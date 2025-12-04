@@ -6,7 +6,12 @@
     <!-- SEO ESTRATÉGICO -->
     <title>Melhor Salão de Chapecó em Alisamento Orgânico Sem Formol | Essência de Romã Hair</title>
     <meta name="description" content="Especialistas em Progressiva Semi Definitiva Orgânica Zero Formol em Chapecó. Agende seu Liso Blindado e recupere o brilho do seu fio.">
-    <!-- Meta Pixel Code e Google Analytics (Com DEFER para performance) -->
+    
+    <!-- ########################################## -->
+    <!-- CÓDIGOS DE CONEXÃO (PIXEL, ADS, ANALYTICS) -->
+    <!-- ########################################## -->
+
+    <!-- Meta Pixel Code (DEFER) -->
     <script defer>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -16,21 +21,22 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.com/en_US/fbevents.js');
-    fbq('init', '639959835745383'); 
+    fbq('init', '639959835745383'); // PIXEL ID
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=639959835745383&ev=PageView&noscript=1"
     /></noscript>
-    <!-- FIM Meta Pixel Code -->
-    <!-- Google Analytics (gtag.js) -->
+    
+    <!-- Google Analytics e Ads (ASYNC DEFER) -->
     <script async defer src="https://www.googletagmanager.com/gtag/js?id=AW-11442509118"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'AW-11442509118');
+    gtag('config', 'AW-11442509118'); // GOOGLE ADS CONVERSION ID
     </script>
+    
     <!-- Tailwind CSS, Fonts e Font Awesome -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
@@ -75,8 +81,8 @@
         }
         .text-gold-static {
             color: #e8c872; background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 58%, #fbf5b7 80%, #aa771c 100%);
+            /* FIX DE VISIBILIDADE */
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            /* DROP SHADOW MAIS FORTE PARA VISIBILIDADE */
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.9));
         }
 
@@ -139,16 +145,6 @@
         .option-button.selected { background-color: #B08F9B; color: white; border-color: #90707C; }
         .avatar-especialista { border-radius: 9999px; border: 4px solid #F3C5C5; box-shadow: 0 0 10px rgba(176, 143, 155, 0.5); }
         
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .h1-mobile { font-size: 4.2rem; line-height: 1; }
-            .h1-sub { font-size: 1.8rem; }
-            .logo-img { height: 80px; width: auto; }
-        }
-        @media (min-width: 769px) {
-            .logo-img { height: 120px; width: auto; }
-        }
-        
         /* Novo estilo para a caixa de oferta */
         .offer-box {
             background-color: #f7f7f7; 
@@ -164,6 +160,78 @@
         }
         .offer-box .price-old { color: #888; font-size: 1.2rem; text-decoration: line-through; }
         .offer-box .price-new { color: #4B0000; font-size: 3rem; font-weight: 800; font-family: 'Playfair Display', serif; }
+
+        /* Estilo da Galeria de Prints (Provas Sociais) */
+        .prints-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 1.5rem;
+            padding: 1rem 0;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .print-card {
+            flex: 0 0 85vw; /* Fica grande no mobile */
+            sm:flex-none sm:w-1/3;
+            scroll-snap-align: start;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid #d4af37;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            background: #111;
+        }
+        .prints-scroll::-webkit-scrollbar { display: none; }
+
+        /* Estilos do Calendário Dinâmico - REMOVIDO */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+        .day-card {
+            background: #fdf2f2;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            border: 2px solid #eee;
+            transition: all 0.2s;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra suave */
+        }
+        .day-card:hover:not(.booked) {
+            border-color: #C5A059;
+            background: #fff8f8;
+            box-shadow: 0 4px 12px rgba(197, 160, 89, 0.3);
+        }
+        .day-card.booked {
+            background: #f3f3f3;
+            color: #888;
+            cursor: not-allowed;
+            opacity: 0.7;
+            border-style: dashed;
+        }
+        /* Cor de Preço: Pico (VERMELHO) */
+        .price-peak { color: #E74C3C; font-weight: 800; } 
+        /* Cor de Preço: Desconto (AZUL) */
+        .price-discount { color: #1E40AF; font-weight: 700; } 
+        /* Cor de Preço: Base/Médio (Bordô Suave) */
+        .price-base { color: #4B0000; font-weight: 700; } 
+        
+        .tag-status { font-size: 0.75rem; font-weight: 800; padding: 2px 6px; border-radius: 999px; margin-top: 4px; display: inline-block; }
+        .status-low { background: #4ade8020; color: #4ade80; } /* Verde suave */
+        .status-high { background: #f8717120; color: #f87171; } /* Vermelho suave */
+        .status-peak { background: #4B0000; color: white; } /* Bordô forte */
+
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .h1-mobile { font-size: 4.2rem; line-height: 1; }
+            .h1-sub { font-size: 1.8rem; }
+            .logo-img { height: 80px; width: auto; }
+        }
+        @media (min-width: 769px) {
+            .logo-img { height: 120px; width: auto; }
+        }
     </style>
 </head>
 <body class="bg-primary">
@@ -244,14 +312,25 @@
 <div id="bloco-autoridade" class="bg-white py-10">
     <div class="container mx-auto px-6 max-w-6xl text-center">
         <h3 class="text-sm font-extrabold tracking-widest uppercase text-gray-500 mb-6">
-            Autoridade em Alisamento Orgânico em Chapecó
+            Padrão Ouro de Qualidade e Segurança Química
         </h3>
         <!-- DECLARAÇÃO DE AUTORIDADE CLEAN -->
         <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 opacity-80">
-            <!-- APENAS SELOS GENÉRICOS / AUTORIZADOS -->
-            <span class="text-xs font-bold uppercase text-red-700 border-2 border-red-700 p-1 rounded-md">FÓRMULA EXCLUSIVA</span>
-            <span class="text-xs font-bold uppercase text-green-700 border-2 border-green-700 p-1 rounded-md">ANVISA APROVADO</span>
-            <span class="text-xs font-bold uppercase text-blue-700 border-2 border-blue-700 p-1 rounded-md">ZERO FORMOL</span>
+            <!-- Selo 1: FÓRMULA EXCLUSIVA -->
+            <div class="text-center">
+                <i class="fas fa-flask text-gold text-2xl mb-1"></i>
+                <p class="text-xs font-bold uppercase text-red-700 border-2 border-red-700 p-1 rounded-md">FÓRMULA EXCLUSIVA</p>
+            </div>
+            <!-- Selo 2: ANVISA APROVADO -->
+            <div class="text-center">
+                <i class="fas fa-certificate text-green-600 text-2xl mb-1"></i>
+                <p class="text-xs font-bold uppercase text-green-700 border-2 border-green-700 p-1 rounded-md">ANVISA APROVADO</p>
+            </div>
+            <!-- Selo 3: ZERO FORMOL (100% Orgânica) -->
+            <div class="text-center">
+                <i class="fas fa-leaf text-blue-700 text-2xl mb-1"></i>
+                <p class="text-xs font-bold uppercase text-blue-700 border-2 border-blue-700 p-1 rounded-md">100% ORGÂNICA E ZERO FORMOL</p>
+            </div>
         </div>
     </div>
 </div>
@@ -281,10 +360,14 @@
                 *Válido para comprimentos até a metade das costas.
             </p>
 
-            <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20garantir%20o%20Voucher%20Rel%C3%A2mpago%20de%20R%24189%2C90!" target="_blank" onclick="fbq('track', 'Purchase', {content_name: 'Voucher_Oferta_Midpage', value: 189.90, currency: 'BRL'});" class="btn-solid-gold w-full inline-flex items-center justify-center gap-3 py-4 px-6 rounded-full shadow-xl hover:shadow-2xl transition-all pulse-gpu">
+            <!-- NOVO CTA DE AGENDAMENTO (COM REGRA DE R$ 50) -->
+            <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20garantir%20o%20Voucher%20Rel%C3%A2mpago%20de%20R%24189%2C90!%20Sei%20que%20%C3%A9%20necess%C3%A1rio%20o%20dep%C3%B3sito%20de%20R%2450%2C00%20para%20agendar." target="_blank" onclick="fbq('track', 'Purchase', {content_name: 'Voucher_Oferta_Midpage', value: 189.90, currency: 'BRL'});" class="btn-solid-gold w-full inline-flex items-center justify-center gap-3 py-4 px-6 rounded-full shadow-xl hover:shadow-2xl transition-all pulse-gpu">
                 <i class="fab fa-whatsapp text-xl font-bold"></i>
                 <span class="font-extrabold uppercase tracking-widest">GARANTIR MEU DESCONTO AGORA</span>
             </a>
+            <p class="text-xs text-red-700 font-bold mt-2">
+                *Requer depósito de R$ 50,00 (deduzível do valor final) para fixar o agendamento.
+            </p>
         </div>
     </div>
 </div>
@@ -368,13 +451,13 @@
             <div class="w-full max-w-sm relative group">
                 <div id="comparison-container" class="relative w-full aspect-[9/16] overflow-hidden rounded-xl border-2 border-gold shadow-2xl cursor-col-resize touch-action-none mx-auto">
                     <!-- Vídeos do Slider com data-src para Lazy Load -->
-                    <video id="video-after" class="absolute w-full h-full object-cover lazy-video" autoplay loop muted playsinline poster="https://placehold.co/300x400/2b0505/C5A059?text=Loading">
+                    <video id="video-after" class="absolute w-full h-full object-cover lazy-video" autoplay muted loop playsinline poster="https://placehold.co/300x400/2b0505/C5A059?text=Loading">
                          <!-- LINK ORIGINAL DO CÓDIGO DO CLIENTE -->
                         <source data-src="https://salaoessenciaderoma.com/assets/videos/video16.mp4?v=f88b0215" type="video/mp4">
                     </video>
                     <span class="absolute top-6 right-6 p-2 text-xs bg-black/60 rounded-lg text-white font-bold uppercase z-10">Depois</span>
                     <div id="after-video-wrapper" class="absolute top-0 left-0 h-full w-1/2 overflow-hidden z-10 border-r-2 border-white/40">
-                        <video id="video-before" class="absolute w-full h-full object-cover lazy-video" autoplay loop muted playsinline poster="https://placehold.co/300x400/2b0505/C5A059?text=Loading">
+                        <video id="video-before" class="absolute w-full h-full object-cover lazy-video" autoplay muted loop playsinline poster="https://placehold.co/300x400/2b0505/C5A059?text=Loading">
                              <!-- LINK ORIGINAL DO CÓDIGO DO CLIENTE -->
                             <source data-src="https://salaoessenciaderoma.com/assets/videos/video15.mp4?v=f88b0215" type="video/mp4">
                         </video>
@@ -418,6 +501,50 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="gold-separator"></div>
+</div>
+
+<!-- ###################################################################### -->
+<!-- BLOCO 5.5: GALERIA DE FOTOS (LOOKBOOK) - RESTAURADA -->
+<!-- ###################################################################### -->
+<div id="bloco-fotos" class="bg-secondary text-gray-100 py-16">
+    <div class="container mx-auto px-6 max-w-6xl">
+        <div class="text-center mb-12">
+            <span class="text-gold text-xs md:text-sm font-bold tracking-[0.3em] uppercase block mb-4 opacity-90">
+                Portfólio Exclusivo
+            </span>
+            <h2 class="font-playfair text-4xl md:text-5xl text-white mb-4 leading-tight">
+                Transformações <span class="text-gradient-gold italic-elegant">Visuais</span>
+            </h2>
+        </div>
+        
+        <!-- GALERIA SCROLL (Usando links de imagem do cliente) -->
+        <div class="prints-scroll">
+            <!-- FOTO 1 -->
+            <div class="print-card flex-none w-[80vw] sm:w-[300px] snap-start relative aspect-[3/4]">
+                <img src="https://teste333.carrd.co/assets/images/image11.jpg?v=6ec22dfd" alt="Resultado Liso" class="w-full h-full object-cover">
+                <span class="absolute bottom-4 left-4 text-xs bg-black/60 text-white p-2 rounded">Selagem Orgânica</span>
+            </div>
+            <!-- FOTO 2 -->
+            <div class="print-card flex-none w-[80vw] sm:w-[300px] snap-start relative aspect-[3/4]">
+                <img src="https://salaoessenciaderoma.com/assets/images/image01.jpg?v=263b4fdd" alt="Liso Premium" class="w-full h-full object-cover">
+                <span class="absolute bottom-4 left-4 text-xs bg-black/60 text-white p-2 rounded">Liso Premium</span>
+            </div>
+            <!-- FOTO 3 -->
+            <div class="print-card flex-none w-[80vw] sm:w-[300px] snap-start relative aspect-[3/4]">
+                <img src="https://salaoessenciaderoma.com/assets/images/image02.jpg?v=58b00179" alt="Progressiva Blindada" class="w-full h-full object-cover">
+                <span class="absolute bottom-4 left-4 text-xs bg-black/60 text-white p-2 rounded">Liso Blindado</span>
+            </div>
+             <!-- FOTO 4 -->
+            <div class="print-card flex-none w-[80vw] sm:w-[300px] snap-start relative aspect-[3/4]">
+                <img src="https://salaoessenciaderoma.com/assets/images/image06.jpg?v=765c8fc0" alt="Brilho Intenso" class="w-full h-full object-cover">
+                <span class="absolute bottom-4 left-4 text-xs bg-black/60 text-white p-2 rounded">Brilho Espelhado</span>
+            </div>
+        </div>
+        <p class="text-center text-xs text-[#c5a059] mt-4 opacity-70 animate-pulse tracking-widest uppercase">
+            ← Deslize para ver mais →
+        </p>
     </div>
     <div class="gold-separator"></div>
 </div>
@@ -507,8 +634,9 @@
             <h2 class="font-playfair text-4xl md:text-5xl text-black font-semibold">
                 Experiências <span class="text-gradient-gold italic-elegant">Reais</span> em Chapecó
             </h2>
+            <!-- RESTAURAÇÃO DA AUTORIDADE NUMÉRICA -->
             <p class="text-gray-600 text-lg max-w-xl mx-auto mt-4">
-                Não compre apenas um serviço, faça um investimento na sua autoestima.
+                Mais de <b>530 Alisamentos com Qualificação 5 Estrelas</b>. Não compre apenas um serviço, faça um investimento na sua autoestima.
             </p>
         </div>
 
@@ -598,8 +726,9 @@
 <!-- ###################################################################### -->
 <footer id="rodape-institucional" class="bg-black text-gray-400 py-10 text-xs text-center">
     <div class="container mx-auto px-6 max-w-4xl">
+        <!-- RESTAURAÇÃO DA DATA DE CRIAÇÃO -->
         <p class="mb-2">
-            &copy; 2025 Essência de Romã Hair. Todos os direitos reservados.
+            &copy; 2016 - 2025 Essência de Romã Hair. Todos os direitos reservados.
         </p>
         <p class="mb-4">
             Rua Achiles Tomazelli, 296 D. Centro • Chapecó, SC.
@@ -970,7 +1099,7 @@
         // Passo 4: Localização/Agendamento
         {
             title: "Quase lá! Qual o melhor dia para a sua transformação?", icon: '🗓️',
-            content: `${especialistaAvatar}<p class="text-sm text-gray-600 mb-4 text-center">Para liberar seu Protocolo, precisamos do seu contato e uma pré-agenda.</p><div class="space-y-4"><input id="input-data" type="date" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B08F9B] focus:border-transparent"><p class="text-xs text-gray-500 text-center">A data é apenas uma preferência inicial. A Especialista confirmará a agenda via WhatsApp.</p></div><div class="bg-[#E9F7EF] p-4 rounded-lg mt-6 border border-[#2ECC71]"><h4 class="font-bold text-[#2ECC71] text-center">✅ Confiança Essencial</h4><p class="text-sm text-gray-700 text-center mt-1">Seu Protocolo ÚNICO está pronto! O próximo passo é clicar para **Liberar a Fórmula Exclusiva** e o bônus de R$ 50,00 com nossa Especialista.</p></div>`,
+            content: `${especialistaAvatar}<p class="text-sm text-gray-600 mb-4 text-center">Para liberar seu Protocolo, precisamos do seu contato e uma pré-agenda.</p><div class="space-y-4"><input id="input-data" type="date" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B08F9B] focus:border-transparent"><p class="text-xs text-gray-500 text-center">A data é apenas uma preferência inicial. A Especialista confirmará a agenda via WhatsApp.</p></div><div class="bg-[#E9F7EF] p-4 rounded-lg mt-6 border border-[#2ECC71]"><h4 class="font-bold text-[#2ECC71] text-center">✅ Confiança Essencial</h4><p class="text-sm text-gray-700 text-center mt-1">Seu Protocolo Único está pronto! O próximo passo é clicar para **Liberar a Fórmula Exclusiva** e o bônus de R$ 50,00 com nossa Especialista.</p></div>`,
             validate: () => {
                 answers.data_preferencial = document.getElementById('input-data').value;
                 return true;
