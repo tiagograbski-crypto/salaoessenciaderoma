@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- 1. SEO DE ALTA PERFORMANCE -->
+    <!-- ========================================== -->
+    <!-- 1. SEO & METADATA -->
+    <!-- ========================================== -->
     <title>Essência de Romã Hair | O Liso Blindado em Chapecó</title>
     <meta name="description" content="Especialista em Alisamento Orgânico e Recuperação Capilar em Chapecó. Recupere a saúde do seu fio com o Liso Blindado. Agende seu horário com condição VIP de Dezembro.">
     <meta name="keywords" content="Alisamento Orgânico Chapecó, Salão de Beleza Chapecó, Progressiva Sem Formol, Liso Blindado, Tratamento Capilar, Cabeleireiro Centro Chapecó">
@@ -13,19 +15,21 @@
     <link rel="canonical" href="https://salaoessenciaderoma.com/">
     <meta name="theme-color" content="#2b0505">
 
-    <!-- VERIFICAÇÃO DE DOMÍNIO FACEBOOK -->
+    <!-- Verificação de Domínio Facebook -->
     <meta name="facebook-domain-verification" content="qv2s2b5jb5v1cswia122tvhz9cd2bw" />
 
-    <!-- 2. ALGORITMO META -->
+    <!-- Open Graph (Compartilhamento) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://salaoessenciaderoma.com/">
     <meta property="og:title" content="🔥 Últimas Vagas: Liso Blindado (Dezembro)">
-    <meta property="og:description" content="O único alisamento de Chapecó que trata enquanto alisa. Veja o antes e depois e garanta seu voucher promocional antes que a agenda feche.">
+    <meta property="og:description" content="O único alisamento de Chapecó que trata enquanto alisa. Veja o antes e depois e garanta seu voucher promocional.">
     <meta property="og:image" content="https://salaoessenciaderoma.com/assets/images/hero-poster.jpg">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:site_name" content="Essência de Romã Hair">
 
-    <!-- 3. TRACKING E PIXELS (INTEGRAÇÃO DE DADOS) -->
+    <!-- ========================================== -->
+    <!-- 2. TRACKING & SCRIPTS (BLINDADOS) -->
+    <!-- ========================================== -->
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11442509118"></script>
@@ -67,7 +71,7 @@
     try {
         fbq('init', '639959835745383');
         fbq('track', 'PageView');
-    } catch(e) { console.log('FB Pixel block'); }
+    } catch(e) { console.log('FB Pixel error/blocked'); }
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=639959835745383&ev=PageView&noscript=1"
@@ -75,546 +79,393 @@
 
     <!-- Manychat -->
     <script>
-        try {
-            var script = document.createElement('script');
-            script.src = "//widget.manychat.com/1394285950786346.js";
-            script.defer = true;
-            document.head.appendChild(script);
-        } catch(e) {}
+        window.addEventListener('load', function() {
+            try {
+                var script = document.createElement('script');
+                script.src = "//widget.manychat.com/1394285950786346.js";
+                script.defer = true;
+                document.body.appendChild(script);
+            } catch(e) {}
+        });
     </script>
 
-    <!-- 4. DEPENDÊNCIAS VISUAIS -->
+    <!-- 3. ESTILOS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        /* --- CORE STYLES --- */
-        * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
+        * { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+        html, body { margin: 0; padding: 0; overflow-x: hidden; background-color: #2b0505; font-family: 'Montserrat', sans-serif; }
 
-        html, body {
-            margin: 0; padding: 0; overflow-x: hidden;
-            background-color: #2b0505;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        /* --- HEADER FIXO SUPERIOR --- */
-        #header-sticky {
-            background: rgba(43, 5, 5, 0.95); /* Vinho Escuro */
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        /* --- HERO CONTAINER (Mobile Ajustado) --- */
-        .hero-container {
-            position: relative; 
-            width: 100vw; 
-            height: 100dvh; 
-            overflow: hidden;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            background-color: #2b0505; border-bottom: 2px solid #c5a059;
-        }
-        .video-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; z-index: 0; pointer-events: none; }
-        .video-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
-            background: radial-gradient(circle at center, rgba(75,0,0,0.1) 0%, rgba(43,5,5,0.8) 90%),
-                        linear-gradient(to bottom, rgba(75, 0, 0, 0.6) 0%, rgba(75, 0, 0, 0.2) 35%, rgba(43, 5, 5, 1) 100%);
-        }
-        .hero-content { 
-            position: relative; z-index: 10; width: 100%; height: 100%; 
-            display: flex; flex-direction: column; justify-content: center; align-items: center; 
-            padding-top: 60px; text-align: center; 
-        }
-
-        /* Seta de Scroll Hero */
-        .hero-scroll-arrow {
-            position: absolute;
-            bottom: 15%;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 20;
-            font-size: 2rem;
-            color: #d4af37;
-            animation: bounce 2s infinite;
-            cursor: pointer;
-            opacity: 0.8;
-        }
-
-        /* Typography */
+        /* Header */
+        #header-sticky { background: rgba(43, 5, 5, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(197, 160, 89, 0.3); transition: all 0.3s ease; }
+        
+        /* Hero */
+        .hero-container { position: relative; width: 100vw; height: 100dvh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #2b0505; border-bottom: 2px solid #c5a059; }
+        .video-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; z-index: 0; }
+        .video-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background: radial-gradient(circle at center, rgba(75,0,0,0.1) 0%, rgba(43,5,5,0.8) 90%), linear-gradient(to bottom, rgba(75, 0, 0, 0.6) 0%, rgba(75, 0, 0, 0.2) 35%, rgba(43, 5, 5, 1) 100%); }
+        .hero-content { position: relative; z-index: 10; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; padding-top: 60px; text-align: center; }
+        .hero-scroll-arrow { position: absolute; bottom: 15%; left: 50%; transform: translateX(-50%); z-index: 20; font-size: 2rem; color: #d4af37; animation: bounce 2s infinite; cursor: pointer; opacity: 0.8; }
+        
+        /* Typography & Colors */
         .font-playfair { font-family: 'Playfair Display', serif; }
-        .italic-elegant { font-style: italic; }
-        .text-gold-static {
-            color: #e8c872;
-            background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 58%, #fbf5b7 80%, #aa771c 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
-        }
-
-        /* --- BLOCO 2 --- */
-        #bloco2-content {
-            background-color: #4B0000;
-            background-image: linear-gradient(to bottom, #2b0505 0%, #4B0000 100%);
-            color: #f3f3f3; padding-top: 5rem; padding-bottom: 5rem;
-        }
-        .text-gold-shine {
-            background: linear-gradient(to right, #cfc09f, #ffecb3, #c5a059, #ffd700, #cfc09f);
-            background-size: 200% auto; -webkit-background-clip: text; background-clip: text;
-            color: transparent; animation: shine 6s linear infinite;
-        }
+        .text-gold-static { color: #e8c872; background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 58%, #fbf5b7 80%, #aa771c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .text-gold-shine { background: linear-gradient(to right, #cfc09f, #ffecb3, #c5a059, #ffd700, #cfc09f); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent; animation: shine 6s linear infinite; }
         @keyframes shine { to { background-position: 200% center; } }
 
-        /* Video Cards (9:16) */
-        .video-card {
-            border-radius: 16px; overflow: hidden; border: 1px solid rgba(197, 160, 89, 0.4);
-            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.6); transition: transform 0.3s ease;
-            background: #000; position: relative; aspect-ratio: 9 / 16; transform: translateZ(0);
-        }
-        .video-card:hover { transform: translateY(-5px) scale(1.01); border-color: #ffd700; }
-        .card-mute-btn {
-            position: absolute; bottom: 10px; right: 10px; width: 32px; height: 32px;
-            background: rgba(0,0,0,0.7); border-radius: 50%; display: flex; align-items: center;
-            justify-content: center; color: white; z-index: 20; cursor: pointer;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-        .btn-insta-float {
-            position: absolute; top: 15px; right: 15px; width: 36px; height: 36px;
-            background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; color: #fff;
-            font-size: 1.2rem; z-index: 10; transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3); text-decoration: none;
-        }
-
-        /* --- BOTÕES UNIFICADOS --- */
-        .btn-solid-gold {
-            background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%);
-            color: #2b0505; border: 1px solid #ffecb3;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); position: relative; overflow: hidden;
-            transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; text-align: center;
-            display: inline-flex; align-items: center; justify-content: center;
-            font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
-        }
-        .btn-solid-gold:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5); }
-        .btn-solid-gold::after {
-            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.6), transparent);
-            transform: skewX(-25deg); animation: shine-pass 3s infinite; pointer-events: none;
-        }
-        @keyframes shine-pass { 0% { left: -100%; } 20% { left: 200%; } 100% { left: 200%; } }
+        /* Buttons */
+        .btn-solid-gold { background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%); color: #2b0505; border: 1px solid #ffecb3; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); position: relative; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; justify-content: center; }
+        .btn-solid-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5); }
         .btn-ghost { border: 1px solid rgba(255, 255, 255, 0.2); color: #e5e5e5; transition: all 0.3s ease; }
-        .btn-ghost:hover { border-color: #d4af37; color: #d4af37; }
 
-        /* Voucher Styles */
-        .voucher-card {
-            background: linear-gradient(145deg, #1a0505, #2b0808);
-            border: 1px solid rgba(197, 160, 89, 0.2); border-radius: 16px;
-            padding: 1.5rem; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-            text-align: center; display: flex; flex-direction: column; justify-content: space-between;
-            transition: all 0.4s ease; opacity: 0.95;
-            min-width: 280px; 
-        }
-        .voucher-card.active-card, .voucher-card:hover {
-            transform: translateY(-5px); border-color: #ffd700;
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15); opacity: 1; z-index: 10;
-        }
-        .voucher-title { color: #fff; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif; }
-        .voucher-price-old { color: #888; text-decoration: line-through; font-size: 0.9rem; }
-        .voucher-price-new {
-            font-family: 'Playfair Display', serif; font-weight: 700; color: #ffd700;
-            font-size: 2.2rem; text-shadow: 0 2px 10px rgba(255, 215, 0, 0.2); line-height: 1; margin: 0.5rem 0;
-            transition: all 0.3s ease;
-        }
-        .voucher-rule { font-size: 0.75rem; color: #ccc; border-top: 1px solid rgba(197, 160, 89, 0.2); padding-top: 0.8rem; margin-top: 0.8rem; }
-        .lote-tag {
-            position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%);
-            background: #c5a059; color: #2b0505; text-transform: uppercase;
-            font-size: 0.65rem; font-weight: 800; padding: 0.3rem 1rem;
-            border-radius: 999px; letter-spacing: 0.1em; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            white-space: nowrap; opacity: 0; transition: opacity 0.3s;
-        }
-        .voucher-card.active-card .lote-tag, .voucher-card:hover .lote-tag { opacity: 1; }
+        /* Video Cards */
+        .video-card { border-radius: 16px; overflow: hidden; border: 1px solid rgba(197, 160, 89, 0.4); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.6); background: #000; position: relative; aspect-ratio: 9 / 16; }
+        .card-mute-btn { position: absolute; bottom: 10px; right: 10px; width: 32px; height: 32px; background: rgba(0,0,0,0.7); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; z-index: 20; cursor: pointer; border: 1px solid rgba(255,255,255,0.3); }
+        .btn-insta-float { position: absolute; top: 15px; right: 15px; width: 36px; height: 36px; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(4px); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.2rem; z-index: 10; text-decoration: none; }
+
+        /* Vouchers */
+        .voucher-card { background: linear-gradient(145deg, #1a0505, #2b0808); border: 1px solid rgba(197, 160, 89, 0.2); border-radius: 16px; padding: 1.5rem; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.4); text-align: center; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.4s ease; min-width: 280px; }
+        .voucher-card.active-card { transform: translateY(-5px); border-color: #ffd700; box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15); z-index: 10; }
+        .premium-tag { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728); color: #2b0505; text-transform: uppercase; font-size: 0.65rem; font-weight: 800; padding: 0.35rem 1.2rem; border-radius: 50px; letter-spacing: 0.15em; box-shadow: 0 5px 15px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.4); white-space: nowrap; z-index: 20; border: 1px solid #7a5c18; }
         
-        .cut-toggle-container {
-            margin-top: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px;
-            padding: 0.8rem; border: 1px solid rgba(197, 160, 89, 0.2);
-            display: flex; align-items: center; justify-content: space-between;
-            font-size: 0.8rem; color: #e5e5e5; text-align: left;
-        }
+        .section-pill { display: inline-block; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.4); color: #d4af37; font-size: 0.7rem; font-weight: 700; padding: 6px 20px; border-radius: 50px; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.2em; backdrop-filter: blur(5px); box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+        .voucher-title { color: #fff; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif; }
+        .voucher-price-old { color: #888; text-decoration: line-through; font-size: 0.9rem; margin-bottom: 2px; }
+        .voucher-price-new { font-family: 'Playfair Display', serif; font-weight: 700; color: #ffd700; font-size: 2.8rem; text-shadow: 0 2px 10px rgba(255, 215, 0, 0.2); line-height: 1; margin: 0.5rem 0; display: flex; justify-content: center; align-items: flex-start; gap: 2px; }
+        .voucher-currency, .voucher-cents { font-size: 1.2rem; margin-top: 6px; font-weight: 600; }
+        .voucher-rule { font-size: 0.75rem; color: #ccc; border-top: 1px solid rgba(197, 160, 89, 0.2); padding-top: 0.8rem; margin-top: 0.8rem; }
+        .cut-toggle-container { margin-top: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 0.8rem; border: 1px solid rgba(197, 160, 89, 0.2); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: #e5e5e5; text-align: left; }
         .switch { position: relative; display: inline-block; width: 34px; height: 20px; flex-shrink: 0; margin-left: 8px; }
         .switch input { opacity: 0; width: 0; height: 0; }
-        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #555; transition: .4s; border-radius: 34px; }
-        .slider:before { position: absolute; content: ""; height: 12px; width: 12px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
-        input:checked + .slider { background-color: #4ade80; } /* Verde para indicar ativo */
-        input:focus + .slider { box-shadow: 0 0 1px #4ade80; }
-        input:checked + .slider:before { transform: translateX(14px); }
+        .slider-toggle { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #555; transition: .4s; border-radius: 34px; }
+        .slider-toggle:before { position: absolute; content: ""; height: 12px; width: 12px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
+        input:checked + .slider-toggle { background-color: #4ade80; }
+        input:checked + .slider-toggle:before { transform: translateX(14px); }
 
-        /* CALENDÁRIO VISUAL */
-        .calendar-wrapper { max-width: 100%; overflow-x: hidden; margin: 0 auto; }
+        /* Calendar */
         .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; width: 100%; margin-top: 1rem; }
         .cal-header { text-align: center; font-size: 0.65rem; color: #aaa; text-transform: uppercase; font-weight: bold; margin-bottom: 5px; }
-        .cal-day {
-            aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center;
-            border-radius: 8px; font-size: 0.9rem; font-weight: bold; position: relative;
-            background: rgba(255,255,255,0.05); color: #fff; transition: all 0.5s ease; cursor: default;
-            min-height: 40px;
-        }
-        .cal-day.available { border: 1px solid #4ade80; color: #4ade80; box-shadow: 0 0 5px rgba(74, 222, 128, 0.3); cursor: pointer; }
-        .cal-day.available:hover { background: rgba(74, 222, 128, 0.1); transform: scale(1.1); }
+        .cal-day { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 0.9rem; font-weight: bold; position: relative; background: rgba(255,255,255,0.05); color: #fff; transition: all 0.2s ease; cursor: default; min-height: 40px; }
+        .cal-day.available { border: 1px solid #4ade80; color: #4ade80; cursor: pointer; }
         .cal-day.full { color: #555; text-decoration: line-through; background: rgba(0,0,0,0.2); }
-        .cal-day.closed { color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); opacity: 0.6; position: relative; }
-        .cal-day.closed::after { content: '✖'; position: absolute; font-size: 1.2rem; color: #ef4444; opacity: 0.5; }
-        .fire-badge {
-            position: absolute; top: -5px; right: -5px; font-size: 0.6rem; background: #fff;
-            border-radius: 50%; width: 14px; height: 14px; display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.5); z-index: 10; animation: bounce-fire 1s infinite;
-        }
-        @keyframes bounce-fire { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
-        #dynamic-msg-container { margin-top: 15px; min-height: 40px; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 8px; }
-        .vaga-alert {
-            background: rgba(212, 175, 55, 0.1); border: 1px solid #d4af37; color: #d4af37;
-            padding: 8px 16px; border-radius: 999px; font-size: 0.8rem; font-weight: bold;
-            animation: fade-in-up 0.3s ease-out; display: flex; align-items: center; gap: 8px;
-        }
-        @keyframes fade-in-up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .cal-tooltip {
-            position: absolute; bottom: 120%; left: 50%; transform: translateX(-50%);
-            padding: 4px 8px; border-radius: 6px;
-            font-size: 0.7rem; font-weight: 800; white-space: nowrap; pointer-events: none;
-            opacity: 0; transition: opacity 0.2s, bottom 0.2s; z-index: 20;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
+        .cal-day.closed { color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); opacity: 0.6; }
+        .fire-badge { position: absolute; top: -5px; right: -5px; font-size: 0.6rem; background: #fff; border-radius: 50%; width: 14px; height: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.5); z-index: 10; animation: bounce-fire 1s infinite; }
+        .cal-tooltip { position: absolute; bottom: 120%; left: 50%; transform: translateX(-50%); padding: 4px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 800; white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity 0.2s; z-index: 20; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
         .cal-tooltip.mode-fire { background: #d4af37; color: #2b0505; border: 1px solid #fff; }
-        .cal-tooltip.mode-fire::after {
-            content: ''; position: absolute; top: 100%; left: 50%; margin-left: -5px;
-            border-width: 5px; border-style: solid; border-color: #d4af37 transparent transparent transparent;
-        }
-        .cal-tooltip.mode-urgent {
-            background: #FFFFFF; color: #DC2626; border: 2px solid #DC2626; transform: translateX(-50%) scale(1.1);
-        }
-        .cal-tooltip.mode-urgent::after {
-            content: ''; position: absolute; top: 100%; left: 50%; margin-left: -5px;
-            border-width: 5px; border-style: solid; border-color: #FFFFFF transparent transparent transparent;
-        }
-        .cal-day:hover .cal-tooltip { opacity: 1; bottom: 110%; }
+        .cal-tooltip.mode-urgent { background: #FFFFFF; color: #DC2626; border: 2px solid #DC2626; }
+        .cal-day:hover .cal-tooltip { opacity: 1; }
 
-        /* --- GALERIA DE PRINTS --- */
-        #bloco-prints { background-color: #f0f2f5; padding-top: 4rem; padding-bottom: 4rem; }
-        .print-gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .print-card {
-            background: #fff; border-radius: 12px; overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s;
-            border: 1px solid #e1e1e1;
-        }
-        .print-card:hover { transform: translateY(-5px); }
-        .print-img-wrapper {
-            width: 100%; height: 450px; overflow: hidden; background: #000;
-            display: flex; align-items: center; justify-content: center; position: relative;
-        }
-        .print-img { width: 100%; height: 100%; object-fit: cover; }
-        .print-overlay-hint {
-            position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.6);
-            color: #fff; padding: 8px; text-align: center; font-size: 0.75rem;
-        }
-
-        /* --- BLOCO 3: DEPOIMENTOS REFINADOS --- */
-        #bloco3-refinado {
-            font-family: 'Montserrat', sans-serif; background-color: #F9F9F9; color: #111111;
-            padding-top: 5rem; padding-bottom: 3rem; width: 100%; position: relative; z-index: 20;
-        }
-        #bloco3-refinado .text-gold {
-            background: linear-gradient(to right, #b8860b, #ffd700, #cfc09f, #d4af37, #b8860b);
-            background-size: 200% auto; -webkit-background-clip: text; background-clip: text;
-            color: transparent; animation: shine 8s linear infinite; font-style: italic;
-        }
-        #bloco3-refinado .testimonial-card {
-            background: #FFFFFF; border: 1px solid #E5E5E5; border-top: 3px solid #C5A059;
-            border-radius: 12px; padding: 2.5rem; box-shadow: 0 5px 20px rgba(0,0,0,0.04);
-            height: 100%; display: flex; flex-direction: column; justify-content: space-between;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        #bloco3-refinado .testimonial-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(197, 160, 89, 0.15); border-color: #d4af37; }
-        #bloco3-refinado .star-gold { color: #F59E0B; font-size: 1.1rem; margin-right: 3px; }
-        #bloco3-refinado .testimonial-gallery { display: grid; grid-template-columns: 1fr; gap: 2rem; width: 100%; max-width: 1200px; margin: 0 auto; }
-        @media (min-width: 1024px) { #bloco3-refinado .testimonial-gallery { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; } }
-        #bloco3-refinado .quote-mark { font-family: 'Playfair Display', serif; font-size: 4rem; line-height: 0.5; color: #E0E0E0; margin-bottom: 1.5rem; display: block; }
-        #bloco3-refinado .verified-badge {
-            display: inline-flex; align-items: center; gap: 4px; font-size: 0.65rem; color: #111;
-            background: #fff; padding: 3px 10px; border-radius: 99px; margin-left: 8px; font-weight: 700;
-            letter-spacing: 0.05em; text-transform: uppercase; border: 1px solid #C5A059;
-            box-shadow: 0 2px 5px rgba(197, 160, 89, 0.15); vertical-align: middle; transform: translateY(-2px);
-        }
-        #bloco3-refinado .verified-badge i { color: #F59E0B; font-size: 0.75rem; }
-        #bloco3-refinado .btn-trust {
-            display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 28px;
-            margin-top: 2rem; background-color: transparent; border: 1px solid #C5A059; border-radius: 50px;
-            color: #854D0E; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
-            text-decoration: none; transition: all 0.3s ease;
-        }
-        #bloco3-refinado .btn-trust:hover { background-color: #fffbf0; border-color: #b48e43; box-shadow: 0 4px 12px rgba(197, 160, 89, 0.15); }
-        #bloco3-refinado .text-review { font-size: 1.125rem; line-height: 1.7; color: #1F2937; font-style: italic; font-weight: 500; margin-bottom: 2rem; }
-        #bloco3-refinado .client-name { font-size: 1.05rem; font-weight: 800; color: #2b0505; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.5rem; }
-        #bloco3-refinado .meta-row { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: #52525B; font-weight: 600; margin-bottom: 2px; }
-        #bloco3-refinado .meta-icon { color: #C5A059; width: 14px; text-align: center; }
-
-        /* --- BLOCO 4: SLIDER --- */
-        #bloco-slider-refinado {
-            background-color: #4B0000; background-image: linear-gradient(to bottom, #4B0000 0%, #2b0505 100%);
-            color: #f3f3f3; padding-top: 4rem; padding-bottom: 6rem; position: relative; z-index: 20;
-        }
-        .gold-separator {
-            width: 100%; max-width: 200px; height: 2px;
-            background: linear-gradient(90deg, transparent, #c5a059, transparent);
-            margin: 4rem auto 0 auto; opacity: 0.8;
-        }
-        #bloco-slider-refinado .text-gold {
-            background: linear-gradient(to right, #cfc09f, #ffecb3, #c5a059, #ffd700, #cfc09f);
-            background-size: 200% auto; -webkit-background-clip: text; background-clip: text;
-            color: transparent; animation: shine 6s linear infinite; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-        }
-        #comparison-container {
-            position: relative; width: 100%; aspect-ratio: 9 / 16; overflow: hidden;
-            border-radius: 16px; border: 1px solid rgba(197, 160, 89, 0.4);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5); cursor: col-resize; touch-action: none;
-            margin: 0 auto; max-width: 320px;
-        }
-        #video-before, #video-after { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
-        #after-video-wrapper { position: absolute; top: 0; left: 0; height: 100%; width: 50%; overflow: hidden; z-index: 10; border-right: 1px solid rgba(255,255,255,0.2); }
-        #drag-handle {
-            position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 4px; height: 100%;
-            background: linear-gradient(to bottom, transparent, #ffd700, #c5a059, transparent);
-            z-index: 20; pointer-events: none; box-shadow: 0 0 15px rgba(197, 160, 89, 0.6);
-        }
-        #drag-handle::after {
-            content: '↔'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
-            background: linear-gradient(135deg, #d4af37, #b38728); color: #2b0505; border: 2px solid #fff5e6;
-            border-radius: 50%; box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); font-size: 1.2rem; font-weight: 800; padding-bottom: 3px;
-        }
-        .video-label {
-            position: absolute; padding: 0.4rem 1rem; font-family: 'Montserrat', sans-serif; font-weight: 700;
-            font-size: 0.75rem; letter-spacing: 0.1em; color: #fff; background-color: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(4px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 4px;
-            text-transform: uppercase; z-index: 15; top: 1.5rem; pointer-events: none;
-        }
+        /* SLIDER ANTES DEPOIS */
+        #comparison-container { position: relative; width: 100%; aspect-ratio: 9 / 16; overflow: hidden; border-radius: 16px; border: 1px solid rgba(197, 160, 89, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.5); cursor: col-resize; touch-action: none; margin: 0 auto; max-width: 320px; }
+        #video-before, #video-after { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+        #before-video-wrapper { position: absolute; top: 0; left: 0; height: 100%; width: 50%; overflow: hidden; z-index: 10; border-right: 1px solid rgba(255,255,255,0.5); }
+        #drag-handle { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 4px; height: 100%; background: linear-gradient(to bottom, transparent, #ffd700, #c5a059, transparent); z-index: 20; pointer-events: none; }
+        #drag-handle::after { content: '↔'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #d4af37, #b38728); color: #2b0505; border: 2px solid #fff5e6; border-radius: 50%; font-weight: 800; box-shadow: 0 0 15px rgba(0,0,0,0.5); }
+        .video-label { position: absolute; padding: 0.4rem 1rem; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.1em; color: #fff; background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 4px; text-transform: uppercase; z-index: 15; top: 1.5rem; pointer-events: none; }
         .label-before { left: 1.5rem; } .label-after { right: 1.5rem; }
-        .beneficio-item { display: flex; align-items: flex-start; margin-bottom: 2rem; }
-        .check-icon {
-            color: #ffd700; flex-shrink: 0; margin-right: 1.2rem; font-size: 1.6rem;
-            margin-top: 2px; filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.4));
-        }
         .layout-split { display: flex; flex-direction: column; align-items: center; gap: 3rem; }
-        @media (min-width: 1024px) {
-            .layout-split { flex-direction: row; justify-content: center; align-items: center; gap: 5rem; }
-            .col-left { flex: 0 0 350px; } .col-right { flex: 1; text-align: left; }
-            .text-left-lg { text-align: left !important; }
-        }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .pulse-gpu { animation: pulse-transform 2s infinite; }
-        @keyframes pulse-transform { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
 
-        /* --- BLOCO FAQ - VERSÃO FINAL LAPIDADA --- */
-        #faq-isolate {
-            font-family: 'Montserrat', sans-serif; background-color: #2b0505;
-            background-image: linear-gradient(to bottom, #4B0000 0%, #1a0202 100%);
-            color: #f3f3f3; padding-top: 5rem; padding-bottom: 6rem; width: 100%; position: relative; z-index: 20;
-        }
-        #faq-isolate .text-gold {
-            background: linear-gradient(to right, #cfc09f, #ffecb3, #c5a059, #ffd700, #cfc09f);
-            background-size: 200% auto; -webkit-background-clip: text; background-clip: text;
-            color: transparent; animation: shine 6s linear infinite;
-        }
-        #faq-isolate details {
-            background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(197, 160, 89, 0.15); border-radius: 12px;
-            margin-bottom: 1rem; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        #faq-isolate details[open] {
-            background: rgba(0, 0, 0, 0.6); border-color: #C5A059;
-            box-shadow: 0 0 20px rgba(197, 160, 89, 0.15), inset 0 0 10px rgba(197, 160, 89, 0.05);
-        }
-        #faq-isolate summary {
-            display: flex; align-items: center; justify-content: space-between; padding: 1.5rem;
-            cursor: pointer; list-style: none; position: relative; transition: background-color 0.3s;
-        }
-        #faq-isolate summary:hover { background-color: rgba(255,255,255,0.03); }
-        #faq-isolate summary::-webkit-details-marker { display: none; }
-        #faq-isolate .faq-question {
-            font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: #f3f3f3;
-            line-height: 1.4; width: 90%; letter-spacing: 0.02em;
-        }
-        #faq-isolate .faq-toggle {
-            font-size: 1.5rem; color: #C5A059; font-weight: 300; transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-        }
-        #faq-isolate details[open] .faq-toggle { transform: rotate(45deg); color: #ffd700; }
-        #faq-isolate .faq-answer {
-            padding: 0 1.5rem 1.5rem 1.5rem; color: #d1d5db; font-size: 1rem; line-height: 1.7; font-weight: 400;
-            border-top: 1px solid rgba(197, 160, 89, 0.1); margin-top: 0; padding-top: 1.2rem;
-            display: flex; align-items: flex-start; gap: 12px;
-        }
-        #faq-isolate .answer-icon { color: #C5A059; font-size: 1.1rem; margin-top: 4px; flex-shrink: 0; }
-        #faq-isolate .header-eyebrow {
-            color: #C5A059; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
-            display: block; margin-bottom: 1rem;
-        }
-        #faq-isolate .header-title { font-size: 2.5rem; line-height: 1.1; color: #fff; margin-bottom: 1rem; }
-        #faq-isolate .status-online {
-            display: inline-block; width: 8px; height: 8px; background-color: #4ade80; border-radius: 50%;
-            box-shadow: 0 0 8px #4ade80; margin-right: 6px; animation: pulse-green 2s infinite;
-            vertical-align: middle; margin-bottom: 2px;
-        }
-        @keyframes pulse-green {
-            0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
-            70% { box-shadow: 0 0 0 6px rgba(74, 222, 128, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
-        }
+        /* FAQ */
+        details { background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(197, 160, 89, 0.15); border-radius: 12px; margin-bottom: 1rem; overflow: hidden; transition: all 0.4s ease; }
+        details[open] { background: rgba(0, 0, 0, 0.6); border-color: #C5A059; box-shadow: 0 0 15px rgba(197, 160, 89, 0.1); }
+        summary { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem; cursor: pointer; list-style: none; }
+        summary::-webkit-details-marker { display: none; }
+        .faq-question { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: #f3f3f3; line-height: 1.4; width: 90%; letter-spacing: 0.02em; }
+        .faq-toggle { font-size: 1.5rem; color: #C5A059; font-weight: 300; transition: transform 0.4s; }
+        details[open] .faq-toggle { transform: rotate(45deg); color: #ffd700; }
+        .faq-answer { padding: 0 1.5rem 1.5rem 1.5rem; color: #d1d5db; font-size: 1rem; line-height: 1.7; font-weight: 400; border-top: 1px solid rgba(197, 160, 89, 0.1); margin-top: 0; padding-top: 1.2rem; display: flex; align-items: flex-start; gap: 12px; }
+        .answer-icon { color: #C5A059; font-size: 1.1rem; margin-top: 4px; flex-shrink: 0; }
 
-        /* --- RODAPÉ "THE EMPIRE" --- */
-        #footer-empire-master {
-            font-family: 'Montserrat', sans-serif; background-color: #2b0505;
-            background-image: linear-gradient(to bottom, #4B0000 0%, #1a0202 100%);
-            color: #ccc; padding-top: 6rem; padding-bottom: 8rem; width: 100%; position: relative; z-index: 10;
-            font-size: 0.9rem; border-top: 1px solid rgba(197, 160, 89, 0.2);
-            left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; box-sizing: border-box;
+        /* PRINTS WHATSAPP */
+        .print-card { 
+            background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #e1e1e1; 
+            min-width: 220px; max-width: 280px; scroll-snap-align: center; 
         }
-        #footer-empire-master .font-serif { font-family: 'Cormorant Garamond', serif; }
-        #footer-empire-master .footer-heading {
+        .print-img-wrapper { 
+            width: 100%; height: 380px; overflow: hidden; background: #000; 
+            display: flex; align-items: center; justify-content: center; position: relative; 
+        }
+        .print-img { width: 100%; height: 100%; object-fit: contain; }
+
+        /* RODAPÉ ROYAL EMPIRE (Sofisticado) */
+        #footer-empire-master { 
+            background-color: #1a0505; 
+            background-image: radial-gradient(circle at center top, #2b0808 0%, #1a0505 60%); 
+            color: #ccc; 
+            padding-top: 4rem; 
+            padding-bottom: 2rem; 
+            position: relative; 
+            border-top: 1px solid rgba(197, 160, 89, 0.3); 
+        }
+        .footer-divider { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 800px; display: flex; align-items: center; justify-content: center; }
+        .footer-divider::before, .footer-divider::after { content: ''; height: 1px; flex: 1; background: linear-gradient(90deg, transparent, #c5a059, transparent); }
+        .footer-divider-icon { color: #d4af37; font-size: 1.2rem; margin: 0 15px; background: #1a0505; padding: 0 10px; animation: pulse 3s infinite; }
+        
+        .footer-heading { 
             font-family: 'Montserrat', sans-serif; color: #C5A059; font-size: 0.75rem;
             font-weight: 700; text-transform: uppercase; letter-spacing: 0.25em;
-            margin-bottom: 1.5rem; display: block; border-bottom: 1px solid rgba(197, 160, 89, 0.2);
-            padding-bottom: 10px; width: fit-content;
+            margin-bottom: 1rem; display: block; position: relative; padding-bottom: 5px; 
         }
-        /* Marcas "Slim" (Mais discretas) */
-        #footer-empire-master .brands-wrapper { text-align: center; margin-bottom: 2rem; padding: 0 20px; }
-        #footer-empire-master .brands-title {
-            font-family: 'Montserrat', sans-serif; font-size: 0.55rem; letter-spacing: 0.3em;
-            text-transform: uppercase; color: #edaea0; margin-bottom: 1rem; display: block; opacity: 0.6;
-        }
-        #footer-empire-master .brands-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; }
-        #footer-empire-master .brand-logo {
-            font-family: 'Cormorant Garamond', serif; color: #aaa; font-size: 0.9rem; /* Menor */
-            text-transform: uppercase; letter-spacing: 0.08em; transition: all 0.4s ease;
-            cursor: default; position: relative; opacity: 0.3; /* Mais transparente */
-        }
-        #footer-empire-master .brand-logo:hover { color: #C5A059; opacity: 0.9; text-shadow: 0 0 15px rgba(197, 160, 89, 0.4); transform: translateY(-2px); }
-        #footer-empire-master .brand-main { color: #fff; font-weight: 600; border-bottom: 1px solid #C5A059; padding-bottom: 2px; opacity: 0.6; }
+        .footer-heading::after { content: ''; position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background: #C5A059; }
         
-        #footer-empire-master .content-grid { display: grid; grid-template-columns: 1fr; gap: 4rem; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-        @media (min-width: 900px) { #footer-empire-master .content-grid { grid-template-columns: 1.2fr 0.8fr 1fr; gap: 3rem; } }
-        #footer-empire-master p { line-height: 1.8; font-weight: 300; color: #e0e0e0; font-size: 0.9rem; margin-bottom: 1rem; }
-        #footer-empire-master strong { color: #fff; font-weight: 500; }
-        #footer-empire-master i { color: #C5A059; margin-right: 8px; width: 15px; text-align: center; }
-        #footer-empire-master .map-frame { width: 100%; height: 220px; border: 1px solid rgba(197, 160, 89, 0.3); padding: 4px; background: rgba(197, 160, 89, 0.05); border-radius: 4px; }
-        #footer-empire-master iframe { width: 100%; height: 100%; border: none; filter: grayscale(20%) contrast(1.1); transition: filter 0.5s; }
-        #footer-empire-master .map-frame:hover iframe { filter: grayscale(0%) contrast(1); }
-        #footer-empire-master .badges-row { display: flex; gap: 15px; margin-top: 2rem; flex-wrap: wrap; }
-        #footer-empire-master .badge-minimal {
-            display: flex; align-items: center; gap: 8px; font-size: 0.65rem; text-transform: uppercase;
-            letter-spacing: 0.05em; color: #ccc; border: 1px solid #555; padding: 6px 10px;
-            border-radius: 2px; transition: border-color 0.3s;
-        }
-        #footer-empire-master .badge-minimal:hover { border-color: #C5A059; color: #fff; }
-        #footer-empire-master .badge-minimal i { color: #C5A059; margin: 0; font-size: 0.8rem; }
-        #footer-empire-master .bottom-bar {
-            border-top: 1px solid rgba(255,255,255,0.1); margin-top: 4rem; padding-top: 3rem;
-            display: flex; flex-direction: column; align-items: center; gap: 2rem;
-        }
-        #footer-empire-master .social-links { display: flex; gap: 1.5rem; }
-        #footer-empire-master .social-link {
-            width: 45px; height: 45px; display: flex; align-items: center; justify-content: center;
-            border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.2); color: #C5A059;
-            font-size: 1.2rem; transition: all 0.3s; text-decoration: none; background: rgba(255,255,255,0.05);
-        }
-        #footer-empire-master .social-link:hover {
-            border-color: #C5A059; background: #C5A059; color: #1a0202;
-            transform: translateY(-3px); box-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
-        }
-        #footer-empire-master .legal-links button {
-            color: #9CA3AF; font-size: 0.75rem; text-decoration: none; margin: 0 10px;
-            transition: color 0.2s; cursor: pointer; background: transparent; border: none;
-            font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.05em;
-            padding: 0; outline: none;
-        }
-        #footer-empire-master .legal-links button:hover { color: #fff; text-decoration: underline; }
-        #footer-empire-master .copyright-text { font-size: 0.75rem; color: #9CA3AF; margin-bottom: 1rem; font-weight: 400; letter-spacing: 0.02em; }
-        #footer-empire-master .counter-camou { opacity: 0.15; filter: grayscale(100%); transform: scale(0.7); margin-top: 1rem; }
-        #footer-empire-master .counter-camou:hover { opacity: 1; filter: grayscale(0%); }
-        #erh-legal-modal-overlay {
-            display: none; position: fixed; z-index: 2147483647 !important; left: 0; top: 0;
-            width: 100%; height: 100%; overflow-y: auto; background-color: rgba(0,0,0,0.9) !important;
-            backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); align-items: center; justify-content: center;
-        }
-        #erh-legal-modal-overlay.active { display: flex !important; }
-        .legal-modal-box {
-            background-color: #FFFFFF !important; color: #000000 !important; padding: 2.5rem;
-            width: 90%; max-width: 800px; border-radius: 12px; position: relative;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); text-align: left;
-            max-height: 80vh; overflow-y: auto; margin: auto;
-        }
-        .legal-close-btn {
-            color: #000000 !important; position: absolute; top: 15px; right: 20px; font-size: 32px;
-            font-weight: bold; cursor: pointer; line-height: 1; transition: color 0.2s; z-index: 100;
-        }
-        .legal-close-btn:hover { color: #C5A059 !important; }
-        .legal-content-title {
-            font-family: 'Playfair Display', serif !important; font-size: 2rem !important;
-            color: #000000 !important; margin-top: 0 !important; margin-bottom: 1.5rem !important;
-            border-bottom: 3px solid #C5A059; padding-bottom: 0.5rem; font-weight: 700 !important;
-        }
-        .legal-content-text {
-            font-family: 'Montserrat', sans-serif !important; font-size: 1rem !important;
-            line-height: 1.8 !important; color: #000000 !important; font-weight: 500 !important;
-        }
-        .legal-content-text p { margin-bottom: 1rem !important; color: #000000 !important; }
-        .legal-content-text strong { color: #000000 !important; font-weight: 800 !important; }
+        .brands-wrapper { border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 2rem; margin-bottom: 2rem; text-align: center; }
+        .brands-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem 3rem; align-items: center; }
+        .brand-logo { font-family: 'Cormorant Garamond', serif; color: #fff; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.15em; opacity: 0.4; transition: all 0.5s ease; cursor: default; }
+        .brand-logo:hover { opacity: 1; color: #d4af37; text-shadow: 0 0 15px rgba(212, 175, 55, 0.6); transform: scale(1.05); }
         
-        /* Status Dot */
+        .map-frame { width: 100%; height: 160px; border: 1px solid rgba(197, 160, 89, 0.4); padding: 4px; border-radius: 4px; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); transition: transform 0.3s; }
+        .map-frame:hover { transform: translateY(-3px); border-color: #ffd700; }
+        
+        .social-links { display: flex; gap: 0.8rem; margin-bottom: 1.5rem; justify-content: center; }
+        .social-link { width: 36px; height: 36px; border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #d4af37; transition: all 0.3s; font-size: 1rem; }
+        .social-link:hover { background: #d4af37; color: #1a0505; border-color: #d4af37; transform: translateY(-3px); }
+        
+        .badges-row { display: flex; gap: 10px; margin-top: 1rem; flex-wrap: wrap; }
+        .badge-minimal { border: 1px solid #333; padding: 4px 10px; font-size: 0.6rem; color: #888; border-radius: 4px; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px; }
+        .badge-minimal i { color: #d4af37; }
+        
+        .bottom-bar { text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem; margin-top: 1.5rem; }
+        .legal-links button { color: #666; font-size: 0.7rem; margin: 0 8px; transition: color 0.3s; }
+        .legal-links button:hover { color: #d4af37; }
+        
+        /* Modal & Utils */
+        #erh-legal-modal-overlay { display: none; position: fixed; z-index: 2147483647; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); backdrop-filter: blur(5px); align-items: center; justify-content: center; }
+        #erh-legal-modal-overlay.active { display: flex; }
+        .legal-modal-box { background-color: #FFF; color: #000; padding: 2.5rem; width: 90%; max-width: 700px; border-radius: 8px; position: relative; max-height: 80vh; overflow-y: auto; text-align: left; border-top: 4px solid #d4af37; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .snap-x-mandatory { scroll-snap-type: x mandatory; }
+        .snap-center { scroll-snap-align: center; }
         .status-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 4px; }
         .bg-open { background-color: #4ade80; box-shadow: 0 0 5px #4ade80; }
         .bg-closed { background-color: #f87171; box-shadow: 0 0 5px #f87171; }
         
-        @media (max-width: 768px) {
-            #footer-empire-master .content-grid { text-align: center; }
-            #footer-empire-master .footer-heading { margin: 0 auto 1.5rem auto; }
-            #footer-empire-master .badges-row { justify-content: center; }
-            #footer-empire-master .brands-grid { gap: 1.5rem 0; flex-direction: column; }
-            #footer-empire-master .brand-logo { font-size: 1.3rem; padding: 0.5rem 0; }
-            .legal-modal-box { padding: 1.5rem; }
+        /* Contador Online */
+        .online-counter-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(0,0,0,0.3); padding: 4px 10px; border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.7rem; color: #aaa; margin-top: 1rem;
         }
+        .online-dot { width: 6px; height: 6px; background-color: #4ade80; border-radius: 50%; animation: pulse-green 2s infinite; }
+        
+        @media (min-width: 768px) { #footer-empire-master .content-grid { grid-template-columns: 1fr 1fr 1fr; gap: 3rem; } .layout-split { flex-direction: row; justify-content: center; } }
     </style>
 </head>
 <body>
 
-    <!-- 1. HEADER FIXO SUPERIOR -->
+    <!-- SCRIPT DE INICIALIZAÇÃO -->
+    <script>
+        // Função WhatsApp
+        function openWhatsApp(message, value, id) {
+             const phone = "5549999954052";
+             
+             if (value && id) {
+                 const checkbox = document.getElementById('check-' + id);
+                 let msg = `Olá! Quero garantir meu horário VIP de Dezembro.\n\n*Voucher:* ${message} (R$ ${value.toFixed(2)})`;
+                 if(checkbox && checkbox.checked) {
+                     msg += `\n*+ Adicional:* Corte Terapêutico (Oferta R$ 80,00)`;
+                     msg += `\n*Valor Total:* R$ ${(value + 80).toFixed(2)}`;
+                 }
+                 msg += `\n\nCiente da taxa de reserva de R$ 50,00.`;
+                 message = msg;
+             }
+             const finalLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
+             try { if(typeof gtag === 'function') gtag('event', 'conversion', {'send_to': 'AW-11442509118/CNfICPrhpYAZEL6qm9Aq'}); } catch(e){}
+             window.open(finalLink, '_blank');
+        }
+
+        // Funções UI
+        function setActiveCard(card) {
+            document.querySelectorAll('.voucher-card').forEach(c => c.classList.remove('active-card'));
+            card.classList.add('active-card');
+        }
+        
+        function toggleCut(type, basePrice) {
+            const checkbox = document.getElementById('check-' + type);
+            const priceInt = document.querySelector(`#price-${type} .price-int`);
+            const priceCents = document.querySelector(`#price-${type} .price-cents`);
+            const priceWrapper = document.getElementById(`price-${type}`);
+
+            if (checkbox && priceInt && priceCents) {
+                if (checkbox.checked) {
+                    const newPrice = basePrice + 80;
+                    priceInt.textContent = newPrice.toFixed(0);
+                    priceCents.textContent = ',' + (newPrice % 1).toFixed(2).substring(2);
+                    priceWrapper.style.color = "#4ade80"; 
+                } else {
+                    priceInt.textContent = Math.floor(basePrice);
+                    priceCents.textContent = ',' + (basePrice % 1).toFixed(2).substring(2);
+                    priceWrapper.style.color = "#ffd700"; 
+                }
+            }
+        }
+
+        function toggleCardAudio(id,b) { 
+            const v=document.getElementById(id); const i=b.querySelector('i'); if(!v) return;
+            document.querySelectorAll('video').forEach(x=>{if(x.id!==id)x.muted=true}); 
+            if(v.muted){v.muted=false;i.className='fas fa-volume-up'}else{v.muted=true;i.className='fas fa-volume-mute'} 
+        }
+        
+        function resgatar(t,v,id){ openWhatsApp(t, v, id); }
+        function sendWhatsAppMessage(){ openWhatsApp("Olá! Vi os depoimentos e quero agendar."); }
+        function selectDay(d){
+            const m=["🔥 1 Vaga Extra!","⚠️ Últimos 2 horários!","💎 Horário Nobre liberado"][Math.floor(Math.random()*3)];
+            const btnHtml = `<button onclick="openWhatsApp('Olá! Vi vaga dia ${d}/12.')" class="bg-[#4ade80] text-[#064e3b] text-xs font-bold px-4 py-2 rounded-full shadow-lg mt-2 w-full"><i class="fab fa-whatsapp"></i> Agendar dia ${d}</button>`;
+            const c = document.getElementById('dynamic-msg-container');
+            if(c) c.innerHTML=`<div class="vaga-alert">${m}</div>${btnHtml}`;
+        }
+
+        // Status
+        function updateStatus() {
+            const now = new Date();
+            const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+            const brTime = new Date(utc - (3600000 * 3));
+            const day = brTime.getDay(); const hour = brTime.getHours();
+            let isOpen = false; let statusText = "Fechado";
+
+            if (day === 0) { statusText = "Fechado • Abre Segunda 13h"; } 
+            else if (day === 1) { 
+                if (hour >= 13 && hour < 17) { isOpen = true; statusText = "Aberto Agora"; } 
+                else if (hour < 13) { statusText = "Fechado • Abre 13h"; } 
+                else { statusText = "Fechado • Abre Terça 08h"; }
+            } else { 
+                if (hour >= 8 && hour < 18) { isOpen = true; statusText = "Aberto Agora"; } 
+                else if (hour < 8) { statusText = "Fechado • Abre 08h"; } 
+                else { if (day === 6) statusText = "Fechado • Abre Segunda 13h"; else statusText = "Fechado • Abre 08h"; }
+            }
+
+            const el = document.getElementById('header-status-text');
+            if(el) {
+                el.innerHTML = `<span class="status-dot ${isOpen?'bg-open':'bg-closed'}"></span> ${statusText}`;
+                el.className = `text-[10px] md:text-xs font-bold tracking-wide mt-1 flex items-center ${isOpen?'text-green-400':'text-red-300'}`;
+            }
+        }
+        setInterval(updateStatus, 60000); updateStatus();
+
+        // Slider Antes/Depois (Script Drag)
+        (function(){
+            const c=document.getElementById('comparison-container');
+            const aw=document.getElementById('before-video-wrapper');
+            const h=document.getElementById('drag-handle');
+            
+            function u(x){
+                if(!c)return;
+                const w=c.getBoundingClientRect().width;
+                const p=(Math.max(0,Math.min(x,w))/w)*100;
+                if(aw) aw.style.width=`${p}%`;
+                if(h) h.style.left=`${p}%`;
+            }
+
+            if(c){
+                let d=false;
+                const start = (e) => { d=true; u((e.touches?e.touches[0].clientX:e.clientX) - c.getBoundingClientRect().left); };
+                const move = (e) => { if(!d)return; u((e.touches?e.touches[0].clientX:e.clientX) - c.getBoundingClientRect().left); };
+                const end = () => { d=false; };
+
+                c.addEventListener('mousedown', start);
+                window.addEventListener('mouseup', end);
+                window.addEventListener('mousemove', move);
+                c.addEventListener('touchstart', start, {passive:true});
+                window.addEventListener('touchend', end);
+                window.addEventListener('touchmove', move, {passive:false});
+            }
+        })();
+
+        // Popula Calendário e Depoimentos
+        document.addEventListener('DOMContentLoaded',()=>{
+            const days=document.querySelectorAll('.cal-day.available');
+            days.forEach(d=>{
+                if(Math.random()>0.4) {
+                    const b=document.createElement('div'); b.className='fire-badge'; b.innerHTML='🔥'; d.appendChild(b);
+                    const t=document.createElement('div'); t.className='cal-tooltip mode-fire'; t.innerHTML='🔥 Alta procura'; d.appendChild(t);
+                }
+            });
+
+            const reviews=[
+                {name:"Maria S.", texto:"Melhor investimento que fiz. Resultado 100% liso.", local:"Progresso"},
+                {name:"Ana L.", texto:"Minha raiz crescia rápido, a Essência salvou minha rotina.", local:"Centro"},
+                {name:"Carla P.", texto:"Atendimento VIP e resultado de cinema.", local:"Santa Maria"},
+                {name:"Beatriz G.", texto:"Brilho espelhado incrível.", local:"Líder"}
+            ];
+            const c = document.getElementById('dynamic-gallery');
+            if(c) {
+                reviews.forEach(r => {
+                    c.innerHTML += `<div class="testimonial-card snap-center shrink-0 w-[80vw] md:w-auto"><div class="flex text-[#F59E0B] mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-gray-800 italic mb-4">"${r.texto}"</p><div class="mt-auto pt-4 border-t border-gray-100"><strong class="block text-[#2b0505] text-xs font-bold">${r.name} <span class="ml-1 text-[10px] text-[#C5A059] border border-[#C5A059] rounded-full px-1">Verificada</span></strong><span class="text-xs text-gray-500">${r.local}</span></div></div>`;
+                });
+            }
+        });
+
+        // FAQ Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const accItems = document.querySelectorAll('#faq-isolate details');
+            accItems.forEach(item => {
+                item.querySelector('summary').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    accItems.forEach(other => { if(other!==item) other.removeAttribute('open'); });
+                    if(item.hasAttribute('open')) item.removeAttribute('open'); else item.setAttribute('open','');
+                });
+            });
+        });
+
+        // Modal Jurídico
+        (function(){
+            const modal = document.getElementById('erh-legal-modal-overlay');
+            const closeBtn = document.getElementById('erh-modal-close');
+            const privacyBtn = document.getElementById('btn-privacy-trigger');
+            const termsBtn = document.getElementById('btn-terms-trigger');
+            const cPriv = document.getElementById('content-privacy');
+            const cTerms = document.getElementById('content-terms');
+
+            function open(t) {
+                if(!modal) return; modal.classList.add('active');
+                if(t==='p'){ if(cPriv) cPriv.style.display='block'; if(cTerms) cTerms.style.display='none'; }
+                else { if(cPriv) cPriv.style.display='none'; if(cTerms) cTerms.style.display='block'; }
+            }
+            function close() { if(modal) modal.classList.remove('active'); }
+
+            if(privacyBtn) privacyBtn.addEventListener('click', ()=>open('p'));
+            if(termsBtn) termsBtn.addEventListener('click', ()=>open('t'));
+            if(closeBtn) closeBtn.addEventListener('click', close);
+            if(modal) modal.addEventListener('click', e=>{ if(e.target===modal) close(); });
+        })();
+        
+        // Contador Online
+        function updateOnlineUsers() {
+            const base = 25;
+            const variation = Math.floor(Math.random() * 8) - 4; 
+            const count = base + variation;
+            const el = document.getElementById('online-count-number');
+            if(el) el.innerText = count;
+        }
+        setInterval(updateOnlineUsers, 5000);
+        updateOnlineUsers();
+    </script>
+
+    <!-- HEADER -->
     <header id="header-sticky" class="fixed top-0 left-0 w-full z-50 h-20 md:h-24 flex items-center">
         <div class="container mx-auto max-w-7xl px-4 flex justify-between items-center">
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-3 md:gap-4">
                 <img src="https://i.ibb.co/7xQTPb2t/LOGO.png" alt="Logo" class="h-10 md:h-14 w-auto object-contain drop-shadow-md">
-                <div class="hidden md:flex flex-col">
-                    <span class="text-white font-playfair font-bold text-lg leading-none">Essência de Romã</span>
-                    <!-- Status Dinâmico -->
-                    <span id="header-status-text" class="text-xs text-gray-300 font-medium tracking-wide mt-1">Carregando...</span>
+                <div class="flex flex-col">
+                    <span class="text-white font-playfair font-bold text-sm md:text-lg leading-none">Essência de Romã</span>
+                    <span id="header-status-text" class="text-[10px] md:text-xs text-gray-300 font-medium tracking-wide mt-1">Carregando...</span>
                 </div>
             </div>
             <div class="flex items-center gap-3">
-                <a href="https://www.google.com/maps/search/?api=1&query=Rua+Achiles+Tomazelli+296+D+Chapeco" target="_blank" class="hidden sm:flex items-center gap-2 btn-ghost py-2 px-4 rounded-full text-xs font-bold uppercase tracking-wider no-underline">
-                    <i class="fas fa-map-marker-alt"></i> Mapa
-                </a>
-                <a href="#vouchers" class="flex items-center gap-2 btn-solid-gold py-2 md:py-3 px-4 md:px-6 rounded-full shadow-lg">
+                <a href="https://www.google.com/maps/search/?api=1&query=Rua+Achiles+Tomazelli+296+D+Chapeco" target="_blank" class="hidden sm:flex items-center gap-2 btn-ghost py-2 px-4 rounded-full text-xs font-bold uppercase tracking-wider no-underline"><i class="fas fa-map-marker-alt"></i> Mapa</a>
+                <a href="#vouchers" class="flex items-center gap-2 btn-solid-gold py-2 md:py-3 px-4 md:px-6 rounded-full shadow-lg text-[10px] md:text-xs no-underline">
                     <i class="fab fa-whatsapp text-lg"></i>
                     <div class="flex flex-col text-left leading-none">
-                        <span class="text-[10px] md:text-xs font-bold opacity-80 uppercase">Agendar</span>
-                        <span class="text-xs md:text-sm font-extrabold uppercase tracking-wider">Voucher</span>
+                        <span class="font-bold opacity-80 uppercase">Agendar</span>
+                        <span class="font-extrabold uppercase tracking-wider">Voucher</span>
                     </div>
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- 2. HERO -->
+    <!-- HERO -->
     <section id="inicio" class="hero-container">
         <video id="heroVideo" class="video-bg" autoplay muted loop playsinline webkit-playsinline poster="https://salaoessenciaderoma.com/assets/images/hero-poster.jpg">
             <!-- VÍDEO CAPA ATUALIZADO (Confiança e Luxo) -->
@@ -622,9 +473,7 @@
         </video>
         <div class="video-overlay"></div>
         <div class="hero-content px-4">
-            <div class="inline-block bg-[#d4af37]/20 backdrop-blur-sm border border-[#d4af37]/50 text-[#fcf6ba] text-xs font-bold px-4 py-1 rounded-full mb-6 uppercase tracking-widest shadow-lg">
-                🎄 Especial de Natal
-            </div>
+            <div class="section-pill mb-6">🎄 Especial de Natal</div>
             <h1 class="font-playfair text-white leading-none drop-shadow-2xl mb-6">
                 <span class="block text-xl md:text-3xl font-medium tracking-[0.2em] mb-2 text-gray-200 uppercase">O Verdadeiro</span>
                 <span class="block text-5xl md:text-8xl font-bold italic text-gold-static py-2">Liso Blindado</span>
@@ -638,8 +487,8 @@
         </div>
     </section>
 
-    <!-- 3. BLOCO 2 (Videos, Vouchers, Agenda) -->
-    <section id="bloco2-content">
+    <!-- BLOCO 2 -->
+    <section id="bloco2-content" class="bg-[#2b0505] text-[#f3f3f3] pt-16 pb-16">
         <div class="container mx-auto px-6 max-w-6xl">
             <header class="text-center mb-16">
                 <span class="text-[#c5a059] text-xs md:text-sm font-bold tracking-[0.3em] uppercase block mb-4 opacity-90">O Poder do Liso Blindado</span>
@@ -647,132 +496,125 @@
                 <p class="text-gray-200 font-light text-lg max-w-2xl mx-auto leading-relaxed">Veja como o nosso método exclusivo alinha os fios e devolve o brilho espelhado.</p>
             </header>
 
-            <!-- GRID VÍDEOS -->
-            <div class="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 pb-8 md:pb-0 snap-x snap-mandatory hide-scrollbar">
-                <div class="flex-none w-[70vw] md:w-auto snap-center video-card group">
+            <!-- Grid Vídeos -->
+            <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:grid md:grid-cols-3 pb-8 md:pb-0 hide-scrollbar">
+                <div class="snap-center shrink-0 w-[70vw] md:w-auto video-card group">
                     <a href="https://www.instagram.com/essenciaderoma.chapeco/" target="_blank" class="btn-insta-float"><i class="fab fa-instagram"></i></a>
                     <button class="card-mute-btn" onclick="toggleCardAudio('vid1', this)"><i class="fas fa-volume-mute"></i></button>
                     <video id="vid1" class="w-full h-full object-cover" autoplay muted loop playsinline><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765201568/WhatsApp_Video_2025-12-06_at_11.25.53_o2b4bl.mp4" type="video/mp4"></video>
                 </div>
-                <div class="flex-none w-[70vw] md:w-auto snap-center video-card group">
+                <div class="snap-center shrink-0 w-[70vw] md:w-auto video-card group">
                     <a href="https://www.instagram.com/essenciaderoma.chapeco/" target="_blank" class="btn-insta-float"><i class="fab fa-instagram"></i></a>
                     <button class="card-mute-btn" onclick="toggleCardAudio('vid2', this)"><i class="fas fa-volume-mute"></i></button>
                     <video id="vid2" class="w-full h-full object-cover" autoplay muted loop playsinline><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765201565/WhatsApp_Video_2025-11-27_at_18.35.30_mic7zp.mp4" type="video/mp4"></video>
                 </div>
-                <div class="flex-none w-[70vw] md:w-auto snap-center video-card group">
+                <div class="snap-center shrink-0 w-[70vw] md:w-auto video-card group">
                     <a href="https://www.instagram.com/essenciaderoma.chapeco/" target="_blank" class="btn-insta-float"><i class="fab fa-instagram"></i></a>
                     <button class="card-mute-btn" onclick="toggleCardAudio('vid3', this)"><i class="fas fa-volume-mute"></i></button>
                     <video id="vid3" class="w-full h-full object-cover" autoplay muted loop playsinline><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765201566/WhatsApp_Video_2025-12-07_at_08.43.32_viqj3g.mp4" type="video/mp4"></video>
                 </div>
             </div>
+            <p class="slide-hint md:hidden text-center text-xs text-gray-500 italic mt-2">Deslize para ver mais</p>
 
-            <!-- VOUCHERS CARROSSEL MOBILE -->
+            <!-- VOUCHERS -->
             <div id="vouchers" class="mt-20 mb-8 text-center">
-                <div class="inline-block bg-[#c5a059] text-[#2b0505] text-xs font-bold px-4 py-1 rounded-full mb-6 uppercase tracking-widest shadow-lg">Escolha seu Tipo de Cabelo</div>
-                <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:grid md:grid-cols-3 max-w-5xl mx-auto pb-6 md:pb-0 px-4 md:px-0 hide-scrollbar" id="card-container">
+                <div class="section-pill">Escolha seu Tipo de Cabelo</div>
+                
+                <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:grid md:grid-cols-3 max-w-5xl mx-auto pb-6 pt-8 px-4 md:px-0 hide-scrollbar" id="card-container">
                     
-                    <!-- V1 LISOS -->
-                    <div class="voucher-card active-card snap-center shrink-0 w-[85vw] md:w-auto" onmouseenter="setActiveCard(this)">
-                        <div class="lote-tag">Mais Vendido</div>
+                    <!-- V1 -->
+                    <div class="voucher-card active-card snap-center shrink-0" onmouseenter="setActiveCard(this)">
+                        <div class="premium-tag">Mais Vendido</div>
                         <div>
                             <h3 class="voucher-title">Lisos e Ondulados</h3>
                             <div class="voucher-price-old">De R$ 250,00</div>
-                            <div class="voucher-price-new" id="price-liso"><span class="text-2xl align-top">R$</span>189<span class="text-2xl align-top">,90</span></div>
-                            <!-- UPSELL CORTE -->
+                            <div class="voucher-price-new" id="price-liso">
+                                <span class="voucher-currency">R$</span>
+                                <span class="price-int">189</span>
+                                <span class="price-cents">,90</span>
+                            </div>
                             <div class="cut-toggle-container">
                                 <span class="flex-1 text-left">
-                                    <span class="text-gray-400 text-xs block">Adicionar Corte Terapêutico?</span>
-                                    <span class="text-[#c5a059] font-bold text-xs">De R$ 250 por <span class="text-white">+ R$ 80</span></span>
+                                    <span class="text-gray-300 font-bold text-xs block">Corte Terapêutico (Pontas)</span>
+                                    <span class="text-[#c5a059] text-xs">De <span class="line-through text-gray-500">R$250</span> por +R$80</span>
                                 </span>
-                                <label class="switch"><input type="checkbox" id="check-liso" onchange="toggleCut('liso', 189.90)"><span class="slider"></span></label>
+                                <label class="switch"><input type="checkbox" id="check-liso" onchange="toggleCut('liso', 189.90)"><span class="slider-toggle"></span></label>
                             </div>
                             <a href="javascript:void(0)" onclick="openWhatsApp('Liso/Ondulado', 189.90, 'liso')" class="block w-full btn-solid-gold py-3 rounded-lg text-sm uppercase tracking-wider mt-4 font-bold shadow-md text-[#2b0505] no-underline">Resgatar Voucher</a>
                         </div>
                         <div class="voucher-rule"><i class="fas fa-ruler-vertical text-[#c5a059] mr-1"></i> Até metade das costas</div>
                     </div>
                     
-                    <!-- V2 CACHEADOS -->
-                    <div class="voucher-card snap-center shrink-0 w-[85vw] md:w-auto" onmouseenter="setActiveCard(this)">
-                        <div class="lote-tag">Destaque</div>
+                    <!-- V2 -->
+                    <div class="voucher-card snap-center shrink-0" onmouseenter="setActiveCard(this)">
+                        <div class="premium-tag">Destaque</div>
                         <div>
                             <h3 class="voucher-title">Cacheados (3A-3C)</h3>
                             <div class="voucher-price-old">De R$ 320,00</div>
-                            <div class="voucher-price-new" id="price-cacheado"><span class="text-2xl align-top">R$</span>280<span class="text-2xl align-top">,00</span></div>
-                             <!-- UPSELL CORTE -->
+                            <div class="voucher-price-new" id="price-cacheado">
+                                <span class="voucher-currency">R$</span>
+                                <span class="price-int">280</span>
+                                <span class="price-cents">,00</span>
+                            </div>
                             <div class="cut-toggle-container">
                                 <span class="flex-1 text-left">
-                                    <span class="text-gray-400 text-xs block">Adicionar Corte Terapêutico?</span>
-                                    <span class="text-[#c5a059] font-bold text-xs">De R$ 250 por <span class="text-white">+ R$ 80</span></span>
+                                    <span class="text-gray-300 font-bold text-xs block">Corte Terapêutico (Pontas)</span>
+                                    <span class="text-[#c5a059] text-xs">De <span class="line-through text-gray-500">R$250</span> por +R$80</span>
                                 </span>
-                                <label class="switch"><input type="checkbox" id="check-cacheado" onchange="toggleCut('cacheado', 280.00)"><span class="slider"></span></label>
+                                <label class="switch"><input type="checkbox" id="check-cacheado" onchange="toggleCut('cacheado', 280.00)"><span class="slider-toggle"></span></label>
                             </div>
                             <a href="javascript:void(0)" onclick="openWhatsApp('Cacheado', 280.00, 'cacheado')" class="block w-full btn-solid-gold py-3 rounded-lg text-sm uppercase tracking-wider mt-4 font-bold shadow-md text-[#2b0505] no-underline">Resgatar Voucher</a>
                         </div>
                         <div class="voucher-rule"><i class="fas fa-ruler-vertical text-[#c5a059] mr-1"></i> Até metade das costas (esticado)</div>
                     </div>
-                    
-                    <!-- V3 CRESPOS -->
-                    <div class="voucher-card snap-center shrink-0 w-[85vw] md:w-auto" onmouseenter="setActiveCard(this)">
-                        <div class="lote-tag">Premium</div>
+
+                    <!-- V3 -->
+                    <div class="voucher-card snap-center shrink-0" onmouseenter="setActiveCard(this)">
+                        <div class="premium-tag">Premium</div>
                         <div>
                             <h3 class="voucher-title">Crespos (4A-4C)</h3>
                             <div class="voucher-price-old">De R$ 499,00</div>
-                            <div class="voucher-price-new" id="price-crespo"><span class="text-2xl align-top">R$</span>310<span class="text-2xl align-top">,00</span></div>
-                             <!-- UPSELL CORTE -->
+                            <div class="voucher-price-new" id="price-crespo">
+                                <span class="voucher-currency">R$</span>
+                                <span class="price-int">310</span>
+                                <span class="price-cents">,00</span>
+                            </div>
                             <div class="cut-toggle-container">
                                 <span class="flex-1 text-left">
-                                    <span class="text-gray-400 text-xs block">Adicionar Corte Terapêutico?</span>
-                                    <span class="text-[#c5a059] font-bold text-xs">De R$ 250 por <span class="text-white">+ R$ 80</span></span>
+                                    <span class="text-gray-300 font-bold text-xs block">Corte Terapêutico (Pontas)</span>
+                                    <span class="text-[#c5a059] text-xs">De <span class="line-through text-gray-500">R$250</span> por +R$80</span>
                                 </span>
-                                <label class="switch"><input type="checkbox" id="check-crespo" onchange="toggleCut('crespo', 310.00)"><span class="slider"></span></label>
+                                <label class="switch"><input type="checkbox" id="check-crespo" onchange="toggleCut('crespo', 310.00)"><span class="slider-toggle"></span></label>
                             </div>
                             <a href="javascript:void(0)" onclick="openWhatsApp('Crespo', 310.00, 'crespo')" class="block w-full btn-solid-gold py-3 rounded-lg text-sm uppercase tracking-wider mt-4 font-bold shadow-md text-[#2b0505] no-underline">Resgatar Voucher</a>
                         </div>
                         <div class="voucher-rule"><i class="fas fa-ruler-vertical text-[#c5a059] mr-1"></i> Até metade das costas (esticado)</div>
                     </div>
                 </div>
+                <p class="slide-hint md:hidden text-center text-xs text-gray-500 mt-2 italic">Deslize para ver opções</p>
 
-                <!-- AGENDA DE DEZEMBRO -->
-                <div class="mt-12 mb-6 bg-black/30 p-4 md:p-6 rounded-2xl border border-red-900/40 inline-block w-full max-w-4xl">
-                    <div class="flex justify-between items-center mb-4 px-2">
-                        <p class="text-sm text-red-300 font-bold uppercase tracking-widest">Agenda Dezembro • <span class="animate-pulse">AO VIVO</span></p>
-                        <span class="text-[10px] text-gray-400">Seg-Sab: 08h-19h</span>
-                    </div>
-                    
+                <!-- Agenda -->
+                <div class="mt-12 mb-6 bg-black/30 p-4 rounded-2xl border border-red-900/40 inline-block w-full max-w-4xl">
+                    <p class="text-sm text-red-300 font-bold uppercase tracking-widest mb-3">Agenda Dezembro • <span class="animate-pulse">AO VIVO</span></p>
                     <div class="calendar-wrapper">
-                        <!-- Dias da Semana -->
-                        <div class="grid grid-cols-7 gap-1 md:gap-2 mb-2">
+                         <div class="grid grid-cols-7 gap-1 md:gap-2 mb-2">
                             <div class="cal-header">Dom</div><div class="cal-header">Seg</div><div class="cal-header">Ter</div><div class="cal-header">Qua</div><div class="cal-header">Qui</div><div class="cal-header">Sex</div><div class="cal-header">Sáb</div>
                         </div>
-                        
-                        <!-- Dias -->
                         <div class="calendar-grid" id="smart-calendar">
-                            <!-- Dias 1-6 -->
-                            <div class="cal-day full">1</div><div class="cal-day full">2</div><div class="cal-day full">3</div><div class="cal-day full">4</div><div class="cal-day full">5</div><div class="cal-day full">6</div>
-                            <!-- 7 Dom Fechado -->
-                            <div class="cal-day closed">7</div>
-                            <!-- 8-13 -->
-                            <div class="cal-day available" onclick="selectDay(8)" data-day="8">8</div><div class="cal-day available" onclick="selectDay(9)" data-day="9">9</div><div class="cal-day available" onclick="selectDay(10)" data-day="10">10</div><div class="cal-day available" onclick="selectDay(11)" data-day="11">11</div><div class="cal-day available" onclick="selectDay(12)" data-day="12">12</div><div class="cal-day available" onclick="selectDay(13)" data-day="13">13</div>
-                            <!-- 14 Dom Fechado -->
-                            <div class="cal-day closed">14</div>
-                            <!-- 15-16 -->
-                            <div class="cal-day available" onclick="selectDay(15)" data-day="15">15</div><div class="cal-day available" onclick="selectDay(16)" data-day="16">16</div>
-                            <!-- 17-23 Lotado -->
-                            <div class="cal-day full">17</div><div class="cal-day full">18</div><div class="cal-day full">19</div><div class="cal-day full">20</div><div class="cal-day full">21</div><div class="cal-day full">22</div><div class="cal-day full">23</div>
-                            <!-- Natal -->
-                            <div class="cal-day closed">24</div><div class="cal-day closed">25</div><div class="cal-day closed">26</div>
-                            <!-- Final -->
-                            <div class="cal-day full">27</div><div class="cal-day full">28</div><div class="cal-day full">29</div><div class="cal-day full">30</div><div class="cal-day closed">31</div>
+                             <div class="cal-day full">1</div><div class="cal-day full">2</div><div class="cal-day full">3</div><div class="cal-day full">4</div><div class="cal-day full">5</div><div class="cal-day full">6</div><div class="cal-day closed">7</div>
+                             <div class="cal-day available" onclick="selectDay(8)" data-day="8">8</div><div class="cal-day available" onclick="selectDay(9)" data-day="9">9</div><div class="cal-day available" onclick="selectDay(10)" data-day="10">10</div><div class="cal-day available" onclick="selectDay(11)" data-day="11">11</div><div class="cal-day available" onclick="selectDay(12)" data-day="12">12</div><div class="cal-day available" onclick="selectDay(13)" data-day="13">13</div><div class="cal-day closed">14</div>
+                             <div class="cal-day available" onclick="selectDay(15)" data-day="15">15</div><div class="cal-day available" onclick="selectDay(16)" data-day="16">16</div>
+                             <div class="cal-day full">17</div><div class="cal-day full">18</div><div class="cal-day full">19</div><div class="cal-day full">20</div><div class="cal-day full">21</div><div class="cal-day full">22</div><div class="cal-day full">23</div>
+                             <div class="cal-day closed">24</div><div class="cal-day closed">25</div><div class="cal-day closed">26</div>
+                             <div class="cal-day full">27</div><div class="cal-day full">28</div><div class="cal-day full">29</div><div class="cal-day full">30</div><div class="cal-day closed">31</div>
                         </div>
                     </div>
-                    
                     <div id="dynamic-msg-container"></div>
-                    <p class="text-[10px] text-gray-500 mt-4 italic text-center">*Dias riscados: Esgotados. Vermelhos: Fechado.</p>
                 </div>
 
                 <div class="vip-terms max-w-2xl mx-auto">
                     <p class="mb-2"><i class="fas fa-crown text-[#c5a059] mr-1"></i> <strong>Garantia de Horário VIP (Dezembro):</strong></p>
-                    <ul class="list-disc pl-4 space-y-1">
+                    <ul class="list-disc pl-4 space-y-1 text-left text-xs">
                         <li>Taxa de Reserva de R$ 50,00 (100% abatida no valor final).</li>
                         <li>Reagendamento: Permitido 1 vez, com 12 horas de antecedência.</li>
                     </ul>
@@ -781,156 +623,126 @@
         </div>
     </section>
 
-    <!-- 4. BLOCO 3: GALERIA DE PRINTS (REAL - Recriada) -->
-    <section id="bloco-prints">
+    <!-- BLOCO PRINTS -->
+    <section id="bloco-prints" class="bg-[#f0f2f5] py-16">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-10">
                 <span class="text-gray-500 text-xs font-bold tracking-[0.2em] uppercase block mb-2">Transparência Total</span>
                 <h2 class="font-playfair text-3xl md:text-4xl text-gray-900 font-bold">O Que Elas Dizem <span class="text-[#25D366]">No WhatsApp</span></h2>
             </div>
 
-            <!-- PRINTS REAIS -->
-            <div class="print-gallery-grid">
-                <div class="print-card">
-                    <div class="print-img-wrapper">
-                        <img src="https://salaoessenciaderoma.com/assets/images/image09.jpg?v=fed598c5" alt="Depoimento 1" class="print-img" loading="lazy">
-                        <div class="print-overlay-hint"><i class="fas fa-search-plus"></i> Cliente Satisfeita</div>
-                    </div>
+            <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 px-4 md:px-0 hide-scrollbar">
+                <div class="print-card snap-center shrink-0">
+                    <div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/v1765217143/image10_hqklzu.jpg" alt="Print 1" class="print-img" loading="lazy"></div>
                 </div>
-                <div class="print-card">
-                    <div class="print-img-wrapper">
-                        <img src="https://salaoessenciaderoma.com/assets/images/image08.jpg?v=fed598c5" alt="Depoimento 2" class="print-img" loading="lazy">
-                        <div class="print-overlay-hint"><i class="fas fa-search-plus"></i> Resultado Real</div>
-                    </div>
+                <div class="print-card snap-center shrink-0">
+                    <div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/v1765217144/image12_o8mqvd.jpg" alt="Print 2" class="print-img" loading="lazy"></div>
                 </div>
-                <div class="print-card">
-                    <div class="print-img-wrapper">
-                        <img src="https://salaoessenciaderoma.com/assets/images/image11.jpg?v=8c4aa70b" alt="Depoimento 3" class="print-img" loading="lazy">
-                        <div class="print-overlay-hint"><i class="fas fa-search-plus"></i> Sem Filtro</div>
-                    </div>
+                <div class="print-card snap-center shrink-0">
+                    <div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/v1765217143/image08_maqez1.jpg" alt="Print 3" class="print-img" loading="lazy"></div>
+                </div>
+                <div class="print-card snap-center shrink-0">
+                    <div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/v1765217144/image11_aynsvl.jpg" alt="Print 4" class="print-img" loading="lazy"></div>
                 </div>
             </div>
             
             <div class="text-center mt-8">
-                <!-- AQUI TAMBÉM: MUDAMOS PARA REDIRECIONAR PARA OBRIGADO -->
-                <a href="#vouchers" class="btn-solid-gold py-3 px-8 rounded-full shadow-lg no-underline text-[#2b0505] font-bold">
-                    Quero Meu Resultado Assim
-                </a>
+                <a href="#vouchers" class="btn-solid-gold py-3 px-8 rounded-full shadow-lg no-underline text-[#2b0505] font-bold">Quero Meu Resultado Assim</a>
             </div>
         </div>
     </section>
 
-    <!-- 5. BLOCO 4: DEPOIMENTOS REFINADOS -->
-    <div id="bloco3-refinado">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
-            <div style="text-align: center; margin-bottom: 4rem;">
-                <span style="color: #C5A059; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; display: block; margin-bottom: 1.5rem;">A Voz de Quem Viveu</span>
-                <h2 class="font-playfair" style="font-size: 2.5rem; line-height: 1.1; color: #000000; margin-bottom: 1.5rem; font-weight: 600;">Experiências <span class="text-gold">Reais</span></h2>
-                <p style="color: #333333; font-size: 1.15rem; max-width: 700px; margin: 0 auto; line-height: 1.6; font-weight: 400;">
-                    Não compre apenas um serviço, faça um <strong>investimento na sua autoestima</strong>. Veja o que nossas clientes de Chapecó dizem sobre a durabilidade e o cuidado do nosso método.
-                </p>
+    <!-- BLOCO DEPOIMENTOS -->
+    <div id="bloco3-refinado" class="bg-[#F9F9F9] py-16">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-10">
+                <span class="text-[#C5A059] text-xs font-bold tracking-widest uppercase">A Voz de Quem Viveu</span>
+                <h2 class="font-playfair text-3xl md:text-5xl text-black font-bold mt-2">Experiências <span class="text-gold-shine">Reais</span></h2>
             </div>
-            <div id="dynamic-gallery" class="testimonial-gallery"></div>
-            <div style="text-align: center; margin-top: 5rem;">
-                <button onclick="sendWhatsAppMessage()" class="btn-solid-gold" style="padding: 18px 40px; font-size: 1.1rem; border-radius: 50px;">Quero Meu Liso Blindado</button>
-                <p style="margin-top: 1rem; margin-bottom: 1rem; font-size: 0.85rem; color: #666;">Últimos horários disponíveis para Dezembro.</p>
-                <div>
-                    <a href="https://essenciaderomahair.belasis.app" target="_blank" class="btn-trust">
-                        <i class="fas fa-star" style="color: #C5A059;"></i> Ver Avaliações Oficiais <span style="color: #9ca3af; font-weight: 400; margin-left: 4px; text-transform: none;">(Belasis)</span>
-                    </a>
-                </div>
+            
+            <div id="dynamic-gallery" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 px-4 md:px-0 hide-scrollbar">
+                <!-- JS Preenche aqui -->
+            </div>
+            <p class="slide-hint md:hidden text-center text-xs text-gray-500 italic mt-2">Deslize para ler mais</p>
+            
+            <div class="text-center mt-10">
+                <button onclick="sendWhatsAppMessage()" class="btn-solid-gold py-3 px-10 rounded-full text-lg">Quero Meu Liso Blindado</button>
             </div>
         </div>
-        <div style="width: 100%; max-width: 200px; height: 2px; background: linear-gradient(90deg, transparent, #c5a059, transparent); margin: 4rem auto 0 auto; opacity: 0.6;"></div>
     </div>
 
-    <!-- 6. BLOCO 5: SLIDER ANTES/DEPOIS -->
-    <div id="bloco-slider-refinado">
+    <!-- SLIDER ANTES/DEPOIS -->
+    <div id="bloco-slider-refinado" class="py-16">
         <div class="container mx-auto px-6 max-w-6xl">
-            <div class="text-center mb-12 lg:mb-16">
-                <h2 class="font-playfair text-4xl md:text-6xl text-white mb-4 leading-tight">A Transformação <span class="text-gold italic-elegant">Absoluta</span></h2>
-                <p class="text-gray-200 font-light text-base md:text-lg opacity-90 uppercase tracking-widest">Arraste para ver o poder do Liso Blindado</p>
+            <div class="text-center mb-12">
+                <h2 class="font-playfair text-4xl md:text-6xl text-white mb-4">A Transformação <span class="text-gold italic-elegant">Absoluta</span></h2>
+                <p class="text-gray-300">Arraste para ver o poder do Liso Blindado</p>
             </div>
+            
             <div class="layout-split">
                 <div class="col-left relative group">
                     <div id="comparison-container">
                         <video id="video-after" autoplay loop muted playsinline><source src="https://salaoessenciaderoma.com/assets/videos/video16.mp4?v=f88b0215" type="video/mp4"></video>
                         <span class="video-label label-after">Depois</span>
-                        <div id="after-video-wrapper">
-                            <video id="video-before" autoplay loop muted playsinline><source src="https://salaoessenciaderoma.com/assets/videos/video15.mp4?v=f88b0215" type="video/mp4"></video>
+                        <div id="before-video-wrapper">
+                            <!-- VÍDEO ANTES CORRETO -->
+                            <video id="video-before" autoplay loop muted playsinline><source src="https://salaoessenciaderoma.com/assets/videos/video15.mp4?v=56b0164c" type="video/mp4"></video>
                             <span class="video-label label-before">Antes</span>
                         </div>
                         <div id="drag-handle"></div>
                     </div>
-                    <p class="text-center text-xs text-[#c5a059] mt-4 opacity-80 animate-pulse tracking-widest uppercase font-bold">↔ Toque e arraste para comparar ↔</p>
+                    <p class="text-center text-xs text-[#c5a059] mt-4 uppercase font-bold animate-pulse">↔ Arraste para comparar ↔</p>
                 </div>
-                <div class="col-right">
-                    <h3 class="font-playfair text-3xl md:text-5xl text-white mb-8 text-center md:text-left-lg">Liberdade Real em <br><span class="text-[#c5a059]">Cada Fio</span></h3>
-                    <div class="mb-4">
-                        <div class="beneficio-item">
-                            <i class="fas fa-gem check-icon mt-1"></i>
-                            <div><strong class="text-white block mb-1 text-lg md:text-xl">Brilho Espelhado</strong><p class="text-base md:text-lg text-gray-300 font-light text-left-lg">Acabamento de joia que reflete a luz e elimina o aspecto opaco imediatamente.</p></div>
-                        </div>
-                        <div class="beneficio-item">
-                            <i class="fas fa-umbrella check-icon mt-1"></i>
-                            <div><strong class="text-white block mb-1 text-lg md:text-xl">Blindagem Anti-Umidade</strong><p class="text-base md:text-lg text-gray-300 font-light text-left-lg">Proteção total contra o clima de Chapecó. Zero frizz, mesmo na chuva.</p></div>
-                        </div>
-                        <div class="beneficio-item">
-                            <i class="fas fa-clock check-icon mt-1"></i>
-                            <div><strong class="text-white block mb-1 text-lg md:text-xl">Acorde Pronta</strong><p class="text-base md:text-lg text-gray-300 font-light text-left-lg">Economize 40 minutos todas as manhãs. Diga adeus à chapinha definitivamente.</p></div>
-                        </div>
+                
+                <div class="col-right text-white">
+                    <h3 class="font-playfair text-3xl mb-6">Liberdade em <br><span class="text-[#c5a059]">Cada Fio</span></h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start"><i class="fas fa-gem text-[#ffd700] mr-4 mt-1"></i><div><strong>Brilho Espelhado</strong><p class="text-gray-400 text-sm">Reflete a luz como uma joia.</p></div></div>
+                        <div class="flex items-start"><i class="fas fa-umbrella text-[#ffd700] mr-4 mt-1"></i><div><strong>Blindagem Anti-Umidade</strong><p class="text-gray-400 text-sm">Zero frizz, mesmo na chuva.</p></div></div>
+                        <div class="flex items-start"><i class="fas fa-clock text-[#ffd700] mr-4 mt-1"></i><div><strong>Acorde Pronta</strong><p class="text-gray-400 text-sm">Adeus chapinha diária.</p></div></div>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-12 lg:mt-16">
-                <a href="#vouchers" class="btn-solid-gold inline-flex px-8 py-4 rounded-full shadow-xl hover:-translate-y-1 transition-all no-underline"><i class="fab fa-whatsapp mr-2 text-xl"></i> <span class="font-bold text-lg">Quero essa Transformação</span></a>
-            </div>
         </div>
-        <div class="gold-separator"></div>
     </div>
 
-    <!-- 7. BLOCO 6: FAQ (NOVO) -->
-    <div id="faq-isolate">
-        <div style="max-width: 800px; margin: 0 auto; padding: 0 24px;">
-            <div style="text-align: center; mb-12">
-                <span class="header-eyebrow">Dúvidas Frequentes</span>
-                <h2 class="font-playfair header-title">Tudo sobre o <span class="text-gold">Liso Blindado</span></h2>
+    <!-- FAQ -->
+    <div id="faq-isolate" class="py-16 bg-[#1a0202]">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <div class="text-center mb-10">
+                <div class="section-pill">Dúvidas Frequentes</div>
+                <h2 class="font-playfair text-3xl text-white font-bold">Tudo sobre o <span class="text-gold-shine">Liso Blindado</span></h2>
             </div>
-            <div class="faq-container" style="margin-top: 3rem;">
+            
+            <div class="space-y-4">
                 <details>
-                    <summary><span class="faq-question">É compatível com outras químicas (Loiros/Tintura)?</span><span class="faq-toggle">+</span></summary>
-                    <div class="faq-answer"><i class="fas fa-check answer-icon"></i><p><strong>Sim!</strong> Nossa equipe faz uma avaliação detalhada. Usamos um protocolo exclusivo com pigmentos matizadores que protegem a cor.</p></div>
+                    <summary class="text-white font-bold">É compatível com outras químicas (Loiros/Tintura)?<span class="text-[#C5A059]">+</span></summary>
+                    <div class="faq-answer p-4 text-gray-300"><strong>Sim!</strong> Nossa equipe faz uma avaliação detalhada. Usamos um protocolo exclusivo com pigmentos matizadores que protegem a cor.</div>
                 </details>
                 <details>
-                    <summary><span class="faq-question">Grávidas, lactantes ou crianças podem fazer?</span><span class="faq-toggle">+</span></summary>
-                    <div class="faq-answer"><i class="fas fa-baby-carriage answer-icon"></i><p><strong>Sim, com autorização médica.</strong> Nossa fórmula é 100% orgânica, sem formol, sem cheiro forte e sem fumaça.</p></div>
+                    <summary class="text-white font-bold">Grávidas podem fazer?<span class="text-[#C5A059]">+</span></summary>
+                    <div class="faq-answer p-4 text-gray-300"><strong>Sim, com autorização médica.</strong> Nossa fórmula é 100% orgânica, sem formol, sem cheiro forte e sem fumaça.</div>
                 </details>
                 <details>
-                    <summary><span class="faq-question">Quanto tempo dura o efeito liso?</span><span class="faq-toggle">+</span></summary>
-                    <div class="faq-answer"><i class="fas fa-calendar-check answer-icon"></i><p>O efeito liso no comprimento pode durar de <strong>3 a 6 meses</strong>, dependendo do crescimento da sua raiz.</p></div>
+                    <summary class="text-white font-bold">Quanto tempo dura o efeito liso?<span class="text-[#C5A059]">+</span></summary>
+                    <div class="faq-answer p-4 text-gray-300">De 3 a 6 meses, dependendo do crescimento da raiz e dos cuidados em casa. Para maior durabilidade, use a linha de manutenção da mesma marca ou solicite a indicação da nossa especialista.</div>
                 </details>
                 <details>
-                    <summary><span class="faq-question">Ajuda a reduzir frizz e pontas duplas?</span><span class="faq-toggle">+</span></summary>
-                    <div class="faq-answer"><i class="fas fa-magic answer-icon"></i><p><strong>Com certeza!</strong> O alinhamento sela as cutículas, eliminando o frizz e devolvendo massa ao fio.</p></div>
-                </details>
-                <details>
-                    <summary><span class="faq-question">Qual a diferença entre Gloss Secret e Lissage 4K?</span><span class="faq-toggle">+</span></summary>
-                    <div class="faq-answer"><i class="fas fa-crown answer-icon"></i><p>O <strong>Gloss Secret</strong> é focado em brilho e hidratação profunda. O <strong>Lissage 4K</strong> é nossa semi-definitiva mais potente.</p></div>
+                    <summary class="text-white font-bold">Ajuda a reduzir frizz e pontas duplas?<span class="text-[#C5A059]">+</span></summary>
+                    <div class="faq-answer p-4 text-gray-300"><strong>Com certeza!</strong> O alinhamento sela as cutículas, eliminando o frizz e devolvendo massa ao fio.</div>
                 </details>
             </div>
-            <div style="text-align: center;">
-                <!-- BOTÃO FAQ AGORA MANDA PARA WHATSAPP DIRETO -->
-                <a href="javascript:void(0)" onclick="openWhatsApp('Olá! Tenho dúvidas sobre o Liso Blindado.')" class="btn-solid-gold"><i class="fab fa-whatsapp" style="font-size: 1.4rem; margin-right: 8px;"></i>Falar com a Especialista</a>
-                <p style="color: #bbb; font-size: 0.9rem; margin-top: 1.2rem; font-weight: 400;"><span class="status-online"></span> Atendimento Humano • Tire suas dúvidas agora</p>
+            
+            <div class="text-center mt-10">
+                <button onclick="openWhatsApp('Olá! Tenho dúvidas sobre o Liso Blindado.')" class="btn-solid-gold py-3 px-8 rounded-full">Falar com Especialista</button>
             </div>
         </div>
-        <div style="width: 100%; max-width: 200px; height: 2px; background: linear-gradient(90deg, transparent, #c5a059, transparent); margin: 4rem auto 0 auto; opacity: 0.6;"></div>
     </div>
 
-    <!-- 8. RODAPÉ THE EMPIRE (FINAL SLIM) -->
-    <div id="footer-empire-master">
-
-        <!-- 1. GALERIA DE MARCAS (SLIM) -->
+    <!-- RODAPÉ ROYAL EMPIRE (Sofisticado) -->
+    <footer id="footer-empire-master">
+        <div class="footer-divider"><i class="fas fa-gem footer-divider-icon"></i></div>
+        
         <div class="brands-wrapper">
             <span class="brands-title">PRODUTOS HOMOLOGADOS & PARCEIROS</span>
             <div class="brands-grid">
@@ -943,377 +755,85 @@
             </div>
         </div>
 
-        <!-- 2. CONTEÚDO PRINCIPAL -->
         <div class="content-grid">
-            <!-- COLUNA 1: CONTATO -->
+            <!-- Coluna 1: Contato -->
             <div>
-                <span class="footer-heading">Canais de Atendimento</span>
-                <p>Experiência desde 2016, cuidando da sua autoestima com técnicas exclusivas em Chapecó.</p>
-                <p style="margin-top: 1.5rem;">
-                    <span style="color: #999; font-size: 0.8rem; display: block; margin-bottom: 5px;">Fale com a Especialista:</span>
-                    <a href="javascript:void(0)" onclick="openWhatsApp('Olá! Vim pelo rodapé do site.')" style="color: #fff; text-decoration: none; font-size: 1.1rem; font-weight: 600;">
-                        <i class="fab fa-whatsapp"></i> (49) 99995-4052
-                    </a>
-                    <br>
-                    <span style="font-size: 0.85rem; margin-top: 5px; display: block; color: #ccc;">
-                        <i class="fas fa-envelope"></i> frentecaixachapeco@gmail.com
-                    </span>
-                </p>
+                <span class="footer-heading">Contato</span>
+                <p>Chapecó, SC</p>
+                <a href="#" onclick="openWhatsApp('Olá!')" class="text-white hover:text-[#C5A059] transition text-lg block my-2"> (49) 99995-4052</a>
+                <p class="text-xs mb-4">frentecaixachapeco@gmail.com</p>
                 <div class="badges-row">
                     <div class="badge-minimal"><i class="fas fa-shield-alt"></i> SITE SEGURO</div>
                     <div class="badge-minimal"><i class="fas fa-check-circle"></i> ANVISA</div>
-                    <div class="badge-minimal"><i class="fas fa-star"></i> TOP OF MIND</div>
                 </div>
             </div>
 
-            <!-- COLUNA 2: HORÁRIOS -->
+            <!-- Coluna 2: Horários -->
             <div>
-                <span class="footer-heading">Horário de Funcionamento</span>
-                <p><strong>Segunda-feira:</strong><br>13:00 às 17:00</p>
-                <p><strong>Terça a Sábado:</strong><br>08:00 às 18:00</p>
-                <p class="text-xs text-[#aaa] mt-4" style="font-size: 0.75rem; line-height: 1.4;">*Horário sujeito a alterações em feriados.</p>
+                <span class="footer-heading">Horário de Atendimento</span>
+                <p><strong>Segunda-feira:</strong><br>13:00 - 17:00</p>
+                <p class="mt-2"><strong>Terça a Sábado:</strong><br>08:00 - 18:00</p>
+                <p class="text-xs text-[#666] mt-2 italic">*Horários sujeitos a alteração em feriados.</p>
             </div>
 
-            <!-- COLUNA 3: LOCALIZAÇÃO -->
+            <!-- Coluna 3: Localização -->
             <div>
                 <span class="footer-heading">Localização</span>
-                <p><i class="fas fa-map-pin"></i> Rua Achiles Tomazelli, 296 D<br>Centro • Chapecó, SC</p>
+                <p class="mb-2"><i class="fas fa-map-pin text-[#C5A059] mr-2"></i>Rua Achiles Tomazelli, 296 D - Centro</p>
                 <div class="map-frame">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3489.1751996515865!2d-52.6186419849202!3d-27.100918083072045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e4b574a6914757%3A0xc3f83734e941198c!2sRua%20Achiles%20Tomazelli%2C%20296%20D%20-%20Centro%2C%20Chapec%C3%B3%20-%20SC%2C%2089802-125!5e0!3m2!1spt-BR!2sbr!4v1628172930000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Essência de Romã"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3489.1751996515865!2d-52.6186419849202!3d-27.100918083072045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e4b574a6914757%3A0xc3f83734e941198c!2sRua%20Achiles%20Tomazelli%2C%20296%20D%20-%20Centro%2C%20Chapec%C3%B3%20-%20SC%2C%2089802-125!5e0!3m2!1spt-BR!2sbr!4v1628172930000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
                 </div>
-                <div style="text-align: right; margin-top: 8px;">
-                    <a href="https://www.google.com/maps/search/?api=1&query=Rua+Achiles+Tomazelli+296+D+Chapeco" target="_blank" style="font-size: 0.7rem; color: #C5A059; text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid rgba(197,160,89,0.3);">Ver no Mapa →</a>
-                </div>
+                <a href="https://www.google.com/maps/search/?api=1&query=Rua+Achiles+Tomazelli+296+D+Chapeco" target="_blank" class="text-xs text-[#C5A059] mt-2 block hover:underline">Abrir no Google Maps →</a>
             </div>
         </div>
 
-        <!-- 3. BARRA INFERIOR -->
         <div class="bottom-bar">
-            <div class="social-links">
-                <a href="https://www.instagram.com/essenciaderoma.chapeco/" target="_blank" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@essenciaderoma.chapeco" target="_blank" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.facebook.com/essenciaderoma.1" target="_blank" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.youtube.com/@essenciaderomahair" target="_blank" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <div class="social-links justify-center">
+                <a href="https://www.instagram.com/essenciaderoma.chapeco/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/essenciaderoma.1" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@essenciaderoma.chapeco" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@essenciaderomahair" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
             </div>
-
             <div class="legal-links">
-                <!-- IDs para JS -->
                 <button id="btn-privacy-trigger">Política de Privacidade</button>
-                <span style="color:#333">|</span>
+                <span>|</span>
                 <button id="btn-terms-trigger">Termos de Uso</button>
-                <span style="color:#333">|</span>
-                <span style="font-size: 0.7rem; color: #444;">CNPJ: 28.842.798/0001-38</span>
             </div>
-
-            <p class="copyright-text">
-                &copy; 2016 - 2025 Essência de Romã Hair. Todos os direitos reservados.
-            </p>
-
-            <div class="counter-camou">
-                <a href='https://www.free-counters.org/'>powered by Free-Counters</a>
-                <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=13bf5bd57f4cee9b64b562dd5a804f9c312ccdc9'></script>
-                <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1390923/t/3"></script>
+            <p class="copyright-text">&copy; 2016 - 2025 Essência de Romã Hair. Todos os direitos reservados.</p>
+            <div class="online-counter-badge mt-4">
+                 <span class="online-dot"></span> <span id="online-count-number">24</span> pessoas online agora
             </div>
         </div>
 
-        <!-- 4. MODAL ÚNICO E DINÂMICO (TELEPORTADO) -->
+        <!-- MODAL JURÍDICO -->
         <div id="erh-legal-modal-overlay" class="legal-modal-overlay">
             <div class="legal-modal-box">
                 <span id="erh-modal-close" class="legal-close-btn">&times;</span>
-
-                <!-- CONTEÚDO PRIVACIDADE (INICIALMENTE OCULTO) -->
+                
+                <!-- PRIVACIDADE -->
                 <div id="content-privacy" style="display:none;">
                     <h2 class="legal-content-title">Política de Privacidade</h2>
                     <div class="legal-content-text">
-                        <p><strong>Última atualização: Dezembro de 2025</strong></p>
-                        <p>A Essência de Romã Hair respeita a sua privacidade. Esta política descreve como tratamos seus dados pessoais.</p>
-                        <p><strong>1. Coleta de Dados:</strong><br>Coletamos apenas informações essenciais (Nome, Telefone) fornecidas voluntariamente por você para fins de agendamento.</p>
-                        <p><strong>2. Finalidade:</strong><br>Seus dados são usados exclusivamente para confirmar horários e enviar lembretes.</p>
-                        <p><strong>3. Segurança:</strong><br>Não compartilhamos seus dados com terceiros para fins de marketing.</p>
+                        <p><strong>1. Coleta de Dados:</strong> Coletamos apenas informações essenciais (Nome, Telefone) fornecidas voluntariamente por você via WhatsApp para fins de agendamento e comunicação sobre nossos serviços.</p>
+                        <p><strong>2. Uso das Informações:</strong> Seus dados são utilizados exclusivamente para confirmar horários, enviar lembretes de agendamento e eventuais promoções exclusivas da Essência de Romã.</p>
+                        <p><strong>3. Compartilhamento:</strong> Não compartilhamos, vendemos ou alugamos suas informações pessoais para terceiros para fins de marketing sem seu consentimento explícito.</p>
+                        <p><strong>4. Segurança:</strong> Adotamos medidas de segurança adequadas para proteger seus dados contra acesso não autorizado.</p>
                     </div>
                 </div>
 
-                <!-- CONTEÚDO TERMOS (INICIALMENTE OCULTO) -->
+                <!-- TERMOS DE USO -->
                 <div id="content-terms" style="display:none;">
                     <h2 class="legal-content-title">Termos de Uso</h2>
                     <div class="legal-content-text">
-                        <p><strong>1. Agendamento e Sinal:</strong><br>Para garantir a exclusividade do horário, solicitamos um sinal de R$ 50,00, que será integralmente deduzido do valor final do serviço.</p>
-                        <p><strong>2. Política de Cancelamento e Reagendamento:</strong><br>O reagendamento é permitido uma única vez, desde que solicitado com no mínimo 12 horas de antecedência. Cancelamentos fora deste prazo ou o não comparecimento (No-Show) implicam na retenção do sinal para cobrir a hora reservada.</p>
-                        <p><strong>3. Atrasos:</strong><br>Tolerância máxima de 15 minutos. Após esse período, o atendimento poderá ser cancelado ou reduzido, sem reembolso do sinal.</p>
-                        <p><strong>4. Garantia:</strong><br>Oferecemos garantia de 7 dias para ajustes técnicos, mediante avaliação presencial.</p>
+                        <p><strong>1. Agendamento e Sinal:</strong> Para garantir a exclusividade do seu horário e o compromisso com nossa equipe, solicitamos um sinal de reserva no valor de R$ 50,00. Este valor será integralmente deduzido do valor final do serviço realizado no salão.</p>
+                        <p><strong>2. Política de Cancelamento e Reagendamento:</strong> Compreendemos imprevistos. O reagendamento é permitido uma única vez, desde que solicitado com no mínimo 12 horas de antecedência do horário marcado. Cancelamentos fora deste prazo ou o não comparecimento (No-Show) implicam na retenção do sinal para cobrir a hora reservada que ficou ociosa.</p>
+                        <p><strong>3. Tolerância de Atraso:</strong> Para não prejudicar o atendimento das próximas clientes, temos uma tolerância máxima de 15 minutos de atraso. Após esse período, o atendimento poderá ser cancelado ou ter o tempo de execução reduzido, sem reembolso do sinal.</p>
+                        <p><strong>4. Garantia de Serviço:</strong> Oferecemos garantia técnica de 7 dias para ajustes, mediante avaliação presencial de nossa equipe técnica.</p>
                     </div>
                 </div>
             </div>
         </div>
+    </footer>
 
-    </div>
-
-    <!-- JAVASCRIPT GLOBAL -->
-    <script>
-        // --- 1. FUNÇÕES VITAIS (PRIMEIRAS A CARREGAR) ---
-        
-        function openWhatsApp(message, value, id) {
-             const phone = "5549999954052";
-             
-             if (value && id) {
-                 const checkbox = document.getElementById('check-' + id);
-                 let msg = `Olá! Quero garantir meu horário VIP de Dezembro.\n\n*Voucher:* ${message} (R$ ${value.toFixed(2)})`;
-                 
-                 if(checkbox && checkbox.checked) {
-                     msg += `\n*+ Adicional:* Corte Terapêutico (Oferta R$ 80,00)`;
-                     msg += `\n*Valor Total:* R$ ${(value + 80).toFixed(2)}`;
-                 }
-                 msg += `\n\nCiente da taxa de reserva de R$ 50,00.`;
-                 message = msg;
-             }
-
-             const finalLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
-             
-             // Tracking Blindado (Não trava o clique)
-             try {
-                 if(typeof gtag === 'function') {
-                     gtag('event', 'conversion', {
-                         'send_to': 'AW-11442509118/CNfICPrhpYAZEL6qm9Aq',
-                         'event_callback': function() {} 
-                     });
-                 }
-                 if(typeof fbq === 'function') {
-                     fbq('track', 'Lead');
-                 }
-             } catch(e) { console.log('Tracking bypass'); }
-
-             window.open(finalLink, '_blank');
-        }
-
-        function setActiveCard(card) {
-            document.querySelectorAll('.voucher-card').forEach(c => c.classList.remove('active-card'));
-            card.classList.add('active-card');
-        }
-        
-        function toggleCut(type, basePrice) {
-            const checkbox = document.getElementById('check-' + type);
-            const priceElement = document.getElementById('price-' + type);
-            
-            if (checkbox && priceElement) {
-                if (checkbox.checked) {
-                    const newPrice = basePrice + 80;
-                    priceElement.innerHTML = `<span class="text-2xl align-top">R$</span>${newPrice.toFixed(0)}<span class="text-2xl align-top">,${(newPrice % 1).toFixed(2).substring(2)}</span>`;
-                    priceElement.style.color = "#4ade80"; 
-                } else {
-                    priceElement.innerHTML = `<span class="text-2xl align-top">R$</span>${Math.floor(basePrice)}<span class="text-2xl align-top">,${(basePrice % 1).toFixed(2).substring(2)}</span>`;
-                    priceElement.style.color = "#d4af37"; 
-                }
-            }
-        }
-
-        function resgatar(t,v,id){
-             openWhatsApp(t, v, id);
-        }
-        
-        function selectDay(d){
-            const m=["🔥 1 Vaga Extra!","⚠️ Últimos 2 horários!","💎 Horário Nobre liberado","⚡ Restam 3 vagas!"][Math.floor(Math.random()*4)];
-            const btnHtml = `<button onclick="openWhatsApp('Olá! Vi vaga dia ${d}/12 no site.')" class="bg-[#4ade80] text-[#064e3b] text-xs font-bold px-4 py-2 rounded-full shadow-lg flex items-center gap-2 mt-2 cursor-pointer"><i class="fab fa-whatsapp"></i> Agendar dia ${d}/12</button>`;
-            const container = document.getElementById('dynamic-msg-container');
-            if(container) container.innerHTML=`<div class="vaga-alert">${m}</div>${btnHtml}`;
-        }
-        
-        function sendWhatsAppMessage(){
-            openWhatsApp("Olá! Vi os depoimentos no site e quero garantir meu Liso Blindado para Dezembro. Poderíamos agendar?");
-        }
-        
-        function toggleCardAudio(id,b) { 
-            const v=document.getElementById(id); 
-            const i=b.querySelector('i'); 
-            if(!v || !i) return;
-            document.querySelectorAll('video').forEach(x=>{if(x.id!==id)x.muted=true}); 
-            document.querySelectorAll('.card-mute-btn i').forEach(ic => { if(ic !== i) ic.className='fas fa-volume-mute'; }); 
-            if(v.muted){v.muted=false;i.className='fas fa-volume-up'}else{v.muted=true;i.className='fas fa-volume-mute'} 
-        }
-
-        // --- 2. LÓGICAS AUTOMÁTICAS ---
-
-        function updateStatus() {
-            const now = new Date();
-            const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-            const brTime = new Date(utc - (3600000 * 3));
-            
-            const day = brTime.getDay();
-            const hour = brTime.getHours();
-            
-            let isOpen = false;
-            let statusText = "";
-
-            if (day === 0) { statusText = "Fechado • Abre Segunda 13h"; } 
-            else if (day === 1) { 
-                if (hour >= 13 && hour < 17) { isOpen = true; statusText = "Aberto Agora"; } 
-                else if (hour < 13) { statusText = "Fechado • Abre 13h"; } 
-                else { statusText = "Fechado • Abre Terça 08h"; }
-            } else { 
-                if (hour >= 8 && hour < 18) { isOpen = true; statusText = "Aberto Agora"; } 
-                else if (hour < 8) { statusText = "Fechado • Abre 08h"; } 
-                else { 
-                    if (day === 6) statusText = "Fechado • Abre Segunda 13h";
-                    else statusText = "Fechado • Abre 08h"; 
-                }
-            }
-
-            const el = document.getElementById('header-status-text');
-            if(el) {
-                if(isOpen) {
-                    el.innerHTML = `<span class="status-dot bg-open"></span> ${statusText}`;
-                    el.className = "text-[10px] md:text-xs font-bold tracking-wide mt-1 text-green-400 flex items-center";
-                } else {
-                    el.innerHTML = `<span class="status-dot bg-closed"></span> ${statusText}`;
-                    el.className = "text-[10px] md:text-xs font-bold tracking-wide mt-1 text-red-300 flex items-center opacity-90";
-                }
-            }
-        }
-        setInterval(updateStatus, 60000);
-        updateStatus();
-
-        // Slider
-        (function(){
-            const c=document.getElementById('comparison-container');
-            const aw=document.getElementById('after-video-wrapper');
-            const h=document.getElementById('drag-handle');
-            const vi=document.getElementById('video-before');
-            let d=false;
-            function u(x){
-                if(!c)return;
-                const w=c.getBoundingClientRect().width;
-                const p=(Math.max(0,Math.min(x,w))/w)*100;
-                if(aw) aw.style.width=`${p}%`;
-                if(h) h.style.left=`${p}%`;
-                if(vi) vi.style.width=`${w}px`;
-            }
-            if(c){
-                c.addEventListener('mousedown',e=>{d=true;u(e.clientX-c.getBoundingClientRect().left)});
-                window.addEventListener('mouseup',()=>d=false);
-                window.addEventListener('mousemove',e=>{if(d)u(e.clientX-c.getBoundingClientRect().left)});
-                c.addEventListener('touchstart',e=>{d=true;u(e.touches[0].clientX-c.getBoundingClientRect().left)},{passive:true});
-                window.addEventListener('touchend',()=>d=false);
-                window.addEventListener('touchmove',e=>{if(d)u(e.touches[0].clientX-c.getBoundingClientRect().left)},{passive:false});
-                u(c.getBoundingClientRect().width/2);
-            }
-        })();
-        
-        // Calendário Vivo
-        document.addEventListener('DOMContentLoaded',()=>{
-            const days=document.querySelectorAll('.cal-day.available');
-            const getRandom = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
-            days.forEach(d=>{
-                let v=getRandom(3, 7); d.dataset.viewers=v; 
-                const b=document.createElement('div');b.className='fire-badge';b.innerHTML='🔥';b.style.display=v>=5?'flex':'none';d.appendChild(b);
-                const t=document.createElement('div');
-                
-                if(v >= 5) {
-                    t.className='cal-tooltip mode-fire'; t.innerHTML=`🔥 ${v} pessoas de olho`;
-                    d.style.borderColor='#d4af37'; d.style.color='#d4af37';
-                } else {
-                    t.className='cal-tooltip mode-urgent';
-                    let spots = getRandom(1, 2); 
-                    t.innerHTML=`⚠️ Resta ${spots} vaga${spots>1?'s':''}`;
-                }
-                d.appendChild(t);
-            });
-
-            setInterval(()=>{
-                if(days.length === 0) return;
-                const r=days[Math.floor(Math.random()*days.length)];
-                let cur=parseInt(r.dataset.viewers);
-                let nw=cur + (Math.random()>0.5 ? 1 : -1);
-                if(nw<2) nw=2; if(nw>9) nw=9;
-                r.dataset.viewers=nw;
-                
-                const tip = r.querySelector('.cal-tooltip');
-                const badge = r.querySelector('.fire-badge');
-                
-                if(nw >= 5) {
-                    if(badge) badge.style.display='flex';
-                    r.style.borderColor='#d4af37'; r.style.color='#d4af37';
-                    if(tip) { tip.className='cal-tooltip mode-fire'; tip.innerHTML=`🔥 ${nw} pessoas de olho`; }
-                } else {
-                    if(badge) badge.style.display='none';
-                    r.style.borderColor='#4ade80'; r.style.color='#4ade80';
-                    if(tip) { 
-                        tip.className='cal-tooltip mode-urgent';
-                        let spots = Math.floor(Math.random() * 2) + 1; 
-                        tip.innerHTML=`⚠️ Resta ${spots} vaga${spots>1?'s':''}`; 
-                    }
-                }
-            }, 2000);
-        });
-
-        // Depoimentos Random
-        (function(){
-            const reviews=[{name:"Maria S.",local:"Progresso",servico:"Liso Blindado",tempo:"Há 2 dias",texto:"Eu tinha texturas muito difíceis e vivia com medo de química. A Jô me deu total segurança. O resultado foi 100% liso."},{name:"Ana L.",local:"Centro",servico:"Retoque Raiz",tempo:"Há 5 dias",texto:"Minha raiz crescia rápido e eu vivia refém da chapinha. O retoque estratégico da Essência salvou minha rotina."},{name:"Carla P.",local:"Santa Maria",servico:"Protocolo Premium",tempo:"Há 1 semana",texto:"O ambiente VIP me conquistou. Desde a recepção até o protocolo, cada detalhe foi luxuoso."},{name:"Beatriz G.",local:"Líder",servico:"Recuperação",tempo:"Há 3 dias",texto:"Meu cabelo estava opaco. O Protocolo deu uma injeção de brilho espelhado. Recebo elogios todos os dias."},{name:"Fernanda K.",local:"Efapi",servico:"Liso Orgânico",tempo:"Há 2 semanas",texto:"Melhor investimento que fiz. Já fui em vários salões, mas o cuidado com a saúde do fio aqui é diferente."},{name:"Patrícia M.",local:"Jardim Itália",servico:"Correção + Liso",tempo:"Há 4 dias",texto:"Estava com o cabelo manchado. Saí outra pessoa. A equipe é super técnica e explica tudo."}];
-            function rnd(){
-                const c=document.getElementById('dynamic-gallery');if(!c)return;
-                const s=[...reviews].sort(()=>0.5-Math.random()).slice(0,3);
-                let h='';s.forEach(r=>{h+=`<div class="testimonial-card"><div><span class="quote-mark">“</span><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;"><div style="display:flex;"><i class="fas fa-star star-gold"></i><i class="fas fa-star star-gold"></i><i class="fas fa-star star-gold"></i><i class="fas fa-star star-gold"></i><i class="fas fa-star star-gold"></i></div><span style="font-size:0.7rem;font-weight:600;color:#9CA3AF;text-transform:uppercase;">${r.tempo}</span></div><p class="text-review">"${r.texto}"</p></div><div style="border-top:1px solid #F3F4F6;padding-top:1.5rem;margin-top:auto;"><cite class="client-name">${r.name}<span class="verified-badge"><i class="fas fa-check-circle"></i> Verificada</span></cite><div class="meta-row"><i class="fas fa-map-marker-alt meta-icon"></i><span>${r.local}</span></div><div class="meta-row"><i class="fas fa-magic meta-icon"></i><span>${r.servico}</span></div></div></div>`});
-                c.innerHTML=h;
-            }
-            setTimeout(rnd,200);
-        })();
-
-        // FAQ Logic
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(() => {
-                const accItems = document.querySelectorAll('#faq-isolate details');
-                accItems.forEach(item => {
-                    const summary = item.querySelector('summary');
-                    if(summary) {
-                        summary.addEventListener('click', (e) => {
-                            e.preventDefault();
-                            accItems.forEach(otherItem => {
-                                if (otherItem !== item && otherItem.hasAttribute('open')) { otherItem.removeAttribute('open'); }
-                            });
-                            if (item.hasAttribute('open')) { item.removeAttribute('open'); } else { item.setAttribute('open', ''); }
-                        });
-                    }
-                });
-            }, 500);
-        });
-
-        // Modal Jurídico
-        (function(){
-            const modal = document.getElementById('erh-legal-modal-overlay');
-            const closeBtn = document.getElementById('erh-modal-close');
-            const privacyBtn = document.getElementById('btn-privacy-trigger');
-            const termsBtn = document.getElementById('btn-terms-trigger');
-            const contentPrivacy = document.getElementById('content-privacy');
-            const contentTerms = document.getElementById('content-terms');
-
-            function openModal(type) {
-                if(!modal) return;
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden'; 
-                if(type === 'privacy') {
-                    if(contentPrivacy) contentPrivacy.style.display = 'block';
-                    if(contentTerms) contentTerms.style.display = 'none';
-                } else {
-                    if(contentPrivacy) contentPrivacy.style.display = 'none';
-                    if(contentTerms) contentTerms.style.display = 'block';
-                }
-            }
-
-            function closeModal() {
-                if(!modal) return;
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto'; 
-            }
-
-            if(privacyBtn) privacyBtn.addEventListener('click', () => openModal('privacy'));
-            if(termsBtn) termsBtn.addEventListener('click', () => openModal('terms'));
-            if(closeBtn) closeBtn.addEventListener('click', closeModal);
-            
-            if(modal) {
-                modal.addEventListener('click', (e) => {
-                    if (e.target === modal) closeModal();
-                });
-            }
-        })();
-    </script>
 </body>
 </html>
