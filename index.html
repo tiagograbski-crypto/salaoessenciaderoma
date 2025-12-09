@@ -4,20 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- 1. SEO & PERFORMANCE -->
+    <!-- ========================================== -->
+    <!-- 1. PERFORMANCE & SEO (OTIMIZAÇÃO GOOGLE) -->
+    <!-- ========================================== -->
     <title>Essência de Romã Hair | O Liso Blindado em Chapecó</title>
     <meta name="description" content="Especialista em Alisamento Orgânico e Recuperação Capilar em Chapecó. Recupere a saúde do seu fio com o Liso Blindado. Agende seu horário com condição VIP de Dezembro.">
-    <meta name="theme-color" content="#2b0505">
+    <meta name="keywords" content="Alisamento Orgânico Chapecó, Salão de Beleza Chapecó, Progressiva Sem Formol, Liso Blindado, Tratamento Capilar, Cabeleireiro Centro Chapecó">
+    <meta name="author" content="Essência de Romã Hair">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://salaoessenciaderoma.com/">
+    <meta name="theme-color" content="#2b0505">
 
-    <!-- Preload -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Dicas de DNS para conexão rápida -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://res.cloudinary.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Preload Crítico (Fonte e Imagem de Capa) -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="https://salaoessenciaderoma.com/assets/images/hero-poster.jpg">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Meta -->
+    <!-- Meta Social -->
     <meta name="facebook-domain-verification" content="qv2s2b5jb5v1cswia122tvhz9cd2bw" />
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://salaoessenciaderoma.com/">
@@ -25,7 +37,7 @@
     <meta property="og:description" content="O único alisamento de Chapecó que trata enquanto alisa.">
     <meta property="og:image" content="https://salaoessenciaderoma.com/assets/images/hero-poster.jpg">
 
-    <!-- 2. TRACKING -->
+    <!-- 2. TRACKING (GOOGLE & META) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11442509118"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -43,26 +55,31 @@
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=639959835745383&ev=PageView&noscript=1"/></noscript>
 
-    <!-- Manychat -->
+    <!-- Manychat (Carregamento Adiado para não travar o topo) -->
     <script>
         window.addEventListener('load', function() {
-            var s = document.createElement('script');
-            s.src = "//widget.manychat.com/1394285950786346.js";
-            s.defer = true; document.body.appendChild(s);
+            setTimeout(function() {
+                var s = document.createElement('script');
+                s.src = "//widget.manychat.com/1394285950786346.js";
+                s.defer = true; document.body.appendChild(s);
+            }, 3000); // Carrega 3s depois para priorizar o site
         });
     </script>
 
     <style>
+        /* OTIMIZAÇÕES VISUAIS */
         * { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
         body { background-color: #2b0505; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
         
         /* HEADER & HERO */
         #header-sticky { background: rgba(43, 5, 5, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(197, 160, 89, 0.3); transition: all 0.3s ease; }
-        .hero-container { position: relative; width: 100vw; height: 100dvh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .hero-container { position: relative; width: 100vw; height: 100dvh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #2b0505; }
         .video-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; z-index: 0; }
         .video-overlay { position: absolute; inset: 0; z-index: 1; background: radial-gradient(circle at center, rgba(75,0,0,0.1) 0%, rgba(43,5,5,0.8) 90%), linear-gradient(to bottom, rgba(75, 0, 0, 0.6) 0%, rgba(75, 0, 0, 0.2) 35%, rgba(43, 5, 5, 1) 100%); }
-        .hero-content { position: relative; z-index: 10; padding-top: 60px; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; }
-        .hero-scroll-arrow { margin-top: 2rem; font-size: 2rem; color: #d4af37; animation: bounce 2s infinite; cursor: pointer; opacity: 0.9; }
+        .hero-content { position: relative; z-index: 10; padding-top: 60px; text-align: center; }
+        
+        /* SETA (Fluxo Normal) */
+        .hero-scroll-arrow { margin-top: 3rem; font-size: 2rem; color: #d4af37; animation: bounce 2s infinite; cursor: pointer; opacity: 0.9; }
 
         /* TYPOGRAPHY */
         .font-playfair { font-family: 'Playfair Display', serif; }
@@ -122,10 +139,10 @@
         }
         .transform-video {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
-            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Transição Suave */
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        #video-antes { opacity: 0; z-index: 10; pointer-events: none; }
-        #video-depois { opacity: 1; z-index: 5; }
+        #video-before-layer { opacity: 0; z-index: 10; pointer-events: none; }
+        #video-after-layer { opacity: 1; z-index: 5; }
 
         .control-dock {
             position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
@@ -271,7 +288,7 @@
         function sendWhatsAppMessage(){openWhatsApp("Olá! Vi os depoimentos e quero agendar.");}
         function selectDay(d){let m,c="#4ade80";if(d===23||d===27){m="⚠️ ÚLTIMO HORÁRIO!";c="#facc15";}else{m=["🔥 1 Vaga Extra!","💎 Horário Nobre"][Math.floor(Math.random()*2)];}const h=`<button onclick="openWhatsApp('Olá! Vi vaga dia ${d}/12.')" style="background-color:${c};color:#064e3b" class="text-xs font-bold px-4 py-2 rounded-full shadow-lg mt-2 w-full"><i class="fab fa-whatsapp"></i> Agendar dia ${d}</button>`;const k=document.getElementById('dynamic-msg-container');if(k)k.innerHTML=`<div class="vaga-alert" style="color:${c};border-color:${c}">${m}</div>${h}`;}
 
-        // NOVO SLIDER (Smart Toggle)
+        // Smart Toggle (Antes/Depois)
         function toggleTransform(mode) {
             const vAntes = document.getElementById('vid-antes');
             const vDepois = document.getElementById('vid-depois');
@@ -282,19 +299,19 @@
             if(mode === 'antes') {
                 vAntes.style.opacity = '1';
                 vDepois.style.opacity = '0';
-                bAntes.classList.add('bg-white', 'text-black');
-                bAntes.classList.remove('text-gray-400', 'hover:text-white');
-                bDepois.classList.remove('bg-[#d4af37]', 'text-[#1a0505]', 'shadow-lg');
-                bDepois.classList.add('text-gray-400', 'hover:text-white');
-                label.innerText = "Antes";
+                bAntes.classList.add('active');
+                bDepois.classList.remove('active');
+                label.innerText = "ANTES";
+                label.style.borderColor = "#ffffff";
+                label.style.color = "#ffffff";
             } else {
                 vAntes.style.opacity = '0';
                 vDepois.style.opacity = '1';
-                bAntes.classList.remove('bg-white', 'text-black');
-                bAntes.classList.add('text-gray-400', 'hover:text-white');
-                bDepois.classList.add('bg-[#d4af37]', 'text-[#1a0505]', 'shadow-lg');
-                bDepois.classList.remove('text-gray-400', 'hover:text-white');
-                label.innerText = "Depois";
+                bAntes.classList.remove('active');
+                bDepois.classList.add('active');
+                label.innerText = "DEPOIS";
+                label.style.borderColor = "#d4af37";
+                label.style.color = "#d4af37";
             }
         }
 
@@ -368,6 +385,7 @@
     <!-- HERO -->
     <section id="inicio" class="hero-container">
         <video id="heroVideo" class="video-bg" autoplay muted loop playsinline webkit-playsinline poster="https://salaoessenciaderoma.com/assets/images/hero-poster.jpg">
+            <!-- VÍDEO CAPA ATUALIZADO (Confiança e Luxo) -->
             <source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765202825/Roteiro_de_V%C3%ADdeo_Cabelo_Confian%C3%A7a_e_Luxo_m9yv0x.mp4" type="video/mp4">
         </video>
         <div class="video-overlay"></div>
@@ -399,25 +417,32 @@
             </header>
 
             <!-- Grid Vídeos -->
-            <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:grid md:grid-cols-3 pb-8 md:pb-0 hide-scrollbar">
+            <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:grid md:grid-cols-4 pb-8 md:pb-0 hide-scrollbar">
+                <!-- V1 -->
                 <div class="snap-center shrink-0 w-[70vw] md:w-auto video-card group">
                     <button class="card-mute-btn" onclick="toggleCardAudio('vid1', this)"><i class="fas fa-volume-mute"></i></button>
-                    <video id="vid1" class="w-full h-full object-cover" autoplay muted loop playsinline><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765201568/WhatsApp_Video_2025-12-06_at_11.25.53_o2b4bl.mp4" type="video/mp4"></video>
+                    <video id="vid1" class="w-full h-full object-cover" autoplay muted loop playsinline><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765288349/WhatsApp_Video_2025-12-09_at_10.51.20_lr2cw1.mp4" type="video/mp4"></video>
                 </div>
+                <!-- V2 -->
                 <div class="snap-center shrink-0 w-[70vw] md:w-auto video-card group">
                     <button class="card-mute-btn" onclick="toggleCardAudio('vid2', this)"><i class="fas fa-volume-mute"></i></button>
-                    <video id="vid2" class="w-full h-full object-cover" autoplay muted loop playsinline><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765201565/WhatsApp_Video_2025-11-27_at_18.35.30_mic7zp.mp4" type="video/mp4"></video>
+                    <video id="vid2" class="w-full h-full object-cover" autoplay muted loop playsinline><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765201568/WhatsApp_Video_2025-12-06_at_11.25.53_o2b4bl.mp4" type="video/mp4"></video>
                 </div>
+                <!-- V3 -->
                 <div class="snap-center shrink-0 w-[70vw] md:w-auto video-card group">
                     <button class="card-mute-btn" onclick="toggleCardAudio('vid3', this)"><i class="fas fa-volume-mute"></i></button>
-                    <video id="vid3" class="w-full h-full object-cover" autoplay muted loop playsinline><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765201566/WhatsApp_Video_2025-12-07_at_08.43.32_viqj3g.mp4" type="video/mp4"></video>
+                    <video id="vid3" class="w-full h-full object-cover" autoplay muted loop playsinline><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765201565/WhatsApp_Video_2025-11-27_at_18.35.30_mic7zp.mp4" type="video/mp4"></video>
+                </div>
+                <!-- V4 -->
+                <div class="snap-center shrink-0 w-[70vw] md:w-auto video-card group">
+                    <button class="card-mute-btn" onclick="toggleCardAudio('vid4', this)"><i class="fas fa-volume-mute"></i></button>
+                    <video id="vid4" class="w-full h-full object-cover" autoplay muted loop playsinline><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765201566/WhatsApp_Video_2025-12-07_at_08.43.32_viqj3g.mp4" type="video/mp4"></video>
                 </div>
             </div>
             <p class="slide-hint md:hidden text-center text-xs text-gray-500 italic mt-2">Deslize para ver mais</p>
 
             <div id="vouchers" class="mt-20 mb-8 text-center">
                 <div class="section-pill">Escolha seu Tipo de Cabelo</div>
-                
                 <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:grid md:grid-cols-3 max-w-5xl mx-auto pb-6 pt-8 px-4 md:px-0 hide-scrollbar" id="card-container">
                     <!-- V1 -->
                     <div class="voucher-card active-card snap-center shrink-0" onmouseenter="setActiveCard(this)">
@@ -587,7 +612,7 @@
         </div>
     </div>
 
-    <!-- RODAPÉ EMPIRE (CENTRALIZADO) -->
+    <!-- RODAPÉ ROYAL EMPIRE (CENTRALIZADO) -->
     <footer id="footer-empire-master">
         <div class="footer-divider"><i class="fas fa-gem footer-divider-icon"></i></div>
         
@@ -684,34 +709,5 @@
         </div>
     </footer>
 
-    <!-- SCRIPT FINAL -->
-    <script>
-        // SMART TOGGLE LOGIC
-        function toggleTransform(mode) {
-            const vAntes = document.getElementById('vid-antes');
-            const vDepois = document.getElementById('vid-depois');
-            const bAntes = document.getElementById('btn-antes');
-            const bDepois = document.getElementById('btn-depois');
-            const label = document.getElementById('status-label');
-
-            if(mode === 'antes') {
-                vAntes.style.opacity = '1';
-                vDepois.style.opacity = '0';
-                bAntes.classList.add('active');
-                bDepois.classList.remove('active');
-                label.innerText = "ANTES";
-                label.style.borderColor = "#ffffff";
-                label.style.color = "#ffffff";
-            } else {
-                vAntes.style.opacity = '0';
-                vDepois.style.opacity = '1';
-                bAntes.classList.remove('active');
-                bDepois.classList.add('active');
-                label.innerText = "DEPOIS";
-                label.style.borderColor = "#d4af37";
-                label.style.color = "#d4af37";
-            }
-        }
-    </script>
 </body>
 </html>
