@@ -7,23 +7,23 @@
     <!-- 1. SEO & PERFORMANCE -->
     <title>Essência de Romã Hair | O Liso Blindado em Chapecó</title>
     <meta name="description" content="Especialista em Alisamento Orgânico e Recuperação Capilar em Chapecó. Recupere a saúde do seu fio com o Liso Blindado. Agende seu horário com condição VIP de Dezembro.">
-    <meta name="keywords" content="Alisamento Orgânico Chapecó, Salão de Beleza Chapecó, Progressiva Sem Formol, Liso Blindado, Tratamento Capilar, Cabeleireiro Centro Chapecó">
-    <meta name="author" content="Essência de Romã Hair">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://salaoessenciaderoma.com/">
     <meta name="theme-color" content="#2b0505">
+    <link rel="canonical" href="https://salaoessenciaderoma.com/">
 
-    <!-- Verificação de Domínio Facebook -->
+    <!-- Preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Meta -->
     <meta name="facebook-domain-verification" content="qv2s2b5jb5v1cswia122tvhz9cd2bw" />
-
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://salaoessenciaderoma.com/">
     <meta property="og:title" content="🔥 Últimas Vagas: Liso Blindado (Dezembro)">
-    <meta property="og:description" content="O único alisamento de Chapecó que trata enquanto alisa. Veja o antes e depois e garanta seu voucher promocional.">
+    <meta property="og:description" content="O único alisamento de Chapecó que trata enquanto alisa.">
     <meta property="og:image" content="https://salaoessenciaderoma.com/assets/images/hero-poster.jpg">
-    <meta property="og:locale" content="pt_BR">
-    <meta property="og:site_name" content="Essência de Romã Hair">
 
     <!-- 2. TRACKING -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11442509118"></script>
@@ -52,22 +52,17 @@
         });
     </script>
 
-    <!-- 3. ESTILOS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     <style>
         * { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
-        html, body { margin: 0; padding: 0; overflow-x: hidden; background-color: #2b0505; font-family: 'Montserrat', sans-serif; }
-
+        body { background-color: #2b0505; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+        
         /* HEADER & HERO */
         #header-sticky { background: rgba(43, 5, 5, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(197, 160, 89, 0.3); transition: all 0.3s ease; }
-        .hero-container { position: relative; width: 100vw; height: 100dvh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #2b0505; border-bottom: 2px solid #c5a059; }
+        .hero-container { position: relative; width: 100vw; height: 100dvh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; }
         .video-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; z-index: 0; }
         .video-overlay { position: absolute; inset: 0; z-index: 1; background: radial-gradient(circle at center, rgba(75,0,0,0.1) 0%, rgba(43,5,5,0.8) 90%), linear-gradient(to bottom, rgba(75, 0, 0, 0.6) 0%, rgba(75, 0, 0, 0.2) 35%, rgba(43, 5, 5, 1) 100%); }
-        .hero-content { position: relative; z-index: 10; padding-top: 60px; text-align: center; }
-        .hero-scroll-arrow { position: absolute; bottom: 15%; left: 50%; transform: translateX(-50%); z-index: 20; font-size: 2rem; color: #d4af37; animation: bounce 2s infinite; cursor: pointer; opacity: 0.8; }
+        .hero-content { position: relative; z-index: 10; padding-top: 60px; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; }
+        .hero-scroll-arrow { margin-top: 2rem; font-size: 2rem; color: #d4af37; animation: bounce 2s infinite; cursor: pointer; opacity: 0.9; }
 
         /* TYPOGRAPHY */
         .font-playfair { font-family: 'Playfair Display', serif; }
@@ -118,16 +113,42 @@
         @keyframes bounce-fire { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
         .vaga-alert { background: rgba(212, 175, 55, 0.1); border: 1px solid #d4af37; color: #d4af37; padding: 8px 16px; border-radius: 999px; font-size: 0.8rem; font-weight: bold; animation: fade-in-up 0.3s ease-out; display: flex; align-items: center; gap: 8px; justify-content: center; margin-top: 10px; }
 
-        /* SLIDER ANTES DEPOIS */
-        #comparison-container { position: relative; width: 100%; aspect-ratio: 9 / 16; overflow: hidden; border-radius: 16px; border: 1px solid rgba(197, 160, 89, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.5); cursor: ew-resize; touch-action: pan-y; margin: 0 auto; max-width: 320px; user-select: none; }
-        #video-before, #video-after { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
-        #before-video-wrapper { position: absolute; top: 0; left: 0; height: 100%; width: 50%; overflow: hidden; z-index: 10; border-right: 1px solid rgba(255,255,255,0.5); pointer-events: none; }
-        #drag-handle { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 100%; z-index: 20; cursor: ew-resize; display: flex; justify-content: center; align-items: center; touch-action: none; }
-        #drag-handle::before { content: ''; width: 4px; height: 100%; background: linear-gradient(to bottom, transparent, #ffd700, #c5a059, transparent); }
-        #drag-handle::after { content: '↔'; position: absolute; top: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #d4af37, #b38728); color: #2b0505; border: 2px solid #fff5e6; border-radius: 50%; font-weight: 800; box-shadow: 0 0 15px rgba(0,0,0,0.5); transform: translateY(-50%); }
-        .video-label { position: absolute; padding: 0.4rem 1rem; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.1em; color: #fff; background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 4px; text-transform: uppercase; z-index: 15; top: 1.5rem; pointer-events: none; }
-        .label-before { left: 1.5rem; } .label-after { right: 1.5rem; }
-        .layout-split { display: flex; flex-direction: column; align-items: center; gap: 3rem; }
+        /* NOVA TRANSFORMAÇÃO (CINEMA MODE) */
+        .transformation-box {
+            position: relative; width: 100%; max-width: 340px; aspect-ratio: 9/16;
+            margin: 0 auto; border-radius: 20px; overflow: hidden;
+            border: 2px solid rgba(197, 160, 89, 0.3);
+            box-shadow: 0 20px 60px -10px rgba(0,0,0,0.7);
+        }
+        .transform-video {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Transição Suave */
+        }
+        #video-antes { opacity: 0; z-index: 10; pointer-events: none; }
+        #video-depois { opacity: 1; z-index: 5; }
+
+        .control-dock {
+            position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+            display: flex; gap: 4px; padding: 4px;
+            background: rgba(20, 5, 5, 0.8); backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.15); border-radius: 100px;
+            z-index: 20; box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .dock-btn {
+            padding: 8px 24px; border-radius: 100px; font-size: 0.75rem; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer;
+            color: #888; transition: all 0.3s ease;
+        }
+        .dock-btn.active {
+            background: #d4af37; color: #1a0505; box-shadow: 0 2px 12px rgba(212, 175, 55, 0.4);
+        }
+        .dock-status-label {
+            position: absolute; top: 20px; left: 50%; transform: translateX(-50%);
+            background: rgba(0,0,0,0.5); backdrop-filter: blur(4px);
+            color: #d4af37; font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.2em; padding: 6px 16px; border-radius: 100px;
+            border: 1px solid rgba(212,175,55,0.3); z-index: 20; pointer-events: none;
+        }
 
         /* FAQ */
         details { background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(197, 160, 89, 0.15); border-radius: 12px; margin-bottom: 1rem; overflow: hidden; transition: all 0.4s ease; }
@@ -237,7 +258,6 @@
                     el.className = `text-[10px] md:text-xs font-bold tracking-wide mt-1 flex items-center ${isOpen?'text-green-400':'text-red-300'}`;
                 }
             }
-            // Tenta rodar agora E depois que carregar
             updateStatusImmediate();
             document.addEventListener('DOMContentLoaded', updateStatusImmediate);
             setInterval(updateStatusImmediate, 60000);
@@ -251,37 +271,57 @@
         function sendWhatsAppMessage(){openWhatsApp("Olá! Vi os depoimentos e quero agendar.");}
         function selectDay(d){let m,c="#4ade80";if(d===23||d===27){m="⚠️ ÚLTIMO HORÁRIO!";c="#facc15";}else{m=["🔥 1 Vaga Extra!","💎 Horário Nobre"][Math.floor(Math.random()*2)];}const h=`<button onclick="openWhatsApp('Olá! Vi vaga dia ${d}/12.')" style="background-color:${c};color:#064e3b" class="text-xs font-bold px-4 py-2 rounded-full shadow-lg mt-2 w-full"><i class="fab fa-whatsapp"></i> Agendar dia ${d}</button>`;const k=document.getElementById('dynamic-msg-container');if(k)k.innerHTML=`<div class="vaga-alert" style="color:${c};border-color:${c}">${m}</div>${h}`;}
 
-        // Modal Functions (Global)
-        function openModal(type) {
-            const modal = document.getElementById('erh-legal-modal-overlay');
-            const cPriv = document.getElementById('content-privacy');
-            const cTerms = document.getElementById('content-terms');
-            if(!modal) return;
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            if(type === 'privacy') {
-                if(cPriv) cPriv.style.display = 'block';
-                if(cTerms) cTerms.style.display = 'none';
+        // NOVO SLIDER (Smart Toggle)
+        function toggleTransform(mode) {
+            const vAntes = document.getElementById('vid-antes');
+            const vDepois = document.getElementById('vid-depois');
+            const bAntes = document.getElementById('btn-antes');
+            const bDepois = document.getElementById('btn-depois');
+            const label = document.getElementById('status-label');
+
+            if(mode === 'antes') {
+                vAntes.style.opacity = '1';
+                vDepois.style.opacity = '0';
+                bAntes.classList.add('bg-white', 'text-black');
+                bAntes.classList.remove('text-gray-400', 'hover:text-white');
+                bDepois.classList.remove('bg-[#d4af37]', 'text-[#1a0505]', 'shadow-lg');
+                bDepois.classList.add('text-gray-400', 'hover:text-white');
+                label.innerText = "Antes";
             } else {
-                if(cPriv) cPriv.style.display = 'none';
-                if(cTerms) cTerms.style.display = 'block';
+                vAntes.style.opacity = '0';
+                vDepois.style.opacity = '1';
+                bAntes.classList.remove('bg-white', 'text-black');
+                bAntes.classList.add('text-gray-400', 'hover:text-white');
+                bDepois.classList.add('bg-[#d4af37]', 'text-[#1a0505]', 'shadow-lg');
+                bDepois.classList.remove('text-gray-400', 'hover:text-white');
+                label.innerText = "Depois";
             }
         }
-        function closeModal() {
-            const modal = document.getElementById('erh-legal-modal-overlay');
-            if(modal) modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
+
+        // Modal Functions (Global)
+        function openModal(t){
+            const m=document.getElementById('erh-legal-modal-overlay');
+            const cp=document.getElementById('content-privacy');
+            const ct=document.getElementById('content-terms');
+            if(!m) return;
+            m.classList.add('active');
+            document.body.style.overflow='hidden';
+            if(t==='privacy'){ if(cp)cp.style.display='block'; if(ct)ct.style.display='none'; } 
+            else { if(cp)cp.style.display='none'; if(ct)ct.style.display='block'; }
+        }
+        function closeModal(){
+            const m=document.getElementById('erh-legal-modal-overlay');
+            if(m) m.classList.remove('active');
+            document.body.style.overflow='auto';
         }
 
         // DOMContentLoaded Logic
         document.addEventListener('DOMContentLoaded',()=>{
-            // Inteligência de Data (Dias passados ficam vermelhos)
             const today = new Date().getDate();
             document.querySelectorAll('.cal-day[data-day]').forEach(d => {
                 const dayNumber = parseInt(d.getAttribute('data-day'));
                 if(dayNumber < today) { d.className = 'cal-day closed'; d.removeAttribute('onclick'); d.style.opacity = '0.5'; d.innerText = dayNumber; }
             });
-
             const days=document.querySelectorAll('.cal-day.available');
             days.forEach(d=>{ if(Math.random()>0.4 && !d.classList.contains('last-spot')) { const b=document.createElement('div'); b.className='fire-badge'; b.innerHTML='🔥'; d.appendChild(b); } });
             
@@ -300,27 +340,6 @@
             const accItems = document.querySelectorAll('#faq-isolate details');
             accItems.forEach(item => { item.querySelector('summary').addEventListener('click', (e) => { e.preventDefault(); accItems.forEach(other => { if(other!==item) other.removeAttribute('open'); }); if(item.hasAttribute('open')) item.removeAttribute('open'); else item.setAttribute('open',''); }); });
         });
-
-        // Slider Drag + Touch (Revisado)
-        (function(){
-            const c=document.getElementById('comparison-container');
-            const aw=document.getElementById('before-video-wrapper');
-            const h=document.getElementById('drag-handle');
-            function u(x){if(!c)return;const w=c.getBoundingClientRect().width;const p=(Math.max(0,Math.min(x,w))/w)*100;if(aw)aw.style.width=`${p}%`;if(h)h.style.left=`${p}%`;}
-            if(c){
-                let d=false;
-                const start=(e)=>{d=true;u((e.touches?e.touches[0].clientX:e.clientX)-c.getBoundingClientRect().left);};
-                const move=(e)=>{if(!d)return;if(e.touches)e.preventDefault();u((e.touches?e.touches[0].clientX:e.clientX)-c.getBoundingClientRect().left);};
-                const end=()=>{d=false;};
-                
-                c.addEventListener('mousedown',start);
-                window.addEventListener('mouseup',end);
-                window.addEventListener('mousemove',move);
-                c.addEventListener('touchstart',start,{passive:false});
-                window.addEventListener('touchend',end);
-                window.addEventListener('touchmove',move,{passive:false});
-            }
-        })();
     </script>
 
     <!-- HEADER -->
@@ -363,6 +382,7 @@
                 <span>Progressiva</span> <span class="text-[#d4af37]">•</span> <span>Semi Definitiva</span> <span class="text-[#d4af37]">•</span> <span>Orgânica</span>
             </div>
             <p class="hero-subtext">Tecnologia exclusiva que alinha, recupera e protege contra o verão.<br><strong>Zero Formol. Brilho de Joia.</strong></p>
+            <!-- SETA NO FLUXO (RESOLVIDO) -->
             <div onclick="document.getElementById('bloco2-content').scrollIntoView({behavior: 'smooth'})" class="hero-scroll-arrow">
                 <i class="fas fa-chevron-down"></i>
             </div>
@@ -514,40 +534,38 @@
         </div>
     </div>
 
-    <!-- SLIDER ANTES/DEPOIS -->
-    <div id="bloco-slider-refinado" class="py-16">
-        <div class="container mx-auto px-6 max-w-6xl">
-            <div class="text-center mb-12">
-                <h2 class="font-playfair text-4xl md:text-6xl text-white mb-4">A Transformação <span class="text-gold italic-elegant">Absoluta</span></h2>
-                <p class="text-gray-300">Arraste para ver o poder do Liso Blindado</p>
+    <!-- NOVA TRANSFORMAÇÃO (SMART TOGGLE) -->
+    <section id="bloco-transformation" class="py-16 bg-[#2b0505] relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#d4af37] to-transparent opacity-30"></div>
+        <div class="container mx-auto px-6 max-w-4xl text-center relative z-10">
+            <span class="text-[#c5a059] text-xs font-bold tracking-[0.3em] uppercase block mb-4">Resultado Real</span>
+            <h2 class="font-playfair text-3xl md:text-5xl text-white mb-8">A Transformação <span class="text-gold-shine">Absoluta</span></h2>
+
+            <!-- MOLDURA DO CELULAR -->
+            <div class="transformation-box">
+                <!-- Video ANTES -->
+                <video id="vid-antes" class="transform-video opacity-0" muted loop playsinline>
+                    <source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765286921/WhatsApp_Video_2025-12-09_at_10.26.29_wrdw09.mp4" type="video/mp4">
+                </video>
+
+                <!-- Video DEPOIS (Padrão) -->
+                <video id="vid-depois" class="transform-video opacity-100" autoplay muted loop playsinline>
+                    <source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765286926/WhatsApp_Video_2025-12-09_at_10.28.20_vfb8e7.mp4" type="video/mp4">
+                </video>
+
+                <!-- Label de Status -->
+                <div id="status-label" class="dock-status-label">DEPOIS</div>
+
+                <!-- Controles Flutuantes -->
+                <div class="control-dock">
+                    <button onclick="toggleTransform('antes')" id="btn-antes" class="dock-btn">Ver Antes</button>
+                    <button onclick="toggleTransform('depois')" id="btn-depois" class="dock-btn active">Ver Depois</button>
+                </div>
             </div>
             
-            <div class="layout-split">
-                <div class="col-left relative group">
-                    <div id="comparison-container">
-                        <video id="video-after" autoplay loop muted playsinline><source src="https://salaoessenciaderoma.com/assets/videos/video16.mp4?v=f88b0215" type="video/mp4"></video>
-                        <span class="video-label label-after">Depois</span>
-                        <div id="before-video-wrapper">
-                            <!-- VÍDEO ANTES CORRETO -->
-                            <video id="video-before" autoplay loop muted playsinline><source src="https://salaoessenciaderoma.com/assets/videos/video15.mp4?v=56b0164c" type="video/mp4"></video>
-                            <span class="video-label label-before">Antes</span>
-                        </div>
-                        <div id="drag-handle"></div>
-                    </div>
-                    <p class="text-center text-xs text-[#c5a059] mt-4 uppercase font-bold animate-pulse">↔ Arraste para comparar ↔</p>
-                </div>
-                
-                <div class="col-right text-white">
-                    <h3 class="font-playfair text-3xl mb-6">Liberdade em <br><span class="text-[#c5a059]">Cada Fio</span></h3>
-                    <div class="space-y-6">
-                        <div class="flex items-start"><i class="fas fa-gem text-[#ffd700] mr-4 mt-1"></i><div><strong>Brilho Espelhado</strong><p class="text-gray-400 text-sm">Reflete a luz como uma joia.</p></div></div>
-                        <div class="flex items-start"><i class="fas fa-umbrella text-[#ffd700] mr-4 mt-1"></i><div><strong>Blindagem Anti-Umidade</strong><p class="text-gray-400 text-sm">Zero frizz, mesmo na chuva.</p></div></div>
-                        <div class="flex items-start"><i class="fas fa-clock text-[#ffd700] mr-4 mt-1"></i><div><strong>Acorde Pronta</strong><p class="text-gray-400 text-sm">Adeus chapinha diária.</p></div></div>
-                    </div>
-                </div>
-            </div>
+            <p class="text-gray-400 text-xs mt-6 italic opacity-80">Toque nos botões para alternar instantaneamente</p>
         </div>
-    </div>
+    </section>
 
     <!-- FAQ -->
     <div id="faq-isolate" class="py-16 bg-[#1a0202]">
@@ -569,7 +587,7 @@
         </div>
     </div>
 
-    <!-- RODAPÉ ROYAL EMPIRE (CENTRALIZADO) -->
+    <!-- RODAPÉ EMPIRE (CENTRALIZADO) -->
     <footer id="footer-empire-master">
         <div class="footer-divider"><i class="fas fa-gem footer-divider-icon"></i></div>
         
@@ -636,8 +654,6 @@
         <div id="erh-legal-modal-overlay" class="legal-modal-overlay" onclick="closeModal()">
             <div class="legal-modal-box" onclick="event.stopPropagation()">
                 <span id="erh-modal-close" class="legal-close-btn" onclick="closeModal()">&times;</span>
-                
-                <!-- PRIVACIDADE -->
                 <div id="content-privacy" style="display:none;">
                     <h2 class="legal-content-title">Política de Privacidade</h2>
                     <div class="legal-content-text">
@@ -651,8 +667,6 @@
                         <p>Você pode solicitar a exclusão dos seus dados de nossa base de contatos a qualquer momento, entrando em contato conosco.</p>
                     </div>
                 </div>
-
-                <!-- TERMOS DE USO -->
                 <div id="content-terms" style="display:none;">
                     <h2 class="legal-content-title">Termos de Uso</h2>
                     <div class="legal-content-text">
@@ -670,5 +684,34 @@
         </div>
     </footer>
 
+    <!-- SCRIPT FINAL -->
+    <script>
+        // SMART TOGGLE LOGIC
+        function toggleTransform(mode) {
+            const vAntes = document.getElementById('vid-antes');
+            const vDepois = document.getElementById('vid-depois');
+            const bAntes = document.getElementById('btn-antes');
+            const bDepois = document.getElementById('btn-depois');
+            const label = document.getElementById('status-label');
+
+            if(mode === 'antes') {
+                vAntes.style.opacity = '1';
+                vDepois.style.opacity = '0';
+                bAntes.classList.add('active');
+                bDepois.classList.remove('active');
+                label.innerText = "ANTES";
+                label.style.borderColor = "#ffffff";
+                label.style.color = "#ffffff";
+            } else {
+                vAntes.style.opacity = '0';
+                vDepois.style.opacity = '1';
+                bAntes.classList.remove('active');
+                bDepois.classList.add('active');
+                label.innerText = "DEPOIS";
+                label.style.borderColor = "#d4af37";
+                label.style.color = "#d4af37";
+            }
+        }
+    </script>
 </body>
 </html>
