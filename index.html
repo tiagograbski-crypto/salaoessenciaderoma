@@ -4,32 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ========================================== -->
-    <!-- 1. PERFORMANCE & SEO (OTIMIZAÇÃO GOOGLE) -->
-    <!-- ========================================== -->
+    <!-- 1. SEO & PERFORMANCE -->
     <title>Essência de Romã Hair | O Liso Blindado em Chapecó</title>
     <meta name="description" content="Especialista em Alisamento Orgânico e Recuperação Capilar em Chapecó. Recupere a saúde do seu fio com o Liso Blindado. Agende seu horário com condição VIP de Dezembro.">
     <meta name="keywords" content="Alisamento Orgânico Chapecó, Salão de Beleza Chapecó, Progressiva Sem Formol, Liso Blindado, Tratamento Capilar, Cabeleireiro Centro Chapecó">
-    <meta name="author" content="Essência de Romã Hair">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://salaoessenciaderoma.com/">
     <meta name="theme-color" content="#2b0505">
+    <link rel="canonical" href="https://salaoessenciaderoma.com/">
 
-    <!-- Dicas de DNS para conexão rápida -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://res.cloudinary.com">
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-    <!-- Preload Crítico (Fonte e Imagem de Capa) -->
+    <!-- Preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="https://salaoessenciaderoma.com/assets/images/hero-poster.jpg">
-
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Meta Social -->
+    <!-- Meta -->
     <meta name="facebook-domain-verification" content="qv2s2b5jb5v1cswia122tvhz9cd2bw" />
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://salaoessenciaderoma.com/">
@@ -37,7 +26,7 @@
     <meta property="og:description" content="O único alisamento de Chapecó que trata enquanto alisa.">
     <meta property="og:image" content="https://salaoessenciaderoma.com/assets/images/hero-poster.jpg">
 
-    <!-- 2. TRACKING (GOOGLE & META) -->
+    <!-- 2. TRACKING -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11442509118"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -55,35 +44,38 @@
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=639959835745383&ev=PageView&noscript=1"/></noscript>
 
-    <!-- Manychat (Carregamento Adiado para não travar o topo) -->
+    <!-- Manychat -->
     <script>
         window.addEventListener('load', function() {
-            setTimeout(function() {
-                var s = document.createElement('script');
-                s.src = "//widget.manychat.com/1394285950786346.js";
-                s.defer = true; document.body.appendChild(s);
-            }, 3000); // Carrega 3s depois para priorizar o site
+            var s = document.createElement('script');
+            s.src = "//widget.manychat.com/1394285950786346.js";
+            s.defer = true; document.body.appendChild(s);
         });
     </script>
 
     <style>
-        /* OTIMIZAÇÕES VISUAIS */
         * { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
         body { background-color: #2b0505; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
         
         /* HEADER & HERO */
         #header-sticky { background: rgba(43, 5, 5, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(197, 160, 89, 0.3); transition: all 0.3s ease; }
-        .hero-container { position: relative; width: 100vw; height: 100dvh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #2b0505; }
+        .hero-container { position: relative; width: 100vw; height: 100dvh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #2b0505; border-bottom: 2px solid #c5a059; }
         .video-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; z-index: 0; }
         .video-overlay { position: absolute; inset: 0; z-index: 1; background: radial-gradient(circle at center, rgba(75,0,0,0.1) 0%, rgba(43,5,5,0.8) 90%), linear-gradient(to bottom, rgba(75, 0, 0, 0.6) 0%, rgba(75, 0, 0, 0.2) 35%, rgba(43, 5, 5, 1) 100%); }
         .hero-content { position: relative; z-index: 10; padding-top: 60px; text-align: center; }
-        
-        /* SETA (Fluxo Normal) */
-        .hero-scroll-arrow { margin-top: 3rem; font-size: 2rem; color: #d4af37; animation: bounce 2s infinite; cursor: pointer; opacity: 0.9; }
+        .hero-scroll-arrow { margin-top: 2rem; font-size: 2rem; color: #d4af37; animation: bounce 2s infinite; cursor: pointer; opacity: 0.9; }
 
         /* TYPOGRAPHY */
         .font-playfair { font-family: 'Playfair Display', serif; }
-        .text-gold-static { background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); }
+        /* CORREÇÃO DO EFEITO DOURADO (Blinded for WebKit/Chrome/Safari) */
+        .text-gold-static { 
+            background: linear-gradient(to bottom, #e8c872 10%, #bf953f 40%, #fbf5b7 60%, #aa771c 90%); 
+            -webkit-background-clip: text; 
+            background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            color: #d4af37; /* Fallback */
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6)); 
+        }
         .text-gold-shine { background: linear-gradient(to right, #cfc09f, #ffecb3, #c5a059, #ffd700, #cfc09f); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 6s linear infinite; }
         @keyframes shine { to { background-position: 200% center; } }
         
@@ -120,7 +112,7 @@
         /* Calendar */
         .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; width: 100%; margin-top: 1rem; }
         .cal-header { text-align: center; font-size: 0.65rem; color: #aaa; text-transform: uppercase; font-weight: bold; margin-bottom: 5px; }
-        .cal-day { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 0.9rem; font-weight: bold; position: relative; background: rgba(255,255,255,0.05); color: #fff; transition: all 0.2s; cursor: default; }
+        .cal-day { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 0.9rem; font-weight: bold; position: relative; background: rgba(255,255,255,0.05); color: #fff; transition: all 0.2s; cursor: default; min-height: 40px; }
         .cal-day.available { border: 1px solid #4ade80; color: #4ade80; cursor: pointer; }
         .cal-day.full { color: #555; text-decoration: line-through; background: rgba(0,0,0,0.2); }
         .cal-day.closed { color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); opacity: 0.6; }
@@ -141,6 +133,9 @@
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
             transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        /* CORREÇÃO: Autoplay só funciona se vídeo estiver "visível" ou não pausado. 
+           Usamos opacity e z-index para alternar, mantendo ambos rodando ou pausando o oculto via JS se preferir, 
+           mas aqui ambos rodam para transição suave */
         #video-before-layer { opacity: 0; z-index: 10; pointer-events: none; }
         #video-after-layer { opacity: 1; z-index: 5; }
 
@@ -177,7 +172,7 @@
         .faq-answer { padding: 0 1.5rem 1.5rem 1.5rem; color: #d1d5db; font-size: 1rem; line-height: 1.7; font-weight: 400; border-top: 1px solid rgba(197, 160, 89, 0.1); margin-top: 0; padding-top: 1.2rem; }
 
         /* PRINTS */
-        .print-card { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #e1e1e1; min-width: 240px; max-width: 280px; scroll-snap-align: center; }
+        .print-card { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #e1e1e1; min-width: 220px; max-width: 280px; scroll-snap-align: center; }
         .print-img-wrapper { width: 100%; height: 420px; overflow: hidden; background: #000; display: flex; align-items: center; justify-content: center; }
         .print-img { width: 100%; height: 100%; object-fit: contain; }
 
@@ -569,7 +564,7 @@
             <!-- MOLDURA DO CELULAR -->
             <div class="transformation-box">
                 <!-- Video ANTES -->
-                <video id="vid-antes" class="transform-video opacity-0" muted loop playsinline>
+                <video id="vid-antes" class="transform-video opacity-0" muted loop playsinline autoplay>
                     <source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765286921/WhatsApp_Video_2025-12-09_at_10.26.29_wrdw09.mp4" type="video/mp4">
                 </video>
 
@@ -709,5 +704,34 @@
         </div>
     </footer>
 
+    <!-- SCRIPT FINAL -->
+    <script>
+        // SMART TOGGLE LOGIC
+        function toggleTransform(mode) {
+            const vAntes = document.getElementById('vid-antes');
+            const vDepois = document.getElementById('vid-depois');
+            const bAntes = document.getElementById('btn-antes');
+            const bDepois = document.getElementById('btn-depois');
+            const label = document.getElementById('status-label');
+
+            if(mode === 'antes') {
+                vAntes.style.opacity = '1';
+                vDepois.style.opacity = '0';
+                bAntes.classList.add('active');
+                bDepois.classList.remove('active');
+                label.innerText = "ANTES";
+                label.style.borderColor = "#ffffff";
+                label.style.color = "#ffffff";
+            } else {
+                vAntes.style.opacity = '0';
+                vDepois.style.opacity = '1';
+                bAntes.classList.remove('active');
+                bDepois.classList.add('active');
+                label.innerText = "DEPOIS";
+                label.style.borderColor = "#d4af37";
+                label.style.color = "#d4af37";
+            }
+        }
+    </script>
 </body>
 </html>
