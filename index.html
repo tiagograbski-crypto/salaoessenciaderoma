@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ========================================== -->
-    <!-- 1. SEO & PERFORMANCE EXTREMA -->
-    <!-- ========================================== -->
+    <!-- 1. SEO & PERFORMANCE -->
     <title>Essência de Romã Hair | O Liso Blindado em Chapecó</title>
     <meta name="description" content="Especialista em Alisamento Orgânico e Recuperação Capilar em Chapecó. Recupere a saúde do seu fio com o Liso Blindado. Agende seu horário com condição VIP de Dezembro.">
     <meta name="keywords" content="Alisamento Orgânico Chapecó, Salão de Beleza Chapecó, Progressiva Sem Formol, Liso Blindado, Tratamento Capilar, Cabeleireiro Centro Chapecó">
@@ -15,24 +13,24 @@
     <link rel="canonical" href="https://salaoessenciaderoma.com/">
     <meta name="theme-color" content="#2b0505">
 
-    <!-- Preload Crítico (Carregamento Turbo) -->
+    <!-- FAVICON (LOGO NA ABA DO NAVEGADOR) -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co/7xQTPb2t/LOGO.png" />
+
+    <!-- Preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Meta Social -->
+    <!-- Meta -->
     <meta name="facebook-domain-verification" content="qv2s2b5jb5v1cswia122tvhz9cd2bw" />
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://salaoessenciaderoma.com/">
     <meta property="og:title" content="🔥 Últimas Vagas: Liso Blindado (Dezembro)">
     <meta property="og:description" content="O único alisamento de Chapecó que trata enquanto alisa.">
-    <meta property="og:image" content="https://salaoessenciaderoma.com/assets/images/hero-poster.jpg">
-    <meta property="og:locale" content="pt_BR">
-    <meta property="og:site_name" content="Essência de Romã Hair">
 
-    <!-- 2. TRACKING OTIMIZADO -->
+    <!-- 2. TRACKING -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11442509118"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -50,26 +48,22 @@
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=639959835745383&ev=PageView&noscript=1"/></noscript>
 
-    <!-- Manychat (Carregamento Tardio) -->
+    <!-- Manychat -->
     <script>
         window.addEventListener('load', function() {
-            setTimeout(function() {
-                var s = document.createElement('script');
-                s.src = "//widget.manychat.com/1394285950786346.js";
-                s.defer = true; document.body.appendChild(s);
-            }, 2000);
+            var s = document.createElement('script');
+            s.src = "//widget.manychat.com/1394285950786346.js";
+            s.defer = true; document.body.appendChild(s);
         });
     </script>
 
     <style>
-        /* CORE */
+        /* OTIMIZAÇÕES VISUAIS */
         * { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
         body { background-color: #2b0505; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
         
-        /* HEADER */
+        /* HEADER & HERO */
         #header-sticky { background: rgba(43, 5, 5, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(197, 160, 89, 0.3); transition: all 0.3s ease; }
-        
-        /* HERO */
         .hero-container { position: relative; width: 100vw; height: 100dvh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #2b0505; border-bottom: 2px solid #c5a059; }
         .video-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; z-index: 0; }
         .video-overlay { position: absolute; inset: 0; z-index: 1; background: radial-gradient(circle at center, rgba(75,0,0,0.1) 0%, rgba(43,5,5,0.8) 90%), linear-gradient(to bottom, rgba(75, 0, 0, 0.6) 0%, rgba(75, 0, 0, 0.2) 35%, rgba(43, 5, 5, 1) 100%); }
@@ -107,7 +101,6 @@
         .cut-toggle-container { margin-top: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 0.8rem; border: 1px solid rgba(197, 160, 89, 0.2); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: #e5e5e5; text-align: left; }
         .switch { position: relative; display: inline-block; width: 34px; height: 20px; flex-shrink: 0; margin-left: 8px; }
         .switch input { opacity: 0; width: 0; height: 0; }
-        .slider-toggle { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #555; transition: .4s; border-radius: 34px; }
         .slider-toggle:before { position: absolute; content: ""; height: 12px; width: 12px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
         input:checked + .slider-toggle { background-color: #4ade80; }
         input:checked + .slider-toggle:before { transform: translateX(14px); }
@@ -137,8 +130,8 @@
             transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
         /* Antes começa oculto, depois visível por padrão */
-        #video-before-layer { opacity: 0; z-index: 20; pointer-events: none; }
-        #video-after-layer { opacity: 1; z-index: 10; }
+        #video-before-layer { opacity: 0; z-index: 10; } /* Z-index menor para ficar atrás no After */
+        #video-after-layer { opacity: 1; z-index: 5; }
 
         .control-dock {
             position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
@@ -163,15 +156,6 @@
             border: 1px solid rgba(212,175,55,0.3); z-index: 20; pointer-events: none;
         }
 
-        /* FAQ */
-        details { background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(197, 160, 89, 0.15); border-radius: 12px; margin-bottom: 1rem; overflow: hidden; transition: all 0.4s ease; }
-        details[open] { background: rgba(0, 0, 0, 0.6); border-color: #C5A059; box-shadow: 0 0 15px rgba(197, 160, 89, 0.1); }
-        summary { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem; cursor: pointer; list-style: none; }
-        .faq-question { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: #f3f3f3; line-height: 1.4; width: 90%; letter-spacing: 0.02em; }
-        .faq-toggle { font-size: 1.5rem; color: #C5A059; transition: transform 0.4s; }
-        details[open] .faq-toggle { transform: rotate(45deg); color: #ffd700; }
-        .faq-answer { padding: 0 1.5rem 1.5rem 1.5rem; color: #d1d5db; font-size: 1rem; line-height: 1.7; font-weight: 400; border-top: 1px solid rgba(197, 160, 89, 0.1); margin-top: 0; padding-top: 1.2rem; }
-
         /* PRINTS */
         .print-card { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #e1e1e1; min-width: 220px; max-width: 280px; scroll-snap-align: center; }
         .print-img-wrapper { width: 100%; height: 420px; overflow: hidden; background: #000; display: flex; align-items: center; justify-content: center; }
@@ -181,36 +165,16 @@
         #footer-empire-master { background-color: #1a0505; background-image: radial-gradient(circle at center top, #2b0808 0%, #1a0505 60%); color: #ccc; padding-top: 4rem; padding-bottom: 2rem; border-top: 1px solid rgba(197, 160, 89, 0.3); text-align: center; }
         .footer-divider { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 800px; display: flex; align-items: center; justify-content: center; }
         .footer-divider::before, .footer-divider::after { content: ''; height: 1px; flex: 1; background: linear-gradient(90deg, transparent, #c5a059, transparent); }
-        .footer-divider-icon { color: #d4af37; font-size: 1.2rem; margin: 0 15px; background: #1a0505; padding: 0 10px; animation: pulse 3s infinite; }
-        
         .footer-heading { font-family: 'Montserrat', sans-serif; color: #C5A059; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.25em; margin-bottom: 1rem; display: inline-block; position: relative; padding-bottom: 5px; }
         .footer-heading::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 30px; height: 2px; background: #C5A059; }
         
-        .brands-wrapper { border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 2rem; margin-bottom: 2rem; text-align: center; }
-        .brands-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem 3rem; align-items: center; }
-        .brand-logo { font-family: 'Cormorant Garamond', serif; color: #fff; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.15em; opacity: 0.4; transition: all 0.5s ease; cursor: default; }
-        .brand-logo:hover { opacity: 1; color: #d4af37; text-shadow: 0 0 15px rgba(212, 175, 55, 0.6); transform: scale(1.05); }
-        .map-frame { width: 100%; max-width: 300px; height: 160px; border: 1px solid rgba(197, 160, 89, 0.4); padding: 4px; border-radius: 4px; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); transition: transform 0.3s; margin: 0 auto; }
-        .social-links { display: flex; gap: 0.8rem; margin-bottom: 1.5rem; justify-content: center; }
-        .social-link { width: 36px; height: 36px; border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #d4af37; transition: all 0.3s; font-size: 1rem; }
-        .social-link:hover { background: #d4af37; color: #1a0505; border-color: #d4af37; transform: translateY(-3px); }
-        .badges-row { display: flex; gap: 10px; margin-top: 1rem; flex-wrap: wrap; justify-content: center; }
-        .badge-minimal { border: 1px solid #333; padding: 4px 10px; font-size: 0.6rem; color: #888; border-radius: 4px; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px; }
-        .badge-minimal i { color: #d4af37; }
-        .bottom-bar { text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem; margin-top: 1.5rem; }
-        .legal-links button { color: #666; font-size: 0.7rem; margin: 0 8px; transition: color 0.3s; background: none; border: none; cursor: pointer; }
-        .legal-links button:hover { color: #d4af37; }
-
         /* Modal & Utils */
         #erh-legal-modal-overlay { display: none; position: fixed; z-index: 2147483647; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); backdrop-filter: blur(8px); align-items: center; justify-content: center; }
         #erh-legal-modal-overlay.active { display: flex; }
         .legal-modal-box { background-color: #FFF; color: #000; padding: 2.5rem; width: 90%; max-width: 700px; border-radius: 8px; position: relative; max-height: 80vh; overflow-y: auto; text-align: left; border-top: 4px solid #d4af37; z-index: 2147483648; }
         .legal-close-btn { position: absolute; top: 15px; right: 20px; font-size: 32px; font-weight: bold; cursor: pointer; color: #000; transition: color 0.2s; }
-        .legal-close-btn:hover { color: #d4af37; }
         .legal-content-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #000; margin-bottom: 1.5rem; border-bottom: 3px solid #d4af37; padding-bottom: 0.5rem; font-weight: 700; }
         .legal-content-text { font-family: 'Montserrat', sans-serif; font-size: 0.95rem; line-height: 1.8; color: #333; }
-        .legal-content-text p { margin-bottom: 1rem; }
-        .legal-content-text strong { color: #000; font-weight: 800; }
 
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .snap-x-mandatory { scroll-snap-type: x mandatory; }
@@ -553,7 +517,7 @@
                 <button onclick="sendWhatsAppMessage()" class="btn-solid-gold py-3 px-10 rounded-full text-lg">Quero Meu Liso Blindado</button>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- NOVA TRANSFORMAÇÃO (SMART TOGGLE) -->
     <section id="bloco-transformation" class="py-16 bg-[#2b0505] relative overflow-hidden">
@@ -599,14 +563,14 @@
                 <details><summary class="text-white font-bold">É compatível com loiras?<span class="text-[#C5A059]">+</span></summary><div class="faq-answer p-4 text-gray-300">Sim! Usamos matizadores exclusivos que protegem a cor.</div></details>
                 <details><summary class="text-white font-bold">Grávidas podem fazer?<span class="text-[#C5A059]">+</span></summary><div class="faq-answer p-4 text-gray-300">Sim, com autorização médica. Fórmula 100% orgânica.</div></details>
                 <details><summary class="text-white font-bold">Quanto tempo dura?<span class="text-[#C5A059]">+</span></summary><div class="faq-answer p-4 text-gray-300">De 3 a 6 meses, dependendo do crescimento da raiz e dos cuidados Home Care. Use sempre a linha recomendada.</div></details>
-                <details><summary class="text-white font-bold">Ajuda a reduzir frizz e pontas duplas?<span class="text-[#C5A059]">+</span></summary><div class="faq-answer p-4 text-gray-300">Com certeza! O alinhamento sela as cutículas, eliminando o frizz.</div></details>
+                <details><summary class="text-white font-bold">Ajuda a reduzir frizz e pontas duplas?<span class="text-[#C5A059]">+</span></summary><div class="faq-answer p-4 text-gray-300">Com certeza! O alinhamento se Sela as cutículas, eliminando o frizz.</div></details>
                 <details><summary class="text-white font-bold">Como cuidar em casa?<span class="text-[#C5A059]">+</span></summary><div class="faq-answer p-4 text-gray-300">A durabilidade depende muito do <strong>Home Care</strong>. Use sempre a linha de manutenção da mesma marca ou solicite a indicação da nossa profissional para garantir o liso por mais tempo.</div></details>
             </div>
             <div class="text-center mt-10">
                 <button onclick="openWhatsApp('Olá! Tenho dúvidas sobre o Liso Blindado.')" class="btn-solid-gold py-3 px-8 rounded-full">Falar com Especialista</button>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- RODAPÉ ROYAL EMPIRE (CENTRALIZADO) -->
     <footer id="footer-empire-master">
@@ -675,8 +639,6 @@
         <div id="erh-legal-modal-overlay" class="legal-modal-overlay" onclick="closeModal()">
             <div class="legal-modal-box" onclick="event.stopPropagation()">
                 <span id="erh-modal-close" class="legal-close-btn" onclick="closeModal()">&times;</span>
-                
-                <!-- PRIVACIDADE -->
                 <div id="content-privacy" style="display:none;">
                     <h2 class="legal-content-title">Política de Privacidade</h2>
                     <div class="legal-content-text">
@@ -690,8 +652,6 @@
                         <p>Você pode solicitar a exclusão dos seus dados de nossa base de contatos a qualquer momento, entrando em contato conosco.</p>
                     </div>
                 </div>
-
-                <!-- TERMOS DE USO -->
                 <div id="content-terms" style="display:none;">
                     <h2 class="legal-content-title">Termos de Uso</h2>
                     <div class="legal-content-text">
