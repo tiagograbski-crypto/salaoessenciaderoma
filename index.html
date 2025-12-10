@@ -13,7 +13,7 @@
     <link rel="canonical" href="https://salaoessenciaderoma.com/">
     <meta name="theme-color" content="#2b0505">
 
-    <!-- FAVICON (LOGO NA ABA DO NAVEGADOR) -->
+    <!-- FAVICON -->
     <link rel="icon" type="image/png" href="https://i.ibb.co/7xQTPb2t/LOGO.png" />
 
     <!-- Preload -->
@@ -23,13 +23,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Meta -->
+    <!-- Meta Social -->
     <meta name="facebook-domain-verification" content="qv2s2b5jb5v1cswia122tvhz9cd2bw" />
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://salaoessenciaderoma.com/">
     <meta property="og:title" content="🔥 Últimas Vagas: Liso Blindado (Dezembro)">
     <meta property="og:description" content="O único alisamento de Chapecó que trata enquanto alisa.">
-
+    
     <!-- 2. TRACKING -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11442509118"></script>
     <script>
@@ -58,12 +58,14 @@
     </script>
 
     <style>
-        /* OTIMIZAÇÕES VISUAIS */
+        /* CORE */
         * { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
-        body { background-color: #2b0505; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+        body { background-color: #2b0505; font-family: 'Montserrat', sans-serif; overflow-x: hidden; margin: 0; padding: 0; }
         
-        /* HEADER & HERO */
+        /* HEADER */
         #header-sticky { background: rgba(43, 5, 5, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(197, 160, 89, 0.3); transition: all 0.3s ease; }
+        
+        /* HERO */
         .hero-container { position: relative; width: 100vw; height: 100dvh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #2b0505; border-bottom: 2px solid #c5a059; }
         .video-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; z-index: 0; }
         .video-overlay { position: absolute; inset: 0; z-index: 1; background: radial-gradient(circle at center, rgba(75,0,0,0.1) 0%, rgba(43,5,5,0.8) 90%), linear-gradient(to bottom, rgba(75, 0, 0, 0.6) 0%, rgba(75, 0, 0, 0.2) 35%, rgba(43, 5, 5, 1) 100%); }
@@ -72,7 +74,7 @@
 
         /* TYPOGRAPHY */
         .font-playfair { font-family: 'Playfair Display', serif; }
-        .text-gold-static { background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); }
+        .text-gold-static { background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 58%, #fbf5b7 80%, #aa771c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6)); }
         .text-gold-shine { background: linear-gradient(to right, #cfc09f, #ffecb3, #c5a059, #ffd700, #cfc09f); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 6s linear infinite; }
         @keyframes shine { to { background-position: 200% center; } }
         
@@ -101,16 +103,18 @@
         .cut-toggle-container { margin-top: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 0.8rem; border: 1px solid rgba(197, 160, 89, 0.2); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: #e5e5e5; text-align: left; }
         .switch { position: relative; display: inline-block; width: 34px; height: 20px; flex-shrink: 0; margin-left: 8px; }
         .switch input { opacity: 0; width: 0; height: 0; }
+        .slider-toggle { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #555; transition: .4s; border-radius: 34px; }
         .slider-toggle:before { position: absolute; content: ""; height: 12px; width: 12px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
         input:checked + .slider-toggle { background-color: #4ade80; }
         input:checked + .slider-toggle:before { transform: translateX(14px); }
+        #card-container { padding-right: 15%; /* Visual cue on mobile */ }
 
         /* Calendar */
         .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; width: 100%; margin-top: 1rem; }
         .cal-header { text-align: center; font-size: 0.65rem; color: #aaa; text-transform: uppercase; font-weight: bold; margin-bottom: 5px; }
-        .cal-day { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 0.9rem; font-weight: bold; position: relative; background: rgba(255,255,255,0.05); color: #fff; transition: all 0.2s; cursor: default; }
+        .cal-day { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 0.9rem; font-weight: bold; position: relative; background: rgba(255,255,255,0.05); color: #fff; transition: all 0.2s; cursor: default; min-height: 40px; }
         .cal-day.available { border: 1px solid #4ade80; color: #4ade80; cursor: pointer; }
-        .cal-day.full { color: #555; text-decoration: line-through; background: rgba(0,0,0,0.2); }
+        .cal-day.full { color: #555; text-decoration: line-through; background: rgba(0,0,0,0.2); opacity: 0.6; }
         .cal-day.closed { color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); opacity: 0.6; }
         .cal-day.last-spot { border: 1px solid #facc15; color: #facc15; cursor: pointer; animation: pulse-yellow 2s infinite; }
         @keyframes pulse-yellow { 0% {box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.4);} 70% {box-shadow: 0 0 0 4px rgba(250, 204, 21, 0);} 100% {box-shadow: 0 0 0 0 rgba(250, 204, 21, 0);} }
@@ -129,8 +133,7 @@
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
             transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        /* Antes começa oculto, depois visível por padrão */
-        #video-before-layer { opacity: 0; z-index: 10; } /* Z-index menor para ficar atrás no After */
+        #video-before-layer { opacity: 0; z-index: 10; pointer-events: none; }
         #video-after-layer { opacity: 1; z-index: 5; }
 
         .control-dock {
@@ -156,25 +159,69 @@
             border: 1px solid rgba(212,175,55,0.3); z-index: 20; pointer-events: none;
         }
 
+        /* FAQ (GOLDEN ACCORDION) */
+        #faq-isolate { background-color: #1a0202; background-image: radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%); }
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 8px; margin-bottom: 1rem; overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative;
+        }
+        .faq-item[open] { background: rgba(20, 5, 5, 0.8); border-color: #d4af37; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); }
+        .faq-item::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0%; background: #d4af37; transition: height 0.3s ease; }
+        .faq-item[open]::before { height: 100%; }
+        summary.faq-summary { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem; cursor: pointer; list-style: none; transition: background 0.2s; }
+        summary.faq-summary:hover { background: rgba(255,255,255,0.02); }
+        summary.faq-summary::-webkit-details-marker { display: none; }
+        .faq-question-text { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: #ffffff; letter-spacing: 0.02em; transition: color 0.3s; }
+        .faq-item[open] .faq-question-text { color: #ffd700; }
+        .faq-icon-wrapper { width: 20px; height: 20px; position: relative; display: flex; align-items: center; justify-content: center; }
+        .faq-icon-line { position: absolute; background-color: #d4af37; transition: transform 0.3s ease, opacity 0.3s ease; }
+        .line-v { width: 2px; height: 12px; }
+        .line-h { width: 12px; height: 2px; }
+        .faq-item[open] .line-v { transform: rotate(90deg); opacity: 0; }
+        .faq-item[open] .line-h { transform: rotate(180deg); }
+        .faq-answer-content { padding: 0 1.5rem 1.5rem 1.5rem; color: #d1d5db; font-size: 0.95rem; line-height: 1.7; border-top: 1px solid rgba(197, 160, 89, 0.1); animation: slideDown 0.3s ease-out; }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+
         /* PRINTS */
         .print-card { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #e1e1e1; min-width: 220px; max-width: 280px; scroll-snap-align: center; }
         .print-img-wrapper { width: 100%; height: 420px; overflow: hidden; background: #000; display: flex; align-items: center; justify-content: center; }
         .print-img { width: 100%; height: 100%; object-fit: contain; }
 
-        /* RODAPÉ ROYAL EMPIRE (CENTRALIZADO) */
+        /* RODAPÉ ROYAL EMPIRE (CENTRALIZADO & LIMPO) */
         #footer-empire-master { background-color: #1a0505; background-image: radial-gradient(circle at center top, #2b0808 0%, #1a0505 60%); color: #ccc; padding-top: 4rem; padding-bottom: 2rem; border-top: 1px solid rgba(197, 160, 89, 0.3); text-align: center; }
         .footer-divider { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 800px; display: flex; align-items: center; justify-content: center; }
         .footer-divider::before, .footer-divider::after { content: ''; height: 1px; flex: 1; background: linear-gradient(90deg, transparent, #c5a059, transparent); }
+        .footer-divider-icon { color: #d4af37; font-size: 1.2rem; margin: 0 15px; background: #1a0505; padding: 0 10px; animation: pulse 3s infinite; }
+        
         .footer-heading { font-family: 'Montserrat', sans-serif; color: #C5A059; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.25em; margin-bottom: 1rem; display: inline-block; position: relative; padding-bottom: 5px; }
         .footer-heading::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 30px; height: 2px; background: #C5A059; }
         
+        .brands-wrapper { border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 2rem; margin-bottom: 2rem; text-align: center; }
+        .brands-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem 3rem; align-items: center; }
+        .brand-logo { font-family: 'Cormorant Garamond', serif; color: #fff; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.15em; opacity: 0.4; transition: all 0.5s ease; cursor: default; }
+        .brand-logo:hover { opacity: 1; color: #d4af37; text-shadow: 0 0 15px rgba(212, 175, 55, 0.6); transform: scale(1.05); }
+        .map-frame { width: 100%; max-width: 300px; height: 160px; border: 1px solid rgba(197, 160, 89, 0.4); padding: 4px; border-radius: 4px; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); transition: transform 0.3s; margin: 0 auto; }
+        .social-links { display: flex; gap: 0.8rem; margin-bottom: 1.5rem; justify-content: center; }
+        .social-link { width: 36px; height: 36px; border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #d4af37; transition: all 0.3s; font-size: 1rem; }
+        .social-link:hover { background: #d4af37; color: #1a0505; border-color: #d4af37; transform: translateY(-3px); }
+        .badges-row { display: flex; gap: 10px; margin-top: 1rem; flex-wrap: wrap; justify-content: center; }
+        .badge-minimal { border: 1px solid #333; padding: 4px 10px; font-size: 0.6rem; color: #888; border-radius: 4px; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px; }
+        .badge-minimal i { color: #d4af37; }
+        .bottom-bar { text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem; margin-top: 1.5rem; }
+        .legal-links button { color: #666; font-size: 0.7rem; margin: 0 8px; transition: color 0.3s; background: none; border: none; cursor: pointer; }
+        .legal-links button:hover { color: #d4af37; }
+
         /* Modal & Utils */
         #erh-legal-modal-overlay { display: none; position: fixed; z-index: 2147483647; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); backdrop-filter: blur(8px); align-items: center; justify-content: center; }
         #erh-legal-modal-overlay.active { display: flex; }
         .legal-modal-box { background-color: #FFF; color: #000; padding: 2.5rem; width: 90%; max-width: 700px; border-radius: 8px; position: relative; max-height: 80vh; overflow-y: auto; text-align: left; border-top: 4px solid #d4af37; z-index: 2147483648; }
         .legal-close-btn { position: absolute; top: 15px; right: 20px; font-size: 32px; font-weight: bold; cursor: pointer; color: #000; transition: color 0.2s; }
+        .legal-close-btn:hover { color: #d4af37; }
         .legal-content-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #000; margin-bottom: 1.5rem; border-bottom: 3px solid #d4af37; padding-bottom: 0.5rem; font-weight: 700; }
         .legal-content-text { font-family: 'Montserrat', sans-serif; font-size: 0.95rem; line-height: 1.8; color: #333; }
+        .legal-content-text p { margin-bottom: 1rem; }
+        .legal-content-text strong { color: #000; font-weight: 800; }
 
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .snap-x-mandatory { scroll-snap-type: x mandatory; }
@@ -246,7 +293,7 @@
         function toggleCardAudio(id,b){const v=document.getElementById(id);const i=b.querySelector('i');if(!v)return;document.querySelectorAll('video').forEach(x=>{if(x.id!==id)x.muted=true});if(v.muted){v.muted=false;i.className='fas fa-volume-up'}else{v.muted=true;i.className='fas fa-volume-mute'}}
         function resgatar(t,v,id){openWhatsApp(t,v,id);}
         function sendWhatsAppMessage(){openWhatsApp("Olá! Vi os depoimentos e quero agendar.");}
-        function selectDay(d){let m,c="#4ade80";if(d===23||d===27){m="⚠️ ÚLTIMO HORÁRIO!";c="#facc15";}else{m=["🔥 1 Vaga Extra!","💎 Horário Nobre"][Math.floor(Math.random()*2)];}const h=`<button onclick="openWhatsApp('Olá! Vi vaga dia ${d}/12.')" style="background-color:${c};color:#064e3b" class="text-xs font-bold px-4 py-2 rounded-full shadow-lg mt-2 w-full"><i class="fab fa-whatsapp"></i> Agendar dia ${d}</button>`;const k=document.getElementById('dynamic-msg-container');if(k)k.innerHTML=`<div class="vaga-alert" style="color:${c};border-color:${c}">${m}</div>${h}`;}
+        function selectDay(d){let m,c="#4ade80";if(d===10||d===12){m="⚠️ ÚLTIMO HORÁRIO!";c="#facc15";}else{m=["🔥 1 Vaga Extra!","💎 Horário Nobre"][Math.floor(Math.random()*2)];}const h=`<button onclick="openWhatsApp('Olá! Vi vaga dia ${d}/12.')" style="background-color:${c};color:#064e3b" class="text-xs font-bold px-4 py-2 rounded-full shadow-lg mt-2 w-full"><i class="fab fa-whatsapp"></i> Agendar dia ${d}</button>`;const k=document.getElementById('dynamic-msg-container');if(k)k.innerHTML=`<div class="vaga-alert" style="color:${c};border-color:${c}">${m}</div>${h}`;}
 
         // Smart Toggle (Antes/Depois)
         function toggleTransform(mode) {
@@ -314,8 +361,24 @@
                 }, 4000);
             }
             
-            const accItems = document.querySelectorAll('#faq-isolate details');
-            accItems.forEach(item => { item.querySelector('summary').addEventListener('click', (e) => { e.preventDefault(); accItems.forEach(other => { if(other!==item) other.removeAttribute('open'); }); if(item.hasAttribute('open')) item.removeAttribute('open'); else item.setAttribute('open',''); }); });
+            // FAQ Logic (New Sophisticated Accordion)
+            const accItems = document.querySelectorAll('.faq-item');
+            accItems.forEach(item => {
+                const summary = item.querySelector('.faq-summary');
+                summary.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Close others
+                    accItems.forEach(other => {
+                        if (other !== item) other.removeAttribute('open');
+                    });
+                    // Toggle current
+                    if (item.hasAttribute('open')) {
+                        item.removeAttribute('open');
+                    } else {
+                        item.setAttribute('open', '');
+                    }
+                });
+            });
         });
     </script>
 
@@ -346,7 +409,7 @@
     <section id="inicio" class="hero-container">
         <video id="heroVideo" class="video-bg" autoplay muted loop playsinline webkit-playsinline poster="https://salaoessenciaderoma.com/assets/images/hero-poster.jpg">
             <!-- VÍDEO CAPA ATUALIZADO (Confiança e Luxo) -->
-            <source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765202825/Roteiro_de_V%C3%ADdeo_Cabelo_Confian%C3%A7a_e_Luxo_m9yv0x.mp4" type="video/mp4">
+            <source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/q_auto,f_auto/v1765202825/Roteiro_de_V%C3%ADdeo_Cabelo_Confian%C3%A7a_e_Luxo_m9yv0x.mp4" type="video/mp4">
         </video>
         <div class="video-overlay"></div>
         <div class="hero-content px-4">
@@ -381,22 +444,22 @@
                 <!-- V1 -->
                 <div class="snap-center shrink-0 w-[70vw] md:w-auto video-card group">
                     <button class="card-mute-btn" onclick="toggleCardAudio('vid1', this)"><i class="fas fa-volume-mute"></i></button>
-                    <video id="vid1" class="w-full h-full object-cover" autoplay muted loop playsinline><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765288349/WhatsApp_Video_2025-12-09_at_10.51.20_lr2cw1.mp4" type="video/mp4"></video>
+                    <video id="vid1" class="w-full h-full object-cover" autoplay muted loop playsinline><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/q_auto,f_auto,w_720/v1765288349/WhatsApp_Video_2025-12-09_at_10.51.20_lr2cw1.mp4" type="video/mp4"></video>
                 </div>
                 <!-- V2 -->
                 <div class="snap-center shrink-0 w-[70vw] md:w-auto video-card group">
                     <button class="card-mute-btn" onclick="toggleCardAudio('vid2', this)"><i class="fas fa-volume-mute"></i></button>
-                    <video id="vid2" class="w-full h-full object-cover" autoplay muted loop playsinline><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765201568/WhatsApp_Video_2025-12-06_at_11.25.53_o2b4bl.mp4" type="video/mp4"></video>
+                    <video id="vid2" class="w-full h-full object-cover" autoplay muted loop playsinline><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/q_auto,f_auto,w_720/v1765201568/WhatsApp_Video_2025-12-06_at_11.25.53_o2b4bl.mp4" type="video/mp4"></video>
                 </div>
                 <!-- V3 -->
                 <div class="snap-center shrink-0 w-[70vw] md:w-auto video-card group">
                     <button class="card-mute-btn" onclick="toggleCardAudio('vid3', this)"><i class="fas fa-volume-mute"></i></button>
-                    <video id="vid3" class="w-full h-full object-cover" autoplay muted loop playsinline><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765201565/WhatsApp_Video_2025-11-27_at_18.35.30_mic7zp.mp4" type="video/mp4"></video>
+                    <video id="vid3" class="w-full h-full object-cover" autoplay muted loop playsinline><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/q_auto,f_auto,w_720/v1765201565/WhatsApp_Video_2025-11-27_at_18.35.30_mic7zp.mp4" type="video/mp4"></video>
                 </div>
                 <!-- V4 -->
                 <div class="snap-center shrink-0 w-[70vw] md:w-auto video-card group">
                     <button class="card-mute-btn" onclick="toggleCardAudio('vid4', this)"><i class="fas fa-volume-mute"></i></button>
-                    <video id="vid4" class="w-full h-full object-cover" autoplay muted loop playsinline><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765201566/WhatsApp_Video_2025-12-07_at_08.43.32_viqj3g.mp4" type="video/mp4"></video>
+                    <video id="vid4" class="w-full h-full object-cover" autoplay muted loop playsinline><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/q_auto,f_auto,w_720/v1765201566/WhatsApp_Video_2025-12-07_at_08.43.32_viqj3g.mp4" type="video/mp4"></video>
                 </div>
             </div>
             <p class="slide-hint md:hidden text-center text-xs text-gray-500 italic mt-2">Deslize para ver mais</p>
@@ -450,7 +513,10 @@
                         </div>
                     </div>
                 </div>
-                <p class="slide-hint md:hidden text-center text-xs text-gray-500 italic mt-2">Deslize para ver opções</p>
+                <!-- Indicação Mobile de Scroll -->
+                <p class="slide-hint md:hidden text-center text-xs text-gray-500 italic mt-2">
+                    Deslize para ver opções <span class="ml-1">→</span>
+                </p>
 
                 <!-- Agenda -->
                 <div class="mt-12 mb-6 bg-black/30 p-4 rounded-2xl border border-red-900/40 inline-block w-full max-w-4xl">
@@ -462,8 +528,8 @@
                         </div>
                         <div class="calendar-grid" id="smart-calendar">
                              <div class="cal-day full">1</div><div class="cal-day full">2</div><div class="cal-day full">3</div><div class="cal-day full">4</div><div class="cal-day full">5</div><div class="cal-day full">6</div><div class="cal-day closed">7</div>
-                             <div class="cal-day available" onclick="selectDay(8)" data-day="8">8</div><div class="cal-day available" onclick="selectDay(9)" data-day="9">9</div><div class="cal-day available" onclick="selectDay(10)" data-day="10">10</div><div class="cal-day available" onclick="selectDay(11)" data-day="11">11</div><div class="cal-day available" onclick="selectDay(12)" data-day="12">12</div><div class="cal-day available" onclick="selectDay(13)" data-day="13">13</div><div class="cal-day closed">14</div>
-                             <div class="cal-day available" onclick="selectDay(15)" data-day="15">15</div><div class="cal-day available" onclick="selectDay(16)" data-day="16">16</div>
+                             <div class="cal-day available" onclick="selectDay(8)" data-day="8">8</div><div class="cal-day available" onclick="selectDay(9)" data-day="9">9</div><div class="cal-day last-spot" onclick="selectDay(10)" data-day="10">10</div><div class="cal-day available" onclick="selectDay(11)" data-day="11">11</div><div class="cal-day last-spot" onclick="selectDay(12)" data-day="12">12</div><div class="cal-day available" onclick="selectDay(13)" data-day="13">13</div><div class="cal-day closed">14</div>
+                             <div class="cal-day closed" onclick="selectDay(15)" data-day="15">15</div><div class="cal-day available" onclick="selectDay(16)" data-day="16">16</div>
                              <div class="cal-day full">17</div><div class="cal-day full">18</div><div class="cal-day full">19</div><div class="cal-day full">20</div><div class="cal-day full">21</div><div class="cal-day full">22</div><div class="cal-day last-spot" onclick="selectDay(23)" data-day="23">23</div>
                              <div class="cal-day closed">24</div><div class="cal-day closed">25</div><div class="cal-day closed">26</div>
                              <div class="cal-day last-spot" onclick="selectDay(27)" data-day="27">27</div><div class="cal-day full">28</div><div class="cal-day full">29</div><div class="cal-day full">30</div><div class="cal-day closed">31</div>
@@ -485,16 +551,16 @@
 
             <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 px-4 md:px-0 hide-scrollbar">
                 <div class="print-card snap-center shrink-0">
-                    <div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/v1765217143/image10_hqklzu.jpg" alt="Print 1" class="print-img" loading="lazy"></div>
+                    <div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/q_auto,f_auto,w_720/v1765217143/image10_hqklzu.jpg" alt="Print 1" class="print-img" loading="lazy"></div>
                 </div>
                 <div class="print-card snap-center shrink-0">
-                    <div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/v1765217144/image12_o8mqvd.jpg" alt="Print 2" class="print-img" loading="lazy"></div>
+                    <div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/q_auto,f_auto,w_720/v1765217144/image12_o8mqvd.jpg" alt="Print 2" class="print-img" loading="lazy"></div>
                 </div>
                 <div class="print-card snap-center shrink-0">
-                    <div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/v1765217143/image08_maqez1.jpg" alt="Print 3" class="print-img" loading="lazy"></div>
+                    <div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/q_auto,f_auto,w_720/v1765217143/image08_maqez1.jpg" alt="Print 3" class="print-img" loading="lazy"></div>
                 </div>
                 <div class="print-card snap-center shrink-0">
-                    <div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/v1765217144/image11_aynsvl.jpg" alt="Print 4" class="print-img" loading="lazy"></div>
+                    <div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/q_auto,f_auto,w_720/v1765217144/image11_aynsvl.jpg" alt="Print 4" class="print-img" loading="lazy"></div>
                 </div>
             </div>
             
@@ -517,7 +583,7 @@
                 <button onclick="sendWhatsAppMessage()" class="btn-solid-gold py-3 px-10 rounded-full text-lg">Quero Meu Liso Blindado</button>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- NOVA TRANSFORMAÇÃO (SMART TOGGLE) -->
     <section id="bloco-transformation" class="py-16 bg-[#2b0505] relative overflow-hidden">
@@ -528,14 +594,14 @@
 
             <!-- MOLDURA DO CELULAR -->
             <div class="transformation-box">
-                <!-- Video ANTES -->
+                <!-- Video ANTES (MP4) -->
                 <video id="vid-antes" class="transform-video opacity-0" muted loop playsinline autoplay>
-                    <source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765286921/WhatsApp_Video_2025-12-09_at_10.26.29_wrdw09.mp4" type="video/mp4">
+                    <source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/q_auto,f_auto,w_720/v1765286921/WhatsApp_Video_2025-12-09_at_10.26.29_wrdw09.mp4" type="video/mp4">
                 </video>
 
                 <!-- Video DEPOIS (Padrão) -->
                 <video id="vid-depois" class="transform-video opacity-100" autoplay muted loop playsinline>
-                    <source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765286926/WhatsApp_Video_2025-12-09_at_10.28.20_vfb8e7.mp4" type="video/mp4">
+                    <source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/q_auto,f_auto,w_720/v1765286926/WhatsApp_Video_2025-12-09_at_10.28.20_vfb8e7.mp4" type="video/mp4">
                 </video>
 
                 <!-- Label de Status -->
@@ -552,25 +618,60 @@
         </div>
     </section>
 
-    <!-- FAQ -->
-    <div id="faq-isolate" class="py-16 bg-[#1a0202]">
+    <!-- FAQ (GOLDEN ACCORDION) -->
+    <div id="faq-isolate" class="py-16">
         <div class="container mx-auto px-6 max-w-3xl">
             <div class="text-center mb-10">
                 <div class="section-pill">Dúvidas Frequentes</div>
                 <h2 class="font-playfair text-3xl text-white font-bold">Tudo sobre o <span class="text-gold-shine">Liso Blindado</span></h2>
             </div>
             <div class="space-y-4">
-                <details><summary class="text-white font-bold">É compatível com loiras?<span class="text-[#C5A059]">+</span></summary><div class="faq-answer p-4 text-gray-300">Sim! Usamos matizadores exclusivos que protegem a cor.</div></details>
-                <details><summary class="text-white font-bold">Grávidas podem fazer?<span class="text-[#C5A059]">+</span></summary><div class="faq-answer p-4 text-gray-300">Sim, com autorização médica. Fórmula 100% orgânica.</div></details>
-                <details><summary class="text-white font-bold">Quanto tempo dura?<span class="text-[#C5A059]">+</span></summary><div class="faq-answer p-4 text-gray-300">De 3 a 6 meses, dependendo do crescimento da raiz e dos cuidados Home Care. Use sempre a linha recomendada.</div></details>
-                <details><summary class="text-white font-bold">Ajuda a reduzir frizz e pontas duplas?<span class="text-[#C5A059]">+</span></summary><div class="faq-answer p-4 text-gray-300">Com certeza! O alinhamento se Sela as cutículas, eliminando o frizz.</div></details>
-                <details><summary class="text-white font-bold">Como cuidar em casa?<span class="text-[#C5A059]">+</span></summary><div class="faq-answer p-4 text-gray-300">A durabilidade depende muito do <strong>Home Care</strong>. Use sempre a linha de manutenção da mesma marca ou solicite a indicação da nossa profissional para garantir o liso por mais tempo.</div></details>
+                <details class="faq-item">
+                    <summary class="faq-summary">
+                        <span class="faq-question-text">É compatível com loiras?</span>
+                        <div class="faq-icon-wrapper"><div class="faq-icon-line line-v"></div><div class="faq-icon-line line-h"></div></div>
+                    </summary>
+                    <div class="faq-answer-content">Sim! Usamos matizadores exclusivos que protegem a cor.</div>
+                </details>
+                
+                <details class="faq-item">
+                    <summary class="faq-summary">
+                        <span class="faq-question-text">Grávidas podem fazer?</span>
+                        <div class="faq-icon-wrapper"><div class="faq-icon-line line-v"></div><div class="faq-icon-line line-h"></div></div>
+                    </summary>
+                    <div class="faq-answer-content">Sim, com autorização médica. Fórmula 100% orgânica.</div>
+                </details>
+                
+                <details class="faq-item">
+                    <summary class="faq-summary">
+                        <span class="faq-question-text">Quanto tempo dura?</span>
+                        <div class="faq-icon-wrapper"><div class="faq-icon-line line-v"></div><div class="faq-icon-line line-h"></div></div>
+                    </summary>
+                    <div class="faq-answer-content">De 3 a 6 meses, dependendo do crescimento da raiz e dos cuidados Home Care. Use sempre a linha recomendada.</div>
+                </details>
+                
+                <details class="faq-item">
+                    <summary class="faq-summary">
+                        <span class="faq-question-text">Ajuda a reduzir frizz e pontas duplas?</span>
+                        <div class="faq-icon-wrapper"><div class="faq-icon-line line-v"></div><div class="faq-icon-line line-h"></div></div>
+                    </summary>
+                    <div class="faq-answer-content">Com certeza! O alinhamento sela as cutículas, eliminando o frizz.</div>
+                </details>
+                
+                <details class="faq-item">
+                    <summary class="faq-summary">
+                        <span class="faq-question-text">Como cuidar em casa?</span>
+                        <div class="faq-icon-wrapper"><div class="faq-icon-line line-v"></div><div class="faq-icon-line line-h"></div></div>
+                    </summary>
+                    <div class="faq-answer-content">A durabilidade depende muito do <strong>Home Care</strong>. Use sempre a linha de manutenção da mesma marca ou solicite a indicação da nossa profissional para garantir o liso por mais tempo.</div>
+                </details>
             </div>
+            
             <div class="text-center mt-10">
                 <button onclick="openWhatsApp('Olá! Tenho dúvidas sobre o Liso Blindado.')" class="btn-solid-gold py-3 px-8 rounded-full">Falar com Especialista</button>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- RODAPÉ ROYAL EMPIRE (CENTRALIZADO) -->
     <footer id="footer-empire-master">
@@ -639,6 +740,8 @@
         <div id="erh-legal-modal-overlay" class="legal-modal-overlay" onclick="closeModal()">
             <div class="legal-modal-box" onclick="event.stopPropagation()">
                 <span id="erh-modal-close" class="legal-close-btn" onclick="closeModal()">&times;</span>
+                
+                <!-- PRIVACIDADE -->
                 <div id="content-privacy" style="display:none;">
                     <h2 class="legal-content-title">Política de Privacidade</h2>
                     <div class="legal-content-text">
@@ -652,6 +755,8 @@
                         <p>Você pode solicitar a exclusão dos seus dados de nossa base de contatos a qualquer momento, entrando em contato conosco.</p>
                     </div>
                 </div>
+
+                <!-- TERMOS DE USO -->
                 <div id="content-terms" style="display:none;">
                     <h2 class="legal-content-title">Termos de Uso</h2>
                     <div class="legal-content-text">
