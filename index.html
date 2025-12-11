@@ -31,7 +31,8 @@
     <meta property="og:description" content="O único alisamento de Chapecó que trata enquanto alisa.">
     <meta property="og:image" content="https://salaoessenciaderoma.com/assets/images/hero-poster.jpg">
 
-    <!-- 2. TRACKING -->
+    <!-- 2. TRACKING OTIMIZADO -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11442509118"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -39,6 +40,8 @@
       gtag('js', new Date());
       gtag('config', 'AW-11442509118');
     </script>
+    
+    <!-- Meta Pixel -->
     <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -47,14 +50,32 @@
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
     try{fbq('init', '639959835745383');fbq('track', 'PageView');}catch(e){}
     </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=639959835745383&ev=PageView&noscript=1"/></noscript>
+    
+    <!-- Conversion Snippet -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.open(url, '_blank');
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-11442509118/CNfICPrhpYAZEL6qm9Aq',
+          'transaction_id': '',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
 
-    <!-- Manychat -->
+    <!-- Manychat (Carregamento Adiado) -->
     <script>
         window.addEventListener('load', function() {
-            var s = document.createElement('script');
-            s.src = "//widget.manychat.com/1394285950786346.js";
-            s.defer = true; document.body.appendChild(s);
+            setTimeout(() => {
+                var s = document.createElement('script');
+                s.src = "//widget.manychat.com/1394285950786346.js";
+                s.defer = true; document.body.appendChild(s);
+            }, 3000); 
         });
     </script>
 
@@ -75,15 +96,7 @@
 
         /* TYPOGRAPHY */
         .font-playfair { font-family: 'Playfair Display', serif; }
-        
-        /* EFEITO DOURADO ORIGINAL */
-        .text-gold-static { 
-            color: #e8c872;
-            background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 58%, #fbf5b7 80%, #aa771c 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
-        }
-
+        .text-gold-static { background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 58%, #fbf5b7 80%, #aa771c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6)); }
         .text-gold-shine { background: linear-gradient(to right, #cfc09f, #ffecb3, #c5a059, #ffd700, #cfc09f); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 6s linear infinite; }
         @keyframes shine { to { background-position: 200% center; } }
         
@@ -102,38 +115,23 @@
         .card-mute-btn { position: absolute; bottom: 10px; right: 10px; width: 32px; height: 32px; background: rgba(0,0,0,0.7); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; z-index: 20; cursor: pointer; border: 1px solid rgba(255,255,255,0.3); }
         .btn-insta-float { position: absolute; top: 15px; right: 15px; width: 36px; height: 36px; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(4px); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.2rem; z-index: 10; text-decoration: none; }
 
-        /* VOUCHERS (ESTILO ATUALIZADO) */
-        .voucher-card { 
-            background: linear-gradient(145deg, #1a0505, #2b0808); 
-            border: 1px solid rgba(197, 160, 89, 0.3); 
-            border-radius: 16px; padding: 1.5rem; position: relative; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4); 
-            text-align: center; 
-            display: flex; flex-direction: column; justify-content: space-between; align-items: center;
-            min-width: 280px; transition: border-color 0.3s; 
-        }
+        /* Vouchers */
+        .voucher-card { background: linear-gradient(145deg, #1a0505, #2b0808); border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 16px; padding: 1.5rem; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.4); text-align: center; display: flex; flex-direction: column; justify-content: space-between; min-width: 280px; transition: border-color 0.3s; }
         .voucher-card.active-card { border-color: #ffd700; box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15); }
         .premium-tag { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728); color: #2b0505; text-transform: uppercase; font-size: 0.65rem; font-weight: 800; padding: 0.35rem 1.2rem; border-radius: 50px; letter-spacing: 0.15em; box-shadow: 0 5px 15px rgba(0,0,0,0.5); white-space: nowrap; z-index: 20; border: 1px solid #7a5c18; }
-        
-        .voucher-price-new { 
-            font-family: 'Playfair Display', serif; font-weight: 700; color: #ffd700; 
-            font-size: 2.8rem; line-height: 1; margin: 0.5rem 0; 
-            display: flex; justify-content: center; align-items: baseline; gap: 2px; 
-        }
-        .voucher-currency { font-size: 1.2rem; margin-top: 6px; font-weight: 600; position: relative; top: -0.5em; }
-        .voucher-cents { font-size: 1.2rem; margin-top: 6px; font-weight: 600; position: relative; top: -0.5em; }
-        
-        .voucher-rule { font-size: 0.75rem; color: #ccc; border-top: 1px solid rgba(197, 160, 89, 0.2); padding-top: 0.8rem; margin-top: 0.8rem; width: 100%; }
-        .cut-toggle-container { margin-top: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 0.8rem; border: 1px solid rgba(197, 160, 89, 0.2); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: #e5e5e5; text-align: left; width: 100%; }
-        
+        .voucher-price-new { font-family: 'Playfair Display', serif; font-weight: 700; color: #ffd700; font-size: 2.8rem; line-height: 1; margin: 0.5rem 0; display: flex; justify-content: center; align-items: flex-start; gap: 2px; }
+        .voucher-currency, .voucher-cents { font-size: 1.2rem; margin-top: 6px; font-weight: 600; }
+        .voucher-rule { font-size: 0.75rem; color: #ccc; border-top: 1px solid rgba(197, 160, 89, 0.2); padding-top: 0.8rem; margin-top: 0.8rem; }
+        .cut-toggle-container { margin-top: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 0.8rem; border: 1px solid rgba(197, 160, 89, 0.2); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: #e5e5e5; text-align: left; }
         .switch { position: relative; display: inline-block; width: 34px; height: 20px; flex-shrink: 0; margin-left: 8px; }
         .switch input { opacity: 0; width: 0; height: 0; }
         .slider-toggle { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #555; transition: .4s; border-radius: 34px; }
         .slider-toggle:before { position: absolute; content: ""; height: 12px; width: 12px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
         input:checked + .slider-toggle { background-color: #4ade80; }
         input:checked + .slider-toggle:before { transform: translateX(14px); }
+        #card-container { padding-right: 15%; }
 
-        /* Calendar */
+        /* Calendar (CORRIGIDO PARA DEZ 2025: 11 = Quinta) */
         .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; width: 100%; margin-top: 1rem; }
         .cal-header { text-align: center; font-size: 0.65rem; color: #aaa; text-transform: uppercase; font-weight: bold; margin-bottom: 5px; }
         .cal-day { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 0.9rem; font-weight: bold; position: relative; background: rgba(255,255,255,0.05); color: #fff; transition: all 0.2s; cursor: default; min-height: 40px; }
@@ -146,7 +144,7 @@
         @keyframes bounce-fire { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
         .vaga-alert { background: rgba(212, 175, 55, 0.1); border: 1px solid #d4af37; color: #d4af37; padding: 8px 16px; border-radius: 999px; font-size: 0.8rem; font-weight: bold; animation: fade-in-up 0.3s ease-out; display: flex; align-items: center; gap: 8px; justify-content: center; margin-top: 10px; }
 
-        /* NOVA TRANSFORMAÇÃO (CINEMA MODE) */
+        /* NOVA TRANSFORMAÇÃO (CINEMA MODE - SMART TOGGLE) */
         .transformation-box {
             position: relative; width: 100%; max-width: 340px; aspect-ratio: 9/16;
             margin: 0 auto; border-radius: 20px; overflow: hidden;
@@ -183,29 +181,14 @@
             border: 1px solid rgba(212,175,55,0.3); z-index: 20; pointer-events: none;
         }
 
-        /* FAQ (GOLDEN ACCORDION) */
-        #faq-isolate { background-color: #1a0202; background-image: radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%); }
-        .faq-item {
-            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(197, 160, 89, 0.2);
-            border-radius: 8px; margin-bottom: 1rem; overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative;
-        }
-        .faq-item[open] { background: rgba(20, 5, 5, 0.8); border-color: #d4af37; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); }
-        .faq-item::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0%; background: #d4af37; transition: height 0.3s ease; }
-        .faq-item[open]::before { height: 100%; }
-        summary.faq-summary { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem; cursor: pointer; list-style: none; transition: background 0.2s; }
-        summary.faq-summary:hover { background: rgba(255,255,255,0.02); }
-        summary.faq-summary::-webkit-details-marker { display: none; }
-        .faq-question-text { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: #ffffff !important; letter-spacing: 0.02em; transition: color 0.3s; }
-        .faq-item[open] .faq-question-text { color: #ffd700 !important; }
-        .faq-icon-wrapper { width: 20px; height: 20px; position: relative; display: flex; align-items: center; justify-content: center; }
-        .faq-icon-line { position: absolute; background-color: #d4af37; transition: transform 0.3s ease, opacity 0.3s ease; }
-        .line-v { width: 2px; height: 12px; }
-        .line-h { width: 12px; height: 2px; }
-        .faq-item[open] .line-v { transform: rotate(90deg); opacity: 0; }
-        .faq-item[open] .line-h { transform: rotate(180deg); }
-        .faq-answer-content { padding: 0 1.5rem 1.5rem 1.5rem; color: #d1d5db; font-size: 0.95rem; line-height: 1.7; border-top: 1px solid rgba(197, 160, 89, 0.1); animation: slideDown 0.3s ease-out; }
-        @keyframes slideDown { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+        /* FAQ */
+        details { background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(197, 160, 89, 0.15); border-radius: 12px; margin-bottom: 1rem; overflow: hidden; transition: all 0.4s ease; }
+        details[open] { background: rgba(0, 0, 0, 0.6); border-color: #C5A059; box-shadow: 0 0 15px rgba(197, 160, 89, 0.1); }
+        summary { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem; cursor: pointer; list-style: none; }
+        .faq-question { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: #ffffff !important; letter-spacing: 0.02em; transition: color 0.3s; }
+        .faq-toggle { font-size: 1.5rem; color: #C5A059; transition: transform 0.4s; }
+        details[open] .faq-toggle { transform: rotate(45deg); color: #ffd700; }
+        .faq-answer { padding: 0 1.5rem 1.5rem 1.5rem; color: #d1d5db; font-size: 1rem; line-height: 1.7; font-weight: 400; border-top: 1px solid rgba(197, 160, 89, 0.1); margin-top: 0; padding-top: 1.2rem; }
 
         /* PRINTS */
         .print-card { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #e1e1e1; min-width: 220px; max-width: 280px; scroll-snap-align: center; }
@@ -274,9 +257,12 @@
                  msg += `\n\nCiente da taxa de reserva de R$ 50,00.`;
                  message = msg;
              }
-             const finalLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
-             try { if(typeof gtag === 'function') gtag('event', 'conversion', {'send_to': 'AW-11442509118/CNfICPrhpYAZEL6qm9Aq'}); } catch(e){}
-             window.open(finalLink, '_blank');
+             // Chama conversão antes de abrir
+             if (typeof gtag_report_conversion === 'function') {
+                gtag_report_conversion(`https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`);
+             } else {
+                window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`, '_blank');
+             }
         }
 
         // Status da Loja (Execução Imediata)
@@ -317,7 +303,7 @@
         function toggleCardAudio(id,b){const v=document.getElementById(id);const i=b.querySelector('i');if(!v)return;document.querySelectorAll('video').forEach(x=>{if(x.id!==id)x.muted=true});if(v.muted){v.muted=false;i.className='fas fa-volume-up'}else{v.muted=true;i.className='fas fa-volume-mute'}}
         function resgatar(t,v,id){openWhatsApp(t,v,id);}
         function sendWhatsAppMessage(){openWhatsApp("Olá! Vi os depoimentos e quero agendar.");}
-        function selectDay(d){let m,c="#4ade80";if(d===10||d===12){m="⚠️ ÚLTIMO HORÁRIO!";c="#facc15";}else{m=["🔥 1 Vaga Extra!","💎 Horário Nobre"][Math.floor(Math.random()*2)];}const h=`<button onclick="openWhatsApp('Olá! Vi vaga dia ${d}/12.')" style="background-color:${c};color:#064e3b" class="text-xs font-bold px-4 py-2 rounded-full shadow-lg mt-2 w-full"><i class="fab fa-whatsapp"></i> Agendar dia ${d}</button>`;const k=document.getElementById('dynamic-msg-container');if(k)k.innerHTML=`<div class="vaga-alert" style="color:${c};border-color:${c}">${m}</div>${h}`;}
+        function selectDay(d){let m,c="#4ade80";if(d===12){m="⚠️ ÚLTIMAS VAGAS (10h, 11h ou 11:30h)";c="#facc15";}else if(d===16||d===17){m="🔥 Horários da Tarde";c="#4ade80";}else if(d===24){m="🎄 VAGA EXTRA DE NATAL!";c="#facc15";}else{m="💎 Horário Disponível";}const h=`<button onclick="openWhatsApp('Olá! Quero agendar dia ${d}/12.')" style="background-color:${c};color:#064e3b" class="text-xs font-bold px-4 py-2 rounded-full shadow-lg mt-2 w-full"><i class="fab fa-whatsapp"></i> Agendar dia ${d}</button>`;const k=document.getElementById('dynamic-msg-container');if(k)k.innerHTML=`<div class="vaga-alert" style="color:${c};border-color:${c}">${m}</div>${h}`;}
 
         // Smart Toggle (Antes/Depois)
         function toggleTransform(mode) {
@@ -548,15 +534,14 @@
                     <p class="text-xs text-gray-300 mb-4 italic">Selecione a data que você mais tem interesse:</p>
                     <div class="calendar-wrapper">
                          <div class="grid grid-cols-7 gap-1 md:gap-2 mb-2">
-                            <div class="cal-header">Dom</div><div class="cal-header">Seg</div><div class="cal-header">Ter</div><div class="cal-header">Qua</div><div class="cal-header">Qui</div><div class="cal-header">Sex</div><div class="cal-header">Sáb</div>
+                            <div class="cal-header"></div><div class="cal-header">Seg</div><div class="cal-header">Ter</div><div class="cal-header">Qua</div><div class="cal-header">Qui</div><div class="cal-header">Sex</div><div class="cal-header">Sáb</div>
                         </div>
                         <div class="calendar-grid" id="smart-calendar">
-                             <div class="cal-day full">1</div><div class="cal-day full">2</div><div class="cal-day full">3</div><div class="cal-day full">4</div><div class="cal-day full">5</div><div class="cal-day full">6</div><div class="cal-day closed">7</div>
-                             <div class="cal-day available" onclick="selectDay(8)" data-day="8">8</div><div class="cal-day available" onclick="selectDay(9)" data-day="9">9</div><div class="cal-day last-spot" onclick="selectDay(10)" data-day="10">10</div><div class="cal-day available" onclick="selectDay(11)" data-day="11">11</div><div class="cal-day last-spot" onclick="selectDay(12)" data-day="12">12</div><div class="cal-day available" onclick="selectDay(13)" data-day="13">13</div><div class="cal-day closed">14</div>
-                             <div class="cal-day closed" onclick="selectDay(15)" data-day="15">15</div><div class="cal-day available" onclick="selectDay(16)" data-day="16">16</div>
-                             <div class="cal-day full">17</div><div class="cal-day full">18</div><div class="cal-day full">19</div><div class="cal-day full">20</div><div class="cal-day full">21</div><div class="cal-day full">22</div><div class="cal-day last-spot" onclick="selectDay(23)" data-day="23">23</div>
-                             <div class="cal-day closed">24</div><div class="cal-day closed">25</div><div class="cal-day closed">26</div>
-                             <div class="cal-day last-spot" onclick="selectDay(27)" data-day="27">27</div><div class="cal-day full">28</div><div class="cal-day full">29</div><div class="cal-day full">30</div><div class="cal-day closed">31</div>
+                             <div class="cal-day"></div><div class="cal-day full">1</div><div class="cal-day full">2</div><div class="cal-day full">3</div><div class="cal-day full">4</div><div class="cal-day full">5</div><div class="cal-day closed">6</div>
+                             <div class="cal-day closed">7</div><div class="cal-day full">8</div><div class="cal-day full">9</div><div class="cal-day full">10</div><div class="cal-day full">11</div><div class="cal-day last-spot" onclick="selectDay(12)" data-day="12">12</div><div class="cal-day full">13</div>
+                             <div class="cal-day closed" onclick="selectDay(15)" data-day="15">14</div><div class="cal-day full">15</div><div class="cal-day available" onclick="selectDay(16)" data-day="16">16</div><div class="cal-day available" onclick="selectDay(17)" data-day="17">17</div><div class="cal-day full">18</div><div class="cal-day full">19</div><div class="cal-day full">20</div>
+                             <div class="cal-day closed">21</div><div class="cal-day full">22</div><div class="cal-day full">23</div><div class="cal-day last-spot" onclick="selectDay(24)" data-day="24">24</div><div class="cal-day closed">25</div><div class="cal-day closed">26</div><div class="cal-day full" onclick="selectDay(27)" data-day="27">27</div>
+                             <div class="cal-day closed">28</div><div class="cal-day full">29</div><div class="cal-day full">30</div><div class="cal-day closed">31</div>
                         </div>
                     </div>
                     <div id="dynamic-msg-container"></div>
