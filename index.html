@@ -31,8 +31,7 @@
     <meta property="og:description" content="O único alisamento de Chapecó que trata enquanto alisa.">
     <meta property="og:image" content="https://salaoessenciaderoma.com/assets/images/hero-poster.jpg">
 
-    <!-- 2. TRACKING OTIMIZADO -->
-    <!-- Google tag (gtag.js) -->
+    <!-- 2. TRACKING -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11442509118"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -41,7 +40,7 @@
       gtag('config', 'AW-11442509118');
     </script>
     
-    <!-- Conversion Snippet (Google Ads) -->
+    <!-- Conversion Snippet -->
     <script>
     function gtag_report_conversion(url) {
       var callback = function () {
@@ -57,7 +56,7 @@
       return false;
     }
     </script>
-    
+
     <!-- Meta Pixel -->
     <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -69,21 +68,18 @@
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=639959835745383&ev=PageView&noscript=1"/></noscript>
 
-    <!-- TikTok Pixel Code Start -->
+    <!-- TikTok Pixel -->
     <script>
     !function (w, d, t) {
       w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-    var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-    ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-
-
+      var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+      ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
       ttq.load('D4TEU2JC77U1QNJ4VQ90');
       ttq.page();
     }(window, document, 'ttq');
     </script>
-    <!-- TikTok Pixel Code End -->
 
-    <!-- Manychat (Carregamento Adiado) -->
+    <!-- Manychat -->
     <script>
         window.addEventListener('load', function() {
             setTimeout(() => {
@@ -106,12 +102,12 @@
         .hero-container { position: relative; width: 100vw; height: 100dvh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #2b0505; border-bottom: 2px solid #c5a059; }
         .video-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; z-index: 0; }
         .video-overlay { position: absolute; inset: 0; z-index: 1; background: radial-gradient(circle at center, rgba(75,0,0,0.1) 0%, rgba(43,5,5,0.8) 90%), linear-gradient(to bottom, rgba(75, 0, 0, 0.6) 0%, rgba(75, 0, 0, 0.2) 35%, rgba(43, 5, 5, 1) 100%); }
-        .hero-content { position: relative; z-index: 10; padding-top: 60px; text-align: center; }
+        .hero-content { position: relative; z-index: 10; padding-top: 60px; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; }
         .hero-scroll-arrow { margin-top: 2rem; font-size: 2rem; color: #d4af37; animation: bounce 2s infinite; cursor: pointer; opacity: 0.9; }
 
         /* TYPOGRAPHY */
         .font-playfair { font-family: 'Playfair Display', serif; }
-        .text-gold-static { background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6)); }
+        .text-gold-static { background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 58%, #fbf5b7 80%, #aa771c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6)); }
         .text-gold-shine { background: linear-gradient(to right, #cfc09f, #ffecb3, #c5a059, #ffd700, #cfc09f); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 6s linear infinite; }
         @keyframes shine { to { background-position: 200% center; } }
         
@@ -131,13 +127,13 @@
         .btn-insta-float { position: absolute; top: 15px; right: 15px; width: 36px; height: 36px; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(4px); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.2rem; z-index: 10; text-decoration: none; }
 
         /* Vouchers */
-        .voucher-card { background: linear-gradient(145deg, #1a0505, #2b0808); border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 16px; padding: 1.5rem; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.4); text-align: center; display: flex; flex-direction: column; justify-content: space-between; min-width: 280px; transition: border-color 0.3s; }
+        .voucher-card { background: linear-gradient(145deg, #1a0505, #2b0808); border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 16px; padding: 1.5rem; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.4); text-align: center; display: flex; flex-direction: column; justify-content: space-between; align-items: center; min-width: 280px; transition: border-color 0.3s; }
         .voucher-card.active-card { border-color: #ffd700; box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15); }
         .premium-tag { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728); color: #2b0505; text-transform: uppercase; font-size: 0.65rem; font-weight: 800; padding: 0.35rem 1.2rem; border-radius: 50px; letter-spacing: 0.15em; box-shadow: 0 5px 15px rgba(0,0,0,0.5); white-space: nowrap; z-index: 20; border: 1px solid #7a5c18; }
-        .voucher-price-new { font-family: 'Playfair Display', serif; font-weight: 700; color: #ffd700; font-size: 2.8rem; line-height: 1; margin: 0.5rem 0; display: flex; justify-content: center; align-items: flex-start; gap: 2px; }
-        .voucher-currency, .voucher-cents { font-size: 1.2rem; margin-top: 6px; font-weight: 600; }
-        .voucher-rule { font-size: 0.75rem; color: #ccc; border-top: 1px solid rgba(197, 160, 89, 0.2); padding-top: 0.8rem; margin-top: 0.8rem; }
-        .cut-toggle-container { margin-top: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 0.8rem; border: 1px solid rgba(197, 160, 89, 0.2); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: #e5e5e5; text-align: left; }
+        .voucher-price-new { font-family: 'Playfair Display', serif; font-weight: 700; color: #ffd700; font-size: 2.8rem; line-height: 1; margin: 0.5rem 0; display: flex; justify-content: center; align-items: baseline; gap: 2px; }
+        .voucher-currency, .voucher-cents { font-size: 1.2rem; margin-top: 6px; font-weight: 600; position: relative; top: -0.5em; }
+        .voucher-rule { font-size: 0.75rem; color: #ccc; border-top: 1px solid rgba(197, 160, 89, 0.2); padding-top: 0.8rem; margin-top: 0.8rem; width: 100%; }
+        .cut-toggle-container { margin-top: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 0.8rem; border: 1px solid rgba(197, 160, 89, 0.2); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: #e5e5e5; text-align: left; width: 100%; }
         .switch { position: relative; display: inline-block; width: 34px; height: 20px; flex-shrink: 0; margin-left: 8px; }
         .switch input { opacity: 0; width: 0; height: 0; }
         .slider-toggle { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #555; transition: .4s; border-radius: 34px; }
@@ -145,6 +141,7 @@
         input:checked + .slider-toggle { background-color: #4ade80; }
         input:checked + .slider-toggle:before { transform: translateX(14px); }
         #card-container { padding-right: 15%; }
+        @media (min-width: 768px) { #card-container { padding-right: 0; justify-content: center; } }
 
         /* Calendar */
         .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; width: 100%; margin-top: 1rem; }
@@ -196,7 +193,7 @@
             border: 1px solid rgba(212,175,55,0.3); z-index: 20; pointer-events: none;
         }
 
-        /* FAQ (GOLDEN ACCORDION) */
+        /* FAQ (GOLDEN ACCORDION) - CORREÇÃO DE COR */
         #faq-isolate { background-color: #1a0202; background-image: radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%); }
         .faq-item {
             background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(197, 160, 89, 0.2);
@@ -209,8 +206,14 @@
         summary.faq-summary { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem; cursor: pointer; list-style: none; transition: background 0.2s; }
         summary.faq-summary:hover { background: rgba(255,255,255,0.02); }
         summary.faq-summary::-webkit-details-marker { display: none; }
-        .faq-question-text { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: #ffffff !important; letter-spacing: 0.02em; transition: color 0.3s; }
+        
+        /* COR BRANCA FORÇADA NO TÍTULO */
+        .faq-question-text { 
+            font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; 
+            color: #ffffff !important; letter-spacing: 0.02em; transition: color 0.3s; 
+        }
         .faq-item[open] .faq-question-text { color: #ffd700 !important; }
+        
         .faq-icon-wrapper { width: 20px; height: 20px; position: relative; display: flex; align-items: center; justify-content: center; }
         .faq-icon-line { position: absolute; background-color: #d4af37; transition: transform 0.3s ease, opacity 0.3s ease; }
         .line-v { width: 2px; height: 12px; }
@@ -401,17 +404,15 @@
                 }, 4000);
             }
             
-            // FAQ Logic (New Sophisticated Accordion)
+            // FAQ Logic
             const accItems = document.querySelectorAll('.faq-item');
             accItems.forEach(item => {
                 const summary = item.querySelector('.faq-summary');
                 summary.addEventListener('click', (e) => {
                     e.preventDefault();
-                    // Close others
                     accItems.forEach(other => {
                         if (other !== item) other.removeAttribute('open');
                     });
-                    // Toggle current
                     if (item.hasAttribute('open')) {
                         item.removeAttribute('open');
                     } else {
@@ -564,14 +565,14 @@
                     <p class="text-xs text-gray-300 mb-4 italic">Selecione a data que você mais tem interesse:</p>
                     <div class="calendar-wrapper">
                          <div class="grid grid-cols-7 gap-1 md:gap-2 mb-2">
-                            <div class="cal-header">Dom</div><div class="cal-header">Seg</div><div class="cal-header">Ter</div><div class="cal-header">Qua</div><div class="cal-header">Qui</div><div class="cal-header">Sex</div><div class="cal-header">Sáb</div>
+                            <div class="cal-header"></div><div class="cal-header">Seg</div><div class="cal-header">Ter</div><div class="cal-header">Qua</div><div class="cal-header">Qui</div><div class="cal-header">Sex</div><div class="cal-header">Sáb</div>
                         </div>
                         <div class="calendar-grid" id="smart-calendar">
-                             <div class="cal-day full">1</div><div class="cal-day full">2</div><div class="cal-day full">3</div><div class="cal-day full">4</div><div class="cal-day full">5</div><div class="cal-day full">6</div><div class="cal-day closed">7</div>
-                             <div class="cal-day available" onclick="selectDay(8)" data-day="8">8</div><div class="cal-day available" onclick="selectDay(9)" data-day="9">9</div><div class="cal-day last-spot" onclick="selectDay(10)" data-day="10">10</div><div class="cal-day available" onclick="selectDay(11)" data-day="11">11</div><div class="cal-day last-spot" onclick="selectDay(12)" data-day="12">12</div><div class="cal-day available" onclick="selectDay(13)" data-day="13">13</div><div class="cal-day closed">14</div>
-                             <div class="cal-day closed" onclick="selectDay(15)" data-day="15">15</div><div class="cal-day available" onclick="selectDay(16)" data-day="16">16</div>
+                             <div class="cal-day"></div><div class="cal-day full">1</div><div class="cal-day full">2</div><div class="cal-day full">3</div><div class="cal-day full">4</div><div class="cal-day full">5</div><div class="cal-day closed">6</div>
+                             <div class="cal-day closed">7</div><div class="cal-day full">8</div><div class="cal-day full">9</div><div class="cal-day full">10</div><div class="cal-day full">11</div><div class="cal-day last-spot" onclick="selectDay(12)" data-day="12">12</div><div class="cal-day full">13</div>
+                             <div class="cal-day closed" onclick="selectDay(15)" data-day="15">14</div><div class="cal-day closed">15</div><div class="cal-day available" onclick="selectDay(16)" data-day="16">16</div>
                              <div class="cal-day available" onclick="selectDay(17)" data-day="17">17</div><div class="cal-day full">18</div><div class="cal-day full">19</div><div class="cal-day full">20</div><div class="cal-day full">21</div><div class="cal-day full">22</div><div class="cal-day full" onclick="selectDay(23)" data-day="23">23</div>
-                             <div class="cal-day closed">24</div><div class="cal-day closed">25</div><div class="cal-day closed">26</div>
+                             <div class="cal-day last-spot" onclick="selectDay(24)" data-day="24">24</div><div class="cal-day closed">25</div><div class="cal-day closed">26</div>
                              <div class="cal-day full" onclick="selectDay(27)" data-day="27">27</div><div class="cal-day full">28</div><div class="cal-day full">29</div><div class="cal-day full">30</div><div class="cal-day closed">31</div>
                         </div>
                     </div>
