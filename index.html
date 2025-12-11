@@ -31,7 +31,8 @@
     <meta property="og:description" content="O único alisamento de Chapecó que trata enquanto alisa.">
     <meta property="og:image" content="https://salaoessenciaderoma.com/assets/images/hero-poster.jpg">
 
-    <!-- 2. TRACKING -->
+    <!-- 2. TRACKING OTIMIZADO -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11442509118"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -40,7 +41,7 @@
       gtag('config', 'AW-11442509118');
     </script>
     
-    <!-- Conversion Snippet -->
+    <!-- Conversion Snippet (Google Ads) -->
     <script>
     function gtag_report_conversion(url) {
       var callback = function () {
@@ -56,8 +57,33 @@
       return false;
     }
     </script>
+    
+    <!-- Meta Pixel -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    try{fbq('init', '639959835745383');fbq('track', 'PageView');}catch(e){}
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=639959835745383&ev=PageView&noscript=1"/></noscript>
 
-    <!-- Manychat -->
+    <!-- TikTok Pixel Code Start -->
+    <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+    var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+    ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+
+      ttq.load('D4TEU2JC77U1QNJ4VQ90');
+      ttq.page();
+    }(window, document, 'ttq');
+    </script>
+    <!-- TikTok Pixel Code End -->
+
+    <!-- Manychat (Carregamento Adiado) -->
     <script>
         window.addEventListener('load', function() {
             setTimeout(() => {
@@ -85,7 +111,7 @@
 
         /* TYPOGRAPHY */
         .font-playfair { font-family: 'Playfair Display', serif; }
-        .text-gold-static { background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 58%, #fbf5b7 80%, #aa771c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6)); }
+        .text-gold-static { background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6)); }
         .text-gold-shine { background: linear-gradient(to right, #cfc09f, #ffecb3, #c5a059, #ffd700, #cfc09f); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 6s linear infinite; }
         @keyframes shine { to { background-position: 200% center; } }
         
@@ -118,12 +144,7 @@
         .slider-toggle:before { position: absolute; content: ""; height: 12px; width: 12px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
         input:checked + .slider-toggle { background-color: #4ade80; }
         input:checked + .slider-toggle:before { transform: translateX(14px); }
-        
-        /* CORREÇÃO DO CARD CONTAINER: Padding só no Mobile, Centralizado no Desktop */
-        #card-container { padding-right: 15%; } /* Mobile: mostra o próximo */
-        @media (min-width: 768px) { 
-            #card-container { padding-right: 0; justify-content: center; } 
-        }
+        #card-container { padding-right: 15%; }
 
         /* Calendar */
         .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; width: 100%; margin-top: 1rem; }
@@ -196,8 +217,7 @@
         .line-h { width: 12px; height: 2px; }
         .faq-item[open] .line-v { transform: rotate(90deg); opacity: 0; }
         .faq-item[open] .line-h { transform: rotate(180deg); }
-        /* CORREÇÃO COR RESPOSTA */
-        .faq-answer-content { padding: 0 1.5rem 1.5rem 1.5rem; color: #f3f3f3 !important; font-size: 0.95rem; line-height: 1.7; border-top: 1px solid rgba(197, 160, 89, 0.1); animation: slideDown 0.3s ease-out; }
+        .faq-answer-content { padding: 0 1.5rem 1.5rem 1.5rem; color: #d1d5db; font-size: 0.95rem; line-height: 1.7; border-top: 1px solid rgba(197, 160, 89, 0.1); animation: slideDown 0.3s ease-out; }
         @keyframes slideDown { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
 
         /* PRINTS */
@@ -551,7 +571,7 @@
                              <div class="cal-day available" onclick="selectDay(8)" data-day="8">8</div><div class="cal-day available" onclick="selectDay(9)" data-day="9">9</div><div class="cal-day last-spot" onclick="selectDay(10)" data-day="10">10</div><div class="cal-day available" onclick="selectDay(11)" data-day="11">11</div><div class="cal-day last-spot" onclick="selectDay(12)" data-day="12">12</div><div class="cal-day available" onclick="selectDay(13)" data-day="13">13</div><div class="cal-day closed">14</div>
                              <div class="cal-day closed" onclick="selectDay(15)" data-day="15">15</div><div class="cal-day available" onclick="selectDay(16)" data-day="16">16</div>
                              <div class="cal-day available" onclick="selectDay(17)" data-day="17">17</div><div class="cal-day full">18</div><div class="cal-day full">19</div><div class="cal-day full">20</div><div class="cal-day full">21</div><div class="cal-day full">22</div><div class="cal-day full" onclick="selectDay(23)" data-day="23">23</div>
-                             <div class="cal-day last-spot" onclick="selectDay(24)" data-day="24">24</div><div class="cal-day closed">25</div><div class="cal-day closed">26</div>
+                             <div class="cal-day closed">24</div><div class="cal-day closed">25</div><div class="cal-day closed">26</div>
                              <div class="cal-day full" onclick="selectDay(27)" data-day="27">27</div><div class="cal-day full">28</div><div class="cal-day full">29</div><div class="cal-day full">30</div><div class="cal-day closed">31</div>
                         </div>
                     </div>
