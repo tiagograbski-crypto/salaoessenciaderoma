@@ -31,24 +31,13 @@
     <meta property="og:description" content="O único alisamento de Chapecó que trata enquanto alisa.">
     <meta property="og:image" content="https://salaoessenciaderoma.com/assets/images/hero-poster.jpg">
 
-    <!-- 2. TRACKING OTIMIZADO -->
-    <!-- Google tag (gtag.js) -->
+    <!-- 2. TRACKING -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11442509118"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'AW-11442509118');
-    </script>
-    
-    <!-- Meta Pixel -->
-    <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-    document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    try{fbq('init', '639959835745383');fbq('track', 'PageView');}catch(e){}
     </script>
     
     <!-- Conversion Snippet -->
@@ -68,7 +57,7 @@
     }
     </script>
 
-    <!-- Manychat (Carregamento Adiado) -->
+    <!-- Manychat -->
     <script>
         window.addEventListener('load', function() {
             setTimeout(() => {
@@ -129,9 +118,14 @@
         .slider-toggle:before { position: absolute; content: ""; height: 12px; width: 12px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
         input:checked + .slider-toggle { background-color: #4ade80; }
         input:checked + .slider-toggle:before { transform: translateX(14px); }
-        #card-container { padding-right: 15%; }
+        
+        /* CORREÇÃO DO CARD CONTAINER: Padding só no Mobile, Centralizado no Desktop */
+        #card-container { padding-right: 15%; } /* Mobile: mostra o próximo */
+        @media (min-width: 768px) { 
+            #card-container { padding-right: 0; justify-content: center; } 
+        }
 
-        /* Calendar (CORRIGIDO PARA DEZ 2025: 11 = Quinta) */
+        /* Calendar */
         .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; width: 100%; margin-top: 1rem; }
         .cal-header { text-align: center; font-size: 0.65rem; color: #aaa; text-transform: uppercase; font-weight: bold; margin-bottom: 5px; }
         .cal-day { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 0.9rem; font-weight: bold; position: relative; background: rgba(255,255,255,0.05); color: #fff; transition: all 0.2s; cursor: default; min-height: 40px; }
@@ -181,14 +175,30 @@
             border: 1px solid rgba(212,175,55,0.3); z-index: 20; pointer-events: none;
         }
 
-        /* FAQ */
-        details { background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(197, 160, 89, 0.15); border-radius: 12px; margin-bottom: 1rem; overflow: hidden; transition: all 0.4s ease; }
-        details[open] { background: rgba(0, 0, 0, 0.6); border-color: #C5A059; box-shadow: 0 0 15px rgba(197, 160, 89, 0.1); }
-        summary { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem; cursor: pointer; list-style: none; }
-        .faq-question { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: #ffffff !important; letter-spacing: 0.02em; transition: color 0.3s; }
-        .faq-toggle { font-size: 1.5rem; color: #C5A059; transition: transform 0.4s; }
-        details[open] .faq-toggle { transform: rotate(45deg); color: #ffd700; }
-        .faq-answer { padding: 0 1.5rem 1.5rem 1.5rem; color: #d1d5db; font-size: 1rem; line-height: 1.7; font-weight: 400; border-top: 1px solid rgba(197, 160, 89, 0.1); margin-top: 0; padding-top: 1.2rem; }
+        /* FAQ (GOLDEN ACCORDION) */
+        #faq-isolate { background-color: #1a0202; background-image: radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%); }
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 8px; margin-bottom: 1rem; overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative;
+        }
+        .faq-item[open] { background: rgba(20, 5, 5, 0.8); border-color: #d4af37; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); }
+        .faq-item::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0%; background: #d4af37; transition: height 0.3s ease; }
+        .faq-item[open]::before { height: 100%; }
+        summary.faq-summary { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem; cursor: pointer; list-style: none; transition: background 0.2s; }
+        summary.faq-summary:hover { background: rgba(255,255,255,0.02); }
+        summary.faq-summary::-webkit-details-marker { display: none; }
+        .faq-question-text { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: #ffffff !important; letter-spacing: 0.02em; transition: color 0.3s; }
+        .faq-item[open] .faq-question-text { color: #ffd700 !important; }
+        .faq-icon-wrapper { width: 20px; height: 20px; position: relative; display: flex; align-items: center; justify-content: center; }
+        .faq-icon-line { position: absolute; background-color: #d4af37; transition: transform 0.3s ease, opacity 0.3s ease; }
+        .line-v { width: 2px; height: 12px; }
+        .line-h { width: 12px; height: 2px; }
+        .faq-item[open] .line-v { transform: rotate(90deg); opacity: 0; }
+        .faq-item[open] .line-h { transform: rotate(180deg); }
+        /* CORREÇÃO COR RESPOSTA */
+        .faq-answer-content { padding: 0 1.5rem 1.5rem 1.5rem; color: #f3f3f3 !important; font-size: 0.95rem; line-height: 1.7; border-top: 1px solid rgba(197, 160, 89, 0.1); animation: slideDown 0.3s ease-out; }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
 
         /* PRINTS */
         .print-card { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #e1e1e1; min-width: 220px; max-width: 280px; scroll-snap-align: center; }
@@ -534,14 +544,15 @@
                     <p class="text-xs text-gray-300 mb-4 italic">Selecione a data que você mais tem interesse:</p>
                     <div class="calendar-wrapper">
                          <div class="grid grid-cols-7 gap-1 md:gap-2 mb-2">
-                            <div class="cal-header"></div><div class="cal-header">Seg</div><div class="cal-header">Ter</div><div class="cal-header">Qua</div><div class="cal-header">Qui</div><div class="cal-header">Sex</div><div class="cal-header">Sáb</div>
+                            <div class="cal-header">Dom</div><div class="cal-header">Seg</div><div class="cal-header">Ter</div><div class="cal-header">Qua</div><div class="cal-header">Qui</div><div class="cal-header">Sex</div><div class="cal-header">Sáb</div>
                         </div>
                         <div class="calendar-grid" id="smart-calendar">
-                             <div class="cal-day"></div><div class="cal-day full">1</div><div class="cal-day full">2</div><div class="cal-day full">3</div><div class="cal-day full">4</div><div class="cal-day full">5</div><div class="cal-day closed">6</div>
-                             <div class="cal-day closed">7</div><div class="cal-day full">8</div><div class="cal-day full">9</div><div class="cal-day full">10</div><div class="cal-day full">11</div><div class="cal-day last-spot" onclick="selectDay(12)" data-day="12">12</div><div class="cal-day full">13</div>
-                             <div class="cal-day closed" onclick="selectDay(15)" data-day="15">14</div><div class="cal-day full">15</div><div class="cal-day available" onclick="selectDay(16)" data-day="16">16</div><div class="cal-day available" onclick="selectDay(17)" data-day="17">17</div><div class="cal-day full">18</div><div class="cal-day full">19</div><div class="cal-day full">20</div>
-                             <div class="cal-day closed">21</div><div class="cal-day full">22</div><div class="cal-day full">23</div><div class="cal-day last-spot" onclick="selectDay(24)" data-day="24">24</div><div class="cal-day closed">25</div><div class="cal-day closed">26</div><div class="cal-day full" onclick="selectDay(27)" data-day="27">27</div>
-                             <div class="cal-day closed">28</div><div class="cal-day full">29</div><div class="cal-day full">30</div><div class="cal-day closed">31</div>
+                             <div class="cal-day full">1</div><div class="cal-day full">2</div><div class="cal-day full">3</div><div class="cal-day full">4</div><div class="cal-day full">5</div><div class="cal-day full">6</div><div class="cal-day closed">7</div>
+                             <div class="cal-day available" onclick="selectDay(8)" data-day="8">8</div><div class="cal-day available" onclick="selectDay(9)" data-day="9">9</div><div class="cal-day last-spot" onclick="selectDay(10)" data-day="10">10</div><div class="cal-day available" onclick="selectDay(11)" data-day="11">11</div><div class="cal-day last-spot" onclick="selectDay(12)" data-day="12">12</div><div class="cal-day available" onclick="selectDay(13)" data-day="13">13</div><div class="cal-day closed">14</div>
+                             <div class="cal-day closed" onclick="selectDay(15)" data-day="15">15</div><div class="cal-day available" onclick="selectDay(16)" data-day="16">16</div>
+                             <div class="cal-day available" onclick="selectDay(17)" data-day="17">17</div><div class="cal-day full">18</div><div class="cal-day full">19</div><div class="cal-day full">20</div><div class="cal-day full">21</div><div class="cal-day full">22</div><div class="cal-day full" onclick="selectDay(23)" data-day="23">23</div>
+                             <div class="cal-day last-spot" onclick="selectDay(24)" data-day="24">24</div><div class="cal-day closed">25</div><div class="cal-day closed">26</div>
+                             <div class="cal-day full" onclick="selectDay(27)" data-day="27">27</div><div class="cal-day full">28</div><div class="cal-day full">29</div><div class="cal-day full">30</div><div class="cal-day closed">31</div>
                         </div>
                     </div>
                     <div id="dynamic-msg-container"></div>
