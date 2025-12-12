@@ -107,7 +107,18 @@
 
         /* TYPOGRAPHY */
         .font-playfair { font-family: 'Playfair Display', serif; }
-        .text-gold-static { background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 58%, #fbf5b7 80%, #aa771c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6)); }
+        
+        /* EFEITO DOURADO "JOIA" (RESTAURADO E BLINDADO) */
+        .text-gold-static { 
+            background: linear-gradient(to bottom, #cfc09f 0%, #ffecb3 20%, #c5a059 40%, #ffd700 60%, #a47814 80%, #cfc09f 100%);
+            -webkit-background-clip: text; 
+            background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            color: #d4af37 !important; /* Fallback forçado */
+            filter: drop-shadow(0 2px 3px rgba(0,0,0,0.8));
+            font-weight: 800;
+        }
+
         .text-gold-shine { background: linear-gradient(to right, #cfc09f, #ffecb3, #c5a059, #ffd700, #cfc09f); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 6s linear infinite; }
         @keyframes shine { to { background-position: 200% center; } }
         
@@ -193,7 +204,7 @@
             border: 1px solid rgba(212,175,55,0.3); z-index: 20; pointer-events: none;
         }
 
-        /* FAQ (GOLDEN ACCORDION) - CORREÇÃO DE COR */
+        /* FAQ (GOLDEN ACCORDION) - CORREÇÃO DE COR BLINDADA */
         #faq-isolate { background-color: #1a0202; background-image: radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%); }
         .faq-item {
             background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(197, 160, 89, 0.2);
@@ -207,12 +218,13 @@
         summary.faq-summary:hover { background: rgba(255,255,255,0.02); }
         summary.faq-summary::-webkit-details-marker { display: none; }
         
-        /* COR BRANCA FORÇADA NO TÍTULO */
+        /* COR BRANCA FORÇADA NO TÍTULO (IMPORTANTE!) */
         .faq-question-text { 
             font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; 
             color: #ffffff !important; letter-spacing: 0.02em; transition: color 0.3s; 
+            -webkit-text-fill-color: #ffffff !important; /* Para WebKit */
         }
-        .faq-item[open] .faq-question-text { color: #ffd700 !important; }
+        .faq-item[open] .faq-question-text { color: #ffd700 !important; -webkit-text-fill-color: #ffd700 !important; }
         
         .faq-icon-wrapper { width: 20px; height: 20px; position: relative; display: flex; align-items: center; justify-content: center; }
         .faq-icon-line { position: absolute; background-color: #d4af37; transition: transform 0.3s ease, opacity 0.3s ease; }
@@ -220,12 +232,17 @@
         .line-h { width: 12px; height: 2px; }
         .faq-item[open] .line-v { transform: rotate(90deg); opacity: 0; }
         .faq-item[open] .line-h { transform: rotate(180deg); }
-        .faq-answer-content { padding: 0 1.5rem 1.5rem 1.5rem; color: #d1d5db; font-size: 0.95rem; line-height: 1.7; border-top: 1px solid rgba(197, 160, 89, 0.1); animation: slideDown 0.3s ease-out; }
+        
+        /* CORREÇÃO DA RESPOSTA */
+        .faq-answer-content { 
+            padding: 0 1.5rem 1.5rem 1.5rem; color: #e5e5e5 !important; font-size: 0.95rem; line-height: 1.7; 
+            border-top: 1px solid rgba(197, 160, 89, 0.1); animation: slideDown 0.3s ease-out; 
+        }
         @keyframes slideDown { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
 
         /* PRINTS */
         .print-card { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #e1e1e1; min-width: 220px; max-width: 280px; scroll-snap-align: center; }
-        .print-img-wrapper { width: 100%; height: 420px; overflow: hidden; background: #000; display: flex; align-items: center; justify-content: center; }
+        .print-img-wrapper { width: 100%; height: 100%; overflow: hidden; background: #000; display: flex; align-items: center; justify-content: center; }
         .print-img { width: 100%; height: 100%; object-fit: contain; }
 
         /* RODAPÉ ROYAL EMPIRE (CENTRALIZADO) */
@@ -404,15 +421,17 @@
                 }, 4000);
             }
             
-            // FAQ Logic
+            // FAQ Logic (New Sophisticated Accordion)
             const accItems = document.querySelectorAll('.faq-item');
             accItems.forEach(item => {
                 const summary = item.querySelector('.faq-summary');
                 summary.addEventListener('click', (e) => {
                     e.preventDefault();
+                    // Close others
                     accItems.forEach(other => {
                         if (other !== item) other.removeAttribute('open');
                     });
+                    // Toggle current
                     if (item.hasAttribute('open')) {
                         item.removeAttribute('open');
                     } else {
@@ -507,6 +526,35 @@
 
             <div id="vouchers" class="mt-20 mb-8 text-center">
                 <div class="section-pill">Escolha seu Tipo de Cabelo</div>
+                
+                <!-- GALERIA NOVA: CORES & MECHAS (CARROSSEL UNIFICADO) -->
+                <div class="mt-16 mb-12">
+                    <h3 class="font-playfair text-2xl text-white mb-6">Arte em <span class="text-[#d4af37]">Cores & Mechas</span></h3>
+                    <!-- Alterado para apenas Flex (Carrossel) em todas as telas, com largura fixa nos cards -->
+                    <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 px-4 md:px-0 hide-scrollbar justify-start md:justify-center">
+                         <!-- V1 -->
+                        <div class="snap-center shrink-0 w-[60vw] md:w-[280px] video-card group">
+                             <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="none"><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/q_auto,f_auto/v1765551108/WhatsApp_Video_2025-12-11_at_08.39.18_1_i6br9l.mp4" type="video/mp4"></video>
+                        </div>
+                        <!-- V2 -->
+                        <div class="snap-center shrink-0 w-[60vw] md:w-[280px] video-card group">
+                             <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="none"><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/q_auto,f_auto/v1765549894/WhatsApp_Video_2025-12-12_at_11.17.57_y2wmdu.mp4" type="video/mp4"></video>
+                        </div>
+                        <!-- V3 -->
+                        <div class="snap-center shrink-0 w-[60vw] md:w-[280px] video-card group">
+                             <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="none"><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/q_auto,f_auto/v1765550931/WhatsApp_Video_2025-12-12_at_11.48.17_tsglrn.mp4" type="video/mp4"></video>
+                        </div>
+                        <!-- V4 -->
+                        <div class="snap-center shrink-0 w-[60vw] md:w-[280px] video-card group">
+                             <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="none"><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/q_auto,f_auto/v1765550932/WhatsApp_Video_2025-12-12_at_11.45.33_kke68u.mp4" type="video/mp4"></video>
+                        </div>
+                        <!-- IMG 5 -->
+                        <div class="snap-center shrink-0 w-[60vw] md:w-[280px] video-card group">
+                             <img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/q_auto,f_auto/v1765550934/WhatsApp_Image_2025-12-12_at_11.45.45_ywpltb.jpg" class="w-full h-full object-cover" alt="Resultado Mechas">
+                        </div>
+                    </div>
+                </div>
+
                 <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:grid md:grid-cols-3 max-w-5xl mx-auto pb-6 pt-8 px-4 md:px-0 hide-scrollbar" id="card-container">
                     <!-- V1 -->
                     <div class="voucher-card active-card snap-center shrink-0" onmouseenter="setActiveCard(this)">
@@ -565,12 +613,12 @@
                     <p class="text-xs text-gray-300 mb-4 italic">Selecione a data que você mais tem interesse:</p>
                     <div class="calendar-wrapper">
                          <div class="grid grid-cols-7 gap-1 md:gap-2 mb-2">
-                            <div class="cal-header"></div><div class="cal-header">Seg</div><div class="cal-header">Ter</div><div class="cal-header">Qua</div><div class="cal-header">Qui</div><div class="cal-header">Sex</div><div class="cal-header">Sáb</div>
+                            <div class="cal-header">Dom</div><div class="cal-header">Seg</div><div class="cal-header">Ter</div><div class="cal-header">Qua</div><div class="cal-header">Qui</div><div class="cal-header">Sex</div><div class="cal-header">Sáb</div>
                         </div>
                         <div class="calendar-grid" id="smart-calendar">
-                             <div class="cal-day"></div><div class="cal-day full">1</div><div class="cal-day full">2</div><div class="cal-day full">3</div><div class="cal-day full">4</div><div class="cal-day full">5</div><div class="cal-day closed">6</div>
-                             <div class="cal-day closed">7</div><div class="cal-day full">8</div><div class="cal-day full">9</div><div class="cal-day full">10</div><div class="cal-day full">11</div><div class="cal-day last-spot" onclick="selectDay(12)" data-day="12">12</div><div class="cal-day full">13</div>
-                             <div class="cal-day closed" onclick="selectDay(15)" data-day="15">14</div><div class="cal-day closed">15</div><div class="cal-day available" onclick="selectDay(16)" data-day="16">16</div>
+                             <div class="cal-day full">1</div><div class="cal-day full">2</div><div class="cal-day full">3</div><div class="cal-day full">4</div><div class="cal-day full">5</div><div class="cal-day full">6</div><div class="cal-day closed">7</div>
+                             <div class="cal-day available" onclick="selectDay(8)" data-day="8">8</div><div class="cal-day available" onclick="selectDay(9)" data-day="9">9</div><div class="cal-day last-spot" onclick="selectDay(10)" data-day="10">10</div><div class="cal-day available" onclick="selectDay(11)" data-day="11">11</div><div class="cal-day last-spot" onclick="selectDay(12)" data-day="12">12</div><div class="cal-day available" onclick="selectDay(13)" data-day="13">13</div><div class="cal-day closed">14</div>
+                             <div class="cal-day closed" onclick="selectDay(15)" data-day="15">15</div><div class="cal-day available" onclick="selectDay(16)" data-day="16">16</div>
                              <div class="cal-day available" onclick="selectDay(17)" data-day="17">17</div><div class="cal-day full">18</div><div class="cal-day full">19</div><div class="cal-day full">20</div><div class="cal-day full">21</div><div class="cal-day full">22</div><div class="cal-day full" onclick="selectDay(23)" data-day="23">23</div>
                              <div class="cal-day last-spot" onclick="selectDay(24)" data-day="24">24</div><div class="cal-day closed">25</div><div class="cal-day closed">26</div>
                              <div class="cal-day full" onclick="selectDay(27)" data-day="27">27</div><div class="cal-day full">28</div><div class="cal-day full">29</div><div class="cal-day full">30</div><div class="cal-day closed">31</div>
@@ -637,12 +685,12 @@
             <div class="transformation-box">
                 <!-- Video ANTES (MP4) -->
                 <video id="vid-antes" class="transform-video opacity-0" muted loop playsinline autoplay>
-                    <source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/q_auto,f_auto,w_720/v1765286921/WhatsApp_Video_2025-12-09_at_10.26.29_wrdw09.mp4" type="video/mp4">
+                    <source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765286921/WhatsApp_Video_2025-12-09_at_10.26.29_wrdw09.mp4" type="video/mp4">
                 </video>
 
                 <!-- Video DEPOIS (Padrão) -->
                 <video id="vid-depois" class="transform-video opacity-100" autoplay muted loop playsinline>
-                    <source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/q_auto,f_auto,w_720/v1765286926/WhatsApp_Video_2025-12-09_at_10.28.20_vfb8e7.mp4" type="video/mp4">
+                    <source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/v1765286926/WhatsApp_Video_2025-12-09_at_10.28.20_vfb8e7.mp4" type="video/mp4">
                 </video>
 
                 <!-- Label de Status -->
