@@ -6,47 +6,35 @@
     
     <!-- 1. SEO & PERFORMANCE -->
     <title>Essência de Romã Hair | O Liso Blindado em Chapecó</title>
-    <meta name="description" content="Especialista em Alisamento Orgânico e Recuperação Capilar em Chapecó. Agende seu horário com condição VIP de Dezembro.">
+    <meta name="description" content="Especialista em Alisamento Orgânico e Recuperação Capilar em Chapecó. Últimas vagas para Dezembro.">
     <meta name="theme-color" content="#2b0505">
     <link rel="canonical" href="https://salaoessenciaderoma.com/">
     <link rel="icon" type="image/png" href="https://i.ibb.co/7xQTPb2t/LOGO.png" />
 
-    <!-- SCRIPT DE SEGURANÇA -->
+    <!-- SEGURANÇA -->
     <script>
         document.onkeydown = function(e) {
             if(e.keyCode == 123) return false; 
-            if(e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) return false; 
-            if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false; 
+            if(e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 67 || e.keyCode == 74 || e.keyCode == 85)) return false; 
         }
-        document.addEventListener('dragstart', function(e){e.preventDefault();}, false);
-        document.addEventListener('selectstart', function(e){e.preventDefault();}, false);
+        document.addEventListener('dragstart', e=>e.preventDefault());
+        document.addEventListener('selectstart', e=>e.preventDefault());
     </script>
 
     <!-- FONTS & LIBS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Cinzel:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- TRACKING SCRIPTS -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11442509118"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-11442509118');
-      
-      function gtag_report_conversion(url) {
-        var callback = function () { if (typeof(url) != 'undefined') { window.open(url, '_blank'); } };
-        if (typeof gtag === 'function') { gtag('event', 'conversion', { 'send_to': 'AW-11442509118/CNfICPrhpYAZEL6qm9Aq', 'transaction_id': '', 'event_callback': callback }); } 
-        else { callback(); }
-        return false;
-      }
+      window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-11442509118');
+      function gtag_report_conversion(url) { var c = function () { if (typeof(url) != 'undefined') { window.open(url, '_blank'); } }; if (typeof gtag === 'function') { gtag('event', 'conversion', { 'send_to': 'AW-11442509118/CNfICPrhpYAZEL6qm9Aq', 'event_callback': c }); } else { c(); } return false; }
     </script>
-    
-    <!-- Meta & TikTok Pixels -->
     <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');try{fbq('init', '639959835745383');fbq('track', 'PageView');}catch(e){}</script>
-    <script>!function (w, d, t) {w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};ttq.load('D4TEU2JC77U1QNJ4VQ90');ttq.page();}(window, document, 'ttq');</script>
+    <script>window.addEventListener('load',function(){setTimeout(()=>{var s=document.createElement('script');s.src="//widget.manychat.com/1394285950786346.js";s.defer=true;document.body.appendChild(s);},3000);});</script>
 
     <style>
         /* CORE */
@@ -65,18 +53,16 @@
 
         /* TYPOGRAPHY */
         .font-playfair { font-family: 'Playfair Display', serif; }
-        
-        /* EFEITO DOURADO JOIA */
         .text-gold-static { 
             color: #e8c872;
             background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 58%, #fbf5b7 80%, #aa771c 100%);
-            -webkit-background-clip: text; 
-            background-clip: text;
+            -webkit-background-clip: text; background-clip: text;
             -webkit-text-fill-color: transparent; 
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
             font-weight: 800;
         }
-        
+        .text-gold-shine { background: linear-gradient(to right, #cfc09f, #ffecb3, #c5a059, #ffd700, #cfc09f); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 6s linear infinite; }
+        @keyframes shine { to { background-position: 200% center; } }
         .eyebrow-text { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: #e5e5e5; margin-bottom: 0.5rem; font-weight: 500; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
         .hero-subtext { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #e5e5e5; margin-top: 1.5rem; line-height: 1.6; max-width: 90%; margin-left: auto; margin-right: auto; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
 
@@ -84,19 +70,17 @@
         .section-pill { display: inline-block; background: rgba(212, 175, 55, 0.15); border: 1px solid rgba(212, 175, 55, 0.5); color: #d4af37; font-size: 0.7rem; font-weight: 700; padding: 6px 20px; border-radius: 50px; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.2em; backdrop-filter: blur(5px); }
         .btn-solid-gold { background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%); color: #2b0505; border: 1px solid #ffecb3; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); transition: transform 0.2s; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; justify-content: center; }
         .btn-solid-gold:active { transform: scale(0.98); }
-        .btn-ghost { border: 1px solid rgba(255, 255, 255, 0.2); color: #e5e5e5; cursor: pointer; transition: all 0.3s; }
-        .btn-ghost:hover { background: rgba(255,255,255,0.1); color: #fff; border-color: #fff; }
+        .btn-ghost { border: 1px solid rgba(255, 255, 255, 0.2); color: #e5e5e5; cursor: pointer; }
 
-        /* CARDS */
+        /* CARDS & VOUCHERS */
         .video-card { border-radius: 16px; overflow: hidden; border: 1px solid rgba(197, 160, 89, 0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.5); background: #000; position: relative; aspect-ratio: 9/16; }
         .card-mute-btn { position: absolute; bottom: 10px; right: 10px; width: 32px; height: 32px; background: rgba(0,0,0,0.7); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; z-index: 20; cursor: pointer; border: 1px solid rgba(255,255,255,0.3); }
-
-        /* VOUCHERS */
         .voucher-card { background: linear-gradient(145deg, #1a0505, #2b0808); border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 16px; padding: 1.5rem; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.4); text-align: center; display: flex; flex-direction: column; justify-content: space-between; align-items: center; min-width: 280px; transition: border-color 0.3s; }
         .voucher-card.active-card { border-color: #ffd700; box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15); }
         .premium-tag { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728); color: #2b0505; text-transform: uppercase; font-size: 0.65rem; font-weight: 800; padding: 0.35rem 1.2rem; border-radius: 50px; letter-spacing: 0.15em; box-shadow: 0 5px 15px rgba(0,0,0,0.5); white-space: nowrap; z-index: 20; border: 1px solid #7a5c18; }
         .voucher-price-new { font-family: 'Playfair Display', serif; font-weight: 700; color: #ffd700; font-size: 2.8rem; line-height: 1; margin: 0.5rem 0; display: flex; justify-content: center; align-items: baseline; gap: 2px; }
         .voucher-currency, .voucher-cents { font-size: 1.2rem; margin-top: 6px; font-weight: 600; position: relative; top: -0.5em; }
+        .voucher-rule { font-size: 0.75rem; color: #ccc; border-top: 1px solid rgba(197, 160, 89, 0.2); padding-top: 0.8rem; margin-top: 0.8rem; width: 100%; }
         .cut-toggle-container { margin-top: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 0.8rem; border: 1px solid rgba(197, 160, 89, 0.2); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: #e5e5e5; text-align: left; width: 100%; }
         .switch { position: relative; display: inline-block; width: 34px; height: 20px; flex-shrink: 0; margin-left: 8px; }
         .switch input { opacity: 0; width: 0; height: 0; }
@@ -107,18 +91,6 @@
         #card-container { padding-right: 15%; }
         @media (min-width: 768px) { #card-container { padding-right: 0; justify-content: center; } }
 
-        /* CALENDAR */
-        .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; width: 100%; margin-top: 1rem; }
-        .cal-header { text-align: center; font-size: 0.65rem; color: #aaa; text-transform: uppercase; font-weight: bold; margin-bottom: 5px; }
-        .cal-day { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 0.9rem; font-weight: bold; position: relative; background: rgba(255,255,255,0.05); color: #fff; transition: all 0.2s; cursor: default; min-height: 40px; }
-        .cal-day.available { border: 1px solid #4ade80; color: #4ade80; cursor: pointer; }
-        .cal-day.available:hover { background: rgba(74, 222, 128, 0.1); }
-        .cal-day.full { color: #555; text-decoration: line-through; background: rgba(0,0,0,0.2); opacity: 0.6; }
-        .cal-day.closed { color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); opacity: 0.6; }
-        .cal-day.last-spot { border: 1px solid #facc15; color: #facc15; cursor: pointer; animation: pulse-yellow 2s infinite; }
-        @keyframes pulse-yellow { 0% {box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.4);} 70% {box-shadow: 0 0 0 4px rgba(250, 204, 21, 0);} 100% {box-shadow: 0 0 0 0 rgba(250, 204, 21, 0);} }
-        .vaga-alert { background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.5); color: #d4af37; padding: 8px 16px; border-radius: 999px; font-size: 0.8rem; font-weight: bold; animation: fade-in-up 0.3s ease-out; display: flex; align-items: center; gap: 8px; justify-content: center; margin-top: 10px; }
-
         /* CINEMA MODE */
         .transformation-box { position: relative; width: 100%; max-width: 340px; aspect-ratio: 9/16; margin: 0 auto; border-radius: 20px; overflow: hidden; border: 2px solid rgba(197, 160, 89, 0.3); box-shadow: 0 20px 60px -10px rgba(0,0,0,0.7); }
         .transform-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -128,7 +100,7 @@
         .dock-btn { padding: 8px 24px; border-radius: 100px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; color: #888; transition: all 0.3s ease; }
         .dock-btn.active { background: #d4af37; color: #1a0505; box-shadow: 0 2px 12px rgba(212, 175, 55, 0.4); }
         .dock-status-label { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); color: #d4af37; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; padding: 6px 16px; border-radius: 100px; border: 1px solid rgba(212,175,55,0.3); z-index: 20; pointer-events: none; }
-
+        
         /* FAQ */
         #faq-isolate { background-color: #1a0202; background-image: radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%); }
         .faq-item { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(197, 160, 89, 0.2); border-radius: 8px; margin-bottom: 1rem; overflow: hidden; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; }
@@ -263,30 +235,39 @@
                 </div>
                 <p class="slide-hint md:hidden text-center text-xs text-gray-500 italic mt-2">Deslize para ver opções <span class="ml-1">→</span></p>
 
-                <div class="mt-12 mb-6 bg-black/30 p-4 rounded-2xl border border-red-900/40 inline-block w-full max-w-4xl">
-                    <p class="text-sm text-red-300 font-bold uppercase tracking-widest mb-3">Agenda Dezembro • <span class="animate-pulse">AO VIVO</span></p>
-                    <div class="calendar-wrapper">
-                         <div class="grid grid-cols-7 gap-1 md:gap-2 mb-2 text-center text-xs font-bold text-gray-400"><div>DOM</div><div>SEG</div><div>TER</div><div>QUA</div><div>QUI</div><div>SEX</div><div>SÁB</div></div>
-                         <div class="grid grid-cols-7 gap-1" id="smart-calendar">
-                             <!-- Gerado via JS -->
-                        </div>
+                <!-- BLOCO DE ESCASSEZ -->
+                <div class="mt-12 mb-6 bg-black/30 p-6 rounded-2xl border border-red-900/40 inline-block w-full max-w-4xl">
+                    <div class="flex flex-col items-center gap-4">
+                        <div class="animate-pulse text-4xl text-yellow-500"><i class="fas fa-exclamation-triangle"></i></div>
+                        <h3 class="text-xl md:text-2xl font-serif font-bold text-white uppercase tracking-widest">
+                            Agenda Dezembro <span class="text-red-500">Lotada</span>
+                        </h3>
+                        <p class="text-lg text-gold-static font-bold border-b border-gold-static/30 pb-2">
+                            Restam apenas 5 vagas até o final do ano!
+                        </p>
+                        <p class="text-sm text-gray-400 max-w-md">
+                            Devido à alta procura de fim de ano, não estamos conseguindo atender a todos. Garanta seu horário agora antes que encerre.
+                        </p>
+                        <button onclick="openWhatsApp('Olá! Vi que restam poucas vagas para Dezembro. Quero garantir a minha!')" class="btn-solid-gold py-4 px-8 rounded-full shadow-lg text-sm font-bold uppercase mt-4 w-full md:w-auto hover:scale-105 transition-transform">
+                            <i class="fab fa-whatsapp text-lg mr-2"></i> Garantir Minha Vaga
+                        </button>
                     </div>
-                    <div id="dynamic-msg-container"></div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="bloco-prints" class="bg-[#f0f2f5] py-16">
-            <div class="container mx-auto px-6 max-w-6xl"><div class="text-center mb-10"><span class="text-gray-500 text-xs font-bold tracking-[0.2em] uppercase block mb-2">Transparência Total</span><h2 class="font-playfair text-3xl md:text-4xl text-gray-900 font-bold">O Que Elas Dizem <span class="text-[#25D366]">No WhatsApp</span></h2></div><div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 px-4 md:px-0 hide-scrollbar"><div class="print-card snap-center shrink-0"><div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/q_auto,f_auto,w_720/v1765217143/image10_hqklzu.jpg" class="print-img"></div></div><div class="print-card snap-center shrink-0"><div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/q_auto,f_auto,w_720/v1765217144/image12_o8mqvd.jpg" class="print-img"></div></div><div class="print-card snap-center shrink-0"><div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/q_auto,f_auto,w_720/v1765217143/image08_maqez1.jpg" class="print-img"></div></div><div class="print-card snap-center shrink-0"><div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/q_auto,f_auto,w_720/v1765217144/image11_aynsvl.jpg" class="print-img"></div></div></div><div class="text-center mt-8"><a href="#vouchers" class="btn-solid-gold py-3 px-8 rounded-full shadow-lg no-underline text-[#2b0505] font-bold">Quero Meu Resultado Assim</a></div></div>
-        </section>
-        
-        <div id="bloco3-refinado" class="bg-[#f9f9f9] py-16"><div class="container mx-auto px-6 max-w-6xl"><div class="text-center mb-10"><span class="text-[#C5A059] text-xs font-bold tracking-widest uppercase">A Voz de Quem Viveu</span><h2 class="font-playfair text-3xl md:text-5xl text-black font-bold mt-2">Experiências <span class="text-gold-shine">Reais</span></h2></div><div id="dynamic-gallery" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 px-4 md:px-0 hide-scrollbar"></div><p class="slide-hint md:hidden text-center text-xs text-gray-500 italic mt-2">Deslize para ler mais</p><div class="text-center mt-10"><button onclick="sendWhatsAppMessage()" class="btn-solid-gold py-3 px-10 rounded-full text-lg">Quero Meu Liso Blindado</button></div></div></div>
+    <section id="bloco-prints" class="bg-[#f0f2f5] py-16">
+        <div class="container mx-auto px-6 max-w-6xl"><div class="text-center mb-10"><span class="text-gray-500 text-xs font-bold tracking-[0.2em] uppercase block mb-2">Transparência Total</span><h2 class="font-playfair text-3xl md:text-4xl text-gray-900 font-bold">O Que Elas Dizem <span class="text-[#25D366]">No WhatsApp</span></h2></div><div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 px-4 md:px-0 hide-scrollbar"><div class="print-card snap-center shrink-0"><div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/q_auto,f_auto,w_720/v1765217143/image10_hqklzu.jpg" class="print-img"></div></div><div class="print-card snap-center shrink-0"><div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/q_auto,f_auto,w_720/v1765217144/image12_o8mqvd.jpg" class="print-img"></div></div><div class="print-card snap-center shrink-0"><div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/q_auto,f_auto,w_720/v1765217143/image08_maqez1.jpg" class="print-img"></div></div><div class="print-card snap-center shrink-0"><div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/q_auto,f_auto,w_720/v1765217144/image11_aynsvl.jpg" class="print-img"></div></div></div><div class="text-center mt-8"><a href="#vouchers" class="btn-solid-gold py-3 px-8 rounded-full shadow-lg no-underline text-[#2b0505] font-bold">Quero Meu Resultado Assim</a></div></div>
+    </section>
+    
+    <div id="bloco3-refinado" class="bg-[#f9f9f9] py-16"><div class="container mx-auto px-6 max-w-6xl"><div class="text-center mb-10"><span class="text-[#C5A059] text-xs font-bold tracking-widest uppercase">A Voz de Quem Viveu</span><h2 class="font-playfair text-3xl md:text-5xl text-black font-bold mt-2">Experiências <span class="text-gold-shine">Reais</span></h2></div><div id="dynamic-gallery" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 px-4 md:px-0 hide-scrollbar"></div><p class="slide-hint md:hidden text-center text-xs text-gray-500 italic mt-2">Deslize para ler mais</p><div class="text-center mt-10"><button onclick="sendWhatsAppMessage()" class="btn-solid-gold py-3 px-10 rounded-full text-lg">Quero Meu Liso Blindado</button></div></div></div>
 
-        <section id="bloco-transformation" class="py-16 bg-[#2b0505] relative overflow-hidden"><div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#d4af37] to-transparent opacity-30"></div><div class="container mx-auto px-6 max-w-4xl text-center relative z-10"><span class="text-[#c5a059] text-xs font-bold tracking-[0.3em] uppercase block mb-4">Resultado Real</span><h2 class="font-playfair text-3xl md:text-5xl text-white mb-8">A Transformação <span class="text-gold-shine">Absoluta</span></h2><div class="transformation-box"><video id="vid-antes" class="transform-video opacity-0" muted loop playsinline autoplay><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/q_auto,f_auto,w_720/v1765286921/WhatsApp_Video_2025-12-09_at_10.26.29_wrdw09.mp4" type="video/mp4"></video><video id="vid-depois" class="transform-video opacity-100" autoplay muted loop playsinline><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/q_auto,f_auto,w_720/v1765286926/WhatsApp_Video_2025-12-09_at_10.28.20_vfb8e7.mp4" type="video/mp4"></video><div id="status-label" class="dock-status-label">DEPOIS</div><div class="control-dock"><button onclick="toggleTransform('antes')" id="btn-antes" class="dock-btn">Ver Antes</button><button onclick="toggleTransform('depois')" id="btn-depois" class="dock-btn active">Ver Depois</button></div></div><p class="text-gray-400 text-xs mt-6 italic opacity-80">Toque nos botões para alternar instantaneamente</p></div></section>
+    <section id="bloco-transformation" class="py-16 bg-[#2b0505] relative overflow-hidden"><div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#d4af37] to-transparent opacity-30"></div><div class="container mx-auto px-6 max-w-4xl text-center relative z-10"><span class="text-[#c5a059] text-xs font-bold tracking-[0.3em] uppercase block mb-4">Resultado Real</span><h2 class="font-playfair text-3xl md:text-5xl text-white mb-8">A Transformação <span class="text-gold-shine">Absoluta</span></h2><div class="transformation-box"><video id="vid-antes" class="transform-video opacity-0" muted loop playsinline autoplay><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/q_auto,f_auto,w_720/v1765286921/WhatsApp_Video_2025-12-09_at_10.26.29_wrdw09.mp4" type="video/mp4"></video><video id="vid-depois" class="transform-video opacity-100" autoplay muted loop playsinline><source src="https://res.cloudinary.com/dh4ekg6f2/video/upload/q_auto,f_auto,w_720/v1765286926/WhatsApp_Video_2025-12-09_at_10.28.20_vfb8e7.mp4" type="video/mp4"></video><div id="status-label" class="dock-status-label">DEPOIS</div><div class="control-dock"><button onclick="toggleTransform('antes')" id="btn-antes" class="dock-btn">Ver Antes</button><button onclick="toggleTransform('depois')" id="btn-depois" class="dock-btn active">Ver Depois</button></div></div><p class="text-gray-400 text-xs mt-6 italic opacity-80">Toque nos botões para alternar instantaneamente</p></div></section>
 
-        <div id="faq-isolate" class="py-16"><div class="container mx-auto px-6 max-w-3xl"><div class="text-center mb-10"><div class="section-pill">Dúvidas Frequentes</div><h2 class="font-playfair text-3xl text-white font-bold">Tudo sobre o <span class="text-gold-shine">Liso Blindado</span></h2></div><div class="space-y-4"><details class="faq-item"><summary class="faq-summary"><span class="faq-question-text">É compatível com loiras?</span><div class="faq-icon-wrapper"><div class="faq-icon-line line-v"></div><div class="faq-icon-line line-h"></div></div></summary><div class="faq-answer-content">Sim! Usamos matizadores exclusivos que protegem a cor.</div></details><details class="faq-item"><summary class="faq-summary"><span class="faq-question-text">Grávidas podem fazer?</span><div class="faq-icon-wrapper"><div class="faq-icon-line line-v"></div><div class="faq-icon-line line-h"></div></div></summary><div class="faq-answer-content">Sim, com autorização médica. Fórmula 100% orgânica.</div></details><details class="faq-item"><summary class="faq-summary"><span class="faq-question-text">Quanto tempo dura?</span><div class="faq-icon-wrapper"><div class="faq-icon-line line-v"></div><div class="faq-icon-line line-h"></div></div></summary><div class="faq-answer-content">De 3 a 6 meses, dependendo do crescimento da raiz e dos cuidados Home Care.</div></details><details class="faq-item"><summary class="faq-summary"><span class="faq-question-text">Como cuidar em casa?</span><div class="faq-icon-wrapper"><div class="faq-icon-line line-v"></div><div class="faq-icon-line line-h"></div></div></summary><div class="faq-answer-content">A durabilidade depende muito do <strong>Home Care</strong>. Use sempre a linha de manutenção da mesma marca.</div></details></div><div class="text-center mt-10"><button onclick="openWhatsApp('Olá! Tenho dúvidas sobre o Liso Blindado.')" class="btn-solid-gold py-3 px-8 rounded-full">Falar com Especialista</button></div></div></div>
+    <div id="faq-isolate" class="py-16"><div class="container mx-auto px-6 max-w-3xl"><div class="text-center mb-10"><div class="section-pill">Dúvidas Frequentes</div><h2 class="font-playfair text-3xl text-white font-bold">Tudo sobre o <span class="text-gold-shine">Liso Blindado</span></h2></div><div class="space-y-4"><details class="faq-item"><summary class="faq-summary"><span class="faq-question-text">É compatível com loiras?</span><div class="faq-icon-wrapper"><div class="faq-icon-line line-v"></div><div class="faq-icon-line line-h"></div></div></summary><div class="faq-answer-content">Sim! Usamos matizadores exclusivos que protegem a cor.</div></details><details class="faq-item"><summary class="faq-summary"><span class="faq-question-text">Grávidas podem fazer?</span><div class="faq-icon-wrapper"><div class="faq-icon-line line-v"></div><div class="faq-icon-line line-h"></div></div></summary><div class="faq-answer-content">Sim, com autorização médica. Fórmula 100% orgânica.</div></details><details class="faq-item"><summary class="faq-summary"><span class="faq-question-text">Quanto tempo dura?</span><div class="faq-icon-wrapper"><div class="faq-icon-line line-v"></div><div class="faq-icon-line line-h"></div></div></summary><div class="faq-answer-content">De 3 a 6 meses, dependendo do crescimento da raiz e dos cuidados Home Care.</div></details><details class="faq-item"><summary class="faq-summary"><span class="faq-question-text">Como cuidar em casa?</span><div class="faq-icon-wrapper"><div class="faq-icon-line line-v"></div><div class="faq-icon-line line-h"></div></div></summary><div class="faq-answer-content">A durabilidade depende muito do <strong>Home Care</strong>. Use sempre a linha de manutenção da mesma marca.</div></details></div><div class="text-center mt-10"><button onclick="openWhatsApp('Olá! Tenho dúvidas sobre o Liso Blindado.')" class="btn-solid-gold py-3 px-8 rounded-full">Falar com Especialista</button></div></div></div>
 
-        <footer id="footer-empire-master"><div class="footer-divider"><i class="fas fa-gem footer-divider-icon"></i></div><div class="brands-wrapper"><span class="brands-title">PRODUTOS HOMOLOGADOS & PARCEIROS</span><div class="brands-grid"><span class="brand-logo brand-main">ESSÊNCIA DE ROMÃ</span><span class="brand-logo">A GATA LAMBEU</span><span class="brand-logo">ITALLIAN COLOR</span><span class="brand-logo">AMERICAN SMOOTH</span><span class="brand-logo">JESSICA GRABSKI</span><span class="brand-logo">ESSÊNCIA RARA</span></div></div><div class="content-grid text-center"><div><span class="footer-heading">Contato</span><p>Chapecó, SC</p><a href="#" onclick="openWhatsApp('Olá!')" class="text-white hover:text-[#C5A059] transition text-lg block my-2"> (49) 99995-4052</a><div class="badges-row justify-center"><div class="badge-minimal"><i class="fas fa-shield-alt"></i> SITE SEGURO</div><div class="badge-minimal"><i class="fas fa-check-circle"></i> ANVISA</div></div></div><div><span class="footer-heading">Horário de Atendimento</span><p><strong>Segunda-feira:</strong><br>13:00 - 17:00</p><p class="mt-2"><strong>Terça a Sábado:</strong><br>08:00 - 18:00</p><p class="text-xs text-[#666] mt-2 italic">*Horários sujeitos a alteração em feriados.</p></div><div><span class="footer-heading">Localização</span><p class="mb-2"><i class="fas fa-map-pin text-[#C5A059] mr-2"></i>Rua Achiles Tomazelli, 296 D - Centro</p><div class="map-frame"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3489.1751996515865!2d-52.6186419849202!3d-27.100918083072045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e4b574a6914757%3A0xc3f83734e941198c!2sRua%20Achiles%20Tomazelli%2C%20296%20D%20-%20Centro%2C%20Chapec%C3%B3%20-%20SC%2C%2089802-125!5e0!3m2!1spt-BR!2sbr!4v1628172930000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe></div><a href="https://www.google.com/maps/search/?api=1&query=Rua+Achiles+Tomazelli+296+D+Chapeco" target="_blank" class="text-xs text-[#C5A059] mt-2 block hover:underline">Abrir no Google Maps →</a></div></div><div class="bottom-bar"><div class="social-links justify-center"><a href="https://www.instagram.com/essenciaderoma.chapeco/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/essenciaderoma.1" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a><a href="https://www.tiktok.com/@essenciaderoma.chapeco" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a><a href="https://www.youtube.com/@essenciaderomahair" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a></div><div class="legal-links"><button onclick="openModal('privacy')" id="btn-privacy-trigger">Política de Privacidade</button><span>|</span><button onclick="openModal('terms')" id="btn-terms-trigger">Termos de Uso</button></div><p class="copyright-text">&copy; 2016 - 2025 Essência de Romã Hair. Todos os direitos reservados.</p></div></footer>
+    <footer id="footer-empire-master"><div class="footer-divider"><i class="fas fa-gem footer-divider-icon"></i></div><div class="brands-wrapper"><span class="brands-title">PRODUTOS HOMOLOGADOS & PARCEIROS</span><div class="brands-grid"><span class="brand-logo brand-main">ESSÊNCIA DE ROMÃ</span><span class="brand-logo">A GATA LAMBEU</span><span class="brand-logo">ITALLIAN COLOR</span><span class="brand-logo">AMERICAN SMOOTH</span><span class="brand-logo">JESSICA GRABSKI</span><span class="brand-logo">ESSÊNCIA RARA</span></div></div><div class="content-grid text-center"><div><span class="footer-heading">Contato</span><p>Chapecó, SC</p><a href="#" onclick="openWhatsApp('Olá!')" class="text-white hover:text-[#C5A059] transition text-lg block my-2"> (49) 99995-4052</a><div class="badges-row justify-center"><div class="badge-minimal"><i class="fas fa-shield-alt"></i> SITE SEGURO</div><div class="badge-minimal"><i class="fas fa-check-circle"></i> ANVISA</div></div></div><div><span class="footer-heading">Horário de Atendimento</span><p><strong>Segunda-feira:</strong><br>13:00 - 17:00</p><p class="mt-2"><strong>Terça a Sábado:</strong><br>08:00 - 18:00</p><p class="text-xs text-[#666] mt-2 italic">*Horários sujeitos a alteração em feriados.</p></div><div><span class="footer-heading">Localização</span><p class="mb-2"><i class="fas fa-map-pin text-[#C5A059] mr-2"></i>Rua Achiles Tomazelli, 296 D - Centro</p><div class="map-frame"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3489.1751996515865!2d-52.6186419849202!3d-27.100918083072045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e4b574a6914757%3A0xc3f83734e941198c!2sRua%20Achiles%20Tomazelli%2C%20296%20D%20-%20Centro%2C%20Chapec%C3%B3%20-%20SC%2C%2089802-125!5e0!3m2!1spt-BR!2sbr!4v1628172930000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe></div><a href="https://www.google.com/maps/search/?api=1&query=Rua+Achiles+Tomazelli+296+D+Chapeco" target="_blank" class="text-xs text-[#C5A059] mt-2 block hover:underline">Abrir no Google Maps →</a></div></div><div class="bottom-bar"><div class="social-links justify-center"><a href="https://www.instagram.com/essenciaderoma.chapeco/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/essenciaderoma.1" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a><a href="https://www.tiktok.com/@essenciaderoma.chapeco" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a><a href="https://www.youtube.com/@essenciaderomahair" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a></div><div class="legal-links"><button onclick="openModal('privacy')" id="btn-privacy-trigger">Política de Privacidade</button><span>|</span><button onclick="openModal('terms')" id="btn-terms-trigger">Termos de Uso</button></div><p class="copyright-text">&copy; 2016 - 2025 Essência de Romã Hair. Todos os direitos reservados.</p></div></footer>
 
     <!-- SCRIPT GERAL -->
     <script>
@@ -307,81 +288,36 @@
         function setActiveCard(c) { document.querySelectorAll('.voucher-card').forEach(x=>x.classList.remove('active-card')); c.classList.add('active-card'); }
         function toggleCut(t,b){ const c=document.getElementById('check-'+t); const pI=document.querySelector(`#price-${t} .price-int`); if(c&&pI){ pI.textContent=c.checked?(b+80).toFixed(0):Math.floor(b); } }
         function toggleCardAudio(id,b){ const v=document.getElementById(id); const i=b.querySelector('i'); if(!v)return; document.querySelectorAll('video').forEach(x=>{if(x.id!==id)x.muted=true}); if(v.muted){v.muted=false;i.className='fas fa-volume-up'}else{v.muted=true;i.className='fas fa-volume-mute'} }
-        function resgatar(t,v,id){openWhatsApp(t,v,id);}
-        function sendWhatsAppMessage(){openWhatsApp("Olá! Vi os depoimentos e quero agendar.");}
-
-        function renderLiveCalendar() {
-             const grid = document.getElementById('smart-calendar');
-             if(!grid) return;
-             grid.innerHTML = '';
-             
-             // Configuração Fixa Dezembro 2025
-             // Dia 1 = Segunda-feira (1 célula vazia antes, pois a semana começa no Domingo)
-             // Total dias: 31
-             
-             // Data de "Hoje" simulada para preview (15/12/2025) ou real
-             const now = new Date();
-             // Se não for Dez 2025, forçamos a visualização para o dia 15 (teste)
-             // Se for Dez 2025, usa o dia real.
-             let today = 15;
-             if (now.getMonth() === 11 && now.getFullYear() === 2025) {
-                 today = now.getDate();
-             }
-
-             // Adiciona célula vazia para Domingo (Dia 1 é Segunda)
-             grid.innerHTML += '<div class="cal-day"></div>';
-
-             for(let d=1; d<=31; d++) {
-                 let statusClass = "cal-day";
-                 let clickAttr = "";
-                 let dayOfWeek = (d % 7); // 1=Seg, 2=Ter... 0=Dom (aproximado, pois d=1 é Seg)
-                 
-                 // Ajuste fino do dia da semana (considerando offset de 1)
-                 // Se d=1 (Seg), (1+1)%7 = 2? Não.
-                 // Vamos usar new Date para ter certeza
-                 const dateObj = new Date(2025, 11, d); // Mês 11 = Dez
-                 const weekDay = dateObj.getDay(); // 0=Dom, 6=Sab
-
-                 if (d < today) {
-                     statusClass += " full"; // Passado
-                 } else if (weekDay === 0 || d === 25) { // Domingo ou Natal
-                     statusClass += " closed";
-                 } else if (d === today) {
-                     statusClass += " last-spot animate-pulse"; // HOJE
-                     clickAttr = `onclick="selectDay(${d}, true)"`;
-                 } else if (d === 24) {
-                     statusClass += " last-spot"; // Véspera
-                     clickAttr = `onclick="selectDay(${d}, false)"`;
-                 } else {
-                     statusClass += " available";
-                     clickAttr = `onclick="selectDay(${d}, false)"`;
-                 }
-                 
-                 grid.innerHTML += `<div class="${statusClass}" ${clickAttr} data-day="${d}">${d}</div>`;
-             }
+        
+        function toggleTransform(m) {
+            const vA=document.getElementById('vid-antes'), vD=document.getElementById('vid-depois');
+            const bA=document.getElementById('btn-antes'), bD=document.getElementById('btn-depois');
+            const lbl=document.getElementById('status-label');
+            if(m==='antes'){ vA.style.opacity='1'; vD.style.opacity='0'; bA.classList.add('active'); bD.classList.remove('active'); lbl.innerText="ANTES"; lbl.style.borderColor="#fff"; lbl.style.color="#fff"; }
+            else{ vA.style.opacity='0'; vD.style.opacity='1'; bA.classList.remove('active'); bD.classList.add('active'); lbl.innerText="DEPOIS"; lbl.style.borderColor="#d4af37"; lbl.style.color="#d4af37"; }
         }
 
-        function selectDay(d, isToday) {
-             let msg = isToday ? "🔥 ÚLTIMAS VAGAS HOJE!" : "💎 Horário Disponível";
-             let color = isToday ? "#facc15" : "#4ade80";
-             let wppText = isToday ? "Olá! Quero encaixe para HOJE (15/12)." : `Olá! Quero agendar dia ${d}/12.`;
-             
-             if (d === 24) { msg = "🎄 VAGA EXTRA DE NATAL!"; color = "#facc15"; }
+        function resgatar(t,v,id){
+             const chk = document.getElementById('check-' + id);
+             let msg = `Olá! Quero garantir meu horário VIP de Dezembro.\n\n*Voucher:* ${t} (R$ ${v.toFixed(2)})`;
+             if(chk && chk.checked) msg += `\n*+ Adicional:* Corte Terapêutico (Oferta R$ 80,00)`;
+             msg += `\n\nCiente da taxa de reserva de R$ 50,00.`;
+             openWhatsApp(msg);
+        }
+        function sendWhatsAppMessage(){openWhatsApp("Olá! Vi os depoimentos e quero agendar.");}
 
-             const html = `
-                <div class="vaga-alert" style="color:${color};border-color:${color}; border:1px solid; border-radius:999px; padding:8px; display:inline-block; margin-bottom:8px; font-weight:bold; font-size:0.8rem;">${msg}</div>
-                <button onclick="openWhatsApp('${wppText}')" style="background-color:${color}; color:#064e3b" class="w-full py-3 rounded-lg font-bold uppercase text-xs shadow-lg flex items-center justify-center gap-2">
-                    <i class="fab fa-whatsapp text-lg"></i> Agendar ${isToday ? 'Agora' : ('Dia '+d)}
-                </button>
-            `;
-            document.getElementById('dynamic-msg-container').innerHTML = html;
+        // --- MODAL LÓGICA ---
+        function openModal(type) {
+            const modal = document.getElementById('erh-legal-modal-overlay');
+            if(modal) modal.style.display = 'flex';
+        }
+        function closeModal() {
+            const modal = document.getElementById('erh-legal-modal-overlay');
+            if(modal) modal.style.display = 'none';
         }
 
         // INIT
         document.addEventListener('DOMContentLoaded', () => {
-            renderLiveCalendar(); // Inicia o calendário
-            
-            // Status Loja
             (function(){
                 const el=document.getElementById('header-status-text'); if(!el) return;
                 const h = new Date().getHours();
