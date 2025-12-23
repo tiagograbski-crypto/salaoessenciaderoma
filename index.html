@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR" oncontextmenu="return false">
+<html lang="pt-BR" oncontextmenu="return false" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- 1. SEO & PERFORMANCE -->
     <title>Essência de Romã Hair | O Liso Blindado em Chapecó</title>
-    <meta name="description" content="Especialista em Alisamento Orgânico e Recuperação Capilar em Chapecó. Últimas vagas para Dezembro.">
+    <meta name="description" content="Especialista em Alisamento Orgânico e Recuperação Capilar em Chapecó. Últimas vagas para o Natal.">
     <meta name="theme-color" content="#2b0505">
     <link rel="canonical" href="https://salaoessenciaderoma.com/">
     <link rel="icon" type="image/png" href="https://i.ibb.co/7xQTPb2t/LOGO.png" />
@@ -23,7 +23,7 @@
 
     <!-- FONTS & LIBS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cinzel:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -70,16 +70,21 @@
         .section-pill { display: inline-block; background: rgba(212, 175, 55, 0.15); border: 1px solid rgba(212, 175, 55, 0.5); color: #d4af37; font-size: 0.7rem; font-weight: 700; padding: 6px 20px; border-radius: 50px; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.2em; backdrop-filter: blur(5px); }
         .btn-solid-gold { background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%); color: #2b0505; border: 1px solid #ffecb3; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); transition: transform 0.2s; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; justify-content: center; }
         .btn-solid-gold:active { transform: scale(0.98); }
-        .btn-ghost { border: 1px solid rgba(255, 255, 255, 0.2); color: #e5e5e5; cursor: pointer; }
+        .btn-ghost { border: 1px solid rgba(255, 255, 255, 0.2); color: #e5e5e5; cursor: pointer; transition: all 0.3s; }
+        .btn-ghost:hover { background: rgba(255,255,255,0.1); color: #fff; border-color: #fff; }
 
-        /* CARDS & VOUCHERS */
+        /* CARDS */
         .video-card { border-radius: 16px; overflow: hidden; border: 1px solid rgba(197, 160, 89, 0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.5); background: #000; position: relative; aspect-ratio: 9/16; }
         .card-mute-btn { position: absolute; bottom: 10px; right: 10px; width: 32px; height: 32px; background: rgba(0,0,0,0.7); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; z-index: 20; cursor: pointer; border: 1px solid rgba(255,255,255,0.3); }
+
+        /* VOUCHERS */
         .voucher-card { background: linear-gradient(145deg, #1a0505, #2b0808); border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 16px; padding: 1.5rem; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.4); text-align: center; display: flex; flex-direction: column; justify-content: space-between; align-items: center; min-width: 280px; transition: border-color 0.3s; }
         .voucher-card.active-card { border-color: #ffd700; box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15); }
         .premium-tag { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728); color: #2b0505; text-transform: uppercase; font-size: 0.65rem; font-weight: 800; padding: 0.35rem 1.2rem; border-radius: 50px; letter-spacing: 0.15em; box-shadow: 0 5px 15px rgba(0,0,0,0.5); white-space: nowrap; z-index: 20; border: 1px solid #7a5c18; }
+        
+        /* PREÇOS E TOGGLE (CORRIGIDO) */
         .voucher-price-new { font-family: 'Playfair Display', serif; font-weight: 700; color: #ffd700; font-size: 2.8rem; line-height: 1; margin: 0.5rem 0; display: flex; justify-content: center; align-items: baseline; gap: 2px; }
-        .voucher-currency, .voucher-cents { font-size: 1.2rem; margin-top: 6px; font-weight: 600; position: relative; top: -0.5em; }
+        .voucher-currency { font-size: 1.2rem; margin-top: 6px; font-weight: 600; position: relative; top: -0.5em; }
         .voucher-rule { font-size: 0.75rem; color: #ccc; border-top: 1px solid rgba(197, 160, 89, 0.2); padding-top: 0.8rem; margin-top: 0.8rem; width: 100%; }
         .cut-toggle-container { margin-top: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 0.8rem; border: 1px solid rgba(197, 160, 89, 0.2); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: #e5e5e5; text-align: left; width: 100%; }
         .switch { position: relative; display: inline-block; width: 34px; height: 20px; flex-shrink: 0; margin-left: 8px; }
@@ -89,7 +94,6 @@
         input:checked + .slider-toggle { background-color: #4ade80; }
         input:checked + .slider-toggle:before { transform: translateX(14px); }
         #card-container { padding-right: 15%; }
-        @media (min-width: 768px) { #card-container { padding-right: 0; justify-content: center; } }
 
         /* CINEMA MODE */
         .transformation-box { position: relative; width: 100%; max-width: 340px; aspect-ratio: 9/16; margin: 0 auto; border-radius: 20px; overflow: hidden; border: 2px solid rgba(197, 160, 89, 0.3); box-shadow: 0 20px 60px -10px rgba(0,0,0,0.7); }
@@ -112,12 +116,10 @@
         .faq-item[open] .faq-question-text { color: #ffd700 !important; }
         .faq-answer-content { padding: 0 1.5rem 1.5rem 1.5rem; color: #ffffff !important; font-size: 0.95rem; line-height: 1.7; border-top: 1px solid rgba(197, 160, 89, 0.1); }
         
-        /* PRINTS */
+        /* PRINTS & FOOTER */
         .print-card { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #e1e1e1; min-width: 220px; max-width: 280px; scroll-snap-align: center; }
         .print-img-wrapper { width: 100%; height: 100%; overflow: hidden; background: #000; display: flex; align-items: center; justify-content: center; }
         .print-img { width: 100%; height: 100%; object-fit: contain; }
-
-        /* FOOTER */
         #footer-empire-master { background-color: #1a0505; background-image: radial-gradient(circle at center top, #2b0808 0%, #1a0505 60%); color: #ccc; padding-top: 4rem; padding-bottom: 2rem; border-top: 1px solid rgba(197, 160, 89, 0.3); text-align: center; }
         .footer-divider { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 800px; display: flex; align-items: center; justify-content: center; }
         .footer-divider::before, .footer-divider::after { content: ''; height: 1px; flex: 1; background: linear-gradient(90deg, transparent, #c5a059, transparent); }
@@ -153,6 +155,7 @@
 </head>
 <body>
 
+    <!-- HOME PAGE -->
     <header id="header-sticky" class="fixed top-0 left-0 w-full z-50 h-20 md:h-24 flex items-center">
         <div class="container mx-auto max-w-7xl px-4 flex justify-between items-center">
             <div class="flex items-center gap-2 md:gap-4">
@@ -163,10 +166,9 @@
                 </div>
             </div>
             <div class="flex items-center gap-2 md:gap-3">
-                <button onclick="openWhatsApp('Olá! Gostaria de conhecer o menu de Outros Serviços.')" class="flex items-center gap-2 btn-ghost py-2 px-2 md:px-4 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider no-underline transition-all hover:bg-white/10 border border-white/20">
-                    <i class="fas fa-spa text-[#d4af37]"></i> <span class="md:hidden">Serviços</span><span class="hidden md:inline">Outras Especialidades</span>
+                <button onclick="openWhatsApp('Olá! Gostaria de conhecer o menu de Outros Serviços.')" class="flex items-center gap-2 btn-ghost py-2 px-2 md:px-4 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider transition-all hover:bg-white/10 border border-white/20">
+                    <i class="fas fa-spa text-[#d4af37]"></i> Outros Serviços
                 </button>
-                <a href="https://www.google.com/maps/search/?api=1&query=Rua+Achiles+Tomazelli+296+D+Chapeco" target="_blank" class="hidden sm:flex items-center gap-2 btn-ghost py-2 px-4 rounded-full text-xs font-bold uppercase tracking-wider no-underline"><i class="fas fa-map-marker-alt"></i> Mapa</a>
                 <a href="#vouchers" class="flex items-center gap-2 btn-solid-gold py-2 px-3 md:py-3 md:px-6 rounded-full shadow-lg text-[10px] md:text-xs no-underline">
                     <i class="fab fa-whatsapp text-sm md:text-lg"></i>
                     <div class="flex flex-col text-left leading-none">
@@ -198,6 +200,7 @@
         </div>
     </section>
 
+    <!-- CONTEÚDO PRINCIPAL -->
     <section id="bloco2-content" class="bg-[#2b0505] text-[#f3f3f3] pt-16 pb-16">
         <div class="container mx-auto px-6 max-w-6xl">
             <header class="text-center mb-16">
@@ -229,27 +232,78 @@
                 </div>
 
                 <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:grid md:grid-cols-3 max-w-5xl mx-auto pb-6 pt-8 px-4 md:px-0 hide-scrollbar" id="card-container">
-                    <div class="voucher-card active-card snap-center shrink-0" onmouseenter="setActiveCard(this)"><div class="premium-tag">Mais Vendido</div><div><h3 class="voucher-title">Lisos e Ondulados</h3><div class="voucher-rule"><p><i class="fas fa-ruler-vertical text-[#c5a059] mr-1"></i> Até metade das costas</p></div><div class="voucher-price-old">De R$ 250,00</div><div class="voucher-price-new" id="price-liso"><span class="voucher-currency">R$</span><span class="price-int">189</span><span class="price-cents">,90</span></div><div class="cut-toggle-container"><span class="flex-1 text-left"><span class="text-gray-300 font-bold text-xs block">Corte Terapêutico (Pontas)</span><span class="text-[#c5a059] text-xs">De <span class="line-through text-gray-500">R$250</span> por +R$80</span></span><label class="switch"><input type="checkbox" id="check-liso" onchange="toggleCut('liso', 189.90)"><span class="slider-toggle"></span></label></div><a href="javascript:void(0)" onclick="resgatar('Liso/Ondulado', 189.90, 'liso')" class="block w-full btn-solid-gold py-3 rounded-lg text-sm uppercase tracking-wider mt-4 font-bold shadow-md text-[#2b0505] no-underline">Garantir Condição VIP</a></div></div>
-                    <div class="voucher-card snap-center shrink-0" onmouseenter="setActiveCard(this)"><div class="premium-tag">Destaque</div><div><h3 class="voucher-title">Cacheados (3A-3C)</h3><div class="voucher-rule"><p><i class="fas fa-ruler-vertical text-[#c5a059] mr-1"></i> Até metade das costas (esticado)</p></div><div class="voucher-price-old">De R$ 320,00</div><div class="voucher-price-new" id="price-cacheado"><span class="voucher-currency">R$</span><span class="price-int">280</span><span class="price-cents">,00</span></div><div class="cut-toggle-container"><span class="flex-1 text-left"><span class="text-gray-300 font-bold text-xs block">Corte Terapêutico (Pontas)</span><span class="text-[#c5a059] text-xs">De <span class="line-through text-gray-500">R$250</span> por +R$80</span></span><label class="switch"><input type="checkbox" id="check-cacheado" onchange="toggleCut('cacheado', 280.00)"><span class="slider-toggle"></span></label></div><a href="javascript:void(0)" onclick="resgatar('Cacheado', 280.00, 'cacheado')" class="block w-full btn-solid-gold py-3 rounded-lg text-sm uppercase tracking-wider mt-4 font-bold shadow-md text-[#2b0505] no-underline">Garantir Condição VIP</a></div></div>
-                    <div class="voucher-card snap-center shrink-0" onmouseenter="setActiveCard(this)"><div class="premium-tag">Premium</div><div><h3 class="voucher-title">Crespos (4A-4C)</h3><div class="voucher-rule"><p><i class="fas fa-ruler-vertical text-[#c5a059] mr-1"></i> Até metade das costas (esticado)</p></div><div class="voucher-price-old">De R$ 499,00</div><div class="voucher-price-new" id="price-crespo"><span class="voucher-currency">R$</span><span class="price-int">310</span><span class="price-cents">,00</span></div><div class="cut-toggle-container"><span class="flex-1 text-left"><span class="text-gray-300 font-bold text-xs block">Corte Terapêutico (Pontas)</span><span class="text-[#c5a059] text-xs">De <span class="line-through text-gray-500">R$250</span> por +R$80</span></span><label class="switch"><input type="checkbox" id="check-crespo" onchange="toggleCut('crespo', 310.00)"><span class="slider-toggle"></span></label></div><a href="javascript:void(0)" onclick="resgatar('Crespo', 310.00, 'crespo')" class="block w-full btn-solid-gold py-3 rounded-lg text-sm uppercase tracking-wider mt-4 font-bold shadow-md text-[#2b0505] no-underline">Garantir Condição VIP</a></div></div>
+                    <!-- VOUCHER 1 -->
+                    <div class="voucher-card active-card snap-center shrink-0 min-w-[280px]" onmouseenter="setActiveCard(this)">
+                        <div class="premium-tag">Mais Vendido</div>
+                        <h3 class="font-serif text-xl font-bold mt-4 text-white">Lisos e Ondulados</h3>
+                        <div class="voucher-rule">
+                            <p><i class="fas fa-ruler-vertical text-[#c5a059] mr-1"></i> Até metade das costas</p>
+                        </div>
+                        <div class="voucher-price-old">De R$ 250,00</div>
+                        <div class="voucher-price-new" id="price-liso">
+                            <span class="voucher-currency">R$</span><span class="price-int">189</span><span class="price-cents">,90</span>
+                        </div>
+                        <div class="cut-toggle-container">
+                            <span class="flex-1 text-left"><span class="text-gray-300 font-bold text-xs block">Corte Terapêutico (Pontas)</span><span class="text-[#c5a059] text-xs">De <span class="line-through text-gray-500">R$250</span> por +R$80</span></span>
+                            <label class="switch"><input type="checkbox" id="check-liso" onchange="toggleCut('liso', 189.90)"><span class="slider-toggle"></span></label>
+                        </div>
+                        <button onclick="resgatar('Liso/Ondulado', 189.90, 'liso')" class="btn-solid-gold w-full py-3 rounded mt-4 text-sm font-bold uppercase">Agendar VIP</button>
+                    </div>
+
+                    <!-- VOUCHER 2 -->
+                    <div class="voucher-card snap-center shrink-0 min-w-[280px]" onmouseenter="setActiveCard(this)">
+                        <div class="premium-tag">Destaque</div>
+                        <h3 class="font-serif text-xl font-bold mt-4 text-white">Cacheados (3A-3C)</h3>
+                        <div class="voucher-rule">
+                            <p><i class="fas fa-ruler-vertical text-[#c5a059] mr-1"></i> Até metade das costas (esticado)</p>
+                        </div>
+                        <div class="voucher-price-old">De R$ 320,00</div>
+                        <div class="voucher-price-new" id="price-cacheado">
+                            <span class="voucher-currency">R$</span><span class="price-int">280</span><span class="price-cents">,00</span>
+                        </div>
+                        <div class="cut-toggle-container">
+                            <span class="flex-1 text-left"><span class="text-gray-300 font-bold text-xs block">Corte Terapêutico (Pontas)</span><span class="text-[#c5a059] text-xs">De <span class="line-through text-gray-500">R$250</span> por +R$80</span></span>
+                            <label class="switch"><input type="checkbox" id="check-cacheado" onchange="toggleCut('cacheado', 280.00)"><span class="slider-toggle"></span></label>
+                        </div>
+                        <button onclick="resgatar('Cacheado', 280.00, 'cacheado')" class="btn-solid-gold w-full py-3 rounded mt-4 text-sm font-bold uppercase">Agendar VIP</button>
+                    </div>
+
+                    <!-- VOUCHER 3 -->
+                    <div class="voucher-card snap-center shrink-0 min-w-[280px]" onmouseenter="setActiveCard(this)">
+                        <div class="premium-tag">Premium</div>
+                        <h3 class="font-serif text-xl font-bold mt-4 text-white">Crespos (4A-4C)</h3>
+                        <div class="voucher-rule">
+                            <p><i class="fas fa-ruler-vertical text-[#c5a059] mr-1"></i> Até metade das costas (esticado)</p>
+                        </div>
+                        <div class="voucher-price-old">De R$ 499,00</div>
+                        <div class="voucher-price-new" id="price-crespo">
+                            <span class="voucher-currency">R$</span><span class="price-int">310</span><span class="price-cents">,00</span>
+                        </div>
+                        <div class="cut-toggle-container">
+                            <span class="flex-1 text-left"><span class="text-gray-300 font-bold text-xs block">Corte Terapêutico (Pontas)</span><span class="text-[#c5a059] text-xs">De <span class="line-through text-gray-500">R$250</span> por +R$80</span></span>
+                            <label class="switch"><input type="checkbox" id="check-crespo" onchange="toggleCut('crespo', 310.00)"><span class="slider-toggle"></span></label>
+                        </div>
+                        <button onclick="resgatar('Crespo', 310.00, 'crespo')" class="btn-solid-gold w-full py-3 rounded mt-4 text-sm font-bold uppercase">Agendar VIP</button>
+                    </div>
                 </div>
+                
                 <p class="slide-hint md:hidden text-center text-xs text-gray-500 italic mt-2">Deslize para ver opções <span class="ml-1">→</span></p>
 
-                <!-- BLOCO DE ESCASSEZ -->
-                <div class="mt-12 mb-6 bg-black/30 p-6 rounded-2xl border border-red-900/40 inline-block w-full max-w-4xl">
+                <!-- BLOCO DE ESCASSEZ DE NATAL -->
+                <div class="mt-12 mb-6 bg-gradient-to-r from-red-900 to-[#2b0505] p-6 rounded-2xl border border-[#d4af37]/50 inline-block w-full max-w-4xl shadow-[0_0_30px_rgba(239,68,68,0.2)]">
                     <div class="flex flex-col items-center gap-4">
-                        <div class="animate-pulse text-4xl text-yellow-500"><i class="fas fa-exclamation-triangle"></i></div>
-                        <h3 class="text-xl md:text-2xl font-serif font-bold text-white uppercase tracking-widest">
-                            Agenda Dezembro <span class="text-red-500">Lotada</span>
+                        <div class="animate-pulse text-4xl text-[#d4af37]"><i class="fas fa-gift"></i></div>
+                        <h3 class="text-xl md:text-3xl font-serif font-bold text-white uppercase tracking-widest leading-tight">
+                            Plantão de Natal <span class="text-[#d4af37]">VIP</span>
                         </h3>
-                        <p class="text-lg text-gold-static font-bold border-b border-gold-static/30 pb-2">
-                            Restam apenas 5 vagas até o final do ano!
+                        <div class="bg-red-600 text-white px-4 py-1 rounded text-xs font-bold uppercase tracking-widest animate-bounce">
+                            Somente 23/12 e 24/12
+                        </div>
+                        <p class="text-lg text-gray-200 font-light max-w-md">
+                            Liberamos horários extras e uma condição especial para quem agendar agora.
                         </p>
-                        <p class="text-sm text-gray-400 max-w-md">
-                            Devido à alta procura de fim de ano, não estamos conseguindo atender a todos. Garanta seu horário agora antes que encerre.
-                        </p>
-                        <button onclick="openWhatsApp('Olá! Vi que restam poucas vagas para Dezembro. Quero garantir a minha!')" class="btn-solid-gold py-4 px-8 rounded-full shadow-lg text-sm font-bold uppercase mt-4 w-full md:w-auto hover:scale-105 transition-transform">
-                            <i class="fab fa-whatsapp text-lg mr-2"></i> Garantir Minha Vaga
+                        <button onclick="openWhatsApp('Olá! Quero conferir a Oferta Relâmpago de Natal (23 e 24/12)!')" class="btn-solid-gold py-4 px-8 rounded-full shadow-lg text-sm font-bold uppercase mt-2 w-full md:w-auto hover:scale-105 transition-transform">
+                            <i class="fab fa-whatsapp text-lg mr-2"></i> Conferir Oferta no Whats
                         </button>
                     </div>
                 </div>
@@ -258,7 +312,7 @@
     </section>
 
     <section id="bloco-prints" class="bg-[#f0f2f5] py-16">
-        <div class="container mx-auto px-6 max-w-6xl"><div class="text-center mb-10"><span class="text-gray-500 text-xs font-bold tracking-[0.2em] uppercase block mb-2">Transparência Total</span><h2 class="font-playfair text-3xl md:text-4xl text-gray-900 font-bold">O Que Elas Dizem <span class="text-[#25D366]">No WhatsApp</span></h2></div><div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 px-4 md:px-0 hide-scrollbar"><div class="print-card snap-center shrink-0"><div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/q_auto,f_auto,w_720/v1765217143/image10_hqklzu.jpg" class="print-img"></div></div><div class="print-card snap-center shrink-0"><div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/q_auto,f_auto,w_720/v1765217144/image12_o8mqvd.jpg" class="print-img"></div></div><div class="print-card snap-center shrink-0"><div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/q_auto,f_auto,w_720/v1765217143/image08_maqez1.jpg" class="print-img"></div></div><div class="print-card snap-center shrink-0"><div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/q_auto,f_auto,w_720/v1765217144/image11_aynsvl.jpg" class="print-img"></div></div></div><div class="text-center mt-8"><a href="#vouchers" class="btn-solid-gold py-3 px-8 rounded-full shadow-lg no-underline text-[#2b0505] font-bold">Quero Meu Resultado Assim</a></div></div>
+        <div class="container mx-auto px-6 max-w-6xl"><div class="text-center mb-10"><span class="text-gray-500 text-xs font-bold tracking-[0.2em] uppercase block mb-2">Transparência Total</span><h2 class="font-playfair text-3xl md:text-4xl text-gray-900 font-bold">O Que Elas Dizem <span class="text-[#25D366]">No WhatsApp</span></h2></div><div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 px-4 md:px-0 hide-scrollbar"><div class="print-card snap-center shrink-0"><div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/v1765217143/image10_hqklzu.jpg" class="print-img"></div></div><div class="print-card snap-center shrink-0"><div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/v1765217144/image12_o8mqvd.jpg" class="print-img"></div></div><div class="print-card snap-center shrink-0"><div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/v1765217143/image08_maqez1.jpg" class="print-img"></div></div><div class="print-card snap-center shrink-0"><div class="print-img-wrapper"><img src="https://res.cloudinary.com/dh4ekg6f2/image/upload/v1765217144/image11_aynsvl.jpg" class="print-img"></div></div></div><div class="text-center mt-8"><a href="#vouchers" class="btn-solid-gold py-3 px-8 rounded-full shadow-lg no-underline text-[#2b0505] font-bold">Quero Meu Resultado Assim</a></div></div>
     </section>
     
     <div id="bloco3-refinado" class="bg-[#f9f9f9] py-16"><div class="container mx-auto px-6 max-w-6xl"><div class="text-center mb-10"><span class="text-[#C5A059] text-xs font-bold tracking-widest uppercase">A Voz de Quem Viveu</span><h2 class="font-playfair text-3xl md:text-5xl text-black font-bold mt-2">Experiências <span class="text-gold-shine">Reais</span></h2></div><div id="dynamic-gallery" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 px-4 md:px-0 hide-scrollbar"></div><p class="slide-hint md:hidden text-center text-xs text-gray-500 italic mt-2">Deslize para ler mais</p><div class="text-center mt-10"><button onclick="sendWhatsAppMessage()" class="btn-solid-gold py-3 px-10 rounded-full text-lg">Quero Meu Liso Blindado</button></div></div></div>
@@ -269,26 +323,59 @@
 
     <footer id="footer-empire-master"><div class="footer-divider"><i class="fas fa-gem footer-divider-icon"></i></div><div class="brands-wrapper"><span class="brands-title">PRODUTOS HOMOLOGADOS & PARCEIROS</span><div class="brands-grid"><span class="brand-logo brand-main">ESSÊNCIA DE ROMÃ</span><span class="brand-logo">A GATA LAMBEU</span><span class="brand-logo">ITALLIAN COLOR</span><span class="brand-logo">AMERICAN SMOOTH</span><span class="brand-logo">JESSICA GRABSKI</span><span class="brand-logo">ESSÊNCIA RARA</span></div></div><div class="content-grid text-center"><div><span class="footer-heading">Contato</span><p>Chapecó, SC</p><a href="#" onclick="openWhatsApp('Olá!')" class="text-white hover:text-[#C5A059] transition text-lg block my-2"> (49) 99995-4052</a><div class="badges-row justify-center"><div class="badge-minimal"><i class="fas fa-shield-alt"></i> SITE SEGURO</div><div class="badge-minimal"><i class="fas fa-check-circle"></i> ANVISA</div></div></div><div><span class="footer-heading">Horário de Atendimento</span><p><strong>Segunda-feira:</strong><br>13:00 - 17:00</p><p class="mt-2"><strong>Terça a Sábado:</strong><br>08:00 - 18:00</p><p class="text-xs text-[#666] mt-2 italic">*Horários sujeitos a alteração em feriados.</p></div><div><span class="footer-heading">Localização</span><p class="mb-2"><i class="fas fa-map-pin text-[#C5A059] mr-2"></i>Rua Achiles Tomazelli, 296 D - Centro</p><div class="map-frame"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3489.1751996515865!2d-52.6186419849202!3d-27.100918083072045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e4b574a6914757%3A0xc3f83734e941198c!2sRua%20Achiles%20Tomazelli%2C%20296%20D%20-%20Centro%2C%20Chapec%C3%B3%20-%20SC%2C%2089802-125!5e0!3m2!1spt-BR!2sbr!4v1628172930000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe></div><a href="https://www.google.com/maps/search/?api=1&query=Rua+Achiles+Tomazelli+296+D+Chapeco" target="_blank" class="text-xs text-[#C5A059] mt-2 block hover:underline">Abrir no Google Maps →</a></div></div><div class="bottom-bar"><div class="social-links justify-center"><a href="https://www.instagram.com/essenciaderoma.chapeco/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/essenciaderoma.1" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a><a href="https://www.tiktok.com/@essenciaderoma.chapeco" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a><a href="https://www.youtube.com/@essenciaderomahair" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a></div><div class="legal-links"><button onclick="openModal('privacy')" id="btn-privacy-trigger">Política de Privacidade</button><span>|</span><button onclick="openModal('terms')" id="btn-terms-trigger">Termos de Uso</button></div><p class="copyright-text">&copy; 2016 - 2025 Essência de Romã Hair. Todos os direitos reservados.</p></div></footer>
 
+    <!-- MODAL -->
+    <div id="erh-legal-modal-overlay" class="legal-modal-overlay" onclick="closeModal()">
+        <div class="legal-modal-box" onclick="event.stopPropagation()">
+            <span class="legal-close-btn" onclick="closeModal()">&times;</span>
+            <div id="content-privacy" style="display:none;">
+                <h2 class="legal-content-title">Política de Privacidade</h2>
+                <div class="legal-content-text"><p><strong>1. Coleta:</strong> Dados usados para agendamento.</p></div>
+            </div>
+            <div id="content-terms" style="display:none;">
+                <h2 class="legal-content-title">Termos de Uso</h2>
+                <div class="legal-content-text"><p><strong>1. Agendamento:</strong> Sinal de R$ 50,00.</p></div>
+            </div>
+        </div>
+    </div>
+
     <!-- SCRIPT GERAL -->
     <script>
-        function openWhatsApp(msg, val, id) {
+        function openWhatsApp(msg) {
              const phone = "5549999954052";
-             if (val && id) {
-                 const chk = document.getElementById('check-' + id);
-                 if(chk && chk.checked) msg += `\n*+ Adicional:* Corte Terapêutico (Oferta R$ 80,00)`;
-                 msg += `\n\nCiente da taxa de reserva de R$ 50,00.`;
-             }
              const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(msg)}`;
-             
              if (typeof fbq === 'function') fbq('track', 'Lead');
              if (typeof gtag_report_conversion === 'function') gtag_report_conversion(url);
              else window.open(url, '_blank');
         }
 
         function setActiveCard(c) { document.querySelectorAll('.voucher-card').forEach(x=>x.classList.remove('active-card')); c.classList.add('active-card'); }
-        function toggleCut(t,b){ const c=document.getElementById('check-'+t); const pI=document.querySelector(`#price-${t} .price-int`); if(c&&pI){ pI.textContent=c.checked?(b+80).toFixed(0):Math.floor(b); } }
-        function toggleCardAudio(id,b){ const v=document.getElementById(id); const i=b.querySelector('i'); if(!v)return; document.querySelectorAll('video').forEach(x=>{if(x.id!==id)x.muted=true}); if(v.muted){v.muted=false;i.className='fas fa-volume-up'}else{v.muted=true;i.className='fas fa-volume-mute'} }
         
+        function toggleCut(t,b){ 
+            const c=document.getElementById('check-'+t); 
+            const pI=document.querySelector(`#price-${t} .price-int`); 
+            const pC=document.querySelector(`#price-${t} .price-cents`);
+            const p=document.getElementById(`price-${t}`);
+            
+            if(c){ 
+                const total = c.checked ? b + 80 : b;
+                const intPart = Math.floor(total);
+                const decimalPart = ',' + (total % 1).toFixed(2).substring(2);
+                
+                if(pI) pI.textContent = intPart;
+                if(pC) pC.textContent = decimalPart;
+                if(p) p.style.color = c.checked ? "#4ade80" : "#ffd700";
+            } 
+        }
+
+        function toggleCardAudio(id,btn){ 
+            const v=document.getElementById(id); 
+            const i=btn.querySelector('i'); 
+            if(!v) return; 
+            document.querySelectorAll('video').forEach(vid => { if(vid.id !== id) vid.muted = true; }); 
+            if(v.muted) { v.muted = false; i.className = 'fas fa-volume-up'; } 
+            else { v.muted = true; i.className = 'fas fa-volume-mute'; } 
+        }
+
         function toggleTransform(m) {
             const vA=document.getElementById('vid-antes'), vD=document.getElementById('vid-depois');
             const bA=document.getElementById('btn-antes'), bD=document.getElementById('btn-depois');
@@ -306,30 +393,36 @@
         }
         function sendWhatsAppMessage(){openWhatsApp("Olá! Vi os depoimentos e quero agendar.");}
 
-        // --- MODAL LÓGICA ---
         function openModal(type) {
             const modal = document.getElementById('erh-legal-modal-overlay');
-            if(modal) modal.style.display = 'flex';
+            const priv = document.getElementById('content-privacy');
+            const terms = document.getElementById('content-terms');
+            if(modal){
+                modal.style.display = 'flex';
+                if(type === 'privacy') { priv.style.display = 'block'; terms.style.display = 'none'; }
+                else { priv.style.display = 'none'; terms.style.display = 'block'; }
+            }
         }
         function closeModal() {
             const modal = document.getElementById('erh-legal-modal-overlay');
             if(modal) modal.style.display = 'none';
         }
 
-        // INIT
         document.addEventListener('DOMContentLoaded', () => {
             (function(){
                 const el=document.getElementById('header-status-text'); if(!el) return;
                 const h = new Date().getHours();
-                const isOpen = (h>=8 && h<19);
-                el.innerHTML = isOpen ? '<span class="text-green-400">● Aberto Agora</span>' : '<span class="text-red-300">○ Fechado</span>';
+                el.innerHTML = (h>=8 && h<19) ? '<span class="text-green-400">● Aberto Agora</span>' : '<span class="text-red-300">○ Fechado</span>';
             })();
-
             document.querySelectorAll('.faq-item summary').forEach(s => s.addEventListener('click', e => {
                 e.preventDefault(); const p = s.parentElement;
                 document.querySelectorAll('.faq-item').forEach(o => { if(o!==p)o.removeAttribute('open'); });
                 p.hasAttribute('open') ? p.removeAttribute('open') : p.setAttribute('open','');
             }));
+            
+            // Garantir que os botões do rodapé abram o modal
+            document.getElementById('btn-privacy-trigger').onclick = () => openModal('privacy');
+            document.getElementById('btn-terms-trigger').onclick = () => openModal('terms');
         });
     </script>
 </body>
