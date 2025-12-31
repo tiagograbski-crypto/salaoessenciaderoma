@@ -52,7 +52,20 @@
         
         body.no-scroll { overflow: hidden; height: 100vh; }
 
-        /* INTRO OVERLAY - ORIGINAL CLEAN STYLE */
+        /* GRADIENTES DOURADOS DE LUXO */
+        .gold-gradient-text {
+            color: #e8c872;
+            background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 58%, #fbf5b7 80%, #aa771c 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%);
+        }
+
+        /* INTRO OVERLAY */
         #intro-overlay { 
             position: fixed; 
             inset: 0; 
@@ -81,8 +94,13 @@
             font-family: 'Cinzel', serif; 
             font-size: clamp(3.5rem, 12vw, 7rem); 
             line-height: 1;
-            color: #d4af37;
-            text-shadow: 0 0 25px rgba(212,175,55,0.3);
+            /* Aplicando o mesmo gradiente sofisticado dos textos principais */
+            color: #e8c872;
+            background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 58%, #fbf5b7 80%, #aa771c 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
             opacity: 0; 
             animation: zoomInFade 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards; 
         }
@@ -101,8 +119,8 @@
             opacity: 0;
             animation: fadeInUp 1s 1s forwards;
             background: transparent;
-            border: 2px solid #d4af37;
-            color: #d4af37;
+            border: 2px solid #b38728; /* Dourado mais fechado na borda */
+            color: #e8c872; /* Dourado claro no texto */
             padding: 12px 35px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
@@ -111,13 +129,17 @@
             text-transform: uppercase;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             margin-top: 1rem;
+            position: relative;
+            overflow: hidden;
         }
         
         .intro-btn:hover {
-            background: #d4af37;
-            color: #1a0505;
+            /* Hover com o gradiente rico */
+            background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%);
+            color: #2b0505;
+            border-color: transparent;
             box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
         }
 
@@ -135,6 +157,19 @@
         /* HERO - 2026 THEME */
         .hero-container { position: relative; width: 100vw; height: 100dvh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #2b0505; border-bottom: 2px solid #c5a059; }
         
+        /* VIDEO COM ZOOM PARA REMOVER MARCA D'AGUA */
+        .video-bg { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            object-position: center 20%; 
+            z-index: 0; 
+            transform: scale(1.3); /* ZOOM APLICADO */
+        }
+
         /* FILTRO ORIGINAL (AVERMELHADO) */
         .video-overlay { 
             position: absolute; 
@@ -160,6 +195,8 @@
 
         /* TYPOGRAPHY */
         .font-playfair { font-family: 'Playfair Display', serif; }
+        
+        /* TEXTO DOURADO SOFISTICADO (O MESMO DO BEM-VINDO 2026) */
         .text-gold-static { 
             color: #e8c872;
             background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 58%, #fbf5b7 80%, #aa771c 100%);
