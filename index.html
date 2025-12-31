@@ -65,17 +65,17 @@
             background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%);
         }
 
-        /* INTRO OVERLAY */
+        /* INTRO OVERLAY - CINEMATIC GRANDIOSO */
         #intro-overlay { 
             position: fixed; 
             inset: 0; 
-            background: #1a0505; 
+            background: radial-gradient(circle at center, #2b0808 0%, #0f0202 100%); /* Fundo profundo com foco */
             z-index: 9999; 
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
             align-items: center; 
-            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+            transition: opacity 1.5s cubic-bezier(0.77, 0, 0.175, 1), transform 1.5s cubic-bezier(0.77, 0, 0.175, 1);
             padding: 20px;
             text-align: center;
         }
@@ -87,64 +87,91 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 20px;
+            gap: 25px; /* Espaçamento mais elegante */
+        }
+
+        .intro-spotlight {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+            animation: pulse-glow 4s infinite alternate;
+        }
+
+        .intro-pre-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+            opacity: 0;
+            animation: fadeInUp 1.2s 0.3s forwards;
         }
 
         .intro-year { 
             font-family: 'Cinzel', serif; 
-            font-size: clamp(3.5rem, 12vw, 7rem); 
+            font-size: clamp(4rem, 15vw, 9rem); 
             line-height: 1;
-            /* Aplicando o mesmo gradiente sofisticado dos textos principais */
-            color: #e8c872;
-            background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 58%, #fbf5b7 80%, #aa771c 100%);
+            /* Gradiente Metálico Rico */
+            background: linear-gradient(to bottom, #fff8dc 0%, #d4af37 40%, #8a6e28 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+            color: transparent;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
             opacity: 0; 
-            animation: zoomInFade 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards; 
+            animation: zoomInFade 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards; 
+            margin: 10px 0;
         }
         
         .intro-sub { 
-            font-family: 'Montserrat', sans-serif; 
-            letter-spacing: 0.3em; 
-            text-transform: uppercase; 
+            font-family: 'Playfair Display', serif; /* Fonte mais sofisticada para o convite */
+            font-style: italic;
+            letter-spacing: 0.05em; 
             color: #e5e5e5; 
-            font-size: clamp(0.75rem, 3vw, 1rem); 
+            font-size: clamp(1rem, 3vw, 1.4rem); 
             opacity: 0; 
-            animation: fadeInUp 1s 0.6s forwards; 
+            max-width: 600px;
+            line-height: 1.6;
+            animation: fadeInUp 1.2s 0.8s forwards; 
         }
 
         .intro-btn {
             opacity: 0;
-            animation: fadeInUp 1s 1s forwards;
+            animation: fadeInUp 1.2s 1.4s forwards;
             background: transparent;
-            border: 2px solid #b38728; /* Dourado mais fechado na borda */
-            color: #e8c872; /* Dourado claro no texto */
-            padding: 12px 35px;
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            color: #d4af37;
+            padding: 16px 45px;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 0.9rem;
-            letter-spacing: 0.15em;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.25em;
             text-transform: uppercase;
-            border-radius: 50px;
+            border-radius: 2px; /* Mais "High Fashion" que arredondado */
             cursor: pointer;
-            transition: all 0.4s ease;
-            margin-top: 1rem;
+            transition: all 0.5s ease;
+            margin-top: 2rem;
             position: relative;
             overflow: hidden;
         }
         
         .intro-btn:hover {
-            /* Hover com o gradiente rico */
-            background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%);
-            color: #2b0505;
-            border-color: transparent;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+            background: rgba(212, 175, 55, 0.1);
+            border-color: #fff;
+            color: #fff;
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+            transform: translateY(-3px);
         }
 
-        @keyframes zoomInFade { 0% { transform: scale(0.9); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes zoomInFade { 0% { transform: scale(0.9); opacity: 0; filter: blur(10px); } 100% { transform: scale(1); opacity: 1; filter: blur(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse-glow { 0% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); } 100% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); } }
 
         /* HEADER */
         #header-sticky { 
@@ -196,7 +223,7 @@
         /* TYPOGRAPHY */
         .font-playfair { font-family: 'Playfair Display', serif; }
         
-        /* TEXTO DOURADO SOFISTICADO (O MESMO DO BEM-VINDO 2026) */
+        /* TEXTO DOURADO SOFISTICADO (O MESMO DA INTRO) */
         .text-gold-static { 
             color: #e8c872;
             background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 58%, #fbf5b7 80%, #aa771c 100%);
@@ -367,10 +394,13 @@
 
     <!-- INTRO OVERLAY -->
     <div id="intro-overlay">
+        <div class="intro-particles"></div>
         <div class="intro-content-wrapper">
+            <p class="intro-pre-title">Obrigado por fazer história conosco em 2025</p>
             <h1 class="intro-year">2026</h1>
-            <p class="intro-sub">Um novo ciclo de beleza começa</p>
-            <button onclick="enterSite()" class="intro-btn">Iniciar Minha Beleza 2026</button>
+            <div class="intro-spotlight"></div>
+            <p class="intro-sub">Você é nossa convidada de honra para viver o extraordinário.</p>
+            <button onclick="enterSite()" class="intro-btn">Aceitar Convite VIP</button>
         </div>
     </div>
 
