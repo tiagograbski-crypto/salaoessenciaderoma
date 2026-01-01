@@ -6,7 +6,7 @@
     
     <!-- 1. SEO & PERFORMANCE OTIMIZADA -->
     <title>Essência de Romã Hair | 2026 - O Extraordinário</title>
-    <meta name="description" content="Comece 2026 vivendo o Extraordinário. Agenda especial e Clube de Assinatura exclusivo.">
+    <meta name="description" content="Comece 2026 vivendo o Extraordinário. Agenda especial para os dias 02 e 03 de Janeiro. Recupere seu cabelo das festas com o Liso Blindado.">
     <meta name="theme-color" content="#2b0505">
     <link rel="canonical" href="https://salaoessenciaderoma.com/">
     <link rel="icon" type="image/png" href="https://i.ibb.co/7xQTPb2t/LOGO.png" />
@@ -27,13 +27,13 @@
         document.addEventListener('selectstart', e=>e.preventDefault());
     </script>
 
-    <!-- FONTS & LIBS (Incluindo Cormorant para o Clube) -->
+    <!-- FONTS & LIBS -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- CONFIG TAILWIND HÍBRIDA (SITE + CLUBE) -->
+    <!-- CONFIG TAILWIND HÍBRIDA -->
     <script>
         tailwind.config = {
             theme: {
@@ -96,11 +96,11 @@
         
         body.no-scroll { overflow: hidden; height: 100vh; }
 
-        /* --- ESTILOS DO CLUBE ALISA CHAPECÓ (INTEGRADOS) --- */
+        /* --- ESTILOS DO CLUBE --- */
         #club-view-container {
             background-color: #FFFEFC;
             color: #0f0f0f;
-            display: none; /* Oculto por padrão */
+            display: none;
             width: 100%;
             min-height: 100vh;
             position: absolute;
@@ -109,7 +109,6 @@
             z-index: 9000;
         }
         
-        /* Member Card Styles */
         .member-card {
             background: linear-gradient(160deg, #1a1a1a 0%, #000000 100%);
             border-radius: 12px;
@@ -137,7 +136,6 @@
             100% { transform: translate(30%, 30%) rotate(25deg); }
         }
 
-        /* Texto Liquid Gold */
         .text-liquid-gold {
             background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
             -webkit-background-clip: text;
@@ -148,7 +146,6 @@
         }
         @keyframes shine-text { to { background-position: 200% center; } }
 
-        /* Feature Card */
         .feature-card {
             background: #fff; border-radius: 8px; overflow: hidden;
             transition: all 0.4s ease; border: 1px solid rgba(0,0,0,0.03);
@@ -156,22 +153,19 @@
             padding: 1rem;
         }
 
-        /* Pricing Card Clube */
         .club-pricing-card {
             background: #FFFEFC; border-radius: 16px; overflow: hidden;
             box-shadow: 0 15px 30px -10px rgba(0,0,0,0.08);
             border: 1px solid rgba(0,0,0,0.04);
             transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
             display: flex; flex-direction: column; height: 100%;
-            min-width: 85vw; max-width: 85vw; /* Mobile width */
+            min-width: 85vw; max-width: 85vw;
         }
         @media (min-width: 1024px) { .club-pricing-card { min-width: 0; max-width: none; flex: 1; } }
 
-        /* Dots Clube */
         .carousel-dot { width: 6px; height: 6px; border-radius: 50%; background: #e5e5e5; transition: all 0.3s ease; }
         .carousel-dot.active { width: 20px; border-radius: 3px; background: #C59D24; }
 
-        /* Timeline Clube - NEUROVENDAS */
         .timeline-wrapper { position: relative; margin-top: 20px; }
         .timeline-track { position: absolute; left: 6px; top: 8px; bottom: 8px; width: 1px; background: #e5e5e5; z-index: 0; }
         .timeline-point { position: relative; z-index: 1; display: flex; align-items: flex-start; margin-bottom: 22px; }
@@ -186,7 +180,6 @@
         .point-dot.red { background: #EF4444; border-color: #EF4444; }
         .point-dot.start { background: #121212; border-color: #121212; }
 
-        /* Botão Luxury Clube */
         .btn-luxury-glow {
             position: relative; overflow: hidden;
             background: linear-gradient(135deg, #C59D24 0%, #E6C25B 50%, #C59D24 100%);
@@ -208,7 +201,6 @@
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         
         /* --- FIM ESTILOS CLUBE --- */
-
 
         /* INTRO OVERLAY (SITE PRINCIPAL) */
         #intro-overlay { 
@@ -371,7 +363,7 @@
             <h1 class="intro-year">O Extraordinário</h1>
             <div class="intro-spotlight"></div>
             <p class="intro-sub">Você é nossa convidada de honra para viver isso.</p>
-            <button onclick="enterSite()" class="intro-btn">Iniciar Minha Beleza 2026</button>
+            <button onclick="enterSite()" class="intro-btn">Iniciar Minha Jornada 2026</button>
         </div>
     </div>
 
@@ -480,7 +472,7 @@
                 <!-- CARROSSEL DE VIDEOS (GRID 3) -->
                 <div class="smart-grid hide-scrollbar pb-8">
                     <!-- 3 VIDEOS APENAS (COM SOM ATIVO) - PRELOAD NONE PARA ECONOMIA DE DADOS -->
-                    <div class="snap-center shrink-0 w-[70vw] md:w-auto video-card group bg-black"><button class="card-mute-btn" onclick="toggleCardAudio('vid1', this)"><i class="fas fa-volume-mute"></i></button><video id="vid1" class="w-full h-full object-cover" autoplay muted loop playsinline preload="none"><source src="https://res.cloudinary.com/daukvmsc2/video/upload/v1767279738/WhatsApp_Video_2025-12-09_at_10.26.29_klq4pc.mp4" type="video/mp4"></video></div>
+                    <div class="snap-center shrink-0 w-[70vw] md:w-auto video-card group bg-black"><button class="card-mute-btn" onclick="toggleCardAudio('vid1', this)"><i class="fas fa-volume-mute"></i></button><video id="vid1" class="w-full h-full object-cover" autoplay muted loop playsinline preload="none"><source src="https://res.cloudinary.com/daukvmsc2/video/upload/v1767283500/WhatsApp_Video_2025-12-07_at_08.43.32_scitfn.mp4" type="video/mp4"></video></div>
                     <div class="snap-center shrink-0 w-[70vw] md:w-auto video-card group bg-black"><button class="card-mute-btn" onclick="toggleCardAudio('vid2', this)"><i class="fas fa-volume-mute"></i></button><video id="vid2" class="w-full h-full object-cover" autoplay muted loop playsinline preload="none"><source src="https://res.cloudinary.com/daukvmsc2/video/upload/v1767279737/WhatsApp_Video_2025-12-10_at_19.00.59_ov4cma.mp4" type="video/mp4"></video></div>
                     <div class="snap-center shrink-0 w-[70vw] md:w-auto video-card group bg-black"><button class="card-mute-btn" onclick="toggleCardAudio('vid3', this)"><i class="fas fa-volume-mute"></i></button><video id="vid3" class="w-full h-full object-cover" autoplay muted loop playsinline preload="none"><source src="https://res.cloudinary.com/daukvmsc2/video/upload/v1767279736/WhatsApp_Video_2025-12-09_at_10.51.20_y3iop0.mp4" type="video/mp4"></video></div>
                 </div>
@@ -621,7 +613,7 @@
                 </div>
                 
                 <div class="text-center mt-8">
-                    <a href="https://www.google.com/search?q=Essencia+de+Roma+Hair+Chapeco" target="_blank" class="text-[#d4af37] font-bold text-sm hover:underline">Ver todas as avaliações no Google →</a>
+                    <a href="https://www.google.com/search?q=Essencia+de+Roma+Hair+Chapeco" target="_blank" class="text-[#4285F4] font-bold text-sm hover:underline">Ver todas as avaliações no Google →</a>
                 </div>
             </div>
         </section>
