@@ -44,6 +44,9 @@
                         'brand-gold-light': '#E3C676',
                         'brand-white': '#FFFEFC',
                         'brand-gray': '#666666',
+                        'header-sublime': '#121212',
+                        'header-imperial': '#4A3B32', 
+                        'header-absoluto': '#2C3E50',
                         'promo-alert': '#B91C1C',
                     },
                     backgroundImage: {
@@ -312,16 +315,6 @@
         .dock-btn { padding: 8px 24px; border-radius: 100px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; color: #888; transition: all 0.3s ease; }
         .dock-btn.active { background: #d4af37; color: #1a0505; box-shadow: 0 2px 12px rgba(212, 175, 55, 0.4); }
         .dock-status-label { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); color: #d4af37; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; padding: 6px 16px; border-radius: 100px; border: 1px solid rgba(212,175,55,0.3); z-index: 20; pointer-events: none; }
-        
-        #faq-isolate { background-color: #1a0202; background-image: radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%); }
-        .faq-item { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(197, 160, 89, 0.2); border-radius: 8px; margin-bottom: 1rem; overflow: hidden; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; }
-        .faq-item[open] { background: rgba(20, 5, 5, 0.8); border-color: #d4af37; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); }
-        .faq-item::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0%; background: #d4af37; transition: height 0.3s ease; }
-        .faq-item[open]::before { height: 100%; }
-        summary.faq-summary { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem; cursor: pointer; list-style: none; }
-        .faq-question-text { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: #ffffff !important; transition: color 0.3s; }
-        .faq-item[open] .faq-question-text { color: #ffd700 !important; }
-        .faq-answer-content { padding: 0 1.5rem 1.5rem 1.5rem; color: #ffffff !important; font-size: 0.95rem; line-height: 1.7; border-top: 1px solid rgba(197, 160, 89, 0.1); }
         
         .google-review-card { background: #fff; border-radius: 8px; padding: 25px 20px; min-width: 280px; max-width: 320px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); scroll-snap-align: center; display: flex; flex-direction: column; gap: 12px; border: none; color: #333; text-align: left; transition: transform 0.3s ease; }
         .google-review-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
@@ -812,7 +805,7 @@
                                     <div class="timeline-point">
                                         <div class="point-dot green"><i class="fas fa-check text-[6px]"></i></div>
                                         <div class="flex justify-between w-full items-baseline bg-green-50 p-2 rounded -mt-2 border border-green-100">
-                                            <div class="flex flex-col"><span class="text-xs font-bold text-green-800">Manutenção (30d)</span><span class="text-[9px] text-green-600">★ Preço de Membro</span></div>
+                                            <div class="flex flex-col"><span class="text-xs font-bold text-green-800">Manutenção (30d)</span><span class="text-[9px] text-green-600">★ Opção Mais Econômica</span></div>
                                             <span class="text-sm font-bold text-brand-black">R$ 119,90</span>
                                         </div>
                                     </div>
@@ -874,7 +867,7 @@
                                     <div class="timeline-point">
                                         <div class="point-dot green"><i class="fas fa-check text-[6px]"></i></div>
                                         <div class="flex justify-between w-full items-baseline bg-green-50 p-2 rounded -mt-2 border border-green-100">
-                                            <div class="flex flex-col"><span class="text-xs font-bold text-green-800">Manutenção (30d)</span></div>
+                                            <div class="flex flex-col"><span class="text-xs font-bold text-green-800">Manutenção (30d)</span><span class="text-[9px] text-green-600">★ Opção Mais Econômica</span></div>
                                             <span class="text-sm font-bold text-brand-black">R$ 139,90</span>
                                         </div>
                                     </div>
@@ -927,7 +920,7 @@
                                 <div class="timeline-wrapper">
                                     <div class="timeline-track"></div>
                                     <div class="timeline-point"><div class="point-dot start">1</div><div class="flex justify-between w-full items-baseline border-b border-gray-100 pb-2"><div class="flex flex-col"><span class="text-xs font-bold text-brand-black">Adesão</span><span class="text-[9px] text-red-500 font-bold">*R$ 0,00</span></div><span class="text-xs text-gray-400 line-through">R$ 499</span></div></div>
-                                    <div class="timeline-point"><div class="point-dot green"><i class="fas fa-check text-[6px]"></i></div><div class="flex justify-between w-full items-baseline bg-green-50 p-2 rounded -mt-2 border border-green-100"><div class="flex flex-col"><span class="text-xs font-bold text-green-800">Manutenção (30d)</span></div><span class="text-sm font-bold text-brand-black">R$ 159,90</span></div></div>
+                                    <div class="timeline-point"><div class="point-dot green"><i class="fas fa-check text-[6px]"></i></div><div class="flex justify-between w-full items-baseline bg-green-50 p-2 rounded -mt-2 border border-green-100"><div class="flex flex-col"><span class="text-xs font-bold text-green-800">Manutenção (30d)</span><span class="text-[9px] text-green-600">★ Opção Mais Econômica</span></div><span class="text-sm font-bold text-brand-black">R$ 159,90</span></div></div>
                                     <div class="timeline-point"><div class="point-dot yellow">!</div><div class="flex justify-between w-full items-baseline border-b border-gray-100 pb-2"><div class="flex flex-col"><span class="text-xs font-medium text-gray-500">Zona de Risco (31-60d)</span></div><span class="text-xs font-medium text-gray-500">R$ 220,00</span></div></div>
                                     <div class="timeline-point"><div class="point-dot red">x</div><div class="flex justify-between w-full items-baseline"><div class="flex flex-col"><span class="text-xs font-medium text-red-500">Perda do Clube (61d+)</span></div><span class="text-xs font-medium text-gray-500">R$ 499,00</span></div></div>
                                 </div>
@@ -942,6 +935,84 @@
                 </div>
             </div>
         </section>
+
+        <!-- SEÇÃO 4: FAQ ESPECÍFICO DO CLUBE -->
+        <section class="py-20 bg-brand-white">
+            <div class="max-w-2xl mx-auto px-6">
+                <div class="bg-gray-50 border border-gray-100 rounded-lg p-6 text-center mb-12 reveal-on-scroll shadow-sm">
+                    <i class="fas fa-shield-alt text-2xl text-brand-gold mb-3"></i>
+                    <h3 class="text-xl font-serif text-brand-black mb-2">Segurança Garantida</h3>
+                    <p class="text-[11px] text-gray-500 leading-relaxed font-light">
+                        Nossa tecnologia Essência de Romã é compatível com todas as químicas, incluindo loiros e descoloridos.
+                    </p>
+                </div>
+
+                <h2 class="text-center text-2xl font-serif text-brand-black mb-8">Dúvidas Frequentes</h2>
+
+                <div class="space-y-4">
+                    <details class="group bg-white rounded-lg border border-gray-100 overflow-hidden">
+                        <summary class="flex justify-between items-center p-4 cursor-pointer list-none text-brand-black font-medium text-xs hover:bg-gray-50 transition">
+                            Como funciona o pagamento? Precisa de cartão?
+                            <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-brand-gray text-[10px]"></i></span>
+                        </summary>
+                        <div class="p-4 pt-0 text-gray-500 text-[11px] leading-relaxed border-t border-transparent group-open:border-gray-100 group-open:pt-4 text-justify font-light">
+                            <strong>Não precisa de cartão de crédito.</strong> O pagamento é feito presencialmente (PIX, Dinheiro ou Cartão) no ato do seu procedimento. Você não fica presa a cobranças automáticas.
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-lg border border-gray-100 overflow-hidden">
+                        <summary class="flex justify-between items-center p-4 cursor-pointer list-none text-brand-black font-medium text-xs hover:bg-gray-50 transition">
+                            E se eu não quiser alisar este mês? (Posso usar em outros serviços?)
+                            <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-brand-gray text-[10px]"></i></span>
+                        </summary>
+                        <div class="p-4 pt-0 text-gray-500 text-[11px] leading-relaxed border-t border-transparent group-open:border-gray-100 group-open:pt-4 text-justify font-light">
+                            Sem problemas! Você paga sua mensalidade normalmente e usa o valor integral como <strong>Crédito Flexível</strong> para realizar Cortes, Mechas ou Tratamentos no mesmo mês. Assim você mantém seu Status de Membro ativo sem perder dinheiro.
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-lg border border-gray-100 overflow-hidden">
+                        <summary class="flex justify-between items-center p-4 cursor-pointer list-none text-brand-black font-medium text-xs hover:bg-gray-50 transition">
+                            O crédito acumula para o próximo mês?
+                            <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-brand-gray text-[10px]"></i></span>
+                        </summary>
+                        <div class="p-4 pt-0 text-gray-500 text-[11px] leading-relaxed border-t border-transparent group-open:border-gray-100 group-open:pt-4 text-justify font-light">
+                            <strong>Não é acumulativo.</strong> O valor do seu plano deve ser utilizado dentro do mês corrente (até o último dia do mês). É como uma assinatura de academia: o uso garante seu resultado contínuo.
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-lg border border-gray-100 overflow-hidden">
+                        <summary class="flex justify-between items-center p-4 cursor-pointer list-none text-brand-black font-medium text-xs hover:bg-gray-50 transition">
+                            E se eu atrasar o retorno (passar de 30 dias)?
+                            <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down text-brand-gray text-[10px]"></i></span>
+                        </summary>
+                        <div class="p-4 pt-0 text-gray-500 text-[11px] leading-relaxed border-t border-transparent group-open:border-gray-100 group-open:pt-4 text-justify font-light">
+                            Se você retornar entre 31 e 60 dias, entra na <strong>Zona de Risco (Amarela)</strong> e paga o valor de reativação (um pouco maior). Se passar de 60 dias, volta para o preço cheio (Vermelho) e perde a isenção da adesão.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ÁREA LEGAL DO CLUBE -->
+        <div class="py-8 text-center bg-white border-t border-gray-100">
+            <button onclick="document.getElementById('club-terms-modal').classList.remove('hidden')" class="text-[9px] text-gray-400 uppercase tracking-widest hover:text-brand-black transition">
+                Termos de Uso
+            </button>
+        </div>
+
+        <!-- MODAL DE TERMOS DO CLUBE -->
+        <div id="club-terms-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center">
+            <div class="bg-white w-full max-w-lg mx-4 rounded-xl shadow-2xl p-6 relative max-h-[80vh] overflow-y-auto">
+                <button onclick="document.getElementById('club-terms-modal').classList.add('hidden')" class="absolute top-4 right-4 text-gray-400 hover:text-black">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h3 class="text-lg font-serif text-brand-black mb-4">Termos do Círculo Premier</h3>
+                <div class="text-[10px] text-gray-600 space-y-3 leading-relaxed font-light text-justify">
+                    <p><strong>1. Adesão:</strong> Pagamento único para acesso aos valores exclusivos.</p>
+                    <p><strong>2. Ciclo:</strong> Para manter o valor promocional, o retorno deve ser em até 30 dias. Entre 31-60 dias: valor de reativação. Após 61 dias: valor avulso.</p>
+                    <p><strong>3. Pagamento Flexível:</strong> Não compromete o limite do seu cartão. O pagamento é realizado presencialmente, no ato do procedimento. Você tem até o último dia do mês para usufruir do seu serviço.</p>
+                    <p><strong>4. Crédito Flexível:</strong> O valor da mensalidade pode ser usado em outros serviços no mesmo mês. Não acumulativo.</p>
+                    <p><strong>5. Promoção Isenção:</strong> Válida até 15/01/2026 para clientes com histórico de alisamento nos últimos 60 dias no salão Essência de Romã.</p>
+                </div>
+            </div>
+        </div>
     </div> <!-- FIM WRAPPER CLUBE -->
 
     <!-- MODAL DO SITE PRINCIPAL -->
