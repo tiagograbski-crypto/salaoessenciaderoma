@@ -6,7 +6,7 @@
     
     <!-- 1. SEO & PERFORMANCE OTIMIZADA -->
     <title>Essência de Romã Hair | 2026 - O Extraordinário</title>
-    <meta name="description" content="Comece 2026 vivendo o Extraordinário. Agenda especial para os dias 02 e 03 de Janeiro. Recupere seu cabelo das festas com o Liso Blindado.">
+    <meta name="description" content="Comece 2026 vivendo o Extraordinário. Agenda especial e Clube de Assinatura exclusivo.">
     <meta name="theme-color" content="#2b0505">
     <link rel="canonical" href="https://salaoessenciaderoma.com/">
     <link rel="icon" type="image/png" href="https://i.ibb.co/7xQTPb2t/LOGO.png" />
@@ -27,13 +27,13 @@
         document.addEventListener('selectstart', e=>e.preventDefault());
     </script>
 
-    <!-- FONTS & LIBS -->
+    <!-- FONTS & LIBS (Incluindo Cormorant para o Clube) -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- CONFIG TAILWIND HÍBRIDA -->
+    <!-- CONFIG TAILWIND HÍBRIDA (SITE + CLUBE) -->
     <script>
         tailwind.config = {
             theme: {
@@ -44,10 +44,12 @@
                         'brand-gold-light': '#E3C676',
                         'brand-white': '#FFFEFC',
                         'brand-gray': '#666666',
-                        'header-sublime': '#121212',
-                        'header-imperial': '#4A3B32', 
-                        'header-absoluto': '#2C3E50',
                         'promo-alert': '#B91C1C',
+                    },
+                    backgroundImage: {
+                        'header-sublime': 'linear-gradient(145deg, #1C1C1C 0%, #2A2A2A 100%)', /* Grafite Sofisticado */
+                        'header-imperial': 'linear-gradient(145deg, #2b0505 0%, #4a0a0a 100%)', /* Vinho Marca */
+                        'header-absoluto': 'linear-gradient(145deg, #3E2723 0%, #5D4037 100%)', /* Bronze Nobre */
                     },
                     fontFamily: {
                         'serif': ['Cormorant Garamond', 'Playfair Display', 'serif'],
@@ -96,11 +98,11 @@
         
         body.no-scroll { overflow: hidden; height: 100vh; }
 
-        /* --- ESTILOS DO CLUBE --- */
+        /* --- ESTILOS DO CLUBE ALISA CHAPECÓ (INTEGRADOS) --- */
         #club-view-container {
             background-color: #FFFEFC;
             color: #0f0f0f;
-            display: none;
+            display: none; /* Oculto por padrão */
             width: 100%;
             min-height: 100vh;
             position: absolute;
@@ -109,6 +111,7 @@
             z-index: 9000;
         }
         
+        /* Member Card Styles */
         .member-card {
             background: linear-gradient(160deg, #1a1a1a 0%, #000000 100%);
             border-radius: 12px;
@@ -136,6 +139,7 @@
             100% { transform: translate(30%, 30%) rotate(25deg); }
         }
 
+        /* Texto Liquid Gold */
         .text-liquid-gold {
             background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
             -webkit-background-clip: text;
@@ -146,6 +150,7 @@
         }
         @keyframes shine-text { to { background-position: 200% center; } }
 
+        /* Feature Card */
         .feature-card {
             background: #fff; border-radius: 8px; overflow: hidden;
             transition: all 0.4s ease; border: 1px solid rgba(0,0,0,0.03);
@@ -153,19 +158,22 @@
             padding: 1rem;
         }
 
+        /* Pricing Card Clube */
         .club-pricing-card {
             background: #FFFEFC; border-radius: 16px; overflow: hidden;
             box-shadow: 0 15px 30px -10px rgba(0,0,0,0.08);
             border: 1px solid rgba(0,0,0,0.04);
             transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
             display: flex; flex-direction: column; height: 100%;
-            min-width: 85vw; max-width: 85vw;
+            min-width: 85vw; max-width: 85vw; /* Mobile width */
         }
         @media (min-width: 1024px) { .club-pricing-card { min-width: 0; max-width: none; flex: 1; } }
 
+        /* Dots Clube */
         .carousel-dot { width: 6px; height: 6px; border-radius: 50%; background: #e5e5e5; transition: all 0.3s ease; }
         .carousel-dot.active { width: 20px; border-radius: 3px; background: #C59D24; }
 
+        /* Timeline Clube - NEUROVENDAS REFINADA */
         .timeline-wrapper { position: relative; margin-top: 20px; }
         .timeline-track { position: absolute; left: 6px; top: 8px; bottom: 8px; width: 1px; background: #e5e5e5; z-index: 0; }
         .timeline-point { position: relative; z-index: 1; display: flex; align-items: flex-start; margin-bottom: 22px; }
@@ -180,6 +188,7 @@
         .point-dot.red { background: #EF4444; border-color: #EF4444; }
         .point-dot.start { background: #121212; border-color: #121212; }
 
+        /* Botão Luxury Clube */
         .btn-luxury-glow {
             position: relative; overflow: hidden;
             background: linear-gradient(135deg, #C59D24 0%, #E6C25B 50%, #C59D24 100%);
@@ -200,7 +209,12 @@
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         
+        #club-terms-modal {
+             backdrop-filter: blur(8px); background: rgba(0,0,0,0.6);
+        }
+        
         /* --- FIM ESTILOS CLUBE --- */
+
 
         /* INTRO OVERLAY (SITE PRINCIPAL) */
         #intro-overlay { 
@@ -749,7 +763,7 @@
                 <div class="text-center mb-16 reveal-on-scroll">
                     <h2 class="text-4xl md:text-5xl font-serif text-brand-black italic">Escolha Seu Plano</h2>
                     <p class="mt-4 text-gray-400 font-light text-xs uppercase tracking-widest max-w-xl mx-auto">
-                        Pagamento Presencial • Sem Cartão de Crédito
+                        Sem Cartão de Crédito • Pague Somente ao Usar
                     </p>
                     
                     <div class="mt-8 bg-red-50 border border-red-100 text-red-800 px-6 py-4 rounded-lg inline-block shadow-sm animate-pulse text-left md:text-center max-w-lg">
@@ -821,6 +835,7 @@
                             <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Sublime." class="w-full btn-luxury-glow py-3.5 rounded-lg text-[10px] block text-center shadow-lg bg-brand-gold mt-4">
                                 Entrar no Clube Sublime
                             </a>
+                            <p class="text-center text-[9px] text-gray-400 mt-3 leading-tight"><i class="fas fa-wallet text-[8px]"></i> Pague no ato. Crédito válido até o último dia do mês.</p>
                         </div>
                     </div>
 
@@ -882,6 +897,7 @@
                             <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Imperial." class="w-full btn-luxury-glow py-3.5 rounded-lg text-[10px] block text-center shadow-lg bg-brand-gold mt-4">
                                 Entrar no Clube Imperial
                             </a>
+                            <p class="text-center text-[9px] text-gray-400 mt-3 leading-tight"><i class="fas fa-wallet text-[8px]"></i> Pague no ato. Crédito válido até o último dia do mês.</p>
                         </div>
                     </div>
 
@@ -919,6 +935,7 @@
                             <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Absoluto." class="w-full btn-luxury-glow py-3.5 rounded-lg text-[10px] block text-center shadow-lg bg-brand-gold mt-4">
                                 Entrar no Clube Absoluto
                             </a>
+                            <p class="text-center text-[9px] text-gray-400 mt-3 leading-tight"><i class="fas fa-wallet text-[8px]"></i> Pague no ato. Crédito válido até o último dia do mês.</p>
                         </div>
                     </div>
 
@@ -927,7 +944,7 @@
         </section>
     </div> <!-- FIM WRAPPER CLUBE -->
 
-    <!-- MODAL -->
+    <!-- MODAL DO SITE PRINCIPAL -->
     <div id="erh-legal-modal-overlay" class="legal-modal-overlay" onclick="closeModal()">
         <div class="legal-modal-box" onclick="event.stopPropagation()">
             <span class="legal-close-btn" onclick="closeModal()">&times;</span>
