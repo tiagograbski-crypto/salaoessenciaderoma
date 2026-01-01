@@ -27,13 +27,13 @@
         document.addEventListener('selectstart', e=>e.preventDefault());
     </script>
 
-    <!-- FONTS & LIBS (Incluindo Cormorant para o Clube) -->
+    <!-- FONTS & LIBS -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- CONFIG TAILWIND HÍBRIDA (SITE + CLUBE) -->
+    <!-- CONFIG TAILWIND HÍBRIDA -->
     <script>
         tailwind.config = {
             theme: {
@@ -48,11 +48,6 @@
                         'header-imperial': '#4A3B32', 
                         'header-absoluto': '#2C3E50',
                         'promo-alert': '#B91C1C',
-                    },
-                    backgroundImage: {
-                        'header-sublime': 'linear-gradient(145deg, #1C1C1C 0%, #2A2A2A 100%)', /* Grafite Sofisticado */
-                        'header-imperial': 'linear-gradient(145deg, #2b0505 0%, #4a0a0a 100%)', /* Vinho Marca */
-                        'header-absoluto': 'linear-gradient(145deg, #3E2723 0%, #5D4037 100%)', /* Bronze Nobre */
                     },
                     fontFamily: {
                         'serif': ['Cormorant Garamond', 'Playfair Display', 'serif'],
@@ -81,9 +76,9 @@
         /* CORE */
         * { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
         
-        /* SCROLLBAR & SELECTION */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #1a0505; }
+        /* SCROLLBAR & SELECTION - REFINADOS PARA VISIBILIDADE MOBILE */
+        ::-webkit-scrollbar { width: 8px; height: 6px; } /* Altura definida para scroll horizontal */
+        ::-webkit-scrollbar-track { background: rgba(26, 5, 5, 0.5); }
         ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #b38728; }
         ::selection { background: #d4af37; color: #1a0505; }
@@ -105,7 +100,7 @@
         #club-view-container {
             background-color: #FFFEFC;
             color: #0f0f0f;
-            display: none; /* Oculto por padrão */
+            display: none;
             width: 100%;
             min-height: 100vh;
             position: absolute;
@@ -142,7 +137,6 @@
             100% { transform: translate(30%, 30%) rotate(25deg); }
         }
 
-        /* Texto Liquid Gold */
         .text-liquid-gold {
             background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
             -webkit-background-clip: text;
@@ -153,7 +147,6 @@
         }
         @keyframes shine-text { to { background-position: 200% center; } }
 
-        /* Feature Card */
         .feature-card {
             background: #fff; border-radius: 8px; overflow: hidden;
             transition: all 0.4s ease; border: 1px solid rgba(0,0,0,0.03);
@@ -161,22 +154,21 @@
             padding: 1rem;
         }
 
-        /* Pricing Card Clube */
+        /* Pricing Card Clube - Layout Responsivo */
         .club-pricing-card {
             background: #FFFEFC; border-radius: 16px; overflow: hidden;
             box-shadow: 0 15px 30px -10px rgba(0,0,0,0.08);
             border: 1px solid rgba(0,0,0,0.04);
             transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
             display: flex; flex-direction: column; height: 100%;
-            min-width: 85vw; max-width: 85vw; /* Mobile width */
+            /* Tamanhos fixos para Mobile, Flexíveis para Tablet/Desktop */
+            min-width: 85vw; max-width: 85vw; 
         }
-        @media (min-width: 1024px) { .club-pricing-card { min-width: 0; max-width: none; flex: 1; } }
+        @media (min-width: 768px) { .club-pricing-card { min-width: 0; max-width: none; flex: 1; } }
 
-        /* Dots Clube */
         .carousel-dot { width: 6px; height: 6px; border-radius: 50%; background: #e5e5e5; transition: all 0.3s ease; }
         .carousel-dot.active { width: 20px; border-radius: 3px; background: #C59D24; }
 
-        /* Timeline Clube - NEUROVENDAS REFINADA */
         .timeline-wrapper { position: relative; margin-top: 20px; }
         .timeline-track { position: absolute; left: 6px; top: 8px; bottom: 8px; width: 1px; background: #e5e5e5; z-index: 0; }
         .timeline-point { position: relative; z-index: 1; display: flex; align-items: flex-start; margin-bottom: 22px; }
@@ -191,7 +183,6 @@
         .point-dot.red { background: #EF4444; border-color: #EF4444; }
         .point-dot.start { background: #121212; border-color: #121212; }
 
-        /* Botão Luxury Clube */
         .btn-luxury-glow {
             position: relative; overflow: hidden;
             background: linear-gradient(135deg, #C59D24 0%, #E6C25B 50%, #C59D24 100%);
@@ -209,8 +200,6 @@
             opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; will-change: opacity, transform;
         }
         .reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         
         #club-terms-modal {
              backdrop-filter: blur(8px); background: rgba(0,0,0,0.6);
@@ -303,11 +292,47 @@
         .voucher-promo-card:hover { transform: translateY(-5px); }
         .voucher-dashed { border: 2px dashed #2b0505; padding: 1rem; border-radius: 8px; margin: 1rem 0; background: rgba(255,255,255,0.2); }
 
-        .smart-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1.5rem; padding-bottom: 2rem; justify-content: flex-start; }
-        @media (min-width: 768px) { .smart-grid { display: grid; grid-template-columns: repeat(3, 1fr); overflow-x: visible; justify-content: center; gap: 2rem; max-width: 1000px; margin: 0 auto; } }
+        /* GRID SYSTEM (Mobile: Carousel with Scrollbar | Tablet: 2 Col | Desktop: 3 Col) */
+        .smart-grid {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 1.5rem;
+            padding-bottom: 2rem;
+            justify-content: flex-start;
+            /* Scrollbar VISÍVEL para Mobile */
+            scrollbar-color: #d4af37 rgba(26, 5, 5, 0.5);
+            scrollbar-width: thin;
+        }
+        
+        /* Grid responsivo para telas maiores */
+        @media (min-width: 768px) {
+            .smart-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* Tablet: 2 Colunas */
+                overflow-x: visible;
+                justify-content: center;
+                gap: 2rem;
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+        }
+        @media (min-width: 1024px) {
+            .smart-grid {
+                grid-template-columns: repeat(3, 1fr); /* Desktop: 3 Colunas */
+            }
+        }
+
         /* Ajuste específico para 4 itens na grade de mechas */
-        .smart-grid.grid-4 { grid-template-columns: repeat(4, 1fr); }
-        @media (max-width: 1024px) { .smart-grid.grid-4 { grid-template-columns: repeat(2, 1fr); } }
+        .smart-grid.grid-4 { 
+            /* Mobile mantém flex/carousel */
+        }
+        @media (min-width: 768px) { 
+            .smart-grid.grid-4 { grid-template-columns: repeat(2, 1fr); } 
+        }
+        @media (min-width: 1024px) { 
+            .smart-grid.grid-4 { grid-template-columns: repeat(4, 1fr); } 
+        }
 
         .transformation-box { position: relative; width: 100%; max-width: 340px; aspect-ratio: 9/16; margin: 0 auto; border-radius: 20px; overflow: hidden; border: 2px solid rgba(197, 160, 89, 0.3); box-shadow: 0 20px 60px -10px rgba(0,0,0,0.7); }
         .transform-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
