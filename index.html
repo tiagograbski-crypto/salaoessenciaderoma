@@ -55,6 +55,7 @@
                         'serif': ['Cormorant Garamond', 'Playfair Display', 'serif'],
                         'sans': ['Montserrat', 'sans-serif'],
                         'cinzel': ['Cinzel', 'serif'],
+                        'luxury': ['Cormorant Garamond', 'serif'], /* Adicionado para garantir o visual sofisticado */
                     },
                     screens: { 'xs': '475px' },
                     boxShadow: {
@@ -331,8 +332,34 @@
         .agata-nav-fixed { position: fixed !important; top: 0; left: 0; width: 100%; z-index: 5000 !important; background: rgba(5, 5, 5, 0.95); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.05); transform: translateY(-100%); transition: transform 0.5s ease; height: auto; }
         .agata-nav-fixed.visible { transform: translateY(0); }
         .product-card { border-radius: 24px; overflow: hidden; height: auto; border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(15,15,15,0.6); }
-        .ingredient-item { display: flex; gap: 1.2rem; margin-bottom: 1rem; padding: 1.2rem; border-radius: 12px; border: 1px solid transparent; background: rgba(255,255,255,0.02); transition: all 0.8s ease; opacity: 0.6; transform: translateX(-10px); }
-        .ingredient-item.glow-active { opacity: 1; transform: translateX(0); background: linear-gradient(90deg, rgba(229, 201, 136, 0.1) 0%, transparent 100%); border-left: 2px solid #E5C988; box-shadow: 0 0 20px rgba(229, 201, 136, 0.05); }
+        
+        /* ESTILO INTERATIVO SOFISTICADO */
+        .ingredient-item, .card-glass {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.08); /* Borda mais sutil */
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px); /* Vidro fosco real */
+            -webkit-backdrop-filter: blur(8px);
+        }
+        
+        .ingredient-item:hover, .card-glass:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
+        }
+
+        /* CLASSE DE ATIVAÇÃO COM O EFEITO "0% FORMOL" */
+        .interactive-glow {
+            border: 1px solid #E5C988 !important;
+            box-shadow: 0 10px 30px rgba(229, 201, 136, 0.2) !important;
+            background: linear-gradient(145deg, rgba(229, 201, 136, 0.1) 0%, rgba(0,0,0,0) 100%) !important;
+            transform: scale(1.02);
+        }
+
+        .ingredient-item { display: flex; gap: 1.2rem; margin-bottom: 1rem; padding: 1.2rem; border-radius: 12px; }
+        /* Remove a animação lateral antiga para focar no clique/scroll */
+        .ingredient-item.glow-active { opacity: 1; transform: translateX(0); }
+        
         .ingredient-icon { color: #E5C988; flex-shrink: 0; margin-top: 2px; }
         .btn-touch { min-height: 54px; display: flex; align-items: center; justify-content: center; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; font-size: 14px; border-radius: 12px; transition: all 0.3s; cursor: pointer; user-select: none; }
         .btn-outline-gl { border: 1px solid rgba(255,255,255,0.3); color: #fff; background: rgba(255,255,255,0.05); }
@@ -1042,7 +1069,7 @@
                             <div class="grid gap-6">
                                 <h4 class="text-gray-500 text-xs uppercase tracking-[0.2em] mb-2 font-bold">Protocolos de Tempo</h4>
                                 <!-- Protocolo 15 min -->
-                                <div class="card-glass p-6 relative overflow-hidden group">
+                                <div class="card-glass p-6 relative overflow-hidden group" onclick="toggleCardState(this)">
                                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition"><i data-lucide="zap" class="w-8 h-8 text-[#E5C988]"></i></div>
                                     <div class="flex items-center gap-4 mb-2">
                                         <span class="text-3xl font-luxury text-white">15'</span>
@@ -1056,7 +1083,7 @@
                                 </div>
 
                                 <!-- Protocolo 40 min -->
-                                <div class="card-glass p-6 relative overflow-hidden group border border-[#E5C988]/20">
+                                <div class="card-glass p-6 relative overflow-hidden group border border-[#E5C988]/20" onclick="toggleCardState(this)">
                                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition"><i data-lucide="shield" class="w-8 h-8 text-[#E5C988]"></i></div>
                                     <div class="flex items-center gap-4 mb-2">
                                         <span class="text-3xl font-luxury text-white">40'+</span>
@@ -1074,7 +1101,7 @@
                             <div class="pt-8 border-t border-white/10">
                                 <h4 class="text-[#E5C988] text-sm uppercase tracking-[0.2em] mb-6 font-bold flex items-center gap-2"><i data-lucide="dna" class="w-4 h-4"></i> Matriz Tecnológica</h4>
                                 
-                                <div class="ingredient-item">
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
                                     <i data-lucide="wheat" class="ingredient-icon w-6 h-6"></i>
                                     <div>
                                         <strong class="text-white text-sm block uppercase mb-1">Proteína do Trigo</strong>
@@ -1082,7 +1109,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="ingredient-item">
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
                                     <i data-lucide="droplet" class="ingredient-icon w-6 h-6"></i>
                                     <div>
                                         <strong class="text-white text-sm block uppercase mb-1">Ácido Hialurônico</strong>
@@ -1090,7 +1117,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="ingredient-item">
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
                                     <i data-lucide="sparkles" class="ingredient-icon w-6 h-6"></i>
                                     <div>
                                         <strong class="text-white text-sm block uppercase mb-1">Óleo de Uva</strong>
@@ -1161,21 +1188,21 @@
                             <div class="p-6 bg-[#0a0a0a]">
                                 <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-4 font-bold border-b border-white/10 pb-2">Engenharia Molecular</p>
                                 
-                                <div class="ingredient-item">
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
                                     <i data-lucide="layers" class="ingredient-icon w-5 h-5"></i>
                                     <div>
                                         <strong class="text-white text-sm block uppercase mb-1">Queratina Hidrolisada</strong>
                                         <p class="text-gray-400 text-xs leading-relaxed text-justify">Micro-partículas que penetram profundamente na fibra para repor a massa proteica perdida em processos químicos, devolvendo a integridade estrutural.</p>
                                     </div>
                                 </div>
-                                <div class="ingredient-item">
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
                                     <i data-lucide="hexagon" class="ingredient-icon w-5 h-5"></i>
                                     <div>
                                         <strong class="text-white text-sm block uppercase mb-1">Ceramidas</strong>
                                         <p class="text-gray-400 text-xs leading-relaxed text-justify">Lipídio essencial que atua como "cola biológica", selando as cutículas e impedindo que os nutrientes e a hidratação escapem do interior do fio.</p>
                                     </div>
                                 </div>
-                                <div class="ingredient-item">
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
                                     <i data-lucide="droplet" class="ingredient-icon w-5 h-5"></i>
                                     <div>
                                         <strong class="text-white text-sm block uppercase mb-1">D-Pantenol</strong>
@@ -1200,21 +1227,21 @@
                             <div class="p-6 bg-[#0a0a0a]">
                                 <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-4 font-bold border-b border-white/10 pb-2">Engenharia Molecular</p>
 
-                                <div class="ingredient-item">
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
                                     <i data-lucide="link" class="ingredient-icon w-5 h-5"></i>
                                     <div>
                                         <strong class="text-white text-sm block uppercase mb-1">Cistina</strong>
                                         <p class="text-gray-400 text-xs leading-relaxed text-justify">Aminoácido chave na formação de pontes dissulfeto. Promove a religação interna, aumentando a resistência à quebra instantaneamente.</p>
                                     </div>
                                 </div>
-                                <div class="ingredient-item">
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
                                     <i data-lucide="droplets" class="ingredient-icon w-5 h-5"></i>
                                     <div>
                                         <strong class="text-white text-sm block uppercase mb-1">Óleo de Abacate</strong>
                                         <p class="text-gray-400 text-xs leading-relaxed text-justify">Concentrado de Vitaminas A, D e E. Proporciona nutrição lipídica intensa, devolvendo a emoliência sem pesar em fios lisos.</p>
                                     </div>
                                 </div>
-                                <div class="ingredient-item">
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
                                     <i data-lucide="sun" class="ingredient-icon w-5 h-5"></i>
                                     <div>
                                         <strong class="text-white text-sm block uppercase mb-1">Proteína da Seda</strong>
@@ -1237,21 +1264,21 @@
                             <div class="p-6 bg-[#0a0a0a]">
                                 <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-4 font-bold border-b border-white/10 pb-2">Engenharia Molecular</p>
 
-                                <div class="ingredient-item">
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
                                     <i data-lucide="activity" class="ingredient-icon w-5 h-5"></i>
                                     <div>
                                         <strong class="text-white text-sm block uppercase mb-1">Colágeno</strong>
                                         <p class="text-gray-400 text-xs leading-relaxed text-justify">Proteína que melhora a flexibilidade do fio, prevenindo a quebra por tração mecânica (escovação) e mantendo o movimento.</p>
                                     </div>
                                 </div>
-                                <div class="ingredient-item">
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
                                     <i data-lucide="cpu" class="ingredient-icon w-5 h-5"></i>
                                     <div>
                                         <strong class="text-white text-sm block uppercase mb-1">Nano Link</strong>
                                         <p class="text-gray-400 text-xs leading-relaxed text-justify">Complexo de aminoácidos de baixo peso molecular que penetra no córtex para reparar danos profundos de dentro para fora.</p>
                                     </div>
                                 </div>
-                                <div class="ingredient-item">
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
                                     <i data-lucide="umbrella" class="ingredient-icon w-5 h-5"></i>
                                     <div>
                                         <strong class="text-white text-sm block uppercase mb-1">Semi Di Lino</strong>
@@ -1416,8 +1443,15 @@
                 intro.style.display = 'none';
                 navbar.classList.add('visible');
                 initObserver();
-                initIngredientGlow();
+                // initIngredientGlow(); // Desativado para usar apenas o clique
             }, 800);
+        }
+
+        function toggleCardState(element) {
+            // Se já estiver ativo, desativa. Se não, ativa.
+            // Para permitir apenas um ativo por grupo, poderíamos remover de todos antes.
+            // Aqui vou permitir toggle simples (ligar/desligar) para exploração livre.
+            element.classList.toggle('interactive-glow');
         }
 
         function scrollToAgataSection(id) {
@@ -1436,19 +1470,6 @@
             }, observerOptions);
             
             document.querySelectorAll('.observe-me').forEach(el => observer.observe(el));
-        }
-
-        function initIngredientGlow() {
-            const observerOptions = { root: null, rootMargin: '-10% 0px -20% 0px', threshold: 0.5 };
-            const observer = new IntersectionObserver((entries) => { 
-                entries.forEach(entry => { 
-                    if (entry.isIntersecting) { 
-                        entry.target.classList.add('glow-active'); 
-                    } 
-                }); 
-            }, observerOptions);
-            
-            document.querySelectorAll('.ingredient-item').forEach(el => observer.observe(el));
         }
 
         function openWhatsApp(msg) {
