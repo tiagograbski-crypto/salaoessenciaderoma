@@ -291,8 +291,16 @@
             min-width: 85vw; max-width: 85vw; 
             color: #f3f3f3; 
         }
+        /* CORREÇÃO PARA TABLET E DESKTOP */
+        @media (min-width: 768px) { 
+            .club-pricing-card { 
+                min-width: 0; 
+                max-width: none; 
+                width: 100%; 
+                flex: 1; 
+            } 
+        }
         .club-pricing-card:hover { transform: translateY(-8px); border-color: rgba(197, 157, 36, 0.4); }
-        @media (min-width: 1024px) { .club-pricing-card { min-width: 0; max-width: none; flex: 1; } }
 
         /* HEADER DO CARD MAIS LIMPO */
         .club-card-header { padding: 2rem 1.5rem; text-align: center; position: relative; border-bottom: 1px solid rgba(255,255,255,0.05); }
