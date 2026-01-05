@@ -27,7 +27,7 @@
         document.addEventListener('selectstart', e=>e.preventDefault());
     </script>
 
-    <!-- FONTS & LIBS (Incluindo Cormorant para o Clube) -->
+    <!-- FONTS & LIBS -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
@@ -55,7 +55,7 @@
                         'serif': ['Cormorant Garamond', 'Playfair Display', 'serif'],
                         'sans': ['Montserrat', 'sans-serif'],
                         'cinzel': ['Cinzel', 'serif'],
-                        'luxury': ['Cormorant Garamond', 'serif'], /* Adicionado para garantir o visual sofisticado */
+                        'luxury': ['Cormorant Garamond', 'serif'],
                     },
                     screens: { 'xs': '475px' },
                     boxShadow: {
@@ -99,14 +99,14 @@
         
         body.no-scroll { overflow: hidden; height: 100vh; }
 
-        /* VIEW TRANSITIONS (Suavidade) */
+        /* VIEW TRANSITIONS */
         .view-section {
             transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
             opacity: 0;
             pointer-events: none;
             position: absolute;
             top: 0; left: 0; width: 100%;
-            display: none; /* Controlado via JS */
+            display: none; 
         }
         .view-section.active {
             opacity: 1;
@@ -135,7 +135,6 @@
         
         .intro-year { 
             font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 8vw, 5.5rem); line-height: 1.1;
-            /* Dourado Metálico Rico */
             background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%); 
             -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
             filter: drop-shadow(0 0 20px rgba(212,175,55,0.3)); opacity: 0; animation: zoomInFade 1.5s ease-out forwards; 
@@ -180,27 +179,6 @@
         .video-card { border-radius: 16px; overflow: hidden; border: 1px solid rgba(197, 160, 89, 0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.5); background: #000; position: relative; aspect-ratio: 9/16; }
         .card-mute-btn { position: absolute; bottom: 10px; right: 10px; width: 32px; height: 32px; background: rgba(0,0,0,0.7); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; z-index: 20; cursor: pointer; border: 1px solid rgba(255,255,255,0.3); }
 
-        .voucher-card { background: linear-gradient(145deg, #1a0505, #2b0808); border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 16px; padding: 1.5rem; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.4); text-align: center; display: flex; flex-direction: column; justify-content: space-between; align-items: center; min-width: 280px; transition: border-color 0.3s; height: 100%; }
-        .voucher-card.active-card { border-color: #ffd700; box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15); transform: translateY(-5px); transition: all 0.3s ease; }
-        .premium-tag { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728); color: #2b0505; text-transform: uppercase; font-size: 0.65rem; font-weight: 800; padding: 0.35rem 1.2rem; border-radius: 50px; letter-spacing: 0.15em; box-shadow: 0 5px 15px rgba(0,0,0,0.5); white-space: nowrap; z-index: 20; border: 1px solid #7a5c18; }
-        .voucher-price-new { font-family: 'Playfair Display', serif; font-weight: 700; color: #ffd700; font-size: 2.8rem; line-height: 1; margin: 0.5rem 0; display: flex; justify-content: center; align-items: baseline; gap: 2px; }
-        .voucher-currency { font-size: 1.2rem; margin-top: 6px; font-weight: 600; position: relative; top: -0.5em; }
-        .voucher-rule { font-size: 0.75rem; color: #ccc; border-top: 1px solid rgba(197, 160, 89, 0.2); padding-top: 0.8rem; margin-top: 0.8rem; width: 100%; }
-        .cut-toggle-container { margin-top: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 0.8rem; border: 1px solid rgba(197, 160, 89, 0.2); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: #e5e5e5; text-align: left; width: 100%; }
-        
-        .switch { position: relative; display: inline-block; width: 34px; height: 20px; flex-shrink: 0; margin-left: 8px; }
-        .switch input { opacity: 0; width: 0; height: 0; }
-        .slider-toggle { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #555; transition: .4s; border-radius: 34px; }
-        .slider-toggle:before { position: absolute; content: ""; height: 12px; width: 12px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
-        input:checked + .slider-toggle { background-color: #4ade80; }
-        input:checked + .slider-toggle:before { transform: translateX(14px); }
-
-        .funnel-step { display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; padding: 1rem; }
-        .funnel-icon-box { width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, #2b0505 0%, #1a0202 100%); border: 1px solid #d4af37; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #d4af37; margin-bottom: 1rem; box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); transition: transform 0.3s; }
-        .funnel-step:hover .funnel-icon-box { transform: scale(1.1); box-shadow: 0 0 25px rgba(212, 175, 55, 0.4); }
-        .funnel-line { display: none; }
-        @media (min-width: 768px) { .funnel-line { display: block; position: absolute; top: 35px; right: -50%; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #d4af37, transparent); opacity: 0.3; z-index: 0; } .funnel-step:last-child .funnel-line { display: none; } }
-
         .voucher-promo-card { background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 50%, #b38728 100%); border-radius: 16px; padding: 2rem; color: #2b0505; text-align: center; position: relative; overflow: hidden; box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2); transition: transform 0.3s; }
         .voucher-promo-card:hover { transform: translateY(-5px); }
         .voucher-dashed { border: 2px dashed #2b0505; padding: 1rem; border-radius: 8px; margin: 1rem 0; background: rgba(255,255,255,0.2); }
@@ -212,13 +190,6 @@
         @media (min-width: 768px) { .smart-grid.grid-4 { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 1024px) { .smart-grid.grid-4 { grid-template-columns: repeat(4, 1fr); } }
 
-        .transformation-box { position: relative; width: 100%; max-width: 340px; aspect-ratio: 9/16; margin: 0 auto; border-radius: 20px; overflow: hidden; border: 2px solid rgba(197, 160, 89, 0.3); box-shadow: 0 20px 60px -10px rgba(0,0,0,0.7); }
-        .transform-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
-        .control-dock { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 4px; padding: 4px; background: rgba(20, 5, 5, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.15); border-radius: 100px; z-index: 30; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        .dock-btn { padding: 8px 24px; border-radius: 100px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; color: #888; transition: all 0.3s ease; }
-        .dock-btn.active { background: #d4af37; color: #1a0505; box-shadow: 0 2px 12px rgba(212, 175, 55, 0.4); }
-        .dock-status-label { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); color: #d4af37; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; padding: 6px 16px; border-radius: 100px; border: 1px solid rgba(212,175,55,0.3); z-index: 20; pointer-events: none; }
-        
         .google-review-card { background: #fff; border-radius: 8px; padding: 25px 20px; min-width: 280px; max-width: 320px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); scroll-snap-align: center; display: flex; flex-direction: column; gap: 12px; border: none; color: #333; text-align: left; transition: transform 0.3s ease; }
         .google-review-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
         .google-header { display: flex; align-items: center; gap: 12px; }
@@ -280,10 +251,10 @@
         .member-card::after { content: ''; position: absolute; top: -150%; left: -150%; width: 250%; height: 250%; background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.02) 45%, rgba(227, 198, 118, 0.1) 50%, rgba(255, 255, 255, 0.02) 55%, transparent 60%); transform: rotate(25deg); animation: holo-shimmer 8s infinite ease-in-out; pointer-events: none; }
         @keyframes holo-shimmer { 0% { transform: translate(-30%, -30%) rotate(25deg); } 100% { transform: translate(30%, 30%) rotate(25deg); } }
         
-        /* CLUB PRICING DARK - REFINADO PARA "MAIS LIMPO E BONITO" */
+        /* CLUB PRICING DARK */
         .club-pricing-card { 
             background: linear-gradient(145deg, #1a1a1a 0%, #0a0a0a 100%); 
-            border-radius: 20px; /* Bordas mais suaves */
+            border-radius: 20px; 
             overflow: hidden; 
             box-shadow: 0 20px 60px -10px rgba(0,0,0,0.6); 
             border: 1px solid rgba(255, 255, 255, 0.08); 
@@ -292,25 +263,15 @@
             min-width: 85vw; max-width: 85vw; 
             color: #f3f3f3; 
         }
-        /* CORREÇÃO PARA TABLET E DESKTOP */
         @media (min-width: 768px) { 
-            .club-pricing-card { 
-                min-width: 0; 
-                max-width: none; 
-                width: 100%; 
-                flex: 1; 
-            } 
+            .club-pricing-card { min-width: 0; max-width: none; width: 100%; flex: 1; } 
         }
         .club-pricing-card:hover { transform: translateY(-8px); border-color: rgba(197, 157, 36, 0.4); }
 
-        /* HEADER DO CARD MAIS LIMPO */
         .club-card-header { padding: 2rem 1.5rem; text-align: center; position: relative; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .club-card-header h3 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-style: italic; margin-top: 0.5rem; letter-spacing: 0.05em; color: #fff; }
-        
         .club-price-box { text-align: center; margin-bottom: 2rem; margin-top: 1rem; }
         .club-price-val { font-family: 'Cormorant Garamond', serif; font-size: 4rem; line-height: 1; font-weight: 300; color: #d4af37; }
-        
-        /* TIMELINE MAIS LIMPA */
         .club-timeline { position: relative; margin-top: 1rem; padding-left: 10px; }
         .club-timeline::before { content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 1px; background: rgba(255,255,255,0.1); }
         .timeline-item { position: relative; padding-left: 25px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: baseline; }
@@ -319,7 +280,6 @@
         .timeline-marker.active { background: #10B981; border-color: #10B981; box-shadow: 0 0 10px rgba(16, 185, 129, 0.4); }
         .timeline-marker.warn { background: #F59E0B; border-color: #F59E0B; }
         .timeline-marker.danger { background: #EF4444; border-color: #EF4444; }
-        
         .club-pricing-card .text-brand-black { color: #ffffff !important; }
         .club-pricing-card .text-gray-400 { color: #a1a1a1 !important; font-weight: 300; letter-spacing: 0.05em; }
 
@@ -342,13 +302,10 @@
             backdrop-filter: blur(8px); /* Vidro fosco real */
             -webkit-backdrop-filter: blur(8px);
         }
-        
         .ingredient-item:hover, .card-glass:hover {
             background: rgba(255, 255, 255, 0.06);
             transform: translateY(-2px);
         }
-
-        /* CLASSE DE ATIVAÇÃO COM O EFEITO "0% FORMOL" */
         .interactive-glow {
             border: 1px solid #E5C988 !important;
             box-shadow: 0 10px 30px rgba(229, 201, 136, 0.2) !important;
@@ -357,7 +314,6 @@
         }
 
         .ingredient-item { display: flex; gap: 1.2rem; margin-bottom: 1rem; padding: 1.2rem; border-radius: 12px; }
-        /* Remove a animação lateral antiga para focar no clique/scroll */
         .ingredient-item.glow-active { opacity: 1; transform: translateX(0); }
         
         .ingredient-icon { color: #E5C988; flex-shrink: 0; margin-top: 2px; }
@@ -387,6 +343,116 @@
         /* HARDWARE ACCELERATION FOR SMOOTH SCROLL REVEAL */
         .reveal-on-scroll, .observe-me {
             will-change: opacity, transform;
+        }
+
+        /* BRILHO 8K ANIMATION */
+        @keyframes shine {
+            0% { background-position: -200%; }
+            100% { background-position: 200%; }
+        }
+
+        /* FAQ REDESIGN - HIGH END */
+        .faq-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            margin-bottom: 16px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .faq-item:hover {
+            border-color: rgba(197, 157, 36, 0.3);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateX(5px);
+        }
+
+        .faq-item[open], .faq-item.active {
+            background: linear-gradient(160deg, rgba(20, 5, 5, 0.8) 0%, rgba(40, 10, 10, 0.8) 100%);
+            border-color: #C59D24;
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+            transform: scale(1.01);
+        }
+
+        /* SUMMARY / HEADER */
+        .faq-summary, .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            list-style: none;
+            width: 100%;
+        }
+        .faq-summary::-webkit-details-marker { display: none; }
+
+        .faq-question-text, .faq-question span {
+            font-family: 'Cormorant Garamond', serif; /* Mais sofisticado */
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #e5e5e5;
+            letter-spacing: 0.02em;
+            font-style: italic;
+            transition: color 0.3s;
+        }
+
+        .faq-item[open] .faq-question-text, 
+        .faq-item.active .faq-question span {
+            color: #d4af37;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* ICON */
+        .faq-icon-wrapper i, .faq-icon {
+            color: #666;
+            transition: all 0.4s ease;
+            font-size: 1rem;
+        }
+
+        /* Rotate Chevron (Home) */
+        .faq-item[open] .faq-icon-wrapper i {
+            transform: rotate(180deg);
+            color: #d4af37;
+        }
+
+        /* Rotate Plus (Agata) */
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            color: #d4af37;
+        }
+
+        /* CONTENT */
+        .faq-answer-content, .faq-answer {
+            color: #a0a0a0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            border-top: 1px solid transparent;
+            transition: all 0.5s ease;
+        }
+
+        .faq-item[open] .faq-answer-content, 
+        .faq-item.active .faq-answer {
+            border-top-color: rgba(212, 175, 55, 0.1);
+            padding-top: 1rem;
+        }
+
+        /* Agata Specific Answer Animation */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding-bottom: 0;
+            padding-top: 0;
+            opacity: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px; /* Safe upper limit */
+            opacity: 1;
+            padding-bottom: 1.5rem;
+            padding-top: 1rem;
         }
     </style>
 </head>
@@ -531,51 +597,26 @@
 
                 <!-- TABELA DE PREÇOS -->
                 <div id="vouchers" class="mt-20 mb-8 text-center">
-                    <div class="section-pill">QUERO MEU LISO BLINDADO</div>
+                    <div class="section-pill">OFERTA EXCLUSIVA</div>
                     
-                    <!-- OFFER CARD -->
-                    <div class="bg-white-gold rounded-2xl p-8 max-w-lg mx-auto mb-8 relative overflow-hidden transform hover:scale-[1.01] transition-transform duration-500">
-                        <div class="absolute -right-10 -top-10 text-yellow-200 opacity-20 text-9xl"><i class="fas fa-gift"></i></div>
-                        <div class="relative z-10">
-                            <div class="uppercase tracking-widest text-[#2b0505] font-bold text-xs mb-2">Especial Abertura 2026</div>
-                            <h3 class="font-playfair text-3xl md:text-4xl text-[#2b0505] font-black mb-2">Tratamento + Liso</h3>
-                            
-                            <div class="bg-gray-100 border border-gray-300 rounded p-2 mb-4 inline-block">
-                                <p class="text-[#2b0505] font-bold text-xs uppercase"><i class="fas fa-ruler-vertical text-[#d4af37]"></i> Até Alça do Sutiã (Meio das Costas)</p>
-                                <p class="text-xs text-gray-500 italic mt-1">Cabelos Lisos ou Ondulados</p>
-                            </div>
-                            
-                            <div class="flex items-center justify-center gap-2 mb-4">
-                                <div class="text-5xl md:text-6xl font-playfair font-black text-[#2b0505] flex items-start">
-                                    <span class="text-2xl mt-2 mr-1">R$</span>199<span class="text-3xl mt-2">,90</span>
-                                </div>
-                            </div>
-
-                            <!-- Toggle -->
-                            <div class="bg-gray-100 rounded-lg p-3 flex items-center justify-between border border-gray-300 mb-6">
-                                <div class="text-left">
-                                    <span class="block text-[#2b0505] font-bold text-xs">Adicionar Corte Terapêutico?</span>
-                                    <span class="text-[#d4af37] text-[10px] font-bold">+ R$ 80,00 (Opcional)</span>
-                                </div>
-                                <label class="switch"><input type="checkbox" id="check-promo" onchange="toggleCut('promo', 199.90)"><span class="slider-toggle"></span></label>
-                            </div>
-
-                            <button onclick="resgatar('ESPECIAL ABERTURA 2026 (Liso)', 199.90, 'promo')" class="w-full bg-[#2b0505] text-white font-bold py-4 rounded-full shadow-lg uppercase tracking-wider hover:bg-black transition-colors flex items-center justify-center gap-2">
-                                <i class="fab fa-whatsapp text-xl"></i> Garantir Vaga 02 ou 03/Jan
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- NOVO VOUCHER UPSELL - ATUALIZADO -->
+                    <!-- VOUCHER GATA LAMBEU (AGORA PRINCIPAL E TRIPWIRE) -->
                     <div class="voucher-promo-card max-w-lg mx-auto mb-16 transform hover:scale-105 transition-all">
                         <div class="absolute top-0 left-0 bg-[#2b0505] text-[#d4af37] text-[10px] font-bold px-3 py-1 rounded-br-lg uppercase tracking-widest">Oferta Limitada</div>
                         <h4 class="font-playfair text-2xl font-bold mb-2">Voucher A Gata Lambeu</h4>
                         <p class="text-sm mb-4 font-medium">Garanta créditos exclusivos para produtos e serviços da marca <strong>A Gata Lambeu</strong>.</p>
-                        <div class="voucher-dashed">
-                            <span class="block text-xs uppercase font-bold text-[#2b0505] opacity-70">Valor Promocional Hoje:</span>
-                            <span class="text-4xl font-bold text-[#2b0505]">R$ 30,00</span>
+                        
+                        <div class="mb-4">
+                             <span class="inline-block bg-[#1a0505] text-[#d4af37] font-bold px-4 py-1 rounded text-xs uppercase tracking-wider border border-[#d4af37]/30">
+                                <i class="far fa-clock mr-1"></i> Válido até 07/Jan
+                             </span>
                         </div>
-                        <button onclick="resgatarVoucher()" class="w-full bg-[#2b0505] text-[#d4af37] font-bold py-3 rounded-full uppercase tracking-wider hover:bg-black transition-all">
+
+                        <div class="voucher-dashed">
+                            <span class="block text-xs uppercase font-bold text-[#2b0505] opacity-70">Pague R$ 40,00 e leve:</span>
+                            <span class="text-4xl font-bold text-[#2b0505]">R$ 50,00</span>
+                            <span class="block text-[10px] uppercase font-bold text-[#2b0505] opacity-70 mt-1">Em créditos no Salão</span>
+                        </div>
+                        <button onclick="openWhatsApp('Olá! Gostaria de comprar o VOUCHER A GATA LAMBEU (Pague 40 leve 50) antes que acabe a promoção do dia 07!')" class="w-full bg-[#2b0505] text-[#d4af37] font-bold py-3 rounded-full uppercase tracking-wider hover:bg-black transition-all">
                             <i class="fas fa-ticket-alt mr-2"></i> Adquirir Voucher
                         </button>
                     </div>
@@ -656,7 +697,36 @@
         </section>
 
         <!-- FAQ -->
-        <div id="faq-isolate" class="py-16"><div class="container mx-auto px-6 max-w-3xl"><div class="text-center mb-10"><div class="section-pill">Dúvidas Frequentes</div><h2 class="font-playfair text-3xl text-white font-bold">Tudo sobre o <span class="text-gold-shine">Liso Blindado</span></h2></div><div class="space-y-4"><details class="faq-item"><summary class="faq-summary"><span class="faq-question-text">É compatível com loiras?</span><div class="faq-icon-wrapper"><i class="fas fa-chevron-down text-[#d4af37]"></i></div></summary><div class="faq-answer-content">Sim! Usamos matizadores exclusivos que protegem a cor.</div></details><details class="faq-item"><summary class="faq-summary"><span class="faq-question-text">Grávidas podem fazer?</span><div class="faq-icon-wrapper"><i class="fas fa-chevron-down text-[#d4af37]"></i></div></summary><div class="faq-answer-content">Sim, com autorização médica. Fórmula 100% orgânica.</div></details><details class="faq-item"><summary class="faq-summary"><span class="faq-question-text">Quanto tempo dura?</span><div class="faq-icon-wrapper"><i class="fas fa-chevron-down text-[#d4af37]"></i></div></summary><div class="faq-answer-content">De 3 a 6 meses, dependendo do crescimento da raiz.</div></details></div></div></div>
+        <div id="faq-isolate" class="py-16"><div class="container mx-auto px-6 max-w-3xl"><div class="text-center mb-10"><div class="section-pill">Dúvidas Frequentes</div><h2 class="font-playfair text-3xl text-white font-bold">Tudo sobre o <span class="text-gold-shine">Liso Blindado</span></h2></div><div class="space-y-4">
+        
+            <!-- FAQ ITEM HOME 1 -->
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    <span class="faq-question-text">É compatível com loiras?</span>
+                    <div class="faq-icon-wrapper"><i class="fas fa-chevron-down"></i></div>
+                </summary>
+                <div class="faq-answer-content">Sim! Usamos matizadores exclusivos que protegem a cor.</div>
+            </details>
+            
+            <!-- FAQ ITEM HOME 2 -->
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    <span class="faq-question-text">Grávidas podem fazer?</span>
+                    <div class="faq-icon-wrapper"><i class="fas fa-chevron-down"></i></div>
+                </summary>
+                <div class="faq-answer-content">Sim, com autorização médica. Fórmula 100% orgânica.</div>
+            </details>
+            
+            <!-- FAQ ITEM HOME 3 -->
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    <span class="faq-question-text">Quanto tempo dura?</span>
+                    <div class="faq-icon-wrapper"><i class="fas fa-chevron-down"></i></div>
+                </summary>
+                <div class="faq-answer-content">De 3 a 6 meses, dependendo do crescimento da raiz.</div>
+            </details>
+
+        </div></div></div>
 
         <!-- FOOTER -->
         <footer id="footer-empire-master"><div class="footer-divider"><i class="fas fa-gem footer-divider-icon"></i></div><div class="brands-wrapper"><span class="brands-title">PRODUTOS HOMOLOGADOS</span><div class="brands-grid"><span class="brand-logo brand-main">ESSÊNCIA DE ROMÃ HAIR</span><span class="brand-logo">A GATA LAMBEU</span><span class="brand-logo">ITALLIAN COLOR</span></div></div><div class="content-grid text-center"><div><span class="footer-heading">Contato</span><p>Chapecó, SC</p><a href="#" onclick="openWhatsApp('Olá!')" class="text-white hover:text-[#C5A059] transition text-lg block my-2"> (49) 99995-4052</a></div><div><span class="footer-heading">Localização</span><p class="mb-2"><i class="fas fa-map-pin text-[#C5A059] mr-2"></i>Rua Achiles Tomazelli, 296 D</p><div class="map-frame"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3489.1751996515865!2d-52.6186419849202!3d-27.100918083072045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e4b574a6914757%3A0xc3f83734e941198c!2sRua%20Achiles%20Tomazelli%2C%20296%20D%20-%20Centro%2C%20Chapec%C3%B3%20-%20SC%2C%2089802-125!5e0!3m2!1spt-BR!2sbr!4v1628172930000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe></div><a href="https://www.google.com/maps/search/?api=1&query=Rua+Achiles+Tomazelli+296+D+Chapeco" target="_blank" class="text-xs text-[#C5A059] mt-2 block hover:underline">Abrir no Google Maps →</a></div></div><div class="bottom-bar"><div class="social-links justify-center"><a href="https://www.instagram.com/essenciaderoma.chapeco/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a></div><div class="legal-links"><button onclick="openModal('privacy')" id="btn-privacy-trigger">Política de Privacidade</button></div><p class="copyright-text">&copy; 2016 - 2026 Essência de Romã Hair & A Gata Lambeu.</p></div></footer>
@@ -1073,27 +1143,46 @@
                                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition"><i data-lucide="zap" class="w-8 h-8 text-[#E5C988]"></i></div>
                                     <div class="flex items-center gap-4 mb-2">
                                         <span class="text-3xl font-luxury text-white">15'</span>
-                                        <span class="text-xs font-bold text-[#E5C988] uppercase tracking-wider border border-[#E5C988]/30 px-2 py-1 rounded">Flash Ritual</span>
+                                        <span class="text-xs font-bold text-[#E5C988] uppercase tracking-wider border border-[#E5C988]/30 px-2 py-1 rounded">Escova de Alta Performance</span>
                                     </div>
-                                    <h3 class="text-lg text-white mb-2">POLIMENTO & BRILHO</h3>
-                                    <p class="text-gray-400 text-xs leading-relaxed mb-4">Disciplina imediata e redução de frizz sem perder o movimento natural.</p>
-                                    <div class="flex items-center gap-2 text-[#E5C988] text-xs font-bold uppercase tracking-wider bg-white/5 p-3 rounded">
-                                        <i data-lucide="wind" class="w-4 h-4"></i> Finalização: Escova Modeladora
+                                    <h3 class="text-lg text-white mb-2">ESCOVA MODELADORA</h3>
+                                    <p class="text-gray-400 text-xs leading-relaxed mb-4">Redução de frizz momentânea e alinhamento com brilho extremo. Ideal para eventos.</p>
+                                    
+                                    <!-- DESTAQUE BRILHO 8K -->
+                                    <div class="mb-4 text-center">
+                                        <span class="text-2xl font-black uppercase tracking-widest" style="background: linear-gradient(to right, #fff, #ffd700, #fff); -webkit-background-clip: text; color: transparent; font-weight: 800; animation: shine 3s infinite;">BRILHO 8K</span>
                                     </div>
+
+                                    <div class="flex items-center justify-between text-[#E5C988] text-xs font-bold uppercase tracking-wider bg-white/5 p-3 rounded">
+                                        <span>A partir de:</span>
+                                        <span class="text-lg">R$ 129,00</span>
+                                    </div>
+                                    <button onclick="openWhatsApp('Olá! Gostaria de agendar a Escova de Alta Performance (Flash Ritual 15min) com Brilho 8K.')" class="mt-3 w-full btn-touch btn-outline-gl text-[10px] py-2">Agendar Flash Ritual</button>
                                 </div>
 
                                 <!-- Protocolo 40 min -->
                                 <div class="card-glass p-6 relative overflow-hidden group border border-[#E5C988]/20" onclick="toggleCardState(this)">
                                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition"><i data-lucide="shield" class="w-8 h-8 text-[#E5C988]"></i></div>
                                     <div class="flex items-center gap-4 mb-2">
-                                        <span class="text-3xl font-luxury text-white">40'+</span>
+                                        <span class="text-lg font-luxury text-white">40' - 1h40</span>
                                         <span class="text-xs font-bold text-[#E5C988] uppercase tracking-wider border border-[#E5C988]/30 px-2 py-1 rounded">Liso Blindado</span>
                                     </div>
-                                    <h3 class="text-lg text-white mb-2">ALISAMENTO DEFINITIVO</h3>
-                                    <p class="text-gray-400 text-xs leading-relaxed mb-4">Transformação completa da estrutura com durabilidade extrema.</p>
-                                    <div class="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-wider bg-[#E5C988]/10 p-3 rounded border-l-2 border-[#E5C988]">
-                                        <i data-lucide="thermometer" class="w-4 h-4"></i> Finalização: Chapinha / Prancha
+                                    <h3 class="text-lg text-white mb-2">TRANSFORMAÇÃO DEFINITIVA</h3>
+                                    <p class="text-gray-400 text-xs leading-relaxed mb-4">Mudança completa da estrutura do fio. Liso perfeito, resistente à umidade e com durabilidade prolongada.</p>
+                                    
+                                    <!-- PREÇO A PARTIR DE -->
+                                    <div class="flex flex-col gap-1 bg-white/5 p-3 rounded mb-4">
+                                         <div class="flex items-center justify-between text-[#E5C988] text-xs font-bold uppercase tracking-wider">
+                                            <span>A partir de:</span>
+                                            <span class="text-lg">R$ 250,00</span>
+                                        </div>
+                                        <span class="text-[9px] text-gray-500 font-light italic leading-tight">*Valor final mediante análise de comprimento, volume e estrutura do fio.</span>
                                     </div>
+
+                                    <div class="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-wider bg-[#E5C988]/10 p-3 rounded border-l-2 border-[#E5C988]">
+                                        <i data-lucide="check-circle" class="w-4 h-4"></i> Resultado Garantido
+                                    </div>
+                                     <button onclick="openWhatsApp('Olá! Gostaria de agendar uma avaliação para o Liso Blindado (A partir de R$ 250).')" class="mt-3 w-full btn-touch btn-solid-gl text-[10px] py-2 text-black font-bold">Agendar Avaliação</button>
                                 </div>
                             </div>
 
@@ -1181,7 +1270,7 @@
                                 <h3 class="font-luxury text-xl text-white mb-1">BAIN RECONSTRUTOR</h3>
                                 <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">Shampoo 250ml</p>
                                 <div class="text-[#E5C988] font-bold text-xl mb-6">R$ 149,90</div>
-                                <button onclick="window.open('https://wa.me/554900000000?text=Quero%20o%20Bain%20Reconstrutor')" class="btn-touch btn-solid-gl w-full text-xs mb-6">EU QUERO ESTE</button>
+                                <button onclick="openWhatsApp('Olá! Gostaria de adquirir o Shampoo Bain Reconstrutor (Home Care) da linha A Gata Lambeu.')" class="btn-touch btn-solid-gl w-full text-xs mb-6">EU QUERO ESTE</button>
                             </div>
                             
                             <!-- Lista de Ativos -->
@@ -1221,7 +1310,7 @@
                                 <h3 class="font-luxury text-xl text-white mb-1">GOLD INFUSION</h3>
                                 <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">Ampola 20ml</p>
                                 <div class="text-[#E5C988] font-bold text-xl mb-6">R$ 289,80</div>
-                                <button onclick="window.open('https://wa.me/554900000000?text=Quero%20a%20Gold%20Infusion')" class="btn-touch btn-solid-gl w-full text-xs mb-6">EU QUERO ESTE</button>
+                                <button onclick="openWhatsApp('Olá! Tenho interesse na Ampola Gold Infusion (Power Dose) da linha A Gata Lambeu.')" class="btn-touch btn-solid-gl w-full text-xs mb-6">EU QUERO ESTE</button>
                             </div>
                             
                             <div class="p-6 bg-[#0a0a0a]">
@@ -1258,7 +1347,7 @@
                                 <h3 class="font-luxury text-xl text-white mb-1">BLINDAGEM QUEEN</h3>
                                 <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">Leave-in 200ml</p>
                                 <div class="text-[#E5C988] font-bold text-xl mb-6">R$ 248,40</div>
-                                <button onclick="window.open('https://wa.me/554900000000?text=Quero%20a%20Blindagem%20Queen')" class="btn-touch btn-solid-gl w-full text-xs mb-6">EU QUERO ESTE</button>
+                                <button onclick="openWhatsApp('Olá! Quero garantir o Leave-in Blindagem Queen da linha A Gata Lambeu.')" class="btn-touch btn-solid-gl w-full text-xs mb-6">EU QUERO ESTE</button>
                             </div>
                             
                             <div class="p-6 bg-[#0a0a0a]">
