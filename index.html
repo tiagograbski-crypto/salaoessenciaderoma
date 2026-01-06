@@ -4,36 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- 1. SEO & PERFORMANCE OTIMIZADA -->
+    <!-- =========================================
+       1. SEO & METADADOS DE PERFORMANCE
+    ========================================== -->
     <title>Essência de Romã Hair | 2026 - O Extraordinário</title>
-    <meta name="description" content="Comece 2026 vivendo o Extraordinário. Agenda especial e Clube de Assinatura exclusivo.">
+    <meta name="description" content="Comece 2026 vivendo o Extraordinário. Agenda especial de Liso Blindado e Clube de Assinatura exclusivo em Chapecó.">
     <meta name="theme-color" content="#2b0505">
     <link rel="canonical" href="https://salaoessenciaderoma.com/">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://i.ibb.co/7xQTPb2t/LOGO.png" />
 
-    <!-- 2. PRÉ-CARREGAMENTO CRÍTICO -->
+    <!-- =========================================
+       2. PRÉ-CARREGAMENTO DE RECURSOS CRÍTICOS
+    ========================================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://res.cloudinary.com">
+    
+    <!-- Preload da Imagem Hero para LCP (Largest Contentful Paint) -->
     <link rel="preload" as="image" href="https://salaoessenciaderoma.com/assets/images/hero-poster.jpg">
 
-    <!-- SEGURANÇA -->
+    <!-- =========================================
+       3. SCRIPTS DE SEGURANÇA E PROTEÇÃO
+    ========================================== -->
     <script>
+        // Desabilitar teclas de inspeção e cópia
         document.onkeydown = function(e) {
-            if(e.keyCode == 123) return false; 
-            if(e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 67 || e.keyCode == 74 || e.keyCode == 85)) return false; 
+            if(e.keyCode == 123) {
+                return false; 
+            }
+            if(e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 67 || e.keyCode == 74 || e.keyCode == 85)) {
+                return false; 
+            }
         }
-        document.addEventListener('dragstart', e=>e.preventDefault());
-        document.addEventListener('selectstart', e=>e.preventDefault());
+        // Desabilitar arraste de imagens
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+        });
+        // Desabilitar seleção de texto
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+        });
     </script>
 
-    <!-- FONTS & LIBS -->
+    <!-- =========================================
+       4. FONTES E BIBLIOTECAS EXTERNAS
+    ========================================== -->
+    <!-- Google Fonts: Cormorant (Luxo), Montserrat (Leitura), Playfair (Títulos), Cinzel (Detalhes) -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- CONFIG TAILWIND HÍBRIDA -->
+    <!-- Configuração Personalizada do Tailwind -->
     <script>
         tailwind.config = {
             theme: {
@@ -57,7 +87,10 @@
                         'cinzel': ['Cinzel', 'serif'],
                         'luxury': ['Cormorant Garamond', 'serif'],
                     },
-                    screens: { 'xs': '475px' },
+                    screens: { 
+                        'xs': '475px',
+                        'tablet': '900px' /* Breakpoint específico para tablet vertical */
+                    },
                     boxShadow: {
                         'soft': '0 20px 40px -15px rgba(0, 0, 0, 0.05)',
                         'gold': '0 10px 30px -5px rgba(197, 157, 36, 0.25)',
@@ -67,16 +100,77 @@
         }
     </script>
 
+    <!-- =========================================
+       5. TRACKING E ANALYTICS
+    ========================================== -->
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11442509118"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []; 
+      function gtag(){dataLayer.push(arguments);} 
+      gtag('js', new Date()); 
+      gtag('config', 'AW-11442509118');
+      
+      function gtag_report_conversion(url) { 
+          var c = function () { 
+              if (typeof(url) != 'undefined') { 
+                  window.open(url, '_blank'); 
+              } 
+          }; 
+          if (typeof gtag === 'function') { 
+              gtag('event', 'conversion', { 
+                  'send_to': 'AW-11442509118/CNfICPrhpYAZEL6qm9Aq', 
+                  'event_callback': c 
+              }); 
+          } else { 
+              c(); 
+          } 
+          return false; 
+      }
+    </script>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        try{fbq('init', '639959835745383');fbq('track', 'PageView');}catch(e){}
+    </script>
+
+    <!-- =========================================
+       6. ESTILOS CSS PERSONALIZADOS (AUDITORIA)
+    ========================================== -->
     <style>
-        /* CORE */
-        * { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+        /* CORE RESET & SCROLL */
+        * { 
+            -webkit-font-smoothing: antialiased; 
+            scroll-behavior: smooth; 
+        }
         
-        /* SCROLLBAR & SELECTION */
-        ::-webkit-scrollbar { width: 8px; height: 6px; } 
-        ::-webkit-scrollbar-track { background: rgba(26, 5, 5, 0.5); }
-        ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #b38728; }
-        ::selection { background: #d4af37; color: #1a0505; }
+        /* SCROLLBAR CUSTOMIZADA */
+        ::-webkit-scrollbar { 
+            width: 8px; 
+            height: 6px; 
+        } 
+        ::-webkit-scrollbar-track { 
+            background: rgba(26, 5, 5, 0.5); 
+        }
+        ::-webkit-scrollbar-thumb { 
+            background: #d4af37; 
+            border-radius: 4px; 
+        }
+        ::-webkit-scrollbar-thumb:hover { 
+            background: #b38728; 
+        }
+        ::selection { 
+            background: #d4af37; 
+            color: #1a0505; 
+        }
 
         body { 
             background-color: #2b0505; 
@@ -86,12 +180,15 @@
             margin: 0; 
             padding: 0; 
             color: #f3f3f3; 
-            padding-bottom: 70px;
+            padding-bottom: 70px; /* Espaço para barra mobile */
         }
         
-        body.no-scroll { overflow: hidden; height: 100vh; }
+        body.no-scroll { 
+            overflow: hidden; 
+            height: 100vh; 
+        }
 
-        /* VIEW TRANSITIONS */
+        /* TRANSIÇÕES DE VIEWS (SPA FEELING) */
         .view-section {
             transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
             opacity: 0;
@@ -107,7 +204,7 @@
             display: block;
         }
 
-        /* INTRO OVERLAY */
+        /* --- INTRO OVERLAY --- */
         #intro-overlay { 
             position: fixed; 
             inset: 0; 
@@ -122,42 +219,167 @@
             text-align: center;
         }
         
-        .intro-content-wrapper { position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px; width: 100%; }
-        .intro-pre-title { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; letter-spacing: 0.3em; text-transform: uppercase; color: #ccc; opacity: 0; animation: fadeInUp 1s 0.2s forwards; }
+        .intro-content-wrapper { 
+            position: relative; 
+            z-index: 10; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 15px; 
+            width: 100%; 
+        }
+        
+        .intro-pre-title { 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 0.9rem; 
+            letter-spacing: 0.3em; 
+            text-transform: uppercase; 
+            color: #ccc; 
+            opacity: 0; 
+            animation: fadeInUp 1s 0.2s forwards; 
+        }
         
         .intro-year { 
-            font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 8vw, 5.5rem); line-height: 1.1;
+            font-family: 'Cinzel', serif; 
+            font-size: clamp(2.5rem, 8vw, 5.5rem); 
+            line-height: 1.1;
             background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%); 
-            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
-            filter: drop-shadow(0 0 20px rgba(212,175,55,0.3)); opacity: 0; animation: zoomInFade 1.5s ease-out forwards; 
-            margin: 15px 0; text-align: center; font-weight: 400; letter-spacing: 0.1em;
+            -webkit-background-clip: text; 
+            background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            color: transparent;
+            filter: drop-shadow(0 0 20px rgba(212,175,55,0.3)); 
+            opacity: 0; 
+            animation: zoomInFade 1.5s ease-out forwards; 
+            margin: 15px 0; 
+            text-align: center; 
+            font-weight: 400; 
+            letter-spacing: 0.1em;
         }
         
-        .intro-sub { font-family: 'Playfair Display', serif; font-style: italic; letter-spacing: 0.05em; color: #fff; font-size: clamp(1rem, 3vw, 1.3rem); opacity: 0; max-width: 600px; line-height: 1.6; animation: fadeInUp 1s 0.8s forwards; }
+        .intro-sub { 
+            font-family: 'Playfair Display', serif; 
+            font-style: italic; 
+            letter-spacing: 0.05em; 
+            color: #fff; 
+            font-size: clamp(1rem, 3vw, 1.3rem); 
+            opacity: 0; 
+            max-width: 600px; 
+            line-height: 1.6; 
+            animation: fadeInUp 1s 0.8s forwards; 
+        }
         
         .intro-btn {
-            opacity: 0; animation: fadeInUp 1s 1.2s forwards; background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%); border: 1px solid #ffecb3; color: #2b0505;
-            padding: 16px 45px; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 50px;
-            cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); margin-top: 2rem; position: relative; overflow: hidden; box-shadow: 0 4px 25px rgba(212, 175, 55, 0.3);
+            opacity: 0; 
+            animation: fadeInUp 1s 1.2s forwards; 
+            background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%); 
+            border: 1px solid #ffecb3; 
+            color: #2b0505;
+            padding: 16px 45px; 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 800; 
+            font-size: 0.85rem; 
+            letter-spacing: 0.2em; 
+            text-transform: uppercase; 
+            border-radius: 50px;
+            cursor: pointer; 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+            margin-top: 2rem; 
+            position: relative; 
+            overflow: hidden; 
+            box-shadow: 0 4px 25px rgba(212, 175, 55, 0.3);
         }
-        .intro-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 10px 40px rgba(212, 175, 55, 0.5); background: linear-gradient(135deg, #e6c665 0%, #fffbd4 45%, #c49635 100%); }
+        .intro-btn:hover { 
+            transform: translateY(-3px) scale(1.02); 
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.5); 
+            background: linear-gradient(135deg, #e6c665 0%, #fffbd4 45%, #c49635 100%); 
+        }
 
-        @keyframes zoomInFade { 0% { transform: scale(0.95); opacity: 0; filter: blur(5px); } 100% { transform: scale(1); opacity: 1; filter: blur(0); } }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes pulse-gold { 0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); } 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); } }
+        @keyframes zoomInFade { 
+            0% { transform: scale(0.95); opacity: 0; filter: blur(5px); } 
+            100% { transform: scale(1); opacity: 1; filter: blur(0); } 
+        }
+        @keyframes fadeInUp { 
+            from { opacity: 0; transform: translateY(20px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        @keyframes pulse-gold { 
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); } 
+            70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); } 
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); } 
+        }
 
-        /* HEADER */
-        #header-sticky { background: rgba(43, 5, 5, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(197, 160, 89, 0.3); transition: all 0.3s ease; z-index: 50; }
+        /* HEADER FIXO */
+        #header-sticky { 
+            background: rgba(43, 5, 5, 0.95); 
+            backdrop-filter: blur(10px); 
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3); 
+            transition: all 0.3s ease; 
+            z-index: 50; 
+        }
         
-        /* CARDS & COMMON */
-        .hero-container { position: relative; width: 100vw; height: 100dvh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #2b0505; border-bottom: 2px solid #c5a059; }
-        .video-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; z-index: 0; transform: scale(1.3); will-change: transform; }
-        .video-overlay { position: absolute; inset: 0; z-index: 1; background: radial-gradient(circle at center, rgba(75,0,0,0.2) 0%, rgba(43,5,5,0.85) 90%), linear-gradient(to bottom, rgba(75, 0, 0, 0.5) 0%, rgba(75, 0, 0, 0.2) 35%, rgba(43, 5, 5, 1) 100%); }
-        .hero-content { position: relative; z-index: 10; padding-top: 60px; width: 100%; max-width: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+        /* ESTILOS DE CARDS & GERAIS */
+        .hero-container { 
+            position: relative; 
+            width: 100vw; 
+            height: 100dvh; 
+            overflow: hidden; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            background-color: #2b0505; 
+            border-bottom: 2px solid #c5a059; 
+        }
+        .video-bg { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            object-position: center 20%; 
+            z-index: 0; 
+            transform: scale(1.3); 
+            will-change: transform; 
+        }
+        .video-overlay { 
+            position: absolute; 
+            inset: 0; 
+            z-index: 1; 
+            background: radial-gradient(circle at center, rgba(75,0,0,0.2) 0%, rgba(43,5,5,0.85) 90%), linear-gradient(to bottom, rgba(75, 0, 0, 0.5) 0%, rgba(75, 0, 0, 0.2) 35%, rgba(43, 5, 5, 1) 100%); 
+        }
+        .hero-content { 
+            position: relative; 
+            z-index: 10; 
+            padding-top: 60px; 
+            width: 100%; 
+            max-width: 1200px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+        }
 
         .font-playfair { font-family: 'Playfair Display', serif; }
-        .text-gold-static { color: #e8c872; background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 58%, #fbf5b7 80%, #aa771c 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8)); font-weight: 800; }
-        .text-gold-shine { background: linear-gradient(to right, #cfc09f, #ffecb3, #c5a059, #ffd700, #cfc09f); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 6s linear infinite; }
+        .text-gold-static { 
+            color: #e8c872; 
+            background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 58%, #fbf5b7 80%, #aa771c 100%); 
+            -webkit-background-clip: text; 
+            background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8)); 
+            font-weight: 800; 
+        }
+        .text-gold-shine { 
+            background: linear-gradient(to right, #cfc09f, #ffecb3, #c5a059, #ffd700, #cfc09f); 
+            background-size: 200% auto; 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            animation: shine 6s linear infinite; 
+        }
         
         .eyebrow-text { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: #e5e5e5; margin-bottom: 0.5rem; font-weight: 500; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
         .hero-subtext { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #e5e5e5; margin-top: 1.5rem; line-height: 1.6; max-width: 90%; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
@@ -165,23 +387,68 @@
         .btn-ghost { border: 1px solid rgba(255, 255, 255, 0.2); color: #e5e5e5; cursor: pointer; transition: all 0.3s; }
         .btn-ghost:hover { background: rgba(255,255,255,0.1); color: #fff; border-color: #fff; }
         .bg-white-gold { background: linear-gradient(145deg, #ffffff 0%, #f8f1e0 100%); border: 2px solid #d4af37; box-shadow: 0 0 40px rgba(212, 175, 55, 0.3); color: #2b0505; }
-        .btn-header-gold { background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%); color: #2b0505; border: 1px solid #ffecb3; font-weight: 800; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); transition: transform 0.2s, box-shadow 0.2s; }
-        .btn-header-gold:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5); }
+        
+        /* Botão Header Dourado */
+        .btn-header-gold { 
+            background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%); 
+            color: #2b0505; 
+            border: 1px solid #ffecb3; 
+            font-weight: 800; 
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); 
+            transition: transform 0.2s, box-shadow 0.2s; 
+        }
+        .btn-header-gold:hover { 
+            transform: translateY(-1px); 
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5); 
+        }
 
         .video-card { border-radius: 16px; overflow: hidden; border: 1px solid rgba(197, 160, 89, 0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.5); background: #000; position: relative; aspect-ratio: 9/16; }
         .card-mute-btn { position: absolute; bottom: 10px; right: 10px; width: 32px; height: 32px; background: rgba(0,0,0,0.7); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; z-index: 20; cursor: pointer; border: 1px solid rgba(255,255,255,0.3); }
 
-        .voucher-promo-card { background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 50%, #b38728 100%); border-radius: 16px; padding: 2rem; color: #2b0505; text-align: center; position: relative; overflow: hidden; box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2); transition: transform 0.3s; }
+        .voucher-promo-card { 
+            background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 50%, #b38728 100%); 
+            border-radius: 16px; 
+            padding: 2rem; 
+            color: #2b0505; 
+            text-align: center; 
+            position: relative; 
+            overflow: hidden; 
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2); 
+            transition: transform 0.3s; 
+        }
         .voucher-promo-card:hover { transform: translateY(-5px); }
         .voucher-dashed { border: 2px dashed #2b0505; padding: 1rem; border-radius: 8px; margin: 1rem 0; background: rgba(255,255,255,0.2); }
 
-        .smart-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1.5rem; padding-bottom: 2rem; justify-content: flex-start; scrollbar-color: #d4af37 rgba(26, 5, 5, 0.5); scrollbar-width: thin; }
-        @media (min-width: 768px) { .smart-grid { display: grid; grid-template-columns: repeat(2, 1fr); overflow-x: visible; justify-content: center; gap: 2rem; max-width: 1000px; margin: 0 auto; } }
-        @media (min-width: 1024px) { .smart-grid { grid-template-columns: repeat(3, 1fr); } }
+        /* GRIDS INTELIGENTES */
+        .smart-grid { 
+            display: flex; 
+            overflow-x: auto; 
+            scroll-snap-type: x mandatory; 
+            gap: 1.5rem; 
+            padding-bottom: 2rem; 
+            justify-content: flex-start; 
+            scrollbar-color: #d4af37 rgba(26, 5, 5, 0.5); 
+            scrollbar-width: thin; 
+        }
+        @media (min-width: 768px) { 
+            .smart-grid { 
+                display: grid; 
+                grid-template-columns: repeat(2, 1fr); 
+                overflow-x: visible; 
+                justify-content: center; 
+                gap: 2rem; 
+                max-width: 1000px; 
+                margin: 0 auto; 
+            } 
+        }
+        @media (min-width: 1024px) { 
+            .smart-grid { grid-template-columns: repeat(3, 1fr); } 
+        }
         .smart-grid.grid-4 { }
         @media (min-width: 768px) { .smart-grid.grid-4 { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 1024px) { .smart-grid.grid-4 { grid-template-columns: repeat(4, 1fr); } }
 
+        /* GOOGLE REVIEWS */
         .google-review-card { background: #fff; border-radius: 8px; padding: 25px 20px; min-width: 280px; max-width: 320px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); scroll-snap-align: center; display: flex; flex-direction: column; gap: 12px; border: none; color: #333; text-align: left; transition: transform 0.3s ease; }
         .google-review-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
         .google-header { display: flex; align-items: center; gap: 12px; }
@@ -192,6 +459,7 @@
         .google-text { font-size: 0.85rem; line-height: 1.6; color: #4d5156; font-weight: 400; }
         .google-icon-fa { margin-left: auto; color: #70757a; font-size: 1.1rem; opacity: 0.7; }
 
+        /* FOOTER */
         #footer-empire-master { background-color: #1a0505; background-image: radial-gradient(circle at center top, #2b0808 0%, #1a0505 60%); color: #ccc; padding-top: 4rem; padding-bottom: 2rem; border-top: 1px solid rgba(197, 160, 89, 0.3); text-align: center; }
         .footer-divider { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 800px; display: flex; align-items: center; justify-content: center; }
         .footer-divider::before, .footer-divider::after { content: ''; height: 1px; flex: 1; background: linear-gradient(90deg, transparent, #c5a059, transparent); }
@@ -226,23 +494,21 @@
         @media (min-width: 768px) { .mobile-sticky-bar { display: none; } }
         @media (min-width: 768px) { #footer-empire-master .content-grid { grid-template-columns: 1fr 1fr 1fr; gap: 3rem; } }
         
-        /* ESTILOS CLUBE & AGATA */
-        #club-view-container, #agata-view-container {
+        /* ESTILOS CLUBE & AGATA & CONTATO */
+        #club-view-container, #agata-view-container, #contato-view-container {
              width: 100%; min-height: 100vh; position: absolute; top: 0; left: 0;
              z-index: 9000; 
              display: none; 
         }
         #club-view-container { background-color: #FFFEFC; color: #0f0f0f; }
         #agata-view-container { background-color: #050505; color: #ffffff; z-index: 9100; }
+        #contato-view-container { background-color: #050505; color: #ffffff; z-index: 10001; }
 
         .text-liquid-gold { background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% auto; animation: shine-text 8s infinite linear; text-shadow: 0px 1px 3px rgba(0,0,0,0.5); }
         .text-gl-gold-gradient { background: linear-gradient(135deg, #F0E3C2, #E5C988, #C4A058); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .feature-card { background: #fff; border-radius: 8px; overflow: hidden; transition: all 0.4s ease; border: 1px solid rgba(0,0,0,0.03); box-shadow: 0 4px 10px rgba(0,0,0,0.03); padding: 1rem; }
-        .member-card { background: linear-gradient(160deg, #1a1a1a 0%, #000000 100%); border-radius: 12px; position: relative; overflow: hidden; box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.08); transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
-        .member-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.6; pointer-events: none; }
-        .member-card::after { content: ''; position: absolute; top: -150%; left: -150%; width: 250%; height: 250%; background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.02) 45%, rgba(227, 198, 118, 0.1) 50%, rgba(255, 255, 255, 0.02) 55%, transparent 60%); transform: rotate(25deg); animation: holo-shimmer 8s infinite ease-in-out; pointer-events: none; }
-        @keyframes holo-shimmer { 0% { transform: translate(-30%, -30%) rotate(25deg); } 100% { transform: translate(30%, 30%) rotate(25deg); } }
         
+        /* CARD DO CLUBE - AUDITORIA DE LAYOUT */
         .club-pricing-card { 
             background: linear-gradient(145deg, #1a1a1a 0%, #0a0a0a 100%); 
             border-radius: 20px; 
@@ -251,11 +517,19 @@
             border: 1px solid rgba(255, 255, 255, 0.08); 
             transition: all 0.4s ease; 
             display: flex; flex-direction: column; height: 100%; 
-            min-width: 85vw; max-width: 85vw; 
+            min-width: 85vw; /* Mobile: Um por vez */
+            max-width: 85vw; 
             color: #f3f3f3; 
+            scroll-snap-align: center;
         }
+        /* Tablet & Desktop Fix */
         @media (min-width: 768px) { 
-            .club-pricing-card { min-width: 0; max-width: none; width: 100%; flex: 1; } 
+            .club-pricing-card { 
+                min-width: 0; 
+                max-width: none; 
+                width: 100%; 
+                flex: 1; 
+            } 
         }
         .club-pricing-card:hover { transform: translateY(-8px); border-color: rgba(197, 157, 36, 0.4); }
 
@@ -271,7 +545,9 @@
         .timeline-marker.active { background: #10B981; border-color: #10B981; box-shadow: 0 0 10px rgba(16, 185, 129, 0.4); }
         .timeline-marker.warn { background: #F59E0B; border-color: #F59E0B; }
         .timeline-marker.danger { background: #EF4444; border-color: #EF4444; }
-        
+        .club-pricing-card .text-brand-black { color: #ffffff !important; }
+        .club-pricing-card .text-gray-400 { color: #a1a1a1 !important; font-weight: 300; letter-spacing: 0.05em; }
+
         .btn-luxury-glow { position: relative; overflow: hidden; background: linear-gradient(135deg, #C59D24 0%, #E6C25B 50%, #C59D24 100%); color: #2b0c0c; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; transition: all 0.4s ease; border: 1px solid rgba(255,255,255,0.4); box-shadow: 0 5px 15px rgba(197, 157, 36, 0.2); }
         .btn-luxury-glow:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(197, 157, 36, 0.4); background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 40%, #b38728 100%); }
 
@@ -368,9 +644,64 @@
             margin-bottom: 1rem;
             display: inline-block;
         }
+
+        /* CONTATO EXPRESS STYLE */
+        .contact-view-content {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            background: radial-gradient(circle at center, #2b0505 0%, #0a0a0a 100%);
+        }
+        .contact-btn {
+            width: 100%;
+            max-width: 350px;
+            padding: 16px;
+            border-radius: 50px;
+            margin-bottom: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .contact-btn:active { transform: scale(0.98); }
+        .btn-whatsapp-main { background: #25D366; color: white; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+        .btn-call { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: white; }
+        .btn-map { background: transparent; border: 1px solid rgba(212, 175, 55, 0.3); color: #d4af37; }
     </style>
 </head>
 <body class="no-scroll">
+
+    <!-- VIEW: CONTATO EXPRESS (PARA ADS) -->
+    <div id="contato-view-container">
+        <div class="contact-view-content">
+            <img src="https://i.ibb.co/7xQTPb2t/LOGO.png" alt="Essência de Romã" class="w-32 mb-6 drop-shadow-lg">
+            
+            <h1 class="text-white font-playfair text-2xl mb-2">Fale Conosco</h1>
+            <p class="text-gray-400 text-xs mb-8 max-w-xs">Atendimento exclusivo para agendamentos e orçamentos via WhatsApp.</p>
+
+            <button onclick="openWhatsApp('Olá! Vim pelo anúncio e gostaria de agendar um horário.')" class="contact-btn btn-whatsapp-main">
+                <i class="fab fa-whatsapp text-xl"></i> Chamar no WhatsApp
+            </button>
+            
+            <a href="tel:+5549999954052" class="contact-btn btn-call">
+                <i class="fas fa-phone-alt"></i> Ligar Agora
+            </a>
+            
+            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Achiles+Tomazelli+296+D+Chapeco" target="_blank" class="contact-btn btn-map">
+                <i class="fas fa-map-marker-alt"></i> Como Chegar
+            </a>
+
+            <button onclick="window.location.hash='home'" class="text-gray-500 text-xs mt-8 underline">Ir para o Site Oficial</button>
+        </div>
+    </div>
 
     <!-- MODAL COMUNICADO TÉCNICO (NOVO) -->
     <div id="comunicado-modal-overlay">
@@ -617,27 +948,195 @@
         </div>
     </div> 
 
-    <!-- WRAPPER DO CLUBE -->
+    <!-- WRAPPER DO CLUBE (RESTAURADO E COMPLETO) -->
     <div id="club-view-container">
         <div class="fixed top-0 left-0 w-full z-50 bg-brand-white/90 backdrop-blur-md border-b border-gray-100 h-16 flex items-center justify-between px-6 shadow-sm">
             <span class="text-brand-black font-serif font-bold text-lg">Alisa Chapecó</span>
-            <button onclick="window.location.hash='home'" class="text-xs font-bold uppercase tracking-widest text-brand-gray border border-gray-200 px-4 py-2 rounded-full hover:bg-brand-black hover:text-brand-gold transition-colors"><i class="fas fa-arrow-left mr-2"></i> Voltar ao Site</button>
+            <button onclick="window.location.hash='home'" class="text-xs font-bold uppercase tracking-widest text-brand-gray border border-gray-200 px-4 py-2 rounded-full hover:bg-brand-black hover:text-brand-gold transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i> Voltar ao Site
+            </button>
         </div>
+
         <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-black pt-20">
-            <div class="absolute inset-0 z-0 opacity-60"><img src="https://testeessencia.carrd.co/assets/images/image14.jpg?v=6dfe078c" class="w-full h-full object-cover object-top" loading="lazy"></div>
+            <div class="absolute inset-0 z-0 opacity-60">
+                <img src="https://testeessencia.carrd.co/assets/images/image14.jpg?v=6dfe078c" class="w-full h-full object-cover object-top" loading="lazy">
+            </div>
             <div class="absolute inset-0 z-10 bg-gradient-to-t from-brand-black via-brand-black/60 to-transparent"></div>
             <div class="relative z-20 text-center px-6 max-w-5xl mx-auto flex flex-col items-center w-full pb-10">
-                <h1 class="text-white text-5xl sm:text-7xl md:text-8xl font-serif font-light leading-none tracking-tighter">Liso <span class="italic text-brand-gold-light">Blindado</span></h1>
-                <p class="text-gray-300 font-light text-sm leading-relaxed text-center opacity-90 max-w-lg mt-8">Esqueça a incerteza da progressiva comum. Previsibilidade e liso perfeito todo mês.</p>
-                <a href="#planos" class="btn-luxury-glow px-12 py-4 rounded-full text-[11px] tracking-widest bg-brand-gold text-brand-black font-bold mt-8">VER PLANOS</a>
+                <div class="mb-6 inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full shadow-lg">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                    <span class="text-white/90 text-[10px] font-semibold uppercase tracking-widest">Tecnologia Essência de Romã</span>
+                </div>
+                <h1 class="text-white text-5xl sm:text-7xl md:text-8xl font-serif font-light leading-none tracking-tighter">
+                    Liso <span class="italic text-brand-gold-light">Blindado</span>
+                </h1>
+                <p class="text-gray-300 font-light text-sm leading-relaxed text-center opacity-90 max-w-lg mt-8">
+                    Esqueça a incerteza da progressiva comum. Com <strong>16 anos de excelência</strong>, entregamos um selamento que blinda sua liberdade. Previsibilidade e liso perfeito todo mês.
+                </p>
+                <a href="#planos" class="btn-luxury-glow px-12 py-4 rounded-full text-[11px] tracking-widest bg-brand-gold text-brand-black font-bold mt-8">
+                    DESBLOQUEAR ACESSO
+                </a>
             </div>
         </section>
-        <section id="planos" class="py-24 bg-brand-white"><div class="max-w-7xl mx-auto px-4"><div id="plans-carousel" class="smart-grid no-scrollbar">
-            <!-- CARDS DE PLANOS (RESUMIDOS PARA CABER NO CÓDIGO) -->
-            <div class="club-pricing-card"><div class="club-card-header bg-header-sublime"><h3>Sublime</h3></div><div class="p-8"><span class="club-price-val">119<span class="text-2xl">,90</span></span><a href="https://wa.me/5549999954052" class="w-full btn-luxury-glow py-3.5 rounded-lg text-[10px] block text-center mt-6">ENTRAR</a></div></div>
-            <div class="club-pricing-card"><div class="club-card-header bg-header-imperial"><h3>Imperial</h3></div><div class="p-8"><span class="club-price-val">139<span class="text-2xl">,90</span></span><a href="https://wa.me/5549999954052" class="w-full btn-luxury-glow py-3.5 rounded-lg text-[10px] block text-center mt-6">ENTRAR</a></div></div>
-            <div class="club-pricing-card"><div class="club-card-header bg-header-absoluto"><h3>Absoluto</h3></div><div class="p-8"><span class="club-price-val">159<span class="text-2xl">,90</span></span><a href="https://wa.me/5549999954052" class="w-full btn-luxury-glow py-3.5 rounded-lg text-[10px] block text-center mt-6">ENTRAR</a></div></div>
-        </div></div></section>
+
+        <section id="planos" class="py-24 bg-brand-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-serif text-brand-black italic">Escolha Seu Plano</h2>
+                    <p class="mt-4 text-gray-400 font-light text-xs uppercase tracking-widest max-w-xl mx-auto">
+                        Sem Cartão de Crédito • Pague Somente ao Usar
+                    </p>
+                </div>
+
+                <div id="plans-carousel" class="smart-grid no-scrollbar">
+                    
+                    <!-- CARD 1: SUBLIME -->
+                    <div class="club-pricing-card">
+                        <div class="club-card-header bg-header-sublime">
+                            <div class="absolute top-4 right-4 text-brand-gold-light text-[9px] border border-brand-gold-light px-2 py-0.5 rounded uppercase font-bold">Fio Fino</div>
+                            <h3>Sublime</h3>
+                            <p class="text-[9px] uppercase mt-2 tracking-widest opacity-60">Para Lisos & Ondulados</p>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow relative">
+                            <div class="club-price-box">
+                                <span class="club-price-val">119<span class="text-2xl">,90</span></span>
+                                <p class="text-[9px] text-gray-400 uppercase tracking-widest mt-1">por sessão mensal</p>
+                            </div>
+                            <div class="club-timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="flex-1 ml-2 border-b border-gray-700 pb-2 mb-2 flex justify-between">
+                                        <div class="flex flex-col"><span class="text-xs font-bold text-white">Adesão (1ª Vez)</span><span class="text-[9px] text-red-500 font-bold">*R$ 0,00</span></div>
+                                        <span class="text-xs text-gray-500 line-through">R$ 359</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker active"></div>
+                                    <div class="flex-1 ml-2 bg-green-900/20 p-2 rounded border border-green-800/30 flex justify-between items-center">
+                                        <div class="flex flex-col"><span class="text-xs font-bold text-green-400">Manutenção (30d)</span><span class="text-[9px] text-green-600">★ Opção Econômica</span></div>
+                                        <span class="text-sm font-bold text-white">R$ 119,90</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker warn"></div>
+                                    <div class="flex-1 ml-2 border-b border-gray-700 pb-2 mb-2 flex justify-between">
+                                        <span class="text-xs font-medium text-gray-400">Zona de Risco (31-60d)</span>
+                                        <span class="text-xs font-medium text-gray-400">R$ 169,90</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker danger"></div>
+                                    <div class="flex-1 ml-2 flex justify-between">
+                                        <span class="text-xs font-medium text-red-500">Perda do Clube (61d+)</span>
+                                        <span class="text-xs font-medium text-gray-400">R$ 359,00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Sublime." class="w-full btn-luxury-glow py-3.5 rounded-lg text-[10px] block text-center shadow-lg bg-brand-gold mt-6">
+                                Entrar no Clube Sublime
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2: IMPERIAL -->
+                    <div class="club-pricing-card">
+                        <div class="club-card-header bg-header-imperial">
+                            <div class="absolute top-4 right-4 text-white/60 text-[9px] border border-white/30 px-2 py-0.5 rounded uppercase font-bold">Fio Médio</div>
+                            <h3>Imperial</h3>
+                            <p class="text-[9px] uppercase mt-2 tracking-widest opacity-60">Para Cacheados</p>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow relative">
+                            <div class="club-price-box">
+                                <span class="club-price-val">139<span class="text-2xl">,90</span></span>
+                                <p class="text-[9px] text-gray-400 uppercase tracking-widest mt-1">por sessão mensal</p>
+                            </div>
+                            <div class="club-timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="flex-1 ml-2 border-b border-gray-700 pb-2 mb-2 flex justify-between">
+                                        <div class="flex flex-col"><span class="text-xs font-bold text-white">Adesão</span><span class="text-[9px] text-red-500 font-bold">*R$ 0,00</span></div>
+                                        <span class="text-xs text-gray-500 line-through">R$ 410</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker active"></div>
+                                    <div class="flex-1 ml-2 bg-green-900/20 p-2 rounded border border-green-800/30 flex justify-between items-center">
+                                        <div class="flex flex-col"><span class="text-xs font-bold text-green-400">Manutenção (30d)</span><span class="text-[9px] text-green-600">★ Opção Econômica</span></div>
+                                        <span class="text-sm font-bold text-white">R$ 139,90</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker warn"></div>
+                                    <div class="flex-1 ml-2 border-b border-gray-700 pb-2 mb-2 flex justify-between">
+                                        <span class="text-xs font-medium text-gray-400">Zona de Risco (31-60d)</span>
+                                        <span class="text-xs font-medium text-gray-400">R$ 189,00</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker danger"></div>
+                                    <div class="flex-1 ml-2 flex justify-between">
+                                        <span class="text-xs font-medium text-red-500">Perda do Clube (61d+)</span>
+                                        <span class="text-xs font-medium text-gray-400">R$ 410,00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Imperial." class="w-full btn-luxury-glow py-3.5 rounded-lg text-[10px] block text-center shadow-lg bg-brand-gold mt-6">
+                                Entrar no Clube Imperial
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3: ABSOLUTO -->
+                    <div class="club-pricing-card">
+                        <div class="club-card-header bg-header-absoluto">
+                            <div class="absolute top-4 right-4 text-white/50 text-[10px] border border-white/30 px-2 py-0.5 rounded uppercase font-bold">Fio Grosso</div>
+                            <h3>Absoluto</h3>
+                            <p class="text-[10px] uppercase mt-2 tracking-widest opacity-60">Para Crespos</p>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow relative">
+                            <div class="club-price-box">
+                                <span class="club-price-val">159<span class="text-2xl">,90</span></span>
+                                <p class="text-[9px] text-gray-400 uppercase tracking-widest mt-1">por sessão mensal</p>
+                            </div>
+                            <div class="club-timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="flex-1 ml-2 border-b border-gray-700 pb-2 mb-2 flex justify-between">
+                                        <div class="flex flex-col"><span class="text-xs font-bold text-white">Adesão</span><span class="text-[9px] text-red-500 font-bold">*R$ 0,00</span></div>
+                                        <span class="text-xs text-gray-500 line-through">R$ 499</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker active"></div>
+                                    <div class="flex-1 ml-2 bg-green-900/20 p-2 rounded border border-green-800/30 flex justify-between items-center">
+                                        <div class="flex flex-col"><span class="text-xs font-bold text-green-400">Manutenção (30d)</span><span class="text-[9px] text-green-600">★ Opção Econômica</span></div>
+                                        <span class="text-sm font-bold text-white">R$ 159,90</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker warn"></div>
+                                    <div class="flex-1 ml-2 border-b border-gray-700 pb-2 mb-2 flex justify-between">
+                                        <span class="text-xs font-medium text-gray-400">Zona de Risco (31-60d)</span>
+                                        <span class="text-xs font-medium text-gray-400">R$ 220,00</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker danger"></div>
+                                    <div class="flex-1 ml-2 flex justify-between">
+                                        <span class="text-xs font-medium text-red-500">Perda do Clube (61d+)</span>
+                                        <span class="text-xs font-medium text-gray-400">R$ 499,00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Absoluto." class="w-full btn-luxury-glow py-3.5 rounded-lg text-[10px] block text-center shadow-lg bg-brand-gold mt-6">
+                                Entrar no Clube Absoluto
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
     </div>
 
     <!-- WRAPPER DA GATA LAMBEU -->
@@ -720,9 +1219,11 @@
             const main = document.getElementById('main-site-wrapper');
             const club = document.getElementById('club-view-container');
             const agata = document.getElementById('agata-view-container');
+            const contato = document.getElementById('contato-view-container');
             const sticky = document.getElementById('mobile-sticky-bar');
 
-            main.style.display = 'none'; club.style.display = 'none'; agata.style.display = 'none';
+            main.style.display = 'none'; club.style.display = 'none'; agata.style.display = 'none'; 
+            if(contato) contato.style.display = 'none';
             if(sticky) sticky.style.display = 'none';
 
             if (hash === '#clube') { club.style.display = 'block'; }
@@ -732,6 +1233,15 @@
                 document.getElementById('agata-navbar').classList.add('visible');
                 document.getElementById('agata-intro-layer').style.display = 'none';
             } 
+            else if (hash === '#contato') {
+                if(contato) {
+                    contato.style.display = 'flex'; // Use flex to center content
+                    // Remove intro overlay immediately for contact route
+                    const intro = document.getElementById('intro-overlay');
+                    if(intro) intro.style.display = 'none';
+                    document.body.classList.remove('no-scroll');
+                }
+            }
             else { 
                 main.style.display = 'block'; 
                 if(sticky && window.innerWidth < 768) sticky.style.display = 'flex';
