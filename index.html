@@ -4,66 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- =========================================
-       1. SEO & METADADOS DE PERFORMANCE
-    ========================================== -->
+    <!-- 1. SEO & PERFORMANCE OTIMIZADA -->
     <title>Essência de Romã Hair | 2026 - O Extraordinário</title>
-    <meta name="description" content="Comece 2026 vivendo o Extraordinário. Agenda especial de Liso Blindado e Clube de Assinatura exclusivo em Chapecó.">
+    <meta name="description" content="Comece 2026 vivendo o Extraordinário. Agenda especial e Clube de Assinatura exclusivo.">
     <meta name="theme-color" content="#2b0505">
     <link rel="canonical" href="https://salaoessenciaderoma.com/">
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://i.ibb.co/7xQTPb2t/LOGO.png" />
 
-    <!-- =========================================
-       2. PRÉ-CARREGAMENTO DE RECURSOS CRÍTICOS
-    ========================================== -->
+    <!-- 2. PRÉ-CARREGAMENTO CRÍTICO -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://res.cloudinary.com">
-    
-    <!-- Preload da Imagem Hero para LCP (Largest Contentful Paint) -->
     <link rel="preload" as="image" href="https://salaoessenciaderoma.com/assets/images/hero-poster.jpg">
 
-    <!-- =========================================
-       3. SCRIPTS DE SEGURANÇA E PROTEÇÃO
-    ========================================== -->
+    <!-- SEGURANÇA -->
     <script>
-        // Desabilitar teclas de inspeção e cópia
         document.onkeydown = function(e) {
-            if(e.keyCode == 123) {
-                return false; 
-            }
-            if(e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 67 || e.keyCode == 74 || e.keyCode == 85)) {
-                return false; 
-            }
+            if(e.keyCode == 123) return false; 
+            if(e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 67 || e.keyCode == 74 || e.keyCode == 85)) return false; 
         }
-        // Desabilitar arraste de imagens
-        document.addEventListener('dragstart', function(e) {
-            e.preventDefault();
-        });
-        // Desabilitar seleção de texto
-        document.addEventListener('selectstart', function(e) {
-            e.preventDefault();
-        });
+        document.addEventListener('dragstart', e=>e.preventDefault());
+        document.addEventListener('selectstart', e=>e.preventDefault());
     </script>
 
-    <!-- =========================================
-       4. FONTES E BIBLIOTECAS EXTERNAS
-    ========================================== -->
-    <!-- Google Fonts: Cormorant (Luxo), Montserrat (Leitura), Playfair (Títulos), Cinzel (Detalhes) -->
+    <!-- FONTS & LIBS -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Configuração Personalizada do Tailwind -->
+    <!-- CONFIG TAILWIND HÍBRIDA -->
     <script>
         tailwind.config = {
             theme: {
@@ -87,10 +57,7 @@
                         'cinzel': ['Cinzel', 'serif'],
                         'luxury': ['Cormorant Garamond', 'serif'],
                     },
-                    screens: { 
-                        'xs': '475px',
-                        'tablet': '900px' /* Breakpoint específico para tablet vertical */
-                    },
+                    screens: { 'xs': '475px' },
                     boxShadow: {
                         'soft': '0 20px 40px -15px rgba(0, 0, 0, 0.05)',
                         'gold': '0 10px 30px -5px rgba(197, 157, 36, 0.25)',
@@ -100,77 +67,24 @@
         }
     </script>
 
-    <!-- =========================================
-       5. TRACKING E ANALYTICS
-    ========================================== -->
-    <!-- Google Tag Manager -->
+    <!-- TRACKING SCRIPTS -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11442509118"></script>
     <script>
-      window.dataLayer = window.dataLayer || []; 
-      function gtag(){dataLayer.push(arguments);} 
-      gtag('js', new Date()); 
-      gtag('config', 'AW-11442509118');
-      
-      function gtag_report_conversion(url) { 
-          var c = function () { 
-              if (typeof(url) != 'undefined') { 
-                  window.open(url, '_blank'); 
-              } 
-          }; 
-          if (typeof gtag === 'function') { 
-              gtag('event', 'conversion', { 
-                  'send_to': 'AW-11442509118/CNfICPrhpYAZEL6qm9Aq', 
-                  'event_callback': c 
-              }); 
-          } else { 
-              c(); 
-          } 
-          return false; 
-      }
+      window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-11442509118');
+      function gtag_report_conversion(url) { var c = function () { if (typeof(url) != 'undefined') { window.open(url, '_blank'); } }; if (typeof gtag === 'function') { gtag('event', 'conversion', { 'send_to': 'AW-11442509118/CNfICPrhpYAZEL6qm9Aq', 'event_callback': c }); } else { c(); } return false; }
     </script>
-    
-    <!-- Meta Pixel Code -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window,document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        try{fbq('init', '639959835745383');fbq('track', 'PageView');}catch(e){}
-    </script>
+    <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');try{fbq('init', '639959835745383');fbq('track', 'PageView');}catch(e){}</script>
 
-    <!-- =========================================
-       6. ESTILOS CSS PERSONALIZADOS (AUDITORIA)
-    ========================================== -->
     <style>
-        /* CORE RESET & SCROLL */
-        * { 
-            -webkit-font-smoothing: antialiased; 
-            scroll-behavior: smooth; 
-        }
+        /* CORE */
+        * { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
         
-        /* SCROLLBAR CUSTOMIZADA */
-        ::-webkit-scrollbar { 
-            width: 8px; 
-            height: 6px; 
-        } 
-        ::-webkit-scrollbar-track { 
-            background: rgba(26, 5, 5, 0.5); 
-        }
-        ::-webkit-scrollbar-thumb { 
-            background: #d4af37; 
-            border-radius: 4px; 
-        }
-        ::-webkit-scrollbar-thumb:hover { 
-            background: #b38728; 
-        }
-        ::selection { 
-            background: #d4af37; 
-            color: #1a0505; 
-        }
+        /* SCROLLBAR & SELECTION */
+        ::-webkit-scrollbar { width: 8px; height: 6px; } 
+        ::-webkit-scrollbar-track { background: rgba(26, 5, 5, 0.5); }
+        ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #b38728; }
+        ::selection { background: #d4af37; color: #1a0505; }
 
         body { 
             background-color: #2b0505; 
@@ -180,15 +94,12 @@
             margin: 0; 
             padding: 0; 
             color: #f3f3f3; 
-            padding-bottom: 70px; /* Espaço para barra mobile */
+            padding-bottom: 70px;
         }
         
-        body.no-scroll { 
-            overflow: hidden; 
-            height: 100vh; 
-        }
+        body.no-scroll { overflow: hidden; height: 100vh; }
 
-        /* TRANSIÇÕES DE VIEWS (SPA FEELING) */
+        /* VIEW TRANSITIONS */
         .view-section {
             transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
             opacity: 0;
@@ -204,7 +115,7 @@
             display: block;
         }
 
-        /* --- INTRO OVERLAY --- */
+        /* INTRO OVERLAY */
         #intro-overlay { 
             position: fixed; 
             inset: 0; 
@@ -219,167 +130,42 @@
             text-align: center;
         }
         
-        .intro-content-wrapper { 
-            position: relative; 
-            z-index: 10; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            gap: 15px; 
-            width: 100%; 
-        }
-        
-        .intro-pre-title { 
-            font-family: 'Montserrat', sans-serif; 
-            font-size: 0.9rem; 
-            letter-spacing: 0.3em; 
-            text-transform: uppercase; 
-            color: #ccc; 
-            opacity: 0; 
-            animation: fadeInUp 1s 0.2s forwards; 
-        }
+        .intro-content-wrapper { position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px; width: 100%; }
+        .intro-pre-title { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; letter-spacing: 0.3em; text-transform: uppercase; color: #ccc; opacity: 0; animation: fadeInUp 1s 0.2s forwards; }
         
         .intro-year { 
-            font-family: 'Cinzel', serif; 
-            font-size: clamp(2.5rem, 8vw, 5.5rem); 
-            line-height: 1.1;
+            font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 8vw, 5.5rem); line-height: 1.1;
             background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%); 
-            -webkit-background-clip: text; 
-            background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-            color: transparent;
-            filter: drop-shadow(0 0 20px rgba(212,175,55,0.3)); 
-            opacity: 0; 
-            animation: zoomInFade 1.5s ease-out forwards; 
-            margin: 15px 0; 
-            text-align: center; 
-            font-weight: 400; 
-            letter-spacing: 0.1em;
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
+            filter: drop-shadow(0 0 20px rgba(212,175,55,0.3)); opacity: 0; animation: zoomInFade 1.5s ease-out forwards; 
+            margin: 15px 0; text-align: center; font-weight: 400; letter-spacing: 0.1em;
         }
         
-        .intro-sub { 
-            font-family: 'Playfair Display', serif; 
-            font-style: italic; 
-            letter-spacing: 0.05em; 
-            color: #fff; 
-            font-size: clamp(1rem, 3vw, 1.3rem); 
-            opacity: 0; 
-            max-width: 600px; 
-            line-height: 1.6; 
-            animation: fadeInUp 1s 0.8s forwards; 
-        }
+        .intro-sub { font-family: 'Playfair Display', serif; font-style: italic; letter-spacing: 0.05em; color: #fff; font-size: clamp(1rem, 3vw, 1.3rem); opacity: 0; max-width: 600px; line-height: 1.6; animation: fadeInUp 1s 0.8s forwards; }
         
         .intro-btn {
-            opacity: 0; 
-            animation: fadeInUp 1s 1.2s forwards; 
-            background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%); 
-            border: 1px solid #ffecb3; 
-            color: #2b0505;
-            padding: 16px 45px; 
-            font-family: 'Montserrat', sans-serif; 
-            font-weight: 800; 
-            font-size: 0.85rem; 
-            letter-spacing: 0.2em; 
-            text-transform: uppercase; 
-            border-radius: 50px;
-            cursor: pointer; 
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-            margin-top: 2rem; 
-            position: relative; 
-            overflow: hidden; 
-            box-shadow: 0 4px 25px rgba(212, 175, 55, 0.3);
+            opacity: 0; animation: fadeInUp 1s 1.2s forwards; background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%); border: 1px solid #ffecb3; color: #2b0505;
+            padding: 16px 45px; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 50px;
+            cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); margin-top: 2rem; position: relative; overflow: hidden; box-shadow: 0 4px 25px rgba(212, 175, 55, 0.3);
         }
-        .intro-btn:hover { 
-            transform: translateY(-3px) scale(1.02); 
-            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.5); 
-            background: linear-gradient(135deg, #e6c665 0%, #fffbd4 45%, #c49635 100%); 
-        }
+        .intro-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 10px 40px rgba(212, 175, 55, 0.5); background: linear-gradient(135deg, #e6c665 0%, #fffbd4 45%, #c49635 100%); }
 
-        @keyframes zoomInFade { 
-            0% { transform: scale(0.95); opacity: 0; filter: blur(5px); } 
-            100% { transform: scale(1); opacity: 1; filter: blur(0); } 
-        }
-        @keyframes fadeInUp { 
-            from { opacity: 0; transform: translateY(20px); } 
-            to { opacity: 1; transform: translateY(0); } 
-        }
-        @keyframes pulse-gold { 
-            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); } 
-            70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); } 
-            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); } 
-        }
+        @keyframes zoomInFade { 0% { transform: scale(0.95); opacity: 0; filter: blur(5px); } 100% { transform: scale(1); opacity: 1; filter: blur(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse-gold { 0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); } 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); } }
 
-        /* HEADER FIXO */
-        #header-sticky { 
-            background: rgba(43, 5, 5, 0.95); 
-            backdrop-filter: blur(10px); 
-            border-bottom: 1px solid rgba(197, 160, 89, 0.3); 
-            transition: all 0.3s ease; 
-            z-index: 50; 
-        }
+        /* HEADER */
+        #header-sticky { background: rgba(43, 5, 5, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(197, 160, 89, 0.3); transition: all 0.3s ease; z-index: 50; }
         
-        /* ESTILOS DE CARDS & GERAIS */
-        .hero-container { 
-            position: relative; 
-            width: 100vw; 
-            height: 100dvh; 
-            overflow: hidden; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            background-color: #2b0505; 
-            border-bottom: 2px solid #c5a059; 
-        }
-        .video-bg { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            object-position: center 20%; 
-            z-index: 0; 
-            transform: scale(1.3); 
-            will-change: transform; 
-        }
-        .video-overlay { 
-            position: absolute; 
-            inset: 0; 
-            z-index: 1; 
-            background: radial-gradient(circle at center, rgba(75,0,0,0.2) 0%, rgba(43,5,5,0.85) 90%), linear-gradient(to bottom, rgba(75, 0, 0, 0.5) 0%, rgba(75, 0, 0, 0.2) 35%, rgba(43, 5, 5, 1) 100%); 
-        }
-        .hero-content { 
-            position: relative; 
-            z-index: 10; 
-            padding-top: 60px; 
-            width: 100%; 
-            max-width: 1200px; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            text-align: center; 
-        }
+        /* CARDS & COMMON */
+        .hero-container { position: relative; width: 100vw; height: 100dvh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #2b0505; border-bottom: 2px solid #c5a059; }
+        .video-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; z-index: 0; transform: scale(1.3); will-change: transform; }
+        .video-overlay { position: absolute; inset: 0; z-index: 1; background: radial-gradient(circle at center, rgba(75,0,0,0.2) 0%, rgba(43,5,5,0.85) 90%), linear-gradient(to bottom, rgba(75, 0, 0, 0.5) 0%, rgba(75, 0, 0, 0.2) 35%, rgba(43, 5, 5, 1) 100%); }
+        .hero-content { position: relative; z-index: 10; padding-top: 60px; width: 100%; max-width: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
 
         .font-playfair { font-family: 'Playfair Display', serif; }
-        .text-gold-static { 
-            color: #e8c872; 
-            background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 58%, #fbf5b7 80%, #aa771c 100%); 
-            -webkit-background-clip: text; 
-            background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8)); 
-            font-weight: 800; 
-        }
-        .text-gold-shine { 
-            background: linear-gradient(to right, #cfc09f, #ffecb3, #c5a059, #ffd700, #cfc09f); 
-            background-size: 200% auto; 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-            animation: shine 6s linear infinite; 
-        }
+        .text-gold-static { color: #e8c872; background: linear-gradient(to bottom, #e8c872 0%, #bf953f 26%, #b38728 58%, #fbf5b7 80%, #aa771c 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8)); font-weight: 800; }
+        .text-gold-shine { background: linear-gradient(to right, #cfc09f, #ffecb3, #c5a059, #ffd700, #cfc09f); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 6s linear infinite; }
         
         .eyebrow-text { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: #e5e5e5; margin-bottom: 0.5rem; font-weight: 500; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
         .hero-subtext { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #e5e5e5; margin-top: 1.5rem; line-height: 1.6; max-width: 90%; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
@@ -387,68 +173,23 @@
         .btn-ghost { border: 1px solid rgba(255, 255, 255, 0.2); color: #e5e5e5; cursor: pointer; transition: all 0.3s; }
         .btn-ghost:hover { background: rgba(255,255,255,0.1); color: #fff; border-color: #fff; }
         .bg-white-gold { background: linear-gradient(145deg, #ffffff 0%, #f8f1e0 100%); border: 2px solid #d4af37; box-shadow: 0 0 40px rgba(212, 175, 55, 0.3); color: #2b0505; }
-        
-        /* Botão Header Dourado */
-        .btn-header-gold { 
-            background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%); 
-            color: #2b0505; 
-            border: 1px solid #ffecb3; 
-            font-weight: 800; 
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); 
-            transition: transform 0.2s, box-shadow 0.2s; 
-        }
-        .btn-header-gold:hover { 
-            transform: translateY(-1px); 
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5); 
-        }
+        .btn-header-gold { background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%); color: #2b0505; border: 1px solid #ffecb3; font-weight: 800; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); transition: transform 0.2s, box-shadow 0.2s; }
+        .btn-header-gold:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5); }
 
         .video-card { border-radius: 16px; overflow: hidden; border: 1px solid rgba(197, 160, 89, 0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.5); background: #000; position: relative; aspect-ratio: 9/16; }
         .card-mute-btn { position: absolute; bottom: 10px; right: 10px; width: 32px; height: 32px; background: rgba(0,0,0,0.7); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; z-index: 20; cursor: pointer; border: 1px solid rgba(255,255,255,0.3); }
 
-        .voucher-promo-card { 
-            background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 50%, #b38728 100%); 
-            border-radius: 16px; 
-            padding: 2rem; 
-            color: #2b0505; 
-            text-align: center; 
-            position: relative; 
-            overflow: hidden; 
-            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2); 
-            transition: transform 0.3s; 
-        }
+        .voucher-promo-card { background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 50%, #b38728 100%); border-radius: 16px; padding: 2rem; color: #2b0505; text-align: center; position: relative; overflow: hidden; box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2); transition: transform 0.3s; }
         .voucher-promo-card:hover { transform: translateY(-5px); }
         .voucher-dashed { border: 2px dashed #2b0505; padding: 1rem; border-radius: 8px; margin: 1rem 0; background: rgba(255,255,255,0.2); }
 
-        /* GRIDS INTELIGENTES */
-        .smart-grid { 
-            display: flex; 
-            overflow-x: auto; 
-            scroll-snap-type: x mandatory; 
-            gap: 1.5rem; 
-            padding-bottom: 2rem; 
-            justify-content: flex-start; 
-            scrollbar-color: #d4af37 rgba(26, 5, 5, 0.5); 
-            scrollbar-width: thin; 
-        }
-        @media (min-width: 768px) { 
-            .smart-grid { 
-                display: grid; 
-                grid-template-columns: repeat(2, 1fr); 
-                overflow-x: visible; 
-                justify-content: center; 
-                gap: 2rem; 
-                max-width: 1000px; 
-                margin: 0 auto; 
-            } 
-        }
-        @media (min-width: 1024px) { 
-            .smart-grid { grid-template-columns: repeat(3, 1fr); } 
-        }
+        .smart-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1.5rem; padding-bottom: 2rem; justify-content: flex-start; scrollbar-color: #d4af37 rgba(26, 5, 5, 0.5); scrollbar-width: thin; }
+        @media (min-width: 768px) { .smart-grid { display: grid; grid-template-columns: repeat(2, 1fr); overflow-x: visible; justify-content: center; gap: 2rem; max-width: 1000px; margin: 0 auto; } }
+        @media (min-width: 1024px) { .smart-grid { grid-template-columns: repeat(3, 1fr); } }
         .smart-grid.grid-4 { }
         @media (min-width: 768px) { .smart-grid.grid-4 { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 1024px) { .smart-grid.grid-4 { grid-template-columns: repeat(4, 1fr); } }
 
-        /* GOOGLE REVIEWS */
         .google-review-card { background: #fff; border-radius: 8px; padding: 25px 20px; min-width: 280px; max-width: 320px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); scroll-snap-align: center; display: flex; flex-direction: column; gap: 12px; border: none; color: #333; text-align: left; transition: transform 0.3s ease; }
         .google-review-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
         .google-header { display: flex; align-items: center; gap: 12px; }
@@ -459,7 +200,6 @@
         .google-text { font-size: 0.85rem; line-height: 1.6; color: #4d5156; font-weight: 400; }
         .google-icon-fa { margin-left: auto; color: #70757a; font-size: 1.1rem; opacity: 0.7; }
 
-        /* FOOTER */
         #footer-empire-master { background-color: #1a0505; background-image: radial-gradient(circle at center top, #2b0808 0%, #1a0505 60%); color: #ccc; padding-top: 4rem; padding-bottom: 2rem; border-top: 1px solid rgba(197, 160, 89, 0.3); text-align: center; }
         .footer-divider { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 800px; display: flex; align-items: center; justify-content: center; }
         .footer-divider::before, .footer-divider::after { content: ''; height: 1px; flex: 1; background: linear-gradient(90deg, transparent, #c5a059, transparent); }
@@ -494,21 +234,24 @@
         @media (min-width: 768px) { .mobile-sticky-bar { display: none; } }
         @media (min-width: 768px) { #footer-empire-master .content-grid { grid-template-columns: 1fr 1fr 1fr; gap: 3rem; } }
         
-        /* ESTILOS CLUBE & AGATA & CONTATO */
-        #club-view-container, #agata-view-container, #contato-view-container {
+        /* ESTILOS CLUBE & AGATA - CAMADAS E TRANSIÇÕES */
+        #club-view-container, #agata-view-container {
              width: 100%; min-height: 100vh; position: absolute; top: 0; left: 0;
-             z-index: 9000; 
-             display: none; 
+             z-index: 9000; /* Acima do site principal */
+             display: none; /* Inicialmente ocultos */
         }
         #club-view-container { background-color: #FFFEFC; color: #0f0f0f; }
         #agata-view-container { background-color: #050505; color: #ffffff; z-index: 9100; }
-        #contato-view-container { background-color: #050505; color: #ffffff; z-index: 10001; }
 
         .text-liquid-gold { background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% auto; animation: shine-text 8s infinite linear; text-shadow: 0px 1px 3px rgba(0,0,0,0.5); }
         .text-gl-gold-gradient { background: linear-gradient(135deg, #F0E3C2, #E5C988, #C4A058); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .feature-card { background: #fff; border-radius: 8px; overflow: hidden; transition: all 0.4s ease; border: 1px solid rgba(0,0,0,0.03); box-shadow: 0 4px 10px rgba(0,0,0,0.03); padding: 1rem; }
+        .member-card { background: linear-gradient(160deg, #1a1a1a 0%, #000000 100%); border-radius: 12px; position: relative; overflow: hidden; box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.08); transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+        .member-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.6; pointer-events: none; }
+        .member-card::after { content: ''; position: absolute; top: -150%; left: -150%; width: 250%; height: 250%; background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.02) 45%, rgba(227, 198, 118, 0.1) 50%, rgba(255, 255, 255, 0.02) 55%, transparent 60%); transform: rotate(25deg); animation: holo-shimmer 8s infinite ease-in-out; pointer-events: none; }
+        @keyframes holo-shimmer { 0% { transform: translate(-30%, -30%) rotate(25deg); } 100% { transform: translate(30%, 30%) rotate(25deg); } }
         
-        /* CARD DO CLUBE - AUDITORIA DE LAYOUT */
+        /* CLUB PRICING DARK */
         .club-pricing-card { 
             background: linear-gradient(145deg, #1a1a1a 0%, #0a0a0a 100%); 
             border-radius: 20px; 
@@ -517,19 +260,11 @@
             border: 1px solid rgba(255, 255, 255, 0.08); 
             transition: all 0.4s ease; 
             display: flex; flex-direction: column; height: 100%; 
-            min-width: 85vw; /* Mobile: Um por vez */
-            max-width: 85vw; 
+            min-width: 85vw; max-width: 85vw; 
             color: #f3f3f3; 
-            scroll-snap-align: center;
         }
-        /* Tablet & Desktop Fix */
         @media (min-width: 768px) { 
-            .club-pricing-card { 
-                min-width: 0; 
-                max-width: none; 
-                width: 100%; 
-                flex: 1; 
-            } 
+            .club-pricing-card { min-width: 0; max-width: none; width: 100%; flex: 1; } 
         }
         .club-pricing-card:hover { transform: translateY(-8px); border-color: rgba(197, 157, 36, 0.4); }
 
@@ -558,13 +293,18 @@
         .agata-nav-fixed.visible { transform: translateY(0); }
         .product-card { border-radius: 24px; overflow: hidden; height: auto; border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(15,15,15,0.6); }
         
+        /* ESTILO INTERATIVO SOFISTICADO */
         .ingredient-item, .card-glass {
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.08); 
+            border: 1px solid rgba(255, 255, 255, 0.08); /* Borda mais sutil */
             background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px); /* Vidro fosco real */
             -webkit-backdrop-filter: blur(8px);
+        }
+        .ingredient-item:hover, .card-glass:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
         }
         .interactive-glow {
             border: 1px solid #E5C988 !important;
@@ -574,11 +314,44 @@
         }
 
         .ingredient-item { display: flex; gap: 1.2rem; margin-bottom: 1rem; padding: 1.2rem; border-radius: 12px; }
+        .ingredient-item.glow-active { opacity: 1; transform: translateX(0); }
+        
+        .ingredient-icon { color: #E5C988; flex-shrink: 0; margin-top: 2px; }
+        .btn-touch { min-height: 54px; display: flex; align-items: center; justify-content: center; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; font-size: 14px; border-radius: 12px; transition: all 0.3s; cursor: pointer; user-select: none; }
+        .btn-outline-gl { border: 1px solid rgba(255,255,255,0.3); color: #fff; background: rgba(255,255,255,0.05); }
+        .btn-solid-gl { background: #E5C988; color: #000; box-shadow: 0 5px 20px rgba(229, 201, 136, 0.2); }
         .organic-seal { position: absolute; top: -20px; right: -20px; z-index: 30; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid #E5C988; color: #E5C988; padding: 1rem 1.5rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: center; animation: float 4s ease-in-out infinite; }
+        .organic-seal span { display: block; }
+        .organic-seal .big { font-size: 1.5rem; font-weight: 800; font-family: 'Cinzel', serif; line-height: 1; }
+        .organic-seal .small { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 5px; }
+        
+        .fade-enter { opacity: 0; }
+        .fade-enter-active { opacity: 1; transition: opacity 500ms; }
+        .fade-exit { opacity: 1; }
+        .fade-exit-active { opacity: 0; transition: opacity 500ms; }
 
-        @keyframes shine { 0% { background-position: -200%; } 100% { background-position: 200%; } }
+        /* OPTIMIZATION: REMOVE FIXED BACKGROUND ON TOUCH DEVICES */
+        @media (hover: none) and (pointer: coarse) {
+            .agata-bg-luxury {
+                background-attachment: scroll !important;
+            }
+            .video-bg {
+                transform: none !important;
+            }
+        }
+        
+        /* HARDWARE ACCELERATION FOR SMOOTH SCROLL REVEAL */
+        .reveal-on-scroll, .observe-me {
+            will-change: opacity, transform;
+        }
 
-        /* FAQ STYLE */
+        /* BRILHO 8K ANIMATION */
+        @keyframes shine {
+            0% { background-position: -200%; }
+            100% { background-position: 200%; }
+        }
+
+        /* FAQ REDESIGN - HIGH END */
         .faq-item {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -588,143 +361,102 @@
             overflow: hidden;
             backdrop-filter: blur(10px);
         }
-        .faq-item:hover { border-color: rgba(197, 157, 36, 0.3); transform: translateX(5px); }
-        .faq-summary, .faq-question { padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; list-style: none; width: 100%; }
-        .faq-question-text { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: #e5e5e5; font-style: italic; }
-        .faq-answer-content { color: #a0a0a0; padding: 0 1.5rem 1.5rem 1.5rem; line-height: 1.8; }
-        .faq-item[open] .faq-question-text { color: #d4af37; }
 
-        /* MODAL COMUNICADO TÉCNICO */
-        #comunicado-modal-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(12px);
-            z-index: 11000;
+        .faq-item:hover {
+            border-color: rgba(197, 157, 36, 0.3);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateX(5px);
+        }
+
+        .faq-item[open], .faq-item.active {
+            background: linear-gradient(160deg, rgba(20, 5, 5, 0.8) 0%, rgba(40, 10, 10, 0.8) 100%);
+            border-color: #C59D24;
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+            transform: scale(1.01);
+        }
+
+        /* SUMMARY / HEADER */
+        .faq-summary, .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        #comunicado-modal-overlay.active { display: flex; }
-        .comunicado-box {
-            background: linear-gradient(160deg, #1a0505 0%, #0a0a0a 100%);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 24px;
-            max-width: 600px;
-            width: 100%;
-            position: relative;
-            padding: 2.5rem;
-            box-shadow: 0 25px 60px -10px rgba(0,0,0,0.8);
-            animation: modalFadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        @keyframes modalFadeUp {
-            from { opacity: 0; transform: translateY(30px) scale(0.95); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        .comunicado-close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            color: #666;
-            font-size: 1.5rem;
             cursor: pointer;
+            list-style: none;
+            width: 100%;
+        }
+        .faq-summary::-webkit-details-marker { display: none; }
+
+        .faq-question-text, .faq-question span {
+            font-family: 'Cormorant Garamond', serif; /* Mais sofisticado */
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #e5e5e5;
+            letter-spacing: 0.02em;
+            font-style: italic;
             transition: color 0.3s;
         }
-        .comunicado-close:hover { color: #d4af37; }
-        .comunicado-tag {
-            background: #B91C1C;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 0.65rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1rem;
-            display: inline-block;
+
+        .faq-item[open] .faq-question-text, 
+        .faq-item.active .faq-question span {
+            color: #d4af37;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
 
-        /* CONTATO EXPRESS STYLE */
-        .contact-view-content {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            text-align: center;
-            background: radial-gradient(circle at center, #2b0505 0%, #0a0a0a 100%);
+        /* ICON */
+        .faq-icon-wrapper i, .faq-icon {
+            color: #666;
+            transition: all 0.4s ease;
+            font-size: 1rem;
         }
-        .contact-btn {
-            width: 100%;
-            max-width: 350px;
-            padding: 16px;
-            border-radius: 50px;
-            margin-bottom: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transition: transform 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+
+        /* Rotate Chevron (Home) */
+        .faq-item[open] .faq-icon-wrapper i {
+            transform: rotate(180deg);
+            color: #d4af37;
         }
-        .contact-btn:active { transform: scale(0.98); }
-        .btn-whatsapp-main { background: #25D366; color: white; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
-        .btn-call { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: white; }
-        .btn-map { background: transparent; border: 1px solid rgba(212, 175, 55, 0.3); color: #d4af37; }
+
+        /* Rotate Plus (Agata) */
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            color: #d4af37;
+        }
+
+        /* CONTENT */
+        .faq-answer-content, .faq-answer {
+            color: #a0a0a0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            border-top: 1px solid transparent;
+            transition: all 0.5s ease;
+        }
+
+        .faq-item[open] .faq-answer-content, 
+        .faq-item.active .faq-answer {
+            border-top-color: rgba(212, 175, 55, 0.1);
+            padding-top: 1rem;
+        }
+
+        /* Agata Specific Answer Animation */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding-bottom: 0;
+            padding-top: 0;
+            opacity: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px; /* Safe upper limit */
+            opacity: 1;
+            padding-bottom: 1.5rem;
+            padding-top: 1rem;
+        }
     </style>
 </head>
 <body class="no-scroll">
-
-    <!-- VIEW: CONTATO EXPRESS (PARA ADS) -->
-    <div id="contato-view-container">
-        <div class="contact-view-content">
-            <img src="https://i.ibb.co/7xQTPb2t/LOGO.png" alt="Essência de Romã" class="w-32 mb-6 drop-shadow-lg">
-            
-            <h1 class="text-white font-playfair text-2xl mb-2">Fale Conosco</h1>
-            <p class="text-gray-400 text-xs mb-8 max-w-xs">Atendimento exclusivo para agendamentos e orçamentos via WhatsApp.</p>
-
-            <button onclick="openWhatsApp('Olá! Vim pelo anúncio e gostaria de agendar um horário.')" class="contact-btn btn-whatsapp-main">
-                <i class="fab fa-whatsapp text-xl"></i> Chamar no WhatsApp
-            </button>
-            
-            <a href="tel:+5549999954052" class="contact-btn btn-call">
-                <i class="fas fa-phone-alt"></i> Ligar Agora
-            </a>
-            
-            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Achiles+Tomazelli+296+D+Chapeco" target="_blank" class="contact-btn btn-map">
-                <i class="fas fa-map-marker-alt"></i> Como Chegar
-            </a>
-
-            <button onclick="window.location.hash='home'" class="text-gray-500 text-xs mt-8 underline">Ir para o Site Oficial</button>
-        </div>
-    </div>
-
-    <!-- MODAL COMUNICADO TÉCNICO (NOVO) -->
-    <div id="comunicado-modal-overlay">
-        <div class="comunicado-box">
-            <span class="comunicado-close" onclick="closeComunicado()">&times;</span>
-            <div class="comunicado-tag">Comunicado Técnico</div>
-            <h2 class="font-playfair text-2xl md:text-3xl text-white mb-4 italic">Olá, <span id="user-name-span">Amiga</span>! ✨</h2>
-            <div class="space-y-4 text-gray-300 text-sm leading-relaxed mb-8">
-                <p>No Essência de Romã, nossa filosofia é a transparência total com quem confia na saúde do seu fio sob nossa Direção Técnica.</p>
-                <p>Passamos por dois cenários de reajustes externos que impactam diretamente nossos serviços:</p>
-                <ul class="space-y-2">
-                    <li class="flex items-start gap-2"><i class="fas fa-flask text-[#d4af37] mt-1"></i> <span><strong>Matéria-Prima (Dezembro):</strong> Aumento nos ativos de alta performance (Hialurônico e Proteína do Trigo).</span></li>
-                    <li class="flex items-start gap-2"><i class="fas fa-chart-line text-[#d4af37] mt-1"></i> <span><strong>Custos Operacionais (Janeiro):</strong> Nova política de impostos sobre serviços e anúncios.</span></li>
-                </ul>
-                <p class="bg-[#d4af37]/10 p-3 rounded-lg border-l-2 border-[#d4af37] text-white">
-                    ⚠️ <strong>JANELA DE OPORTUNIDADE:</strong> Conseguimos segurar o valor antigo apenas para as vagas da 1ª e 2ª semana de Janeiro (até dia 15/01).
-                </p>
-            </div>
-            <button onclick="openWhatsApp('Olá! Quero aproveitar a JANELA DE OPORTUNIDADE e garantir meu horário com valor antigo até dia 15/01!')" class="w-full bg-gradient-to-r from-[#d4af37] to-[#b38728] text-[#1a0505] font-extrabold py-4 rounded-full uppercase tracking-wider shadow-lg flex items-center justify-center gap-2">
-                <i class="fab fa-whatsapp text-lg"></i> Consultar Últimos Horários
-            </button>
-        </div>
-    </div>
 
     <!-- INTRO OVERLAY -->
     <div id="intro-overlay">
@@ -737,7 +469,7 @@
         </div>
     </div>
 
-    <!-- WRAPPER DO SITE PRINCIPAL -->
+    <!-- WRAPPER DO SITE PRINCIPAL (GERENCIA A VISIBILIDADE) -->
     <div id="main-site-wrapper">
         <!-- HEADER -->
         <header id="header-sticky" class="fixed top-0 left-0 w-full z-50 h-20 md:h-24 flex items-center">
@@ -746,6 +478,7 @@
                     <img src="https://i.ibb.co/7xQTPb2t/LOGO.png" alt="Logo" class="h-8 md:h-14 w-auto object-contain drop-shadow-md">
                     <div class="flex flex-col">
                         <span class="text-white font-playfair font-bold text-xs md:text-lg leading-none hidden md:block">Essência de Romã</span>
+                        <!-- SOCIAL PROOF NO HEADER/HERO -->
                         <div class="mt-1 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[9px] md:text-[10px] font-bold text-[#d4af37] border border-[#d4af37]/30 inline-flex items-center gap-1 w-fit">
                             <i class="fas fa-star text-[8px]"></i> Mais de 2.000 clientes atendidas em 2025
                         </div>
@@ -755,6 +488,7 @@
                     <button onclick="window.location.hash='clube'" class="flex items-center gap-2 btn-header-gold py-2 px-2 md:px-4 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider">
                         <i class="fas fa-gem text-[#2b0505]"></i> Clube
                     </button>
+                    <!-- BOTÃO A GATA LAMBEU SUBSTITUINDO AGENDAR -->
                     <button onclick="window.location.hash='agata'" class="flex items-center gap-2 btn-header-gold py-2 px-3 md:py-3 md:px-6 rounded-full shadow-lg text-[10px] md:text-xs no-underline">
                         <i class="fas fa-star text-sm md:text-lg"></i>
                         <div class="flex flex-col text-left leading-none">
@@ -766,8 +500,9 @@
             </div>
         </header>
 
-        <!-- HERO SECTION -->
+        <!-- HERO SECTION - 2026 -->
         <section id="inicio" class="hero-container">
+            <!-- VIDEO CARREGADO COM PRIORIDADE E OTIMIZADO -->
             <video id="heroVideo" class="video-bg" muted loop playsinline poster="https://salaoessenciaderoma.com/assets/images/hero-poster.jpg" fetchpriority="high">
                 <source src="https://res.cloudinary.com/daukvmsc2/video/upload/v1767280250/Design_sem_nome_qdjqut.mp4" type="video/mp4">
             </video>
@@ -781,6 +516,9 @@
                     <span class="block text-xl md:text-3xl font-medium tracking-[0.2em] mb-2 uppercase">Recuperação Capilar</span>
                     <span class="block text-4xl md:text-7xl font-bold italic text-gold-static">O Liso dos Sonhos Existe</span>
                 </h1>
+                <div class="flex flex-wrap justify-center gap-4 text-gray-300 text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-8 opacity-90">
+                    <span>Tratamento</span> <span class="text-[#d4af37]">•</span> <span>Alisamento</span> <span class="text-[#d4af37]">•</span> <span>Hidratação</span>
+                </div>
                 <div class="flex flex-col items-center gap-4">
                     <a href="https://api.whatsapp.com/send?phone=5549999954052&text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20o%20Liso%20Blindado%202026." target="_blank" class="btn-solid-gold py-4 px-10 rounded-full text-sm font-bold uppercase shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:scale-105 transition-transform no-underline">
                      QUERO MEU ORÇAMENTO VIP
@@ -790,7 +528,7 @@
             </div>
         </section>
 
-        <!-- FUNIL PASSO A PASSO -->
+        <!-- FUNIL DE VENDAS VISUAL (NOVO) -->
         <section id="funnel" class="bg-[#260404] py-12 border-b border-[#d4af37]/20">
             <div class="container mx-auto px-6 max-w-6xl">
                 <div class="text-center mb-8">
@@ -825,7 +563,7 @@
             </div>
         </section>
 
-        <!-- PROVA SOCIAL GOOGLE -->
+        <!-- GOOGLE REVIEWS (MOVIDO PARA CIMA - ESTRATÉGIA DE PROVA SOCIAL) -->
         <section id="reviews-anchor" class="bg-[#f8f9fa] py-16 relative">
              <div class="absolute top-0 left-0 w-full h-10 bg-gradient-to-b from-[#260404] to-transparent opacity-20"></div>
             <div class="container mx-auto px-6 max-w-6xl">
@@ -841,77 +579,133 @@
                 </div>
                 
                 <div class="smart-grid px-4 md:px-0">
+                    <!-- Review 1 -->
                     <div class="google-review-card snap-center shrink-0">
                         <div class="google-header">
                             <div class="google-avatar">M</div>
-                            <div class="google-info"><h4>Maria Eduarda</h4><span>Local Guide • 12 avaliações</span></div>
+                            <div class="google-info">
+                                <h4>Maria Eduarda</h4>
+                                <span>Local Guide • 12 avaliações</span>
+                            </div>
                             <i class="fab fa-google google-icon-fa"></i>
                         </div>
                         <div class="google-stars">★★★★★</div>
-                        <p class="google-text">Simplesmente o melhor alisamento que já fiz em Chapecó! Meu cabelo ficou super brilhoso e natural.</p>
+                        <p class="google-text">Simplesmente o melhor alisamento que já fiz em Chapecó! Meu cabelo ficou super brilhoso e natural, nada daquele liso esticado artificial. O atendimento é VIP do início ao fim.</p>
                     </div>
 
+                    <!-- Review 2 -->
                     <div class="google-review-card snap-center shrink-0">
                         <div class="google-header">
                             <div class="google-avatar">F</div>
-                            <div class="google-info"><h4>Fernanda Costa</h4><span>2 avaliações</span></div>
+                            <div class="google-info">
+                                <h4>Fernanda Costa</h4>
+                                <span>2 avaliações</span>
+                            </div>
                             <i class="fab fa-google google-icon-fa"></i>
                         </div>
                         <div class="google-stars">★★★★★</div>
-                        <p class="google-text">Fiz o Liso Blindado e estou apaixonada. Já lavei em casa e continua perfeito, secando liso só com o vento.</p>
+                        <p class="google-text">Fiz o Liso Blindado e estou apaixonada. Já lavei em casa e continua perfeito, secando liso só com o vento. A equipe é muito atenciosa e o espaço é lindo.</p>
                     </div>
 
+                    <!-- Review 3 -->
                     <div class="google-review-card snap-center shrink-0">
                         <div class="google-header">
                             <div class="google-avatar">J</div>
-                            <div class="google-info"><h4>Juliana S.</h4><span>Local Guide • 45 avaliações</span></div>
+                            <div class="google-info">
+                                <h4>Juliana S.</h4>
+                                <span>Local Guide • 45 avaliações</span>
+                            </div>
                             <i class="fab fa-google google-icon-fa"></i>
                         </div>
                         <div class="google-stars">★★★★★</div>
-                        <p class="google-text">Recuperei meu cabelo pós-luzes com o tratamento deles. Profissionais extremamente qualificados.</p>
+                        <p class="google-text">Recuperei meu cabelo pós-luzes com o tratamento deles. Profissionais extremamente qualificados. Recomendo de olhos fechados para quem quer qualidade.</p>
                     </div>
+                </div>
+                
+                <div class="text-center mt-8">
+                    <a href="https://api.whatsapp.com/send?phone=5549999954052&text=Ol%C3%A1!%20Vi%20as%20avalia%C3%A7%C3%B5es%20no%20site%20e%20gostaria%20de%20agendar%20meu%20hor%C3%A1rio." target="_blank" class="bg-[#2b0505] text-white px-8 py-3 rounded-full font-bold text-xs uppercase tracking-wider shadow-lg hover:bg-black transition-all inline-flex items-center gap-2">
+                        <i class="fab fa-whatsapp"></i> Agendar com Especialista
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- TABELA DE PREÇOS -->
+        <!-- CONTEÚDO PRINCIPAL E OFERTA (TRIPWIRE) -->
         <section id="bloco2-content" class="bg-[#2b0505] text-[#f3f3f3] pt-16 pb-16">
             <div class="container mx-auto px-6 max-w-6xl">
+                <header class="text-center mb-16">
+                    <span class="text-[#c5a059] text-xs md:text-sm font-bold tracking-[0.3em] uppercase block mb-4 opacity-90">Operação Resgate 2026</span>
+                    <h2 class="font-playfair text-3xl md:text-5xl text-white mb-6 leading-tight">O cabelo dos sonhos<br><span class="text-gold-shine italic-elegant">Logo na primeira semana</span></h2>
+                    <p class="text-gray-200 font-light text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">Piscina, sol e penteados danificaram seus fios? Nós temos a solução imediata para você começar o ano brilhando.</p>
+                </header>
+                
+                <!-- TABELA DE PREÇOS / TRIPWIRE -->
                 <div id="vouchers" class="mt-8 mb-8 text-center">
                     <div class="section-pill">TABELA OFICIAL 2026</div>
                     
+                    <!-- TABELA DE PREÇOS ESTRATÉGICA (ANCORAGEM) -->
                     <div class="voucher-promo-card max-w-lg mx-auto mb-16 transform hover:scale-[1.01] transition-all relative overflow-hidden bg-gradient-to-b from-[#1a0505] to-[#2b0505] border border-[#d4af37]/30 shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
+                        
+                        <!-- Header do Card -->
                         <div class="mb-6 pt-4">
                             <h3 class="font-playfair text-2xl md:text-3xl text-white font-bold mb-2">Investimento Liso Blindado</h3>
                             <p class="text-gray-400 text-xs uppercase tracking-widest">Valores Referência 2026</p>
                         </div>
 
+                        <!-- Lista de Preços (3 Níveis) -->
                         <div class="space-y-3 px-4 mb-8 text-left">
-                            <div class="flex items-center justify-between bg-black/20 p-4 rounded-lg border border-white/5 transition-colors">
+                            
+                            <!-- Nível 1: Sublime -->
+                            <div class="flex items-center justify-between bg-black/20 p-4 rounded-lg border border-white/5 hover:border-[#d4af37]/30 transition-colors">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-full bg-[#d4af37]/10 flex items-center justify-center text-[#d4af37] border border-[#d4af37]/20"><i class="fas fa-feather-alt text-sm"></i></div>
-                                    <div><span class="block text-white font-bold text-sm uppercase tracking-wide">Sublime</span><span class="text-[10px] text-gray-400">Fios Finos / Ondulados</span></div>
+                                    <div class="w-10 h-10 rounded-full bg-[#d4af37]/10 flex items-center justify-center text-[#d4af37] border border-[#d4af37]/20">
+                                        <i class="fas fa-feather-alt text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block text-white font-bold text-sm uppercase tracking-wide">Sublime</span>
+                                        <span class="text-[10px] text-gray-400">Fios Finos / Ondulados</span>
+                                    </div>
                                 </div>
-                                <div class="text-right"><span class="block text-[#d4af37] font-playfair font-bold text-xl">R$ 359</span></div>
+                                <div class="text-right">
+                                    <span class="block text-[#d4af37] font-playfair font-bold text-xl">R$ 359</span>
+                                </div>
                             </div>
 
-                            <div class="flex items-center justify-between bg-black/20 p-4 rounded-lg border border-white/5 transition-colors">
+                            <!-- Nível 2: Imperial -->
+                            <div class="flex items-center justify-between bg-black/20 p-4 rounded-lg border border-white/5 hover:border-[#d4af37]/30 transition-colors">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-full bg-[#d4af37]/10 flex items-center justify-center text-[#d4af37] border border-[#d4af37]/20"><i class="fas fa-crown text-sm"></i></div>
-                                    <div><span class="block text-white font-bold text-sm uppercase tracking-wide">Imperial</span><span class="text-[10px] text-gray-400">Fios Médios / Cacheados</span></div>
+                                    <div class="w-10 h-10 rounded-full bg-[#d4af37]/10 flex items-center justify-center text-[#d4af37] border border-[#d4af37]/20">
+                                        <i class="fas fa-crown text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block text-white font-bold text-sm uppercase tracking-wide">Imperial</span>
+                                        <span class="text-[10px] text-gray-400">Fios Médios / Cacheados</span>
+                                    </div>
                                 </div>
-                                <div class="text-right"><span class="block text-[#d4af37] font-playfair font-bold text-xl">R$ 410</span></div>
+                                <div class="text-right">
+                                    <span class="block text-[#d4af37] font-playfair font-bold text-xl">R$ 410</span>
+                                </div>
                             </div>
 
-                            <div class="flex items-center justify-between bg-black/20 p-4 rounded-lg border border-white/5 transition-colors">
+                            <!-- Nível 3: Absoluto -->
+                            <div class="flex items-center justify-between bg-black/20 p-4 rounded-lg border border-white/5 hover:border-[#d4af37]/30 transition-colors">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-full bg-[#d4af37]/10 flex items-center justify-center text-[#d4af37] border border-[#d4af37]/20"><i class="fas fa-gem text-sm"></i></div>
-                                    <div><span class="block text-white font-bold text-sm uppercase tracking-wide">Absoluto</span><span class="text-[10px] text-gray-400">Fios Grossos / Crespos</span></div>
+                                    <div class="w-10 h-10 rounded-full bg-[#d4af37]/10 flex items-center justify-center text-[#d4af37] border border-[#d4af37]/20">
+                                        <i class="fas fa-gem text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block text-white font-bold text-sm uppercase tracking-wide">Absoluto</span>
+                                        <span class="text-[10px] text-gray-400">Fios Grossos / Crespos</span>
+                                    </div>
                                 </div>
-                                <div class="text-right"><span class="block text-[#d4af37] font-playfair font-bold text-xl">R$ 499</span></div>
+                                <div class="text-right">
+                                    <span class="block text-[#d4af37] font-playfair font-bold text-xl">R$ 499</span>
+                                </div>
                             </div>
+
                         </div>
 
+                        <!-- Rodapé do Card com Disclaimer e CTA -->
                         <div class="bg-black/40 -mx-8 -mb-8 p-6 backdrop-blur-md border-t border-white/10">
                             <div class="flex items-start gap-2 mb-5 justify-center opacity-70">
                                 <i class="fas fa-info-circle text-[#d4af37] text-xs mt-0.5"></i>
@@ -919,37 +713,79 @@
                                     <strong>Importante:</strong> A avaliação final é realizada sempre presencialmente no salão. O valor pode sofrer alterações mediante análise de comprimento extra ou volume excessivo.
                                 </p>
                             </div>
+                            
                             <button onclick="openWhatsApp('Olá! Vi a Tabela Oficial 2026 e gostaria de agendar minha Avaliação Técnica Presencial para definir meu orçamento.')" class="w-full bg-gradient-to-r from-[#d4af37] to-[#b38728] text-[#1a0505] font-extrabold py-4 rounded-full uppercase tracking-wider hover:shadow-[0_0_25px_rgba(212,175,55,0.5)] transition-all flex items-center justify-center gap-2 transform active:scale-95 animate-pulse">
                                 <i class="fab fa-whatsapp text-lg"></i> Agendar Avaliação Técnica
                             </button>
                         </div>
                     </div>
+
+                    <!-- REMOVIDO: Seção "Seu cabelo é diferente?" -->
                 </div>
 
-                <!-- GALERIA DE RESULTADOS -->
+                <!-- GALERIA DE RESULTADOS (MOVIDA PARA O FINAL DO FUNIL) -->
                 <div class="mt-20 mb-8 text-center border-t border-[#d4af37]/30 pt-16">
                     <h3 class="font-playfair text-2xl md:text-3xl text-white mb-8">Galeria de <span class="text-gold-shine">Resultados</span></h3>
+                    
                     <div class="smart-grid hide-scrollbar pb-8">
                         <div class="snap-center shrink-0 w-[70vw] md:w-[40vw] lg:w-auto video-card group bg-black"><button class="card-mute-btn" onclick="toggleCardAudio('vid1', this)"><i class="fas fa-volume-mute"></i></button><video id="vid1" class="w-full h-full object-cover" autoplay muted loop playsinline preload="none"><source src="https://res.cloudinary.com/daukvmsc2/video/upload/v1767283500/WhatsApp_Video_2025-12-07_at_08.43.32_scitfn.mp4" type="video/mp4"></video></div>
                         <div class="snap-center shrink-0 w-[70vw] md:w-[40vw] lg:w-auto video-card group bg-black"><button class="card-mute-btn" onclick="toggleCardAudio('vid2', this)"><i class="fas fa-volume-mute"></i></button><video id="vid2" class="w-full h-full object-cover" autoplay muted loop playsinline preload="none"><source src="https://res.cloudinary.com/daukvmsc2/video/upload/v1767279737/WhatsApp_Video_2025-12-10_at_19.00.59_ov4cma.mp4" type="video/mp4"></video></div>
                         <div class="snap-center shrink-0 w-[70vw] md:w-[40vw] lg:w-auto video-card group bg-black"><button class="card-mute-btn" onclick="toggleCardAudio('vid3', this)"><i class="fas fa-volume-mute"></i></button><video id="vid3" class="w-full h-full object-cover" autoplay muted loop playsinline preload="none"><source src="https://res.cloudinary.com/daukvmsc2/video/upload/v1767279736/WhatsApp_Video_2025-12-09_at_10.51.20_y3iop0.mp4" type="video/mp4"></video></div>
                     </div>
                 </div>
+
             </div>
         </section>
 
+        <!-- FAQ -->
+        <div id="faq-isolate" class="py-16"><div class="container mx-auto px-6 max-w-3xl"><div class="text-center mb-10"><div class="section-pill">Dúvidas Frequentes</div><h2 class="font-playfair text-3xl text-white font-bold">Tudo sobre o <span class="text-gold-shine">Liso Blindado</span></h2></div><div class="space-y-4">
+        
+            <!-- FAQ ITEM HOME 1 -->
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    <span class="faq-question-text">É compatível com loiras?</span>
+                    <div class="faq-icon-wrapper"><i class="fas fa-chevron-down"></i></div>
+                </summary>
+                <div class="faq-answer-content">Sim! Usamos matizadores exclusivos que protegem a cor.</div>
+            </details>
+            
+            <!-- FAQ ITEM HOME 2 -->
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    <span class="faq-question-text">Grávidas podem fazer?</span>
+                    <div class="faq-icon-wrapper"><i class="fas fa-chevron-down"></i></div>
+                </summary>
+                <div class="faq-answer-content">Sim, com autorização médica. Fórmula 100% orgânica.</div>
+            </details>
+            
+            <!-- FAQ ITEM HOME 3 -->
+            <details class="faq-item">
+                <summary class="faq-summary">
+                    <span class="faq-question-text">Quanto tempo dura?</span>
+                    <div class="faq-icon-wrapper"><i class="fas fa-chevron-down"></i></div>
+                </summary>
+                <div class="faq-answer-content">De 3 a 6 meses, dependendo do crescimento da raiz.</div>
+            </details>
+
+        </div></div></div>
+
         <!-- FOOTER -->
-        <footer id="footer-empire-master"><div class="footer-divider"><i class="fas fa-gem footer-divider-icon"></i></div><div class="brands-wrapper"><span class="brands-title">PRODUTOS HOMOLOGADOS</span><div class="brands-grid"><span class="brand-logo brand-main">ESSÊNCIA DE ROMÃ HAIR</span><span class="brand-logo">A GATA LAMBEU</span><span class="brand-logo">ITALLIAN COLOR</span></div></div><div class="bottom-bar"><div class="social-links justify-center"><a href="https://www.instagram.com/essenciaderoma.chapeco/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a></div><p class="copyright-text">&copy; 2016 - 2026 Essência de Romã Hair & A Gata Lambeu.</p></div></footer>
+        <footer id="footer-empire-master"><div class="footer-divider"><i class="fas fa-gem footer-divider-icon"></i></div><div class="brands-wrapper"><span class="brands-title">PRODUTOS HOMOLOGADOS</span><div class="brands-grid"><span class="brand-logo brand-main">ESSÊNCIA DE ROMÃ HAIR</span><span class="brand-logo">A GATA LAMBEU</span><span class="brand-logo">ITALLIAN COLOR</span></div></div><div class="content-grid text-center"><div><span class="footer-heading">Contato</span><p>Chapecó, SC</p><a href="#" onclick="openWhatsApp('Olá!')" class="text-white hover:text-[#C5A059] transition text-lg block my-2"> (49) 99995-4052</a></div><div><span class="footer-heading">Localização</span><p class="mb-2"><i class="fas fa-map-pin text-[#C5A059] mr-2"></i>Rua Achiles Tomazelli, 296 D</p><div class="map-frame"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3489.1751996515865!2d-52.6186419849202!3d-27.100918083072045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e4b574a6914757%3A0xc3f83734e941198c!2sRua%20Achiles%20Tomazelli%2C%20296%20D%20-%20Centro%2C%20Chapec%C3%B3%20-%20SC%2C%2089802-125!5e0!3m2!1spt-BR!2sbr!4v1628172930000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe></div><a href="https://www.google.com/maps/search/?api=1&query=Rua+Achiles+Tomazelli+296+D+Chapeco" target="_blank" class="text-xs text-[#C5A059] mt-2 block hover:underline">Abrir no Google Maps →</a></div></div><div class="bottom-bar"><div class="social-links justify-center"><a href="https://www.instagram.com/essenciaderoma.chapeco/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a></div><div class="legal-links"><button onclick="openModal('privacy')" id="btn-privacy-trigger">Política de Privacidade</button></div><p class="copyright-text">&copy; 2016 - 2026 Essência de Romã Hair & A Gata Lambeu.</p></div></footer>
 
-        <!-- MOBILE STICKY BAR -->
+        <!-- MOBILE STICKY BAR (SITE PRINCIPAL) -->
         <div id="mobile-sticky-bar" class="mobile-sticky-bar">
-            <div class="text-white text-xs"><span class="block text-[#d4af37] font-bold">AGENDA 2026 LIBERADA</span><span>Últimos Horários</span></div>
-            <a href="https://api.whatsapp.com/send?phone=5549999954052&text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar." target="_blank" class="btn-sticky-gold text-[#1a0505] px-6 py-2 rounded-full font-bold text-xs uppercase">Agendar Agora</a>
+            <div class="text-white text-xs">
+                <span class="block text-[#d4af37] font-bold">AGENDA VIP 2026 LIBERADA</span>
+                <span>Últimos Horários</span>
+            </div>
+            <a href="https://api.whatsapp.com/send?phone=5549999954052&text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar." target="_blank" class="btn-sticky-gold text-[#1a0505] px-6 py-2 rounded-full font-bold text-xs uppercase animate-pulse">Agendar Agora</a>
         </div>
-    </div> 
+    </div> <!-- FIM WRAPPER SITE PRINCIPAL -->
 
-    <!-- WRAPPER DO CLUBE (RESTAURADO E COMPLETO) -->
-    <div id="club-view-container">
+
+    <!-- WRAPPER DO CLUBE (INICIALMENTE OCULTO) -->
+    <div id="club-view-container" style="display:none">
+        <!-- HEADER CLUBE -->
         <div class="fixed top-0 left-0 w-full z-50 bg-brand-white/90 backdrop-blur-md border-b border-gray-100 h-16 flex items-center justify-between px-6 shadow-sm">
             <span class="text-brand-black font-serif font-bold text-lg">Alisa Chapecó</span>
             <button onclick="window.location.hash='home'" class="text-xs font-bold uppercase tracking-widest text-brand-gray border border-gray-200 px-4 py-2 rounded-full hover:bg-brand-black hover:text-brand-gold transition-colors">
@@ -957,227 +793,722 @@
             </button>
         </div>
 
+        <!-- CONTEÚDO DO CLUBE -->
         <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-black pt-20">
             <div class="absolute inset-0 z-0 opacity-60">
-                <img src="https://testeessencia.carrd.co/assets/images/image14.jpg?v=6dfe078c" class="w-full h-full object-cover object-top" loading="lazy">
+                <img src="https://testeessencia.carrd.co/assets/images/image14.jpg?v=6dfe078c" class="w-full h-full object-cover object-top" loading="lazy" decoding="async">
             </div>
             <div class="absolute inset-0 z-10 bg-gradient-to-t from-brand-black via-brand-black/60 to-transparent"></div>
+
             <div class="relative z-20 text-center px-6 max-w-5xl mx-auto flex flex-col items-center w-full pb-10">
-                <div class="mb-6 inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full shadow-lg">
+                <div class="mb-6 reveal-on-scroll inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full shadow-lg">
                     <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
                     <span class="text-white/90 text-[10px] font-semibold uppercase tracking-widest">Tecnologia Essência de Romã</span>
                 </div>
-                <h1 class="text-white text-5xl sm:text-7xl md:text-8xl font-serif font-light leading-none tracking-tighter">
-                    Liso <span class="italic text-brand-gold-light">Blindado</span>
-                </h1>
-                <p class="text-gray-300 font-light text-sm leading-relaxed text-center opacity-90 max-w-lg mt-8">
-                    Esqueça a incerteza da progressiva comum. Com <strong>16 anos de excelência</strong>, entregamos um selamento que blinda sua liberdade. Previsibilidade e liso perfeito todo mês.
-                </p>
-                <a href="#planos" class="btn-luxury-glow px-12 py-4 rounded-full text-[11px] tracking-widest bg-brand-gold text-brand-black font-bold mt-8">
-                    DESBLOQUEAR ACESSO
-                </a>
+
+                <div class="reveal-on-scroll w-full mb-10">
+                    <h1 class="text-white text-5xl sm:text-7xl md:text-8xl font-serif font-light leading-none tracking-tighter drop-shadow-2xl">
+                        Liso <span class="italic text-brand-gold-light">Blindado</span>
+                    </h1>
+                    <p class="text-gray-200 text-xs md:text-sm mt-6 tracking-[0.25em] uppercase font-light max-w-xl mx-auto drop-shadow-md border-t border-white/10 pt-6">
+                        A Evolução da Progressiva e do Selamento
+                    </p>
+                </div>
+
+                <div class="mt-8 reveal-on-scroll flex flex-col items-center gap-8 w-full max-w-lg">
+                    <p class="text-gray-300 font-light text-sm leading-relaxed text-center opacity-90">
+                        Esqueça a incerteza da progressiva comum. Com <strong>16 anos de excelência</strong>, entregamos um selamento que blinda sua liberdade. Previsibilidade e liso perfeito todo mês.
+                    </p>
+                    
+                    <a href="#exclusividade" class="btn-luxury-glow px-12 py-4 rounded-full text-[11px] w-full xs:w-auto min-w-[260px] text-center shadow-2xl tracking-widest bg-brand-gold text-brand-black font-bold">
+                        DESBLOQUEAR ACESSO
+                    </a>
+                </div>
             </div>
         </section>
 
-        <section id="planos" class="py-24 bg-brand-white">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="text-center mb-16">
+        <!-- SEÇÃO 2: STATUS & CARTÃO -->
+        <section id="exclusividade" class="py-24 bg-brand-white overflow-hidden">
+            <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
+                
+                <div class="md:w-1/2 reveal-on-scroll">
+                    <span class="text-brand-gold font-bold tracking-[0.2em] uppercase text-[10px]">Exclusividade Real</span>
+                    <h2 class="text-4xl md:text-5xl text-brand-black font-serif mt-4 mb-8 leading-tight">Mais que um serviço.<br><span class="italic text-gray-400">Um Pacto de Beleza.</span></h2>
+                    
+                    <div class="grid gap-3">
+                        <div class="feature-card cursor-default">
+                            <div class="feature-content flex items-center gap-5">
+                                <div class="w-10 h-10 rounded-full bg-brand-black text-brand-gold-light flex items-center justify-center flex-shrink-0 text-lg"><i class="fas fa-crown"></i></div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-brand-black uppercase tracking-widest">Prioridade Absoluta</h4>
+                                    <p class="text-[11px] text-gray-500 mt-1 font-light leading-relaxed">Agenda bloqueada preferencialmente para você.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-card cursor-default">
+                            <div class="feature-content flex items-center gap-5">
+                                <div class="w-10 h-10 rounded-full bg-brand-black text-brand-gold-light flex items-center justify-center flex-shrink-0 text-lg"><i class="fas fa-infinity"></i></div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-brand-black uppercase tracking-widest">Liso Vitalício</h4>
+                                    <p class="text-[11px] text-gray-500 mt-1 font-light leading-relaxed">Blindagem e garantia ativas com o ciclo em dia.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-card cursor-default">
+                            <div class="feature-content flex items-center gap-5">
+                                <div class="w-10 h-10 rounded-full bg-brand-black text-brand-gold-light flex items-center justify-center flex-shrink-0 text-lg"><i class="fas fa-flask"></i></div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-brand-black uppercase tracking-widest">Tecnologia Original</h4>
+                                    <p class="text-[11px] text-gray-500 mt-1 font-light leading-relaxed">Química exclusiva Essência de Romã. Segura e duradoura.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 flex justify-center reveal-on-scroll w-full">
+                    <!-- CARTÃO HOLOGRÁFICO MINIMALISTA -->
+                    <div class="member-card w-full max-w-sm aspect-[1.586/1] flex flex-col justify-center items-center relative group cursor-default p-8">
+                        <div class="absolute inset-0 z-0"></div>
+                        <div class="z-10 text-center flex flex-col items-center gap-3 w-full">
+                            <div>
+                                <h3 class="text-liquid-gold font-serif italic text-6xl leading-none tracking-tighter drop-shadow-2xl">
+                                    Alisa
+                                </h3>
+                                <span class="text-white font-light text-xl tracking-[0.25em] uppercase mt-3 block opacity-80 border-t border-white/10 pt-3">
+                                    Chapecó
+                                </span>
+                            </div>
+                            
+                            <div class="mt-8 flex items-center gap-2 opacity-60">
+                                <div class="h-[1px] w-8 bg-brand-gold"></div>
+                                <span class="text-white text-[8px] tracking-[0.3em] uppercase font-bold">Exclusive Member</span>
+                                <div class="h-[1px] w-8 bg-brand-gold"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 3: PLANOS -->
+        <section id="planos" class="py-24 bg-brand-white relative">
+            <div class="max-w-7xl mx-auto px-4 xs:px-6">
+                <div class="text-center mb-16 reveal-on-scroll">
                     <h2 class="text-4xl md:text-5xl font-serif text-brand-black italic">Escolha Seu Plano</h2>
                     <p class="mt-4 text-gray-400 font-light text-xs uppercase tracking-widest max-w-xl mx-auto">
                         Sem Cartão de Crédito • Pague Somente ao Usar
                     </p>
+                    
+                    <div class="mt-8 bg-red-50 border border-red-100 text-red-800 px-6 py-4 rounded-lg inline-block shadow-sm animate-pulse text-left md:text-center max-w-lg">
+                        <p class="text-[10px] font-bold uppercase tracking-widest mb-2 flex items-center justify-center gap-2 text-red-600">
+                            <i class="fas fa-lock"></i> Oportunidade Exclusiva
+                        </p>
+                        <p class="text-sm font-medium leading-snug">Já é cliente <strong>Essência de Romã</strong> e alisou nos últimos 60 dias?</p>
+                        <p class="text-xs mt-1 text-red-500 font-light">Validaremos seu histórico e sua <strong>Adesão será ZERO</strong>.</p>
+                    </div>
                 </div>
 
+                <!-- CONTAINER CARROSSEL PLANOS -->
                 <div id="plans-carousel" class="smart-grid no-scrollbar">
                     
                     <!-- CARD 1: SUBLIME -->
-                    <div class="club-pricing-card">
+                    <div class="club-pricing-card snap-center shrink-0 reveal-on-scroll">
                         <div class="club-card-header bg-header-sublime">
                             <div class="absolute top-4 right-4 text-brand-gold-light text-[9px] border border-brand-gold-light px-2 py-0.5 rounded uppercase font-bold">Fio Fino</div>
                             <h3>Sublime</h3>
                             <p class="text-[9px] uppercase mt-2 tracking-widest opacity-60">Para Lisos & Ondulados</p>
                         </div>
+                        
                         <div class="p-8 flex flex-col flex-grow relative">
                             <div class="club-price-box">
                                 <span class="club-price-val">119<span class="text-2xl">,90</span></span>
                                 <p class="text-[9px] text-gray-400 uppercase tracking-widest mt-1">por sessão mensal</p>
                             </div>
-                            <div class="club-timeline">
-                                <div class="timeline-item">
-                                    <div class="timeline-marker"></div>
-                                    <div class="flex-1 ml-2 border-b border-gray-700 pb-2 mb-2 flex justify-between">
-                                        <div class="flex flex-col"><span class="text-xs font-bold text-white">Adesão (1ª Vez)</span><span class="text-[9px] text-red-500 font-bold">*R$ 0,00</span></div>
-                                        <span class="text-xs text-gray-500 line-through">R$ 359</span>
+
+                            <div class="timeline-container flex-grow club-timeline">
+                                <div class="timeline-wrapper">
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="flex-1 ml-2 border-b border-gray-700 pb-2 mb-2 flex justify-between">
+                                            <div class="flex flex-col"><span class="text-xs font-bold text-white">Adesão (1ª Vez)</span><span class="text-[9px] text-red-500 font-bold">*R$ 0,00</span></div>
+                                            <span class="text-xs text-gray-500 line-through">R$ 359</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-marker active"></div>
-                                    <div class="flex-1 ml-2 bg-green-900/20 p-2 rounded border border-green-800/30 flex justify-between items-center">
-                                        <div class="flex flex-col"><span class="text-xs font-bold text-green-400">Manutenção (30d)</span><span class="text-[9px] text-green-600">★ Opção Econômica</span></div>
-                                        <span class="text-sm font-bold text-white">R$ 119,90</span>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker active"></div>
+                                        <div class="flex-1 ml-2 bg-green-900/20 p-2 rounded border border-green-800/30 flex justify-between items-center">
+                                            <div class="flex flex-col"><span class="text-xs font-bold text-green-400">Manutenção (30d)</span><span class="text-[9px] text-green-600">★ Opção Mais Econômica</span></div>
+                                            <span class="text-sm font-bold text-white">R$ 119,90</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-marker warn"></div>
-                                    <div class="flex-1 ml-2 border-b border-gray-700 pb-2 mb-2 flex justify-between">
-                                        <span class="text-xs font-medium text-gray-400">Zona de Risco (31-60d)</span>
-                                        <span class="text-xs font-medium text-gray-400">R$ 169,90</span>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker warn"></div>
+                                        <div class="flex-1 ml-2 border-b border-gray-700 pb-2 mb-2 flex justify-between">
+                                            <span class="text-xs font-medium text-gray-400">Zona de Risco (31-60d)</span>
+                                            <span class="text-xs font-medium text-gray-400">R$ 169,90</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-marker danger"></div>
-                                    <div class="flex-1 ml-2 flex justify-between">
-                                        <span class="text-xs font-medium text-red-500">Perda do Clube (61d+)</span>
-                                        <span class="text-xs font-medium text-gray-400">R$ 359,00</span>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker danger"></div>
+                                        <div class="flex-1 ml-2 flex justify-between">
+                                            <span class="text-xs font-medium text-red-500">Perda do Clube (61d+)</span>
+                                            <span class="text-xs font-medium text-gray-400">R$ 359,00</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Sublime." class="w-full btn-luxury-glow py-3.5 rounded-lg text-[10px] block text-center shadow-lg bg-brand-gold mt-6">
                                 Entrar no Clube Sublime
                             </a>
+                            <p class="text-center text-[9px] text-gray-500 mt-3 leading-tight"><i class="fas fa-wallet text-[8px]"></i> Pague no ato. Crédito válido até o último dia do mês.</p>
                         </div>
                     </div>
 
                     <!-- CARD 2: IMPERIAL -->
-                    <div class="club-pricing-card">
-                        <div class="club-card-header bg-header-imperial">
+                    <div class="club-pricing-card snap-center shrink-0 reveal-on-scroll" style="transition-delay: 0.1s;">
+                         <div class="club-card-header bg-header-imperial">
                             <div class="absolute top-4 right-4 text-white/60 text-[9px] border border-white/30 px-2 py-0.5 rounded uppercase font-bold">Fio Médio</div>
                             <h3>Imperial</h3>
                             <p class="text-[9px] uppercase mt-2 tracking-widest opacity-60">Para Cacheados</p>
                         </div>
+                        
                         <div class="p-8 flex flex-col flex-grow relative">
                             <div class="club-price-box">
                                 <span class="club-price-val">139<span class="text-2xl">,90</span></span>
                                 <p class="text-[9px] text-gray-400 uppercase tracking-widest mt-1">por sessão mensal</p>
                             </div>
-                            <div class="club-timeline">
-                                <div class="timeline-item">
-                                    <div class="timeline-marker"></div>
-                                    <div class="flex-1 ml-2 border-b border-gray-700 pb-2 mb-2 flex justify-between">
-                                        <div class="flex flex-col"><span class="text-xs font-bold text-white">Adesão</span><span class="text-[9px] text-red-500 font-bold">*R$ 0,00</span></div>
-                                        <span class="text-xs text-gray-500 line-through">R$ 410</span>
+                            
+                            <!-- Timeline Compacta -->
+                            <div class="timeline-container flex-grow club-timeline">
+                                <div class="timeline-wrapper">
+                                     <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="flex-1 ml-2 border-b border-gray-700 pb-2 mb-2 flex justify-between">
+                                            <div class="flex flex-col"><span class="text-xs font-bold text-white">Adesão</span><span class="text-[9px] text-red-500 font-bold">*R$ 0,00</span></div>
+                                            <span class="text-xs text-gray-500 line-through">R$ 410</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-marker active"></div>
-                                    <div class="flex-1 ml-2 bg-green-900/20 p-2 rounded border border-green-800/30 flex justify-between items-center">
-                                        <div class="flex flex-col"><span class="text-xs font-bold text-green-400">Manutenção (30d)</span><span class="text-[9px] text-green-600">★ Opção Econômica</span></div>
-                                        <span class="text-sm font-bold text-white">R$ 139,90</span>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker active"></div>
+                                        <div class="flex-1 ml-2 bg-green-900/20 p-2 rounded border border-green-800/30 flex justify-between items-center">
+                                            <div class="flex flex-col"><span class="text-xs font-bold text-green-400">Manutenção (30d)</span><span class="text-[9px] text-green-600">★ Opção Mais Econômica</span></div>
+                                            <span class="text-sm font-bold text-white">R$ 139,90</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-marker warn"></div>
-                                    <div class="flex-1 ml-2 border-b border-gray-700 pb-2 mb-2 flex justify-between">
-                                        <span class="text-xs font-medium text-gray-400">Zona de Risco (31-60d)</span>
-                                        <span class="text-xs font-medium text-gray-400">R$ 189,00</span>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker warn"></div>
+                                        <div class="flex-1 ml-2 border-b border-gray-700 pb-2 mb-2 flex justify-between">
+                                            <span class="text-xs font-medium text-gray-400">Zona de Risco (31-60d)</span>
+                                            <span class="text-xs font-medium text-gray-400">R$ 189,00</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-marker danger"></div>
-                                    <div class="flex-1 ml-2 flex justify-between">
-                                        <span class="text-xs font-medium text-red-500">Perda do Clube (61d+)</span>
-                                        <span class="text-xs font-medium text-gray-400">R$ 410,00</span>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker danger"></div>
+                                        <div class="flex-1 ml-2 flex justify-between">
+                                            <span class="text-xs font-medium text-red-500">Perda do Clube (61d+)</span>
+                                            <span class="text-xs font-medium text-gray-400">R$ 410,00</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Imperial." class="w-full btn-luxury-glow py-3.5 rounded-lg text-[10px] block text-center shadow-lg bg-brand-gold mt-6">
                                 Entrar no Clube Imperial
                             </a>
+                            <p class="text-center text-[9px] text-gray-500 mt-3 leading-tight"><i class="fas fa-wallet text-[8px]"></i> Pague no ato. Crédito válido até o último dia do mês.</p>
                         </div>
                     </div>
 
                     <!-- CARD 3: ABSOLUTO -->
-                    <div class="club-pricing-card">
+                    <div class="club-pricing-card snap-center shrink-0 reveal-on-scroll" style="transition-delay: 0.2s;">
                         <div class="club-card-header bg-header-absoluto">
                             <div class="absolute top-4 right-4 text-white/50 text-[10px] border border-white/30 px-2 py-0.5 rounded uppercase font-bold">Fio Grosso</div>
                             <h3>Absoluto</h3>
                             <p class="text-[10px] uppercase mt-2 tracking-widest opacity-60">Para Crespos</p>
                         </div>
+                        
                         <div class="p-8 flex flex-col flex-grow relative">
                             <div class="club-price-box">
                                 <span class="club-price-val">159<span class="text-2xl">,90</span></span>
                                 <p class="text-[9px] text-gray-400 uppercase tracking-widest mt-1">por sessão mensal</p>
                             </div>
-                            <div class="club-timeline">
-                                <div class="timeline-item">
-                                    <div class="timeline-marker"></div>
-                                    <div class="flex-1 ml-2 border-b border-gray-700 pb-2 mb-2 flex justify-between">
-                                        <div class="flex flex-col"><span class="text-xs font-bold text-white">Adesão</span><span class="text-[9px] text-red-500 font-bold">*R$ 0,00</span></div>
-                                        <span class="text-xs text-gray-500 line-through">R$ 499</span>
+
+                            <!-- Timeline Compacta -->
+                            <div class="timeline-container flex-grow club-timeline">
+                                <div class="timeline-wrapper">
+                                     <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="flex-1 ml-2 border-b border-gray-700 pb-2 mb-2 flex justify-between">
+                                            <div class="flex flex-col"><span class="text-xs font-bold text-white">Adesão</span><span class="text-[9px] text-red-500 font-bold">*R$ 0,00</span></div>
+                                            <span class="text-xs text-gray-500 line-through">R$ 499</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-marker active"></div>
-                                    <div class="flex-1 ml-2 bg-green-900/20 p-2 rounded border border-green-800/30 flex justify-between items-center">
-                                        <div class="flex flex-col"><span class="text-xs font-bold text-green-400">Manutenção (30d)</span><span class="text-[9px] text-green-600">★ Opção Econômica</span></div>
-                                        <span class="text-sm font-bold text-white">R$ 159,90</span>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker active"></div>
+                                        <div class="flex-1 ml-2 bg-green-900/20 p-2 rounded border border-green-800/30 flex justify-between items-center">
+                                            <div class="flex flex-col"><span class="text-xs font-bold text-green-400">Manutenção (30d)</span><span class="text-[9px] text-green-600">★ Opção Mais Econômica</span></div>
+                                            <span class="text-sm font-bold text-white">R$ 159,90</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-marker warn"></div>
-                                    <div class="flex-1 ml-2 border-b border-gray-700 pb-2 mb-2 flex justify-between">
-                                        <span class="text-xs font-medium text-gray-400">Zona de Risco (31-60d)</span>
-                                        <span class="text-xs font-medium text-gray-400">R$ 220,00</span>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker warn"></div>
+                                        <div class="flex-1 ml-2 border-b border-gray-700 pb-2 mb-2 flex justify-between">
+                                            <span class="text-xs font-medium text-gray-400">Zona de Risco (31-60d)</span>
+                                            <span class="text-xs font-medium text-gray-400">R$ 220,00</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-marker danger"></div>
-                                    <div class="flex-1 ml-2 flex justify-between">
-                                        <span class="text-xs font-medium text-red-500">Perda do Clube (61d+)</span>
-                                        <span class="text-xs font-medium text-gray-400">R$ 499,00</span>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker danger"></div>
+                                        <div class="flex-1 ml-2 flex justify-between">
+                                            <span class="text-xs font-medium text-red-500">Perda do Clube (61d+)</span>
+                                            <span class="text-xs font-medium text-gray-400">R$ 499,00</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Absoluto." class="w-full btn-luxury-glow py-3.5 rounded-lg text-[10px] block text-center shadow-lg bg-brand-gold mt-6">
                                 Entrar no Clube Absoluto
                             </a>
+                            <p class="text-center text-[9px] text-gray-500 mt-3 leading-tight"><i class="fas fa-wallet text-[8px]"></i> Pague no ato. Crédito válido até o último dia do mês.</p>
                         </div>
                     </div>
 
                 </div>
             </div>
         </section>
-    </div>
+    </div> <!-- FIM WRAPPER CLUBE -->
 
-    <!-- WRAPPER DA GATA LAMBEU -->
-    <div id="agata-view-container">
+    <!-- WRAPPER DA GATA LAMBEU (INICIALMENTE OCULTO) -->
+    <div id="agata-view-container" style="display:none">
+        <!-- NAVEGAÇÃO SUPERIOR AGATA -->
         <nav id="agata-navbar" class="agata-nav-fixed py-4 px-6 md:px-12 flex justify-between items-center">
+            <!-- Logo e Botão de Voltar para Essência -->
             <div class="flex items-center gap-4">
-                 <button onclick="window.location.hash='home'" class="bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white p-3 rounded-full border border-white/10"><i data-lucide="x" class="w-6 h-6"></i></button>
-                <div class="text-white font-luxury text-lg tracking-widest">A GATA LAMBEU</div>
+                 <button onclick="window.location.hash='home'" class="bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white p-3 rounded-full transition-colors border border-white/10 cursor-pointer" aria-label="Voltar para Essência de Romã">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+                <div class="text-white font-luxury text-lg tracking-widest cursor-default">A GATA LAMBEU</div>
+            </div>
+            
+            <div class="flex gap-6 items-center">
+                <button onclick="scrollToAgataSection('ritual')" class="hidden md:block text-xs uppercase tracking-widest text-gray-400 hover:text-[#E5C988] transition">Ritual</button>
+                <button onclick="scrollToAgataSection('results')" class="hidden md:block text-xs uppercase tracking-widest text-gray-400 hover:text-[#E5C988] transition">Resultados</button>
+                <button onclick="scrollToAgataSection('homecare')" class="text-xs uppercase tracking-widest text-[#E5C988] border border-[#E5C988]/30 px-3 py-1 rounded-full bg-[#E5C988]/10">Home Care</button>
             </div>
         </nav>
 
+        <!-- CAPA / INTRO AGATA -->
         <div id="agata-intro-layer" class="agata-intro-screen">
+            <div class="absolute inset-0 z-0">
+                <video autoplay loop muted playsinline class="w-full h-full object-cover opacity-60">
+                    <source src="https://teste333.carrd.co/assets/videos/video01.mp4?v=4b1f8939" type="video/mp4">
+                </video>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-black/80"></div>
+            </div>
+            
             <div class="relative z-10 text-center px-8 max-w-4xl">
-                <h1 class="text-5xl md:text-8xl text-white font-luxury mb-4">A GATA <span class="text-gl-gold-gradient italic">LAMBEU</span></h1>
-                <button onclick="enterAgataMenu()" class="btn-touch btn-outline-gl border-[#E5C988] text-[#E5C988] px-12 py-6 text-base tracking-widest mt-8">INICIAR RITUAL</button>
+                <p class="text-[#E5C988] text-sm md:text-base tracking-[0.4em] font-bold mb-6 uppercase animate-pulse">Experiência Sensorial</p>
+                <h1 class="text-fluid-title text-white font-luxury mb-4 drop-shadow-2xl">A GATA <span class="text-gl-gold-gradient italic">LAMBEU</span></h1>
+                <div class="w-32 h-1 bg-[#E5C988] mx-auto mb-10 rounded-full"></div>
+                <p class="text-gray-200 text-lg md:text-xl font-light mb-12 tracking-wide">Menu Digital Interativo</p>
+                <button onclick="enterAgataMenu()" class="btn-touch btn-outline-gl border-[#E5C988] text-[#E5C988] px-12 py-6 text-base tracking-widest hover:bg-[#E5C988] hover:text-black transition-all pulse-gold mx-auto">
+                    INICIAR O RITUAL
+                </button>
             </div>
         </div>
 
+        <!-- CONTEÚDO PRINCIPAL AGATA -->
         <main id="agata-main-content" class="opacity-0 transition-opacity duration-1000 agata-bg-luxury">
-            <section id="ritual" class="pt-32 pb-20 px-6 md:px-12">
-                <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                    <div class="relative group">
-                        <div class="organic-seal"><span class="block text-2xl font-bold">100%</span><span class="text-[8px] uppercase">Orgânica</span></div>
-                        <img src="https://agatalambeu.com.br/assets/images/image07.jpg?v=de86e831" class="w-full max-w-md mx-auto object-contain drop-shadow-2xl">
-                    </div>
-                    <div class="space-y-12">
-                        <div class="card-glass p-6 relative" onclick="toggleCardState(this)">
-                            <h3 class="text-xl text-white mb-2">Escova de Alta Performance</h3>
-                            <div class="mb-4"><span class="text-3xl font-black" style="background: linear-gradient(to right, #fff, #ffd700, #fff); -webkit-background-clip: text; color: transparent; animation: shine 3s infinite;">BRILHO 8K</span></div>
-                            <div class="flex items-center justify-between text-[#E5C988] text-xs font-bold bg-white/5 p-3 rounded"><span>A partir de:</span><span class="text-lg">R$ 129,00</span></div>
-                            <button onclick="openWhatsApp('Olá! Quero a Escova Alta Performance Brilho 8K.')" class="mt-3 w-full btn-touch btn-outline-gl text-[10px] py-2">Agendar Agora</button>
+            
+            <!-- SEÇÃO 1: O RITUAL (GLOSS PREMIUM) -->
+            <section id="ritual" class="min-h-screen pt-32 pb-20 px-6 md:px-12 flex flex-col justify-center">
+                <div class="max-w-7xl mx-auto w-full">
+                    
+                    <header class="text-center mb-16 observe-me">
+                        <span class="text-[#E5C988] text-xs font-bold tracking-[0.3em] uppercase block mb-4 border border-[#E5C988]/30 inline-block px-4 py-1 rounded-full">Uso Exclusivo Profissional</span>
+                        <h2 class="font-luxury text-4xl md:text-6xl text-white mb-6">PLÁSTICA HÍBRIDA</h2>
+                        <p class="text-gray-300 max-w-2xl mx-auto text-base leading-relaxed">A fusão perfeita entre tecnologia orgânica e performance de luxo. Gloss Premium com ativos nobres para uma transformação absoluta.</p>
+                    </header>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20">
+                        <!-- Imagem Produto com Selo -->
+                        <div class="relative group observe-me lg:sticky lg:top-32">
+                            <div class="absolute inset-0 bg-[#E5C988] blur-[80px] opacity-10 rounded-full group-hover:opacity-20 transition duration-1000"></div>
+                            
+                            <!-- SELO ORGÂNICO -->
+                            <div class="organic-seal">
+                                <span class="big">0%</span>
+                                <span class="small text-white">Formol</span>
+                                <div class="w-full h-px bg-white/20 my-2"></div>
+                                <span class="small text-[#E5C988]">Tecnologia<br>Orgânica</span>
+                            </div>
+
+                            <img src="https://agatalambeu.com.br/assets/images/image07.jpg?v=de86e831" class="relative z-10 w-full max-w-md mx-auto object-contain drop-shadow-2xl hover:scale-105 transition duration-700" alt="Gloss Premium" loading="lazy" decoding="async">
                         </div>
-                        <div class="card-glass p-6 border border-[#E5C988]/20" onclick="toggleCardState(this)">
-                            <h3 class="text-xl text-white mb-2">Liso Blindado 2026</h3>
-                            <div class="flex flex-col gap-1 bg-white/5 p-3 rounded mb-4"><div class="flex items-center justify-between text-[#E5C988] text-xs font-bold"><span>A partir de:</span><span class="text-lg">R$ 250,00</span></div><span class="text-[9px] text-gray-500 italic">*Mediante avaliação de comprimento e volume.</span></div>
-                            <button onclick="openWhatsApp('Olá! Quero agendar a transformação Liso Blindado.')" class="mt-3 w-full btn-touch btn-solid-gl text-[10px] py-2 text-black font-bold">Agendar Avaliação</button>
+
+                        <!-- Detalhes e Ativos -->
+                        <div class="space-y-12 observe-me">
+                            
+                            <!-- PERFIL INDICADO (INDICAÇÃO) -->
+                            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 relative overflow-hidden">
+                                 <!-- Ícone decorativo de fundo -->
+                                <div class="absolute -top-4 -right-4 opacity-10"><i data-lucide="target" class="w-24 h-24 text-[#E5C988]"></i></div>
+                                
+                                <h4 class="text-[#E5C988] text-xs uppercase tracking-[0.2em] mb-4 font-bold flex items-center gap-2">
+                                    <i data-lucide="user-check" class="w-4 h-4"></i> Para quem é indicado?
+                                </h4>
+                                
+                                <div class="space-y-4">
+                                    <div class="flex items-start gap-3">
+                                        <div class="bg-[#E5C988]/20 p-1.5 rounded-full mt-0.5"><i data-lucide="check" class="w-3 h-3 text-[#E5C988]"></i></div>
+                                        <div>
+                                            <strong class="text-white text-sm block mb-1">Tipos de Cabelo</strong>
+                                            <p class="text-gray-400 text-xs leading-relaxed">Cabelos volumosos, ondulados, cacheados, crespos ou com frizz excessivo.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <div class="bg-[#E5C988]/20 p-1.5 rounded-full mt-0.5"><i data-lucide="check" class="w-3 h-3 text-[#E5C988]"></i></div>
+                                        <div>
+                                            <strong class="text-white text-sm block mb-1">Desejo de Resultado</strong>
+                                            <p class="text-gray-400 text-xs leading-relaxed">Para quem busca desde um alinhamento natural (soltura de cachos) até o liso espelhado definitivo.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PROTOCOLOS -->
+                            <div class="grid gap-6">
+                                <h4 class="text-gray-500 text-xs uppercase tracking-[0.2em] mb-2 font-bold">Protocolos de Tempo</h4>
+                                <!-- Protocolo 15 min -->
+                                <div class="card-glass p-6 relative overflow-hidden group" onclick="toggleCardState(this)">
+                                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition"><i data-lucide="zap" class="w-8 h-8 text-[#E5C988]"></i></div>
+                                    <div class="flex items-center gap-4 mb-2">
+                                        <span class="text-3xl font-luxury text-white">15'</span>
+                                        <span class="text-xs font-bold text-[#E5C988] uppercase tracking-wider border border-[#E5C988]/30 px-2 py-1 rounded">Escova de Alta Performance</span>
+                                    </div>
+                                    <h3 class="text-lg text-white mb-2">ESCOVA MODELADORA</h3>
+                                    <p class="text-gray-400 text-xs leading-relaxed mb-4">Redução de frizz momentânea e alinhamento com brilho extremo. Ideal para eventos.</p>
+                                    
+                                    <!-- DESTAQUE BRILHO 8K -->
+                                    <div class="mb-4 text-center">
+                                        <span class="text-2xl font-black uppercase tracking-widest" style="background: linear-gradient(to right, #fff, #ffd700, #fff); -webkit-background-clip: text; color: transparent; font-weight: 800; animation: shine 3s infinite;">BRILHO 8K</span>
+                                    </div>
+
+                                    <div class="flex items-center justify-between text-[#E5C988] text-xs font-bold uppercase tracking-wider bg-white/5 p-3 rounded">
+                                        <span>A partir de:</span>
+                                        <span class="text-lg">R$ 129,00</span>
+                                    </div>
+                                    <button onclick="openWhatsApp('Olá! Gostaria de agendar a Escova de Alta Performance (Flash Ritual 15min) com Brilho 8K.')" class="mt-3 w-full btn-touch btn-outline-gl text-[10px] py-2">Agendar Flash Ritual</button>
+                                </div>
+
+                                <!-- Protocolo 40 min -->
+                                <div class="card-glass p-6 relative overflow-hidden group border border-[#E5C988]/20" onclick="toggleCardState(this)">
+                                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition"><i data-lucide="shield" class="w-8 h-8 text-[#E5C988]"></i></div>
+                                    <div class="flex items-center gap-4 mb-2">
+                                        <span class="text-lg font-luxury text-white">40' - 1h40</span>
+                                        <span class="text-xs font-bold text-[#E5C988] uppercase tracking-wider border border-[#E5C988]/30 px-2 py-1 rounded">Liso Blindado</span>
+                                    </div>
+                                    <h3 class="text-lg text-white mb-2">TRANSFORMAÇÃO DEFINITIVA</h3>
+                                    <p class="text-gray-400 text-xs leading-relaxed mb-4">Mudança completa da estrutura do fio. Liso perfeito, resistente à umidade e com durabilidade prolongada.</p>
+                                    
+                                    <!-- PREÇO A PARTIR DE -->
+                                    <div class="flex flex-col gap-1 bg-white/5 p-3 rounded mb-4">
+                                         <div class="flex items-center justify-between text-[#E5C988] text-xs font-bold uppercase tracking-wider">
+                                            <span>A partir de:</span>
+                                            <span class="text-lg">R$ 250,00</span>
+                                        </div>
+                                        <span class="text-[9px] text-gray-500 font-light italic leading-tight">*Valor final mediante análise de comprimento, volume e estrutura do fio.</span>
+                                    </div>
+
+                                    <div class="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-wider bg-[#E5C988]/10 p-3 rounded border-l-2 border-[#E5C988]">
+                                        <i data-lucide="check-circle" class="w-4 h-4"></i> Resultado Garantido
+                                    </div>
+                                     <button onclick="openWhatsApp('Olá! Gostaria de agendar uma avaliação para o Liso Blindado (A partir de R$ 250).')" class="mt-3 w-full btn-touch btn-solid-gl text-[10px] py-2 text-black font-bold">Agendar Avaliação</button>
+                                </div>
+                            </div>
+
+                            <!-- ATIVOS DA 1 LITRO -->
+                            <div class="pt-8 border-t border-white/10">
+                                <h4 class="text-[#E5C988] text-sm uppercase tracking-[0.2em] mb-6 font-bold flex items-center gap-2"><i data-lucide="dna" class="w-4 h-4"></i> Matriz Tecnológica</h4>
+                                
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
+                                    <i data-lucide="wheat" class="ingredient-icon w-6 h-6"></i>
+                                    <div>
+                                        <strong class="text-white text-sm block uppercase mb-1">Proteína do Trigo</strong>
+                                        <p class="text-gray-400 text-xs leading-relaxed text-justify">Bio-afinidade total com a queratina natural. Atua como um cimento intercelular, preenchendo as porosidades do córtex e aumentando a resistência mecânica do fio durante o processo térmico.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
+                                    <i data-lucide="droplet" class="ingredient-icon w-6 h-6"></i>
+                                    <div>
+                                        <strong class="text-white text-sm block uppercase mb-1">Ácido Hialurônico</strong>
+                                        <p class="text-gray-400 text-xs leading-relaxed text-justify">A "Hidratação Injetável". Molécula capaz de reter até 1000x seu peso em água, garantindo que o cabelo permaneça hidratado, com balanço e maleabilidade mesmo após a ativação térmica.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
+                                    <i data-lucide="sparkles" class="ingredient-icon w-6 h-6"></i>
+                                    <div>
+                                        <strong class="text-white text-sm block uppercase mb-1">Óleo de Uva</strong>
+                                        <p class="text-gray-400 text-xs leading-relaxed text-justify">Poderoso antioxidante rico em Vitamina E. Cria um escudo lipídico leve que protege a cor contra a oxidação e reflete a luz de forma tridimensional (Efeito Espelho).</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- SEÇÃO DE RESULTADOS REAIS (PROVA SOCIAL) -->
+            <section id="results" class="py-20 bg-[#0a0a0a] border-t border-white/5">
+                 <div class="max-w-6xl mx-auto px-6">
+                    <header class="text-center mb-16 observe-me">
+                        <span class="text-[#E5C988] text-xs font-bold tracking-[0.3em] uppercase block mb-4">Transformação Real</span>
+                        <h2 class="font-luxury text-3xl md:text-5xl text-white mb-6">O PODER DO LISO</h2>
+                    </header>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                         <div class="comparison-card aspect-[4/5] observe-me bg-black">
+                             <img src="https://agatalambeu.com.br/assets/images/image06.jpg?v=d3d58bdf" loading="lazy" decoding="async">
+                             <div class="absolute inset-0 flex items-center justify-center">
+                                 <p class="text-white text-xs tracking-widest uppercase border border-white/20 px-4 py-2 bg-black/50 backdrop-blur-md rounded-full">Toque para ver Detalhes</p>
+                             </div>
+                             <div class="comparison-label">Liso Blindado Chapecó</div>
+                          </div>
+                          <div class="comparison-card aspect-[4/5] observe-me bg-black">
+                            <!-- IMAGEM DO RESULTADO ATUALIZADA -->
+                             <div class="absolute inset-0 bg-gradient-to-t from-[#E5C988]/20 to-transparent"></div>
+                             <img src="https://agatalambeu.com.br/assets/images/image05.jpg?v=d3d58bdf" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                             <div class="comparison-label text-[#E5C988]">Liso Blindado Chapecó</div>
+                          </div>
+                    </div>
+                    <div class="mt-12 text-center observe-me">
+                        <p class="text-gray-400 text-sm max-w-2xl mx-auto italic">"Resultados de salão que dispensam filtros. A integridade do fio é mantida em 100% dos casos."</p>
+                    </div>
+                 </div>
+            </section>
+
+            <!-- SEÇÃO 2: HOME CARE (ATIVOS REVELADOS) -->
+            <section id="homecare" class="min-h-screen py-20 px-6 md:px-12 bg-gradient-to-b from-[#050505] to-[#0f0f0f] border-t border-white/10">
+                <div class="max-w-7xl mx-auto w-full">
+                    
+                    <header class="text-center mb-20 observe-me">
+                        <span class="text-[#E5C988] text-xs font-bold tracking-[0.3em] uppercase block mb-4">Manutenção de Luxo</span>
+                        <h2 class="font-luxury text-4xl md:text-6xl text-white mb-6">COLEÇÃO HOME CARE</h2>
+                        <p class="text-gray-400 text-sm tracking-widest uppercase">Tecnologia Profissional em Casa</p>
+                    </header>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                        
+                        <!-- PRODUTO 1: BAIN -->
+                        <div class="product-card group observe-me">
+                            <!-- Topo Produto -->
+                            <div class="p-8 text-center bg-gradient-to-b from-white/5 to-transparent pb-0">
+                                <img src="https://res.cloudinary.com/daukvmsc2/image/upload/v1767297017/Gemini_Generated_Image_ycz26sycz26sycz2_mo58mh.png" class="h-56 object-contain mb-6 mx-auto drop-shadow-2xl" loading="lazy" decoding="async">
+                                <h3 class="font-luxury text-xl text-white mb-1">BAIN RECONSTRUTOR</h3>
+                                <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">Shampoo 250ml</p>
+                                <div class="text-[#E5C988] font-bold text-xl mb-6">R$ 149,90</div>
+                                <button onclick="openWhatsApp('Olá! Gostaria de adquirir o Shampoo Bain Reconstrutor (Home Care) da linha A Gata Lambeu.')" class="btn-touch btn-solid-gl w-full text-xs mb-6">EU QUERO ESTE</button>
+                            </div>
+                            
+                            <!-- Lista de Ativos -->
+                            <div class="p-6 bg-[#0a0a0a]">
+                                <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-4 font-bold border-b border-white/10 pb-2">Engenharia Molecular</p>
+                                
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
+                                    <i data-lucide="layers" class="ingredient-icon w-5 h-5"></i>
+                                    <div>
+                                        <strong class="text-white text-sm block uppercase mb-1">Queratina Hidrolisada</strong>
+                                        <p class="text-gray-400 text-xs leading-relaxed text-justify">Micro-partículas que penetram profundamente na fibra para repor a massa proteica perdida em processos químicos, devolvendo a integridade estrutural.</p>
+                                    </div>
+                                </div>
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
+                                    <i data-lucide="hexagon" class="ingredient-icon w-5 h-5"></i>
+                                    <div>
+                                        <strong class="text-white text-sm block uppercase mb-1">Ceramidas</strong>
+                                        <p class="text-gray-400 text-xs leading-relaxed text-justify">Lipídio essencial que atua como "cola biológica", selando as cutículas e impedindo que os nutrientes e a hidratação escapem do interior do fio.</p>
+                                    </div>
+                                </div>
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
+                                    <i data-lucide="droplet" class="ingredient-icon w-5 h-5"></i>
+                                    <div>
+                                        <strong class="text-white text-sm block uppercase mb-1">D-Pantenol</strong>
+                                        <p class="text-gray-400 text-xs leading-relaxed text-justify">Pró-Vitamina B5. Garante vitalidade ao bulbo capilar e umectação prolongada ao comprimento, evitando a rigidez.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PRODUTO 2: GOLD INFUSION -->
+                        <div class="product-card group observe-me border border-[#E5C988]/30">
+                            <div class="absolute top-4 right-4 z-20 bg-[#E5C988] text-black text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-[0_0_15px_#E5C988]">Power Dose</div>
+                            
+                            <div class="p-8 text-center bg-gradient-to-b from-[#E5C988]/10 to-transparent pb-0">
+                                <img src="https://agatalambeu.com.br/assets/images/image09.jpg?v=de86e831" class="h-56 object-contain mb-6 mx-auto drop-shadow-2xl" loading="lazy" decoding="async">
+                                <h3 class="font-luxury text-xl text-white mb-1">GOLD INFUSION</h3>
+                                <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">Ampola 20ml</p>
+                                <div class="text-[#E5C988] font-bold text-xl mb-6">R$ 289,80</div>
+                                <button onclick="openWhatsApp('Olá! Tenho interesse na Ampola Gold Infusion (Power Dose) da linha A Gata Lambeu.')" class="btn-touch btn-solid-gl w-full text-xs mb-6">EU QUERO ESTE</button>
+                            </div>
+                            
+                            <div class="p-6 bg-[#0a0a0a]">
+                                <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-4 font-bold border-b border-white/10 pb-2">Engenharia Molecular</p>
+
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
+                                    <i data-lucide="link" class="ingredient-icon w-5 h-5"></i>
+                                    <div>
+                                        <strong class="text-white text-sm block uppercase mb-1">Cistina</strong>
+                                        <p class="text-gray-400 text-xs leading-relaxed text-justify">Aminoácido chave na formação de pontes dissulfeto. Promove a religação interna, aumentando a resistência à quebra instantaneamente.</p>
+                                    </div>
+                                </div>
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
+                                    <i data-lucide="droplets" class="ingredient-icon w-5 h-5"></i>
+                                    <div>
+                                        <strong class="text-white text-sm block uppercase mb-1">Óleo de Abacate</strong>
+                                        <p class="text-gray-400 text-xs leading-relaxed text-justify">Concentrado de Vitaminas A, D e E. Proporciona nutrição lipídica intensa, devolvendo a emoliência sem pesar em fios lisos.</p>
+                                    </div>
+                                </div>
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
+                                    <i data-lucide="sun" class="ingredient-icon w-5 h-5"></i>
+                                    <div>
+                                        <strong class="text-white text-sm block uppercase mb-1">Proteína da Seda</strong>
+                                        <p class="text-gray-400 text-xs leading-relaxed text-justify">Envolve o fio em um filme hidrofílico que reflete a luz intensamente, proporcionando brilho tridimensional e toque aveludado.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PRODUTO 3: BLINDAGEM -->
+                        <div class="product-card group observe-me">
+                            <div class="p-8 text-center bg-gradient-to-b from-white/5 to-transparent pb-0">
+                                <img src="https://agatalambeu.com.br/assets/images/image08.jpg?v=de86e831" class="h-56 object-contain mb-6 mx-auto drop-shadow-2xl" loading="lazy" decoding="async">
+                                <h3 class="font-luxury text-xl text-white mb-1">BLINDAGEM QUEEN</h3>
+                                <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">Leave-in 200ml</p>
+                                <div class="text-[#E5C988] font-bold text-xl mb-6">R$ 248,40</div>
+                                <button onclick="openWhatsApp('Olá! Quero garantir o Leave-in Blindagem Queen da linha A Gata Lambeu.')" class="btn-touch btn-solid-gl w-full text-xs mb-6">EU QUERO ESTE</button>
+                            </div>
+                            
+                            <div class="p-6 bg-[#0a0a0a]">
+                                <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-4 font-bold border-b border-white/10 pb-2">Engenharia Molecular</p>
+
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
+                                    <i data-lucide="activity" class="ingredient-icon w-5 h-5"></i>
+                                    <div>
+                                        <strong class="text-white text-sm block uppercase mb-1">Colágeno</strong>
+                                        <p class="text-gray-400 text-xs leading-relaxed text-justify">Proteína que melhora a flexibilidade do fio, prevenindo a quebra por tração mecânica (escovação) e mantendo o movimento.</p>
+                                    </div>
+                                </div>
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
+                                    <i data-lucide="cpu" class="ingredient-icon w-5 h-5"></i>
+                                    <div>
+                                        <strong class="text-white text-sm block uppercase mb-1">Nano Link</strong>
+                                        <p class="text-gray-400 text-xs leading-relaxed text-justify">Complexo de aminoácidos de baixo peso molecular que penetra no córtex para reparar danos profundos de dentro para fora.</p>
+                                    </div>
+                                </div>
+                                <div class="ingredient-item" onclick="toggleCardState(this)">
+                                    <i data-lucide="umbrella" class="ingredient-icon w-5 h-5"></i>
+                                    <div>
+                                        <strong class="text-white text-sm block uppercase mb-1">Semi Di Lino</strong>
+                                        <p class="text-gray-400 text-xs leading-relaxed text-justify">Rico em Ômega 3 e 6. Sela as cutículas criando uma barreira anti-umidade que prolonga o efeito liso e protege contra o calor.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <!-- PROVA SOCIAL: DEPOIMENTOS -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 observe-me">
+                         <div class="card-glass p-8">
+                             <div class="flex text-[#E5C988] mb-4 gap-1"><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i></div>
+                             <p class="text-gray-300 text-sm italic mb-4">"Meu cabelo nunca ficou tão brilhoso. O kit Home Care realmente faz o alisamento durar o triplo do tempo. Vale cada centavo."</p>
+                             <p class="text-white text-xs font-bold uppercase tracking-widest">- Ana Paula S.</p>
+                         </div>
+                         <div class="card-glass p-8">
+                             <div class="flex text-[#E5C988] mb-4 gap-1"><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i></div>
+                             <p class="text-gray-300 text-sm italic mb-4">"A Blindagem Queen é surreal. O cheiro é de perfume importado e o cabelo seca sem frizz nenhum."</p>
+                             <p class="text-white text-xs font-bold uppercase tracking-widest">- Fernanda M.</p>
+                         </div>
+                    </div>
+
+                    <!-- A LÓGICA DA CONTINUIDADE (SYNERGY SECTION) -->
+                    <div class="observe-me bg-gradient-to-r from-[#0a0a0a] via-[#111] to-[#0a0a0a] p-8 md:p-12 rounded-3xl border border-white/10 text-center relative overflow-hidden mb-20">
+                        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+                        <i data-lucide="infinity" class="w-16 h-16 text-[#E5C988] mx-auto mb-6 opacity-80"></i>
+                        <h3 class="font-luxury text-2xl md:text-3xl text-white mb-4">A LÓGICA DA CONTINUIDADE</h3>
+                        <p class="text-gray-300 max-w-3xl mx-auto text-sm md:text-base leading-relaxed mb-8">
+                            O ritual realizado no salão altera quimicamente a estrutura do seu fio para alcançar a perfeição. 
+                            <strong class="text-[#E5C988]">Levar o Kit Home Care não é opcional, é parte do procedimento.</strong> 
+                            Estes produtos possuem a mesma bio-afinidade do Gloss Premium, garantindo que a memória molecular do liso 
+                            seja reativada a cada lavagem. Sem eles, o pH da água e shampoos comuns oxidam o resultado em poucas semanas.
+                        </p>
+                        <div class="inline-flex items-center gap-2 border border-[#E5C988] px-6 py-3 rounded-full text-[#E5C988] text-xs uppercase tracking-widest font-bold">
+                            <i data-lucide="check-circle" class="w-4 h-4"></i> Garantia de Durabilidade 3x Maior
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- FAQ (QUEBRA DE OBJEÇÕES) -->
+            <section class="py-20 px-6 max-w-4xl mx-auto">
+                <h3 class="font-luxury text-2xl text-center text-white mb-10">DÚVIDAS FREQUENTES</h3>
+                <div class="space-y-2">
+                    <div class="faq-item" onclick="this.classList.toggle('active')">
+                        <div class="faq-question">
+                            <span class="text-sm font-bold text-gray-200">O produto amarela cabelos loiros?</span>
+                            <i data-lucide="plus" class="faq-icon text-gray-500 w-5 h-5"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Não. A fórmula contém ativos antioxidantes (Óleo de Uva) e pigmentação balanceada que previne a oxidação da cor, mesmo em altas temperaturas.
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="this.classList.toggle('active')">
+                        <div class="faq-question">
+                            <span class="text-sm font-bold text-gray-200">É compatível com outras químicas?</span>
+                            <i data-lucide="plus" class="faq-icon text-gray-500 w-5 h-5"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Sim, a tecnologia orgânica da Gata Lambeu é altamente compatível. No entanto, sempre recomendamos o Teste de Mecha realizado pelo profissional para garantir a integridade do fio.
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="this.classList.toggle('active')">
+                        <div class="faq-question">
+                            <span class="text-sm font-bold text-gray-200">Quanto tempo dura o efeito liso?</span>
+                            <i data-lucide="plus" class="faq-icon text-gray-500 w-5 h-5"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Com o uso correto da linha Home Care, o efeito do Liso Blindado pode durar de 3 a 5 meses, dependendo do crescimento da raiz e da estrutura natural do cabelo.
                         </div>
                     </div>
                 </div>
             </section>
+
+            <!-- FOOTER SIMPLES -->
+            <footer class="bg-black py-12 border-t border-white/10 text-center">
+                <h4 class="font-luxury text-2xl text-white mb-4">A GATA LAMBEU</h4>
+                <p class="text-gray-500 text-xs uppercase tracking-widest">Tecnologia Capilar de Vanguarda</p>
+            </footer>
+
         </main>
+    </div> <!-- FIM WRAPPER AGATA -->
+
+    <!-- MODAL DO SITE PRINCIPAL -->
+    <div id="erh-legal-modal-overlay" class="legal-modal-overlay" onclick="closeModal()">
+        <div class="legal-modal-box" onclick="event.stopPropagation()">
+            <span class="legal-close-btn" onclick="closeModal()">&times;</span>
+            <div id="content-privacy" style="display:none;">
+                <h2 class="legal-content-title">Política de Privacidade</h2>
+                <div class="legal-content-text"><p><strong>1. Coleta:</strong> Dados usados para agendamento.</p></div>
+            </div>
+            <div id="content-terms" style="display:none;">
+                <h2 class="legal-content-title">Termos de Uso</h2>
+                <div class="legal-content-text"><p><strong>1. Agendamento:</strong> Sinal de R$ 50,00.</p></div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -1191,79 +1522,112 @@
                     overlay.remove();
                     document.body.classList.remove('no-scroll');
                     if(video) video.play();
-                    // MOSTRAR COMUNICADO APÓS 2 SEGUNDOS
-                    setTimeout(showComunicado, 2000);
                 }, 1500);
             }
         }
 
-        // --- LÓGICA DO COMUNICADO ---
-        function showComunicado() {
-            const modal = document.getElementById('comunicado-modal-overlay');
-            const nameSpan = document.getElementById('user-name-span');
-            
-            // Tenta pegar nome da URL ex: ?nome=Maria
-            const urlParams = new URLSearchParams(window.location.search);
-            const nome = urlParams.get('nome');
-            if(nome) nameSpan.innerText = nome;
-
-            modal.classList.add('active');
-        }
-
-        function closeComunicado() {
-            document.getElementById('comunicado-modal-overlay').classList.remove('active');
-        }
-
+        // SISTEMA DE ROTEAMENTO POR HASH (ACELERAÇÃO E LINKS DIRETOS)
         function router() {
             const hash = window.location.hash;
             const main = document.getElementById('main-site-wrapper');
             const club = document.getElementById('club-view-container');
             const agata = document.getElementById('agata-view-container');
-            const contato = document.getElementById('contato-view-container');
             const sticky = document.getElementById('mobile-sticky-bar');
 
-            main.style.display = 'none'; club.style.display = 'none'; agata.style.display = 'none'; 
-            if(contato) contato.style.display = 'none';
+            // Resetar visibilidade
+            main.style.display = 'none';
+            club.style.display = 'none';
+            agata.style.display = 'none';
             if(sticky) sticky.style.display = 'none';
+            document.body.classList.remove('no-scroll'); 
 
-            if (hash === '#clube') { club.style.display = 'block'; }
-            else if (hash === '#agata') {
+            // Lógica de Rotas
+            if (hash === '#clube') {
+                club.style.display = 'block';
+                window.scrollTo(0,0);
+            } else if (hash === '#agata') {
                 agata.style.display = 'block';
+                // Mostrar conteúdo Agata direto (pula intro se link direto)
+                const intro = document.getElementById('agata-intro-layer');
+                if(intro) intro.style.display = 'none'; 
                 document.getElementById('agata-main-content').style.opacity = '1';
                 document.getElementById('agata-navbar').classList.add('visible');
-                document.getElementById('agata-intro-layer').style.display = 'none';
-            } 
-            else if (hash === '#contato') {
-                if(contato) {
-                    contato.style.display = 'flex'; // Use flex to center content
-                    // Remove intro overlay immediately for contact route
-                    const intro = document.getElementById('intro-overlay');
-                    if(intro) intro.style.display = 'none';
-                    document.body.classList.remove('no-scroll');
-                }
-            }
-            else { 
-                main.style.display = 'block'; 
+                window.scrollTo(0,0);
+            } else {
+                // Rota Default (Home)
+                main.style.display = 'block';
                 if(sticky && window.innerWidth < 768) sticky.style.display = 'flex';
             }
-            window.scrollTo(0,0);
         }
 
+        // --- FUNÇÕES ESPECÍFICAS DA GATA LAMBEU ---
         function enterAgataMenu() {
-            document.getElementById('agata-intro-layer').classList.add('fade-out');
-            document.getElementById('agata-main-content').style.opacity = '1';
+            const intro = document.getElementById('agata-intro-layer');
+            const main = document.getElementById('agata-main-content');
+            const navbar = document.getElementById('agata-navbar');
+
+            intro.classList.add('fade-out');
+            main.style.opacity = '1';
+            
             setTimeout(() => {
-                document.getElementById('agata-intro-layer').style.display = 'none';
-                document.getElementById('agata-navbar').classList.add('visible');
+                intro.style.display = 'none';
+                navbar.classList.add('visible');
+                initObserver();
+                // initIngredientGlow(); // Desativado para usar apenas o clique
             }, 800);
         }
 
-        function toggleCardState(element) { element.classList.toggle('interactive-glow'); }
+        function toggleCardState(element) {
+            // Se já estiver ativo, desativa. Se não, ativa.
+            // Para permitir apenas um ativo por grupo, poderíamos remover de todos antes.
+            // Aqui vou permitir toggle simples (ligar/desligar) para exploração livre.
+            element.classList.toggle('interactive-glow');
+        }
+
+        function scrollToAgataSection(id) {
+             const el = document.getElementById(id);
+             if(el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function initObserver() {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.2 };
+            const observer = new IntersectionObserver((entries) => { 
+                entries.forEach(entry => { 
+                    if (entry.isIntersecting) { 
+                        entry.target.classList.add('visible'); 
+                    } 
+                }); 
+            }, observerOptions);
+            
+            document.querySelectorAll('.observe-me').forEach(el => observer.observe(el));
+        }
 
         function openWhatsApp(msg) {
              const phone = "5549999954052";
              const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(msg)}`;
-             window.open(url, '_blank');
+             if (typeof fbq === 'function') fbq('track', 'Lead');
+             if (typeof gtag_report_conversion === 'function') gtag_report_conversion(url);
+             else window.open(url, '_blank');
+        }
+
+        function setActiveCard(c) { document.querySelectorAll('.voucher-card').forEach(x=>x.classList.remove('active-card')); c.classList.add('active-card'); }
+        
+        function toggleCut(t,b){ 
+            const c=document.getElementById('check-'+t); 
+            let container = c.closest('.voucher-card') || c.closest('.bg-white-gold');
+            if (!container) return;
+
+            const pI = container.querySelector('.price-int'); 
+            const pC = container.querySelector('.price-cents');
+            
+            if(c){ 
+                const total = c.checked ? b + 80 : b;
+                const intPart = Math.floor(total);
+                const decimalPart = ',' + (total % 1).toFixed(2).substring(2);
+                
+                if(pI) pI.textContent = intPart;
+                if(pC) pC.textContent = decimalPart;
+            } 
         }
 
         function toggleCardAudio(id,btn){ 
@@ -1275,10 +1639,59 @@
             else { v.muted = true; i.className = 'fas fa-volume-mute'; } 
         }
 
+        function resgatar(t,v,id){
+             const chk = document.getElementById('check-' + id);
+             let msg = `Olá! Quero agendar para JANEIRO/2026.\n\n*Serviço:* ${t} (R$ ${v.toFixed(2)})`;
+             if(chk && chk.checked) msg += `\n*+ Adicional:* Corte Terapêutico (R$ 80,00)`;
+             msg += `\n\nTenho interesse nos dias 02 ou 03.`;
+             openWhatsApp(msg);
+        }
+
+        function resgatarConsultar(){
+            openWhatsApp("Olá! Gostaria de consultar uma oferta para meu cabelo (Crespo/Longo/Volumoso) para JANEIRO/2026.");
+        }
+
+        function resgatarVoucher(){
+            openWhatsApp("Olá! Gostaria de comprar o VOUCHER A GATA LAMBEU de R$ 50,00 para garantir créditos exclusivos.");
+        }
+
+        function openModal(type) {
+            const modal = document.getElementById('erh-legal-modal-overlay');
+            const priv = document.getElementById('content-privacy');
+            const terms = document.getElementById('content-terms');
+            if(modal){
+                modal.style.display = 'flex';
+                if(type === 'privacy') { priv.style.display = 'block'; terms.style.display = 'none'; }
+                else { priv.style.display = 'none'; terms.style.display = 'block'; }
+            }
+        }
+        function closeModal() {
+            const modal = document.getElementById('erh-legal-modal-overlay');
+            if(modal) modal.style.display = 'none';
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
+            // Inicializa Router
             router();
             window.addEventListener('hashchange', router);
+
             lucide.createIcons();
+            document.querySelectorAll('.faq-item summary').forEach(s => s.addEventListener('click', e => {
+                e.preventDefault(); const p = s.parentElement;
+                document.querySelectorAll('.faq-item').forEach(o => { if(o!==p)o.removeAttribute('open'); });
+                p.hasAttribute('open') ? p.removeAttribute('open') : p.setAttribute('open','');
+            }));
+            
+            // Reveal on Scroll
+            const revealObserver = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => revealObserver.observe(el));
         });
     </script>
 </body>
