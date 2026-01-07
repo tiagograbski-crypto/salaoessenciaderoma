@@ -67,15 +67,13 @@
         }
     </script>
 
-    <!-- TRACKING SCRIPTS (RECUPERADOS E PROTEGIDOS) -->
-    <!-- Google Tag Manager / Ads -->
+    <!-- TRACKING SCRIPTS -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11442509118"></script>
     <script>
       window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-11442509118');
       function gtag_report_conversion(url) { var c = function () { if (typeof(url) != 'undefined') { window.open(url, '_blank'); } }; if (typeof gtag === 'function') { gtag('event', 'conversion', { 'send_to': 'AW-11442509118/CNfICPrhpYAZEL6qm9Aq', 'event_callback': c }); } else { c(); } return false; }
     </script>
     
-    <!-- Facebook Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -91,7 +89,6 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=639959835745383&ev=PageView&noscript=1"
     /></noscript>
-    <!-- End Facebook Pixel Code -->
 
     <style>
         /* CORE */
@@ -190,9 +187,41 @@
         .section-pill { display: inline-block; background: rgba(212, 175, 55, 0.15); border: 1px solid rgba(212, 175, 55, 0.5); color: #d4af37; font-size: 0.7rem; font-weight: 700; padding: 6px 20px; border-radius: 50px; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.2em; backdrop-filter: blur(5px); }
         .btn-ghost { border: 1px solid rgba(255, 255, 255, 0.2); color: #e5e5e5; cursor: pointer; transition: all 0.3s; }
         .btn-ghost:hover { background: rgba(255,255,255,0.1); color: #fff; border-color: #fff; }
+        
         .bg-white-gold { background: linear-gradient(145deg, #ffffff 0%, #f8f1e0 100%); border: 2px solid #d4af37; box-shadow: 0 0 40px rgba(212, 175, 55, 0.3); color: #2b0505; }
-        .btn-header-gold { background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%); color: #2b0505; border: 1px solid #ffecb3; font-weight: 800; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); transition: transform 0.2s, box-shadow 0.2s; }
-        .btn-header-gold:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5); }
+        
+        /* Botões "Bootis" Refinados */
+        .btn-header-gold { 
+            background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%); 
+            color: #2b0505; 
+            border: 1px solid rgba(255,255,255,0.4); 
+            font-weight: 800; 
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3), inset 0 1px 0 rgba(255,255,255,0.4); 
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .btn-header-gold:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5), inset 0 1px 0 rgba(255,255,255,0.5); 
+            filter: brightness(1.1);
+        }
+
+        .btn-luxury-glow { 
+            position: relative; 
+            overflow: hidden; 
+            background: linear-gradient(135deg, #C59D24 0%, #E6C25B 50%, #C59D24 100%); 
+            color: #2b0c0c; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px; 
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
+            border: 1px solid rgba(255,255,255,0.3); 
+            box-shadow: 0 5px 15px rgba(197, 157, 36, 0.2), inset 0 1px 0 rgba(255,255,255,0.4); 
+        }
+        .btn-luxury-glow:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 12px 30px rgba(197, 157, 36, 0.5), inset 0 1px 0 rgba(255,255,255,0.6); 
+            background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 40%, #b38728 100%); 
+        }
 
         .video-card { border-radius: 16px; overflow: hidden; border: 1px solid rgba(197, 160, 89, 0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.5); background: #000; position: relative; aspect-ratio: 9/16; }
         .card-mute-btn { position: absolute; bottom: 10px; right: 10px; width: 32px; height: 32px; background: rgba(0,0,0,0.7); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; z-index: 20; cursor: pointer; border: 1px solid rgba(255,255,255,0.3); }
@@ -248,7 +277,7 @@
         .legal-content-text { font-family: 'Montserrat', sans-serif; font-size: 0.95rem; line-height: 1.8; color: #333; }
 
         .mobile-sticky-bar { display: flex; position: fixed; bottom: 0; left: 0; width: 100%; background: #1a0505; border-top: 1px solid #d4af37; z-index: 999; padding: 10px 20px; align-items: center; justify-content: space-between; box-shadow: 0 -5px 20px rgba(0,0,0,0.5); }
-        .btn-sticky-gold { background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%); color: #2b0505; font-weight: 800; padding: 10px 25px; border-radius: 50px; text-transform: uppercase; font-size: 0.75rem; box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); animation: pulse-gold 2s infinite; }
+        .btn-sticky-gold { background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 45%, #b38728 100%); color: #2b0c0c; font-weight: 800; padding: 10px 25px; border-radius: 50px; text-transform: uppercase; font-size: 0.75rem; box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); animation: pulse-gold 2s infinite; }
         @media (min-width: 768px) { .mobile-sticky-bar { display: none; } }
         @media (min-width: 768px) { #footer-empire-master .content-grid { grid-template-columns: 1fr 1fr 1fr; gap: 3rem; } }
         
@@ -258,7 +287,7 @@
              z-index: 9000; /* Acima do site principal */
              display: none; /* Inicialmente ocultos */
         }
-        #club-view-container { background-color: #FFFEFC; color: #0f0f0f; }
+        #club-view-container { background-color: #0a0a0a; color: #f3f3f3; } /* REFORMULADO: Background Dark Luxury */
         #agata-view-container { background-color: #050505; color: #ffffff; z-index: 9100; }
 
         .text-liquid-gold { background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% auto; animation: shine-text 8s infinite linear; text-shadow: 0px 1px 3px rgba(0,0,0,0.5); }
@@ -269,14 +298,15 @@
         .member-card::after { content: ''; position: absolute; top: -150%; left: -150%; width: 250%; height: 250%; background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.02) 45%, rgba(227, 198, 118, 0.1) 50%, rgba(255, 255, 255, 0.02) 55%, transparent 60%); transform: rotate(25deg); animation: holo-shimmer 8s infinite ease-in-out; pointer-events: none; }
         @keyframes holo-shimmer { 0% { transform: translate(-30%, -30%) rotate(25deg); } 100% { transform: translate(30%, 30%) rotate(25deg); } }
         
-        /* CLUB PRICING DARK */
+        /* CLUB PRICING DARK - REDESIGN "ALISA CHAPECÓ" SOFISTICADO */
         .club-pricing-card { 
-            background: linear-gradient(145deg, #1a1a1a 0%, #0a0a0a 100%); 
-            border-radius: 20px; 
+            background: linear-gradient(145deg, rgba(20, 20, 20, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%); /* Vidro Escuro */
+            backdrop-filter: blur(20px);
+            border-radius: 24px; /* Mais arredondado */
             overflow: hidden; 
-            box-shadow: 0 20px 60px -10px rgba(0,0,0,0.6); 
-            border: 1px solid rgba(255, 255, 255, 0.08); 
-            transition: all 0.4s ease; 
+            box-shadow: 0 20px 60px -10px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.08); /* Inner light */
+            border: 1px solid rgba(197, 157, 36, 0.15); /* Borda Dourada Sutil */
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
             display: flex; flex-direction: column; height: 100%; 
             min-width: 85vw; max-width: 85vw; 
             color: #f3f3f3; 
@@ -284,12 +314,16 @@
         @media (min-width: 768px) { 
             .club-pricing-card { min-width: 0; max-width: none; width: 100%; flex: 1; } 
         }
-        .club-pricing-card:hover { transform: translateY(-8px); border-color: rgba(197, 157, 36, 0.4); }
+        .club-pricing-card:hover { 
+            transform: translateY(-8px) scale(1.01); 
+            border-color: rgba(197, 157, 36, 0.5); 
+            box-shadow: 0 30px 80px -10px rgba(197, 157, 36, 0.15), inset 0 1px 0 rgba(255,255,255,0.15);
+        }
 
-        .club-card-header { padding: 2rem 1.5rem; text-align: center; position: relative; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .club-card-header h3 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-style: italic; margin-top: 0.5rem; letter-spacing: 0.05em; color: #fff; }
-        .club-price-box { text-align: center; margin-bottom: 2rem; margin-top: 1rem; }
-        .club-price-val { font-family: 'Cormorant Garamond', serif; font-size: 4rem; line-height: 1; font-weight: 300; color: #d4af37; }
+        .club-card-header { padding: 2.5rem 1.5rem; text-align: center; position: relative; border-bottom: 1px solid rgba(255,255,255,0.05); background: linear-gradient(to bottom, rgba(255,255,255,0.03), transparent); }
+        .club-card-header h3 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-style: italic; margin-top: 0.5rem; letter-spacing: 0.05em; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .club-price-box { text-align: center; margin-bottom: 2rem; margin-top: 1.5rem; }
+        .club-price-val { font-family: 'Cormorant Garamond', serif; font-size: 4.5rem; line-height: 1; font-weight: 300; color: #d4af37; text-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
         .club-timeline { position: relative; margin-top: 1rem; padding-left: 10px; }
         .club-timeline::before { content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 1px; background: rgba(255,255,255,0.1); }
         .timeline-item { position: relative; padding-left: 25px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: baseline; }
@@ -500,7 +534,7 @@
                             <span class="text-white font-playfair font-bold text-xs md:text-lg leading-none hidden md:block group-hover:text-[#d4af37] transition-colors">Essência de Romã</span>
                             <!-- SOCIAL PROOF NO HEADER/HERO -->
                             <div class="mt-1 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[9px] md:text-[10px] font-bold text-[#d4af37] border border-[#d4af37]/30 inline-flex items-center gap-1 w-fit">
-                                <i class="fas fa-star text-[8px]"></i> Mais de 2.000 clientes 2025
+                                <i class="fas fa-star text-[8px]"></i> Mais de 2.000 clientes em 2025
                             </div>
                         </div>
                     </div>
@@ -609,17 +643,51 @@
                         <i class="fas fa-flask mr-2"></i>Inteligência Capilar
                     </span>
                     <h2 class="font-playfair text-3xl md:text-5xl text-white mb-6">PLÁSTICA HÍBRIDA</h2>
-                    <p class="text-gray-200 text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-light">
+                    <p class="text-gray-200 text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-light mb-10">
                         Uma única fórmula de boutique da marca <strong class="text-[#E3C676]">A Gata Lambeu</strong>. O poder de escolha é seu: decida entre um <strong class="text-[#E3C676]">Brilho Instantâneo</strong> radiante ou um <strong class="text-[#E3C676]">Alisamento Espelhado</strong> completo.
                     </p>
-                    <div class="mt-6 flex flex-wrap justify-center gap-3 text-[10px] uppercase tracking-widest text-[#E3C676]/80">
-                        <span class="bg-black/30 px-3 py-1 rounded border border-[#E3C676]/10 backdrop-blur-sm">🧪 Ácido Hialurônico</span>
-                        <span class="bg-black/30 px-3 py-1 rounded border border-[#E3C676]/10 backdrop-blur-sm">🌾 Proteína do Trigo</span>
-                        <span class="bg-black/30 px-3 py-1 rounded border border-[#E3C676]/10 backdrop-blur-sm">🍇 Óleo de Uva</span>
+                    
+                    <!-- GRID DE ATIVOS (NOVO DESIGN) -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                        <!-- Ativo 1 -->
+                        <div class="group relative rounded-2xl p-6 overflow-hidden border border-white/10 hover:border-[#E3C676]/30 transition-all duration-300 hover:-translate-y-1">
+                            <div class="absolute inset-0 bg-white/5 backdrop-blur-md"></div>
+                            <div class="relative z-10 flex flex-col items-center">
+                                <div class="bg-[#E3C676]/10 w-12 h-12 rounded-full flex items-center justify-center text-2xl mb-3 border border-[#E3C676]/20">🧪</div>
+                                <h5 class="text-[#E3C676] text-xs font-bold uppercase tracking-widest mb-2">Ácido Hialurônico</h5>
+                                <p class="text-gray-400 text-[11px] font-light leading-relaxed">
+                                    A "água sólida" para o cabelo. Preenche a fibra capilar, retendo hidratação profunda para fios macios e com balanço natural.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Ativo 2 -->
+                        <div class="group relative rounded-2xl p-6 overflow-hidden border border-white/10 hover:border-[#E3C676]/30 transition-all duration-300 hover:-translate-y-1">
+                            <div class="absolute inset-0 bg-white/5 backdrop-blur-md"></div>
+                            <div class="relative z-10 flex flex-col items-center">
+                                <div class="bg-[#E3C676]/10 w-12 h-12 rounded-full flex items-center justify-center text-2xl mb-3 border border-[#E3C676]/20">🌾</div>
+                                <h5 class="text-[#E3C676] text-xs font-bold uppercase tracking-widest mb-2">Proteína do Trigo</h5>
+                                <p class="text-gray-400 text-[11px] font-light leading-relaxed">
+                                    Reconstrução biomimética. Fortalece a estrutura interna do fio, reduzindo a quebra e aumentando a elasticidade durante o alisamento.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Ativo 3 -->
+                        <div class="group relative rounded-2xl p-6 overflow-hidden border border-white/10 hover:border-[#E3C676]/30 transition-all duration-300 hover:-translate-y-1">
+                            <div class="absolute inset-0 bg-white/5 backdrop-blur-md"></div>
+                            <div class="relative z-10 flex flex-col items-center">
+                                <div class="bg-[#E3C676]/10 w-12 h-12 rounded-full flex items-center justify-center text-2xl mb-3 border border-[#E3C676]/20">🍇</div>
+                                <h5 class="text-[#E3C676] text-xs font-bold uppercase tracking-widest mb-2">Óleo de Semente de Uva</h5>
+                                <p class="text-gray-400 text-[11px] font-light leading-relaxed">
+                                    Antioxidante nobre. Cria um escudo lipídico levíssimo que protege a cor da oxidação e reflete um brilho espelhado intenso.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-16">
                     
                     <!-- Card A: Flash Ritual (Polimento & Brilho) -->
                     <div class="group relative rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-2 reveal-on-scroll shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-white/20 hover:border-[#E3C676]/50">
@@ -759,10 +827,12 @@
                 <div class="mt-20 mb-8 text-center border-t border-[#d4af37]/30 pt-16">
                     <h3 class="font-playfair text-2xl md:text-3xl text-white mb-8">Galeria de <span class="text-gold-shine">Resultados</span></h3>
                     
-                    <!-- Grid ajustado para centralizar os 2 vídeos restantes -->
+                    <!-- Grid ajustado para centralizar os 3 vídeos -->
                     <div class="smart-grid hide-scrollbar pb-8 justify-center">
                         <div class="snap-center shrink-0 w-[70vw] md:w-[40vw] lg:w-[30vw] video-card group bg-black"><button class="card-mute-btn" onclick="toggleCardAudio('vid1', this)"><i class="fas fa-volume-mute"></i></button><video id="vid1" class="w-full h-full object-cover" autoplay muted loop playsinline preload="none"><source src="https://res.cloudinary.com/daukvmsc2/video/upload/v1767283500/WhatsApp_Video_2025-12-07_at_08.43.32_scitfn.mp4" type="video/mp4"></video></div>
                         <div class="snap-center shrink-0 w-[70vw] md:w-[40vw] lg:w-[30vw] video-card group bg-black"><button class="card-mute-btn" onclick="toggleCardAudio('vid2', this)"><i class="fas fa-volume-mute"></i></button><video id="vid2" class="w-full h-full object-cover" autoplay muted loop playsinline preload="none"><source src="https://res.cloudinary.com/daukvmsc2/video/upload/v1767279737/WhatsApp_Video_2025-12-10_at_19.00.59_ov4cma.mp4" type="video/mp4"></video></div>
+                        <!-- Terceiro Vídeo Reconstituído -->
+                        <div class="snap-center shrink-0 w-[70vw] md:w-[40vw] lg:w-[30vw] video-card group bg-black"><button class="card-mute-btn" onclick="toggleCardAudio('vid3', this)"><i class="fas fa-volume-mute"></i></button><video id="vid3" class="w-full h-full object-cover" autoplay muted loop playsinline preload="none"><source src="https://res.cloudinary.com/daukvmsc2/video/upload/v1767279736/WhatsApp_Video_2025-12-09_at_10.51.20_y3iop0.mp4" type="video/mp4"></video></div>
                     </div>
                 </div>
 
@@ -860,38 +930,40 @@
         </section>
 
         <!-- SEÇÃO 2: STATUS & CARTÃO -->
-        <section id="exclusividade" class="py-24 bg-brand-white overflow-hidden">
-            <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
+        <section id="exclusividade" class="py-24 bg-brand-white overflow-hidden" style="background: linear-gradient(180deg, #0a0a0a 0%, #151515 100%); position: relative;">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none"></div>
+            
+            <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16 relative z-10">
                 
                 <div class="md:w-1/2 reveal-on-scroll">
                     <span class="text-brand-gold font-bold tracking-[0.2em] uppercase text-[10px]">Exclusividade Real</span>
-                    <h2 class="text-4xl md:text-5xl text-brand-black font-serif mt-4 mb-8 leading-tight">Mais que um serviço.<br><span class="italic text-gray-400">Um Pacto de Beleza.</span></h2>
+                    <h2 class="text-4xl md:text-5xl text-white font-serif mt-4 mb-8 leading-tight">Mais que um serviço.<br><span class="italic text-gray-400">Um Pacto de Beleza.</span></h2>
                     
                     <div class="grid gap-3">
-                        <div class="feature-card cursor-default">
+                        <div class="feature-card cursor-default bg-white/5 border-white/10 backdrop-blur-md hover:bg-white/10">
                             <div class="feature-content flex items-center gap-5">
-                                <div class="w-10 h-10 rounded-full bg-brand-black text-brand-gold-light flex items-center justify-center flex-shrink-0 text-lg"><i class="fas fa-crown"></i></div>
+                                <div class="w-10 h-10 rounded-full bg-brand-black text-brand-gold-light flex items-center justify-center flex-shrink-0 text-lg border border-brand-gold/30"><i class="fas fa-crown"></i></div>
                                 <div>
-                                    <h4 class="text-xs font-bold text-brand-black uppercase tracking-widest">Prioridade Absoluta</h4>
-                                    <p class="text-[11px] text-gray-500 mt-1 font-light leading-relaxed">Agenda bloqueada preferencialmente para você.</p>
+                                    <h4 class="text-xs font-bold text-white uppercase tracking-widest">Prioridade Absoluta</h4>
+                                    <p class="text-[11px] text-gray-400 mt-1 font-light leading-relaxed">Agenda bloqueada preferencialmente para você.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="feature-card cursor-default">
+                        <div class="feature-card cursor-default bg-white/5 border-white/10 backdrop-blur-md hover:bg-white/10">
                             <div class="feature-content flex items-center gap-5">
-                                <div class="w-10 h-10 rounded-full bg-brand-black text-brand-gold-light flex items-center justify-center flex-shrink-0 text-lg"><i class="fas fa-infinity"></i></div>
+                                <div class="w-10 h-10 rounded-full bg-brand-black text-brand-gold-light flex items-center justify-center flex-shrink-0 text-lg border border-brand-gold/30"><i class="fas fa-infinity"></i></div>
                                 <div>
-                                    <h4 class="text-xs font-bold text-brand-black uppercase tracking-widest">Liso Vitalício</h4>
-                                    <p class="text-[11px] text-gray-500 mt-1 font-light leading-relaxed">Blindagem e garantia ativas com o ciclo em dia.</p>
+                                    <h4 class="text-xs font-bold text-white uppercase tracking-widest">Liso Vitalício</h4>
+                                    <p class="text-[11px] text-gray-400 mt-1 font-light leading-relaxed">Blindagem e garantia ativas com o ciclo em dia.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="feature-card cursor-default">
+                        <div class="feature-card cursor-default bg-white/5 border-white/10 backdrop-blur-md hover:bg-white/10">
                             <div class="feature-content flex items-center gap-5">
-                                <div class="w-10 h-10 rounded-full bg-brand-black text-brand-gold-light flex items-center justify-center flex-shrink-0 text-lg"><i class="fas fa-flask"></i></div>
+                                <div class="w-10 h-10 rounded-full bg-brand-black text-brand-gold-light flex items-center justify-center flex-shrink-0 text-lg border border-brand-gold/30"><i class="fas fa-flask"></i></div>
                                 <div>
-                                    <h4 class="text-xs font-bold text-brand-black uppercase tracking-widest">Tecnologia Original</h4>
-                                    <p class="text-[11px] text-gray-500 mt-1 font-light leading-relaxed">Química exclusiva Essência de Romã. Segura e duradoura.</p>
+                                    <h4 class="text-xs font-bold text-white uppercase tracking-widest">Tecnologia Original</h4>
+                                    <p class="text-[11px] text-gray-400 mt-1 font-light leading-relaxed">Química exclusiva Essência de Romã. Segura e duradoura.</p>
                                 </div>
                             </div>
                         </div>
@@ -900,7 +972,7 @@
 
                 <div class="md:w-1/2 flex justify-center reveal-on-scroll w-full">
                     <!-- CARTÃO HOLOGRÁFICO MINIMALISTA -->
-                    <div class="member-card w-full max-w-sm aspect-[1.586/1] flex flex-col justify-center items-center relative group cursor-default p-8">
+                    <div class="member-card w-full max-w-sm aspect-[1.586/1] flex flex-col justify-center items-center relative group cursor-default p-8 shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/10 ring-1 ring-white/5">
                         <div class="absolute inset-0 z-0"></div>
                         <div class="z-10 text-center flex flex-col items-center gap-3 w-full">
                             <div>
@@ -924,20 +996,20 @@
         </section>
 
         <!-- SEÇÃO 3: PLANOS -->
-        <section id="planos" class="py-24 bg-brand-white relative">
+        <section id="planos" class="py-24 relative" style="background: linear-gradient(180deg, #151515 0%, #0a0a0a 100%);">
             <div class="max-w-7xl mx-auto px-4 xs:px-6">
                 <div class="text-center mb-16 reveal-on-scroll">
-                    <h2 class="text-4xl md:text-5xl font-serif text-brand-black italic">Escolha Seu Plano</h2>
+                    <h2 class="text-4xl md:text-5xl font-serif text-white italic">Escolha Seu Plano</h2>
                     <p class="mt-4 text-gray-400 font-light text-xs uppercase tracking-widest max-w-xl mx-auto">
                         Sem Cartão de Crédito • Pague Somente ao Usar
                     </p>
                     
-                    <div class="mt-8 bg-red-50 border border-red-100 text-red-800 px-6 py-4 rounded-lg inline-block shadow-sm animate-pulse text-left md:text-center max-w-lg">
-                        <p class="text-[10px] font-bold uppercase tracking-widest mb-2 flex items-center justify-center gap-2 text-red-600">
+                    <div class="mt-8 bg-red-900/20 border border-red-500/30 text-red-200 px-6 py-4 rounded-lg inline-block shadow-lg animate-pulse text-left md:text-center max-w-lg backdrop-blur-md">
+                        <p class="text-[10px] font-bold uppercase tracking-widest mb-2 flex items-center justify-center gap-2 text-red-400">
                             <i class="fas fa-lock"></i> Oportunidade Exclusiva
                         </p>
-                        <p class="text-sm font-medium leading-snug">Já é cliente <strong>Essência de Romã</strong> e alisou nos últimos 60 dias?</p>
-                        <p class="text-xs mt-1 text-red-500 font-light">Validaremos seu histórico e sua <strong>Adesão será ZERO</strong>.</p>
+                        <p class="text-sm font-medium leading-snug text-white">Já é cliente <strong>Essência de Romã</strong> e alisou nos últimos 60 dias?</p>
+                        <p class="text-xs mt-1 text-red-300 font-light">Validaremos seu histórico e sua <strong>Adesão será ZERO</strong>.</p>
                     </div>
                 </div>
 
@@ -946,10 +1018,10 @@
                     
                     <!-- CARD 1: SUBLIME -->
                     <div class="club-pricing-card snap-center shrink-0 reveal-on-scroll">
-                        <div class="club-card-header bg-header-sublime">
+                        <div class="club-card-header">
                             <div class="absolute top-4 right-4 text-brand-gold-light text-[9px] border border-brand-gold-light px-2 py-0.5 rounded uppercase font-bold">Fio Fino</div>
                             <h3>Sublime</h3>
-                            <p class="text-[9px] uppercase mt-2 tracking-widest opacity-60">Para Lisos & Ondulados</p>
+                            <p class="text-[9px] uppercase mt-2 tracking-widest opacity-60 text-gray-300">Para Lisos & Ondulados</p>
                         </div>
                         
                         <div class="p-8 flex flex-col flex-grow relative">
@@ -990,7 +1062,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Sublime." class="w-full btn-luxury-glow py-3.5 rounded-lg text-[10px] block text-center shadow-lg bg-brand-gold mt-6">
+                            <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Sublime." class="w-full btn-luxury-glow py-3.5 rounded-lg text-[10px] block text-center shadow-lg bg-brand-gold mt-6 border-none text-[#1a0505]">
                                 Entrar no Clube Sublime
                             </a>
                             <p class="text-center text-[9px] text-gray-500 mt-3 leading-tight"><i class="fas fa-wallet text-[8px]"></i> Pague no ato. Crédito válido até o último dia do mês.</p>
@@ -999,10 +1071,10 @@
 
                     <!-- CARD 2: IMPERIAL -->
                     <div class="club-pricing-card snap-center shrink-0 reveal-on-scroll" style="transition-delay: 0.1s;">
-                         <div class="club-card-header bg-header-imperial">
+                         <div class="club-card-header">
                             <div class="absolute top-4 right-4 text-white/60 text-[9px] border border-white/30 px-2 py-0.5 rounded uppercase font-bold">Fio Médio</div>
                             <h3>Imperial</h3>
-                            <p class="text-[9px] uppercase mt-2 tracking-widest opacity-60">Para Cacheados</p>
+                            <p class="text-[9px] uppercase mt-2 tracking-widest opacity-60 text-gray-300">Para Cacheados</p>
                         </div>
                         
                         <div class="p-8 flex flex-col flex-grow relative">
@@ -1044,7 +1116,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Imperial." class="w-full btn-luxury-glow py-3.5 rounded-lg text-[10px] block text-center shadow-lg bg-brand-gold mt-6">
+                            <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Imperial." class="w-full btn-luxury-glow py-3.5 rounded-lg text-[10px] block text-center shadow-lg bg-brand-gold mt-6 border-none text-[#1a0505]">
                                 Entrar no Clube Imperial
                             </a>
                             <p class="text-center text-[9px] text-gray-500 mt-3 leading-tight"><i class="fas fa-wallet text-[8px]"></i> Pague no ato. Crédito válido até o último dia do mês.</p>
@@ -1053,10 +1125,10 @@
 
                     <!-- CARD 3: ABSOLUTO -->
                     <div class="club-pricing-card snap-center shrink-0 reveal-on-scroll" style="transition-delay: 0.2s;">
-                        <div class="club-card-header bg-header-absoluto">
+                        <div class="club-card-header">
                             <div class="absolute top-4 right-4 text-white/50 text-[10px] border border-white/30 px-2 py-0.5 rounded uppercase font-bold">Fio Grosso</div>
                             <h3>Absoluto</h3>
-                            <p class="text-[10px] uppercase mt-2 tracking-widest opacity-60">Para Crespos</p>
+                            <p class="text-[10px] uppercase mt-2 tracking-widest opacity-60 text-gray-300">Para Crespos</p>
                         </div>
                         
                         <div class="p-8 flex flex-col flex-grow relative">
@@ -1098,7 +1170,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Absoluto." class="w-full btn-luxury-glow py-3.5 rounded-lg text-[10px] block text-center shadow-lg bg-brand-gold mt-6">
+                            <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Absoluto." class="w-full btn-luxury-glow py-3.5 rounded-lg text-[10px] block text-center shadow-lg bg-brand-gold mt-6 border-none text-[#1a0505]">
                                 Entrar no Clube Absoluto
                             </a>
                             <p class="text-center text-[9px] text-gray-500 mt-3 leading-tight"><i class="fas fa-wallet text-[8px]"></i> Pague no ato. Crédito válido até o último dia do mês.</p>
@@ -1566,6 +1638,11 @@
             const agata = document.getElementById('agata-view-container');
             const sticky = document.getElementById('mobile-sticky-bar');
 
+            // 1. Pausar Vídeos em Segundo Plano (AGILIDADE)
+            document.querySelectorAll('video').forEach(v => {
+                if (v.id !== 'heroVideo') v.pause(); // Mantém o hero em cache se possível, mas pausa os outros
+            });
+
             // Resetar visibilidade
             main.style.display = 'none';
             club.style.display = 'none';
@@ -1588,6 +1665,10 @@
             } else {
                 // Rota Default (Home)
                 main.style.display = 'block';
+                // Tenta dar play no hero video se voltar pra home
+                const heroVid = document.getElementById('heroVideo');
+                if(heroVid) heroVid.play().catch(e => console.log("Autoplay prevent"));
+                
                 if(sticky && window.innerWidth < 768) sticky.style.display = 'flex';
             }
         }
