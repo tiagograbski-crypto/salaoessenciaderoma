@@ -475,24 +475,40 @@
         <header id="header-sticky" class="fixed top-0 left-0 w-full z-50 h-20 md:h-24 flex items-center">
             <div class="container mx-auto max-w-7xl px-4 flex justify-between items-center">
                 <div class="flex items-center gap-2 md:gap-4">
-                    <img src="https://i.ibb.co/7xQTPb2t/LOGO.png" alt="Logo" class="h-8 md:h-14 w-auto object-contain drop-shadow-md">
-                    <div class="flex flex-col">
-                        <span class="text-white font-playfair font-bold text-xs md:text-lg leading-none hidden md:block">Essência de Romã</span>
-                        <!-- SOCIAL PROOF NO HEADER/HERO -->
-                        <div class="mt-1 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[9px] md:text-[10px] font-bold text-[#d4af37] border border-[#d4af37]/30 inline-flex items-center gap-1 w-fit">
-                            <i class="fas fa-star text-[8px]"></i> Mais de 2.000 clientes atendidas em 2025
+                    <!-- Logo Clicável para Home também -->
+                    <div onclick="window.location.hash=''" class="cursor-pointer flex items-center gap-2 md:gap-4 group">
+                        <img src="https://i.ibb.co/7xQTPb2t/LOGO.png" alt="Logo" class="h-8 md:h-14 w-auto object-contain drop-shadow-md group-hover:scale-105 transition-transform">
+                        <div class="flex flex-col">
+                            <span class="text-white font-playfair font-bold text-xs md:text-lg leading-none hidden md:block group-hover:text-[#d4af37] transition-colors">Essência de Romã</span>
+                            <!-- SOCIAL PROOF NO HEADER/HERO -->
+                            <div class="mt-1 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[9px] md:text-[10px] font-bold text-[#d4af37] border border-[#d4af37]/30 inline-flex items-center gap-1 w-fit">
+                                <i class="fas fa-star text-[8px]"></i> Mais de 2.000 clientes
+                            </div>
                         </div>
                     </div>
                 </div>
+                
                 <div class="flex items-center gap-2 md:gap-3">
-                    <button onclick="window.location.hash='clube'" class="flex items-center gap-2 btn-header-gold py-2 px-2 md:px-4 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider">
-                        <i class="fas fa-gem text-[#2b0505]"></i> Clube
+                    <!-- 1. NOVO BOTÃO HOME (Estilo Vidro/Ghost) -->
+                    <button onclick="window.location.hash=''" class="hidden md:flex items-center gap-2 text-white border border-white/20 hover:border-[#d4af37] hover:text-[#d4af37] hover:bg-white/5 py-2 px-4 rounded-full text-xs font-bold uppercase tracking-wider transition-all backdrop-blur-sm">
+                        <i class="fas fa-home"></i> Início
                     </button>
-                    <!-- BOTÃO A GATA LAMBEU SUBSTITUINDO AGENDAR -->
-                    <button onclick="window.location.hash='agata'" class="flex items-center gap-2 btn-header-gold py-2 px-3 md:py-3 md:px-6 rounded-full shadow-lg text-[10px] md:text-xs no-underline">
+
+                    <!-- Botão Home Mobile (Apenas Ícone) -->
+                    <button onclick="window.location.hash=''" class="md:hidden flex items-center justify-center text-white border border-white/20 hover:border-[#d4af37] hover:text-[#d4af37] w-9 h-9 rounded-full transition-all backdrop-blur-sm">
+                        <i class="fas fa-home text-xs"></i>
+                    </button>
+
+                    <!-- 2. BOTÃO CLUBE (Mantido Dourado) -->
+                    <button onclick="window.location.hash='clube'" class="flex items-center gap-2 btn-header-gold py-2 px-3 md:px-4 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider hover:scale-105 transition-transform">
+                        <i class="fas fa-gem text-[#2b0505]"></i> <span class="hidden xs:inline">Clube</span>
+                    </button>
+                    
+                    <!-- 3. BOTÃO A GATA LAMBEU (Destaque Premium) -->
+                    <button onclick="window.location.hash='agata'" class="flex items-center gap-2 btn-header-gold py-2 px-3 md:py-3 md:px-6 rounded-full shadow-lg text-[10px] md:text-xs no-underline hover:scale-105 transition-transform border-2 border-[#fff]/20">
                         <i class="fas fa-star text-sm md:text-lg"></i>
                         <div class="flex flex-col text-left leading-none">
-                            <span class="font-bold opacity-80 text-[8px] md:text-[10px]">Menu</span>
+                            <span class="font-bold opacity-80 text-[8px] md:text-[10px] hidden xs:block">Menu</span>
                             <span class="font-extrabold uppercase">A Gata Lambeu</span>
                         </div>
                     </button>
@@ -517,11 +533,11 @@
                     <span class="block text-4xl md:text-7xl font-bold italic text-gold-static">O Liso dos Sonhos Existe</span>
                 </h1>
                 <div class="flex flex-wrap justify-center gap-4 text-gray-300 text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-8 opacity-90">
-                    <span>Tratamento</span> <span class="text-[#d4af37]">•</span> <span>Alisamento</span> <span class="text-[#d4af37]">•</span> <span>Hidratação</span>
+                    <span>Recuperação Capilar</span> <span class="text-[#d4af37]">•</span> <span>Liso Espelhado</span> <span class="text-[#d4af37]">•</span> <span>Chapecó</span>
                 </div>
                 <div class="flex flex-col items-center gap-4">
                     <a href="https://api.whatsapp.com/send?phone=5549999954052&text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20o%20Liso%20Blindado%202026." target="_blank" class="btn-solid-gold py-4 px-10 rounded-full text-sm font-bold uppercase shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:scale-105 transition-transform no-underline">
-                     QUERO MEU ORÇAMENTO VIP
+                      QUERO MEU ORÇAMENTO VIP
                     </a>
                 </div>
                 <div onclick="document.getElementById('reviews-anchor').scrollIntoView({behavior: 'smooth'})" class="hero-scroll-arrow"><i class="fas fa-chevron-down"></i></div>
@@ -558,6 +574,141 @@
                         <div class="funnel-icon-box"><i class="fas fa-gem"></i></div>
                         <h4 class="text-white font-bold text-sm uppercase mb-2">4. Manutenção</h4>
                         <p class="text-gray-400 text-xs">Dicas e produtos para prolongar o resultado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: PLÁSTICA HÍBRIDA (NOVA - ATUALIZADA COM DETALHES TÉCNICOS) -->
+        <section id="plastica-hibrida" class="py-24 relative overflow-hidden bg-[#2b0505] border-b border-[#d4af37]/10">
+            <!-- Background Decorativo -->
+            <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#d4af37] rounded-full mix-blend-overlay filter blur-[100px] opacity-10 pointer-events-none"></div>
+
+            <div class="container mx-auto px-6 max-w-6xl relative z-10">
+                <div class="text-center mb-16 reveal-on-scroll">
+                    <span class="text-[#c5a059] text-xs font-bold tracking-[0.3em] uppercase block mb-3 border border-[#c5a059]/30 inline-block px-6 py-2 rounded-full bg-[#c5a059]/5 backdrop-blur-sm">
+                        <i class="fas fa-flask mr-2"></i>Inteligência Capilar
+                    </span>
+                    <h2 class="font-playfair text-3xl md:text-5xl text-white mb-6">PLÁSTICA HÍBRIDA</h2>
+                    <p class="text-gray-200 text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-light">
+                        Uma única fórmula de boutique, <strong class="text-[#E3C676]">dois resultados extraordinários</strong> baseados na técnica do seu Analista.
+                    </p>
+                    <div class="mt-6 flex flex-wrap justify-center gap-3 text-[10px] uppercase tracking-widest text-[#E3C676]/80">
+                        <span class="bg-black/30 px-3 py-1 rounded border border-[#E3C676]/10 backdrop-blur-sm">🧪 Ácido Hialurônico</span>
+                        <span class="bg-black/30 px-3 py-1 rounded border border-[#E3C676]/10 backdrop-blur-sm">🌾 Proteína do Trigo</span>
+                        <span class="bg-black/30 px-3 py-1 rounded border border-[#E3C676]/10 backdrop-blur-sm">🍇 Óleo de Uva</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                    
+                    <!-- Card A: Flash Ritual (Polimento & Brilho) -->
+                    <div class="group relative rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-2 reveal-on-scroll shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-white/10 hover:border-[#E3C676]/50">
+                        <!-- Efeito Vidro Aprimorado -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/80 backdrop-blur-xl transition-all duration-500 group-hover:bg-white/5"></div>
+                        
+                        <div class="relative p-8 md:p-10 flex flex-col h-full">
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="flex flex-col gap-2">
+                                    <span class="bg-[#d4af37] text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider w-fit shadow-lg">15 min+</span>
+                                    <span class="text-[#E3C676] text-[10px] uppercase tracking-widest flex items-center gap-1 opacity-80"><i class="fas fa-leaf"></i> 100% Orgânico</span>
+                                </div>
+                                <div class="bg-[#d4af37]/10 text-[#d4af37] w-12 h-12 rounded-2xl flex items-center justify-center text-xl border border-[#d4af37]/20 shadow-lg shadow-[#d4af37]/5 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                            </div>
+                            
+                            <h3 class="font-playfair text-2xl md:text-3xl text-white font-bold mb-1 group-hover:text-[#E3C676] transition-colors">POLIMENTO & BRILHO 8K</h3>
+                            <h4 class="text-[#E3C676] text-sm font-bold tracking-[0.2em] uppercase mb-4 pb-4 border-b border-white/10">FLASH RITUAL</h4>
+                            
+                            <div class="flex-grow mb-6">
+                                <p class="text-white font-bold text-lg mb-2 italic">O "Matador de Frizz"</p>
+                                <p class="text-gray-300 text-sm leading-relaxed font-light mb-4">
+                                    Alinhamento cuticular rápido que devolve o brilho espelhado e disciplina os fios rebeldes sem perder o movimento natural.
+                                </p>
+                                
+                                <div class="inline-flex items-center gap-2 bg-white/5 px-3 py-1 rounded text-xs text-gray-300 border border-white/10 mb-6">
+                                    <i class="fas fa-wind text-[#E3C676]"></i> Finalização: <strong class="text-white">Escova</strong>
+                                </div>
+
+                                <!-- Box de Recomendação e Durabilidade -->
+                                <div class="bg-black/40 rounded-xl p-4 border border-white/5 space-y-3 group-hover:border-[#E3C676]/20 transition-colors">
+                                    <div class="flex items-start gap-3">
+                                        <i class="fas fa-hourglass-half text-[#E3C676] mt-1 text-xs"></i>
+                                        <div>
+                                            <span class="text-[10px] uppercase text-gray-400 font-bold tracking-wider block">Durabilidade</span>
+                                            <span class="text-xs text-gray-200">Efeito Cinderela (Momentâneo). Até 2 semanas ou 3 lavagens.</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <i class="fas fa-star text-[#E3C676] mt-1 text-xs"></i>
+                                        <div>
+                                            <span class="text-[10px] uppercase text-gray-400 font-bold tracking-wider block">Recomendação</span>
+                                            <span class="text-xs text-gray-200">Ideal para eventos, fotos e manutenção rápida.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <a href="#" onclick="openWhatsApp('Olá! Quero reivindicar meu horário para o *FLASH RITUAL (Polimento & Brilho 8K)*.')" class="btn-luxury-glow w-full py-4 rounded-xl text-center text-xs tracking-widest shadow-xl border border-[#d4af37]/30 hover:bg-[#d4af37]/20 hover:text-white transition-all uppercase font-bold mt-4">
+                                REIVINDICAR MEU HORÁRIO
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card B: Liso Espelhado (Antigo Definitivo) -->
+                    <div class="group relative rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-2 reveal-on-scroll shadow-[0_15px_50px_rgba(212,175,55,0.15)] border border-[#d4af37]/30 hover:border-[#d4af37]">
+                        <!-- Efeito Vidro Aprimorado (Com toque dourado) -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-[#d4af37]/10 via-transparent to-[#1a0505] backdrop-blur-xl transition-all duration-500 group-hover:bg-[#d4af37]/5"></div>
+                        
+                        <div class="relative p-8 md:p-10 flex flex-col h-full">
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="flex flex-col gap-2">
+                                    <span class="bg-gradient-to-r from-[#d4af37] to-[#b38728] text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider w-fit shadow-lg">40 min+</span>
+                                    <span class="text-[#E3C676] text-[10px] uppercase tracking-widest flex items-center gap-1 opacity-80"><i class="fas fa-leaf"></i> 100% Orgânico</span>
+                                </div>
+                                <div class="bg-gradient-to-br from-[#d4af37] to-[#b38728] text-[#1a0505] w-12 h-12 rounded-2xl flex items-center justify-center text-xl shadow-lg shadow-[#d4af37]/20 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-crown"></i>
+                                </div>
+                            </div>
+                            
+                            <h3 class="font-playfair text-2xl md:text-3xl text-white font-bold mb-1 group-hover:text-[#d4af37] transition-colors">LISO ESPELHADO</h3>
+                            <h4 class="text-[#E3C676] text-sm font-bold tracking-[0.2em] uppercase mb-4 pb-4 border-b border-[#E3C676]/20">LISO BLINDADO</h4>
+                            
+                            <div class="flex-grow mb-6">
+                                <p class="text-white font-bold text-lg mb-2 italic">Elite Exclusive</p>
+                                <p class="text-gray-300 text-sm leading-relaxed font-light mb-4">
+                                    O liso absoluto com integridade total do córtex. Tecnologia de selagem térmica profunda para resultados impecáveis.
+                                </p>
+
+                                <div class="inline-flex items-center gap-2 bg-[#d4af37]/10 px-3 py-1 rounded text-xs text-[#E3C676] border border-[#d4af37]/20 mb-6">
+                                    <i class="fas fa-fire-alt"></i> Finalização: <strong class="text-white">Prancha / Chapinha</strong>
+                                </div>
+
+                                 <!-- Box de Recomendação e Durabilidade -->
+                                 <div class="bg-black/40 rounded-xl p-4 border border-[#d4af37]/20 space-y-3 group-hover:bg-black/60 transition-colors">
+                                    <div class="flex items-start gap-3">
+                                        <i class="fas fa-infinity text-[#E3C676] mt-1 text-xs"></i>
+                                        <div>
+                                            <span class="text-[10px] uppercase text-[#E3C676] font-bold tracking-wider block">Durabilidade</span>
+                                            <span class="text-xs text-white">Alta Performance. Alinhamento estrutural prolongado.</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <i class="fas fa-check-circle text-[#E3C676] mt-1 text-xs"></i>
+                                        <div>
+                                            <span class="text-[10px] uppercase text-[#E3C676] font-bold tracking-wider block">Recomendação</span>
+                                            <span class="text-xs text-white">Para quem busca praticidade total e fios perfeitamente lisos.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <a href="#" onclick="openWhatsApp('Olá! Quero reivindicar meu horário para o *LISO BLINDADO (Liso Espelhado)*.')" class="btn-luxury-glow w-full py-4 rounded-xl text-center text-xs tracking-widest shadow-xl bg-gradient-to-r from-[#d4af37] to-[#aa771c] border-none text-[#1a0505] font-extrabold hover:scale-[1.02] uppercase mt-4">
+                                REIVINDICAR MEU HORÁRIO
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -639,90 +790,6 @@
                     <p class="text-gray-200 font-light text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">Piscina, sol e penteados danificaram seus fios? Nós temos a solução imediata para você começar o ano brilhando.</p>
                 </header>
                 
-                <!-- TABELA DE PREÇOS / TRIPWIRE -->
-                <div id="vouchers" class="mt-8 mb-8 text-center">
-                    <div class="section-pill">TABELA OFICIAL 2026</div>
-                    
-                    <!-- TABELA DE PREÇOS ESTRATÉGICA (ANCORAGEM) -->
-                    <div class="voucher-promo-card max-w-lg mx-auto mb-16 transform hover:scale-[1.01] transition-all relative overflow-hidden bg-gradient-to-b from-[#1a0505] to-[#2b0505] border border-[#d4af37]/30 shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
-                        
-                        <!-- Header do Card -->
-                        <div class="mb-6 pt-4">
-                            <h3 class="font-playfair text-2xl md:text-3xl text-white font-bold mb-2">Investimento Liso Blindado</h3>
-                            <p class="text-gray-400 text-xs uppercase tracking-widest">Valores Referência 2026</p>
-                        </div>
-
-                        <!-- Lista de Preços (3 Níveis) -->
-                        <div class="space-y-3 px-4 mb-8 text-left">
-                            
-                            <!-- Nível 1: Sublime -->
-                            <div class="flex items-center justify-between bg-black/20 p-4 rounded-lg border border-white/5 hover:border-[#d4af37]/30 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-full bg-[#d4af37]/10 flex items-center justify-center text-[#d4af37] border border-[#d4af37]/20">
-                                        <i class="fas fa-feather-alt text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <span class="block text-white font-bold text-sm uppercase tracking-wide">Sublime</span>
-                                        <span class="text-[10px] text-gray-400">Fios Finos / Ondulados</span>
-                                    </div>
-                                </div>
-                                <div class="text-right">
-                                    <span class="block text-[#d4af37] font-playfair font-bold text-xl">R$ 359</span>
-                                </div>
-                            </div>
-
-                            <!-- Nível 2: Imperial -->
-                            <div class="flex items-center justify-between bg-black/20 p-4 rounded-lg border border-white/5 hover:border-[#d4af37]/30 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-full bg-[#d4af37]/10 flex items-center justify-center text-[#d4af37] border border-[#d4af37]/20">
-                                        <i class="fas fa-crown text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <span class="block text-white font-bold text-sm uppercase tracking-wide">Imperial</span>
-                                        <span class="text-[10px] text-gray-400">Fios Médios / Cacheados</span>
-                                    </div>
-                                </div>
-                                <div class="text-right">
-                                    <span class="block text-[#d4af37] font-playfair font-bold text-xl">R$ 410</span>
-                                </div>
-                            </div>
-
-                            <!-- Nível 3: Absoluto -->
-                            <div class="flex items-center justify-between bg-black/20 p-4 rounded-lg border border-white/5 hover:border-[#d4af37]/30 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-full bg-[#d4af37]/10 flex items-center justify-center text-[#d4af37] border border-[#d4af37]/20">
-                                        <i class="fas fa-gem text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <span class="block text-white font-bold text-sm uppercase tracking-wide">Absoluto</span>
-                                        <span class="text-[10px] text-gray-400">Fios Grossos / Crespos</span>
-                                    </div>
-                                </div>
-                                <div class="text-right">
-                                    <span class="block text-[#d4af37] font-playfair font-bold text-xl">R$ 499</span>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Rodapé do Card com Disclaimer e CTA -->
-                        <div class="bg-black/40 -mx-8 -mb-8 p-6 backdrop-blur-md border-t border-white/10">
-                            <div class="flex items-start gap-2 mb-5 justify-center opacity-70">
-                                <i class="fas fa-info-circle text-[#d4af37] text-xs mt-0.5"></i>
-                                <p class="text-[10px] text-gray-300 text-left max-w-xs leading-relaxed">
-                                    <strong>Importante:</strong> A avaliação final é realizada sempre presencialmente no salão. O valor pode sofrer alterações mediante análise de comprimento extra ou volume excessivo.
-                                </p>
-                            </div>
-                            
-                            <button onclick="openWhatsApp('Olá! Vi a Tabela Oficial 2026 e gostaria de agendar minha Avaliação Técnica Presencial para definir meu orçamento.')" class="w-full bg-gradient-to-r from-[#d4af37] to-[#b38728] text-[#1a0505] font-extrabold py-4 rounded-full uppercase tracking-wider hover:shadow-[0_0_25px_rgba(212,175,55,0.5)] transition-all flex items-center justify-center gap-2 transform active:scale-95 animate-pulse">
-                                <i class="fab fa-whatsapp text-lg"></i> Agendar Avaliação Técnica
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- REMOVIDO: Seção "Seu cabelo é diferente?" -->
-                </div>
-
                 <!-- GALERIA DE RESULTADOS (MOVIDA PARA O FINAL DO FUNIL) -->
                 <div class="mt-20 mb-8 text-center border-t border-[#d4af37]/30 pt-16">
                     <h3 class="font-playfair text-2xl md:text-3xl text-white mb-8">Galeria de <span class="text-gold-shine">Resultados</span></h3>
@@ -1426,12 +1493,12 @@
                              <div class="flex text-[#E5C988] mb-4 gap-1"><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i></div>
                              <p class="text-gray-300 text-sm italic mb-4">"Meu cabelo nunca ficou tão brilhoso. O kit Home Care realmente faz o alisamento durar o triplo do tempo. Vale cada centavo."</p>
                              <p class="text-white text-xs font-bold uppercase tracking-widest">- Ana Paula S.</p>
-                         </div>
-                         <div class="card-glass p-8">
+                          </div>
+                          <div class="card-glass p-8">
                              <div class="flex text-[#E5C988] mb-4 gap-1"><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i></div>
                              <p class="text-gray-300 text-sm italic mb-4">"A Blindagem Queen é surreal. O cheiro é de perfume importado e o cabelo seca sem frizz nenhum."</p>
                              <p class="text-white text-xs font-bold uppercase tracking-widest">- Fernanda M.</p>
-                         </div>
+                          </div>
                     </div>
 
                     <!-- A LÓGICA DA CONTINUIDADE (SYNERGY SECTION) -->
