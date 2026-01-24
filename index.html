@@ -18,14 +18,13 @@
     
     <!-- 
         ================================================================================
-        PROJETO: ESSÊNCIA DE ROMÃ HAIR | PLATAFORMA DIGITAL 2026 (MASTER v105)
+        PROJETO: ESSÊNCIA DE ROMÃ HAIR | PLATAFORMA DIGITAL 2026 (MASTER v106)
         ARQUIVO: index.html 
         
-        [RELATÓRIO DE CORREÇÃO TÉCNICA]
-        1. JAVASCRIPT: Todas as funções de interação (toggleMenu, selectService, etc.)
-           foram explicitamente anexadas ao objeto 'window' para evitar ReferenceError.
-        2. ESTRUTURA: Código consolidado e limpo.
-        3. INTEGRIDADE: Conteúdo, Imagens e Design mantidos conforme aprovação anterior.
+        [RELATÓRIO DE ATUALIZAÇÃO v106]
+        1. CAMPANHA: Datas alteradas para 26 a 28 de Janeiro em todos os pontos.
+        2. UI/UX: Modal da campanha atualizado para estilo "Vidro Branco Jateado"
+           (White Frosted Glass) com background translúcido e blur intenso.
         ================================================================================
     -->
 
@@ -55,6 +54,20 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'AW-11442509118');
+
+      // FUNÇÃO DE CONVERSÃO ADICIONADA (Correção de Segurança)
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-11442509118/SEU_LABEL_AQUI', // Substitua pelo Label correto se houver
+            'event_callback': callback
+        });
+        return false;
+      }
     </script>
 
     <script>
@@ -149,10 +162,10 @@
                 extend: {
                     colors: {
                         'brand-black': '#050505',      
-                        'brand-wine': '#220404',       
-                        'brand-gold': '#C5A059',       
+                        'brand-wine': '#220404',        
+                        'brand-gold': '#C5A059',        
                         'brand-gold-light': '#F2E2BA', 
-                        'brand-gold-dark': '#8A6D3B',  
+                        'brand-gold-dark': '#8A6D3B',   
                         'brand-glass': 'rgba(255, 255, 255, 0.03)',
                     },
                     fontFamily: {
@@ -332,17 +345,25 @@
 
 <body class="antialiased selection:bg-brand-gold selection:text-black overflow-x-hidden">
 
-    <!-- CAMPAIGN MODAL -->
+    <!-- CAMPAIGN MODAL (ATUALIZADO: Vidro Branco Jateado & Nova Data) -->
     <div id="campaign-modal" class="fixed inset-0 z-[10000] flex items-center justify-center px-4 opacity-0 pointer-events-none transition-opacity duration-500">
         <div class="absolute inset-0 bg-black/90 backdrop-blur-sm" onclick="closeCampaign()"></div>
-        <div class="relative bg-[#0a0a0a] border border-brand-gold/30 p-8 md:p-12 rounded-2xl max-w-lg w-full text-center shadow-[0_0_50px_rgba(197,160,89,0.2)] transform scale-95 transition-transform duration-500" id="campaign-content">
-            <button onclick="closeCampaign()" class="absolute top-4 right-4 text-gray-500 hover:text-white transition"><i class="fas fa-times text-xl"></i></button>
+        <!-- 
+            STYLE UPDATE: 
+            bg-white/10 (Fundo branco translúcido)
+            backdrop-blur-2xl (Desfoque intenso de vidro jateado)
+            border-white/20 (Borda sutil branca)
+            shadow-white/10 (Brilho difuso)
+        -->
+        <div class="relative bg-white/10 backdrop-blur-2xl border border-white/20 p-8 md:p-12 rounded-2xl max-w-lg w-full text-center shadow-[0_0_60px_rgba(255,255,255,0.1)] transform scale-95 transition-transform duration-500" id="campaign-content">
+            <button onclick="closeCampaign()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition"><i class="fas fa-times text-xl"></i></button>
             <span class="text-brand-gold text-[10px] font-bold tracking-[0.3em] uppercase block mb-4 animate-pulse">Save The Date</span>
             <h2 class="font-luxury text-4xl md:text-5xl text-white mb-2">ESPECIAL</h2>
             <h2 class="font-luxury text-4xl md:text-5xl text-brand-gold italic mb-6">A Gata Lambeu</h2>
-            <div class="w-16 h-[1px] bg-white/20 mx-auto mb-6"></div>
-            <p class="text-xl text-white font-light mb-2">19 a 24 de Janeiro</p>
-            <p class="text-gray-400 text-sm mb-8">Ofertas imperdíveis em <strong>Serviços e Produtos</strong>.</p>
+            <div class="w-16 h-[1px] bg-white/30 mx-auto mb-6"></div>
+            <!-- DATE UPDATE -->
+            <p class="text-xl text-white font-light mb-2">26 a 28 de Janeiro</p>
+            <p class="text-gray-300 text-sm mb-8 font-light">Ofertas imperdíveis em <strong>Serviços e Produtos</strong>.</p>
             <a href="#" onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Quero%20saber%20do%20Especial%20A%20Gata%20Lambeu'); return false;" class="btn-luxury-cta block w-full py-4 rounded-lg text-xs font-bold tracking-widest">QUERO APROVEITAR</a>
         </div>
     </div>
@@ -364,10 +385,10 @@
     <!-- PROGRESSO DE LEITURA SCROLL -->
     <div id="scroll-progress" class="fixed top-0 left-0 h-[3px] bg-brand-gold z-[101] transition-all duration-100 ease-out shadow-[0_0_10px_#C5A059]" style="width: 0%"></div>
 
-    <!-- BARRA CONCIERGE -->
+    <!-- BARRA CONCIERGE (ATUALIZADO: Nova Data) -->
     <div id="concierge-bar" class="concierge-bar">
         <div class="flex flex-col">
-            <span class="text-[9px] text-gray-400 uppercase tracking-widest">Especial A Gata Lambeu (19 a 24/Jan)</span>
+            <span class="text-[9px] text-gray-400 uppercase tracking-widest">Especial A Gata Lambeu (26 a 28/Jan)</span>
             <span class="text-xs text-brand-gold font-bold flex items-center gap-1"><span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span> <span id="slots-text" class="number-tick">Calculando...</span></span>
         </div>
         <a href="#" onclick="gtag_report_conversion('https://api.whatsapp.com/send?phone=5549999954052&text=Ol%C3%A1!%20Gostaria%20de%20consultar%20disponibilidade%20de%20hor%C3%A1rio.'); return false;" class="px-6 py-3 bg-brand-gold text-black text-[10px] font-bold uppercase tracking-widest rounded-full hover:bg-white transition-all shadow-[0_0_15px_rgba(197,160,89,0.4)]">
@@ -430,9 +451,10 @@
                 </video>
             </div>
             <div class="relative z-20 text-center px-4 max-w-4xl mx-auto flex flex-col items-center justify-center h-full">
+                <!-- HERO BADGE (ATUALIZADO: Nova Data) -->
                 <div class="inline-flex items-center gap-3 border border-brand-gold/30 bg-black/60 backdrop-blur-md px-6 py-2 rounded-full mb-10 animate-float shadow-luxury-glow">
                     <div class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
-                    <span class="text-white text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase">Especial A Gata Lambeu (19 a 24/Jan): <span class="text-brand-gold number-tick" id="hero-slots-text">Calculando...</span></span>
+                    <span class="text-white text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase">Especial A Gata Lambeu (26 a 28/Jan): <span class="text-brand-gold number-tick" id="hero-slots-text">Calculando...</span></span>
                 </div>
                 <h1 class="font-luxury text-white leading-tight drop-shadow-2xl mb-10">
                     <span class="block text-xl md:text-3xl font-light tracking-[0.3em] mb-4 uppercase text-gray-400">Alisamentos, Mechas & Protocolos</span>
