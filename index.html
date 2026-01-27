@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="preconnect" href="https://res.cloudinary.com">
+    <link rel="preconnect" href="https://imagensagata.carrd.co">
     
     <!-- AUDITORIA: Imersão Mobile -->
     <meta name="theme-color" content="#050505">
@@ -18,13 +19,13 @@
     
     <!-- 
         ================================================================================
-        PROJETO: ESSÊNCIA DE ROMÃ HAIR | PLATAFORMA DIGITAL 2026 (MASTER v106)
+        PROJETO: ESSÊNCIA DE ROMÃ HAIR | PLATAFORMA DIGITAL 2026 (MASTER v111)
         ARQUIVO: index.html 
         
-        [RELATÓRIO DE ATUALIZAÇÃO v106]
-        1. CAMPANHA: Datas alteradas para 26 a 28 de Janeiro em todos os pontos.
-        2. UI/UX: Modal da campanha atualizado para estilo "Vidro Branco Jateado"
-           (White Frosted Glass) com background translúcido e blur intenso.
+        [RELATÓRIO DE ATUALIZAÇÃO v111]
+        1. FEATURE: Adicionado modal de ZOOM/LIGHTBOX para o Catálogo Digital.
+        2. UX: Clique nas imagens (image20 e image21) abre tela cheia.
+        3. UX: Função de "Toque para Ampliar" dentro do modal para leitura de letras miúdas.
         ================================================================================
     -->
 
@@ -345,26 +346,65 @@
 
 <body class="antialiased selection:bg-brand-gold selection:text-black overflow-x-hidden">
 
-    <!-- CAMPAIGN MODAL (ATUALIZADO: Vidro Branco Jateado & Nova Data) -->
-    <div id="campaign-modal" class="fixed inset-0 z-[10000] flex items-center justify-center px-4 opacity-0 pointer-events-none transition-opacity duration-500">
-        <div class="absolute inset-0 bg-black/90 backdrop-blur-sm" onclick="closeCampaign()"></div>
+    <!-- CAMPAIGN MODAL (ATUALIZADO: Versão Luxury Minimalista - "Black Invitation") -->
+    <div id="campaign-modal" class="fixed inset-0 z-[10000] flex items-center justify-center px-4 opacity-0 pointer-events-none transition-opacity duration-700 ease-out">
+        <div class="absolute inset-0 bg-black/95 backdrop-blur-md transition-opacity duration-700" onclick="closeCampaign()"></div>
+        
         <!-- 
-            STYLE UPDATE: 
-            bg-white/10 (Fundo branco translúcido)
-            backdrop-blur-2xl (Desfoque intenso de vidro jateado)
-            border-white/20 (Borda sutil branca)
-            shadow-white/10 (Brilho difuso)
+            DESIGN AUDIT:
+            1. Formato: Retangular vertical elegante (Portrait Card).
+            2. Acabamento: Borda dupla sutil (Double Frame).
+            3. Fundo: Gradiente radial profundo e escuro (não branco leitoso).
         -->
-        <div class="relative bg-white/10 backdrop-blur-2xl border border-white/20 p-8 md:p-12 rounded-2xl max-w-lg w-full text-center shadow-[0_0_60px_rgba(255,255,255,0.1)] transform scale-95 transition-transform duration-500" id="campaign-content">
-            <button onclick="closeCampaign()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition"><i class="fas fa-times text-xl"></i></button>
-            <span class="text-brand-gold text-[10px] font-bold tracking-[0.3em] uppercase block mb-4 animate-pulse">Save The Date</span>
-            <h2 class="font-luxury text-4xl md:text-5xl text-white mb-2">ESPECIAL</h2>
-            <h2 class="font-luxury text-4xl md:text-5xl text-brand-gold italic mb-6">A Gata Lambeu</h2>
-            <div class="w-16 h-[1px] bg-white/30 mx-auto mb-6"></div>
-            <!-- DATE UPDATE -->
-            <p class="text-xl text-white font-light mb-2">26 a 28 de Janeiro</p>
-            <p class="text-gray-300 text-sm mb-8 font-light">Ofertas imperdíveis em <strong>Serviços e Produtos</strong>.</p>
-            <a href="#" onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Quero%20saber%20do%20Especial%20A%20Gata%20Lambeu'); return false;" class="btn-luxury-cta block w-full py-4 rounded-lg text-xs font-bold tracking-widest">QUERO APROVEITAR</a>
+        <div class="relative bg-[#080808] border border-white/10 p-1 md:p-2 max-w-md w-full shadow-[0_0_90px_rgba(197,160,89,0.15)] transform scale-95 transition-all duration-700 ease-out" id="campaign-content">
+            
+            <div class="relative bg-[#0a0a0a] border border-brand-gold/20 p-8 md:p-12 flex flex-col items-center text-center overflow-hidden">
+                <!-- Textura de Ruído Sutil no Fundo do Card -->
+                <div class="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
+                
+                <!-- Botão Fechar Minimalista -->
+                <button onclick="closeCampaign()" class="absolute top-4 right-4 text-gray-600 hover:text-brand-gold transition duration-500 z-50">
+                    <span class="text-[10px] tracking-widest uppercase mr-2 hidden md:inline">Fechar</span>
+                    <i class="fas fa-times font-light text-lg align-middle"></i>
+                </button>
+
+                <!-- Cabeçalho: "INVITATION" -->
+                <div class="flex items-center gap-4 mb-8 opacity-80">
+                    <div class="h-[1px] w-6 bg-brand-gold"></div>
+                    <span class="text-brand-gold text-[8px] uppercase tracking-[0.4em] font-medium">Invitation</span>
+                    <div class="h-[1px] w-6 bg-brand-gold"></div>
+                </div>
+
+                <!-- Valor Principal -->
+                <div class="relative mb-6">
+                    <h2 class="font-luxury text-7xl text-white font-medium tracking-tight">
+                        50<span class="text-2xl text-brand-gold italic absolute top-0 -right-8">OFF</span>
+                    </h2>
+                    <p class="text-gray-500 text-[9px] uppercase tracking-[0.3em] mt-2 translate-y-[-5px]">Reais em Crédito</p>
+                </div>
+
+                <!-- Descrição Sofisticada -->
+                <div class="space-y-3 mb-10 relative z-10">
+                    <p class="font-luxury text-2xl text-white italic">Especial A Gata Lambeu</p>
+                    <div class="w-8 h-[1px] bg-white/10 mx-auto my-4"></div>
+                    <p class="text-gray-400 text-xs font-light leading-relaxed max-w-[200px] mx-auto">
+                        Privilégio exclusivo para compras acima de <span class="text-white">R$ 250</span>. Válido até 28 de Janeiro.
+                    </p>
+                </div>
+
+                <!-- CTA: Botão Outline Premium -->
+                <a href="#" onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1!%20Aceito%20o%20convite%20para%20o%20Voucher%20de%20R$50%20OFF.'); return false;" class="group relative px-8 py-4 border border-brand-gold/30 hover:border-brand-gold transition-all duration-500 w-full max-w-xs">
+                    <div class="absolute inset-0 bg-brand-gold/0 group-hover:bg-brand-gold/5 transition-all duration-500"></div>
+                    <span class="relative z-10 flex items-center justify-center gap-3 text-brand-gold text-[10px] font-bold uppercase tracking-[0.25em] group-hover:text-white transition-colors">
+                        Ativar Voucher <i class="fas fa-chevron-right text-[8px]"></i>
+                    </span>
+                </a>
+
+                <!-- Disclaimer Mínimo -->
+                <p class="mt-6 text-[8px] text-gray-700 uppercase tracking-widest">
+                    Limitado a 1 uso por CPF
+                </p>
+            </div>
         </div>
     </div>
 
@@ -522,11 +562,11 @@
 
                 <!-- CARROSSEL DE VÍDEOS (3 VÍDEOS) -->
                 <div class="mobile-snap-x pb-8" id="video-carousel">
-                    <!-- Video 1: Liso Blindado (Video 04) -->
+                    <!-- Video 1: Liso Blindado (Restored Video 03) -->
                     <div class="mobile-snap-item rounded-2xl overflow-hidden border border-brand-gold/20 relative group aspect-[9/16] bg-gray-900 shadow-lg w-[80vw] md:w-auto md:flex-1">
                         <!-- Fix: playsinline e webkit-playsinline para iOS -->
                         <video class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700" autoplay loop muted playsinline webkit-playsinline>
-                            <source src="https://agatalambeu.com.br/assets/videos/video04.mp4?v=c5d68552" type="video/mp4">
+                            <source src="https://imagensagata.carrd.co/assets/videos/video03.mp4?v=c257b396" type="video/mp4">
                         </video>
                         <!-- Overlay Informativo -->
                         <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex justify-between items-end">
@@ -550,10 +590,10 @@
                         </div>
                     </div>
 
-                    <!-- Video 3: Liso 8K (Video 01 - Grisalho) -->
+                    <!-- Video 3: Liso 8K (Restored Video 01) -->
                     <div class="mobile-snap-item rounded-2xl overflow-hidden border border-brand-gold/20 relative group aspect-[9/16] bg-gray-900 shadow-lg w-[80vw] md:w-auto md:flex-1">
                         <video class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700" autoplay loop muted playsinline webkit-playsinline>
-                            <source src="https://agatalambeu.com.br/assets/videos/video01.mp4?v=f8805ba8" type="video/mp4">
+                            <source src="https://imagensagata.carrd.co/assets/videos/video01.mp4?v=c257b396" type="video/mp4">
                         </video>
                         <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex justify-between items-end">
                             <span class="text-white text-[10px] font-bold uppercase tracking-wider">Liso 8K</span>
@@ -669,7 +709,7 @@
                         <div class="relative h-full w-full rounded-[20px] p-8 flex flex-col bg-gradient-to-b from-white/5 to-transparent">
                             <!-- VISUAL HEADER (IMAGEM COMO TÍTULO) -->
                             <div class="w-full h-48 rounded-xl overflow-hidden mb-8 border border-white/10 shadow-lg relative group-hover:border-brand-gold/30 transition-colors">
-                                <img src="https://agatalambeu.com.br/assets/images/image11.jpg?v=0b5878dc" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Glass Molecular Synthesis">
+                                <img src="https://imagensagata.carrd.co/assets/images/image11.jpg?v=4b8919f9" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Glass Molecular Synthesis">
                             </div>
 
                             <!-- RESTORED DESCRIPTION LIST -->
@@ -699,14 +739,14 @@
                         </div>
                     </div>
                     
-                    <!-- LISO SOBERANO 8K Card -->
+                    <!-- LISO SOBERANO 8K Card (Updated Image 19) -->
                     <div id="card-liso" class="mobile-snap-item glass-panel rounded-3xl p-1 relative group overflow-hidden h-full flex flex-col transition-all duration-500">
                         <div class="absolute top-0 center w-full bg-brand-gold text-black text-[9px] font-bold text-center py-1 uppercase tracking-widest z-20">Mais Procurado</div>
                         <div class="relative h-full w-full rounded-[20px] p-8 flex flex-col bg-gradient-to-b from-[#2b0505]/40 to-black/80">
                             
                             <!-- VISUAL HEADER (IMAGEM COMO TÍTULO) -->
                             <div class="w-full h-48 rounded-xl overflow-hidden mb-8 border border-brand-gold/30 shadow-lg relative mt-4">
-                                <img src="https://agatalambeu.com.br/assets/images/image06.jpg?v=d546f20b" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Liso Soberano 8K">
+                                <img src="https://imagensagata.carrd.co/assets/images/image19.jpg?v=c257b396" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Liso Soberano 8K">
                             </div>
 
                             <!-- RESTORED DESCRIPTION LIST -->
@@ -741,7 +781,7 @@
                         <div class="relative h-full w-full rounded-[20px] p-8 flex flex-col bg-gradient-to-b from-cyan-900/10 to-transparent">
                             <!-- VISUAL HEADER (IMAGEM COMO TÍTULO) -->
                              <div class="w-full h-48 rounded-xl overflow-hidden mb-8 border border-cyan-500/20 shadow-lg relative bg-cyan-900/20 flex items-center justify-center">
-                                 <img src="https://agatalambeu.com.br/assets/images/image12.jpg?v=385ec146" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Resultado Detox Repair">
+                                 <img src="https://imagensagata.carrd.co/assets/images/image12.jpg?v=c257b396" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Resultado Detox Repair">
                              </div>
 
                              <!-- RESTORED DESCRIPTION LIST -->
@@ -886,7 +926,7 @@
                             </div>
                         </div>
                         <div class="w-full md:w-1/2 order-1 md:order-2 h-80 md:h-[500px] relative rounded-2xl overflow-hidden shadow-2xl border border-white/5">
-                            <img src="https://agatalambeu.com.br/assets/images/image13.jpg?v=5c059641" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s]" alt="Micro-Lights">
+                            <img src="https://imagensagata.carrd.co/assets/images/image13.jpg?v=c257b396" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s]" alt="Micro-Lights">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                         </div>
                     </div>
@@ -894,7 +934,7 @@
                     <!-- 2. ESCULTURA CAPILAR & VISAGISMO (Imagem Esquerda / Texto Direita) -->
                     <div class="flex flex-col md:flex-row items-center gap-12 group reveal">
                         <div class="w-full md:w-1/2 order-1 h-80 md:h-[500px] relative rounded-2xl overflow-hidden shadow-2xl border border-white/5">
-                            <img src="https://agatalambeu.com.br/assets/images/image14.jpg?v=5c059641" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s]" alt="Visagismo">
+                            <img src="https://imagensagata.carrd.co/assets/images/image14.jpg?v=c257b396" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s]" alt="Visagismo">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                         </div>
                         <div class="w-full md:w-1/2 order-2 text-center md:text-left flex flex-col items-center md:items-start">
@@ -924,7 +964,7 @@
                             </div>
                         </div>
                         <div class="w-full md:w-1/2 order-1 md:order-2 h-80 md:h-[500px] relative rounded-2xl overflow-hidden shadow-2xl border border-white/5">
-                            <img src="https://agatalambeu.com.br/assets/images/image15.jpg?v=5c059641" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s]" alt="Recuperação de Córtex">
+                            <img src="https://imagensagata.carrd.co/assets/images/image15.jpg?v=c257b396" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s]" alt="Recuperação de Córtex">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                         </div>
                     </div>
@@ -1028,7 +1068,7 @@
                          <button onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Quero%20o%20Kit%20Trindade%20PRO'); return false;" class="btn-luxury-cta px-10 py-4 rounded-full text-xs">GARANTIR KIT</button>
                     </div>
                     <div class="w-full md:w-1/2 h-64 md:h-full relative rounded-2xl overflow-hidden">
-                        <img src="https://agatalambeu.com.br/assets/images/image05.jpg?v=d546f20b" class="w-full h-full object-cover" alt="Kit Trindade">
+                        <img src="https://imagensagata.carrd.co/assets/images/image05.jpg?v=4b8919f9" class="w-full h-full object-cover" alt="Kit Trindade">
                     </div>
                 </div>
 
@@ -1073,7 +1113,7 @@
                          <div class="absolute top-0 left-0 bg-brand-gold text-[8px] uppercase tracking-widest text-black font-bold px-3 py-1 rounded-br-lg shadow-lg z-20">Best Seller</div>
                          <div class="aspect-[4/5] w-full rounded-lg mb-6 overflow-hidden relative product-img-container flex items-center justify-center transition-all duration-700">
                              <!-- IMAGEM REVERTIDA PARA AMPOLA (image09.jpg) -->
-                             <img src="https://agatalambeu.com.br/assets/images/image09.jpg?v=de86e831" class="w-full h-full object-contain transform transition duration-700 ease-in-out group-hover:scale-110" alt="Gold">
+                             <img src="https://imagensagata.carrd.co/assets/images/image09.jpg?v=4b8919f9" class="w-full h-full object-contain transform transition duration-700 ease-in-out group-hover:scale-110" alt="Gold">
                          </div>
                          <h3 class="text-white font-luxury text-xl">Gold Infusion</h3><div class="text-brand-gold font-bold text-lg mb-4">R$ 289,80</div>
                          <div class="text-[10px] text-gray-400 mb-8 space-y-4 border-t border-brand-gold/20 pt-6 flex-grow">
@@ -1087,7 +1127,7 @@
                      <div class="bg-[#151515] p-6 rounded-xl border border-white/5 group hover:border-brand-gold/30 transition-all flex flex-col relative overflow-hidden">
                          <div class="absolute top-0 left-0 bg-white/10 backdrop-blur text-[8px] uppercase tracking-widest text-white px-3 py-1 rounded-br-lg border-b border-r border-white/5 z-20">Alta Procura</div>
                          <div class="aspect-[4/5] w-full rounded-lg mb-6 overflow-hidden relative product-img-container flex items-center justify-center transition-all duration-700">
-                             <img src="https://agatalambeu.com.br/assets/images/image08.jpg?v=d0245179" class="w-full h-full object-contain transform transition duration-700 ease-in-out group-hover:scale-110" alt="Blindagem">
+                             <img src="https://imagensagata.carrd.co/assets/images/image08.jpg?v=c257b396" class="w-full h-full object-contain transform transition duration-700 ease-in-out group-hover:scale-110" alt="Blindagem">
                          </div>
                          <h3 class="text-white font-luxury text-xl">Blindagem Queen</h3><div class="text-brand-gold font-bold text-lg mb-4">R$ 248,40</div>
                          <div class="text-[10px] text-gray-400 mb-8 space-y-4 border-t border-white/10 pt-6 flex-grow">
@@ -1101,7 +1141,7 @@
                      <div class="bg-[#151515] p-6 rounded-xl border border-white/5 group hover:border-brand-gold/30 transition-all flex flex-col relative overflow-hidden">
                          <div class="absolute top-0 left-0 bg-white/10 backdrop-blur text-[8px] uppercase tracking-widest text-white px-3 py-1 rounded-br-lg border-b border-r border-white/5 z-20">Disponibilidade Imediata</div>
                          <div class="aspect-[4/5] w-full rounded-lg mb-6 overflow-hidden relative product-img-container flex items-center justify-center transition-all duration-700">
-                             <img src="https://agatalambeu.com.br/assets/images/image07.jpg?v=b477b91d" class="w-full h-full object-contain transform transition duration-700 ease-in-out group-hover:scale-110" alt="Bain">
+                             <img src="https://imagensagata.carrd.co/assets/images/image07.jpg?v=c257b396" class="w-full h-full object-contain transform transition duration-700 ease-in-out group-hover:scale-110" alt="Bain">
                          </div>
                          <h3 class="text-white font-luxury text-xl">Bain Reconstrutor</h3><div class="text-brand-gold font-bold text-lg mb-4">R$ 149,90</div>
                          <div class="text-[10px] text-gray-400 mb-8 space-y-4 border-t border-white/10 pt-6 flex-grow">
@@ -1115,140 +1155,110 @@
 
                  <!-- INÍCIO DO MENU DE PREÇOS "A GATA LAMBEU PRO" INTEGRADO -->
                  <section class="gata-la-section" id="AGATA" style="margin-top: 6rem;">
-                    <div class="brand-header">
-                        <h2>A GATA LAMBEU PRO</h2>
-                        <p>Engenharia de Imagem & Soberania Capilar</p>
+                    <div class="brand-header mb-10">
+                        <h2 class="text-3xl md:text-5xl font-luxury text-white mb-4">CATÁLOGO DIGITAL <span class="text-brand-gold italic">2026</span></h2>
+                        <p class="text-gray-400 text-xs tracking-widest uppercase">Toque na imagem para ampliar</p>
                     </div>
 
-                    <!-- TABELA 1: GLASS MOLECULAR -->
-                    <div class="table-container">
-                        <!-- VISUAL HEADER NA TABELA (NOVO) -->
-                         <div class="w-full h-40 rounded-xl overflow-hidden mb-6 border border-brand-gold/20 shadow-lg">
-                             <img src="https://agatalambeu.com.br/assets/images/image11.jpg?v=0b5878dc" class="w-full h-full object-cover" alt="Glass Molecular">
-                         </div>
-
-                        <div class="flex justify-between items-end mb-6 border-b border-brand-gold/20 pb-4">
-                            <div>
-                                <h3 class="protocol-title mb-0 border-none">Glass Molecular Synthesis</h3>
-                                <p class="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Polimento & Redução de Ruído Visual</p>
-                            </div>
-                            <div class="hidden md:flex gap-4 text-[10px] text-brand-gold">
-                                <span><i class="fas fa-bolt mr-1"></i> 15 Minutos</span>
-                                <span><i class="fas fa-shield-alt mr-1"></i> Anti-Umidade</span>
+                    <!-- VOUCHER PROMOCIONAL (ATÉ 28/JAN) -->
+                    <div class="relative max-w-3xl mx-auto mb-16 p-1 rounded-2xl bg-gradient-to-r from-brand-gold/20 via-brand-gold/60 to-brand-gold/20 animate-pulse-gold">
+                        <div class="bg-[#111] rounded-xl p-6 md:p-8 text-center relative overflow-hidden">
+                            <!-- Brilho de fundo -->
+                            <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10"></div>
+                            
+                            <div class="relative z-10 flex flex-col items-center">
+                                <span class="inline-block py-1 px-3 border border-brand-gold text-brand-gold text-[9px] font-bold uppercase tracking-[0.3em] mb-4 rounded-full">Voucher Oficial</span>
+                                <h3 class="text-4xl md:text-6xl font-luxury text-white mb-2">R$ 50,00 <span class="text-brand-gold italic">OFF</span></h3>
+                                <p class="text-gray-400 text-xs md:text-sm font-light mb-6 max-w-md mx-auto">
+                                    Apresente este voucher digital no caixa. Válido para <strong>Liso Soberano 8K</strong> ou <strong>Glass Molecular</strong> até dia <span class="text-white font-bold">28 de Janeiro</span>.
+                                </p>
+                                <button onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1!%20Estou%20com%20o%20print%20do%20Voucher%20de%20R$50%20OFF%20v%C3%A1lido%20at%C3%A9%20dia%2028.'); return false;" class="btn-luxury-cta px-10 py-4 rounded-full text-xs flex items-center gap-3">
+                                    <i class="fas fa-ticket-alt"></i> RESGATAR MEU DESCONTO
+                                </button>
                             </div>
                         </div>
-
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th width="40%">
-                                        <i class="fas fa-ruler-vertical scale-icon"></i> Escala de Arquitetura
-                                        <span class="scale-desc">Comprimento Visível</span>
-                                    </th>
-                                    <th width="30%">
-                                        <i class="fas fa-tint scale-icon"></i> Fios Finos & Médios
-                                        <span class="scale-desc">Baixa/Média Densidade</span>
-                                    </th>
-                                    <th width="30%" class="col-density">
-                                        <i class="fas fa-layer-group scale-icon"></i> Fios Grossos & Ultra
-                                        <span class="scale-desc">Alta Densidade/Volume</span>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Escala P</strong> <span class="text-gray-500 text-[10px] ml-2">(Até o queixo)</span></td>
-                                    <td class="price-value">R$ 180</td>
-                                    <td class="price-value highlight col-density">R$ 220</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Escala M</strong> <span class="text-gray-500 text-[10px] ml-2">(Ombros)</span></td>
-                                    <td class="price-value">R$ 240</td>
-                                    <td class="price-value highlight col-density">R$ 290</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Escala G</strong> <span class="text-gray-500 text-[10px] ml-2">(Costas/Sutiã)</span></td>
-                                    <td class="price-value">R$ 320</td>
-                                    <td class="price-value highlight col-density">R$ 380</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Escala GG</strong> <span class="text-gray-500 text-[10px] ml-2">(Cintura+)</span></td>
-                                    <td class="price-value">R$ 420</td>
-                                    <td class="price-value highlight col-density">R$ 490</td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
 
-                    <!-- TABELA 2: LISO SOBERANO -->
-                    <div class="table-container">
-                         <!-- VISUAL HEADER NA TABELA (NOVO) -->
-                         <div class="w-full h-40 rounded-xl overflow-hidden mb-6 border border-brand-gold/20 shadow-lg">
-                             <img src="https://agatalambeu.com.br/assets/images/image06.jpg?v=d546f20b" class="w-full h-full object-cover" alt="Liso Soberano">
-                         </div>
-
-                        <div class="flex justify-between items-end mb-6 border-b border-brand-gold/20 pb-4">
-                            <div>
-                                <h3 class="protocol-title mb-0 border-none">Liso Soberano 8K</h3>
-                                <p class="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Reconstrução Covalente & Alisamento Definitivo</p>
+                    <!-- GRID DE IMAGENS ESTRATÉGICAS (RETRATO/PORTRAIT) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 max-w-5xl mx-auto">
+                        
+                        <!-- IMAGEM 1: GLASS MOLECULAR (image21) -->
+                        <div class="group relative flex flex-col items-center cursor-zoom-in" onclick="openZoom('https://imagensagata.carrd.co/assets/images/image21.jpg?v=4b458cce')">
+                            <div class="relative w-full rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)] border border-white/10 group-hover:border-brand-gold/50 transition-all duration-500">
+                                <!-- Aspect Ratio Vertical para Catálogo -->
+                                <div class="aspect-[9/14] w-full relative pointer-events-none">
+                                    <img src="https://imagensagata.carrd.co/assets/images/image21.jpg?v=4b458cce" 
+                                         alt="Tabela Oficial Glass Molecular" 
+                                         class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition duration-1000 ease-out">
+                                    
+                                    <!-- Overlay Gradiente -->
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+                                </div>
+                                
+                                <!-- Legenda Flutuante (Some no Zoom) -->
+                                <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
+                                    <h3 class="text-2xl font-luxury text-white mb-1">Glass Molecular</h3>
+                                    <div class="h-[1px] w-12 bg-brand-gold mb-2"></div>
+                                    <p class="text-[10px] text-gray-300 uppercase tracking-widest">Toque para ver a Tabela</p>
+                                </div>
                             </div>
-                            <div class="hidden md:flex gap-4 text-[10px] text-brand-gold">
-                                <span><i class="fas fa-infinity mr-1"></i> Durabilidade Extrema</span>
-                                <span><i class="fas fa-gem mr-1"></i> Brilho 8K</span>
-                            </div>
+                            <button class="mt-6 text-brand-gold text-xs font-bold uppercase tracking-widest border-b border-brand-gold pb-1 hover:text-white hover:border-white transition-colors" onclick="event.stopPropagation(); gtag_report_conversion('https://wa.me/5549999954052?text=Quero%20agendar%20o%20Glass%20Molecular%20com%20o%20Voucher');">
+                                Agendar Glass
+                            </button>
                         </div>
 
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th width="40%">
-                                        <i class="fas fa-ruler-vertical scale-icon"></i> Escala de Arquitetura
-                                        <span class="scale-desc">Comprimento Visível</span>
-                                    </th>
-                                    <th width="30%">
-                                        <i class="fas fa-tint scale-icon"></i> Fios Finos & Médios
-                                        <span class="scale-desc">Baixa/Média Densidade</span>
-                                    </th>
-                                    <th width="30%" class="col-density">
-                                        <i class="fas fa-layer-group scale-icon"></i> Fios Grossos & Ultra
-                                        <span class="scale-desc">Alta Densidade/Volume</span>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Escala P</strong> <span class="text-gray-500 text-[10px] ml-2">(Até o queixo)</span></td>
-                                    <td class="price-value">R$ 390</td>
-                                    <td class="price-value highlight col-density">R$ 480</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Escala M</strong> <span class="text-gray-500 text-[10px] ml-2">(Ombros)</span></td>
-                                    <td class="price-value">R$ 550</td>
-                                    <td class="price-value highlight col-density">R$ 680</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Escala G</strong> <span class="text-gray-500 text-[10px] ml-2">(Costas/Sutiã)</span></td>
-                                    <td class="price-value">R$ 780</td>
-                                    <td class="price-value highlight col-density">R$ 950</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Escala GG</strong> <span class="text-gray-500 text-[10px] ml-2">(Cintura+)</span></td>
-                                    <td class="price-value">R$ 980</td>
-                                    <td class="col-density"><span class="anchor-price">R$ 1.250</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <!-- IMAGEM 2: LISO SOBERANO 8K (image20) -->
+                        <div class="group relative flex flex-col items-center cursor-zoom-in" onclick="openZoom('https://imagensagata.carrd.co/assets/images/image20.jpg?v=4b458cce')">
+                            <div class="relative w-full rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)] border border-white/10 group-hover:border-brand-gold/50 transition-all duration-500">
+                                <!-- Aspect Ratio Vertical para Catálogo -->
+                                <div class="aspect-[9/14] w-full relative pointer-events-none">
+                                    <img src="https://imagensagata.carrd.co/assets/images/image20.jpg?v=4b458cce" 
+                                         alt="Tabela Oficial Liso Soberano 8K" 
+                                         class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition duration-1000 ease-out">
+                                    
+                                    <!-- Overlay Gradiente -->
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+                                </div>
+                                
+                                <!-- Legenda Flutuante (Some no Zoom) -->
+                                <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
+                                    <h3 class="text-2xl font-luxury text-white mb-1">Liso Soberano 8K</h3>
+                                    <div class="h-[1px] w-12 bg-brand-gold mb-2"></div>
+                                    <p class="text-[10px] text-gray-300 uppercase tracking-widest">Toque para ver a Tabela</p>
+                                </div>
+                            </div>
+                            <button class="mt-6 text-brand-gold text-xs font-bold uppercase tracking-widest border-b border-brand-gold pb-1 hover:text-white hover:border-white transition-colors" onclick="event.stopPropagation(); gtag_report_conversion('https://wa.me/5549999954052?text=Quero%20agendar%20o%20Liso%20Soberano%20com%20o%20Voucher');">
+                                Agendar Soberano
+                            </button>
+                        </div>
+
                     </div>
 
-                    <div class="terms-footer">
-                        <h4><i class="fas fa-info-circle mr-2"></i> Diagnóstico Inteligente</h4>
-                        <p><strong>Cálculo de Engenharia:</strong> O valor final é determinado pela <strong>Massa Capilar Total (Comprimento × Densidade)</strong>. Cabelos "Ultra Densos" requerem o dobro de insumos nobres e tempo técnico de fusão.</p>
-                        <p><strong>Segurança Soberana:</strong> Reservamo-nos o direito técnico de recusar ou postergar protocolos caso o Teste de Resistência indique fragilidade na fibra. A saúde do seu cabelo é inegociável.</p>
+                    <div class="terms-footer mt-16 border-t border-white/5 pt-8">
+                        <p class="text-[9px] text-gray-600 uppercase tracking-widest">
+                            * Valores sujeitos a avaliação presencial da massa capilar. O desconto de R$ 50,00 não é cumulativo com outras promoções.
+                        </p>
                     </div>
                 </section>
                 <!-- FIM DO MENU DE PREÇOS -->
              </div>
         </section>
+    </div>
+
+    <!-- ZOOM MODAL (LIGHTBOX) -->
+    <div id="zoom-modal" class="fixed inset-0 z-[11000] bg-black hidden transition-opacity duration-300 opacity-0 overflow-hidden" onclick="closeZoom()">
+        <!-- Container de Scroll para permitir panning quando ampliado -->
+        <div class="w-full h-full overflow-auto flex items-center justify-center p-4" id="zoom-container">
+            <img id="zoom-img" src="" class="max-h-[95vh] max-w-[95vw] object-contain transition-transform duration-300 cursor-zoom-in origin-center" onclick="event.stopPropagation(); toggleZoom(this)">
+        </div>
+        
+        <!-- Controles -->
+        <button class="fixed top-6 right-6 text-white text-2xl z-[11001] bg-black/60 rounded-full w-12 h-12 flex items-center justify-center hover:bg-brand-gold hover:text-black transition-all" onclick="closeZoom()">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-black/70 px-6 py-2 rounded-full text-white/80 text-xs backdrop-blur-md pointer-events-none z-[11001]">
+            <i class="fas fa-search-plus mr-2 text-brand-gold"></i> Toque para ampliar/reduzir
+        </div>
     </div>
 
     <!-- MODAIS -->
@@ -1430,6 +1440,56 @@
             const modal = document.getElementById('campaign-modal');
             if(modal) modal.classList.add('opacity-0', 'pointer-events-none');
         }
+
+        // ZOOM / LIGHTBOX LOGIC
+        function openZoom(src) {
+            const modal = document.getElementById('zoom-modal');
+            const img = document.getElementById('zoom-img');
+            
+            if(modal && img) {
+                img.src = src;
+                // Reset zoom state
+                img.style.transform = "scale(1)";
+                img.classList.remove('scale-active');
+                img.classList.remove('cursor-grab');
+                img.classList.add('cursor-zoom-in');
+                
+                modal.classList.remove('hidden');
+                // Small delay to allow display:block to apply before opacity transition
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                }, 10);
+                
+                // Prevent body scroll
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeZoom() {
+            const modal = document.getElementById('zoom-modal');
+            if(modal) {
+                modal.classList.add('opacity-0');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = ''; // Restore scroll
+                }, 300);
+            }
+        }
+
+        function toggleZoom(img) {
+            if (img.style.transform === "scale(2.5)") {
+                // Zoom Out
+                img.style.transform = "scale(1)";
+                img.classList.remove('cursor-zoom-out');
+                img.classList.add('cursor-zoom-in');
+            } else {
+                // Zoom In
+                img.style.transform = "scale(2.5)";
+                img.classList.remove('cursor-zoom-in');
+                img.classList.add('cursor-zoom-out');
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', initCampaign);
     </script>
 </body>
