@@ -19,13 +19,13 @@
     
     <!-- 
         ================================================================================
-        PROJETO: ESSÊNCIA DE ROMÃ HAIR | PLATAFORMA DIGITAL 2026 (MASTER v111)
+        PROJETO: ESSÊNCIA DE ROMÃ HAIR | PLATAFORMA DIGITAL 2026 (MASTER v117)
         ARQUIVO: index.html 
         
-        [RELATÓRIO DE ATUALIZAÇÃO v111]
-        1. FEATURE: Adicionado modal de ZOOM/LIGHTBOX para o Catálogo Digital.
-        2. UX: Clique nas imagens (image20 e image21) abre tela cheia.
-        3. UX: Função de "Toque para Ampliar" dentro do modal para leitura de letras miúdas.
+        [RELATÓRIO DE ATUALIZAÇÃO v117 - CAPA GATA LAMBEU]
+        1. VISUAL FIX: Substituída a imagem da Capa (Hero) da Gata Lambeu.
+           Saiu: image10.jpg (Coleção/Estranha) -> Entrou: image05.jpg (Kit Trindade/Clean).
+        2. MAINTAINED: Fluxo de navegação para a tabela e lógica de cashback.
         ================================================================================
     -->
 
@@ -346,68 +346,6 @@
 
 <body class="antialiased selection:bg-brand-gold selection:text-black overflow-x-hidden">
 
-    <!-- CAMPAIGN MODAL (ATUALIZADO: Versão Luxury Minimalista - "Black Invitation") -->
-    <div id="campaign-modal" class="fixed inset-0 z-[10000] flex items-center justify-center px-4 opacity-0 pointer-events-none transition-opacity duration-700 ease-out">
-        <div class="absolute inset-0 bg-black/95 backdrop-blur-md transition-opacity duration-700" onclick="closeCampaign()"></div>
-        
-        <!-- 
-            DESIGN AUDIT:
-            1. Formato: Retangular vertical elegante (Portrait Card).
-            2. Acabamento: Borda dupla sutil (Double Frame).
-            3. Fundo: Gradiente radial profundo e escuro (não branco leitoso).
-        -->
-        <div class="relative bg-[#080808] border border-white/10 p-1 md:p-2 max-w-md w-full shadow-[0_0_90px_rgba(197,160,89,0.15)] transform scale-95 transition-all duration-700 ease-out" id="campaign-content">
-            
-            <div class="relative bg-[#0a0a0a] border border-brand-gold/20 p-8 md:p-12 flex flex-col items-center text-center overflow-hidden">
-                <!-- Textura de Ruído Sutil no Fundo do Card -->
-                <div class="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
-                
-                <!-- Botão Fechar Minimalista -->
-                <button onclick="closeCampaign()" class="absolute top-4 right-4 text-gray-600 hover:text-brand-gold transition duration-500 z-50">
-                    <span class="text-[10px] tracking-widest uppercase mr-2 hidden md:inline">Fechar</span>
-                    <i class="fas fa-times font-light text-lg align-middle"></i>
-                </button>
-
-                <!-- Cabeçalho: "INVITATION" -->
-                <div class="flex items-center gap-4 mb-8 opacity-80">
-                    <div class="h-[1px] w-6 bg-brand-gold"></div>
-                    <span class="text-brand-gold text-[8px] uppercase tracking-[0.4em] font-medium">Invitation</span>
-                    <div class="h-[1px] w-6 bg-brand-gold"></div>
-                </div>
-
-                <!-- Valor Principal -->
-                <div class="relative mb-6">
-                    <h2 class="font-luxury text-7xl text-white font-medium tracking-tight">
-                        50<span class="text-2xl text-brand-gold italic absolute top-0 -right-8">OFF</span>
-                    </h2>
-                    <p class="text-gray-500 text-[9px] uppercase tracking-[0.3em] mt-2 translate-y-[-5px]">Reais em Crédito</p>
-                </div>
-
-                <!-- Descrição Sofisticada -->
-                <div class="space-y-3 mb-10 relative z-10">
-                    <p class="font-luxury text-2xl text-white italic">Especial A Gata Lambeu</p>
-                    <div class="w-8 h-[1px] bg-white/10 mx-auto my-4"></div>
-                    <p class="text-gray-400 text-xs font-light leading-relaxed max-w-[200px] mx-auto">
-                        Privilégio exclusivo para compras acima de <span class="text-white">R$ 250</span>. Válido até 28 de Janeiro.
-                    </p>
-                </div>
-
-                <!-- CTA: Botão Outline Premium -->
-                <a href="#" onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1!%20Aceito%20o%20convite%20para%20o%20Voucher%20de%20R$50%20OFF.'); return false;" class="group relative px-8 py-4 border border-brand-gold/30 hover:border-brand-gold transition-all duration-500 w-full max-w-xs">
-                    <div class="absolute inset-0 bg-brand-gold/0 group-hover:bg-brand-gold/5 transition-all duration-500"></div>
-                    <span class="relative z-10 flex items-center justify-center gap-3 text-brand-gold text-[10px] font-bold uppercase tracking-[0.25em] group-hover:text-white transition-colors">
-                        Ativar Voucher <i class="fas fa-chevron-right text-[8px]"></i>
-                    </span>
-                </a>
-
-                <!-- Disclaimer Mínimo -->
-                <p class="mt-6 text-[8px] text-gray-700 uppercase tracking-widest">
-                    Limitado a 1 uso por CPF
-                </p>
-            </div>
-        </div>
-    </div>
-
     <!-- NOISE OVERLAY -->
     <div class="noise-overlay"></div>
 
@@ -425,13 +363,13 @@
     <!-- PROGRESSO DE LEITURA SCROLL -->
     <div id="scroll-progress" class="fixed top-0 left-0 h-[3px] bg-brand-gold z-[101] transition-all duration-100 ease-out shadow-[0_0_10px_#C5A059]" style="width: 0%"></div>
 
-    <!-- BARRA CONCIERGE (ATUALIZADO: Nova Data) -->
+    <!-- BARRA CONCIERGE (ATUALIZADO: Urgência Cashback) -->
     <div id="concierge-bar" class="concierge-bar">
         <div class="flex flex-col">
-            <span class="text-[9px] text-gray-400 uppercase tracking-widest">Especial A Gata Lambeu (26 a 28/Jan)</span>
-            <span class="text-xs text-brand-gold font-bold flex items-center gap-1"><span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span> <span id="slots-text" class="number-tick">Calculando...</span></span>
+            <span class="text-[9px] text-brand-gold font-bold uppercase tracking-widest">⚡ Cashback Home Care (Use no Liso Soberano)</span>
+            <span class="text-xs text-white font-bold flex items-center gap-1"><span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span> <span id="slots-text" class="number-tick">Calculando...</span></span>
         </div>
-        <a href="#" onclick="gtag_report_conversion('https://api.whatsapp.com/send?phone=5549999954052&text=Ol%C3%A1!%20Gostaria%20de%20consultar%20disponibilidade%20de%20hor%C3%A1rio.'); return false;" class="px-6 py-3 bg-brand-gold text-black text-[10px] font-bold uppercase tracking-widest rounded-full hover:bg-white transition-all shadow-[0_0_15px_rgba(197,160,89,0.4)]">
+        <a href="#" onclick="gtag_report_conversion('https://api.whatsapp.com/send?phone=5549999954052&text=Ol%C3%A1!%20Gostaria%20de%20saber%20como%20ganhar%20o%20Cashback%20comprando%20produtos.'); return false;" class="px-6 py-3 bg-brand-gold text-black text-[10px] font-bold uppercase tracking-widest rounded-full hover:bg-white transition-all shadow-[0_0_15px_rgba(197,160,89,0.4)]">
             Consultar <span class="hidden sm:inline">Disponibilidade</span>
         </a>
     </div>
@@ -491,23 +429,51 @@
                 </video>
             </div>
             <div class="relative z-20 text-center px-4 max-w-4xl mx-auto flex flex-col items-center justify-center h-full">
-                <!-- HERO BADGE (ATUALIZADO: Nova Data) -->
+                <!-- HERO BADGE -->
                 <div class="inline-flex items-center gap-3 border border-brand-gold/30 bg-black/60 backdrop-blur-md px-6 py-2 rounded-full mb-10 animate-float shadow-luxury-glow">
                     <div class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
-                    <span class="text-white text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase">Especial A Gata Lambeu (26 a 28/Jan): <span class="text-brand-gold number-tick" id="hero-slots-text">Calculando...</span></span>
+                    <span class="text-white text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase">Especial Cashback (26/Jan a 05/Fev): <span class="text-brand-gold number-tick" id="hero-slots-text">Calculando...</span></span>
                 </div>
                 <h1 class="font-luxury text-white leading-tight drop-shadow-2xl mb-10">
                     <span class="block text-xl md:text-3xl font-light tracking-[0.3em] mb-4 uppercase text-gray-400">Alisamentos, Mechas & Protocolos</span>
                     <span class="block text-5xl md:text-7xl lg:text-8xl font-medium italic text-gold-dynamic py-2">Liso Blindado: A Sua Assinatura de Poder</span>
                 </h1>
                 <p class="text-gray-300 text-sm md:text-base font-light tracking-widest max-w-2xl mx-auto mb-12 leading-relaxed opacity-90">
-                    Liberte-se da escrava da escova. Conquiste o <strong>Liso Espelhado</strong> que o Oeste Catarinense admira. Tecnologia Híbrida exclusiva para mulheres que não aceitam menos que a perfeição.
+                    Liberte-se da escrava da chapinha. Conquiste o <strong>Liso Espelhado</strong> que o Oeste Catarinense admira. Tecnologia Híbrida exclusiva para mulheres que não aceitam menos que a perfeição.
                 </p>
                 <div class="flex flex-col items-center gap-6">
                     <a href="#" onclick="gtag_report_conversion('https://api.whatsapp.com/send?phone=5549999954052&text=Ol%C3%A1!%20Quero%20meu%20Or%C3%A7amento%20VIP%20para%20o%20Padrão%20Ouro%202026.'); return false;" class="btn-luxury-cta py-5 px-12 md:px-16 rounded-full text-xs md:text-sm animate-pulse-gold flex items-center gap-3 font-bold tracking-widest">
                         <span>SOLICITAR ORÇAMENTO VIP</span> <i class="fas fa-arrow-right"></i>
                     </a>
                     <span class="text-[10px] text-gray-500 uppercase tracking-widest"><i class="fas fa-clock text-brand-gold mr-1"></i> Resposta média em 5 minutos</span>
+                    
+                    <!-- NOVO BANNER DE CASHBACK (Lógica Corrigida: Produto -> Serviço | Link: A Gata Lambeu) -->
+                    <div class="mt-6 w-full max-w-lg mx-auto reveal active">
+                        <div class="relative bg-gradient-to-r from-[#1a0505] to-[#0a0a0a] border border-brand-gold/30 rounded-xl p-4 flex flex-col md:flex-row items-center justify-between gap-4 shadow-[0_0_30px_rgba(197,160,89,0.15)] group hover:border-brand-gold/60 transition-all cursor-pointer" onclick="window.location.hash='agata'; return false;">
+                            <!-- Glow Effect -->
+                            <div class="absolute inset-0 bg-brand-gold/5 blur-md rounded-xl group-hover:bg-brand-gold/10 transition-all"></div>
+                            
+                            <!-- Icon/Visual -->
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full border border-brand-gold/50 flex items-center justify-center bg-black/50 text-brand-gold shadow-luxury-glow animate-pulse-gold relative z-10">
+                                <i class="fas fa-shopping-bag text-xl"></i>
+                            </div>
+
+                            <!-- Text Content -->
+                            <div class="text-center md:text-left flex-grow relative z-10">
+                                <h4 class="text-white font-luxury text-xl leading-none mb-1">Compre Home Care <span class="text-brand-gold">& Ganhe Crédito</span></h4>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-widest">50% do valor vira desconto no <span class="text-white font-bold">Liso Soberano 8k</span>.</p>
+                            </div>
+
+                            <!-- CTA Arrow -->
+                            <div class="flex-shrink-0 relative z-10">
+                                <span class="w-8 h-8 rounded-full bg-brand-gold text-black flex items-center justify-center transform group-hover:translate-x-1 transition-transform">
+                                    <i class="fas fa-arrow-right text-xs"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FIM DO BANNER -->
+
                 </div>
             </div>
             <div class="absolute bottom-12 left-1/2 -translate-x-1/2 text-brand-gold animate-bounce cursor-pointer opacity-70 hover:opacity-100 transition" onclick="document.getElementById('funnel').scrollIntoView({behavior:'smooth'})">
@@ -547,7 +513,7 @@
             </div>
         </section>
 
-        <!-- VISUAL RESULTS (CARROSSEL DE 3 VÍDEOS RESTAURADO) -->
+        <!-- VISUAL RESULTS -->
         <section id="visual-results" class="py-24 md:py-32 bg-[#020202] relative overflow-hidden">
             <div class="absolute inset-0 bg-brand-gold/5 blur-[120px] pointer-events-none"></div>
             
@@ -560,15 +526,13 @@
                     </p>
                 </div>
 
-                <!-- CARROSSEL DE VÍDEOS (3 VÍDEOS) -->
+                <!-- CARROSSEL DE VÍDEOS -->
                 <div class="mobile-snap-x pb-8" id="video-carousel">
-                    <!-- Video 1: Liso Blindado (Restored Video 03) -->
+                    <!-- Video 1 -->
                     <div class="mobile-snap-item rounded-2xl overflow-hidden border border-brand-gold/20 relative group aspect-[9/16] bg-gray-900 shadow-lg w-[80vw] md:w-auto md:flex-1">
-                        <!-- Fix: playsinline e webkit-playsinline para iOS -->
                         <video class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700" autoplay loop muted playsinline webkit-playsinline>
                             <source src="https://imagensagata.carrd.co/assets/videos/video03.mp4?v=c257b396" type="video/mp4">
                         </video>
-                        <!-- Overlay Informativo -->
                         <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex justify-between items-end">
                             <span class="text-white text-[10px] font-bold uppercase tracking-wider">Liso Blindado</span>
                             <div class="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center bg-black/40 backdrop-blur-md">
@@ -577,7 +541,7 @@
                         </div>
                     </div>
 
-                    <!-- Video 2: Brilho 8K (Video 02) -->
+                    <!-- Video 2 -->
                     <div class="mobile-snap-item rounded-2xl overflow-hidden border border-brand-gold/20 relative group aspect-[9/16] bg-gray-900 shadow-lg w-[80vw] md:w-auto md:flex-1">
                         <video class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700" autoplay loop muted playsinline webkit-playsinline>
                             <source src="https://res.cloudinary.com/daukvmsc2/video/upload/v1767279737/WhatsApp_Video_2025-12-10_at_19.00.59_ov4cma.mp4" type="video/mp4">
@@ -590,7 +554,7 @@
                         </div>
                     </div>
 
-                    <!-- Video 3: Liso 8K (Restored Video 01) -->
+                    <!-- Video 3 -->
                     <div class="mobile-snap-item rounded-2xl overflow-hidden border border-brand-gold/20 relative group aspect-[9/16] bg-gray-900 shadow-lg w-[80vw] md:w-auto md:flex-1">
                         <video class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700" autoplay loop muted playsinline webkit-playsinline>
                             <source src="https://imagensagata.carrd.co/assets/videos/video01.mp4?v=c257b396" type="video/mp4">
@@ -612,9 +576,9 @@
             </div>
         </section>
 
-        <!-- INGREDIENTES / CIÊNCIA (COMPACTADA & "ONE SCREEN") -->
+        <!-- INGREDIENTES / CIÊNCIA -->
         <section id="science" class="py-12 md:py-20 bg-[#050505] relative overflow-hidden">
-            <!-- Elementos de Fundo Abstratos com Parallax -->
+            <!-- Elementos de Fundo -->
             <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none parallax-container">
                 <div class="absolute top-20 left-[-100px] w-96 h-96 bg-brand-wine rounded-full blur-[120px] parallax-layer" data-speed="0.2"></div>
                 <div class="absolute bottom-20 right-[-100px] w-80 h-80 bg-brand-gold/20 rounded-full blur-[100px] parallax-layer" data-speed="0.3"></div>
@@ -629,21 +593,18 @@
                     </p>
                 </div>
 
-                <!-- LAYOUT LADO A LADO: IMAGEM + ATIVOS + GUIA -->
                 <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 max-w-6xl mx-auto">
                     
-                    <!-- COLUNA 1: IMAGEM DO PRODUTO (Menor e mais integrada) -->
+                    <!-- COLUNA 1: IMAGEM (URL CORRIGIDA para imagensagata.carrd.co) -->
                     <div class="w-full lg:w-5/12 reveal relative group h-fit">
-                        <!-- Glow de Fundo -->
                         <div class="absolute inset-0 bg-brand-gold/10 blur-[50px] rounded-full opacity-30 group-hover:opacity-50 transition duration-1000"></div>
                         
-                        <!-- Imagem com Borda de Vidro -->
                         <div class="relative z-10 p-2 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm shadow-luxury-card">
-                            <img src="https://agatalambeu.com.br/assets/images/image10.jpg?v=5ffc8f20" 
+                            <img src="https://imagensagata.carrd.co/assets/images/image10.jpg?v=bc2296e1" 
                                  alt="Tecnologia Híbrida A Gata Lambeu" 
+                                 loading="lazy"
                                  class="w-full h-auto object-cover rounded-xl transform transition duration-700 group-hover:scale-[1.01] max-h-[400px]">
                             
-                            <!-- Selo Flutuante "0% Formol" -->
                             <div class="absolute -bottom-4 -right-4 bg-[#0a0a0a] border border-brand-gold/30 p-4 rounded-full shadow-luxury-glow flex flex-col items-center justify-center w-20 h-20 z-20">
                                 <span class="text-brand-gold text-xl font-bold font-luxury leading-none">0%</span>
                                 <span class="text-gray-400 text-[8px] uppercase tracking-widest font-bold mt-1">Formol</span>
@@ -651,9 +612,8 @@
                         </div>
                     </div>
 
-                    <!-- COLUNA 2: ATIVOS (COMPACTA) -->
+                    <!-- COLUNA 2: ATIVOS -->
                     <div class="w-full lg:w-7/12 flex flex-col gap-4">
-                        <!-- 1. Lista de Ativos (Química) -->
                         <div class="flex flex-col gap-3">
                             <div class="reveal glass-panel p-4 rounded-xl flex items-center gap-5 border-l-2 border-l-transparent hover:border-l-brand-gold transition-all duration-300 hover:bg-white/10">
                                 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-wine border border-brand-gold/30 flex items-center justify-center text-lg text-brand-gold shadow-luxury-glow"><i class="fas fa-vial"></i></div>
@@ -680,7 +640,6 @@
                     <span class="text-brand-gold text-xs font-bold tracking-[0.3em] uppercase block mb-8 animate-pulse">Personalização</span>
                     <h3 class="font-luxury text-4xl md:text-5xl text-white italic mb-12">"Qual é o seu desejo hoje?"</h3>
                     
-                    <!-- BOTÕES DE DECISÃO -->
                     <div class="flex flex-col md:flex-row gap-6 justify-center">
                         <button onclick="selectService('card-flash')" class="group relative px-10 py-6 bg-white/10 border border-white/10 rounded-2xl hover:bg-brand-gold/20 hover:border-brand-gold/50 transition-all">
                             <span class="block text-white font-bold text-sm uppercase tracking-widest mb-2">Praticidade</span>
@@ -699,20 +658,18 @@
             </div>
         </section>
 
-        <!-- SERVIÇOS (MENU) COM DESCRIÇÕES COMPLETAS & MAIS ESPAÇO -->
+        <!-- SERVIÇOS (MENU) -->
         <section id="services" class="py-24 md:py-32 bg-[#020202]">
             <div class="container mx-auto px-6 max-w-7xl">
                 <div class="mobile-snap-x pb-8" id="services-carousel">
                     
-                    <!-- SOBERANO | GLASS MOLECULAR SYNTHESIS -->
+                    <!-- GLASS MOLECULAR -->
                     <div id="card-flash" class="mobile-snap-item glass-panel rounded-3xl p-1 relative group overflow-hidden h-full flex flex-col transition-all duration-500">
                         <div class="relative h-full w-full rounded-[20px] p-8 flex flex-col bg-gradient-to-b from-white/5 to-transparent">
-                            <!-- VISUAL HEADER (IMAGEM COMO TÍTULO) -->
                             <div class="w-full h-48 rounded-xl overflow-hidden mb-8 border border-white/10 shadow-lg relative group-hover:border-brand-gold/30 transition-colors">
-                                <img src="https://imagensagata.carrd.co/assets/images/image11.jpg?v=4b8919f9" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Glass Molecular Synthesis">
+                                <img src="https://imagensagata.carrd.co/assets/images/image11.jpg?v=4b8919f9" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Glass Molecular Synthesis">
                             </div>
 
-                            <!-- RESTORED DESCRIPTION LIST -->
                             <ul class="space-y-4 mb-8 flex-grow text-xs text-gray-400">
                                 <li class="flex gap-3">
                                     <i class="fas fa-heart text-brand-gold mt-0.5"></i>
@@ -734,22 +691,21 @@
 
                             <div class="border-t border-white/10 pt-6 mt-auto">
                                 <div class="flex justify-between items-end mb-6"><span class="text-xs text-brand-gold uppercase">A partir de</span><span class="text-2xl text-white font-luxury">R$ 180,00</span></div>
-                                <a href="#" onclick="gtag_report_conversion('https://api.whatsapp.com/send?phone=5549999954052&text=Quero%20a%20Glass%20Molecular%20Synthesis'); return false;" class="block w-full py-4 text-center border border-brand-gold/30 rounded-xl text-brand-gold text-xs font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-black transition-all">Agendar</a>
+                                <!-- BOTÃO ATUALIZADO: LEVA PARA O CATÁLOGO (AGATA) -->
+                                <a href="#agata" onclick="window.location.hash='agata'; return false;" class="block w-full py-4 text-center border border-brand-gold/30 rounded-xl text-brand-gold text-xs font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-black transition-all">CONSULTAR TABELA</a>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- LISO SOBERANO 8K Card (Updated Image 19) -->
+                    <!-- LISO SOBERANO 8K (Rastreamento de Cashback Aplicado) -->
                     <div id="card-liso" class="mobile-snap-item glass-panel rounded-3xl p-1 relative group overflow-hidden h-full flex flex-col transition-all duration-500">
                         <div class="absolute top-0 center w-full bg-brand-gold text-black text-[9px] font-bold text-center py-1 uppercase tracking-widest z-20">Mais Procurado</div>
                         <div class="relative h-full w-full rounded-[20px] p-8 flex flex-col bg-gradient-to-b from-[#2b0505]/40 to-black/80">
                             
-                            <!-- VISUAL HEADER (IMAGEM COMO TÍTULO) -->
                             <div class="w-full h-48 rounded-xl overflow-hidden mb-8 border border-brand-gold/30 shadow-lg relative mt-4">
-                                <img src="https://imagensagata.carrd.co/assets/images/image19.jpg?v=c257b396" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Liso Soberano 8K">
+                                <img src="https://imagensagata.carrd.co/assets/images/image19.jpg?v=c257b396" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Liso Soberano 8K">
                             </div>
 
-                            <!-- RESTORED DESCRIPTION LIST -->
                             <ul class="space-y-4 mb-8 flex-grow text-xs text-gray-400">
                                 <li class="flex gap-3">
                                     <i class="fas fa-heart text-brand-gold mt-0.5"></i>
@@ -771,20 +727,19 @@
 
                             <div class="border-t border-brand-gold/20 pt-6 mt-auto">
                                 <div class="flex justify-between items-end mb-6"><span class="text-xs text-brand-gold uppercase">A partir de</span><span class="text-3xl text-white font-luxury">R$ 250,00</span></div>
-                                <a href="#" onclick="gtag_report_conversion('https://api.whatsapp.com/send?phone=5549999954052&text=Quero%20o%20Liso%20Soberano'); return false;" class="btn-luxury-cta block w-full py-5 rounded-xl text-center text-xs">RESERVAR HORÁRIO</a>
+                                <!-- BOTÃO ATUALIZADO: LEVA PARA O CATÁLOGO (AGATA) -->
+                                <a href="#agata" onclick="window.location.hash='agata'; return false;" class="btn-luxury-cta block w-full py-5 rounded-xl text-center text-xs">CONSULTAR TABELA</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Detox Repair Card -->
+                    <!-- DETOX REPAIR -->
                     <div id="card-detox" class="mobile-snap-item glass-panel rounded-3xl p-1 relative group overflow-hidden h-full flex flex-col transition-all duration-500">
                         <div class="relative h-full w-full rounded-[20px] p-8 flex flex-col bg-gradient-to-b from-cyan-900/10 to-transparent">
-                            <!-- VISUAL HEADER (IMAGEM COMO TÍTULO) -->
                              <div class="w-full h-48 rounded-xl overflow-hidden mb-8 border border-cyan-500/20 shadow-lg relative bg-cyan-900/20 flex items-center justify-center">
-                                 <img src="https://imagensagata.carrd.co/assets/images/image12.jpg?v=c257b396" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Resultado Detox Repair">
+                                 <img src="https://imagensagata.carrd.co/assets/images/image12.jpg?v=c257b396" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Resultado Detox Repair">
                              </div>
 
-                             <!-- RESTORED DESCRIPTION LIST -->
                              <ul class="space-y-4 mb-8 flex-grow text-xs text-gray-400">
                                 <li class="flex gap-3">
                                     <i class="fas fa-heart text-cyan-400 mt-0.5"></i>
@@ -806,7 +761,8 @@
 
                             <div class="border-t border-white/10 pt-6 mt-auto">
                                 <div class="flex justify-between items-end mb-6"><span class="text-xs text-gray-500 uppercase">A partir de</span><span class="text-2xl text-white font-luxury">R$ 148,80</span></div>
-                                <a href="#" onclick="gtag_report_conversion('https://api.whatsapp.com/send?phone=5549999954052&text=Quero%20o%20Detox'); return false;" class="block w-full py-4 text-center border border-cyan-500/30 rounded-xl text-cyan-200 text-xs font-bold uppercase tracking-widest hover:bg-cyan-900/30 transition-all">Agendar</a>
+                                <!-- BOTÃO ATUALIZADO: LEVA PARA O CATÁLOGO (AGATA) -->
+                                <a href="#agata" onclick="window.location.hash='agata'; return false;" class="block w-full py-4 text-center border border-cyan-500/30 rounded-xl text-cyan-200 text-xs font-bold uppercase tracking-widest hover:bg-cyan-900/30 transition-all">CONSULTAR TABELA</a>
                             </div>
                         </div>
                     </div>
@@ -814,11 +770,10 @@
             </div>
         </section>
 
-        <!-- NOVA SEÇÃO: AUTORIDADE (A ASSINATURA HUMANA) -->
+        <!-- AUTORIDADE -->
         <section class="py-24 md:py-32 bg-[#050505] border-t border-brand-gold/5">
             <div class="container mx-auto px-6 max-w-6xl flex flex-col md:flex-row items-center gap-16">
                 <div class="w-full md:w-1/3 flex justify-center">
-                    <!-- Placeholder para Foto da Especialista -->
                     <div class="w-72 h-72 rounded-full border border-brand-gold/30 bg-[#1a0a0a] flex items-center justify-center relative shadow-luxury-glow">
                         <span class="text-brand-gold font-luxury text-5xl italic">E.R.</span>
                         <div class="absolute inset-0 rounded-full border border-white/5 animate-spin-slow" style="animation-duration: 25s;"></div>
@@ -831,7 +786,6 @@
                         "Somos especialistas em <strong>Progressivas e Tratamentos de Alto Impacto</strong>. Acreditamos que o liso perfeito não é sobre química pesada, mas sobre respeito à integridade do fio. Nossa metodologia une a precisão técnica com ativos biotecnológicos para entregar resultados que não apenas embelezam, mas tratam."
                     </p>
                     
-                    <!-- ASSINATURA DIGITAL -->
                     <div class="mb-8">
                         <span class="font-signature text-4xl text-brand-gold block transform -rotate-2 opacity-90">Equipe Essência de Romã</span>
                     </div>
@@ -911,7 +865,7 @@
                 </div>
                 <div class="flex flex-col gap-24 max-w-6xl mx-auto">
                     
-                    <!-- 1. LUMINOSIDADE DE ALTA PRECISÃO (Texto Esquerda / Imagem Direita) -->
+                    <!-- 1. LUMINOSIDADE DE ALTA PRECISÃO -->
                     <div class="flex flex-col md:flex-row items-center gap-12 group reveal">
                         <div class="w-full md:w-1/2 order-2 md:order-1 text-center md:text-right flex flex-col items-center md:items-end">
                             <div class="glass-panel p-8 rounded-2xl border-r-4 border-r-brand-gold border-y-0 border-l-0 bg-gradient-to-l from-white/5 to-transparent">
@@ -926,15 +880,15 @@
                             </div>
                         </div>
                         <div class="w-full md:w-1/2 order-1 md:order-2 h-80 md:h-[500px] relative rounded-2xl overflow-hidden shadow-2xl border border-white/5">
-                            <img src="https://imagensagata.carrd.co/assets/images/image13.jpg?v=c257b396" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s]" alt="Micro-Lights">
+                            <img src="https://imagensagata.carrd.co/assets/images/image13.jpg?v=c257b396" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s]" alt="Micro-Lights">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                         </div>
                     </div>
 
-                    <!-- 2. ESCULTURA CAPILAR & VISAGISMO (Imagem Esquerda / Texto Direita) -->
+                    <!-- 2. ESCULTURA CAPILAR & VISAGISMO -->
                     <div class="flex flex-col md:flex-row items-center gap-12 group reveal">
                         <div class="w-full md:w-1/2 order-1 h-80 md:h-[500px] relative rounded-2xl overflow-hidden shadow-2xl border border-white/5">
-                            <img src="https://imagensagata.carrd.co/assets/images/image14.jpg?v=c257b396" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s]" alt="Visagismo">
+                            <img src="https://imagensagata.carrd.co/assets/images/image14.jpg?v=c257b396" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s]" alt="Visagismo">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                         </div>
                         <div class="w-full md:w-1/2 order-2 text-center md:text-left flex flex-col items-center md:items-start">
@@ -949,7 +903,7 @@
                         </div>
                     </div>
 
-                    <!-- 3. PROTOCOLO DE RECUPERAÇÃO DE CÓRTEX (Texto Esquerda / Imagem Direita) -->
+                    <!-- 3. PROTOCOLO DE RECUPERAÇÃO DE CÓRTEX -->
                     <div class="flex flex-col md:flex-row items-center gap-12 group reveal">
                         <div class="w-full md:w-1/2 order-2 md:order-1 text-center md:text-right flex flex-col items-center md:items-end">
                              <div class="glass-panel p-8 rounded-2xl border-r-4 border-r-brand-gold border-y-0 border-l-0 bg-gradient-to-l from-white/5 to-transparent">
@@ -964,7 +918,7 @@
                             </div>
                         </div>
                         <div class="w-full md:w-1/2 order-1 md:order-2 h-80 md:h-[500px] relative rounded-2xl overflow-hidden shadow-2xl border border-white/5">
-                            <img src="https://imagensagata.carrd.co/assets/images/image15.jpg?v=c257b396" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s]" alt="Recuperação de Córtex">
+                            <img src="https://imagensagata.carrd.co/assets/images/image15.jpg?v=c257b396" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s]" alt="Recuperação de Córtex">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                         </div>
                     </div>
@@ -1042,10 +996,10 @@
         <section class="min-h-screen pt-28 pb-20 relative overflow-hidden">
              <div class="mandala-bg animate-spin-slow opacity-10" style="border-color: rgba(255,255,255,0.05)"></div>
              <div class="container mx-auto px-6 relative z-10">
-                 <!-- HERO LOJA -->
+                 <!-- HERO LOJA (ATUALIZADO: Imagem OK e sem Lazy Load) -->
                  <div class="relative w-full h-[50vh] md:h-[60vh] rounded-[2rem] overflow-hidden mb-16 shadow-2xl group">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10"></div>
-                    <img src="https://agatalambeu.com.br/assets/images/image10.jpg?v=5ffc8f20" class="w-full h-full object-cover transform transition duration-[2s] group-hover:scale-110" alt="Coleção">
+                    <img src="https://imagensagata.carrd.co/assets/images/image05.jpg?v=4b8919f9" class="w-full h-full object-cover transform transition duration-[2s] group-hover:scale-110" alt="Coleção">
                     <div class="absolute bottom-8 left-6 md:bottom-12 md:left-12 z-20 max-w-lg">
                         <div class="glass-panel px-8 py-8 rounded-2xl border-l-4 border-l-brand-gold backdrop-blur-md">
                             <h2 class="text-4xl md:text-6xl font-luxury text-white leading-none mb-3">A Gata Lambeu <span class="text-brand-gold italic">PRO</span></h2>
@@ -1054,25 +1008,52 @@
                     </div>
                 </div>
 
-                <!-- KIT ESPECIAL HERO (NOVO DESTAQUE OTIMIZADO) -->
+                <!-- KIT ESPECIAL HERO (ATUALIZADO: Lógica Matemática Aplicada) -->
                 <div class="glass-panel p-10 rounded-3xl border border-brand-gold/30 mb-20 bg-gradient-to-r from-[#0a0a0a] to-[#1a1a1a] shadow-[0_0_40px_rgba(197,160,89,0.15)] flex flex-col md:flex-row items-center gap-10 reveal">
                     <div class="w-full md:w-1/2">
                          <span class="text-brand-gold text-[10px] font-bold tracking-[0.3em] uppercase block mb-3 animate-pulse">Oferta Exclusiva</span>
-                         <h3 class="font-luxury text-4xl text-white mb-4">Kit Trindade <span class="text-brand-gold italic">PRO</span></h3>
-                         <p class="text-gray-400 text-sm leading-relaxed mb-6">O protocolo completo de salão na sua casa. Shampoo Reconstrutor, Ampola de Ouro e Leave-in Blindagem por um valor especial.</p>
+                         <h3 class="font-luxury text-4xl text-white mb-2">Kit Trindade <span class="text-brand-gold italic">PRO</span></h3>
+                         
+                         <!-- Bloco de Preço e Retorno -->
+                         <div class="flex items-end gap-3 mb-4">
+                             <span class="text-3xl text-white font-bold font-luxury">R$ 688,10</span>
+                             <span class="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Kit Completo</span>
+                         </div>
+                         
+                         <!-- Destaque Verde Neon -->
+                         <div class="inline-flex items-center gap-2 border border-green-500/30 bg-green-900/20 px-4 py-3 rounded-lg mb-6 w-full md:w-auto justify-center md:justify-start">
+                             <i class="fas fa-undo-alt text-green-400 animate-pulse"></i>
+                             <span class="text-green-400 text-xs font-bold uppercase tracking-widest">Retorna R$ 344,05 em Crédito</span>
+                         </div>
+
+                         <p class="text-gray-400 text-sm leading-relaxed mb-6">O protocolo máximo. Leve a coleção completa (Bain + Gold + Queen) e garanta o <strong>maior cashback possível</strong> para abater no seu Liso Soberano 8k.</p>
+                         
                          <ul class="space-y-2 text-xs text-gray-300 mb-8">
-                             <li class="flex items-center gap-2"><i class="fas fa-check text-brand-gold"></i> Limpeza inteligente</li>
-                             <li class="flex items-center gap-2"><i class="fas fa-check text-brand-gold"></i> Nutrição profunda em 3 min</li>
-                             <li class="flex items-center gap-2"><i class="fas fa-check text-brand-gold"></i> Proteção térmica total</li>
+                             <li class="flex items-center gap-2"><i class="fas fa-check text-brand-gold"></i> Limpeza inteligente (Bain)</li>
+                             <li class="flex items-center gap-2"><i class="fas fa-check text-brand-gold"></i> Nutrição profunda (Gold Infusion)</li>
+                             <li class="flex items-center gap-2"><i class="fas fa-check text-brand-gold"></i> Proteção térmica total (Queen)</li>
                          </ul>
-                         <button onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Quero%20o%20Kit%20Trindade%20PRO'); return false;" class="btn-luxury-cta px-10 py-4 rounded-full text-xs">GARANTIR KIT</button>
+                         
+                         <button onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20o%20Kit%20Trindade%20Completo%20e%20ganhar%20R$%20344,05%20de%20cr%C3%A9dito%20no%20Liso%20Soberano.'); return false;" class="btn-luxury-cta px-10 py-4 rounded-full text-xs w-full md:w-auto flex items-center justify-center gap-2">
+                             GARANTIR KIT & CRÉDITO MÁXIMO <i class="fas fa-arrow-right"></i>
+                         </button>
                     </div>
-                    <div class="w-full md:w-1/2 h-64 md:h-full relative rounded-2xl overflow-hidden">
-                        <img src="https://imagensagata.carrd.co/assets/images/image05.jpg?v=4b8919f9" class="w-full h-full object-cover" alt="Kit Trindade">
+                    <div class="w-full md:w-1/2 h-64 md:h-[450px] relative rounded-2xl overflow-hidden group cursor-pointer" onclick="openZoom('https://imagensagata.carrd.co/assets/images/image05.jpg?v=4b8919f9')">
+                        <img src="https://imagensagata.carrd.co/assets/images/image05.jpg?v=4b8919f9" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-1000" alt="Kit Trindade">
+                        
+                        <!-- Badge 50% -->
+                        <div class="absolute top-4 right-4 bg-brand-gold text-black font-bold text-[10px] px-3 py-1 rounded-full shadow-lg uppercase tracking-widest z-20">
+                            50% Cashback
+                        </div>
+                        
+                        <!-- Overlay Toque -->
+                        <div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+                            <span class="text-white bg-black/50 px-4 py-2 rounded-full text-xs backdrop-blur-sm"><i class="fas fa-search-plus mr-2"></i> Ampliar</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- PROTOCOLO HOME CARE (EDUCATIVO) -->
+                <!-- PROTOCOLO HOME CARE -->
                  <div class="text-left reveal mb-24">
                     <div class="flex flex-col md:flex-row items-center justify-between mb-12">
                         <div>
@@ -1105,75 +1086,102 @@
                     </div>
                  </div>
 
-                <!-- PRODUTOS INDIVIDUAIS (REORDENADOS & DETALHADOS - MINIMAL LUXURY) -->
+                <!-- PRODUTOS INDIVIDUAIS -->
                 <h2 class="text-4xl md:text-6xl font-luxury text-white mb-10 text-center">Coleção Individual</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                     <!-- Card 1: Gold Infusion (Destaque) -->
-                     <div class="bg-[#151515] p-6 rounded-xl border border-brand-gold/30 relative group hover:shadow-luxury-glow transition-all flex flex-col">
-                         <div class="absolute top-0 left-0 bg-brand-gold text-[8px] uppercase tracking-widest text-black font-bold px-3 py-1 rounded-br-lg shadow-lg z-20">Best Seller</div>
-                         <div class="aspect-[4/5] w-full rounded-lg mb-6 overflow-hidden relative product-img-container flex items-center justify-center transition-all duration-700">
-                             <!-- IMAGEM REVERTIDA PARA AMPOLA (image09.jpg) -->
-                             <img src="https://imagensagata.carrd.co/assets/images/image09.jpg?v=4b8919f9" class="w-full h-full object-contain transform transition duration-700 ease-in-out group-hover:scale-110" alt="Gold">
-                         </div>
-                         <h3 class="text-white font-luxury text-xl">Gold Infusion</h3><div class="text-brand-gold font-bold text-lg mb-4">R$ 289,80</div>
-                         <div class="text-[10px] text-gray-400 mb-8 space-y-4 border-t border-brand-gold/20 pt-6 flex-grow">
-                             <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Óleo de Argan</span><p class="font-light leading-relaxed">Ouro líquido para nutrição intensa.</p></div>
-                             <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Ceramidas</span><p class="font-light leading-relaxed">Cimento intercelular que sela a cutícula.</p></div>
-                             <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Ácido Lático</span><p class="font-light leading-relaxed">Regula o pH e alinha os fios.</p></div>
-                         </div>
-                         <button onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Gold%20Infusion'); return false;" class="w-full bg-brand-gold text-black py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-white transition-all rounded-lg shadow-lg mt-auto">Comprar</button>
-                     </div>
-                     <!-- Card 2: Blindagem Queen -->
-                     <div class="bg-[#151515] p-6 rounded-xl border border-white/5 group hover:border-brand-gold/30 transition-all flex flex-col relative overflow-hidden">
-                         <div class="absolute top-0 left-0 bg-white/10 backdrop-blur text-[8px] uppercase tracking-widest text-white px-3 py-1 rounded-br-lg border-b border-r border-white/5 z-20">Alta Procura</div>
-                         <div class="aspect-[4/5] w-full rounded-lg mb-6 overflow-hidden relative product-img-container flex items-center justify-center transition-all duration-700">
-                             <img src="https://imagensagata.carrd.co/assets/images/image08.jpg?v=c257b396" class="w-full h-full object-contain transform transition duration-700 ease-in-out group-hover:scale-110" alt="Blindagem">
-                         </div>
-                         <h3 class="text-white font-luxury text-xl">Blindagem Queen</h3><div class="text-brand-gold font-bold text-lg mb-4">R$ 248,40</div>
-                         <div class="text-[10px] text-gray-400 mb-8 space-y-4 border-t border-white/10 pt-6 flex-grow">
-                             <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Polímeros Termoativos</span><p class="font-light leading-relaxed">Proteção térmica avançada até 230°C.</p></div>
-                             <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Cisteína</span><p class="font-light leading-relaxed">Prolonga o efeito liso e reduz volume.</p></div>
-                             <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Semi di Lino</span><p class="font-light leading-relaxed">Brilho espelhado tridimensional.</p></div>
-                         </div>
-                         <button onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Blindagem%20Queen'); return false;" class="w-full border border-white/20 text-white py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all rounded-lg mt-auto">Comprar</button>
-                     </div>
-                     <!-- Card 3: Bain (Por último) -->
-                     <div class="bg-[#151515] p-6 rounded-xl border border-white/5 group hover:border-brand-gold/30 transition-all flex flex-col relative overflow-hidden">
-                         <div class="absolute top-0 left-0 bg-white/10 backdrop-blur text-[8px] uppercase tracking-widest text-white px-3 py-1 rounded-br-lg border-b border-r border-white/5 z-20">Disponibilidade Imediata</div>
-                         <div class="aspect-[4/5] w-full rounded-lg mb-6 overflow-hidden relative product-img-container flex items-center justify-center transition-all duration-700">
-                             <img src="https://imagensagata.carrd.co/assets/images/image07.jpg?v=c257b396" class="w-full h-full object-contain transform transition duration-700 ease-in-out group-hover:scale-110" alt="Bain">
-                         </div>
-                         <h3 class="text-white font-luxury text-xl">Bain Reconstrutor</h3><div class="text-brand-gold font-bold text-lg mb-4">R$ 149,90</div>
-                         <div class="text-[10px] text-gray-400 mb-8 space-y-4 border-t border-white/10 pt-6 flex-grow">
-                             <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Queratina Hidrolisada</span><p class="font-light leading-relaxed">Reconstrução profunda da fibra danificada.</p></div>
-                             <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Arginina</span><p class="font-light leading-relaxed">Aminoácido essencial que combate a quebra.</p></div>
-                             <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">D-Pantenol</span><p class="font-light leading-relaxed">Retenção de umidade e maciez extrema.</p></div>
-                         </div>
-                         <button onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Bain%20Reconstrutor'); return false;" class="w-full border border-white/20 text-white py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all rounded-lg mt-auto">Comprar</button>
-                     </div>
+                      <!-- Card 1 -->
+                      <div class="bg-[#151515] p-6 rounded-xl border border-brand-gold/30 relative group hover:shadow-luxury-glow transition-all flex flex-col">
+                          <div class="absolute top-0 left-0 bg-brand-gold text-[8px] uppercase tracking-widest text-black font-bold px-3 py-1 rounded-br-lg shadow-lg z-20">Best Seller</div>
+                          <div class="aspect-[4/5] w-full rounded-lg mb-6 overflow-hidden relative product-img-container flex items-center justify-center transition-all duration-700">
+                              <img src="https://imagensagata.carrd.co/assets/images/image09.jpg?v=4b8919f9" loading="lazy" class="w-full h-full object-contain transform transition duration-700 ease-in-out group-hover:scale-110" alt="Gold">
+                          </div>
+                          <h3 class="text-white font-luxury text-xl">Gold Infusion</h3>
+                          <div class="flex flex-col mb-4">
+                              <span class="text-white font-bold text-lg">R$ 289,80</span>
+                              <!-- RETORNA EM VERDE -->
+                              <span class="text-green-400 text-[9px] uppercase tracking-widest font-bold mt-1 border border-green-500/30 bg-green-900/20 px-2 py-1 rounded w-fit">
+                                  <i class="fas fa-undo-alt mr-1"></i> Retorna R$ 144,90 p/ Liso Soberano
+                              </span>
+                          </div>
+                          <div class="text-[10px] text-gray-400 mb-8 space-y-4 border-t border-brand-gold/20 pt-6 flex-grow">
+                              <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Óleo de Argan</span><p class="font-light leading-relaxed">Ouro líquido para nutrição intensa.</p></div>
+                              <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Ceramidas</span><p class="font-light leading-relaxed">Cimento intercelular que sela a cutícula.</p></div>
+                              <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Ácido Lático</span><p class="font-light leading-relaxed">Regula o pH e alinha os fios.</p></div>
+                          </div>
+                          <button onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20o%20Gold%20Infusion%20e%20garantir%20R$%20144,90%20de%20cr%C3%A9dito%20no%20Liso%20Soberano.'); return false;" class="w-full bg-brand-gold text-black py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-white transition-all rounded-lg shadow-lg mt-auto">Comprar & Ganhar Crédito</button>
+                      </div>
+                      <!-- Card 2 -->
+                      <div class="bg-[#151515] p-6 rounded-xl border border-white/5 group hover:border-brand-gold/30 transition-all flex flex-col relative overflow-hidden">
+                          <div class="absolute top-0 left-0 bg-white/10 backdrop-blur text-[8px] uppercase tracking-widest text-white px-3 py-1 rounded-br-lg border-b border-r border-white/5 z-20">Alta Procura</div>
+                          <div class="aspect-[4/5] w-full rounded-lg mb-6 overflow-hidden relative product-img-container flex items-center justify-center transition-all duration-700">
+                              <img src="https://imagensagata.carrd.co/assets/images/image08.jpg?v=c257b396" loading="lazy" class="w-full h-full object-contain transform transition duration-700 ease-in-out group-hover:scale-110" alt="Blindagem">
+                          </div>
+                          <h3 class="text-white font-luxury text-xl">Blindagem Queen</h3>
+                          <div class="flex flex-col mb-4">
+                              <span class="text-white font-bold text-lg">R$ 248,40</span>
+                              <!-- RETORNA EM VERDE -->
+                              <span class="text-green-400 text-[9px] uppercase tracking-widest font-bold mt-1 border border-green-500/30 bg-green-900/20 px-2 py-1 rounded w-fit">
+                                  <i class="fas fa-undo-alt mr-1"></i> Retorna R$ 124,20 p/ Liso Soberano
+                              </span>
+                          </div>
+                          <div class="text-[10px] text-gray-400 mb-8 space-y-4 border-t border-white/10 pt-6 flex-grow">
+                              <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Polímeros Termoativos</span><p class="font-light leading-relaxed">Proteção térmica avançada até 230°C.</p></div>
+                              <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Cisteína</span><p class="font-light leading-relaxed">Prolonga o efeito liso e reduz volume.</p></div>
+                              <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Semi di Lino</span><p class="font-light leading-relaxed">Brilho espelhado tridimensional.</p></div>
+                          </div>
+                          <button onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20a%20Blindagem%20Queen%20e%20garantir%20R$%20124,20%20de%20cr%C3%A9dito%20no%20Liso%20Soberano.'); return false;" class="w-full border border-white/20 text-white py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all rounded-lg mt-auto">Comprar & Ganhar Crédito</button>
+                      </div>
+                      <!-- Card 3 -->
+                      <div class="bg-[#151515] p-6 rounded-xl border border-white/5 group hover:border-brand-gold/30 transition-all flex flex-col relative overflow-hidden">
+                          <div class="absolute top-0 left-0 bg-white/10 backdrop-blur text-[8px] uppercase tracking-widest text-white px-3 py-1 rounded-br-lg border-b border-r border-white/5 z-20">Disponibilidade Imediata</div>
+                          <div class="aspect-[4/5] w-full rounded-lg mb-6 overflow-hidden relative product-img-container flex items-center justify-center transition-all duration-700">
+                              <img src="https://imagensagata.carrd.co/assets/images/image07.jpg?v=c257b396" loading="lazy" class="w-full h-full object-contain transform transition duration-700 ease-in-out group-hover:scale-110" alt="Bain">
+                          </div>
+                          <h3 class="text-white font-luxury text-xl">Bain Reconstrutor</h3>
+                          <div class="flex flex-col mb-4">
+                              <span class="text-white font-bold text-lg">R$ 149,90</span>
+                              <!-- RETORNA EM VERDE -->
+                              <span class="text-green-400 text-[9px] uppercase tracking-widest font-bold mt-1 border border-green-500/30 bg-green-900/20 px-2 py-1 rounded w-fit">
+                                  <i class="fas fa-undo-alt mr-1"></i> Retorna R$ 74,95 p/ Liso Soberano
+                              </span>
+                          </div>
+                          <div class="text-[10px] text-gray-400 mb-8 space-y-4 border-t border-white/10 pt-6 flex-grow">
+                              <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Queratina Hidrolisada</span><p class="font-light leading-relaxed">Reconstrução profunda da fibra danificada.</p></div>
+                              <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Arginina</span><p class="font-light leading-relaxed">Aminoácido essencial que combate a quebra.</p></div>
+                              <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">D-Pantenol</span><p class="font-light leading-relaxed">Retenção de umidade e maciez extrema.</p></div>
+                          </div>
+                          <button onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20o%20Bain%20Reconstrutor%20e%20garantir%20R$%2074,95%20de%20cr%C3%A9dito%20no%20Liso%20Soberano.'); return false;" class="w-full border border-white/20 text-white py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all rounded-lg mt-auto">Comprar & Ganhar Crédito</button>
+                      </div>
                  </div>
 
-                 <!-- INÍCIO DO MENU DE PREÇOS "A GATA LAMBEU PRO" INTEGRADO -->
+                 <!-- INÍCIO DO MENU DE PREÇOS "A GATA LAMBEU PRO" INTEGRADO (VOUCHER ATUALIZADO) -->
                  <section class="gata-la-section" id="AGATA" style="margin-top: 6rem;">
                     <div class="brand-header mb-10">
                         <h2 class="text-3xl md:text-5xl font-luxury text-white mb-4">CATÁLOGO DIGITAL <span class="text-brand-gold italic">2026</span></h2>
                         <p class="text-gray-400 text-xs tracking-widest uppercase">Toque na imagem para ampliar</p>
                     </div>
 
-                    <!-- VOUCHER PROMOCIONAL (ATÉ 28/JAN) -->
+                    <!-- VOUCHER PROMOCIONAL (ATUALIZADO: Lógica Cashback Produto -> Serviço) -->
                     <div class="relative max-w-3xl mx-auto mb-16 p-1 rounded-2xl bg-gradient-to-r from-brand-gold/20 via-brand-gold/60 to-brand-gold/20 animate-pulse-gold">
                         <div class="bg-[#111] rounded-xl p-6 md:p-8 text-center relative overflow-hidden">
                             <!-- Brilho de fundo -->
                             <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10"></div>
                             
                             <div class="relative z-10 flex flex-col items-center">
-                                <span class="inline-block py-1 px-3 border border-brand-gold text-brand-gold text-[9px] font-bold uppercase tracking-[0.3em] mb-4 rounded-full">Voucher Oficial</span>
-                                <h3 class="text-4xl md:text-6xl font-luxury text-white mb-2">R$ 50,00 <span class="text-brand-gold italic">OFF</span></h3>
-                                <p class="text-gray-400 text-xs md:text-sm font-light mb-6 max-w-md mx-auto">
-                                    Apresente este voucher digital no caixa. Válido para <strong>Liso Soberano 8K</strong> ou <strong>Glass Molecular</strong> até dia <span class="text-white font-bold">28 de Janeiro</span>.
+                                <span class="inline-block py-1 px-3 border border-brand-gold text-brand-gold text-[9px] font-bold uppercase tracking-[0.3em] mb-4 rounded-full">Investimento Inteligente</span>
+                                
+                                <h3 class="text-4xl md:text-6xl font-luxury text-white mb-2">50% <span class="text-brand-gold italic">DE VOLTA</span></h3>
+                                
+                                <p class="text-gray-400 text-xs md:text-sm font-light mb-6 max-w-md mx-auto leading-relaxed">
+                                    Adquira seus produtos da linha <strong>A Gata Lambeu</strong> e receba 50% do valor investido como crédito para realizar o <strong>Liso Soberano 8k</strong> no Essência de Romã.
                                 </p>
-                                <button onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1!%20Estou%20com%20o%20print%20do%20Voucher%20de%20R$50%20OFF%20v%C3%A1lido%20at%C3%A9%20dia%2028.'); return false;" class="btn-luxury-cta px-10 py-4 rounded-full text-xs flex items-center gap-3">
-                                    <i class="fas fa-ticket-alt"></i> RESGATAR MEU DESCONTO
+                                
+                                <p class="text-[9px] text-green-400 mb-6 border border-green-900/30 bg-green-900/10 px-4 py-2 rounded uppercase tracking-widest font-bold">
+                                    Válido até 05/Fev • Uso exclusivo no Liso Soberano 8k
+                                </p>
+
+                                <button onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20comprar%20produtos%20para%20ganhar%20cr%C3%A9dito%20no%20Liso%20Soberano.'); return false;" class="btn-luxury-cta px-10 py-4 rounded-full text-xs flex items-center gap-3">
+                                    <i class="fas fa-shopping-bag"></i> COMPRAR & GANHAR CRÉDITO
                                 </button>
                             </div>
                         </div>
@@ -1182,52 +1190,38 @@
                     <!-- GRID DE IMAGENS ESTRATÉGICAS (RETRATO/PORTRAIT) -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 max-w-5xl mx-auto">
                         
-                        <!-- IMAGEM 1: GLASS MOLECULAR (image21) -->
+                        <!-- IMAGEM 1: GLASS MOLECULAR -->
                         <div class="group relative flex flex-col items-center cursor-zoom-in" onclick="openZoom('https://imagensagata.carrd.co/assets/images/image21.jpg?v=4b458cce')">
                             <div class="relative w-full rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)] border border-white/10 group-hover:border-brand-gold/50 transition-all duration-500">
-                                <!-- Aspect Ratio Vertical para Catálogo -->
                                 <div class="aspect-[9/14] w-full relative pointer-events-none">
-                                    <img src="https://imagensagata.carrd.co/assets/images/image21.jpg?v=4b458cce" 
-                                         alt="Tabela Oficial Glass Molecular" 
-                                         class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition duration-1000 ease-out">
-                                    
-                                    <!-- Overlay Gradiente -->
+                                    <img src="https://imagensagata.carrd.co/assets/images/image21.jpg?v=4b458cce" loading="lazy" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition duration-1000 ease-out" alt="Tabela Oficial Glass Molecular">
                                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
                                 </div>
-                                
-                                <!-- Legenda Flutuante (Some no Zoom) -->
                                 <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
                                     <h3 class="text-2xl font-luxury text-white mb-1">Glass Molecular</h3>
                                     <div class="h-[1px] w-12 bg-brand-gold mb-2"></div>
                                     <p class="text-[10px] text-gray-300 uppercase tracking-widest">Toque para ver a Tabela</p>
                                 </div>
                             </div>
-                            <button class="mt-6 text-brand-gold text-xs font-bold uppercase tracking-widest border-b border-brand-gold pb-1 hover:text-white hover:border-white transition-colors" onclick="event.stopPropagation(); gtag_report_conversion('https://wa.me/5549999954052?text=Quero%20agendar%20o%20Glass%20Molecular%20com%20o%20Voucher');">
+                            <button class="mt-6 text-brand-gold text-xs font-bold uppercase tracking-widest border-b border-brand-gold pb-1 hover:text-white hover:border-white transition-colors" onclick="event.stopPropagation(); gtag_report_conversion('https://wa.me/5549999954052?text=Quero%20agendar%20o%20Glass%20Molecular');">
                                 Agendar Glass
                             </button>
                         </div>
 
-                        <!-- IMAGEM 2: LISO SOBERANO 8K (image20) -->
+                        <!-- IMAGEM 2: LISO SOBERANO 8K -->
                         <div class="group relative flex flex-col items-center cursor-zoom-in" onclick="openZoom('https://imagensagata.carrd.co/assets/images/image20.jpg?v=4b458cce')">
                             <div class="relative w-full rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)] border border-white/10 group-hover:border-brand-gold/50 transition-all duration-500">
-                                <!-- Aspect Ratio Vertical para Catálogo -->
                                 <div class="aspect-[9/14] w-full relative pointer-events-none">
-                                    <img src="https://imagensagata.carrd.co/assets/images/image20.jpg?v=4b458cce" 
-                                         alt="Tabela Oficial Liso Soberano 8K" 
-                                         class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition duration-1000 ease-out">
-                                    
-                                    <!-- Overlay Gradiente -->
+                                    <img src="https://imagensagata.carrd.co/assets/images/image20.jpg?v=4b458cce" loading="lazy" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition duration-1000 ease-out" alt="Tabela Oficial Liso Soberano 8K">
                                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
                                 </div>
-                                
-                                <!-- Legenda Flutuante (Some no Zoom) -->
                                 <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
                                     <h3 class="text-2xl font-luxury text-white mb-1">Liso Soberano 8K</h3>
                                     <div class="h-[1px] w-12 bg-brand-gold mb-2"></div>
                                     <p class="text-[10px] text-gray-300 uppercase tracking-widest">Toque para ver a Tabela</p>
                                 </div>
                             </div>
-                            <button class="mt-6 text-brand-gold text-xs font-bold uppercase tracking-widest border-b border-brand-gold pb-1 hover:text-white hover:border-white transition-colors" onclick="event.stopPropagation(); gtag_report_conversion('https://wa.me/5549999954052?text=Quero%20agendar%20o%20Liso%20Soberano%20com%20o%20Voucher');">
+                            <button class="mt-6 text-brand-gold text-xs font-bold uppercase tracking-widest border-b border-brand-gold pb-1 hover:text-white hover:border-white transition-colors" onclick="event.stopPropagation(); gtag_report_conversion('https://wa.me/5549999954052?text=Quero%20agendar%20o%20Liso%20Soberano%20com%20Cashback');">
                                 Agendar Soberano
                             </button>
                         </div>
@@ -1236,7 +1230,7 @@
 
                     <div class="terms-footer mt-16 border-t border-white/5 pt-8">
                         <p class="text-[9px] text-gray-600 uppercase tracking-widest">
-                            * Valores sujeitos a avaliação presencial da massa capilar. O desconto de R$ 50,00 não é cumulativo com outras promoções.
+                            * O Cashback é gerado sobre o valor dos produtos adquiridos e deve ser utilizado exclusivamente como desconto no serviço Liso Soberano 8k no Essência de Romã Hair. Válido até 05/02/2026.
                         </p>
                     </div>
                 </section>
@@ -1424,23 +1418,6 @@
             initSpotlight();
         });
 
-        // Campaign Modal Logic
-        function initCampaign() {
-            const modal = document.getElementById('campaign-modal');
-            const content = document.getElementById('campaign-content');
-            if(modal && content) {
-                setTimeout(() => {
-                    modal.classList.remove('opacity-0', 'pointer-events-none');
-                    content.classList.remove('scale-95');
-                    content.classList.add('scale-100');
-                }, 3500); // 3.5s delay
-            }
-        }
-        function closeCampaign() {
-            const modal = document.getElementById('campaign-modal');
-            if(modal) modal.classList.add('opacity-0', 'pointer-events-none');
-        }
-
         // ZOOM / LIGHTBOX LOGIC
         function openZoom(src) {
             const modal = document.getElementById('zoom-modal');
@@ -1489,8 +1466,6 @@
                 img.classList.add('cursor-zoom-out');
             }
         }
-
-        document.addEventListener('DOMContentLoaded', initCampaign);
     </script>
 </body>
 </html>
