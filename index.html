@@ -19,13 +19,13 @@
     
     <!-- 
         ================================================================================
-        PROJETO: ESSÊNCIA DE ROMÃ HAIR | PLATAFORMA DIGITAL 2026 (MASTER v118)
+        PROJETO: ESSÊNCIA DE ROMÃ HAIR | PLATAFORMA DIGITAL 2026 (MASTER v120)
         ARQUIVO: index.html 
         
-        [RELATÓRIO DE ATUALIZAÇÃO v118 - REORDENAÇÃO & UX MOBILE]
-        1. REORDER: Liso Soberano 8k agora é o PRIMEIRO card e botão (Carro-Chefe).
-        2. UX MOBILE: Largura dos cards ajustada para 80vw para mostrar "pontinha" do 
-           próximo card, incentivando o scroll lateral.
+        [RELATÓRIO DE ATUALIZAÇÃO v120 - NOVA CAPA GATA LAMBEU]
+        1. HERO UPDATE: Substituída a imagem de capa da seção A Gata Lambeu (#agata).
+           Saiu: image05.jpg (Kit Trindade) -> Entrou: image22.jpg (Nova Campanha).
+        2. STATUS: Mantido carregamento instantâneo (sem lazy load) para impacto visual.
         ================================================================================
     -->
 
@@ -664,12 +664,15 @@
             <div class="container mx-auto px-6 max-w-7xl">
                 <div class="mobile-snap-x pb-8" id="services-carousel">
                     
-                    <!-- LISO SOBERANO 8K (PRIMEIRO - CARRO CHEFE) -->
+                    <!-- LISO SOBERANO 8K (PRIMEIRO - CARRO CHEFE | AJUSTE DE ESPAÇAMENTO DA FAIXA) -->
                     <div id="card-liso" class="mobile-snap-item glass-panel rounded-3xl p-1 relative group overflow-hidden h-full flex flex-col transition-all duration-500">
-                        <div class="absolute top-0 center w-full bg-brand-gold text-black text-[9px] font-bold text-center py-1 uppercase tracking-widest z-20">Mais Procurado</div>
-                        <div class="relative h-full w-full rounded-[20px] p-8 flex flex-col bg-gradient-to-b from-[#2b0505]/40 to-black/80">
+                        <!-- FAIXA AJUSTADA: left-0, py-2 para mais altura e texto legível -->
+                        <div class="absolute top-0 left-0 w-full bg-brand-gold text-black text-[10px] font-bold text-center py-2 uppercase tracking-widest z-20 shadow-md">Mais Procurado</div>
+                        
+                        <!-- CONTEÚDO COM MAIS RESPIRO NO TOPO (pt-12) -->
+                        <div class="relative h-full w-full rounded-[20px] p-8 pt-12 flex flex-col bg-gradient-to-b from-[#2b0505]/40 to-black/80">
                             
-                            <div class="w-full h-48 rounded-xl overflow-hidden mb-8 border border-brand-gold/30 shadow-lg relative mt-4">
+                            <div class="w-full h-48 rounded-xl overflow-hidden mb-8 border border-brand-gold/30 shadow-lg relative mt-2">
                                 <img src="https://imagensagata.carrd.co/assets/images/image19.jpg?v=c257b396" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Liso Soberano 8K">
                             </div>
 
@@ -1000,7 +1003,7 @@
                  <!-- HERO LOJA (ATUALIZADO: Imagem OK e sem Lazy Load) -->
                  <div class="relative w-full h-[50vh] md:h-[60vh] rounded-[2rem] overflow-hidden mb-16 shadow-2xl group">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10"></div>
-                    <img src="https://imagensagata.carrd.co/assets/images/image05.jpg?v=4b8919f9" class="w-full h-full object-cover transform transition duration-[2s] group-hover:scale-110" alt="Coleção">
+                    <img src="https://imagensagata.carrd.co/assets/images/image22.jpg?v=02dd65e7" class="w-full h-full object-cover transform transition duration-[2s] group-hover:scale-110" alt="Coleção">
                     <div class="absolute bottom-8 left-6 md:bottom-12 md:left-12 z-20 max-w-lg">
                         <div class="glass-panel px-8 py-8 rounded-2xl border-l-4 border-l-brand-gold backdrop-blur-md">
                             <h2 class="text-4xl md:text-6xl font-luxury text-white leading-none mb-3">A Gata Lambeu <span class="text-brand-gold italic">PRO</span></h2>
