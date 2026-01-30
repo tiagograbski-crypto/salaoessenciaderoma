@@ -19,13 +19,15 @@
     
     <!-- 
         ================================================================================
-        PROJETO: ESSÊNCIA DE ROMÃ HAIR | PLATAFORMA DIGITAL 2026 (MASTER v120)
+        PROJETO: ESSÊNCIA DE ROMÃ HAIR | PLATAFORMA DIGITAL 2026 (MASTER v126)
         ARQUIVO: index.html 
         
-        [RELATÓRIO DE ATUALIZAÇÃO v120 - NOVA CAPA GATA LAMBEU]
-        1. HERO UPDATE: Substituída a imagem de capa da seção A Gata Lambeu (#agata).
-           Saiu: image05.jpg (Kit Trindade) -> Entrou: image22.jpg (Nova Campanha).
-        2. STATUS: Mantido carregamento instantâneo (sem lazy load) para impacto visual.
+        [RELATÓRIO DE ATUALIZAÇÃO v126]
+        1. CLUBE: Preços da Zona de Alerta (31-60d) ajustados conforme regra de negócio:
+           - Sublime: R$ 159,90
+           - Imperial: R$ 189,90
+           - Absoluto: R$ 219,90
+        2. INTEGRITY: Código completo sem cortes para publicação.
         ================================================================================
     -->
 
@@ -56,7 +58,6 @@
       gtag('js', new Date());
       gtag('config', 'AW-11442509118');
 
-      // FUNÇÃO DE CONVERSÃO ADICIONADA (Correção de Segurança)
       function gtag_report_conversion(url) {
         var callback = function () {
           if (typeof(url) != 'undefined') {
@@ -64,7 +65,7 @@
           }
         };
         gtag('event', 'conversion', {
-            'send_to': 'AW-11442509118/SEU_LABEL_AQUI', // Substitua pelo Label correto se houver
+            'send_to': 'AW-11442509118/SEU_LABEL_AQUI',
             'event_callback': callback
         });
         return false;
@@ -363,7 +364,7 @@
     <!-- PROGRESSO DE LEITURA SCROLL -->
     <div id="scroll-progress" class="fixed top-0 left-0 h-[3px] bg-brand-gold z-[101] transition-all duration-100 ease-out shadow-[0_0_10px_#C5A059]" style="width: 0%"></div>
 
-    <!-- BARRA CONCIERGE (ATUALIZADO: Urgência Cashback) -->
+    <!-- BARRA CONCIERGE -->
     <div id="concierge-bar" class="concierge-bar">
         <div class="flex flex-col">
             <span class="text-[9px] text-brand-gold font-bold uppercase tracking-widest">⚡ Cashback Home Care (Use no Liso Soberano)</span>
@@ -447,7 +448,7 @@
                     </a>
                     <span class="text-[10px] text-gray-500 uppercase tracking-widest"><i class="fas fa-clock text-brand-gold mr-1"></i> Resposta média em 5 minutos</span>
                     
-                    <!-- NOVO BANNER DE CASHBACK (Lógica Corrigida: Produto -> Serviço | Link: A Gata Lambeu) -->
+                    <!-- BANNER DE CASHBACK -->
                     <div class="mt-6 w-full max-w-lg mx-auto reveal active">
                         <div class="relative bg-gradient-to-r from-[#1a0505] to-[#0a0a0a] border border-brand-gold/30 rounded-xl p-4 flex flex-col md:flex-row items-center justify-between gap-4 shadow-[0_0_30px_rgba(197,160,89,0.15)] group hover:border-brand-gold/60 transition-all cursor-pointer" onclick="window.location.hash='agata'; return false;">
                             <!-- Glow Effect -->
@@ -595,7 +596,7 @@
 
                 <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 max-w-6xl mx-auto">
                     
-                    <!-- COLUNA 1: IMAGEM (URL CORRIGIDA para imagensagata.carrd.co) -->
+                    <!-- COLUNA 1: IMAGEM (URL CORRIGIDA) -->
                     <div class="w-full lg:w-5/12 reveal relative group h-fit">
                         <div class="absolute inset-0 bg-brand-gold/10 blur-[50px] rounded-full opacity-30 group-hover:opacity-50 transition duration-1000"></div>
                         
@@ -641,7 +642,6 @@
                     <h3 class="font-luxury text-4xl md:text-5xl text-white italic mb-12">"Qual é o seu desejo hoje?"</h3>
                     
                     <div class="flex flex-col md:flex-row gap-6 justify-center">
-                        <!-- REORDERED BUTTONS: Liso -> Glass -> Detox -->
                         <button onclick="selectService('card-liso')" class="group relative px-10 py-6 bg-white/10 border border-white/10 rounded-2xl hover:bg-brand-gold/20 hover:border-brand-gold/50 transition-all">
                             <span class="block text-white font-bold text-sm uppercase tracking-widest mb-2">Transformação</span>
                             <span class="block text-xs text-gray-400 group-hover:text-brand-gold-light">Quero liso definitivo (Progressiva)</span>
@@ -664,12 +664,12 @@
             <div class="container mx-auto px-6 max-w-7xl">
                 <div class="mobile-snap-x pb-8" id="services-carousel">
                     
-                    <!-- LISO SOBERANO 8K (PRIMEIRO - CARRO CHEFE | AJUSTE DE ESPAÇAMENTO DA FAIXA) -->
+                    <!-- LISO SOBERANO 8K (PRIMEIRO) -->
                     <div id="card-liso" class="mobile-snap-item glass-panel rounded-3xl p-1 relative group overflow-hidden h-full flex flex-col transition-all duration-500">
-                        <!-- FAIXA AJUSTADA: left-0, py-2 para mais altura e texto legível -->
+                        <!-- FAIXA AJUSTADA -->
                         <div class="absolute top-0 left-0 w-full bg-brand-gold text-black text-[10px] font-bold text-center py-2 uppercase tracking-widest z-20 shadow-md">Mais Procurado</div>
                         
-                        <!-- CONTEÚDO COM MAIS RESPIRO NO TOPO (pt-12) -->
+                        <!-- CONTEÚDO COM MAIS RESPIRO NO TOPO -->
                         <div class="relative h-full w-full rounded-[20px] p-8 pt-12 flex flex-col bg-gradient-to-b from-[#2b0505]/40 to-black/80">
                             
                             <div class="w-full h-48 rounded-xl overflow-hidden mb-8 border border-brand-gold/30 shadow-lg relative mt-2">
@@ -697,13 +697,12 @@
 
                             <div class="border-t border-brand-gold/20 pt-6 mt-auto">
                                 <div class="flex justify-between items-end mb-6"><span class="text-xs text-brand-gold uppercase">A partir de</span><span class="text-3xl text-white font-luxury">R$ 250,00</span></div>
-                                <!-- BOTÃO ATUALIZADO: LEVA PARA O CATÁLOGO (AGATA) -->
                                 <a href="#agata" onclick="window.location.hash='agata'; return false;" class="btn-luxury-cta block w-full py-5 rounded-xl text-center text-xs">CONSULTAR TABELA</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- GLASS MOLECULAR (SEGUNDO) -->
+                    <!-- GLASS MOLECULAR -->
                     <div id="card-flash" class="mobile-snap-item glass-panel rounded-3xl p-1 relative group overflow-hidden h-full flex flex-col transition-all duration-500">
                         <div class="relative h-full w-full rounded-[20px] p-8 flex flex-col bg-gradient-to-b from-white/5 to-transparent">
                             <div class="w-full h-48 rounded-xl overflow-hidden mb-8 border border-white/10 shadow-lg relative group-hover:border-brand-gold/30 transition-colors">
@@ -731,13 +730,12 @@
 
                             <div class="border-t border-white/10 pt-6 mt-auto">
                                 <div class="flex justify-between items-end mb-6"><span class="text-xs text-brand-gold uppercase">A partir de</span><span class="text-2xl text-white font-luxury">R$ 180,00</span></div>
-                                <!-- BOTÃO ATUALIZADO: LEVA PARA O CATÁLOGO (AGATA) -->
                                 <a href="#agata" onclick="window.location.hash='agata'; return false;" class="block w-full py-4 text-center border border-brand-gold/30 rounded-xl text-brand-gold text-xs font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-black transition-all">CONSULTAR TABELA</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- DETOX REPAIR (TERCEIRO) -->
+                    <!-- DETOX REPAIR -->
                     <div id="card-detox" class="mobile-snap-item glass-panel rounded-3xl p-1 relative group overflow-hidden h-full flex flex-col transition-all duration-500">
                         <div class="relative h-full w-full rounded-[20px] p-8 flex flex-col bg-gradient-to-b from-cyan-900/10 to-transparent">
                              <div class="w-full h-48 rounded-xl overflow-hidden mb-8 border border-cyan-500/20 shadow-lg relative bg-cyan-900/20 flex items-center justify-center">
@@ -765,7 +763,6 @@
 
                             <div class="border-t border-white/10 pt-6 mt-auto">
                                 <div class="flex justify-between items-end mb-6"><span class="text-xs text-gray-500 uppercase">A partir de</span><span class="text-2xl text-white font-luxury">R$ 148,80</span></div>
-                                <!-- BOTÃO ATUALIZADO: LEVA PARA O CATÁLOGO (AGATA) -->
                                 <a href="#agata" onclick="window.location.hash='agata'; return false;" class="block w-full py-4 text-center border border-cyan-500/30 rounded-xl text-cyan-200 text-xs font-bold uppercase tracking-widest hover:bg-cyan-900/30 transition-all">CONSULTAR TABELA</a>
                             </div>
                         </div>
@@ -778,9 +775,13 @@
         <section class="py-24 md:py-32 bg-[#050505] border-t border-brand-gold/5">
             <div class="container mx-auto px-6 max-w-6xl flex flex-col md:flex-row items-center gap-16">
                 <div class="w-full md:w-1/3 flex justify-center">
-                    <div class="w-72 h-72 rounded-full border border-brand-gold/30 bg-[#1a0a0a] flex items-center justify-center relative shadow-luxury-glow">
-                        <span class="text-brand-gold font-luxury text-5xl italic">E.R.</span>
-                        <div class="absolute inset-0 rounded-full border border-white/5 animate-spin-slow" style="animation-duration: 25s;"></div>
+                    <!-- Círculo com Vídeo em Loop -->
+                    <div class="w-72 h-72 rounded-full border border-brand-gold/30 bg-[#1a0a0a] flex items-center justify-center relative shadow-luxury-glow overflow-hidden">
+                         <video class="w-full h-full object-cover opacity-80" autoplay muted loop playsinline webkit-playsinline>
+                             <source src="https://imagensagata.carrd.co/assets/videos/video05.mp4?v=ed760a36" type="video/mp4">
+                         </video>
+                         <!-- Anel decorativo girando por cima -->
+                        <div class="absolute inset-0 rounded-full border border-white/10 animate-spin-slow pointer-events-none" style="animation-duration: 25s;"></div>
                     </div>
                 </div>
                 <div class="w-full md:w-2/3 text-center md:text-left">
@@ -944,49 +945,177 @@
              <h1 class="text-5xl md:text-7xl font-luxury text-white mb-6 relative z-10">Poder & <span class="italic text-brand-gold">Previsibilidade</span></h1>
              
              <!-- Comparativo -->
-             <section class="py-20 bg-[#1a1a1a] border-y border-brand-gold/10 text-left relative z-10 my-16 rounded-3xl overflow-hidden">
+             <section class="py-20 bg-[#1a1a1a] border-y border-brand-gold/10 text-left relative z-10 my-16 rounded-3xl overflow-hidden shadow-2xl">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center p-8">
-                    <div class="text-center lg:text-right text-gray-400 space-y-4">
-                        <h3 class="uppercase tracking-widest text-sm font-bold mb-4">Modelo Tradicional</h3>
-                        <p>Paga preço cheio (R$ 350+)</p>
-                        <p>Agenda quando sobra tempo</p>
-                        <p>Cabelo instável</p>
+                    <div class="text-center lg:text-right text-gray-500 space-y-6">
+                        <h3 class="uppercase tracking-widest text-sm font-bold mb-6 text-red-400/80">Modelo Tradicional (Risco)</h3>
+                        <p class="border-b border-white/5 pb-2">Paga preço cheio flutuante (R$ 350 a R$ 500)</p>
+                        <p class="border-b border-white/5 pb-2">Agenda "quando dá" (Cabelo instável)</p>
+                        <p>Sem prioridade em datas festivas</p>
                     </div>
-                    <div class="text-center lg:text-left text-white space-y-4 border-t lg:border-t-0 lg:border-l border-white/10 pt-8 lg:pt-0 lg:pl-8">
-                        <h3 class="text-brand-gold uppercase tracking-widest text-sm font-bold mb-4">Clube Alisa Chapecó</h3>
-                        <p class="font-bold">Valor fixo reduzido (Até 60% OFF)</p>
-                        <p class="font-bold">Prioridade total na agenda</p>
-                        <p class="font-bold">Cabelo impecável o ano todo</p>
+                    <div class="text-center lg:text-left text-white space-y-6 border-t lg:border-t-0 lg:border-l border-brand-gold/30 pt-8 lg:pt-0 lg:pl-8">
+                        <h3 class="text-brand-gold uppercase tracking-widest text-sm font-bold mb-6">Clube Alisa Chapecó (Segurança)</h3>
+                        <p class="font-bold border-b border-brand-gold/10 pb-2"><i class="fas fa-check text-brand-gold mr-2"></i> Valor fixo reduzido (Até 60% OFF)</p>
+                        <p class="font-bold border-b border-brand-gold/10 pb-2"><i class="fas fa-check text-brand-gold mr-2"></i> Cabelo impecável o ano todo</p>
+                        <p class="font-bold"><i class="fas fa-check text-brand-gold mr-2"></i> Vaga garantida na agenda</p>
                     </div>
                 </div>
              </section>
 
-             <!-- Planos Clube -->
-             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-20 mobile-snap-x mt-20 relative z-10">
-                <div class="mobile-snap-item bg-[#1a0202] rounded-2xl p-8 border border-white/5 hover:border-brand-gold/50 transition-all hover:-translate-y-2 group shadow-xl glass-panel">
-                    <h3 class="text-2xl font-luxury text-white mb-2">Sublime</h3><div class="text-4xl text-brand-gold font-light mb-2">R$ 119,90</div><span class="text-[9px] text-gray-600 block mb-6">por sessão mensal</span>
-                    <div class="mb-6 p-3 rounded-lg bg-white/5 border border-white/10 text-left"><span class="text-[10px] text-[#E3C676] font-bold uppercase tracking-widest block mb-1">Benefícios:</span><p class="text-[9px] text-gray-400 leading-tight">Manutenção da textura natural melhorada e praticidade. Crédito flexível para corte ou cor.</p></div>
-                    <div class="timeline-container text-left mb-4"><div class="timeline-item"><div class="timeline-marker active"></div><div class="flex justify-between text-[10px] text-[#10B981] font-bold"><span>Manutenção (30d)</span><span>R$ 119,90</span></div></div><div class="timeline-item"><div class="timeline-marker danger"></div><div class="flex justify-between text-[10px] text-red-500/70"><span>Perda do Clube (61d+)</span><span>R$ 359,00</span></div></div></div>
-                    <p class="text-[9px] text-red-400/80 leading-tight text-left mb-6 font-light">*Adesão Zero para clientes ativos (60d).</p><a href="https://wa.me/5549999954052?text=Clube%20Sublime" class="btn-luxury-cta block w-full py-3 rounded text-[10px]">Entrar Agora</a>
+             <!-- Planos Clube (REFINADOS) -->
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20 mobile-snap-x mt-20 relative z-10">
+                
+                <!-- PLANO SUBLIME (LISOS & ONDULADOS) -->
+                <div class="mobile-snap-item bg-[#1a0202] rounded-2xl p-8 border border-white/5 hover:border-brand-gold/50 transition-all hover:-translate-y-2 group shadow-xl glass-panel relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-white/5 px-3 py-1 rounded-bl-lg text-[9px] text-gray-400 uppercase tracking-widest">Entrada</div>
+                    <h3 class="text-2xl font-luxury text-white mb-2">Sublime</h3>
+                    <div class="text-5xl text-brand-gold font-light mb-1">R$ 119,90</div>
+                    <span class="text-[10px] text-gray-500 block mb-6">por sessão mensal</span>
+                    
+                    <div class="mb-6 p-4 rounded-lg bg-black/40 border border-white/5 text-left">
+                        <span class="text-[9px] text-green-400 font-bold uppercase tracking-widest block mb-2"><i class="fas fa-coins mr-1"></i> Economia: R$ 239,10</span>
+                        <span class="text-[10px] text-[#E3C676] font-bold uppercase tracking-widest block mb-1">Ideal para:</span>
+                        <p class="text-[10px] text-gray-400 leading-relaxed">Manutenção de textura natural, alinhamento leve e praticidade do dia a dia.</p>
+                    </div>
+
+                    <!-- LINHA DO TEMPO REFINADA -->
+                    <div class="timeline-container text-left mb-6 pl-4 border-l border-white/10 ml-1">
+                        <div class="timeline-item pb-4">
+                            <div class="timeline-marker active" style="left: -21px;"></div>
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-white font-bold">Ideal (30d)</span>
+                                <span class="text-brand-gold font-bold">R$ 119,90</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item pb-4">
+                            <div class="timeline-marker warn" style="left: -21px; background: #fbbf24; border-color: #f59e0b;"></div>
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-yellow-500 font-bold">⚠️ Alerta (31-60d)</span>
+                                <span class="text-yellow-500">R$ 159,90</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker danger" style="left: -21px;"></div>
+                            <div class="flex justify-between items-center text-xs opacity-60 group-hover:opacity-100 transition-opacity">
+                                <span class="text-red-400">Preço Avulso (61d+)</span>
+                                <span class="text-red-400 line-through">R$ 359,00</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Sublime%20e%20pagar%20R$%20119,90." class="btn-luxury-cta block w-full py-3 rounded text-[10px] border border-white/10 hover:border-brand-gold">Entrar no Sublime</a>
                 </div>
-                <div class="mobile-snap-item bg-gradient-to-b from-[#2b0505] to-[#1a0202] rounded-2xl p-8 border border-brand-gold/30 transition-all transform scale-105 shadow-luxury-glow relative overflow-hidden glass-panel">
-                    <div class="absolute top-0 w-full left-0 h-1 bg-brand-gold"></div><h3 class="text-3xl font-luxury text-white mb-2">Imperial</h3><div class="text-5xl text-brand-gold font-light mb-2">R$ 139,90</div><span class="text-[9px] text-gray-600 block mb-6">por sessão mensal</span>
-                    <div class="mb-6 p-3 rounded-lg bg-white/5 border border-white/10 text-left"><span class="text-[10px] text-[#E3C676] font-bold uppercase tracking-widest block mb-1">Benefícios:</span><p class="text-[9px] text-gray-400 leading-tight">Definição e controle de volume para cacheadas. Crédito flexível para corte ou cor.</p></div>
-                    <div class="timeline-container text-left mb-4"><div class="timeline-item"><div class="timeline-marker active"></div><div class="flex justify-between text-[10px] text-[#10B981] font-bold"><span>Manutenção (30d)</span><span>R$ 139,90</span></div></div><div class="timeline-item"><div class="timeline-marker danger"></div><div class="flex justify-between text-[10px] text-red-500/70"><span>Perda do Clube (61d+)</span><span>R$ 410,00</span></div></div></div>
-                    <p class="text-[9px] text-red-400/80 leading-tight text-left mb-6 font-light">*Adesão Zero para clientes ativos (60d).</p><a href="https://wa.me/5549999954052?text=Clube%20Imperial" class="btn-luxury-cta block w-full py-4 rounded text-[10px]">Entrar Agora</a>
+
+                <!-- PLANO IMPERIAL (CACHEADOS) -->
+                <div class="mobile-snap-item bg-gradient-to-b from-[#2b0505] to-[#1a0202] rounded-2xl p-8 border border-brand-gold/40 transition-all transform scale-105 shadow-[0_0_50px_rgba(197,160,89,0.15)] relative overflow-hidden glass-panel z-20">
+                    <div class="absolute top-0 w-full left-0 h-1 bg-brand-gold"></div>
+                    <div class="absolute top-0 right-0 bg-brand-gold text-black px-3 py-1 rounded-bl-lg text-[9px] font-bold uppercase tracking-widest">Mais Escolhido</div>
+                    
+                    <h3 class="text-3xl font-luxury text-white mb-2">Imperial</h3>
+                    <div class="text-6xl text-brand-gold font-light mb-1">R$ 139,90</div>
+                    <span class="text-[10px] text-gray-500 block mb-6">por sessão mensal</span>
+
+                    <div class="mb-6 p-4 rounded-lg bg-black/40 border border-brand-gold/20 text-left">
+                        <span class="text-[9px] text-green-400 font-bold uppercase tracking-widest block mb-2"><i class="fas fa-coins mr-1"></i> Economia: R$ 270,10</span>
+                        <span class="text-[10px] text-[#E3C676] font-bold uppercase tracking-widest block mb-1">Ideal para:</span>
+                        <p class="text-[10px] text-gray-400 leading-relaxed">Fios ondulados ou cacheados que buscam definição, controle de volume e brilho.</p>
+                    </div>
+
+                    <!-- LINHA DO TEMPO REFINADA -->
+                    <div class="timeline-container text-left mb-6 pl-4 border-l border-brand-gold/30 ml-1">
+                        <div class="timeline-item pb-4">
+                            <div class="timeline-marker active" style="left: -21px; background: #C5A059; box-shadow: 0 0 10px #C5A059;"></div>
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-white font-bold">Ideal (30d)</span>
+                                <span class="text-brand-gold font-bold text-sm">R$ 139,90</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item pb-4">
+                            <div class="timeline-marker warn" style="left: -21px; background: #fbbf24; border-color: #f59e0b;"></div>
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-yellow-500 font-bold">⚠️ Alerta (31-60d)</span>
+                                <span class="text-yellow-500 font-bold">R$ 189,90</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker danger" style="left: -21px;"></div>
+                            <div class="flex justify-between items-center text-xs opacity-70">
+                                <span class="text-red-400">Preço Avulso (61d+)</span>
+                                <span class="text-red-400 line-through">R$ 410,00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Imperial%20e%20pagar%20R$%20139,90." class="btn-luxury-cta block w-full py-4 rounded text-xs font-bold tracking-widest">QUERO SER IMPERIAL</a>
                 </div>
-                <div class="mobile-snap-item bg-[#1a0202] rounded-2xl p-8 border border-white/5 hover:border-brand-gold/50 transition-all hover:-translate-y-2 group shadow-xl glass-panel">
-                    <h3 class="text-2xl font-luxury text-white mb-2">Absoluto</h3><div class="text-4xl text-brand-gold font-light mb-2">R$ 159,90</div><span class="text-[9px] text-gray-600 block mb-6">por sessão mensal</span>
-                    <div class="mb-6 p-3 rounded-lg bg-white/5 border border-white/10 text-left"><span class="text-[10px] text-[#E3C676] font-bold uppercase tracking-widest block mb-1">Benefícios:</span><p class="text-[9px] text-gray-400 leading-tight">Transformação total e saúde de fios resistentes. Crédito flexível para corte ou cor.</p></div>
-                    <div class="timeline-container text-left mb-4"><div class="timeline-item"><div class="timeline-marker active"></div><div class="flex justify-between text-[10px] text-[#10B981] font-bold"><span>Manutenção (30d)</span><span>R$ 159,90</span></div></div><div class="timeline-item"><div class="timeline-marker danger"></div><div class="flex justify-between text-[10px] text-red-500/70"><span>Perda do Clube (61d+)</span><span>R$ 499,00</span></div></div></div>
-                    <p class="text-[9px] text-red-400/80 leading-tight text-left mb-6 font-light">*Adesão Zero para clientes ativos (60d).</p><a href="https://wa.me/5549999954052?text=Clube%20Absoluto" class="btn-luxury-cta block w-full py-3 rounded text-[10px]">Entrar Agora</a>
+
+                <!-- PLANO ABSOLUTO (CRESPOS) -->
+                <div class="mobile-snap-item bg-[#1a0202] rounded-2xl p-8 border border-white/5 hover:border-brand-gold/50 transition-all hover:-translate-y-2 group shadow-xl glass-panel relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-white/5 px-3 py-1 rounded-bl-lg text-[9px] text-gray-400 uppercase tracking-widest">Premium</div>
+                    <h3 class="text-2xl font-luxury text-white mb-2">Absoluto</h3>
+                    <div class="text-5xl text-brand-gold font-light mb-1">R$ 159,90</div>
+                    <span class="text-[10px] text-gray-500 block mb-6">por sessão mensal</span>
+
+                    <div class="mb-6 p-4 rounded-lg bg-black/40 border border-white/5 text-left">
+                        <span class="text-[9px] text-green-400 font-bold uppercase tracking-widest block mb-2"><i class="fas fa-coins mr-1"></i> Economia: R$ 339,10</span>
+                        <span class="text-[10px] text-[#E3C676] font-bold uppercase tracking-widest block mb-1">Ideal para:</span>
+                        <p class="text-[10px] text-gray-400 leading-relaxed">Cabelos resistentes, crespos ou transformações totais. O poder máximo do liso.</p>
+                    </div>
+
+                    <!-- LINHA DO TEMPO REFINADA -->
+                    <div class="timeline-container text-left mb-6 pl-4 border-l border-white/10 ml-1">
+                        <div class="timeline-item pb-4">
+                            <div class="timeline-marker active" style="left: -21px;"></div>
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-white font-bold">Ideal (30d)</span>
+                                <span class="text-brand-gold font-bold">R$ 159,90</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item pb-4">
+                            <div class="timeline-marker warn" style="left: -21px; background: #fbbf24; border-color: #f59e0b;"></div>
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-yellow-500 font-bold">⚠️ Alerta (31-60d)</span>
+                                <span class="text-yellow-500">R$ 219,90</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker danger" style="left: -21px;"></div>
+                            <div class="flex justify-between items-center text-xs opacity-60 group-hover:opacity-100 transition-opacity">
+                                <span class="text-red-400">Preço Avulso (61d+)</span>
+                                <span class="text-red-400 line-through">R$ 499,00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Absoluto%20e%20pagar%20R$%20159,90." class="btn-luxury-cta block w-full py-3 rounded text-[10px] border border-white/10 hover:border-brand-gold">Entrar no Absoluto</a>
                 </div>
              </div>
-             <!-- FAQ -->
-             <div class="max-w-3xl mx-auto text-left relative z-10 mt-16">
+
+             <!-- DISCALIMER ADESÃO -->
+             <div class="max-w-2xl mx-auto mb-16 p-4 rounded-xl border border-brand-gold/20 bg-brand-gold/5">
+                 <p class="text-[10px] text-gray-400 uppercase tracking-widest text-center">
+                     * Adesão Zero (R$ 0,00) exclusiva para clientes com histórico ativo (últimos 60 dias). Novos clientes sujeitos a taxa de entrada.
+                 </p>
+             </div>
+
+             <!-- FAQ REFINADO -->
+             <div class="max-w-3xl mx-auto text-left relative z-10 mt-16 pb-12">
                 <h3 class="font-serif text-3xl text-white italic mb-8 text-center">Dúvidas Frequentes</h3>
-                <details class="faq-item"><summary class="faq-summary"><span class="text-white">Como funciona a cobrança?</span><i class="fas fa-chevron-down text-brand-gold"></i></summary><div class="faq-answer">Não é recorrente no cartão. Você paga apenas quando agendar sua sessão.</div></details>
-                <details class="faq-item"><summary class="faq-summary"><span class="text-white">E se eu não quiser alisar este mês?</span><i class="fas fa-chevron-down text-brand-gold"></i></summary><div class="faq-answer">O crédito é flexível! Use para Corte, Cor ou Tratamento.</div></details>
+                
+                <details class="faq-item">
+                    <summary class="faq-summary"><span class="text-white text-sm font-medium">Como funciona a cobrança?</span><i class="fas fa-chevron-down text-brand-gold"></i></summary>
+                    <div class="faq-answer">Não é recorrente no cartão de crédito. Você paga o valor do seu plano apenas no dia que vier realizar o procedimento no salão.</div>
+                </details>
+                
+                <details class="faq-item">
+                    <summary class="faq-summary"><span class="text-white text-sm font-medium">E se eu não quiser alisar este mês?</span><i class="fas fa-chevron-down text-brand-gold"></i></summary>
+                    <div class="faq-answer">O valor do seu plano vira <strong>Crédito Flexível</strong>. Você pode usar 100% do valor para fazer Corte, Terapia Capilar ou Mechas, mantendo seu preço de Clube garantido.</div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-summary"><span class="text-white text-sm font-medium">Posso cancelar quando quiser?</span><i class="fas fa-chevron-down text-brand-gold"></i></summary>
+                    <div class="faq-answer">Sim. Você pode sair do clube a qualquer momento sem multa. Porém, ao retornar futuramente, será cobrado o valor da <strong>Taxa de Adesão</strong> vigente na época e os serviços voltarão ao preço avulso (tabela cheia) até a reentrada.</div>
+                </details>
              </div>
         </section>
     </div>
