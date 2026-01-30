@@ -19,13 +19,13 @@
     
     <!-- 
         ================================================================================
-        PROJETO: ESSÊNCIA DE ROMÃ HAIR | PLATAFORMA DIGITAL 2026 (MASTER v117)
+        PROJETO: ESSÊNCIA DE ROMÃ HAIR | PLATAFORMA DIGITAL 2026 (MASTER v118)
         ARQUIVO: index.html 
         
-        [RELATÓRIO DE ATUALIZAÇÃO v117 - CAPA GATA LAMBEU]
-        1. VISUAL FIX: Substituída a imagem da Capa (Hero) da Gata Lambeu.
-           Saiu: image10.jpg (Coleção/Estranha) -> Entrou: image05.jpg (Kit Trindade/Clean).
-        2. MAINTAINED: Fluxo de navegação para a tabela e lógica de cashback.
+        [RELATÓRIO DE ATUALIZAÇÃO v118 - REORDENAÇÃO & UX MOBILE]
+        1. REORDER: Liso Soberano 8k agora é o PRIMEIRO card e botão (Carro-Chefe).
+        2. UX MOBILE: Largura dos cards ajustada para 80vw para mostrar "pontinha" do 
+           próximo card, incentivando o scroll lateral.
         ================================================================================
     -->
 
@@ -289,7 +289,7 @@
         .faq-summary { padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; list-style: none; }
         .faq-answer { padding: 0 1.5rem 1.5rem; color: #aaa; font-size: 0.95rem; line-height: 1.7; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 0; padding-top: 1rem; }
         .mobile-snap-x { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 2rem; padding-bottom: 3rem; }
-        .mobile-snap-item { scroll-snap-align: center; flex-shrink: 0; width: 85vw; transition: all 0.5s ease; }
+        .mobile-snap-item { scroll-snap-align: center; flex-shrink: 0; width: 80vw; transition: all 0.5s ease; }
         @media(min-width: 768px) { .mobile-snap-x { display: grid; grid-template-columns: repeat(3, 1fr); overflow: visible; width: 100%; gap: 3rem; } .mobile-snap-item { width: auto; } }
         .wa-float { position: fixed; bottom: 30px; right: 30px; z-index: 1000; background: #25D366; color: white; width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); transition: 0.3s; animation: pulse-green 2s infinite; }
         .wa-float:hover { transform: scale(1.1); }
@@ -641,13 +641,14 @@
                     <h3 class="font-luxury text-4xl md:text-5xl text-white italic mb-12">"Qual é o seu desejo hoje?"</h3>
                     
                     <div class="flex flex-col md:flex-row gap-6 justify-center">
-                        <button onclick="selectService('card-flash')" class="group relative px-10 py-6 bg-white/10 border border-white/10 rounded-2xl hover:bg-brand-gold/20 hover:border-brand-gold/50 transition-all">
-                            <span class="block text-white font-bold text-sm uppercase tracking-widest mb-2">Praticidade</span>
-                            <span class="block text-xs text-gray-400 group-hover:text-brand-gold-light">Quero brilho rápido (Selagem Leve)</span>
-                        </button>
+                        <!-- REORDERED BUTTONS: Liso -> Glass -> Detox -->
                         <button onclick="selectService('card-liso')" class="group relative px-10 py-6 bg-white/10 border border-white/10 rounded-2xl hover:bg-brand-gold/20 hover:border-brand-gold/50 transition-all">
                             <span class="block text-white font-bold text-sm uppercase tracking-widest mb-2">Transformação</span>
                             <span class="block text-xs text-gray-400 group-hover:text-brand-gold-light">Quero liso definitivo (Progressiva)</span>
+                        </button>
+                        <button onclick="selectService('card-flash')" class="group relative px-10 py-6 bg-white/10 border border-white/10 rounded-2xl hover:bg-brand-gold/20 hover:border-brand-gold/50 transition-all">
+                            <span class="block text-white font-bold text-sm uppercase tracking-widest mb-2">Praticidade</span>
+                            <span class="block text-xs text-gray-400 group-hover:text-brand-gold-light">Quero brilho rápido (Selagem Leve)</span>
                         </button>
                         <button onclick="selectService('card-detox')" class="group relative px-10 py-6 bg-white/10 border border-white/10 rounded-2xl hover:bg-brand-gold/20 hover:border-brand-gold/50 transition-all">
                             <span class="block text-white font-bold text-sm uppercase tracking-widest mb-2">Saúde</span>
@@ -663,41 +664,7 @@
             <div class="container mx-auto px-6 max-w-7xl">
                 <div class="mobile-snap-x pb-8" id="services-carousel">
                     
-                    <!-- GLASS MOLECULAR -->
-                    <div id="card-flash" class="mobile-snap-item glass-panel rounded-3xl p-1 relative group overflow-hidden h-full flex flex-col transition-all duration-500">
-                        <div class="relative h-full w-full rounded-[20px] p-8 flex flex-col bg-gradient-to-b from-white/5 to-transparent">
-                            <div class="w-full h-48 rounded-xl overflow-hidden mb-8 border border-white/10 shadow-lg relative group-hover:border-brand-gold/30 transition-colors">
-                                <img src="https://imagensagata.carrd.co/assets/images/image11.jpg?v=4b8919f9" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Glass Molecular Synthesis">
-                            </div>
-
-                            <ul class="space-y-4 mb-8 flex-grow text-xs text-gray-400">
-                                <li class="flex gap-3">
-                                    <i class="fas fa-heart text-brand-gold mt-0.5"></i>
-                                    <div><strong class="text-white block uppercase tracking-wide opacity-80 mb-0.5">O Desejo</strong>Eliminar o "ruído visual" da porosidade e disciplinar sem perder o balanço natural.</div>
-                                </li>
-                                <li class="flex gap-3">
-                                    <i class="fas fa-tools text-brand-gold mt-0.5"></i>
-                                    <div><strong class="text-white block uppercase tracking-wide opacity-80 mb-0.5">A Técnica</strong>Fusão tecnológica avançada. Acabamento de alta resolução em 15 minutos.</div>
-                                </li>
-                                <li class="flex gap-3">
-                                    <i class="fas fa-shield-alt text-brand-gold mt-0.5"></i>
-                                    <div><strong class="text-white block uppercase tracking-wide opacity-80 mb-0.5">Benefício</strong>Polimento imediato da fibra, selagem de pontas e brilho vitrificado.</div>
-                                </li>
-                                <li class="flex gap-3">
-                                    <i class="fas fa-hourglass-half text-brand-gold mt-0.5"></i>
-                                    <div><strong class="text-white block uppercase tracking-wide opacity-80 mb-0.5">Durabilidade</strong>Protocolo de manutenção High-Speed Luxury (até 3 lavagens).</div>
-                                </li>
-                            </ul>
-
-                            <div class="border-t border-white/10 pt-6 mt-auto">
-                                <div class="flex justify-between items-end mb-6"><span class="text-xs text-brand-gold uppercase">A partir de</span><span class="text-2xl text-white font-luxury">R$ 180,00</span></div>
-                                <!-- BOTÃO ATUALIZADO: LEVA PARA O CATÁLOGO (AGATA) -->
-                                <a href="#agata" onclick="window.location.hash='agata'; return false;" class="block w-full py-4 text-center border border-brand-gold/30 rounded-xl text-brand-gold text-xs font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-black transition-all">CONSULTAR TABELA</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- LISO SOBERANO 8K (Rastreamento de Cashback Aplicado) -->
+                    <!-- LISO SOBERANO 8K (PRIMEIRO - CARRO CHEFE) -->
                     <div id="card-liso" class="mobile-snap-item glass-panel rounded-3xl p-1 relative group overflow-hidden h-full flex flex-col transition-all duration-500">
                         <div class="absolute top-0 center w-full bg-brand-gold text-black text-[9px] font-bold text-center py-1 uppercase tracking-widest z-20">Mais Procurado</div>
                         <div class="relative h-full w-full rounded-[20px] p-8 flex flex-col bg-gradient-to-b from-[#2b0505]/40 to-black/80">
@@ -733,7 +700,41 @@
                         </div>
                     </div>
 
-                    <!-- DETOX REPAIR -->
+                    <!-- GLASS MOLECULAR (SEGUNDO) -->
+                    <div id="card-flash" class="mobile-snap-item glass-panel rounded-3xl p-1 relative group overflow-hidden h-full flex flex-col transition-all duration-500">
+                        <div class="relative h-full w-full rounded-[20px] p-8 flex flex-col bg-gradient-to-b from-white/5 to-transparent">
+                            <div class="w-full h-48 rounded-xl overflow-hidden mb-8 border border-white/10 shadow-lg relative group-hover:border-brand-gold/30 transition-colors">
+                                <img src="https://imagensagata.carrd.co/assets/images/image11.jpg?v=4b8919f9" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Glass Molecular Synthesis">
+                            </div>
+
+                            <ul class="space-y-4 mb-8 flex-grow text-xs text-gray-400">
+                                <li class="flex gap-3">
+                                    <i class="fas fa-heart text-brand-gold mt-0.5"></i>
+                                    <div><strong class="text-white block uppercase tracking-wide opacity-80 mb-0.5">O Desejo</strong>Eliminar o "ruído visual" da porosidade e disciplinar sem perder o balanço natural.</div>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i class="fas fa-tools text-brand-gold mt-0.5"></i>
+                                    <div><strong class="text-white block uppercase tracking-wide opacity-80 mb-0.5">A Técnica</strong>Fusão tecnológica avançada. Acabamento de alta resolução em 15 minutos.</div>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i class="fas fa-shield-alt text-brand-gold mt-0.5"></i>
+                                    <div><strong class="text-white block uppercase tracking-wide opacity-80 mb-0.5">Benefício</strong>Polimento imediato da fibra, selagem de pontas e brilho vitrificado.</div>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i class="fas fa-hourglass-half text-brand-gold mt-0.5"></i>
+                                    <div><strong class="text-white block uppercase tracking-wide opacity-80 mb-0.5">Durabilidade</strong>Protocolo de manutenção High-Speed Luxury (até 3 lavagens).</div>
+                                </li>
+                            </ul>
+
+                            <div class="border-t border-white/10 pt-6 mt-auto">
+                                <div class="flex justify-between items-end mb-6"><span class="text-xs text-brand-gold uppercase">A partir de</span><span class="text-2xl text-white font-luxury">R$ 180,00</span></div>
+                                <!-- BOTÃO ATUALIZADO: LEVA PARA O CATÁLOGO (AGATA) -->
+                                <a href="#agata" onclick="window.location.hash='agata'; return false;" class="block w-full py-4 text-center border border-brand-gold/30 rounded-xl text-brand-gold text-xs font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-black transition-all">CONSULTAR TABELA</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DETOX REPAIR (TERCEIRO) -->
                     <div id="card-detox" class="mobile-snap-item glass-panel rounded-3xl p-1 relative group overflow-hidden h-full flex flex-col transition-all duration-500">
                         <div class="relative h-full w-full rounded-[20px] p-8 flex flex-col bg-gradient-to-b from-cyan-900/10 to-transparent">
                              <div class="w-full h-48 rounded-xl overflow-hidden mb-8 border border-cyan-500/20 shadow-lg relative bg-cyan-900/20 flex items-center justify-center">
