@@ -19,17 +19,13 @@
     
     <!-- 
         ================================================================================
-        PROJETO: ESSÊNCIA DE ROMÃ HAIR | PLATAFORMA DIGITAL 2026 (MASTER v129)
+        PROJETO: ESSÊNCIA DE ROMÃ HAIR | PLATAFORMA DIGITAL 2026 (MASTER v130)
         ARQUIVO: index.html 
         
-        [RELATÓRIO DE CONSOLIDAÇÃO v129]
-        1. CLUBE: Design Platinum, Timeline 3 Estágios (Ideal/Alerta/Avulso), 
-           Matemática de Economia corrigida e Badges "Mais Vantajoso".
-        2. LOJA (Gata Lambeu): Capa image22.jpg, Kit Trindade R$ 688 -> R$ 344 Cashback,
-           Badges verdes de retorno financeiro.
-        3. HERO: Banner Cashback corrigido (Produto -> Serviço) linkando para #agata,
-           Botão com efeito Shimmer, Prova Social 5 estrelas.
-        4. SERVIÇOS: Ordem Liso -> Glass -> Detox. Botões "Consultar Tabela".
+        [ATUALIZAÇÃO v130]
+        1. VÍDEOS: Adicionado novo vídeo (video06.mp4) na posição 1 do carrossel.
+        2. LAYOUT: Ajuste do Grid Desktop para 4 colunas (repeat(4, 1fr)) para
+           acomodar o novo vídeo sem quebrar a harmonia.
         ================================================================================
     -->
 
@@ -298,7 +294,7 @@
         .faq-answer { padding: 0 1.5rem 1.5rem; color: #aaa; font-size: 0.95rem; line-height: 1.7; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 0; padding-top: 1rem; }
         .mobile-snap-x { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 2rem; padding-bottom: 3rem; }
         .mobile-snap-item { scroll-snap-align: center; flex-shrink: 0; width: 80vw; transition: all 0.5s ease; }
-        @media(min-width: 768px) { .mobile-snap-x { display: grid; grid-template-columns: repeat(3, 1fr); overflow: visible; width: 100%; gap: 3rem; } .mobile-snap-item { width: auto; } }
+        @media(min-width: 768px) { .mobile-snap-x { display: grid; grid-template-columns: repeat(4, 1fr); overflow: visible; width: 100%; gap: 1.5rem; } .mobile-snap-item { width: auto; } }
         .wa-float { position: fixed; bottom: 30px; right: 30px; z-index: 1000; background: #25D366; color: white; width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); transition: 0.3s; animation: pulse-green 2s infinite; }
         .wa-float:hover { transform: scale(1.1); }
         .wa-badge { position: absolute; top: 0; right: 0; background: red; width: 18px; height: 18px; border-radius: 50%; font-size: 10px; display: flex; align-items: center; justify-content: center; border: 2px solid #000; font-weight: bold; }
@@ -550,7 +546,21 @@
 
                 <!-- CARROSSEL DE VÍDEOS -->
                 <div class="mobile-snap-x pb-8" id="video-carousel">
-                    <!-- Video 1 -->
+                    
+                    <!-- Video Novo (Posição 1) -->
+                    <div class="mobile-snap-item rounded-2xl overflow-hidden border border-brand-gold/20 relative group aspect-[9/16] bg-gray-900 shadow-lg w-[80vw] md:w-auto md:flex-1">
+                        <video class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700" autoplay loop muted playsinline webkit-playsinline>
+                            <source src="https://imagensagata.carrd.co/assets/videos/video06.mp4?v=83fac04c" type="video/mp4">
+                        </video>
+                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex justify-between items-end">
+                            <span class="text-white text-[10px] font-bold uppercase tracking-wider">Liso Supremo</span>
+                            <div class="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center bg-black/40 backdrop-blur-md">
+                                <i class="fas fa-video text-[10px] text-white/70"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 1 Original -->
                     <div class="mobile-snap-item rounded-2xl overflow-hidden border border-brand-gold/20 relative group aspect-[9/16] bg-gray-900 shadow-lg w-[80vw] md:w-auto md:flex-1">
                         <video class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700" autoplay loop muted playsinline webkit-playsinline>
                             <source src="https://imagensagata.carrd.co/assets/videos/video03.mp4?v=c257b396" type="video/mp4">
@@ -563,7 +573,7 @@
                         </div>
                     </div>
 
-                    <!-- Video 2 -->
+                    <!-- Video 2 Original -->
                     <div class="mobile-snap-item rounded-2xl overflow-hidden border border-brand-gold/20 relative group aspect-[9/16] bg-gray-900 shadow-lg w-[80vw] md:w-auto md:flex-1">
                         <video class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700" autoplay loop muted playsinline webkit-playsinline>
                             <source src="https://res.cloudinary.com/daukvmsc2/video/upload/v1767279737/WhatsApp_Video_2025-12-10_at_19.00.59_ov4cma.mp4" type="video/mp4">
@@ -576,7 +586,7 @@
                         </div>
                     </div>
 
-                    <!-- Video 3 -->
+                    <!-- Video 3 Original -->
                     <div class="mobile-snap-item rounded-2xl overflow-hidden border border-brand-gold/20 relative group aspect-[9/16] bg-gray-900 shadow-lg w-[80vw] md:w-auto md:flex-1">
                         <video class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700" autoplay loop muted playsinline webkit-playsinline>
                             <source src="https://imagensagata.carrd.co/assets/videos/video01.mp4?v=c257b396" type="video/mp4">
@@ -1435,8 +1445,8 @@
                             * O Cashback é gerado sobre o valor dos produtos adquiridos e deve ser utilizado exclusivamente como desconto no serviço Liso Soberano 8k no Essência de Romã Hair. Válido até 05/02/2026.
                         </p>
                     </div>
-                </section>
-                <!-- FIM DO MENU DE PREÇOS -->
+                 </section>
+                 <!-- FIM DO MENU DE PREÇOS -->
              </div>
         </section>
     </div>
