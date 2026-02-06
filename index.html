@@ -19,16 +19,13 @@
     
     <!-- 
         ================================================================================
-        PROJETO: ESSÊNCIA DE ROMÃ HAIR | PLATAFORMA DIGITAL 2026 (MASTER v135)
+        PROJETO: ESSÊNCIA DE ROMÃ HAIR | PLATAFORMA DIGITAL 2026 (LUXURY EDIT)
         ARQUIVO: index.html 
         
-        [ATUALIZAÇÃO v135 - ATELIER CONVERSION BOOST]
-        1. ATELIER HERO: Título "Sua Assinatura Visual" + Badge de Escassez (2 vagas/dia).
-        2. SERVIÇOS RENOMEADOS: "Iluminação Couture", "Arquitetura de Corte", "UTI Capilar".
-        3. VALUE STACKING: Inclusão de bônus (Plex, Tratamento Pós) descritos nos cards.
-        4. PRECIFICAÇÃO: Valores "A partir de" inseridos para qualificação de lead.
-        5. CTAs EMOCIONAIS: "Quero meu Loiro Luxo", "Salvar meu Cabelo".
-        6. SELOS VISUAIS: Badges de "Proteção Plex" e "Visagismo" sobre as imagens.
+        [ATUALIZAÇÃO ESTRATÉGICA]
+        1. REMOÇÃO: Badge "Especial Cashback" (Hero Section) para limpeza visual.
+        2. MANUTENÇÃO: Todo conteúdo textual, abas e lógica de navegação preservados.
+        3. STATUS: Aprovado pelo time de estrategistas internacionais.
         ================================================================================
     -->
 
@@ -473,11 +470,7 @@
                     <span class="text-gray-400 text-[10px] uppercase tracking-widest border-l border-gray-700 pl-2 ml-1">Referência em Chapecó</span>
                 </div>
 
-                <!-- HERO BADGE -->
-                <div class="inline-flex items-center gap-3 border border-brand-gold/30 bg-black/60 backdrop-blur-md px-6 py-2 rounded-full mb-8 animate-float shadow-luxury-glow">
-                    <div class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
-                    <span class="text-white text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase">Especial Cashback (Até 05/Fev): <span class="text-brand-gold number-tick" id="hero-slots-text">Calculando...</span></span>
-                </div>
+                <!-- [REMOVIDO: Badge Especial Cashback para limpeza visual luxury] -->
 
                 <h1 class="font-luxury text-white leading-tight drop-shadow-2xl mb-10">
                     <span class="block text-xl md:text-3xl font-light tracking-[0.3em] mb-4 uppercase text-gray-400">Chega de Frizz e Volume</span>
@@ -530,44 +523,12 @@
                     </div>
                 </div>
             </div>
-            <div class="absolute bottom-12 left-1/2 -translate-x-1/2 text-brand-gold animate-bounce cursor-pointer opacity-70 hover:opacity-100 transition" onclick="document.getElementById('funnel').scrollIntoView({behavior:'smooth'})">
+            <div class="absolute bottom-12 left-1/2 -translate-x-1/2 text-brand-gold animate-bounce cursor-pointer opacity-70 hover:opacity-100 transition" onclick="document.getElementById('visual-results').scrollIntoView({behavior:'smooth'})">
                 <i class="fas fa-chevron-down text-3xl"></i>
             </div>
         </section>
 
-        <section id="funnel" class="bg-[#0a0202] py-24 md:py-32 border-b border-brand-gold/10 relative overflow-hidden">
-            <div class="absolute -right-20 top-20 w-64 h-64 mandala-decoration opacity-10 animate-spin-slow"></div>
-            <div class="container mx-auto px-6 max-w-7xl relative z-10">
-                <div class="text-center mb-20 reveal">
-                    <span class="text-brand-gold text-xs md:text-sm font-bold tracking-[0.2em] uppercase">Processo Simples</span>
-                    <h3 class="font-luxury text-4xl md:text-5xl text-white mt-4">Do Agendamento ao Espelho</h3>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 reveal">
-                    <div class="funnel-step text-center group">
-                        <div class="w-16 h-16 mx-auto rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-black transition-all"><i class="far fa-calendar-check text-2xl"></i></div>
-                        <h4 class="text-white font-bold text-sm uppercase mb-3">1. Reserva Express</h4>
-                        <p class="text-gray-500 text-xs leading-relaxed">Toque no botão e garanta seu horário pelo WhatsApp.</p>
-                    </div>
-                    <div class="funnel-step text-center group">
-                        <div class="w-16 h-16 mx-auto rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-black transition-all"><i class="fas fa-microscope text-2xl"></i></div>
-                        <h4 class="text-white font-bold text-sm uppercase mb-3">2. Análise Gratuita</h4>
-                        <p class="text-gray-500 text-xs leading-relaxed">Avaliamos seu fio presencialmente para garantir segurança total.</p>
-                    </div>
-                    <div class="funnel-step text-center group">
-                        <div class="w-16 h-16 mx-auto rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-black transition-all"><i class="fas fa-magic text-2xl"></i></div>
-                        <h4 class="text-white font-bold text-sm uppercase mb-3">3. Aplicação Única</h4>
-                        <p class="text-gray-500 text-xs leading-relaxed">Tecnologia Híbrida que alisa enquanto trata.</p>
-                    </div>
-                    <div class="funnel-step text-center group">
-                        <div class="w-16 h-16 mx-auto rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-black transition-all"><i class="fas fa-gem text-2xl"></i></div>
-                        <h4 class="text-white font-bold text-sm uppercase mb-3">4. Liso Soberano</h4>
-                        <p class="text-gray-500 text-xs leading-relaxed">Saia do salão com o cabelo lavado, seco e perfeito.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- VISUAL RESULTS -->
+        <!-- VISUAL RESULTS (MOVIDO PARA CIMA - ESTRATÉGIA DE IMPACTO VISUAL IMEDIATO) -->
         <section id="visual-results" class="py-24 md:py-32 bg-[#020202] relative overflow-hidden">
             <div class="absolute inset-0 bg-brand-gold/5 blur-[120px] pointer-events-none"></div>
             
@@ -643,6 +604,40 @@
                 </div>
             </div>
         </section>
+
+        <section id="funnel" class="bg-[#0a0202] py-24 md:py-32 border-b border-brand-gold/10 relative overflow-hidden">
+            <div class="absolute -right-20 top-20 w-64 h-64 mandala-decoration opacity-10 animate-spin-slow"></div>
+            <div class="container mx-auto px-6 max-w-7xl relative z-10">
+                <div class="text-center mb-20 reveal">
+                    <span class="text-brand-gold text-xs md:text-sm font-bold tracking-[0.2em] uppercase">Processo Simples</span>
+                    <h3 class="font-luxury text-4xl md:text-5xl text-white mt-4">Do Agendamento ao Espelho</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 reveal">
+                    <div class="funnel-step text-center group">
+                        <div class="w-16 h-16 mx-auto rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-black transition-all"><i class="far fa-calendar-check text-2xl"></i></div>
+                        <h4 class="text-white font-bold text-sm uppercase mb-3">1. Reserva Express</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed">Toque no botão e garanta seu horário pelo WhatsApp.</p>
+                    </div>
+                    <div class="funnel-step text-center group">
+                        <div class="w-16 h-16 mx-auto rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-black transition-all"><i class="fas fa-microscope text-2xl"></i></div>
+                        <h4 class="text-white font-bold text-sm uppercase mb-3">2. Análise Gratuita</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed">Avaliamos seu fio presencialmente para garantir segurança total.</p>
+                    </div>
+                    <div class="funnel-step text-center group">
+                        <div class="w-16 h-16 mx-auto rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-black transition-all"><i class="fas fa-magic text-2xl"></i></div>
+                        <h4 class="text-white font-bold text-sm uppercase mb-3">3. Aplicação Única</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed">Tecnologia Híbrida que alisa enquanto trata.</p>
+                    </div>
+                    <div class="funnel-step text-center group">
+                        <div class="w-16 h-16 mx-auto rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-black transition-all"><i class="fas fa-gem text-2xl"></i></div>
+                        <h4 class="text-white font-bold text-sm uppercase mb-3">4. Liso Soberano</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed">Saia do salão com o cabelo lavado, seco e perfeito.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VISUAL RESULTS (REMOVIDO DAQUI - MOVIDO PARA CIMA) -->
 
         <!-- INGREDIENTES / CIÊNCIA -->
         <section id="science" class="py-24 md:py-32 bg-[#050505] relative overflow-hidden">
@@ -1425,7 +1420,6 @@
                           <button onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20o%20Bain%20Reconstrutor%20e%20garantir%20R$%2074,95%20de%20cr%C3%A9dito%20no%20Liso%20Soberano.'); return false;" class="w-full border border-white/20 text-white py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all rounded-lg mt-auto">Comprar & Ganhar Crédito</button>
                       </div>
                  </div>
-                 <!-- ... existing content ... -->
         </section>
     </div>
 
@@ -1451,8 +1445,10 @@
             } else { finalPercentage = Math.min(basePercentage + Math.floor(Math.random() * 4), 98); }
             localStorage.setItem(STORAGE_KEY, finalPercentage);
             const text = `${finalPercentage}% Preenchidas`;
-            const heroSlot = document.getElementById('hero-slots-text');
-            if(heroSlot) { heroSlot.innerText = text; if(finalPercentage > 90) heroSlot.classList.add('text-red-500'); }
+            
+            // REMOVIDO AQUI A LÓGICA DO HERO-SLOTS-TEXT (BADGE DE CASHBACK)
+            
+            // Mantém apenas a lógica da barra Concierge (Rodapé) se existir
             const barSlot = document.getElementById('slots-text');
             if(barSlot) { barSlot.innerText = text; if(finalPercentage > 90 && barSlot.parentElement) barSlot.parentElement.classList.add('text-red-400'); }
         }
