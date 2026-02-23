@@ -1656,27 +1656,27 @@
 
             <span class="glass-popup-close" onclick="closeLisoBlindadoPopup()">&times;</span>
             
-            <div class="glass-popup-header">
+            <div class="glass-popup-header" style="margin-bottom: 8px;">
                 <span class="pulse-dot"></span>
-                <p style="color: #E5C07B;">Perfil Selecionado: Convite VIP Liberado</p>
+                <p style="color: #E5C07B; font-size: 0.8rem;">Convite VIP Liberado</p>
             </div>
 
             <!-- EFEITO OURO 24K NO TÍTULO -->
-            <h2 class="glass-popup-title gold-shine-text" style="font-size: 1.9rem;">Liso Soberano 8K <br><span style="font-size: 1.3rem;">Essência de Romã</span></h2>
-            <p class="glass-popup-subtitle" style="color: #CCCCCC;">Lote liberado <strong>domingo (dia 22) ao meio-dia</strong>.</p>
+            <h2 class="glass-popup-title gold-shine-text" style="font-size: 1.7rem; margin-bottom: 10px;">Liso Soberano 8K <span style="display:none;"><br><span style="font-size: 1.3rem;">Essência de Romã</span></span></h2>
             
-            <div class="glass-popup-scarcity" style="font-size: 0.95rem;">
-                ⚠️ Status do Lote: Liberação inicial de <strong style="color: #DAA520;">10 unidades</strong>.<br>
-                Restam só <strong style="color: #DAA520;">3 disponíveis</strong> na sua região!
+            <!-- Linha Ocultada para manter o minimalismo sem excluir código -->
+            <p class="glass-popup-subtitle" style="display:none; color: #CCCCCC;">Lote liberado <strong>domingo (dia 22) ao meio-dia</strong>.</p>
+            
+            <div class="glass-popup-scarcity" style="font-size: 0.85rem; padding: 6px; margin-bottom: 12px;">
+                <span style="display:none;">⚠️ Status do Lote: Liberação inicial de <strong style="color: #DAA520;">10 unidades</strong>.<br></span>
+                ⚠️ Lote de 10. Restam só <strong style="color: #DAA520;">3 disponíveis!</strong>
             </div>
 
             <!-- NOVO DESIGN SLIM: 7 Vouchers Já Resgatados -->
-            <div style="font-size: 0.65rem; color: #BF953F; text-align: left; margin-bottom: 5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-            <!-- INTELIGÊNCIA MOVIDA: Prova Social Global Acima dos Vouchers (Ocultada por estratégia, linha não excluída) -->
-            <div class="global-social-proof" style="display: none;">
-                🔥 <span class="vw-count">1</span> <span class="vw-text">pessoa está disputando</span> estes vouchers agora
+            <div style="font-size: 0.65rem; color: #BF953F; text-align: left; margin-bottom: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+                ❌ 7 Vouchers já resgatados:
             </div>
-
+            <div class="claimed-vouchers-row">
             <!-- NOVO DESIGN PREMIUM: 3 Vouchers Ativos com Pulsação, IDs corrigidos e Prova Social Individual Proporcional -->
             <div class="active-vouchers-row">
                 <div class="voucher-card active-voucher" id="voucher-ativo-1" onclick="resgatarVoucher('voucher-ativo-1', 40)">
@@ -1710,8 +1710,11 @@
                 <div id="glass-timer" class="glass-timer-display">10:00</div>
             </div>
 
+            <!-- REGRA ANTIFRAUDE E URGÊNCIA MÁXIMA ATUALIZADA (Sem excluir a linha original) -->
             <p style="font-size: 0.75rem; color: #888888; margin-top: 5px; font-weight: 600;">
-                *Válido por 7 dias. Regra antifraude: Limite de 1 resgate por IP.
+                <span style="display:none;">*Válido por 7 dias. Regra antifraude: Limite de 1 resgate por IP.</span>
+                <span style="display:none;">*Válido até dia 28 só. Regra antifraude: Limite de 1 resgate por IP.</span>
+                *Válido até dia 28 só.
             </p>
         </div>
     </div>
@@ -1741,7 +1744,7 @@
             position: relative;
             width: 90%;
             max-width: 420px;
-            padding: 30px;
+            padding: 20px 15px 25px 15px; /* REDUZIDO PARA FICAR MAIS SLIM/MINIMALISTA */
             border-radius: 20px;
             text-align: center;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -1899,8 +1902,8 @@
         .active-vouchers-row {
             display: flex;
             justify-content: space-between;
-            gap: 8px;
-            margin-bottom: 20px;
+            gap: 6px; /* Reduzido de 8px para comprimir */
+            margin-bottom: 15px; /* Reduzido de 20px */
             width: 100%;
         }
 
@@ -1908,7 +1911,7 @@
             flex: 1; 
             background: linear-gradient(135deg, #1A1A1A, #2C2C2C);
             border-radius: 10px;
-            padding: 12px 4px;
+            padding: 8px 4px; /* Reduzido o padding vertical para achatar o botão */
             cursor: pointer;
             position: relative;
             border: 1.5px solid #BF953F;
@@ -1917,7 +1920,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 75px;
+            min-height: 65px; /* Reduzido de 75px para deixar mais elegante */
         }
 
         /* === PULSAÇÃO LEVE NOS CARDS DISPONÍVEIS === */
@@ -2072,13 +2075,15 @@
 
         // Lógica Corrigida: Passando o ID específico do card clicado e o Valor do Voucher
         function resgatarVoucher(cardId, valorDesconto = 50) {
-            // Verifica a trava antifraude
+            // Verifica a trava antifraude (REGRA SUSPENSA VIA COMENTÁRIO PARA MANTER AS LINHAS)
             const hasClaimed = localStorage.getItem(VOUCHER_KEY);
             
+            /*
             if (hasClaimed) {
                 alert("⚠️ PROTEÇÃO ANTI-FRAUDE: Nosso sistema detectou que um voucher já foi emitido para o seu IP/Aparelho. Regra de limite de 1 por cliente aplicada.");
                 return;
             }
+            */
 
             // Registro de 7 dias
             const dataAtual = new Date();
@@ -2131,7 +2136,7 @@
                     card70.onclick = null; // Bloqueia o clique
                     card70.innerHTML = '<div class="voucher-value" style="font-size:0.85rem; color:#888;">VOUCHER<br><span style="font-size:1.25rem;text-decoration:line-through;">R$ 70</span></div><div class="voucher-desc" style="background:transparent;color:#888;">Alguém pegou</div>';
                 }
-                if (scarcityText) scarcityText.innerHTML = '⚠️ Status do Lote: Liberação inicial de <strong style="color: #DAA520;">10 unidades</strong>.<br>Restam só <strong style="color: #DAA520;">2 disponíveis</strong> na sua região!';
+                if (scarcityText) scarcityText.innerHTML = '<span style="display:none;">⚠️ Status do Lote: Liberação inicial de <strong style="color: #DAA520;">10 unidades</strong>.<br></span>⚠️ Lote de 10. Restam só <strong style="color: #DAA520;">2 disponíveis!</strong>';
             }
             
             // Se for a 3ª vez ou mais (Demorou muito, perdeu o de 50 também)
@@ -2154,14 +2159,16 @@
                     card50.innerHTML = '<div class="voucher-value" style="font-size:0.85rem; color:#888;">VOUCHER<br><span style="font-size:1.25rem;text-decoration:line-through;">R$ 50</span></div><div class="voucher-desc" style="background:transparent;color:#888;">Alguém pegou</div>';
                 }
                 
-                if (scarcityText) scarcityText.innerHTML = '⚠️ Status do Lote: Liberação inicial de <strong style="color: #DAA520;">10 unidades</strong>.<br>Resta só <strong style="color: #DAA520;">1 disponível</strong> na sua região!';
+                if (scarcityText) scarcityText.innerHTML = '<span style="display:none;">⚠️ Status do Lote: Liberação inicial de <strong style="color: #DAA520;">10 unidades</strong>.<br></span>⚠️ Lote de 10. Resta só <strong style="color: #DAA520;">1 disponível!</strong>';
             }
         }
 
         // Função para exibir o Pop-up
         function triggerLisoBlindadoPopup() {
             // Antes de mostrar, a "Proteção" verifica se o cliente já tem o voucher ativo
+            // (REGRA DE BLOQUEIO SUSPENSA VIA COMENTÁRIO)
             const voucherData = localStorage.getItem(VOUCHER_KEY);
+            /*
             if (voucherData) {
                 const parsedData = JSON.parse(voucherData);
                 const agora = new Date();
@@ -2176,6 +2183,7 @@
                     localStorage.removeItem(VOUCHER_KEY);
                 }
             }
+            */
 
             const popupOverlay = document.getElementById('lisoBlindadoPopup');
             const timerDisplay = document.getElementById('glass-timer');
