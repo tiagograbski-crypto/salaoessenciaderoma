@@ -1656,65 +1656,100 @@
 
             <span class="glass-popup-close" onclick="closeLisoBlindadoPopup()">&times;</span>
             
-            <div class="glass-popup-header" style="margin-bottom: 8px;">
+            <!-- TEMPORIZADOR MOVIDO PARA O TOPO (Destaque Máximo) -->
+            <div class="glass-popup-timer-container" style="margin-top: 15px; margin-bottom: 15px; background: rgba(0,0,0,0.5); border-radius: 12px; padding: 12px; border: 1px solid rgba(218,165,32,0.3); box-shadow: inset 0 0 15px rgba(0,0,0,0.8);">
+                <p style="color: #E5C07B; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px;">O acesso VIP expira em:</p>
+                <div id="glass-timer" class="glass-timer-display" style="margin-bottom: 0; font-size: 2.8rem; line-height: 1; text-shadow: 0px 0px 20px rgba(218, 165, 32, 0.4);">10:00</div>
+            </div>
+
+            <!-- Cabeçalho Ocultado (Mantido no código via display:none) -->
+            <div class="glass-popup-header" style="display: none; margin-bottom: 12px; border-bottom: 1px solid rgba(218, 165, 32, 0.1); padding-bottom: 10px;">
                 <span class="pulse-dot"></span>
-                <p style="color: #E5C07B; font-size: 0.8rem;">Convite VIP Liberado</p>
+                <p style="color: #E5C07B; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Acesso Privado Liberado</p>
             </div>
 
             <!-- EFEITO OURO 24K NO TÍTULO -->
-            <h2 class="glass-popup-title gold-shine-text" style="font-size: 1.7rem; margin-bottom: 10px;">Liso Soberano 8K <span style="display:none;"><br><span style="font-size: 1.3rem;">Essência de Romã</span></span></h2>
+            <h2 class="glass-popup-title gold-shine-text" style="font-size: 1.8rem; margin-bottom: 5px; font-family: 'Playfair Display', serif; font-weight: 600;">Liso Soberano 8K <span style="display:none;"><br><span style="font-size: 1.3rem;">Essência de Romã</span></span></h2>
             
-            <!-- Linha Ocultada para manter o minimalismo sem excluir código -->
-            <p class="glass-popup-subtitle" style="display:none; color: #CCCCCC;">Lote liberado <strong>domingo (dia 22) ao meio-dia</strong>.</p>
+            <!-- Linha Restaurada e Ajustada para Demanda Imediata (Evergreen) -->
+            <p class="glass-popup-subtitle" style="color: #CCCCCC;">Lote liberado <strong>hoje</strong>.</p>
             
-            <div class="glass-popup-scarcity" style="font-size: 0.85rem; padding: 6px; margin-bottom: 12px;">
-                <span style="display:none;">⚠️ Status do Lote: Liberação inicial de <strong style="color: #DAA520;">10 unidades</strong>.<br></span>
-                ⚠️ Lote de 10. Restam só <strong style="color: #DAA520;">3 disponíveis!</strong>
+            <!-- Caixa de Escassez Restaurada com Fundo para Destaque -->
+            <div class="glass-popup-scarcity" style="font-size: 0.85rem; padding: 8px; margin-bottom: 15px; background: rgba(40, 40, 40, 0.6); border: 1px dashed rgba(218, 165, 32, 0.4); border-radius: 8px;">
+                <div>
+                    <span style="display:none;">⚠️ Status do Lote: Liberação inicial de <strong style="color: #DAA520;">10 unidades</strong>.<br></span>
+                    ⚠️ Lote de 10. Restam só <strong style="color: #DAA520;">3 disponíveis!</strong>
+                </div>
+                <p style="display:none; color: #D4D4D4; font-size: 0.85rem; font-weight: 300; line-height: 1.5;">O sistema interceptou <strong>3 convites com condições exclusivas</strong> para a sua conexão. Escolha sabiamente.</p>
             </div>
 
-            <!-- NOVO DESIGN SLIM: 7 Vouchers Já Resgatados -->
-            <div style="font-size: 0.65rem; color: #BF953F; text-align: left; margin-bottom: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-                ❌ 7 Vouchers já resgatados:
+            <!-- NOVO DESIGN SLIM: 7 Vouchers Já Resgatados (RESTAURADO E COM VALORES ANCÔRAS) -->
+            <div style="display: block;">
+                <div style="font-size: 0.65rem; color: #BF953F; text-align: left; margin-bottom: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+                    ❌ 7 Vouchers já resgatados:
+                </div>
+                <div class="claimed-vouchers-row">
+                    <div class="mini-voucher claimed" style="text-decoration: none; line-height: 1.1; padding: 4px 0;"><span style="text-decoration: line-through; font-size: 0.6rem;">R$ 90</span><br><span style="font-size: 0.4rem; color: #888;">Ocupado</span></div>
+                    <div class="mini-voucher claimed" style="text-decoration: none; line-height: 1.1; padding: 4px 0;"><span style="text-decoration: line-through; font-size: 0.6rem;">R$ 50</span><br><span style="font-size: 0.4rem; color: #888;">Resgatado</span></div>
+                    <div class="mini-voucher claimed" style="text-decoration: none; line-height: 1.1; padding: 4px 0;"><span style="text-decoration: line-through; font-size: 0.6rem;">R$ 80</span><br><span style="font-size: 0.4rem; color: #888;">Resgatado</span></div>
+                    <div class="mini-voucher claimed" style="text-decoration: none; line-height: 1.1; padding: 4px 0;"><span style="text-decoration: line-through; font-size: 0.6rem;">R$ 30</span><br><span style="font-size: 0.4rem; color: #888;">Ocupado</span></div>
+                    <div class="mini-voucher claimed" style="text-decoration: none; line-height: 1.1; padding: 4px 0;"><span style="text-decoration: line-through; font-size: 0.6rem;">R$ 100</span><br><span style="font-size: 0.4rem; color: #888;">Resgatado</span></div>
+                    <div class="mini-voucher claimed" style="text-decoration: none; line-height: 1.1; padding: 4px 0;"><span style="text-decoration: line-through; font-size: 0.6rem;">R$ 60</span><br><span style="font-size: 0.4rem; color: #888;">Ocupado</span></div>
+                    <div class="mini-voucher claimed" style="text-decoration: none; line-height: 1.1; padding: 4px 0;"><span style="text-decoration: line-through; font-size: 0.6rem;">R$ 70</span><br><span style="font-size: 0.4rem; color: #888;">Resgatado</span></div>
+                </div>
             </div>
-            <div class="claimed-vouchers-row">
+
+            <!-- INTELIGÊNCIA MOVIDA: Prova Social Global Acima dos Vouchers (Ocultada por estratégia, linha não excluída) -->
+            <div class="global-social-proof" style="display: none;">
+                🔥 <span class="vw-count">1</span> <span class="vw-text">pessoa está disputando</span> estes vouchers agora
+            </div>
+
             <!-- NOVO DESIGN PREMIUM: 3 Vouchers Ativos com Pulsação, IDs corrigidos e Prova Social Individual Proporcional -->
             <div class="active-vouchers-row">
-                <div class="voucher-card active-voucher" id="voucher-ativo-1" onclick="resgatarVoucher('voucher-ativo-1', 40)">
-                    <div class="voucher-value gold-shine-text" style="font-size: 0.85rem;">VOUCHER<br><span style="font-size: 1.25rem;">R$ 40</span></div>
-                    <div class="voucher-desc">Resgatar</div>
+                <div class="voucher-card active-voucher" id="voucher-ativo-1" onclick="resgatarVoucher('voucher-ativo-1', 40, 'Corte de Cabelo')">
+                    <div class="voucher-value gold-shine-text" style="font-size: 0.85rem;">VOUCHER<br><span style="font-size: 1.25rem;">R$ 40</span><br><span style="font-size: 0.55rem; color: #FFF; text-shadow: none; letter-spacing: 1px; font-weight: 500; font-family: 'Montserrat', sans-serif;">CORTE</span></div>
+                    <div class="voucher-desc" style="display:none;">Resgatar</div>
+                    <!-- NOVO BOTÃO CTA DENTRO DO VOUCHER -->
+                    <div class="voucher-cta-btn">RESGATAR</div>
                     <!-- INTELIGÊNCIA INDIVIDUAL 1 (Menor Desconto -> Menos Concorrência) -->
-                    <div class="social-proof-text" style="font-size: 0.50rem; color: #E5C07B; margin-top: 8px; background: rgba(0,0,0,0.5); padding: 3px 6px; border-radius: 4px; display: inline-block; width: 95%;">
+                    <div class="social-proof-text" style="font-size: 0.45rem; color: #E5C07B; margin-top: 5px; background: rgba(0,0,0,0.5); padding: 3px 2px; border-radius: 4px; display: inline-block; width: 95%; line-height: 1.2;">
                         🔥 <span class="vw-count-individual" data-min="1" data-max="2">1</span> <span class="vw-text-individual">pessoa muito interessada</span>
                     </div>
                 </div>
-                <div class="voucher-card active-voucher" id="voucher-ativo-2" onclick="resgatarVoucher('voucher-ativo-2', 50)">
-                    <div class="voucher-value gold-shine-text" style="font-size: 0.85rem;">VOUCHER<br><span style="font-size: 1.25rem;">R$ 50</span></div>
-                    <div class="voucher-desc">Resgatar</div>
+                <div class="voucher-card active-voucher" id="voucher-ativo-2" onclick="resgatarVoucher('voucher-ativo-2', 50, 'Tratamento Capilar')">
+                    <div class="voucher-value gold-shine-text" style="font-size: 0.85rem;">VOUCHER<br><span style="font-size: 1.25rem;">R$ 50</span><br><span style="font-size: 0.55rem; color: #FFF; text-shadow: none; letter-spacing: 0.5px; font-weight: 500; font-family: 'Montserrat', sans-serif;">TRATAMENTO</span></div>
+                    <div class="voucher-desc" style="display:none;">Resgatar</div>
+                    <!-- NOVO BOTÃO CTA DENTRO DO VOUCHER -->
+                    <div class="voucher-cta-btn">RESGATAR</div>
                     <!-- INTELIGÊNCIA INDIVIDUAL 2 (Desconto Intermediário -> Concorrência Média) -->
-                    <div class="social-proof-text" style="font-size: 0.50rem; color: #E5C07B; margin-top: 8px; background: rgba(0,0,0,0.5); padding: 3px 6px; border-radius: 4px; display: inline-block; width: 95%;">
+                    <div class="social-proof-text" style="font-size: 0.45rem; color: #E5C07B; margin-top: 5px; background: rgba(0,0,0,0.5); padding: 3px 2px; border-radius: 4px; display: inline-block; width: 95%; line-height: 1.2;">
                         🔥 <span class="vw-count-individual" data-min="2" data-max="4">2</span> <span class="vw-text-individual">pessoas muito interessadas</span>
                     </div>
                 </div>
-                <div class="voucher-card active-voucher" id="voucher-ativo-3" onclick="resgatarVoucher('voucher-ativo-3', 70)">
-                    <div class="voucher-value gold-shine-text" style="font-size: 0.85rem;">VOUCHER<br><span style="font-size: 1.25rem;">R$ 70</span></div>
-                    <div class="voucher-desc">Resgatar</div>
+                <div class="voucher-card active-voucher" id="voucher-ativo-3" onclick="resgatarVoucher('voucher-ativo-3', 70, 'Alisamento Liso Soberano')">
+                    <div class="voucher-value gold-shine-text" style="font-size: 0.85rem;">VOUCHER<br><span style="font-size: 1.25rem;">R$ 70</span><br><span style="font-size: 0.55rem; color: #FFF; text-shadow: none; letter-spacing: 0.5px; font-weight: 500; font-family: 'Montserrat', sans-serif;">ALISAMENTO</span></div>
+                    <div class="voucher-desc" style="display:none;">Resgatar</div>
+                    <!-- NOVO BOTÃO CTA DENTRO DO VOUCHER -->
+                    <div class="voucher-cta-btn">RESGATAR</div>
                     <!-- INTELIGÊNCIA INDIVIDUAL 3 (Maior Desconto -> Altíssima Concorrência!) -->
-                    <div class="social-proof-text" style="font-size: 0.50rem; color: #E5C07B; margin-top: 8px; background: rgba(0,0,0,0.5); padding: 3px 6px; border-radius: 4px; display: inline-block; width: 95%;">
+                    <div class="social-proof-text" style="font-size: 0.45rem; color: #E5C07B; margin-top: 5px; background: rgba(0,0,0,0.5); padding: 3px 2px; border-radius: 4px; display: inline-block; width: 95%; line-height: 1.2;">
                         🔥 <span class="vw-count-individual" data-min="4" data-max="7">4</span> <span class="vw-text-individual">pessoas muito interessadas</span>
                     </div>
                 </div>
             </div>
 
-            <div class="glass-popup-timer-container">
+            <!-- Bloco do Temporizador Antigo (Ocultado) -->
+            <div class="glass-popup-timer-container" style="display:none;">
                 <p>Os vouchers expiram em:</p>
-                <div id="glass-timer" class="glass-timer-display">10:00</div>
+                <div id="glass-timer-old" class="glass-timer-display">10:00</div>
             </div>
 
-            <!-- REGRA ANTIFRAUDE E URGÊNCIA MÁXIMA ATUALIZADA (Sem excluir a linha original) -->
-            <p style="font-size: 0.75rem; color: #888888; margin-top: 5px; font-weight: 600;">
+            <!-- REGRA ANTIFRAUDE E URGÊNCIA MÁXIMA ATUALIZADA (Ocultado da visão, mantido no código) -->
+            <p style="font-size: 0.65rem; color: #999; margin-top: 8px; font-weight: 500; line-height: 1.3;">
                 <span style="display:none;">*Válido por 7 dias. Regra antifraude: Limite de 1 resgate por IP.</span>
                 <span style="display:none;">*Válido até dia 28 só. Regra antifraude: Limite de 1 resgate por IP.</span>
-                *Válido até dia 28 só.
+                <span style="display:none;">*Válido até dia 28 só.</span>
+                *Atenção: Não cumulativo. Não é válido para cobrir outras ofertas e promoções.
             </p>
         </div>
     </div>
@@ -1915,7 +1950,7 @@
             cursor: pointer;
             position: relative;
             border: 1.5px solid #BF953F;
-            transition: transform 0.2s, filter 0.2s;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s, box-shadow 0.3s;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -1923,10 +1958,16 @@
             min-height: 65px; /* Reduzido de 75px para deixar mais elegante */
         }
 
+        /* === NOVO: DESTAQUE ESPECÍFICO NA ISCA PRINCIPAL (Voucher de R$ 70) === */
+        .voucher-card:nth-child(3):not(.esgotado-punicao) {
+            background: linear-gradient(135deg, #2a1a00, #3a2a0a);
+            box-shadow: 0 0 15px rgba(218, 165, 32, 0.15);
+        }
+
         /* === PULSAÇÃO LEVE NOS CARDS DISPONÍVEIS === */
         @keyframes pulse-card-gold {
             0% { box-shadow: 0 0 0 0 rgba(218, 165, 32, 0.3); transform: scale(1); }
-            50% { box-shadow: 0 0 0 8px rgba(218, 165, 32, 0); transform: scale(1.02); }
+            50% { box-shadow: 0 0 0 6px rgba(218, 165, 32, 0); transform: scale(1.02); }
             100% { box-shadow: 0 0 0 0 rgba(218, 165, 32, 0); transform: scale(1); }
         }
 
@@ -1934,29 +1975,32 @@
             animation: pulse-card-gold 2.5s infinite;
         }
 
-        .voucher-card:hover {
+        .voucher-card:hover:not(.esgotado-punicao) {
             filter: brightness(1.2);
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 8px 20px rgba(218, 165, 32, 0.4);
+            z-index: 10;
         }
         
-        /* NOVO: Classe para os Vouchers que o cliente perdeu por demorar (Aversão à Perda) */
+        /* NOVO: Classe para os Vouchers que o cliente perdeu por demorar (Aversão à Perda) MAXIMIZADA */
         .voucher-card.esgotado-punicao {
-            background: rgba(30, 30, 30, 0.5);
-            border-color: rgba(80, 80, 80, 0.4);
+            background: rgba(15, 15, 15, 0.6);
+            border-color: rgba(50, 50, 50, 0.3);
             cursor: not-allowed;
             animation: none;
-            transform: none;
-            filter: grayscale(100%);
-            opacity: 0.6;
+            transform: scale(0.95); /* Dá a sensação de que "encolheu/murchou" */
+            filter: grayscale(100%) opacity(0.4); /* Muito mais apagado pelo contraste da dor */
         }
         .voucher-card.esgotado-punicao:hover {
-            filter: grayscale(100%);
-            transform: none;
+            filter: grayscale(100%) opacity(0.4);
+            transform: scale(0.95);
         }
 
         .voucher-value {
             font-weight: 900;
             margin-bottom: 3px;
             line-height: 1.1; /* Ajustado para encaixar a palavra VOUCHER perfeitamente */
+            transition: all 0.3s ease;
         }
 
         .voucher-desc {
@@ -1970,21 +2014,56 @@
             letter-spacing: 0.5px;
         }
 
-        /* Temporizador Dark Theme */
+        /* NOVO BOTÃO CTA DENTRO DO VOUCHER (ALTA CONVERSÃO COM HOVER) */
+        .voucher-cta-btn {
+            background: linear-gradient(90deg, #DAA520, #F2E2BA, #DAA520);
+            background-size: 200% auto;
+            color: #000;
+            font-weight: 900;
+            font-size: 0.65rem;
+            padding: 6px 0;
+            width: 90%;
+            border-radius: 50px;
+            margin: 6px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(218, 165, 32, 0.4);
+            animation: shine-right-to-left 3.5s linear infinite;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .voucher-card:hover:not(.esgotado-punicao) .voucher-cta-btn {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(218, 165, 32, 0.6);
+        }
+
+        /* Temporizador Dark Theme COM EFEITO HEARTBEAT */
+        @keyframes heartbeat-timer {
+            0%, 100% { transform: scale(1); text-shadow: 0px 0px 15px rgba(218, 165, 32, 0.2); }
+            50% { transform: scale(1.03); text-shadow: 0px 0px 25px rgba(218, 165, 32, 0.6); }
+        }
+
+        .glass-popup-timer-container.active-timer {
+            animation: heartbeat-timer 2s infinite ease-in-out;
+        }
+
         .glass-popup-timer-container p {
-            margin: 0 0 5px 0;
-            font-size: 0.9rem;
-            font-weight: bold;
-            color: #CCCCCC;
+            margin: 0 0 2px 0;
+            font-size: 0.75rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999999;
         }
 
         .glass-timer-display {
-            font-size: 2.5rem;
-            font-weight: 900;
-            font-family: 'Courier New', Courier, monospace;
-            color: #FFFFFF;
-            text-shadow: 0px 0px 10px rgba(218, 165, 32, 0.4);
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            font-weight: 300;
+            font-family: 'Playfair Display', serif; /* Fonte de Alta Relojoaria */
+            color: #E5C07B;
+            text-shadow: 0px 0px 15px rgba(218, 165, 32, 0.2);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
         }
     </style>
 
@@ -1998,6 +2077,10 @@
         function startGlassTimer(durationInSeconds, displayElement) {
             let timer = durationInSeconds;
             let minutes, seconds;
+            
+            // Ativa o heartbeat visual na caixa do temporizador
+            const timerContainer = displayElement.parentElement;
+            if(timerContainer) timerContainer.classList.add('active-timer');
 
             popupTimerInterval = setInterval(function () {
                 minutes = parseInt(timer / 60, 10);
@@ -2011,7 +2094,7 @@
                 if (--timer < 0) {
                     clearInterval(popupTimerInterval);
                     displayElement.textContent = "00:00";
-                    // Opcional: mudar o texto de escassez quando acabar
+                    if(timerContainer) timerContainer.classList.remove('active-timer');
                 }
             }, 1000);
         }
@@ -2073,8 +2156,8 @@
             organicTimer = setTimeout(loopInteligenciaOrganica, 3000);
         }
 
-        // Lógica Corrigida: Passando o ID específico do card clicado e o Valor do Voucher
-        function resgatarVoucher(cardId, valorDesconto = 50) {
+        // Lógica Corrigida: Passando o ID específico do card clicado, o Valor do Voucher e o Serviço
+        function resgatarVoucher(cardId, valorDesconto = 50, servico = 'Liso Soberano 8K') {
             // Verifica a trava antifraude (REGRA SUSPENSA VIA COMENTÁRIO PARA MANTER AS LINHAS)
             const hasClaimed = localStorage.getItem(VOUCHER_KEY);
             
@@ -2100,18 +2183,18 @@
             // Captura exatamente o elemento clicado pelo ID e aplica o visual de Sucesso
             const cardClicado = document.getElementById(cardId);
             if(cardClicado) {
-                // Atualizamos também para apagar o foguinho individual ao clicar
-                cardClicado.innerHTML = '<div class="voucher-value" style="font-size:1rem; color:#fff; text-shadow:none;">OK!</div><div class="voucher-desc" style="color:#fff; background:transparent;">Redirecionando</div>';
+                // Atualizamos também para apagar o foguinho individual ao clicar e ativar o CTA
+                cardClicado.innerHTML = '<div class="voucher-value" style="font-size:1rem; color:#fff; text-shadow:none;">OK!</div><div class="voucher-desc" style="display:none;">Redirecionando</div><div class="voucher-cta-btn" style="background: #fff; color: #4CAF50; box-shadow:none; animation:none;">DIRECIONANDO</div>';
                 cardClicado.style.background = '#4CAF50'; 
                 cardClicado.style.borderColor = '#4CAF50';
                 cardClicado.classList.remove('active-voucher'); // Para a pulsação
                 cardClicado.style.animation = 'none'; // Trava a animação
             }
 
-            // === NOVA LÓGICA DE WHATSAPP COM VALOR DINÂMICO (Liso Soberano 8K) ===
+            // === NOVA LÓGICA DE WHATSAPP COM VALOR DINÂMICO E SERVIÇO ESPECÍFICO ===
             setTimeout(() => {
                 const numeroWpp = "5549999954052"; 
-                const mensagem = `Olá! Meu perfil foi selecionado no site e quero resgatar meu voucher de R$ ${valorDesconto} para aplicar na tabela Liso Soberano 8K.`;
+                const mensagem = `Olá! Meu perfil foi selecionado no site e quero resgatar meu voucher de R$ ${valorDesconto} para aplicar no serviço de ${servico}.`;
                 const urlWpp = `https://wa.me/${numeroWpp}?text=${encodeURIComponent(mensagem)}`;
                 
                 window.open(urlWpp, '_blank'); 
@@ -2134,9 +2217,11 @@
                     card70.classList.add('esgotado-punicao');
                     card70.classList.remove('active-voucher');
                     card70.onclick = null; // Bloqueia o clique
-                    card70.innerHTML = '<div class="voucher-value" style="font-size:0.85rem; color:#888;">VOUCHER<br><span style="font-size:1.25rem;text-decoration:line-through;">R$ 70</span></div><div class="voucher-desc" style="background:transparent;color:#888;">Alguém pegou</div>';
+                    card70.innerHTML = '<div class="voucher-value" style="font-size:0.85rem; color:#888;">VOUCHER<br><span style="font-size:1.25rem;text-decoration:line-through;">R$ 70</span><br><span style="font-size: 0.55rem; color: #888; text-transform: uppercase;">ALISAMENTO</span></div><div class="voucher-desc" style="display:none;">Indisponível</div><div class="voucher-cta-btn" style="background:transparent; color:#888; box-shadow:none; border: 1px dashed #555; animation:none;">PERDIDO</div>';
                 }
-                if (scarcityText) scarcityText.innerHTML = '<span style="display:none;">⚠️ Status do Lote: Liberação inicial de <strong style="color: #DAA520;">10 unidades</strong>.<br></span>⚠️ Lote de 10. Restam só <strong style="color: #DAA520;">2 disponíveis!</strong>';
+                if (scarcityText) {
+                    scarcityText.innerHTML = '<div><span style="display:none;">⚠️ Status do Lote: Liberação inicial de <strong style="color: #DAA520;">10 unidades</strong>.<br></span>⚠️ Lote de 10. Restam só <strong style="color: #DAA520;">2 disponíveis!</strong></div><p style="display:none; color: #D4D4D4; font-size: 0.85rem; font-weight: 300; line-height: 1.5;">O sistema interceptou <strong>2 convites com condições exclusivas</strong> para a sua conexão. Escolha sabiamente.</p>';
+                }
             }
             
             // Se for a 3ª vez ou mais (Demorou muito, perdeu o de 50 também)
@@ -2147,7 +2232,7 @@
                     card70.classList.add('esgotado-punicao');
                     card70.classList.remove('active-voucher');
                     card70.onclick = null;
-                    card70.innerHTML = '<div class="voucher-value" style="font-size:0.85rem; color:#888;">VOUCHER<br><span style="font-size:1.25rem;text-decoration:line-through;">R$ 70</span></div><div class="voucher-desc" style="background:transparent;color:#888;">Alguém pegou</div>';
+                    card70.innerHTML = '<div class="voucher-value" style="font-size:0.85rem; color:#888;">VOUCHER<br><span style="font-size:1.25rem;text-decoration:line-through;">R$ 70</span><br><span style="font-size: 0.55rem; color: #888; text-transform: uppercase;">ALISAMENTO</span></div><div class="voucher-desc" style="display:none;">Indisponível</div><div class="voucher-cta-btn" style="background:transparent; color:#888; box-shadow:none; border: 1px dashed #555; animation:none;">PERDIDO</div>';
                 }
 
                 // Bloqueia o de 50
@@ -2156,10 +2241,12 @@
                     card50.classList.add('esgotado-punicao');
                     card50.classList.remove('active-voucher');
                     card50.onclick = null;
-                    card50.innerHTML = '<div class="voucher-value" style="font-size:0.85rem; color:#888;">VOUCHER<br><span style="font-size:1.25rem;text-decoration:line-through;">R$ 50</span></div><div class="voucher-desc" style="background:transparent;color:#888;">Alguém pegou</div>';
+                    card50.innerHTML = '<div class="voucher-value" style="font-size:0.85rem; color:#888;">VOUCHER<br><span style="font-size:1.25rem;text-decoration:line-through;">R$ 50</span><br><span style="font-size: 0.55rem; color: #888; text-transform: uppercase;">TRATAMENTO</span></div><div class="voucher-desc" style="display:none;">Indisponível</div><div class="voucher-cta-btn" style="background:transparent; color:#888; box-shadow:none; border: 1px dashed #555; animation:none;">PERDIDO</div>';
                 }
                 
-                if (scarcityText) scarcityText.innerHTML = '<span style="display:none;">⚠️ Status do Lote: Liberação inicial de <strong style="color: #DAA520;">10 unidades</strong>.<br></span>⚠️ Lote de 10. Resta só <strong style="color: #DAA520;">1 disponível!</strong>';
+                if (scarcityText) {
+                    scarcityText.innerHTML = '<div><span style="display:none;">⚠️ Status do Lote: Liberação inicial de <strong style="color: #DAA520;">10 unidades</strong>.<br></span>⚠️ Lote de 10. Resta só <strong style="color: #DAA520;">1 disponível!</strong></div><p style="display:none; color: #D4D4D4; font-size: 0.85rem; font-weight: 300; line-height: 1.5;">Resta apenas <strong>1 convite de bonificação</strong> para a sua conexão. Última chance.</p>';
+                }
             }
         }
 
