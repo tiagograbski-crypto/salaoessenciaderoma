@@ -2206,9 +2206,11 @@
 
         // NOVO: Motor de Punição por Hesitação (Perda de Vouchers ao recarregar a página)
         function aplicarInteligenciaDeEscassez() {
-            let visitas = parseInt(localStorage.getItem('@LisoSoberano:VisitasPopup') || '0');
+            // ATUALIZAÇÃO ESTRATÉGICA: Trocado de localStorage para sessionStorage.
+            // Punição de F5 funciona, mas permite que a cliente tente de novo noutro dia.
+            let visitas = parseInt(sessionStorage.getItem('@LisoSoberano:VisitasPopup') || '0');
             visitas++;
-            localStorage.setItem('@LisoSoberano:VisitasPopup', visitas.toString());
+            sessionStorage.setItem('@LisoSoberano:VisitasPopup', visitas.toString());
 
             const scarcityText = document.querySelector('.glass-popup-scarcity');
 
