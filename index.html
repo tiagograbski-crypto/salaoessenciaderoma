@@ -305,7 +305,6 @@
         .timeline-marker.warn { background: #C5A059; opacity: 0.8; }
         .timeline-marker.danger { background: #EF4444; }
         
-        /* Melhoria Funil: Setas visuais no Desktop */
         @media (min-width: 768px) {
             .funnel-step:not(:last-child)::after {
                 content: '\f061';
@@ -328,17 +327,14 @@
         .faq-summary { padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; list-style: none; }
         .faq-answer { padding: 0 1.5rem 1.5rem; color: #aaa; font-size: 0.95rem; line-height: 1.7; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 0; padding-top: 1rem; }
         
-        .mobile-snap-x { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 2rem; padding-bottom: 3rem; }
+        .mobile-snap-x { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 2rem; padding-bottom: 1rem; scrollbar-width: none; -ms-overflow-style: none; }
+        .mobile-snap-x::-webkit-scrollbar { display: none; }
         .mobile-snap-item { scroll-snap-align: center; flex-shrink: 0; width: 80vw; transition: all 0.5s ease; }
         
         /* AUDITORIA DE GRID (CORREÇÃO DE ALINHAMENTO) */
         @media(min-width: 768px) { 
-            .mobile-snap-x { display: grid; overflow: visible; width: 100%; gap: 2rem; } 
-            /* Vídeos mantêm 4 colunas */
-            #video-carousel { grid-template-columns: repeat(4, 1fr); }
-            /* Serviços: 3 colunas, itens centralizados para não "engordar" */
-            #services-carousel { grid-template-columns: repeat(3, 1fr); justify-items: center; }
-            .mobile-snap-item { width: auto; } 
+            .mobile-snap-x { display: flex; overflow-x: auto; width: 100%; gap: 1.5rem; scroll-behavior: smooth; } 
+            .mobile-snap-item { width: 280px; } 
         }
 
         .wa-float { position: fixed; bottom: 30px; right: 30px; z-index: 1000; background: #25D366; color: white; width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); transition: 0.3s; animation: pulse-green 2s infinite; }
@@ -403,6 +399,11 @@
         .product-img-container img { filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8)); transform: scale(1.05); }
         
         @media (max-width: 768px) { .brand-header h2 { font-size: 2rem; } }
+
+        /* Estilo para Botões do Carrossel */
+        .carousel-btn { background: rgba(0,0,0,0.5); border: 1px solid rgba(197, 160, 89, 0.4); color: #C5A059; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s; backdrop-filter: blur(10px); }
+        .carousel-btn:hover { background: #C5A059; color: black; border-color: #C5A059; transform: scale(1.1); }
+        .carousel-btn:active { transform: scale(0.9); }
     </style>
 </head>
 
@@ -477,7 +478,6 @@
             <nav class="text-center space-y-8 relative z-10">
                 <a href="#home" class="menu-link block text-4xl md:text-6xl font-luxury text-white hover:text-brand-gold transition-colors duration-300" onclick="toggleMenu()" style="transition-delay: 0.1s">Início</a>
                 <a href="#atelier" class="menu-link block text-4xl md:text-6xl font-luxury text-white hover:text-brand-gold transition-colors duration-300" onclick="toggleMenu()" style="transition-delay: 0.15s">Atelier & Cor</a>
-                <!-- MENU ATUALIZADO: Clube -> Tabela de Preços -->
                 <a href="#clube" class="menu-link block text-4xl md:text-6xl font-luxury text-white hover:text-brand-gold transition-colors duration-300" onclick="toggleMenu()" style="transition-delay: 0.2s">Tabela de Preços</a>
                 <a href="#agata" class="menu-link block text-4xl md:text-6xl font-luxury text-white hover:text-brand-gold transition-colors duration-300" onclick="toggleMenu()" style="transition-delay: 0.3s">A Gata Lambeu <span class="text-base align-top text-brand-gold font-sans italic">PRO</span></a>
                 <button onclick="toggleMenu(); openModal('privacy')" class="menu-link block text-lg font-light text-gray-400 hover:text-white uppercase tracking-widest mt-8 mx-auto" style="transition-delay: 0.4s">Privacidade & Termos</button>
@@ -491,7 +491,6 @@
         <section class="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-brand-black py-32">
             <div class="mandala-bg animate-spin-slow opacity-10"></div>
             <div class="absolute inset-0 z-0">
-                <!-- Gradiente mais agressivo para garantir leitura do texto dourado -->
                 <div class="absolute inset-0 bg-gradient-to-t from-[#020202] via-[#050505]/70 to-[#020202]/40 z-10"></div>
                 <video id="heroVideo" class="w-full h-full object-cover opacity-60 scale-105" autoplay muted loop playsinline webkit-playsinline poster="https://salaoessenciaderoma.com/assets/images/hero-poster.jpg">
                     <source src="https://res.cloudinary.com/daukvmsc2/video/upload/v1767280250/Design_sem_nome_qdjqut.mp4" type="video/mp4">
@@ -499,7 +498,6 @@
             </div>
             <div class="relative z-20 text-center px-4 max-w-4xl mx-auto flex flex-col items-center justify-center h-full">
                 
-                <!-- Prova Social Imediata -->
                 <div class="flex items-center gap-2 mb-6 opacity-90">
                     <div class="flex text-yellow-400 text-[10px] gap-1 drop-shadow-lg">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -512,7 +510,6 @@
                     <span class="block text-5xl md:text-7xl lg:text-8xl font-medium italic text-gold-dynamic py-2">Liso Blindado: O Fim da Chapinha</span>
                 </h1>
                 
-                <!-- Subtítulo com Quebra de Objeção Imediata -->
                 <div class="flex items-center justify-center gap-4 mb-8">
                     <span class="px-4 py-1 border border-green-500/30 bg-green-900/20 text-green-400 text-[10px] font-bold uppercase tracking-widest rounded-full">Zero Formol</span>
                     <span class="px-4 py-1 border border-white/10 bg-white/5 text-gray-300 text-[10px] font-bold uppercase tracking-widest rounded-full">Compatível com Loiras</span>
@@ -523,7 +520,6 @@
                 </p>
                 
                 <div class="flex flex-col items-center gap-6 w-full max-w-md">
-                    <!-- Botão com efeito "Shimmer" - COPY ALTERADO PARA DESEJO -->
                     <a href="#" onclick="gtag_report_conversion('https://api.whatsapp.com/send?phone=5549999954052&text=Ol%C3%A1!%20Vi%20o%20site%20e%20quero%20me%20livrar%20da%20chapinha%20com%20o%20Liso%20Blindado.'); return false;" class="btn-luxury-cta py-5 px-12 md:px-16 rounded-full text-xs md:text-sm animate-pulse-gold flex items-center justify-center gap-3 font-bold tracking-widest w-full md:w-auto relative overflow-hidden group">
                         <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></span>
                         <span>QUERO MEU LISO BLINDADO</span> <i class="fas fa-arrow-right"></i>
@@ -531,28 +527,33 @@
                     
                     <span class="text-[10px] text-gray-500 uppercase tracking-widest"><i class="fas fa-check-circle text-green-500 mr-1"></i> Garantia de Resultado 7 Dias</span>
                     
-                    <!-- BANNER SEMANA DA MULHER -->
+                    <!-- BANNER SEMANA DA MULHER (DESTAQUE VIP) -->
                     <div class="mt-12 w-full reveal active">
-                        <div class="relative bg-gradient-to-r from-[#2a0815] to-[#0a0a0a] border border-brand-gold/40 rounded-xl p-4 flex flex-col md:flex-row items-center justify-between gap-4 shadow-[0_0_30px_rgba(197,160,89,0.2)] group hover:border-brand-gold/80 transition-all cursor-pointer" onclick="window.location.hash='clube'; return false;">
-                            <!-- Glow Effect -->
-                            <div class="absolute inset-0 bg-brand-gold/10 blur-md rounded-xl group-hover:bg-brand-gold/20 transition-all"></div>
+                        <div class="relative bg-gradient-to-r from-[#7a0e28] via-[#4a0818] to-[#1a0208] border-2 border-[#E5C07B] rounded-2xl p-5 flex flex-col md:flex-row items-center justify-between gap-5 shadow-[0_0_40px_rgba(229,192,123,0.3)] group hover:shadow-[0_0_60px_rgba(229,192,123,0.5)] hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden" onclick="window.location.hash='clube'; return false;">
+                            
+                            <!-- Efeito de Luz e Brilho Interno -->
+                            <div class="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="absolute -inset-full w-[300%] h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
                             
                             <!-- Icon/Visual -->
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full border border-brand-gold/50 flex items-center justify-center bg-black/50 text-brand-gold shadow-luxury-glow animate-pulse-gold relative z-10">
-                                <i class="fas fa-gem text-xl"></i>
+                            <div class="flex-shrink-0 w-16 h-16 rounded-full border-2 border-brand-gold flex items-center justify-center bg-gradient-to-br from-brand-gold to-brand-gold-dark text-black shadow-[0_0_20px_rgba(197,160,89,0.8)] animate-pulse relative z-10">
+                                <i class="fas fa-crown text-2xl"></i>
                             </div>
 
                             <!-- Text Content -->
                             <div class="text-center md:text-left flex-grow relative z-10">
-                                <span class="text-[9px] text-brand-gold font-bold uppercase tracking-[0.2em] block mb-1">👑 Especial Semana da Mulher</span>
-                                <h4 class="text-white font-luxury text-xl leading-none mb-1">Engenharia 8K com <span class="text-brand-gold">Até 51% OFF</span></h4>
-                                <p class="text-[10px] text-gray-400 uppercase tracking-widest">O seu Liso Perfeito com a maior condição do ano. <span class="text-white font-bold underline decoration-brand-gold/50">Ver Tabela.</span></p>
+                                <span class="inline-block bg-white/10 border border-white/20 px-3 py-1 rounded-full text-[9px] text-white font-bold uppercase tracking-[0.2em] mb-2 backdrop-blur-sm">💖 Especial Semana da Mulher</span>
+                                <h4 class="text-white font-luxury text-2xl md:text-3xl leading-none mb-2 flex flex-col md:flex-row items-center md:items-baseline gap-2">
+                                    Engenharia 8K 
+                                    <span class="inline-block bg-[#E5C07B] text-black font-extrabold px-3 py-1 rounded-md text-sm md:text-base shadow-lg transform -rotate-2 animate-pulse-gold">Até 51% OFF</span>
+                                </h4>
+                                <p class="text-[11px] md:text-xs text-gray-200 uppercase tracking-widest font-medium">O seu Liso Perfeito com a maior condição do ano. <span class="text-brand-gold font-bold underline decoration-brand-gold">Ver Tabela.</span></p>
                             </div>
 
                             <!-- CTA Arrow -->
-                            <div class="flex-shrink-0 relative z-10">
-                                <span class="w-8 h-8 rounded-full bg-brand-gold text-black flex items-center justify-center transform group-hover:translate-x-1 transition-transform">
-                                    <i class="fas fa-arrow-right text-xs"></i>
+                            <div class="flex-shrink-0 relative z-10 hidden md:flex">
+                                <span class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform group-hover:translate-x-2 transition-transform shadow-lg">
+                                    <i class="fas fa-arrow-right text-sm"></i>
                                 </span>
                             </div>
                         </div>
@@ -564,7 +565,7 @@
             </div>
         </section>
 
-        <!-- VISUAL RESULTS (IDs Únicos aplicados) -->
+        <!-- VISUAL RESULTS (CARROSSEL PEQUENO E CONTROLADO) -->
         <section id="visual-results-home" class="py-24 md:py-32 bg-[#020202] relative overflow-hidden">
             <div class="absolute inset-0 bg-brand-gold/5 blur-[120px] pointer-events-none"></div>
             
@@ -577,57 +578,84 @@
                     </p>
                 </div>
 
-                <div class="mobile-snap-x video-grid pb-8" id="video-carousel-home">
-                    <div class="mobile-snap-item rounded-2xl overflow-hidden border border-brand-gold/20 relative group aspect-[9/16] bg-gray-900 shadow-lg w-[80vw] md:w-auto md:flex-1">
-                        <video class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700" autoplay loop muted playsinline webkit-playsinline>
-                            <source src="https://imagensagata.carrd.co/assets/videos/video06.mp4?v=83fac04c" type="video/mp4">
-                        </video>
-                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex justify-between items-end">
-                            <span class="text-white text-[10px] font-bold uppercase tracking-wider">Liso Supremo</span>
-                            <div class="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center bg-black/40 backdrop-blur-md">
-                                <i class="fas fa-video text-[10px] text-white/70"></i>
+                <div class="relative group/carousel">
+                    <!-- Botões de Navegação (Desktop) -->
+                    <button onclick="scrollCarousel('video-carousel-home', -300)" class="absolute -left-6 top-1/2 -translate-y-1/2 z-30 hidden md:flex carousel-btn opacity-0 group-hover/carousel:opacity-100">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button onclick="scrollCarousel('video-carousel-home', 300)" class="absolute -right-6 top-1/2 -translate-y-1/2 z-30 hidden md:flex carousel-btn opacity-0 group-hover/carousel:opacity-100">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <div class="mobile-snap-x pb-8" id="video-carousel-home">
+                        <!-- Video 1 -->
+                        <div class="mobile-snap-item rounded-2xl overflow-hidden border border-brand-gold/20 relative group aspect-[9/16] bg-gray-900 shadow-lg">
+                            <video class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700" autoplay loop muted playsinline webkit-playsinline>
+                                <source src="https://imagensagata.carrd.co/assets/videos/video06.mp4?v=83fac04c" type="video/mp4">
+                            </video>
+                            <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex justify-between items-end">
+                                <span class="text-white text-[10px] font-bold uppercase tracking-wider">Liso Supremo</span>
+                                <div class="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center bg-black/40 backdrop-blur-md">
+                                    <i class="fas fa-video text-[10px] text-white/70"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="mobile-snap-item rounded-2xl overflow-hidden border border-brand-gold/20 relative group aspect-[9/16] bg-gray-900 shadow-lg w-[80vw] md:w-auto md:flex-1">
-                        <video class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700" autoplay loop muted playsinline webkit-playsinline>
-                            <source src="https://imagensagata.carrd.co/assets/videos/video03.mp4?v=fd8cb1e0" type="video/mp4">
-                        </video>
-                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex justify-between items-end">
-                            <span class="text-white text-[10px] font-bold uppercase tracking-wider">Liso Blindado</span>
-                            <div class="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center bg-black/40 backdrop-blur-md">
-                                <i class="fas fa-video text-[10px] text-white/70"></i>
+                        <!-- Video 2 -->
+                        <div class="mobile-snap-item rounded-2xl overflow-hidden border border-brand-gold/20 relative group aspect-[9/16] bg-gray-900 shadow-lg">
+                            <video class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700" autoplay loop muted playsinline webkit-playsinline>
+                                <source src="https://imagensagata.carrd.co/assets/videos/video03.mp4?v=fd8cb1e0" type="video/mp4">
+                            </video>
+                            <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex justify-between items-end">
+                                <span class="text-white text-[10px] font-bold uppercase tracking-wider">Liso Blindado</span>
+                                <div class="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center bg-black/40 backdrop-blur-md">
+                                    <i class="fas fa-video text-[10px] text-white/70"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="mobile-snap-item rounded-2xl overflow-hidden border border-brand-gold/20 relative group aspect-[9/16] bg-gray-900 shadow-lg w-[80vw] md:w-auto md:flex-1">
-                        <video class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700" autoplay loop muted playsinline webkit-playsinline>
-                            <source src="https://res.cloudinary.com/daukvmsc2/video/upload/v1767279737/WhatsApp_Video_2025-12-10_at_19.00.59_ov4cma.mp4" type="video/mp4">
-                        </video>
-                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex justify-between items-end">
-                            <span class="text-white text-[10px] font-bold uppercase tracking-wider">Brilho 8K</span>
-                            <div class="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center bg-black/40 backdrop-blur-md">
-                                <i class="fas fa-video text-[10px] text-white/70"></i>
+                        <!-- Video 3 -->
+                        <div class="mobile-snap-item rounded-2xl overflow-hidden border border-brand-gold/20 relative group aspect-[9/16] bg-gray-900 shadow-lg">
+                            <video class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700" autoplay loop muted playsinline webkit-playsinline>
+                                <source src="https://res.cloudinary.com/daukvmsc2/video/upload/v1767279737/WhatsApp_Video_2025-12-10_at_19.00.59_ov4cma.mp4" type="video/mp4">
+                            </video>
+                            <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex justify-between items-end">
+                                <span class="text-white text-[10px] font-bold uppercase tracking-wider">Brilho 8K</span>
+                                <div class="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center bg-black/40 backdrop-blur-md">
+                                    <i class="fas fa-video text-[10px] text-white/70"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="mobile-snap-item rounded-2xl overflow-hidden border border-brand-gold/20 relative group aspect-[9/16] bg-gray-900 shadow-lg w-[80vw] md:w-auto md:flex-1">
-                        <video class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700" autoplay loop muted playsinline webkit-playsinline>
-                            <source src="https://imagensagata.carrd.co/assets/videos/video01.mp4?v=c257b396" type="video/mp4">
-                        </video>
-                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex justify-between items-end">
-                            <span class="text-white text-[10px] font-bold uppercase tracking-wider">Liso 8K</span>
-                            <div class="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center bg-black/40 backdrop-blur-md">
-                                <i class="fas fa-video text-[10px] text-white/70"></i>
+                        <!-- Video 4 -->
+                        <div class="mobile-snap-item rounded-2xl overflow-hidden border border-brand-gold/20 relative group aspect-[9/16] bg-gray-900 shadow-lg">
+                            <video class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700" autoplay loop muted playsinline webkit-playsinline>
+                                <source src="https://imagensagata.carrd.co/assets/videos/video01.mp4?v=c257b396" type="video/mp4">
+                            </video>
+                            <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex justify-between items-end">
+                                <span class="text-white text-[10px] font-bold uppercase tracking-wider">Liso 8K</span>
+                                <div class="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center bg-black/40 backdrop-blur-md">
+                                    <i class="fas fa-video text-[10px] text-white/70"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Video 5 (Adicional para preencher carrossel) -->
+                        <div class="mobile-snap-item rounded-2xl overflow-hidden border border-brand-gold/20 relative group aspect-[9/16] bg-gray-900 shadow-lg">
+                            <video class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700" autoplay loop muted playsinline webkit-playsinline>
+                                <source src="https://imagensagata.carrd.co/assets/videos/video05.mp4?v=ed760a36" type="video/mp4">
+                            </video>
+                            <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex justify-between items-end">
+                                <span class="text-white text-[10px] font-bold uppercase tracking-wider">Terapia Capilar</span>
+                                <div class="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center bg-black/40 backdrop-blur-md">
+                                    <i class="fas fa-video text-[10px] text-white/70"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-16 text-center">
+                <div class="mt-12 text-center">
                     <a href="#" onclick="gtag_report_conversion('https://api.whatsapp.com/send?phone=5549999954052&text=Ol%C3%A1!%20Vi%20os%20resultados%20no%20site%20e%20quero%20esse%20resultado%20no%20meu%20cabelo.'); return false;" class="btn-luxury-cta inline-flex items-center gap-3 py-4 px-10 rounded-full text-xs font-bold tracking-widest">
                         QUERO ESSE RESULTADO
                     </a>
@@ -635,7 +663,7 @@
             </div>
         </section>
 
-        <!-- FUNNEL (IDs Únicos) -->
+        <!-- FUNNEL -->
         <section id="funnel-home" class="bg-[#0a0202] py-24 md:py-32 border-b border-brand-gold/10 relative overflow-hidden">
             <div class="absolute -right-20 top-20 w-64 h-64 mandala-decoration opacity-10 animate-spin-slow"></div>
             <div class="container mx-auto px-6 max-w-7xl relative z-10">
@@ -668,7 +696,7 @@
             </div>
         </section>
 
-        <!-- INGREDIENTES / CIÊNCIA (IDs Únicos) -->
+        <!-- INGREDIENTES / CIÊNCIA -->
         <section id="science-home" class="py-24 md:py-32 bg-[#050505] relative overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none parallax-container">
                 <div class="absolute top-20 left-[-100px] w-96 h-96 bg-brand-wine rounded-full blur-[120px] parallax-layer" data-speed="0.2"></div>
@@ -729,7 +757,6 @@
                     <h3 class="font-luxury text-4xl md:text-5xl text-white italic mb-12">"Qual é o seu desejo hoje?"</h3>
                     
                     <div class="flex flex-col md:flex-row gap-6 justify-center">
-                        <!-- Botões atualizados para usar os IDs únicos do slider principal -->
                         <button onclick="selectService('card-liso-home')" class="group relative px-10 py-6 bg-white/10 border border-white/10 rounded-2xl hover:bg-brand-gold/20 hover:border-brand-gold/50 transition-all">
                             <span class="block text-white font-bold text-sm uppercase tracking-widest mb-2">Transformação</span>
                             <span class="block text-xs text-gray-400 group-hover:text-brand-gold-light">Quero liso definitivo (Progressiva)</span>
@@ -747,20 +774,17 @@
             </div>
         </section>
 
-        <!-- SERVIÇOS (MENU) (IDs Únicos e Classe Genérica Adicionada) -->
+        <!-- SERVIÇOS (MENU) -->
         <section id="services-home" class="py-24 md:py-32 bg-[#020202]">
             <div class="container mx-auto px-6 max-w-7xl">
                 <div class="mobile-snap-x services-grid pb-8" id="services-carousel-home">
                     
-                    <!-- LISO SOBERANO 8K -->
                     <div id="card-liso-home" class="service-card-item mobile-snap-item glass-panel rounded-3xl p-1 relative group overflow-hidden h-full flex flex-col transition-all duration-500 w-full max-w-[380px] border-2 border-brand-gold shadow-[0_0_40px_rgba(197,160,89,0.3)]">
                         <div class="absolute top-0 left-0 w-full bg-brand-gold text-black text-[10px] font-bold text-center py-2 uppercase tracking-widest z-20 shadow-md">⭐ ESCOLHA DA ESPECIALISTA</div>
-                        
                         <div class="relative h-full w-full rounded-[20px] p-8 pt-12 flex flex-col bg-gradient-to-b from-[#2b0505]/40 to-black/80">
                             <div class="w-full h-48 rounded-xl overflow-hidden mb-8 border border-brand-gold/30 shadow-lg relative mt-2">
                                 <img src="https://imagensagata.carrd.co/assets/images/image19.jpg?v=c257b396" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Liso Soberano 8K">
                             </div>
-
                             <ul class="space-y-4 mb-8 flex-grow text-xs text-gray-400">
                                 <li class="flex gap-3 text-brand-gold"><i class="fas fa-check-circle"></i> Sem Formol | Garantia de 7 Dias</li>
                                 <li class="flex gap-3">
@@ -776,7 +800,6 @@
                                     <div><strong class="text-green-400 block uppercase tracking-wide opacity-90 mb-0.5 text-[9px]">Risco Zero</strong>Garantia de retoque inclusa.</div>
                                 </li>
                             </ul>
-
                             <div class="border-t border-brand-gold/20 pt-6 mt-auto">
                                 <div class="flex justify-between items-end mb-6">
                                     <span class="text-[10px] text-brand-gold uppercase">Investimento a partir de</span>
@@ -787,13 +810,11 @@
                         </div>
                     </div>
 
-                    <!-- GLASS MOLECULAR -->
                     <div id="card-flash-home" class="service-card-item mobile-snap-item glass-panel rounded-3xl p-1 relative group overflow-hidden h-full flex flex-col transition-all duration-500 w-full max-w-[380px]">
                         <div class="relative h-full w-full rounded-[20px] p-8 flex flex-col bg-gradient-to-b from-[#2b0505]/40 to-black/80">
                             <div class="w-full h-48 rounded-xl overflow-hidden mb-8 border border-white/10 shadow-lg relative group-hover:border-brand-gold/30 transition-colors">
                                 <img src="https://imagensagata.carrd.co/assets/images/image11.jpg?v=4b8919f9" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Glass Molecular Synthesis">
                             </div>
-
                             <ul class="space-y-4 mb-8 flex-grow text-xs text-gray-400">
                                 <li class="flex gap-3 text-white/50"><i class="fas fa-shield-alt"></i> Brilho Instantâneo</li>
                                 <li class="flex gap-3">
@@ -805,7 +826,6 @@
                                     <div><strong class="text-white block uppercase tracking-wide opacity-80 mb-0.5">A Técnica</strong>Fusão tecnológica avançada. Acabamento de alta resolução em 15 minutos.</div>
                                 </li>
                             </ul>
-
                             <div class="border-t border-white/10 pt-6 mt-auto">
                                 <div class="flex justify-between items-end mb-6">
                                     <span class="text-[10px] text-brand-gold uppercase">Investimento a partir de</span>
@@ -816,13 +836,11 @@
                         </div>
                     </div>
 
-                    <!-- DETOX REPAIR -->
                     <div id="card-detox-home" class="service-card-item mobile-snap-item glass-panel rounded-3xl p-1 relative group overflow-hidden h-full flex flex-col transition-all duration-500 w-full max-w-[380px]">
                         <div class="relative h-full w-full rounded-[20px] p-8 flex flex-col bg-gradient-to-b from-[#2b0505]/40 to-black/80">
                              <div class="w-full h-48 rounded-xl overflow-hidden mb-8 border border-cyan-500/20 shadow-lg relative bg-cyan-900/20 flex items-center justify-center">
                                  <img src="https://imagensagata.carrd.co/assets/images/image12.jpg?v=c257b396" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" alt="Resultado Detox Repair">
                              </div>
-
                              <ul class="space-y-4 mb-8 flex-grow text-xs text-gray-400">
                                 <li class="flex gap-3 text-cyan-400"><i class="fas fa-leaf"></i> Saúde Capilar</li>
                                 <li class="flex gap-3">
@@ -834,7 +852,6 @@
                                     <div><strong class="text-cyan-200 block uppercase tracking-wide opacity-90 mb-0.5">A Técnica</strong>Limpeza quelante + Reposição de Massa.</div>
                                 </li>
                             </ul>
-
                             <div class="border-t border-white/10 pt-6 mt-auto">
                                 <div class="flex justify-between items-end mb-6">
                                     <span class="text-[10px] text-gray-500 uppercase">Investimento a partir de</span>
@@ -842,44 +859,6 @@
                                 </div>
                                 <a href="#" onclick="gtag_report_conversion('https://api.whatsapp.com/send?phone=5549999954052&text=Ol%C3%A1!%20Gostaria%20de%20verificar%20a%20disponibilidade%20para%20o%20Detox%20Repair%20(Sa%C3%BAde%20Capilar).'); return false;" class="block w-full py-4 text-center border border-cyan-500/30 rounded-xl text-cyan-200 text-xs font-bold uppercase tracking-widest hover:bg-cyan-900/30 transition-all">VERIFICAR DISPONIBILIDADE</a>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- AUTORIDADE -->
-        <section class="py-24 md:py-32 bg-[#050505] border-t border-brand-gold/5">
-            <div class="container mx-auto px-6 max-w-6xl flex flex-col md:flex-row items-center gap-16">
-                <div class="w-full md:w-1/3 flex justify-center">
-                    <!-- Círculo com Vídeo em Loop -->
-                    <div class="w-72 h-72 rounded-full border border-brand-gold/30 bg-[#1a0a0a] flex items-center justify-center relative shadow-luxury-glow overflow-hidden">
-                         <video class="w-full h-full object-cover opacity-80" autoplay muted loop playsinline webkit-playsinline>
-                             <source src="https://imagensagata.carrd.co/assets/videos/video05.mp4?v=ed760a36" type="video/mp4">
-                         </video>
-                         <!-- Anel decorativo girando por cima -->
-                        <div class="absolute inset-0 rounded-full border border-white/10 animate-spin-slow pointer-events-none" style="animation-duration: 25s;"></div>
-                    </div>
-                </div>
-                <div class="w-full md:w-2/3 text-center md:text-left">
-                    <span class="text-brand-gold text-[10px] font-bold tracking-[0.3em] uppercase block mb-6">A Assinatura Essência</span>
-                    <h3 class="font-luxury text-4xl md:text-5xl text-white mb-8">Mais que um Salão, <br><span class="italic text-gray-500">uma Filosofia de Cuidado.</span></h3>
-                    <p class="text-gray-400 text-sm leading-relaxed max-w-2xl mb-10 font-light">
-                        "Somos especialistas em <strong>Progressivas e Tratamentos de Alto Impacto</strong>. Acreditamos que o liso perfeito não é sobre química pesada, mas sobre respeito à integridade do fio. Nossa metodologia une a precisão técnica com ativos biotecnológicos para entregar resultados que não apenas embelezam, mas tratam."
-                    </p>
-                    
-                    <div class="mb-8">
-                        <span class="font-signature text-4xl text-brand-gold block transform -rotate-2 opacity-90">Equipe Essência de Romã</span>
-                    </div>
-
-                    <div class="flex flex-col md:flex-row gap-10 justify-center md:justify-start border-t border-white/10 pt-8">
-                        <div>
-                            <span class="block text-3xl font-luxury text-white">16+</span>
-                            <span class="text-[9px] text-gray-500 uppercase tracking-widest">Anos de Expertise</span>
-                        </div>
-                        <div>
-                            <span class="block text-3xl font-luxury text-white">10k+</span>
-                            <span class="text-[9px] text-gray-500 uppercase tracking-widest">Alisamentos Seguros (Sem Danos)</span>
                         </div>
                     </div>
                 </div>
@@ -898,10 +877,6 @@
                         <div class="flex justify-center md:justify-start gap-4">
                             <a href="https://www.instagram.com/essenciaderoma.chapeco/" class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-black hover:bg-brand-gold transition-all"><i class="fab fa-instagram"></i></a>
                             <a href="#" onclick="gtag_report_conversion('https://api.whatsapp.com/send?phone=5549999954052'); return false;" class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-black hover:bg-brand-gold transition-all"><i class="fab fa-whatsapp"></i></a>
-                        </div>
-                        <div class="mt-6 flex gap-3 justify-center md:justify-start opacity-50">
-                            <div class="flex items-center gap-1 text-[9px] text-gray-500 border border-gray-800 px-2 py-1 rounded"><i class="fas fa-lock"></i> Site Seguro</div>
-                            <div class="flex items-center gap-1 text-[9px] text-gray-500 border border-gray-800 px-2 py-1 rounded"><i class="fas fa-shield-alt"></i> Dados Protegidos</div>
                         </div>
                     </div>
                     
@@ -928,119 +903,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="border-t border-white/5 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-[9px] text-gray-700 uppercase tracking-widest gap-4">
-                    <p>© 2026 Essência de Romã Hair.</p>
-                    <div class="flex items-center gap-2 opacity-30"><i class="fas fa-gem text-brand-gold"></i><span>EMPIRE MASTER DESIGN</span></div>
-                </div>
             </div>
         </footer>
     </div>
     
-    <!-- ========================================================================= -->
-    <!-- ATELIER VIEW -->
-    <!-- ========================================================================= -->
-    <div id="atelier-view-container" style="display:none;" class="bg-[#1a1a1a]">
-        <div class="fixed top-0 left-0 w-full z-50 bg-[#1a1a1a]/95 backdrop-blur h-20 flex items-center justify-between px-6 border-b border-brand-gold/20">
-            <span class="text-white font-luxury tracking-[0.2em] uppercase text-xs md:text-base truncate mr-4">Atelier de Estilo</span>
-            <button onclick="window.location.hash='home'" class="flex flex-shrink-0 items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-brand-gold border border-brand-gold/30 px-4 py-2 rounded-full hover:bg-brand-gold hover:text-black transition-all whitespace-nowrap z-[101]"><i class="fas fa-arrow-left"></i> Voltar</button>
-        </div>
-        <section class="min-h-screen pt-28 pb-20 relative overflow-hidden">
-            <div class="mandala-bg animate-spin-slow opacity-10" style="border-color: rgba(197,160,89,0.1)"></div>
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="text-center mb-16 reveal">
-                    <span class="text-brand-gold text-[10px] font-bold tracking-[0.3em] uppercase block mb-4">Visagismo & Colorimetria</span>
-                    <h2 class="font-luxury text-4xl md:text-6xl text-white mb-6">SUA ASSINATURA VISUAL</h2>
-                    <p class="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed font-light">Não é apenas cabelo. É o posicionamento da sua imagem pessoal no mundo.</p>
-                    <div class="mt-4 inline-block bg-red-900/20 border border-red-500/30 px-4 py-2 rounded-full">
-                        <span class="text-red-400 text-[10px] font-bold uppercase tracking-widest animate-pulse">Agenda Restrita: Apenas 2 transformações por dia</span>
-                    </div>
-                </div>
-                <div class="flex flex-col gap-24 max-w-6xl mx-auto">
-                    
-                    <!-- 1. ILUMINAÇÃO COUTURE (Micro-Lights) -->
-                    <div class="flex flex-col md:flex-row items-center gap-12 group reveal">
-                        <div class="w-full md:w-1/2 order-2 md:order-1 text-center md:text-right flex flex-col items-center md:items-end">
-                            <div class="glass-panel p-8 rounded-2xl border-r-4 border-r-brand-gold border-y-0 border-l-0 bg-gradient-to-l from-white/5 to-transparent relative">
-                                <div class="absolute -top-3 right-8 bg-brand-gold text-black text-[9px] font-bold px-3 py-1 rounded shadow-lg uppercase tracking-widest">Inclui: Tratamento Pós-Química</div>
-                                <h3 class="text-xl font-luxury text-white mb-2">ILUMINAÇÃO COUTURE <span class="text-base italic text-brand-gold block">(Micro-Lights)</span></h3>
-                                <div class="flex items-center justify-end gap-1 mb-4 text-yellow-400 text-[10px]"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                                <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-6 leading-relaxed">Técnica de costura ultra-fina para clareamento difuso e preservação da fibra.</p>
-                                <p class="text-gray-300 text-sm leading-relaxed mb-6">
-                                    Esqueça as marcas e o efeito artificial. Criamos um loiro de fusão perfeita que nasce da raiz sem marcações. Todo o processo é blindado com tecnologia Plex para garantir saúde máxima.
-                                </p>
-                                <p class="text-brand-gold text-xs font-bold mb-8 block">Investimento a partir de R$ 450</p>
-                                <a href="#" onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20meu%20Loiro%20Luxo%20com%20Ilumina%C3%A7%C3%A3o%20Couture'); return false;" class="inline-flex items-center gap-2 text-white bg-brand-gold hover:bg-white hover:text-black px-6 py-3 rounded-full transition-all uppercase text-[10px] font-bold tracking-widest shadow-luxury-glow">
-                                    QUERO MEU LOIRO LUXO <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-1/2 order-1 md:order-2 h-80 md:h-[500px] relative rounded-2xl overflow-hidden shadow-2xl border border-white/5">
-                            <div class="absolute top-4 right-4 z-20 bg-black/60 backdrop-blur border border-white/20 px-3 py-1 rounded text-[9px] text-white uppercase tracking-widest font-bold"><i class="fas fa-shield-alt text-brand-gold mr-1"></i> Proteção Plex Inclusa</div>
-                            <img src="https://imagensagata.carrd.co/assets/images/image13.jpg?v=c257b396" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s]" alt="Micro-Lights">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                        </div>
-                    </div>
-
-                    <!-- 2. ARQUITETURA DE CORTE -->
-                    <div class="flex flex-col md:flex-row items-center gap-12 group reveal">
-                        <div class="w-full md:w-1/2 order-1 h-80 md:h-[500px] relative rounded-2xl overflow-hidden shadow-2xl border border-white/5">
-                            <div class="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur border border-white/20 px-3 py-1 rounded text-[9px] text-white uppercase tracking-widest font-bold"><i class="fas fa-crop-alt text-brand-gold mr-1"></i> Visagismo Digital</div>
-                            <img src="https://imagensagata.carrd.co/assets/images/image14.jpg?v=c257b396" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s]" alt="Visagismo">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                        </div>
-                        <div class="w-full md:w-1/2 order-2 text-center md:text-left flex flex-col items-center md:items-start">
-                             <div class="glass-panel p-8 rounded-2xl border-l-4 border-l-brand-gold border-y-0 border-r-0 bg-gradient-to-r from-white/5 to-transparent relative">
-                                <div class="absolute -top-3 left-8 bg-brand-gold text-black text-[9px] font-bold px-3 py-1 rounded shadow-lg uppercase tracking-widest">Inclui: Finalização Premium</div>
-                                <h3 class="text-xl font-luxury text-white mb-2">ARQUITETURA DE CORTE <span class="text-base italic text-brand-gold block">(Visagismo)</span></h3>
-                                <p class="text-[10px] text-brand-gold uppercase tracking-widest mb-6 leading-relaxed">Consultoria de imagem e geometria de corte personalizada para sua estrutura.</p>
-                                <p class="text-gray-300 text-sm leading-relaxed mb-6">
-                                    Cansada de cortes que não encaixam? Analisamos o formato do seu rosto e seu estilo de vida para criar um design funcional. Unimos técnica geométrica com visagismo para entregar praticidade e elegância diária.
-                                </p>
-                                <p class="text-brand-gold text-xs font-bold mb-8 block">Investimento a partir de R$ 120</p>
-                                <a href="#" onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20definir%20meu%20estilo%20com%20Arquitetura%20de%20Corte'); return false;" class="btn-luxury-cta px-8 py-3 rounded-full text-[10px]">DEFINIR MEU ESTILO</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 3. BIO-REGENERAÇÃO (UTI CAPILAR) -->
-                    <div class="flex flex-col md:flex-row items-center gap-12 group reveal">
-                        <div class="w-full md:w-1/2 order-2 md:order-1 text-center md:text-right flex flex-col items-center md:items-end">
-                             <div class="glass-panel p-8 rounded-2xl border-r-4 border-r-brand-gold border-y-0 border-l-0 bg-gradient-to-l from-white/5 to-transparent relative">
-                                <div class="absolute -top-3 right-8 bg-red-900 text-white border border-red-500 text-[9px] font-bold px-3 py-1 rounded shadow-lg uppercase tracking-widest">Socorro Imediato</div>
-                                <h3 class="text-xl font-luxury text-white mb-2">BIO-REGENERAÇÃO DE CÓRTEX <span class="text-base italic text-brand-gold block">(UTI Capilar)</span></h3>
-                                <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-6 leading-relaxed">Para cabelos elásticos, emborrachados ou quimicamente exaustos.</p>
-                                <p class="text-gray-300 text-sm leading-relaxed mb-6">
-                                    A intervenção profunda que seu fio pede. Injetamos massa proteica diretamente no córtex para devolver a resistência perdida. É a verdadeira 'cura' para cabelos que sofreram corte químico ou excesso de descoloração.
-                                </p>
-                                <p class="text-brand-gold text-xs font-bold mb-8 block">Investimento a partir de R$ 250</p>
-                                <a href="#" onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1!%20Preciso%20salvar%20meu%20cabelo%20com%20a%20Bio-Regenera%C3%A7%C3%A3o'); return false;" class="inline-flex items-center gap-2 text-white border border-brand-gold hover:bg-brand-gold hover:text-black px-6 py-3 rounded-full transition-all uppercase text-[10px] font-bold tracking-widest">
-                                    RESGATAR MINHA SAÚDE <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-1/2 order-1 md:order-2 h-80 md:h-[500px] relative rounded-2xl overflow-hidden shadow-2xl border border-white/5">
-                            <div class="absolute top-4 right-4 z-20 bg-black/60 backdrop-blur border border-white/20 px-3 py-1 rounded text-[9px] text-white uppercase tracking-widest font-bold"><i class="fas fa-heartbeat text-red-500 mr-1"></i> Recuperação Total</div>
-                            <img src="https://imagensagata.carrd.co/assets/images/image15.jpg?v=c257b396" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s]" alt="Recuperação de Córtex">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                        </div>
-                    </div>
-
-                </div>
-                
-                <div class="mt-20 text-center border-t border-brand-gold/10 pt-10">
-                    <p class="text-[9px] text-gray-500 uppercase tracking-widest mb-4"><i class="fas fa-lock mr-1"></i> Segurança Profissional</p>
-                    <p class="text-gray-400 text-xs max-w-xl mx-auto">Para garantir a integridade do seu fio, todos os procedimentos de cor (mechas/luzes) exigem a realização prévia e obrigatória do <strong>Teste de Mechas</strong>.</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ========================================================================= -->
-    <!-- CLUB VIEW -->
-    <!-- ========================================================================= -->
+    <!-- CLUB VIEW / TABELA -->
     <div id="club-view-container" style="display:none;" class="bg-[#050505]">
          <div class="fixed top-0 left-0 w-full z-[100] bg-[#050505]/95 backdrop-blur border-b border-brand-gold/20 h-20 flex items-center justify-between px-6">
-            <!-- ATUALIZADO: Nome no header do modal -->
             <div class="flex flex-col"><span class="text-white font-luxury font-bold text-xl tracking-wider">Tabelas & Clube VIP</span></div>
             <button onclick="window.location.hash='home'" class="flex flex-shrink-0 items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-brand-gold border border-brand-gold/30 px-4 py-2 rounded-full hover:bg-brand-gold hover:text-black transition-all whitespace-nowrap z-[101]"><i class="fas fa-arrow-left"></i> Voltar</button>
         </div>
@@ -1048,536 +917,126 @@
         <section class="min-h-screen pt-32 pb-20 px-6 container mx-auto text-center relative">
              <div class="mandala-bg animate-spin-slow opacity-10" style="border-color: rgba(255,255,255,0.05)"></div>
              
-             <!-- TÍTULO PRINCIPAL -->
              <span class="inline-block py-1 px-3 rounded bg-brand-gold/10 text-brand-gold text-[9px] font-bold uppercase tracking-[0.2em] mb-6 border border-brand-gold/20 relative z-10">Valores Oficiais</span>
              <h1 class="text-5xl md:text-7xl font-luxury text-white mb-12 relative z-10">Tabela de <span class="italic text-brand-gold">Preços</span></h1>
              
-             <!-- ESTRATÉGIA DE NEUROVENDAS: MOSTRAR AS TABELAS AVULSAS (CARAS) PRIMEIRO -->
-             <div class="max-w-5xl mx-auto mb-24 relative z-10" style="display: block;">
-                 <div class="text-center mb-8">
-                     <p class="text-xs text-gray-500 tracking-widest uppercase mb-2">Preços para não-assinantes</p>
-                     <h3 class="font-luxury text-3xl text-white">Tabelas de Referência <span class="italic text-gray-500">(Preço Avulso)</span></h3>
-                 </div>
-                 
-                 <div class="flex flex-col gap-16">
-                    
-                    <!-- NOVA TABELA HTML: ENGENHARIA 8K + BLINDAGEM -->
-                    <div class="w-full reveal active">
-                        <!-- ATUALIZAÇÃO DE NITIDEZ: Removido glass-panel e blur. Fundo escuro sólido para contraste máximo -->
-                        <div class="table-container w-full relative overflow-hidden" style="background: #080808; backdrop-filter: none; border: 1px solid rgba(197, 160, 89, 0.4);">
-                            <!-- Borda Superior Dourada -->
-                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-gold-dark via-brand-gold to-brand-gold-dark"></div>
-                            
-                            <div class="text-center mb-10 pt-4">
-                                <h3 class="protocol-title text-brand-gold font-bold" style="font-size: 2.2rem; text-shadow: 0 2px 4px rgba(0,0,0,0.8);">Engenharia 8K + Blindagem</h3>
-                                <p class="text-xs text-gray-300 uppercase tracking-widest mt-2 font-medium">Tabela de Investimento por Tamanho e Densidade</p>
-                            </div>
-                            
-                            <div class="overflow-x-auto pb-4 custom-scrollbar">
-                                <table class="w-full text-left border-collapse">
-                                    <thead>
-                                        <tr>
-                                            <th class="border-b-2 border-brand-gold/50 pb-4 pl-4 min-w-[180px] align-bottom text-white text-sm">Perfil / Tamanho</th>
-                                            <th class="col-density border-b-2 border-brand-gold/50 pb-4 px-4 min-w-[140px] text-center text-white text-sm">Fino <span class="text-gray-300 text-xs font-medium block mt-1 tracking-normal normal-case">Baixa Densidade</span></th>
-                                            <th class="col-density border-b-2 border-brand-gold/50 pb-4 px-4 min-w-[140px] text-center text-white text-sm">Médio <span class="text-gray-300 text-xs font-medium block mt-1 tracking-normal normal-case">Densidade Média</span></th>
-                                            <th class="col-density border-b-2 border-brand-gold/50 pb-4 px-4 min-w-[140px] text-center text-white text-sm">Grosso <span class="text-gray-300 text-xs font-medium block mt-1 tracking-normal normal-case">Alta Densidade</span></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- PERFIL P -->
-                                        <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
-                                            <td class="py-6 pl-4">
-                                                <strong class="text-white block text-base tracking-wider mb-1">1. PERFIL P</strong>
-                                                <span class="text-gray-300 text-xs font-medium block">Até o Queixo</span>
-                                            </td>
-                                            <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 390</span>
-                                                <span class="price-value highlight text-2xl">por R$ 190</span>
-                                            </td>
-                                            <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 480</span>
-                                                <span class="price-value highlight text-2xl">por R$ 240</span>
-                                            </td>
-                                            <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 580</span>
-                                                <span class="price-value highlight text-2xl">por R$ 280</span>
-                                            </td>
-                                        </tr>
-                                        <!-- PERFIL M -->
-                                        <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
-                                            <td class="py-6 pl-4">
-                                                <strong class="text-white block text-base tracking-wider mb-1">2. PERFIL M</strong>
-                                                <span class="text-gray-300 text-xs font-medium block">Até o Ombro</span>
-                                            </td>
-                                            <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 580</span>
-                                                <span class="price-value highlight text-2xl">por R$ 280</span>
-                                            </td>
-                                            <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 680</span>
-                                                <span class="price-value highlight text-2xl">por R$ 330</span>
-                                            </td>
-                                            <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 780</span>
-                                                <span class="price-value highlight text-2xl">por R$ 380</span>
-                                            </td>
-                                        </tr>
-                                        <!-- PERFIL G -->
-                                        <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
-                                            <td class="py-6 pl-4">
-                                                <strong class="text-white block text-base tracking-wider mb-1">3. PERFIL G</strong>
-                                                <span class="text-gray-300 text-xs font-medium block">Até as Costas/Sutiã</span>
-                                            </td>
-                                            <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 750</span>
-                                                <span class="price-value highlight text-2xl">por R$ 370</span>
-                                            </td>
-                                            <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 850</span>
-                                                <span class="price-value highlight text-2xl">por R$ 420</span>
-                                            </td>
-                                            <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 980</span>
-                                                <span class="price-value highlight text-2xl">por R$ 480</span>
-                                            </td>
-                                        </tr>
-                                        <!-- PERFIL GG -->
-                                        <tr class="hover:bg-white/5 transition-colors">
-                                            <td class="py-6 pl-4">
-                                                <strong class="text-white block text-base tracking-wider mb-1">4. PERFIL GG</strong>
-                                                <span class="text-gray-300 text-xs font-medium block">Cintura em diante</span>
-                                            </td>
-                                            <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 880</span>
-                                                <span class="price-value highlight text-2xl">por R$ 430</span>
-                                            </td>
-                                            <td class="col-density py-6 px-4 text-center relative">
-                                                <!-- Badge Ponto Fixo -->
-                                                <div class="absolute -top-1 left-1/2 transform -translate-x-1/2 bg-brand-gold text-black text-[9px] font-bold px-3 py-1 rounded shadow-[0_0_15px_rgba(197,160,89,0.5)] uppercase tracking-widest z-10 whitespace-nowrap">Seu Ponto Fixo</div>
-                                                <span class="block text-xs text-red-500 font-bold line-through mb-1 mt-3">de R$ 980</span>
-                                                <span class="price-value highlight text-2xl text-white drop-shadow-md">por R$ 480</span>
-                                            </td>
-                                            <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 1.250</span>
-                                                <span class="price-value highlight text-2xl">por R$ 610</span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- IMAGEM 1: GLASS MOLECULAR (Antifrizz) - Centralizada -->
-
-             <!-- TRANSIÇÃO PARA O CLUBE -->
-             <div class="mt-16 mb-8 relative z-10 text-center">
-                 <span class="text-brand-gold text-[10px] font-bold uppercase tracking-[0.3em] block mb-4">Mas existe um caminho mais inteligente</span>
-                 <h2 class="text-4xl md:text-5xl font-luxury text-white">Clube de Assinatura</h2>
-             </div>
-
-             <!-- Comparativo -->
-             <section class="py-20 bg-[#1a1a1a] border-y border-brand-gold/10 text-left relative z-10 my-16 rounded-3xl overflow-hidden shadow-2xl">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center p-8">
-                    <div class="text-center lg:text-right text-gray-500 space-y-6 opacity-70 hover:opacity-100 transition-opacity">
-                        <h3 class="uppercase tracking-widest text-sm font-bold mb-6 text-red-500/90 flex items-center justify-end gap-2"><i class="fas fa-exclamation-triangle"></i> Modelo Tradicional (Risco)</h3>
-                        <p class="border-b border-white/5 pb-2 text-red-300/60">Paga o preço cheio e flutuante da tabela</p>
-                        <p class="border-b border-white/5 pb-2 text-red-300/60">Agenda "quando dá" (Cabelo instável)</p>
-                        <p class="text-red-300/60">Sem prioridade em datas festivas</p>
-                    </div>
-                    <div class="text-center lg:text-left text-white space-y-6 border-t lg:border-t-0 lg:border-l border-brand-gold/30 pt-8 lg:pt-0 lg:pl-8">
-                        <h3 class="text-brand-gold uppercase tracking-widest text-sm font-bold mb-6 flex items-center justify-start gap-2"><i class="fas fa-crown"></i> Clube Alisa Chapecó (Segurança)</h3>
-                        <p class="font-bold border-b border-brand-gold/10 pb-2"><i class="fas fa-check text-green-400 mr-2"></i> Valor fixo reduzido (Até 60% OFF da Tabela)</p>
-                        <p class="font-bold border-b border-brand-gold/10 pb-2"><i class="fas fa-check text-green-400 mr-2"></i> Cabelo impecável o ano todo</p>
-                        <p class="font-bold"><i class="fas fa-check text-green-400 mr-2"></i> Vaga garantida na agenda</p>
-                    </div>
-                </div>
-             </section>
-
-             <!-- Planos Clube (DESIGN PLATINUM MEMBERSHIP - LABELS REMOVIDOS E FOCO NO IDEAL) -->
-             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20 mobile-snap-x mt-20 relative z-10 px-4 md:px-0">
-                
-                <!-- PLANO SUBLIME (FINO) -->
-                <div class="mobile-snap-item bg-gradient-to-b from-[#111111] to-[#050505] rounded-[2.5rem] p-8 border border-white/5 hover:border-brand-gold/40 transition-all duration-500 group shadow-[0_15px_40px_-15px_rgba(0,0,0,0.8)] hover:shadow-[0_20px_50px_-10px_rgba(197,160,89,0.2)] relative flex flex-col overflow-hidden w-[85vw] md:w-auto">
-                    
-                    <!-- Detalhe Luminoso no Topo -->
-                    <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-brand-gold/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <!-- Efeito de Fundo Sofisticado (Glow interno) -->
-                    <div class="absolute -top-24 -right-24 w-56 h-56 bg-brand-gold/10 rounded-full blur-[70px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-
-                    <div class="text-[9px] text-brand-gold mt-1 mb-6 bg-brand-gold/5 px-4 py-2 rounded-full w-fit mx-auto border border-brand-gold/20 uppercase tracking-widest backdrop-blur-sm relative z-10"><i class="fas fa-fire mr-1"></i> 2 resgates hoje</div>
-                    
-                    <h3 class="text-4xl font-luxury text-white mb-1 relative z-10 drop-shadow-md">Sublime</h3>
-                    <span class="text-[10px] text-brand-gold-light/70 uppercase tracking-widest block mb-8 pb-5 border-b border-white/5 relative z-10">Fios Finos / Baixa Densidade</span>
-                    
-                    <!-- Caixa de Preço Emoldurada -->
-                    <div class="mb-8 p-6 rounded-3xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/[0.05] shadow-[inset_0_0_20px_rgba(255,255,255,0.02)] flex flex-col items-center relative z-10 backdrop-blur-sm group-hover:border-brand-gold/20 transition-colors duration-500">
-                        <span class="text-[10px] text-gray-500 line-through mb-2 font-medium">Avulso até R$ 880,00</span>
-                        <div class="text-5xl text-brand-gold font-light mb-3 font-luxury drop-shadow-lg">R$ 119<span class="text-2xl text-brand-gold-light">,90</span></div>
-                        <span class="text-[9px] text-green-400 font-bold uppercase tracking-widest bg-green-900/20 px-3 py-1.5 rounded-full border border-green-500/20 shadow-lg"><i class="fas fa-shield-alt mr-1"></i> Valor Fixo Mensal</span>
-                    </div>
-
-                    <!-- LINHA DO TEMPO REFINADA -->
-                    <div class="timeline-container text-left mb-10 pl-5 border-l border-brand-gold/20 ml-2 flex-grow relative z-10">
-                        <div class="timeline-item pb-6">
-                            <div class="timeline-marker active" style="left: -25px; box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);"></div>
-                            <div class="flex justify-between items-center text-xs">
-                                <div class="flex flex-col">
-                                    <span class="text-white font-bold text-sm tracking-wide">Ideal (Até 30d)</span>
-                                    <span class="text-[9px] text-green-400 uppercase tracking-widest font-bold mt-1">Mais Vantajoso</span>
-                                </div>
-                                <span class="text-brand-gold font-bold text-sm bg-brand-gold/10 border border-brand-gold/20 px-2 py-1 rounded">R$ 119,90</span>
-                            </div>
-                        </div>
-                        <div class="timeline-item pb-6">
-                            <div class="timeline-marker warn" style="left: -25px; background: #fbbf24; border-color: #f59e0b;"></div>
-                            <div class="flex justify-between items-center text-xs">
-                                <div class="flex flex-col">
-                                    <span class="text-yellow-500 font-bold text-sm tracking-wide">Alerta (31 a 60d)</span>
-                                    <span class="text-[9px] text-yellow-500/70 uppercase tracking-widest mt-1">Manutenção Tardia</span>
-                                </div>
-                                <span class="text-yellow-500 font-bold text-sm">R$ 159,90</span>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker danger" style="left: -25px; background: #ef4444; border-color: #b91c1c;"></div>
-                            <div class="flex justify-between items-center text-xs opacity-70 group-hover:opacity-100 transition-opacity duration-300">
-                                <div class="flex flex-col">
-                                    <span class="text-red-400 font-bold text-sm tracking-wide">Avulso (61d+)</span>
-                                    <span class="text-[9px] text-red-400/70 uppercase tracking-widest mt-1">Começa tudo de novo</span>
-                                </div>
-                                <span class="text-red-400 line-through text-[10px] mt-1 border border-red-500/20 px-2 py-0.5 rounded bg-red-900/10">Tabela Cheia</span>
-                            </div>
-                        </div>
+             <div class="max-w-5xl mx-auto mb-24 relative z-10">
+                <div class="table-container w-full relative overflow-hidden" style="background: #080808; backdrop-filter: none; border: 1px solid rgba(197, 160, 89, 0.4);">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-gold-dark via-brand-gold to-brand-gold-dark"></div>
+                    <div class="text-center mb-10 pt-4">
+                        <h3 class="protocol-title text-brand-gold font-bold" style="font-size: 2.2rem; text-shadow: 0 2px 4px rgba(0,0,0,0.8);">Engenharia 8K + Blindagem</h3>
+                        <p class="text-xs text-gray-300 uppercase tracking-widest mt-2 font-medium">Tabela de Investimento por Tamanho e Densidade</p>
                     </div>
                     
-                    <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Sublime%20(Fios%20Finos)%20e%20pagar%20R$%20119,90." class="relative overflow-hidden group/btn block w-full py-4 text-center rounded-2xl text-[10px] font-bold tracking-[0.2em] mt-auto bg-gradient-to-r from-brand-gold-dark via-brand-gold to-brand-gold-dark text-brand-black shadow-[0_10px_20px_rgba(197,160,89,0.3)] hover:shadow-[0_15px_30px_rgba(197,160,89,0.5)] hover:scale-[1.02] transition-all duration-300 z-10">
-                        <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]"></span>
-                        ASSINAR SUBLIME
-                    </a>
-                </div>
-
-                <!-- PLANO IMPERIAL (MÉDIO) -->
-                <div class="mobile-snap-item bg-gradient-to-b from-[#111111] to-[#050505] rounded-[2.5rem] p-8 border border-white/5 hover:border-brand-gold/40 transition-all duration-500 group shadow-[0_15px_40px_-15px_rgba(0,0,0,0.8)] hover:shadow-[0_20px_50px_-10px_rgba(197,160,89,0.2)] relative flex flex-col overflow-hidden w-[85vw] md:w-auto">
+                    <div class="overflow-x-auto pb-4 custom-scrollbar px-4">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr>
+                                    <th class="border-b-2 border-brand-gold/50 pb-4 min-w-[180px] text-white text-sm">Perfil / Tamanho</th>
+                                    <th class="border-b-2 border-brand-gold/50 pb-4 text-center text-white text-sm">Fino<br><span class="text-[10px] text-gray-400 font-normal">Baixa Densidade</span></th>
+                                    <th class="border-b-2 border-brand-gold/50 pb-4 text-center text-white text-sm">Médio<br><span class="text-[10px] text-gray-400 font-normal">Densidade Média</span></th>
+                                    <th class="border-b-2 border-brand-gold/50 pb-4 text-center text-white text-sm">Grosso<br><span class="text-[10px] text-gray-400 font-normal">Alta Densidade</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-white/10">
+                                    <td class="py-6"><strong class="text-white block">1. PERFIL P</strong><span class="text-gray-400 text-xs">Até o Queixo</span></td>
+                                    <td class="text-center"><span class="text-red-500 line-through text-xs">de 390</span><br><span class="text-brand-gold font-bold text-xl">por 190</span></td>
+                                    <td class="text-center"><span class="text-red-500 line-through text-xs">de 480</span><br><span class="text-brand-gold font-bold text-xl">por 240</span></td>
+                                    <td class="text-center"><span class="text-red-500 line-through text-xs">de 580</span><br><span class="text-brand-gold font-bold text-xl">por 280</span></td>
+                                </tr>
+                                <tr class="border-b border-white/10">
+                                    <td class="py-6"><strong class="text-white block">2. PERFIL M</strong><span class="text-gray-400 text-xs">Até o Ombro</span></td>
+                                    <td class="text-center"><span class="text-red-500 line-through text-xs">de 580</span><br><span class="text-brand-gold font-bold text-xl">por 280</span></td>
+                                    <td class="text-center"><span class="text-red-500 line-through text-xs">de 680</span><br><span class="text-brand-gold font-bold text-xl">por 330</span></td>
+                                    <td class="text-center"><span class="text-red-500 line-through text-xs">de 780</span><br><span class="text-brand-gold font-bold text-xl">por 380</span></td>
+                                </tr>
+                                <tr class="border-b border-white/10">
+                                    <td class="py-6"><strong class="text-white block">3. PERFIL G</strong><span class="text-gray-400 text-xs">Costas/Sutiã</span></td>
+                                    <td class="text-center"><span class="text-red-500 line-through text-xs">de 750</span><br><span class="text-brand-gold font-bold text-xl">por 370</span></td>
+                                    <td class="text-center"><span class="text-red-500 line-through text-xs">de 850</span><br><span class="text-brand-gold font-bold text-xl">por 420</span></td>
+                                    <td class="text-center"><span class="text-red-500 line-through text-xs">de 980</span><br><span class="text-brand-gold font-bold text-xl">por 480</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-6"><strong class="text-white block">4. PERFIL GG</strong><span class="text-gray-400 text-xs">Cintura adiante</span></td>
+                                    <td class="text-center"><span class="text-red-500 line-through text-xs">de 880</span><br><span class="text-brand-gold font-bold text-xl">por 430</span></td>
+                                    <td class="text-center relative"><div class="absolute -top-1 left-1/2 -translate-x-1/2 bg-brand-gold text-black text-[8px] font-bold px-2 py-0.5 rounded uppercase">Ponto Fixo</div><span class="text-red-500 line-through text-xs">de 980</span><br><span class="text-brand-gold font-bold text-xl">por 480</span></td>
+                                    <td class="text-center"><span class="text-red-500 line-through text-xs">de 1250</span><br><span class="text-brand-gold font-bold text-xl">por 610</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     
-                    <!-- Detalhe Luminoso no Topo -->
-                    <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-brand-gold/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="absolute -top-24 -right-24 w-56 h-56 bg-brand-gold/10 rounded-full blur-[70px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-
-                    <div class="text-[9px] text-green-400 mt-1 mb-6 bg-green-900/20 px-4 py-2 rounded-full w-fit mx-auto border border-green-500/20 uppercase tracking-widest backdrop-blur-sm relative z-10"><i class="fas fa-lock mr-1"></i> Apenas 3 vagas</div>
-                    
-                    <h3 class="text-4xl font-luxury text-white mb-1 relative z-10 drop-shadow-md">Imperial</h3>
-                    <span class="text-[10px] text-brand-gold-light/70 uppercase tracking-widest block mb-8 pb-5 border-b border-white/5 relative z-10">Fios Médios / Densidade Média</span>
-
-                    <!-- Caixa de Preço Emoldurada -->
-                    <div class="mb-8 p-6 rounded-3xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/[0.05] shadow-[inset_0_0_20px_rgba(255,255,255,0.02)] flex flex-col items-center relative z-10 backdrop-blur-sm group-hover:border-brand-gold/20 transition-colors duration-500">
-                        <span class="text-[10px] text-gray-500 line-through mb-2 font-medium">Avulso até R$ 980,00</span>
-                        <div class="text-5xl text-brand-gold font-light mb-3 font-luxury drop-shadow-lg">R$ 139<span class="text-2xl text-brand-gold-light">,90</span></div>
-                        <span class="text-[9px] text-green-400 font-bold uppercase tracking-widest bg-green-900/20 px-3 py-1.5 rounded-full border border-green-500/20 shadow-lg"><i class="fas fa-shield-alt mr-1"></i> Valor Fixo Mensal</span>
+                    <!-- CTA DE ALTA CONVERSÃO INTEGRADO NA TABELA -->
+                    <div class="mt-4 mb-6 text-center px-4 pb-6 border-t border-white/5 pt-8">
+                        <a href="#" onclick="gtag_report_conversion('https://api.whatsapp.com/send?phone=5549999954052&text=Ol%C3%A1!%20Vi%20a%20tabela%20da%20Engenharia%208K%20e%20quero%20come%C3%A7ar%20meu%20protocolo%20personalizado.'); return false;" class="btn-luxury-cta inline-flex flex-col items-center justify-center py-4 px-8 md:px-12 rounded-xl w-full md:w-auto mx-auto relative group shadow-[0_10px_30px_rgba(197,160,89,0.2)] hover:scale-105 transition-transform duration-300">
+                            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></span>
+                            <span class="text-xs md:text-sm font-extrabold tracking-widest uppercase mb-1 relative z-10 text-brand-black drop-shadow-sm">Começar Protocolo Personalizado</span>
+                            <span class="text-[11px] font-bold tracking-wider flex items-center gap-2 text-brand-black/80 relative z-10">
+                                <i class="fab fa-whatsapp text-sm"></i> (49) 99995-4052
+                            </span>
+                        </a>
+                        <p class="text-gray-500 text-[9px] uppercase tracking-widest mt-4">Análise de perfil gratuita e sem compromisso</p>
                     </div>
 
-                    <!-- LINHA DO TEMPO REFINADA -->
-                    <div class="timeline-container text-left mb-10 pl-5 border-l border-brand-gold/20 ml-2 flex-grow relative z-10">
-                        <div class="timeline-item pb-6">
-                            <div class="timeline-marker active" style="left: -25px; box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);"></div>
-                            <div class="flex justify-between items-center text-xs">
-                                <div class="flex flex-col">
-                                    <span class="text-white font-bold text-sm tracking-wide">Ideal (Até 30d)</span>
-                                    <span class="text-[9px] text-green-400 uppercase tracking-widest font-bold mt-1">Mais Vantajoso</span>
-                                </div>
-                                <span class="text-brand-gold font-bold text-sm bg-brand-gold/10 border border-brand-gold/20 px-2 py-1 rounded">R$ 139,90</span>
-                            </div>
-                        </div>
-                        <div class="timeline-item pb-6">
-                            <div class="timeline-marker warn" style="left: -25px; background: #fbbf24; border-color: #f59e0b;"></div>
-                            <div class="flex justify-between items-center text-xs">
-                                <div class="flex flex-col">
-                                    <span class="text-yellow-500 font-bold text-sm tracking-wide">Alerta (31 a 60d)</span>
-                                    <span class="text-[9px] text-yellow-500/70 uppercase tracking-widest mt-1">Manutenção Tardia</span>
-                                </div>
-                                <span class="text-yellow-500 font-bold text-sm">R$ 189,90</span>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker danger" style="left: -25px; background: #ef4444; border-color: #b91c1c;"></div>
-                            <div class="flex justify-between items-center text-xs opacity-70 group-hover:opacity-100 transition-opacity duration-300">
-                                <div class="flex flex-col">
-                                    <span class="text-red-400 font-bold text-sm tracking-wide">Avulso (61d+)</span>
-                                    <span class="text-[9px] text-red-400/70 uppercase tracking-widest mt-1">Começa tudo de novo</span>
-                                </div>
-                                <span class="text-red-400 line-through text-[10px] mt-1 border border-red-500/20 px-2 py-0.5 rounded bg-red-900/10">Tabela Cheia</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Imperial%20(Fios%20M%C3%A9dios)%20e%20pagar%20R$%20139,90." class="relative overflow-hidden group/btn block w-full py-4 text-center rounded-2xl text-[10px] font-bold tracking-[0.2em] mt-auto bg-gradient-to-r from-brand-gold-dark via-brand-gold to-brand-gold-dark text-brand-black shadow-[0_10px_20px_rgba(197,160,89,0.3)] hover:shadow-[0_15px_30px_rgba(197,160,89,0.5)] hover:scale-[1.02] transition-all duration-300 z-10">
-                        <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]"></span>
-                        ASSINAR IMPERIAL
-                    </a>
-                </div>
-
-                <!-- PLANO ABSOLUTO (GROSSO) -->
-                <div class="mobile-snap-item bg-gradient-to-b from-[#111111] to-[#050505] rounded-[2.5rem] p-8 border border-white/5 hover:border-brand-gold/40 transition-all duration-500 group shadow-[0_15px_40px_-15px_rgba(0,0,0,0.8)] hover:shadow-[0_20px_50px_-10px_rgba(197,160,89,0.2)] relative flex flex-col overflow-hidden w-[85vw] md:w-auto">
-                    
-                    <!-- Detalhe Luminoso no Topo -->
-                    <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-brand-gold/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="absolute -top-24 -right-24 w-56 h-56 bg-brand-gold/10 rounded-full blur-[70px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-
-                    <div class="text-[9px] text-red-400 mt-1 mb-6 bg-red-900/20 px-4 py-2 rounded-full w-fit mx-auto border border-red-500/20 uppercase tracking-widest animate-pulse backdrop-blur-sm relative z-10"><i class="fas fa-exclamation-circle mr-1"></i> Última vaga do lote</div>
-                    
-                    <h3 class="text-4xl font-luxury text-white mb-1 relative z-10 drop-shadow-md">Absoluto</h3>
-                    <span class="text-[10px] text-brand-gold-light/70 uppercase tracking-widest block mb-8 pb-5 border-b border-white/5 relative z-10">Fios Grossos / Alta Densidade</span>
-
-                    <!-- Caixa de Preço Emoldurada -->
-                    <div class="mb-8 p-6 rounded-3xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/[0.05] shadow-[inset_0_0_20px_rgba(255,255,255,0.02)] flex flex-col items-center relative z-10 backdrop-blur-sm group-hover:border-brand-gold/20 transition-colors duration-500">
-                        <span class="text-[10px] text-gray-500 line-through mb-2 font-medium">Avulso até R$ 1.250,00</span>
-                        <div class="text-5xl text-brand-gold font-light mb-3 font-luxury drop-shadow-lg">R$ 159<span class="text-2xl text-brand-gold-light">,90</span></div>
-                        <span class="text-[9px] text-green-400 font-bold uppercase tracking-widest bg-green-900/20 px-3 py-1.5 rounded-full border border-green-500/20 shadow-lg"><i class="fas fa-shield-alt mr-1"></i> Valor Fixo Mensal</span>
-                    </div>
-
-                    <!-- LINHA DO TEMPO REFINADA -->
-                    <div class="timeline-container text-left mb-10 pl-5 border-l border-brand-gold/20 ml-2 flex-grow relative z-10">
-                        <div class="timeline-item pb-6">
-                            <div class="timeline-marker active" style="left: -25px; box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);"></div>
-                            <div class="flex justify-between items-center text-xs">
-                                <div class="flex flex-col">
-                                    <span class="text-white font-bold text-sm tracking-wide">Ideal (Até 30d)</span>
-                                    <span class="text-[8px] text-green-400 uppercase tracking-widest font-bold mt-1">Mais Vantajoso</span>
-                                </div>
-                                <span class="text-brand-gold font-bold text-sm bg-brand-gold/10 border border-brand-gold/20 px-2 py-1 rounded">R$ 159,90</span>
-                            </div>
-                        </div>
-                        <div class="timeline-item pb-6">
-                            <div class="timeline-marker warn" style="left: -25px; background: #fbbf24; border-color: #f59e0b;"></div>
-                            <div class="flex justify-between items-center text-xs">
-                                <div class="flex flex-col">
-                                    <span class="text-yellow-500 font-bold text-sm tracking-wide">Alerta (31 a 60d)</span>
-                                    <span class="text-[9px] text-yellow-500/70 uppercase tracking-widest mt-1">Manutenção Tardia</span>
-                                </div>
-                                <span class="text-yellow-500 font-bold text-sm">R$ 219,90</span>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker danger" style="left: -25px; background: #ef4444; border-color: #b91c1c;"></div>
-                            <div class="flex justify-between items-center text-xs opacity-70 group-hover:opacity-100 transition-opacity duration-300">
-                                <div class="flex flex-col">
-                                    <span class="text-red-400 font-bold text-sm tracking-wide">Avulso (61d+)</span>
-                                    <span class="text-[9px] text-red-400/70 uppercase tracking-widest mt-1">Começa tudo de novo</span>
-                                </div>
-                                <span class="text-red-400 line-through text-[10px] mt-1 border border-red-500/20 px-2 py-0.5 rounded bg-red-900/10">Tabela Cheia</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Absoluto%20(Fios%20Grossos)%20e%20pagar%20R$%20159,90." class="relative overflow-hidden group/btn block w-full py-4 text-center rounded-2xl text-[10px] font-bold tracking-[0.2em] mt-auto bg-gradient-to-r from-brand-gold-dark via-brand-gold to-brand-gold-dark text-brand-black shadow-[0_10px_20px_rgba(197,160,89,0.3)] hover:shadow-[0_15px_30px_rgba(197,160,89,0.5)] hover:scale-[1.02] transition-all duration-300 z-10">
-                        <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]"></span>
-                        ASSINAR ABSOLUTO
-                    </a>
                 </div>
              </div>
 
-             <!-- DISCALIMER ADESÃO -->
-             <div class="max-w-2xl mx-auto mb-16 p-4 rounded-xl border border-brand-gold/20 bg-brand-gold/5 relative z-10">
-                 <p class="text-[10px] text-gray-400 uppercase tracking-widest text-center">
-                     * Adesão Zero (R$ 0,00) exclusiva para clientes com histórico ativo (últimos 60 dias). Novos clientes sujeitos a taxa de entrada.
-                 </p>
-             </div>
-
-             <!-- FAQ REFINADO -->
-             <div class="max-w-3xl mx-auto text-left relative z-10 mt-16 pb-12">
-                <h3 class="font-serif text-3xl text-white italic mb-8 text-center">Dúvidas Frequentes</h3>
-                
-                <details class="faq-item">
-                    <summary class="faq-summary"><span class="text-white text-sm font-medium">Como funciona a cobrança?</span><i class="fas fa-chevron-down text-brand-gold"></i></summary>
-                    <div class="faq-answer">Não é recorrente no cartão de crédito. Você paga o valor do seu plano apenas no dia que vier realizar o procedimento no salão.</div>
-                </details>
-                
-                <details class="faq-item">
-                    <summary class="faq-summary"><span class="text-white text-sm font-medium">E se eu não quiser alisar este mês?</span><i class="fas fa-chevron-down text-brand-gold"></i></summary>
-                    <div class="faq-answer">O valor do seu plano vira <strong>Crédito Flexível</strong>. Você pode usar 100% do valor para fazer Corte, Terapia Capilar ou Mechas, mantendo seu preço de Clube garantido.</div>
-                </details>
-
-                <details class="faq-item">
-                    <summary class="faq-summary"><span class="text-white text-sm font-medium">Posso cancelar quando quiser?</span><i class="fas fa-chevron-down text-brand-gold"></i></summary>
-                    <div class="faq-answer">Sim. Você pode sair do clube a qualquer momento sem multa. Porém, ao retornar futuramente, será cobrado o valor da <strong>Taxa de Adesão</strong> vigente na época e os serviços voltarão ao preço avulso (tabela cheia) até a reentrada.</div>
-                </details>
-             </div>
-        </section>
-    </div>
-
-    <!-- ========================================================================= -->
-    <!-- LOJA (COMPLETA - A GATA LAMBEU) -->
-    <!-- ========================================================================= -->
-    <div id="agata-view-container" style="display:none;" class="bg-[#2a2a2a]">
-        <div class="fixed top-0 left-0 w-full z-50 bg-[#1a1a1a]/95 backdrop-blur h-20 flex items-center justify-between px-6 border-b border-white/5">
-            <span class="text-white font-luxury tracking-[0.2em] text-xs md:text-base truncate mr-4">A GATA LAMBEU <span class="text-brand-gold italic">PRO</span></span>
-            <button onclick="window.location.hash='home'" class="flex flex-shrink-0 items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-brand-gold border border-brand-gold/30 px-4 py-2 rounded-full hover:bg-brand-gold hover:text-black transition-all whitespace-nowrap z-[101]"><i class="fas fa-arrow-left"></i> Voltar</button>
-        </div>
-        <section class="min-h-screen pt-28 pb-20 relative overflow-hidden">
-             <div class="mandala-bg animate-spin-slow opacity-10" style="border-color: rgba(255,255,255,0.05)"></div>
-             <div class="container mx-auto px-6 relative z-10">
-                 <!-- HERO LOJA -->
-                 <div class="relative w-full h-[50vh] md:h-[60vh] rounded-[2rem] overflow-hidden mb-16 shadow-2xl group">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10"></div>
-                    <img src="https://imagensagata.carrd.co/assets/images/image22.jpg?v=02dd65e7" class="w-full h-full object-cover transform transition duration-[2s] group-hover:scale-110" alt="Coleção" loading="lazy">
-                    <div class="absolute bottom-8 left-6 md:bottom-12 md:left-12 z-20 max-w-lg">
-                        <div class="glass-panel px-8 py-8 rounded-2xl border-l-4 border-l-brand-gold backdrop-blur-md">
-                            <h2 class="text-4xl md:text-6xl font-luxury text-white leading-none mb-3">A Gata Lambeu <span class="text-brand-gold italic">PRO</span></h2>
-                            <p class="text-gray-200 text-xs font-light">A mesma biotecnologia do salão, engarrafada para seu protocolo diário.</p>
+             <div class="mt-20 px-4 md:px-0">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20 relative z-10">
+                    <!-- PLANO SUBLIME -->
+                    <div class="mobile-snap-item bg-gradient-to-b from-[#111] to-[#050505] rounded-[2.5rem] p-8 border border-white/5 hover:border-brand-gold/40 transition-all duration-500 group relative flex flex-col overflow-hidden w-full md:w-auto">
+                        <div class="text-[9px] text-brand-gold mb-6 bg-brand-gold/5 px-4 py-2 rounded-full w-fit mx-auto border border-brand-gold/20 uppercase tracking-widest">2 resgates hoje</div>
+                        <h3 class="text-4xl font-luxury text-white mb-1">Sublime</h3>
+                        <span class="text-[10px] text-brand-gold-light/70 uppercase tracking-widest block mb-8 pb-5 border-b border-white/5">Fios Finos</span>
+                        <div class="mb-8 p-6 rounded-3xl bg-black/50 border border-white/[0.05] flex flex-col items-center">
+                            <span class="text-[10px] text-gray-500 line-through mb-2 font-medium">Avulso até R$ 880,00</span>
+                            <div class="text-5xl text-brand-gold font-light mb-3 font-luxury">R$ 119<span class="text-2xl text-brand-gold-light">,90</span></div>
+                            <span class="text-[9px] text-green-400 font-bold uppercase tracking-widest bg-green-900/20 px-3 py-1.5 rounded-full border border-green-500/20 shadow-lg">Valor Fixo</span>
                         </div>
+                        <div class="timeline-container text-left mb-10 pl-5 border-l border-brand-gold/20 ml-2 flex-grow relative z-10">
+                            <div class="timeline-item pb-6"><div class="timeline-marker active" style="left: -25px;"></div><div class="flex justify-between items-center text-xs"><div class="flex flex-col"><span class="text-white font-bold">Ideal (Até 30d)</span><span class="text-green-400 text-[9px] uppercase">Mais Vantajoso</span></div><span class="text-brand-gold font-bold bg-brand-gold/10 px-2 py-1 rounded">119,90</span></div></div>
+                            <div class="timeline-item pb-6"><div class="timeline-marker warn" style="left: -25px;"></div><div class="flex justify-between items-center text-xs"><div class="flex flex-col"><span class="text-yellow-500 font-bold">Alerta (31 a 60d)</span><span class="text-yellow-500/70 text-[9px] uppercase">Tardio</span></div><span class="text-yellow-500 font-bold">159,90</span></div></div>
+                            <div class="timeline-item"><div class="timeline-marker danger" style="left: -25px;"></div><div class="flex justify-between items-center text-xs"><div class="flex flex-col"><span class="text-red-400 font-bold">Avulso (61d+)</span><span class="text-red-400/70 text-[9px] uppercase">Começa de novo</span></div><span class="text-red-400 line-through">Tabela</span></div></div>
+                        </div>
+                        <a href="https://wa.me/5549999954052?text=Assinar Sublime" class="block w-full py-4 text-center rounded-2xl text-[10px] font-bold tracking-[0.2em] bg-brand-gold text-black mt-auto">ASSINAR SUBLIME</a>
+                    </div>
+                    <!-- PLANO IMPERIAL -->
+                    <div class="mobile-snap-item bg-gradient-to-b from-[#111] to-[#050505] rounded-[2.5rem] p-8 border border-white/5 hover:border-brand-gold/40 transition-all duration-500 group relative flex flex-col overflow-hidden w-full md:w-auto">
+                        <div class="text-[9px] text-green-400 mb-6 bg-green-900/20 px-4 py-2 rounded-full w-fit mx-auto border border-green-500/20 uppercase tracking-widest">3 vagas</div>
+                        <h3 class="text-4xl font-luxury text-white mb-1">Imperial</h3>
+                        <span class="text-[10px] text-brand-gold-light/70 uppercase tracking-widest block mb-8 pb-5 border-b border-white/5">Fios Médios</span>
+                        <div class="mb-8 p-6 rounded-3xl bg-black/50 border border-white/[0.05] flex flex-col items-center">
+                            <span class="text-[10px] text-gray-500 line-through mb-2 font-medium">Avulso até R$ 980,00</span>
+                            <div class="text-5xl text-brand-gold font-light mb-3 font-luxury">R$ 139<span class="text-2xl text-brand-gold-light">,90</span></div>
+                            <span class="text-[9px] text-green-400 font-bold uppercase tracking-widest bg-green-900/20 px-3 py-1.5 rounded-full border border-green-500/20 shadow-lg">Valor Fixo</span>
+                        </div>
+                        <div class="timeline-container text-left mb-10 pl-5 border-l border-brand-gold/20 ml-2 flex-grow relative z-10">
+                            <div class="timeline-item pb-6"><div class="timeline-marker active" style="left: -25px;"></div><div class="flex justify-between items-center text-xs"><div class="flex flex-col"><span class="text-white font-bold">Ideal (Até 30d)</span><span class="text-green-400 text-[9px] uppercase">Mais Vantajoso</span></div><span class="text-brand-gold font-bold bg-brand-gold/10 px-2 py-1 rounded">139,90</span></div></div>
+                            <div class="timeline-item pb-6"><div class="timeline-marker warn" style="left: -25px;"></div><div class="flex justify-between items-center text-xs"><div class="flex flex-col"><span class="text-yellow-500 font-bold">Alerta (31 a 60d)</span><span class="text-yellow-500/70 text-[9px] uppercase">Tardio</span></div><span class="text-yellow-500 font-bold">189,90</span></div></div>
+                            <div class="timeline-item"><div class="timeline-marker danger" style="left: -25px;"></div><div class="flex justify-between items-center text-xs"><div class="flex flex-col"><span class="text-red-400 font-bold">Avulso (61d+)</span><span class="text-red-400/70 text-[9px] uppercase">Começa de novo</span></div><span class="text-red-400 line-through">Tabela</span></div></div>
+                        </div>
+                        <a href="https://wa.me/5549999954052?text=Assinar Imperial" class="block w-full py-4 text-center rounded-2xl text-[10px] font-bold tracking-[0.2em] bg-brand-gold text-black mt-auto">ASSINAR IMPERIAL</a>
+                    </div>
+                    <!-- PLANO ABSOLUTO -->
+                    <div class="mobile-snap-item bg-gradient-to-b from-[#111] to-[#050505] rounded-[2.5rem] p-8 border border-white/5 hover:border-brand-gold/40 transition-all duration-500 group relative flex flex-col overflow-hidden w-full md:w-auto">
+                        <div class="text-[9px] text-red-400 mb-6 bg-red-900/20 px-4 py-2 rounded-full w-fit mx-auto border border-red-500/20 uppercase tracking-widest animate-pulse">Última vaga</div>
+                        <h3 class="text-4xl font-luxury text-white mb-1">Absoluto</h3>
+                        <span class="text-[10px] text-brand-gold-light/70 uppercase tracking-widest block mb-8 pb-5 border-b border-white/5">Fios Grossos</span>
+                        <div class="mb-8 p-6 rounded-3xl bg-black/50 border border-white/[0.05] flex flex-col items-center">
+                            <span class="text-[10px] text-gray-500 line-through mb-2 font-medium">Avulso até R$ 1.250,00</span>
+                            <div class="text-5xl text-brand-gold font-light mb-3 font-luxury">R$ 159<span class="text-2xl text-brand-gold-light">,90</span></div>
+                            <span class="text-[9px] text-green-400 font-bold uppercase tracking-widest bg-green-900/20 px-3 py-1.5 rounded-full border border-green-500/20 shadow-lg">Valor Fixo</span>
+                        </div>
+                        <div class="timeline-container text-left mb-10 pl-5 border-l border-brand-gold/20 ml-2 flex-grow relative z-10">
+                            <div class="timeline-item pb-6"><div class="timeline-marker active" style="left: -25px;"></div><div class="flex justify-between items-center text-xs"><div class="flex flex-col"><span class="text-white font-bold">Ideal (Até 30d)</span><span class="text-green-400 text-[9px] uppercase">Mais Vantajoso</span></div><span class="text-brand-gold font-bold bg-brand-gold/10 px-2 py-1 rounded">159,90</span></div></div>
+                            <div class="timeline-item pb-6"><div class="timeline-marker warn" style="left: -25px;"></div><div class="flex justify-between items-center text-xs"><div class="flex flex-col"><span class="text-yellow-500 font-bold">Alerta (31 a 60d)</span><span class="text-yellow-500/70 text-[9px] uppercase">Tardio</span></div><span class="text-yellow-500 font-bold">219,90</span></div></div>
+                            <div class="timeline-item"><div class="timeline-marker danger" style="left: -25px;"></div><div class="flex justify-between items-center text-xs"><div class="flex flex-col"><span class="text-red-400 font-bold">Avulso (61d+)</span><span class="text-red-400/70 text-[9px] uppercase">Começa de novo</span></div><span class="text-red-400 line-through">Tabela</span></div></div>
+                        </div>
+                        <a href="https://wa.me/5549999954052?text=Assinar Absoluto" class="block w-full py-4 text-center rounded-2xl text-[10px] font-bold tracking-[0.2em] bg-brand-gold text-black mt-auto">ASSINAR ABSOLUTO</a>
                     </div>
                 </div>
-
-                <!-- KIT ESPECIAL HERO -->
-                <div class="glass-panel p-10 rounded-3xl border border-brand-gold/30 mb-20 bg-gradient-to-r from-[#0a0a0a] to-[#1a1a1a] shadow-[0_0_40px_rgba(197,160,89,0.15)] flex flex-col md:flex-row items-center gap-10 reveal">
-                    <div class="w-full md:w-1/2">
-                         <span class="text-brand-gold text-[10px] font-bold tracking-[0.3em] uppercase block mb-3 animate-pulse">Oferta Exclusiva</span>
-                         <h3 class="font-luxury text-4xl text-white mb-2">Kit Trindade <span class="text-brand-gold italic">PRO</span></h3>
-                         
-                         <!-- Bloco de Preço e Retorno -->
-                         <div class="flex items-end gap-3 mb-4">
-                             <span class="text-3xl text-white font-bold font-luxury">R$ 688,10</span>
-                             <span class="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Kit Completo</span>
-                         </div>
-                         
-                         <!-- Destaque Verde Neon -->
-                         <div class="inline-flex items-center gap-2 border border-green-500/30 bg-green-900/20 px-4 py-3 rounded-lg mb-6 w-full md:w-auto justify-center md:justify-start">
-                             <i class="fas fa-undo-alt text-green-400 animate-pulse"></i>
-                             <span class="text-green-400 text-xs font-bold uppercase tracking-widest">Retorna R$ 344,05 em Crédito</span>
-                         </div>
-
-                         <p class="text-gray-400 text-sm leading-relaxed mb-6">O protocolo máximo. Leve a coleção completa (Bain + Gold + Queen) e garanta o <strong>maior cashback possível</strong> para abater no seu Liso Soberano 8k.</p>
-                         
-                         <ul class="space-y-2 text-xs text-gray-300 mb-8">
-                             <li class="flex items-center gap-2"><i class="fas fa-check text-brand-gold"></i> Limpeza inteligente (Bain)</li>
-                             <li class="flex items-center gap-2"><i class="fas fa-check text-brand-gold"></i> Nutrição profunda (Gold Infusion)</li>
-                             <li class="flex items-center gap-2"><i class="fas fa-check text-brand-gold"></i> Proteção térmica total (Queen)</li>
-                         </ul>
-                         
-                         <button onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20o%20Kit%20Trindade%20Completo%20e%20ganhar%20R$%20344,05%20de%20cr%C3%A9dito%20no%20Liso%20Soberano.'); return false;" class="btn-luxury-cta px-10 py-4 rounded-full text-xs w-full md:w-auto flex items-center justify-center gap-2">
-                             GARANTIR KIT & CRÉDITO MÁXIMO <i class="fas fa-arrow-right"></i>
-                         </button>
-                    </div>
-                    <div class="w-full md:w-1/2 h-64 md:h-[450px] relative rounded-2xl overflow-hidden group cursor-pointer" onclick="openZoom('https://imagensagata.carrd.co/assets/images/image05.jpg?v=4b8919f9')">
-                        <img src="https://imagensagata.carrd.co/assets/images/image05.jpg?v=4b8919f9" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-1000" alt="Kit Trindade">
-                        
-                        <!-- Badge 50% -->
-                        <div class="absolute top-4 right-4 bg-brand-gold text-black font-bold text-[10px] px-3 py-1 rounded-full shadow-lg uppercase tracking-widest z-20">
-                            50% Cashback
-                        </div>
-                        
-                        <!-- Overlay Toque -->
-                        <div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
-                            <span class="text-white bg-black/50 px-4 py-2 rounded-full text-xs backdrop-blur-sm"><i class="fas fa-search-plus mr-2"></i> Ampliar</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROTOCOLO HOME CARE -->
-                 <div class="text-left reveal mb-24">
-                    <div class="flex flex-col md:flex-row items-center justify-between mb-12">
-                        <div>
-                            <span class="text-brand-gold text-[10px] font-bold tracking-[0.3em] uppercase block mb-2">Método PRO</span>
-                            <h3 class="font-luxury text-3xl text-white">O Protocolo de <span class="italic text-brand-gold">Manutenção</span></h3>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="glass-panel p-6 rounded-xl border-l-2 border-brand-gold/50">
-                            <span class="text-4xl font-luxury text-white/10 absolute right-4 top-2">01</span>
-                            <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-2">Higienização Preparatória</h4>
-                            <p class="text-gray-400 text-[10px] leading-relaxed">
-                                Use o <strong>Bain Reconstrutor</strong> para limpar sem enrijecer. Massageie o couro cabeludo suavemente para ativar a circulação sem abrir demais as cutículas.
-                            </p>
-                        </div>
-                        <div class="glass-panel p-6 rounded-xl border-l-2 border-brand-gold/50">
-                            <span class="text-4xl font-luxury text-white/10 absolute right-4 top-2">02</span>
-                            <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-2">Carga de Ouro</h4>
-                            <p class="text-gray-400 text-[10px] leading-relaxed">
-                                Aplique a <strong>Gold Infusion</strong> (Ampola) do comprimento às pontas. O "efeito teia" garante absorção em 3 minutos. Enxágue 80% para manter a emoliência.
-                            </p>
-                        </div>
-                        <div class="glass-panel p-6 rounded-xl border-l-2 border-brand-gold/50">
-                            <span class="text-4xl font-luxury text-white/10 absolute right-4 top-2">03</span>
-                            <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-2">Blindagem Térmica</h4>
-                            <p class="text-gray-400 text-[10px] leading-relaxed">
-                                Com os fios úmidos, aplique o <strong>Blindagem Queen</strong>. Ele cria o escudo contra o calor do secador, ativando o brilho espelhado final.
-                            </p>
-                        </div>
-                    </div>
-                 </div>
-
-                <!-- PRODUTOS INDIVIDUAIS -->
-                <h2 class="text-4xl md:text-6xl font-luxury text-white mb-10 text-center">Coleção Individual</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                      <!-- Card 1 -->
-                      <div class="bg-[#151515] p-6 rounded-xl border border-brand-gold/30 relative group hover:shadow-luxury-glow transition-all flex flex-col">
-                          <div class="absolute top-0 left-0 bg-brand-gold text-[8px] uppercase tracking-widest text-black font-bold px-3 py-1 rounded-br-lg shadow-lg z-20">Fórmula Exclusiva</div>
-                          <div class="absolute top-0 right-0 p-3"><span class="text-[8px] text-red-500 font-bold uppercase tracking-widest animate-pulse">Restam 4 Unidades</span></div>
-                          <div class="aspect-[4/5] w-full rounded-lg mb-6 overflow-hidden relative product-img-container flex items-center justify-center transition-all duration-700">
-                              <img src="https://imagensagata.carrd.co/assets/images/image09.jpg?v=4b8919f9" loading="lazy" class="w-full h-full object-contain transform transition duration-700 ease-in-out group-hover:scale-110 active:scale-95" alt="Gold">
-                          </div>
-                          <h3 class="text-white font-luxury text-xl">Gold Infusion</h3>
-                          <div class="flex flex-col mb-4">
-                              <span class="text-white font-bold text-lg">R$ 289,80</span>
-                              <!-- RETORNA EM VERDE -->
-                              <span class="text-green-400 text-[9px] uppercase tracking-widest font-bold mt-1 border border-green-500/30 bg-green-900/20 px-2 py-1 rounded w-fit">
-                                  <i class="fas fa-undo-alt mr-1"></i> Retorna R$ 144,90 p/ Liso Soberano
-                              </span>
-                          </div>
-                          <div class="text-[10px] text-gray-400 mb-8 space-y-4 border-t border-brand-gold/20 pt-6 flex-grow">
-                              <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Óleo de Argan</span><p class="font-light leading-relaxed">Ouro líquido para nutrição intensa.</p></div>
-                              <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Ceramidas</span><p class="font-light leading-relaxed">Cimento intercelular que sela a cutícula.</p></div>
-                              <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Ácido Lático</span><p class="font-light leading-relaxed">Regula o pH e alinha os fios.</p></div>
-                          </div>
-                          <button onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20o%20Gold%20Infusion%20e%20garantir%20R$%20144,90%20de%20cr%C3%A9dito%20no%20Liso%20Soberano.'); return false;" class="w-full bg-brand-gold text-black py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-white transition-all rounded-lg shadow-lg mt-auto">Comprar & Ganhar Crédito</button>
-                      </div>
-                      
-                      <!-- Card 2 -->
-                      <div class="bg-[#151515] p-6 rounded-xl border border-white/5 group hover:border-brand-gold/30 transition-all flex flex-col relative overflow-hidden">
-                          <div class="absolute top-0 left-0 bg-white/10 backdrop-blur text-[8px] uppercase tracking-widest text-white px-3 py-1 rounded-br-lg border-b border-r border-white/5 z-20">Fórmula Exclusiva</div>
-                          <div class="absolute top-0 right-0 p-3"><span class="text-[8px] text-red-500 font-bold uppercase tracking-widest animate-pulse">Restam 7 Unidades</span></div>
-                          <div class="aspect-[4/5] w-full rounded-lg mb-6 overflow-hidden relative product-img-container flex items-center justify-center transition-all duration-700">
-                              <img src="https://imagensagata.carrd.co/assets/images/image08.jpg?v=c257b396" loading="lazy" class="w-full h-full object-contain transform transition duration-700 ease-in-out group-hover:scale-110 active:scale-95" alt="Blindagem">
-                          </div>
-                          <h3 class="text-white font-luxury text-xl">Blindagem Queen</h3>
-                          <div class="flex flex-col mb-4">
-                              <span class="text-white font-bold text-lg">R$ 248,40</span>
-                              <!-- RETORNA EM VERDE -->
-                              <span class="text-green-400 text-[9px] uppercase tracking-widest font-bold mt-1 border border-green-500/30 bg-green-900/20 px-2 py-1 rounded w-fit">
-                                  <i class="fas fa-undo-alt mr-1"></i> Retorna R$ 124,20 p/ Liso Soberano
-                              </span>
-                          </div>
-                          <div class="text-[10px] text-gray-400 mb-8 space-y-4 border-t border-white/10 pt-6 flex-grow">
-                              <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Polímeros Termoativos</span><p class="font-light leading-relaxed">Proteção térmica avançada até 230°C.</p></div>
-                              <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Cisteína</span><p class="font-light leading-relaxed">Prolonga o efeito liso e reduz volume.</p></div>
-                              <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Semi di Lino</span><p class="font-light leading-relaxed">Brilho espelhado tridimensional.</p></div>
-                          </div>
-                          <button onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20a%20Blindagem%20Queen%20e%20garantir%20R$%20124,20%20de%20cr%C3%A9dito%20no%20Liso%20Soberano.'); return false;" class="w-full border border-white/20 text-white py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all rounded-lg mt-auto">Comprar & Ganhar Crédito</button>
-                      </div>
-                      
-                      <!-- Card 3 -->
-                      <div class="bg-[#151515] p-6 rounded-xl border border-white/5 group hover:border-brand-gold/30 transition-all flex flex-col relative overflow-hidden">
-                          <div class="absolute top-0 left-0 bg-white/10 backdrop-blur text-[8px] uppercase tracking-widest text-white px-3 py-1 rounded-br-lg border-b border-r border-white/5 z-20">Fórmula Exclusiva</div>
-                          <div class="absolute top-0 right-0 p-3"><span class="text-[8px] text-red-500 font-bold uppercase tracking-widest animate-pulse">Restam 3 Unidades</span></div>
-                          <div class="aspect-[4/5] w-full rounded-lg mb-6 overflow-hidden relative product-img-container flex items-center justify-center transition-all duration-700">
-                              <img src="https://imagensagata.carrd.co/assets/images/image07.jpg?v=c257b396" loading="lazy" class="w-full h-full object-contain transform transition duration-700 ease-in-out group-hover:scale-110 active:scale-95" alt="Bain">
-                          </div>
-                          <h3 class="text-white font-luxury text-xl">Bain Reconstrutor</h3>
-                          <div class="flex flex-col mb-4">
-                              <span class="text-white font-bold text-lg">R$ 149,90</span>
-                              <!-- RETORNA EM VERDE -->
-                              <span class="text-green-400 text-[9px] uppercase tracking-widest font-bold mt-1 border border-green-500/30 bg-green-900/20 px-2 py-1 rounded w-fit">
-                                  <i class="fas fa-undo-alt mr-1"></i> Retorna R$ 74,95 p/ Liso Soberano
-                              </span>
-                          </div>
-                          <div class="text-[10px] text-gray-400 mb-8 space-y-4 border-t border-white/10 pt-6 flex-grow">
-                              <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Queratina Hidrolisada</span><p class="font-light leading-relaxed">Reconstrução profunda da fibra danificada.</p></div>
-                              <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">Arginina</span><p class="font-light leading-relaxed">Aminoácido essencial que combate a quebra.</p></div>
-                              <div class="space-y-1"><span class="block text-brand-gold font-bold uppercase tracking-widest text-[9px]">D-Pantenol</span><p class="font-light leading-relaxed">Retenção de umidade e maciez extrema.</p></div>
-                          </div>
-                          <button onclick="gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20o%20Bain%20Reconstrutor%20e%20garantir%20R$%2074,95%20de%20cr%C3%A9dito%20no%20Liso%20Soberano.'); return false;" class="w-full border border-white/20 text-white py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all rounded-lg mt-auto">Comprar & Ganhar Crédito</button>
-                      </div>
-                 </div>
+             </div>
         </section>
     </div>
 
@@ -1587,22 +1046,12 @@
         <img id="zoom-img" src="" class="max-w-[90vw] max-h-[90vh] object-contain transition-transform duration-300 cursor-zoom-in" onclick="event.stopPropagation(); toggleZoom(this)">
     </div>
 
-    <!-- Modal de Termos/Privacidade (Padrão para não quebrar função) -->
-    <div id="erh-legal-modal-overlay" class="fixed inset-0 bg-black/95 backdrop-blur z-[999] hidden items-center justify-center p-4">
-        <div class="bg-[#111] border border-white/10 p-8 rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto relative">
-            <span class="absolute top-4 right-4 text-gray-500 hover:text-white cursor-pointer text-2xl" onclick="closeModal()">&times;</span>
-            <div id="content-privacy" style="display:none;">
-                <h2 class="text-brand-gold font-luxury text-2xl mb-4">Política de Privacidade</h2>
-                <p class="text-gray-400 text-sm">A sua privacidade é importante para nós...</p>
-            </div>
-            <div id="content-terms" style="display:none;">
-                <h2 class="text-brand-gold font-luxury text-2xl mb-4">Termos de Uso</h2>
-                <p class="text-gray-400 text-sm">Estes são os termos de uso do nosso salão...</p>
-            </div>
-        </div>
-    </div>
-
     <script>
+        function scrollCarousel(id, offset) {
+            const el = document.getElementById(id);
+            if(el) el.scrollBy({ left: offset, behavior: 'smooth' });
+        }
+
         function updateScarcity() {
             const STORAGE_KEY = 'er_scarcity_level_v1';
             const today = new Date();
@@ -1624,8 +1073,6 @@
             
             localStorage.setItem(STORAGE_KEY, finalPercentage);
             const text = `${finalPercentage}% Preenchidas`;
-            
-            // Mantém apenas a lógica da barra Concierge (Rodapé) se existir
             const barSlot = document.getElementById('slots-text');
             if(barSlot) { 
                 barSlot.innerText = text; 
@@ -1637,7 +1084,6 @@
             const preloader = document.getElementById('preloader');
             if(preloader) {
                 updateScarcity();
-                // ACELERADO: Tempo de espera caiu de 1500ms para 400ms, e fade out de 1000ms para 500ms
                 setTimeout(() => { 
                     preloader.style.opacity = '0'; 
                     setTimeout(() => { 
@@ -1652,53 +1098,30 @@
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = (winScroll / height) * 100;
-            
             const scrollProgress = document.getElementById('scroll-progress');
             if (scrollProgress) scrollProgress.style.width = scrolled + "%";
             
             const conciergeBar = document.getElementById('concierge-bar');
             const waFloat = document.querySelector('.wa-float');
-            const waText = document.getElementById('wa-status-text'); // Captura o texto do balão
+            const waText = document.getElementById('wa-status-text');
 
             if (conciergeBar) {
                 if (winScroll > 100) { 
-                    // Mostra barra inferior
                     conciergeBar.classList.add('visible'); 
-                    
-                    // Ajusta posição do botão WA no mobile
                     if(waFloat && window.innerWidth < 768) waFloat.style.bottom = "100px"; 
-                    
-                    // OCULTA o texto "Online Agora" para não poluir
                     if(waText) waText.style.opacity = '0';
                 } 
                 else { 
-                    // Esconde barra inferior
                     conciergeBar.classList.remove('visible'); 
-                    
-                    // Volta posição original do botão WA
                     if(waFloat && window.innerWidth < 768) waFloat.style.bottom = "30px"; 
-                    
-                    // MOSTRA o texto "Online Agora" (Topo da página)
                     if(waText) waText.style.opacity = '1';
                 }
             }
             
             const backToTopBtn = document.querySelector('.back-to-top');
             if (backToTopBtn) { 
-                if (winScroll > 500) { 
-                    backToTopBtn.classList.add('show'); 
-                } else { 
-                    backToTopBtn.classList.remove('show'); 
-                } 
-            }
-            
-            const parallaxLayers = document.querySelectorAll('.parallax-layer');
-            if (parallaxLayers.length > 0) { 
-                parallaxLayers.forEach(layer => { 
-                    const speed = layer.getAttribute('data-speed'); 
-                    const yPos = -(winScroll * speed); 
-                    layer.style.transform = `translateY(${yPos}px)`; 
-                }); 
+                if (winScroll > 500) { backToTopBtn.classList.add('show'); } 
+                else { backToTopBtn.classList.remove('show'); } 
             }
             
             if (typeof checkReveal === 'function') checkReveal();
@@ -1706,38 +1129,16 @@
 
         function router() {
             const hash = window.location.hash || '#home';
-            document.querySelectorAll('#main-site-wrapper, #club-view-container, #agata-view-container, #atelier-view-container').forEach(el => { 
-                if(el) el.style.display = 'none'; 
-            });
+            document.querySelectorAll('#main-site-wrapper, #club-view-container').forEach(el => { el.style.display = 'none'; });
             window.scrollTo(0,0);
             
             const overlay = document.getElementById('menu-overlay');
             const toggleBtn = document.getElementById('menu-toggle');
-            if(overlay) overlay.classList.remove('translate-x-0', 'translate-x-full');
-            if(toggleBtn) toggleBtn.classList.remove('active');
             if(overlay) overlay.classList.add('translate-x-full');
-            
-            const conciergeBar = document.getElementById('concierge-bar');
-            if(conciergeBar) conciergeBar.classList.remove('visible');
+            if(toggleBtn) toggleBtn.classList.remove('active');
 
-            if (hash === '#clube') { 
-                const el = document.getElementById('club-view-container'); 
-                if(el) el.style.display = 'block'; 
-            }
-            else if (hash === '#agata') { 
-                const el = document.getElementById('agata-view-container'); 
-                if(el) el.style.display = 'block'; 
-            }
-            else if (hash === '#atelier') { 
-                const el = document.getElementById('atelier-view-container'); 
-                if(el) el.style.display = 'block'; 
-            }
-            else { 
-                const el = document.getElementById('main-site-wrapper'); 
-                if(el) el.style.display = 'block'; 
-                const v = document.getElementById('heroVideo'); 
-                if(v) v.play().catch(e => console.log('Autoplay blocked')); 
-            }
+            if (hash === '#clube') { document.getElementById('club-view-container').style.display = 'block'; }
+            else { document.getElementById('main-site-wrapper').style.display = 'block'; }
         }
 
         function toggleMenu() {
@@ -1758,74 +1159,14 @@
         }
         
         function selectService(selectedId, shouldScroll = true) {
-            // Limpa o estado ativo de todos os cards de serviço em todo o site
-            document.querySelectorAll('.service-card-item').forEach(el => {
-                el.classList.remove('card-active');
-            });
-            
-            // Ativa o card clicado
+            document.querySelectorAll('.service-card-item').forEach(el => el.classList.remove('card-active'));
             const el = document.getElementById(selectedId);
             if (el) {
                 el.classList.add('card-active'); 
-                if(shouldScroll) el.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' }); 
+                if(shouldScroll) el.scrollIntoView({ behavior: 'smooth', block: 'center' }); 
             }
         }
 
-        function initSpotlight() {
-            if (window.innerWidth < 768) {
-                const options = { root: null, rootMargin: '0px', threshold: 0.6 };
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) { 
-                            entry.target.classList.add('spotlight-active'); 
-                            entry.target.classList.remove('spotlight-dim'); 
-                        } 
-                        else { 
-                            entry.target.classList.remove('spotlight-active'); 
-                            entry.target.classList.add('spotlight-dim'); 
-                        }
-                    });
-                }, options);
-                document.querySelectorAll('.mobile-snap-item').forEach(item => observer.observe(item));
-            } else {
-                document.querySelectorAll('.glass-panel').forEach(card => {
-                    card.addEventListener('mousemove', (e) => {
-                        const rect = card.getBoundingClientRect();
-                        const x = e.clientX - rect.left; 
-                        const y = e.clientY - rect.top;
-                        const centerX = rect.width / 2; 
-                        const centerY = rect.height / 2;
-                        const rotateX = ((y - centerY) / centerY) * -5; 
-                        const rotateY = ((x - centerX) / centerX) * 5;
-                        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-                    });
-                    card.addEventListener('mouseleave', () => { 
-                        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)'; 
-                    });
-                });
-            }
-        }
-
-        function openWhatsApp(msg) { 
-            gtag_report_conversion(`https://api.whatsapp.com/send?phone=5549999954052&text=${encodeURIComponent(msg)}`); 
-        }
-        
-        function openModal(type) { 
-            const m = document.getElementById('erh-legal-modal-overlay'); 
-            if(m) { 
-                m.style.display = 'flex'; 
-                const privacy = document.getElementById('content-privacy');
-                const terms = document.getElementById('content-terms');
-                if(privacy) privacy.style.display = (type === 'privacy' ? 'block' : 'none'); 
-                if(terms) terms.style.display = (type === 'terms' ? 'block' : 'none'); 
-            } 
-        }
-        
-        function closeModal() { 
-            const m = document.getElementById('erh-legal-modal-overlay'); 
-            if(m) m.style.display = 'none'; 
-        }
-        
         function checkReveal() { 
             document.querySelectorAll('.reveal').forEach(r => { 
                 if(r.getBoundingClientRect().top < window.innerHeight - 100) r.classList.add('active'); 
@@ -1838,31 +1179,15 @@
             checkReveal();
             if(typeof lucide !== 'undefined') lucide.createIcons();
             selectService('card-liso-home', false);
-            
-            document.querySelectorAll('.faq-item summary').forEach(s => s.addEventListener('click', e => {
-                e.preventDefault(); 
-                const p = s.parentElement;
-                if(p) p.hasAttribute('open') ? p.removeAttribute('open') : p.setAttribute('open','');
-            }));
-            initSpotlight();
         });
 
         function openZoom(src) {
             const modal = document.getElementById('zoom-modal');
             const img = document.getElementById('zoom-img');
-            
             if(modal && img) {
                 img.src = src;
-                img.style.transform = "scale(1)";
-                img.classList.remove('scale-active');
-                img.classList.remove('cursor-grab');
-                img.classList.add('cursor-zoom-in');
-                
                 modal.classList.remove('hidden');
-                setTimeout(() => {
-                    modal.classList.remove('opacity-0');
-                }, 10);
-                
+                setTimeout(() => modal.classList.remove('opacity-0'), 10);
                 document.body.style.overflow = 'hidden';
             }
         }
@@ -1871,23 +1196,12 @@
             const modal = document.getElementById('zoom-modal');
             if(modal) {
                 modal.classList.add('opacity-0');
-                setTimeout(() => {
-                    modal.classList.add('hidden');
-                    document.body.style.overflow = ''; 
-                }, 300);
+                setTimeout(() => { modal.classList.add('hidden'); document.body.style.overflow = ''; }, 300);
             }
         }
 
         function toggleZoom(img) {
-            if (img.style.transform === "scale(2.5)") {
-                img.style.transform = "scale(1)";
-                img.classList.remove('cursor-zoom-out');
-                img.classList.add('cursor-zoom-in');
-            } else {
-                img.style.transform = "scale(2.5)";
-                img.classList.remove('cursor-zoom-in');
-                img.classList.add('cursor-zoom-out');
-            }
+            img.style.transform = img.style.transform === "scale(2.5)" ? "scale(1)" : "scale(2.5)";
         }
     </script>
 </body>
