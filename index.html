@@ -1063,102 +1063,103 @@
                     
                     <!-- NOVA TABELA HTML: ENGENHARIA 8K + BLINDAGEM -->
                     <div class="w-full reveal active">
-                        <div class="table-container w-full glass-panel relative overflow-hidden">
+                        <!-- ATUALIZAÇÃO DE NITIDEZ: Removido glass-panel e blur. Fundo escuro sólido para contraste máximo -->
+                        <div class="table-container w-full relative overflow-hidden" style="background: #080808; backdrop-filter: none; border: 1px solid rgba(197, 160, 89, 0.4);">
                             <!-- Borda Superior Dourada -->
                             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-gold-dark via-brand-gold to-brand-gold-dark"></div>
                             
                             <div class="text-center mb-10 pt-4">
-                                <h3 class="protocol-title text-brand-gold" style="font-size: 2.2rem;">Engenharia 8K + Blindagem</h3>
-                                <p class="text-[10px] text-gray-400 uppercase tracking-widest mt-2">Tabela de Investimento por Tamanho e Densidade</p>
+                                <h3 class="protocol-title text-brand-gold font-bold" style="font-size: 2.2rem; text-shadow: 0 2px 4px rgba(0,0,0,0.8);">Engenharia 8K + Blindagem</h3>
+                                <p class="text-xs text-gray-300 uppercase tracking-widest mt-2 font-medium">Tabela de Investimento por Tamanho e Densidade</p>
                             </div>
                             
                             <div class="overflow-x-auto pb-4 custom-scrollbar">
                                 <table class="w-full text-left border-collapse">
                                     <thead>
                                         <tr>
-                                            <th class="border-b-2 border-brand-gold/30 pb-4 pl-4 min-w-[180px] align-bottom">Perfil / Tamanho</th>
-                                            <th class="col-density border-b-2 border-brand-gold/30 pb-4 px-4 min-w-[140px] text-center">Fino <span class="scale-desc mt-1">Baixa Densidade</span></th>
-                                            <th class="col-density border-b-2 border-brand-gold/30 pb-4 px-4 min-w-[140px] text-center">Médio <span class="scale-desc mt-1">Densidade Média</span></th>
-                                            <th class="col-density border-b-2 border-brand-gold/30 pb-4 px-4 min-w-[140px] text-center">Grosso <span class="scale-desc mt-1">Alta Densidade</span></th>
+                                            <th class="border-b-2 border-brand-gold/50 pb-4 pl-4 min-w-[180px] align-bottom text-white text-sm">Perfil / Tamanho</th>
+                                            <th class="col-density border-b-2 border-brand-gold/50 pb-4 px-4 min-w-[140px] text-center text-white text-sm">Fino <span class="text-gray-300 text-xs font-medium block mt-1 tracking-normal normal-case">Baixa Densidade</span></th>
+                                            <th class="col-density border-b-2 border-brand-gold/50 pb-4 px-4 min-w-[140px] text-center text-white text-sm">Médio <span class="text-gray-300 text-xs font-medium block mt-1 tracking-normal normal-case">Densidade Média</span></th>
+                                            <th class="col-density border-b-2 border-brand-gold/50 pb-4 px-4 min-w-[140px] text-center text-white text-sm">Grosso <span class="text-gray-300 text-xs font-medium block mt-1 tracking-normal normal-case">Alta Densidade</span></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <!-- PERFIL P -->
-                                        <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                                        <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
                                             <td class="py-6 pl-4">
-                                                <strong class="text-white block text-sm tracking-wider mb-1">1. PERFIL P</strong>
-                                                <span class="scale-desc mt-0 text-[10px]">Até o Queixo</span>
+                                                <strong class="text-white block text-base tracking-wider mb-1">1. PERFIL P</strong>
+                                                <span class="text-gray-300 text-xs font-medium block">Até o Queixo</span>
                                             </td>
                                             <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-[10px] text-red-400/80 line-through mb-1">de R$ 390</span>
-                                                <span class="price-value highlight text-xl">por R$ 190</span>
+                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 390</span>
+                                                <span class="price-value highlight text-2xl">por R$ 190</span>
                                             </td>
                                             <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-[10px] text-red-400/80 line-through mb-1">de R$ 480</span>
-                                                <span class="price-value highlight text-xl">por R$ 240</span>
+                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 480</span>
+                                                <span class="price-value highlight text-2xl">por R$ 240</span>
                                             </td>
                                             <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-[10px] text-red-400/80 line-through mb-1">de R$ 580</span>
-                                                <span class="price-value highlight text-xl">por R$ 280</span>
+                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 580</span>
+                                                <span class="price-value highlight text-2xl">por R$ 280</span>
                                             </td>
                                         </tr>
                                         <!-- PERFIL M -->
-                                        <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                                        <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
                                             <td class="py-6 pl-4">
-                                                <strong class="text-white block text-sm tracking-wider mb-1">2. PERFIL M</strong>
-                                                <span class="scale-desc mt-0 text-[10px]">Até o Ombro</span>
+                                                <strong class="text-white block text-base tracking-wider mb-1">2. PERFIL M</strong>
+                                                <span class="text-gray-300 text-xs font-medium block">Até o Ombro</span>
                                             </td>
                                             <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-[10px] text-red-400/80 line-through mb-1">de R$ 580</span>
-                                                <span class="price-value highlight text-xl">por R$ 280</span>
+                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 580</span>
+                                                <span class="price-value highlight text-2xl">por R$ 280</span>
                                             </td>
                                             <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-[10px] text-red-400/80 line-through mb-1">de R$ 680</span>
-                                                <span class="price-value highlight text-xl">por R$ 330</span>
+                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 680</span>
+                                                <span class="price-value highlight text-2xl">por R$ 330</span>
                                             </td>
                                             <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-[10px] text-red-400/80 line-through mb-1">de R$ 780</span>
-                                                <span class="price-value highlight text-xl">por R$ 380</span>
+                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 780</span>
+                                                <span class="price-value highlight text-2xl">por R$ 380</span>
                                             </td>
                                         </tr>
                                         <!-- PERFIL G -->
-                                        <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                                        <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
                                             <td class="py-6 pl-4">
-                                                <strong class="text-white block text-sm tracking-wider mb-1">3. PERFIL G</strong>
-                                                <span class="scale-desc mt-0 text-[10px]">Até as Costas/Sutiã</span>
+                                                <strong class="text-white block text-base tracking-wider mb-1">3. PERFIL G</strong>
+                                                <span class="text-gray-300 text-xs font-medium block">Até as Costas/Sutiã</span>
                                             </td>
                                             <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-[10px] text-red-400/80 line-through mb-1">de R$ 750</span>
-                                                <span class="price-value highlight text-xl">por R$ 370</span>
+                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 750</span>
+                                                <span class="price-value highlight text-2xl">por R$ 370</span>
                                             </td>
                                             <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-[10px] text-red-400/80 line-through mb-1">de R$ 850</span>
-                                                <span class="price-value highlight text-xl">por R$ 420</span>
+                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 850</span>
+                                                <span class="price-value highlight text-2xl">por R$ 420</span>
                                             </td>
                                             <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-[10px] text-red-400/80 line-through mb-1">de R$ 980</span>
-                                                <span class="price-value highlight text-xl">por R$ 480</span>
+                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 980</span>
+                                                <span class="price-value highlight text-2xl">por R$ 480</span>
                                             </td>
                                         </tr>
                                         <!-- PERFIL GG -->
                                         <tr class="hover:bg-white/5 transition-colors">
                                             <td class="py-6 pl-4">
-                                                <strong class="text-white block text-sm tracking-wider mb-1">4. PERFIL GG</strong>
-                                                <span class="scale-desc mt-0 text-[10px]">Cintura em diante</span>
+                                                <strong class="text-white block text-base tracking-wider mb-1">4. PERFIL GG</strong>
+                                                <span class="text-gray-300 text-xs font-medium block">Cintura em diante</span>
                                             </td>
                                             <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-[10px] text-red-400/80 line-through mb-1">de R$ 880</span>
-                                                <span class="price-value highlight text-xl">por R$ 430</span>
+                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 880</span>
+                                                <span class="price-value highlight text-2xl">por R$ 430</span>
                                             </td>
                                             <td class="col-density py-6 px-4 text-center relative">
                                                 <!-- Badge Ponto Fixo -->
                                                 <div class="absolute -top-1 left-1/2 transform -translate-x-1/2 bg-brand-gold text-black text-[9px] font-bold px-3 py-1 rounded shadow-[0_0_15px_rgba(197,160,89,0.5)] uppercase tracking-widest z-10 whitespace-nowrap">Seu Ponto Fixo</div>
-                                                <span class="block text-[10px] text-red-400/80 line-through mb-1 mt-3">de R$ 980</span>
-                                                <span class="price-value highlight text-xl text-white">por R$ 480</span>
+                                                <span class="block text-xs text-red-500 font-bold line-through mb-1 mt-3">de R$ 980</span>
+                                                <span class="price-value highlight text-2xl text-white drop-shadow-md">por R$ 480</span>
                                             </td>
                                             <td class="col-density py-6 px-4 text-center">
-                                                <span class="block text-[10px] text-red-400/80 line-through mb-1">de R$ 1.250</span>
-                                                <span class="price-value highlight text-xl">por R$ 610</span>
+                                                <span class="block text-xs text-red-500 font-bold line-through mb-1">de R$ 1.250</span>
+                                                <span class="price-value highlight text-2xl">por R$ 610</span>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -1167,8 +1168,7 @@
                         </div>
                     </div>
 
-                 </div>
-             </div>
+                    <!-- IMAGEM 1: GLASS MOLECULAR (Antifrizz) - Centralizada -->
 
              <!-- TRANSIÇÃO PARA O CLUBE -->
              <div class="mt-16 mb-8 relative z-10 text-center">
@@ -1195,142 +1195,184 @@
              </section>
 
              <!-- Planos Clube (DESIGN PLATINUM MEMBERSHIP - LABELS REMOVIDOS E FOCO NO IDEAL) -->
-             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20 mobile-snap-x mt-20 relative z-10">
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20 mobile-snap-x mt-20 relative z-10 px-4 md:px-0">
                 
-                <!-- PLANO SUBLIME (LISOS & ONDULADOS) -->
-                <div class="mobile-snap-item bg-[#1a0202] rounded-2xl p-8 border border-white/5 hover:border-brand-gold/50 transition-all hover:-translate-y-2 group shadow-xl glass-panel relative overflow-hidden">
-                    <div class="text-[9px] text-green-400 mt-2 mb-2 bg-green-900/20 px-3 py-1 rounded-full w-fit mx-auto border border-green-500/20"><i class="fas fa-user-check mr-1"></i> 12 entraram hoje</div>
+                <!-- PLANO SUBLIME (FINO) -->
+                <div class="mobile-snap-item bg-gradient-to-b from-[#111111] to-[#050505] rounded-[2.5rem] p-8 border border-white/5 hover:border-brand-gold/40 transition-all duration-500 group shadow-[0_15px_40px_-15px_rgba(0,0,0,0.8)] hover:shadow-[0_20px_50px_-10px_rgba(197,160,89,0.2)] relative flex flex-col overflow-hidden w-[85vw] md:w-auto">
                     
-                    <h3 class="text-2xl font-luxury text-white mb-2">Sublime</h3>
-                    <div class="text-5xl text-brand-gold font-light mb-1">R$ 119,90</div>
-                    <span class="text-[10px] text-gray-500 block mb-6">por sessão mensal</span>
+                    <!-- Detalhe Luminoso no Topo -->
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-brand-gold/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <!-- Efeito de Fundo Sofisticado (Glow interno) -->
+                    <div class="absolute -top-24 -right-24 w-56 h-56 bg-brand-gold/10 rounded-full blur-[70px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+                    <div class="text-[9px] text-brand-gold mt-1 mb-6 bg-brand-gold/5 px-4 py-2 rounded-full w-fit mx-auto border border-brand-gold/20 uppercase tracking-widest backdrop-blur-sm relative z-10"><i class="fas fa-fire mr-1"></i> 2 resgates hoje</div>
                     
-                    <div class="mb-6 p-4 rounded-lg bg-black/40 border border-white/5 text-left">
-                        <span class="text-[9px] text-green-400 font-bold uppercase tracking-widest block mb-2"><i class="fas fa-coins mr-1"></i> Economia: R$ 230,10</span>
-                        <span class="text-[10px] text-[#E3C676] font-bold uppercase tracking-widest block mb-1">Ideal para:</span>
-                        <p class="text-[10px] text-gray-400 leading-relaxed">Manutenção de textura natural, alinhamento leve e praticidade do dia a dia.</p>
+                    <h3 class="text-4xl font-luxury text-white mb-1 relative z-10 drop-shadow-md">Sublime</h3>
+                    <span class="text-[10px] text-brand-gold-light/70 uppercase tracking-widest block mb-8 pb-5 border-b border-white/5 relative z-10">Fios Finos / Baixa Densidade</span>
+                    
+                    <!-- Caixa de Preço Emoldurada -->
+                    <div class="mb-8 p-6 rounded-3xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/[0.05] shadow-[inset_0_0_20px_rgba(255,255,255,0.02)] flex flex-col items-center relative z-10 backdrop-blur-sm group-hover:border-brand-gold/20 transition-colors duration-500">
+                        <span class="text-[10px] text-gray-500 line-through mb-2 font-medium">Avulso até R$ 880,00</span>
+                        <div class="text-5xl text-brand-gold font-light mb-3 font-luxury drop-shadow-lg">R$ 119<span class="text-2xl text-brand-gold-light">,90</span></div>
+                        <span class="text-[9px] text-green-400 font-bold uppercase tracking-widest bg-green-900/20 px-3 py-1.5 rounded-full border border-green-500/20 shadow-lg"><i class="fas fa-shield-alt mr-1"></i> Valor Fixo Mensal</span>
                     </div>
 
                     <!-- LINHA DO TEMPO REFINADA -->
-                    <div class="timeline-container text-left mb-6 pl-4 border-l border-white/10 ml-1">
-                        <div class="timeline-item pb-4">
-                            <div class="timeline-marker active" style="left: -21px;"></div>
+                    <div class="timeline-container text-left mb-10 pl-5 border-l border-brand-gold/20 ml-2 flex-grow relative z-10">
+                        <div class="timeline-item pb-6">
+                            <div class="timeline-marker active" style="left: -25px; box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);"></div>
                             <div class="flex justify-between items-center text-xs">
                                 <div class="flex flex-col">
-                                    <span class="text-white font-bold">Ideal (30d)</span>
-                                    <span class="text-[8px] text-green-400 uppercase tracking-widest font-bold">Mais Vantajoso</span>
+                                    <span class="text-white font-bold text-sm tracking-wide">Ideal (Até 30d)</span>
+                                    <span class="text-[9px] text-green-400 uppercase tracking-widest font-bold mt-1">Mais Vantajoso</span>
                                 </div>
-                                <span class="text-brand-gold font-bold">R$ 119,90</span>
+                                <span class="text-brand-gold font-bold text-sm bg-brand-gold/10 border border-brand-gold/20 px-2 py-1 rounded">R$ 119,90</span>
                             </div>
                         </div>
-                        <div class="timeline-item pb-4">
-                            <div class="timeline-marker warn" style="left: -21px; background: #fbbf24; border-color: #f59e0b;"></div>
+                        <div class="timeline-item pb-6">
+                            <div class="timeline-marker warn" style="left: -25px; background: #fbbf24; border-color: #f59e0b;"></div>
                             <div class="flex justify-between items-center text-xs">
-                                <span class="text-yellow-500 font-bold">⚠️ Alerta (31-60d)</span>
-                                <span class="text-yellow-500">R$ 159,90</span>
+                                <div class="flex flex-col">
+                                    <span class="text-yellow-500 font-bold text-sm tracking-wide">Alerta (31 a 60d)</span>
+                                    <span class="text-[9px] text-yellow-500/70 uppercase tracking-widest mt-1">Manutenção Tardia</span>
+                                </div>
+                                <span class="text-yellow-500 font-bold text-sm">R$ 159,90</span>
                             </div>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-marker danger" style="left: -21px;"></div>
-                            <div class="flex justify-between items-center text-xs opacity-60 group-hover:opacity-100 transition-opacity">
-                                <span class="text-red-400">Avulso (61d+)</span>
-                                <span class="text-red-400 line-through text-[10px]">A partir de R$ 350,00</span>
+                            <div class="timeline-marker danger" style="left: -25px; background: #ef4444; border-color: #b91c1c;"></div>
+                            <div class="flex justify-between items-center text-xs opacity-70 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="flex flex-col">
+                                    <span class="text-red-400 font-bold text-sm tracking-wide">Avulso (61d+)</span>
+                                    <span class="text-[9px] text-red-400/70 uppercase tracking-widest mt-1">Começa tudo de novo</span>
+                                </div>
+                                <span class="text-red-400 line-through text-[10px] mt-1 border border-red-500/20 px-2 py-0.5 rounded bg-red-900/10">Tabela Cheia</span>
                             </div>
                         </div>
                     </div>
                     
-                    <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Sublime%20e%20pagar%20R$%20119,90." class="btn-luxury-cta block w-full py-3 rounded text-[10px] border border-white/10 hover:border-brand-gold">Entrar no Sublime</a>
+                    <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Sublime%20(Fios%20Finos)%20e%20pagar%20R$%20119,90." class="relative overflow-hidden group/btn block w-full py-4 text-center rounded-2xl text-[10px] font-bold tracking-[0.2em] mt-auto bg-gradient-to-r from-brand-gold-dark via-brand-gold to-brand-gold-dark text-brand-black shadow-[0_10px_20px_rgba(197,160,89,0.3)] hover:shadow-[0_15px_30px_rgba(197,160,89,0.5)] hover:scale-[1.02] transition-all duration-300 z-10">
+                        <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]"></span>
+                        ASSINAR SUBLIME
+                    </a>
                 </div>
 
-                <!-- PLANO IMPERIAL (CACHEADOS) -->
-                <div class="mobile-snap-item bg-gradient-to-b from-[#2b0505] to-[#1a0202] rounded-2xl p-8 border border-brand-gold/40 transition-all transform md:scale-105 shadow-[0_0_50px_rgba(197,160,89,0.15)] relative overflow-hidden glass-panel z-20">
-                    <div class="absolute top-0 w-full left-0 h-1 bg-brand-gold"></div>
-                    <div class="text-[9px] text-green-400 mt-2 mb-2 bg-green-900/20 px-3 py-1 rounded-full w-fit mx-auto border border-green-500/20"><i class="fas fa-user-check mr-1"></i> 8 entraram hoje</div>
+                <!-- PLANO IMPERIAL (MÉDIO) -->
+                <div class="mobile-snap-item bg-gradient-to-b from-[#111111] to-[#050505] rounded-[2.5rem] p-8 border border-white/5 hover:border-brand-gold/40 transition-all duration-500 group shadow-[0_15px_40px_-15px_rgba(0,0,0,0.8)] hover:shadow-[0_20px_50px_-10px_rgba(197,160,89,0.2)] relative flex flex-col overflow-hidden w-[85vw] md:w-auto">
                     
-                    <h3 class="text-3xl font-luxury text-white mb-2">Imperial</h3>
-                    <div class="text-6xl text-brand-gold font-light mb-1">R$ 139,90</div>
-                    <span class="text-[10px] text-gray-500 block mb-6">por sessão mensal</span>
+                    <!-- Detalhe Luminoso no Topo -->
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-brand-gold/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute -top-24 -right-24 w-56 h-56 bg-brand-gold/10 rounded-full blur-[70px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
-                    <div class="mb-6 p-4 rounded-lg bg-black/40 border border-brand-gold/20 text-left">
-                        <span class="text-[9px] text-green-400 font-bold uppercase tracking-widest block mb-2"><i class="fas fa-coins mr-1"></i> Economia: R$ 240,10</span>
-                        <span class="text-[10px] text-[#E3C676] font-bold uppercase tracking-widest block mb-1">Ideal para:</span>
-                        <p class="text-[10px] text-gray-400 leading-relaxed">Fios ondulados ou cacheados que buscam definição, controle de volume e brilho.</p>
+                    <div class="text-[9px] text-green-400 mt-1 mb-6 bg-green-900/20 px-4 py-2 rounded-full w-fit mx-auto border border-green-500/20 uppercase tracking-widest backdrop-blur-sm relative z-10"><i class="fas fa-lock mr-1"></i> Apenas 3 vagas</div>
+                    
+                    <h3 class="text-4xl font-luxury text-white mb-1 relative z-10 drop-shadow-md">Imperial</h3>
+                    <span class="text-[10px] text-brand-gold-light/70 uppercase tracking-widest block mb-8 pb-5 border-b border-white/5 relative z-10">Fios Médios / Densidade Média</span>
+
+                    <!-- Caixa de Preço Emoldurada -->
+                    <div class="mb-8 p-6 rounded-3xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/[0.05] shadow-[inset_0_0_20px_rgba(255,255,255,0.02)] flex flex-col items-center relative z-10 backdrop-blur-sm group-hover:border-brand-gold/20 transition-colors duration-500">
+                        <span class="text-[10px] text-gray-500 line-through mb-2 font-medium">Avulso até R$ 980,00</span>
+                        <div class="text-5xl text-brand-gold font-light mb-3 font-luxury drop-shadow-lg">R$ 139<span class="text-2xl text-brand-gold-light">,90</span></div>
+                        <span class="text-[9px] text-green-400 font-bold uppercase tracking-widest bg-green-900/20 px-3 py-1.5 rounded-full border border-green-500/20 shadow-lg"><i class="fas fa-shield-alt mr-1"></i> Valor Fixo Mensal</span>
                     </div>
 
                     <!-- LINHA DO TEMPO REFINADA -->
-                    <div class="timeline-container text-left mb-6 pl-4 border-l border-brand-gold/30 ml-1">
-                        <div class="timeline-item pb-4">
-                            <div class="timeline-marker active" style="left: -21px; background: #C5A059; box-shadow: 0 0 10px #C5A059;"></div>
+                    <div class="timeline-container text-left mb-10 pl-5 border-l border-brand-gold/20 ml-2 flex-grow relative z-10">
+                        <div class="timeline-item pb-6">
+                            <div class="timeline-marker active" style="left: -25px; box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);"></div>
                             <div class="flex justify-between items-center text-xs">
                                 <div class="flex flex-col">
-                                    <span class="text-white font-bold">Ideal (30d)</span>
-                                    <span class="text-[8px] text-green-400 uppercase tracking-widest font-bold">Mais Vantajoso</span>
+                                    <span class="text-white font-bold text-sm tracking-wide">Ideal (Até 30d)</span>
+                                    <span class="text-[9px] text-green-400 uppercase tracking-widest font-bold mt-1">Mais Vantajoso</span>
                                 </div>
-                                <span class="text-brand-gold font-bold text-sm">R$ 139,90</span>
+                                <span class="text-brand-gold font-bold text-sm bg-brand-gold/10 border border-brand-gold/20 px-2 py-1 rounded">R$ 139,90</span>
                             </div>
                         </div>
-                        <div class="timeline-item pb-4">
-                            <div class="timeline-marker warn" style="left: -21px; background: #fbbf24; border-color: #f59e0b;"></div>
+                        <div class="timeline-item pb-6">
+                            <div class="timeline-marker warn" style="left: -25px; background: #fbbf24; border-color: #f59e0b;"></div>
                             <div class="flex justify-between items-center text-xs">
-                                <span class="text-yellow-500 font-bold">⚠️ Alerta (31-60d)</span>
-                                <span class="text-yellow-500 font-bold">R$ 189,90</span>
+                                <div class="flex flex-col">
+                                    <span class="text-yellow-500 font-bold text-sm tracking-wide">Alerta (31 a 60d)</span>
+                                    <span class="text-[9px] text-yellow-500/70 uppercase tracking-widest mt-1">Manutenção Tardia</span>
+                                </div>
+                                <span class="text-yellow-500 font-bold text-sm">R$ 189,90</span>
                             </div>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-marker danger" style="left: -21px;"></div>
-                            <div class="flex justify-between items-center text-xs opacity-70">
-                                <span class="text-red-400">Avulso (61d+)</span>
-                                <span class="text-red-400 line-through text-[10px]">A partir de R$ 380,00</span>
+                            <div class="timeline-marker danger" style="left: -25px; background: #ef4444; border-color: #b91c1c;"></div>
+                            <div class="flex justify-between items-center text-xs opacity-70 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="flex flex-col">
+                                    <span class="text-red-400 font-bold text-sm tracking-wide">Avulso (61d+)</span>
+                                    <span class="text-[9px] text-red-400/70 uppercase tracking-widest mt-1">Começa tudo de novo</span>
+                                </div>
+                                <span class="text-red-400 line-through text-[10px] mt-1 border border-red-500/20 px-2 py-0.5 rounded bg-red-900/10">Tabela Cheia</span>
                             </div>
                         </div>
                     </div>
 
-                    <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Imperial%20e%20pagar%20R$%20139,90." class="btn-luxury-cta block w-full py-4 rounded text-xs font-bold tracking-widest">QUERO SER IMPERIAL</a>
+                    <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Imperial%20(Fios%20M%C3%A9dios)%20e%20pagar%20R$%20139,90." class="relative overflow-hidden group/btn block w-full py-4 text-center rounded-2xl text-[10px] font-bold tracking-[0.2em] mt-auto bg-gradient-to-r from-brand-gold-dark via-brand-gold to-brand-gold-dark text-brand-black shadow-[0_10px_20px_rgba(197,160,89,0.3)] hover:shadow-[0_15px_30px_rgba(197,160,89,0.5)] hover:scale-[1.02] transition-all duration-300 z-10">
+                        <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]"></span>
+                        ASSINAR IMPERIAL
+                    </a>
                 </div>
 
-                <!-- PLANO ABSOLUTO (CRESPOS) -->
-                <div class="mobile-snap-item bg-[#1a0202] rounded-2xl p-8 border border-white/5 hover:border-brand-gold/50 transition-all hover:-translate-y-2 group shadow-xl glass-panel relative overflow-hidden">
-                    <div class="text-[9px] text-green-400 mt-2 mb-2 bg-green-900/20 px-3 py-1 rounded-full w-fit mx-auto border border-green-500/20"><i class="fas fa-user-check mr-1"></i> 5 entraram hoje</div>
+                <!-- PLANO ABSOLUTO (GROSSO) -->
+                <div class="mobile-snap-item bg-gradient-to-b from-[#111111] to-[#050505] rounded-[2.5rem] p-8 border border-white/5 hover:border-brand-gold/40 transition-all duration-500 group shadow-[0_15px_40px_-15px_rgba(0,0,0,0.8)] hover:shadow-[0_20px_50px_-10px_rgba(197,160,89,0.2)] relative flex flex-col overflow-hidden w-[85vw] md:w-auto">
                     
-                    <h3 class="text-2xl font-luxury text-white mb-2">Absoluto</h3>
-                    <div class="text-5xl text-brand-gold font-light mb-1">R$ 159,90</div>
-                    <span class="text-[10px] text-gray-500 block mb-6">por sessão mensal</span>
+                    <!-- Detalhe Luminoso no Topo -->
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-brand-gold/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute -top-24 -right-24 w-56 h-56 bg-brand-gold/10 rounded-full blur-[70px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
-                    <div class="mb-6 p-4 rounded-lg bg-black/40 border border-white/5 text-left">
-                        <span class="text-[9px] text-green-400 font-bold uppercase tracking-widest block mb-2"><i class="fas fa-coins mr-1"></i> Economia: R$ 260,10</span>
-                        <span class="text-[10px] text-[#E3C676] font-bold uppercase tracking-widest block mb-1">Ideal para:</span>
-                        <p class="text-[10px] text-gray-400 leading-relaxed">Cabelos resistentes, crespos ou transformações totais. O poder máximo do liso.</p>
+                    <div class="text-[9px] text-red-400 mt-1 mb-6 bg-red-900/20 px-4 py-2 rounded-full w-fit mx-auto border border-red-500/20 uppercase tracking-widest animate-pulse backdrop-blur-sm relative z-10"><i class="fas fa-exclamation-circle mr-1"></i> Última vaga do lote</div>
+                    
+                    <h3 class="text-4xl font-luxury text-white mb-1 relative z-10 drop-shadow-md">Absoluto</h3>
+                    <span class="text-[10px] text-brand-gold-light/70 uppercase tracking-widest block mb-8 pb-5 border-b border-white/5 relative z-10">Fios Grossos / Alta Densidade</span>
+
+                    <!-- Caixa de Preço Emoldurada -->
+                    <div class="mb-8 p-6 rounded-3xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/[0.05] shadow-[inset_0_0_20px_rgba(255,255,255,0.02)] flex flex-col items-center relative z-10 backdrop-blur-sm group-hover:border-brand-gold/20 transition-colors duration-500">
+                        <span class="text-[10px] text-gray-500 line-through mb-2 font-medium">Avulso até R$ 1.250,00</span>
+                        <div class="text-5xl text-brand-gold font-light mb-3 font-luxury drop-shadow-lg">R$ 159<span class="text-2xl text-brand-gold-light">,90</span></div>
+                        <span class="text-[9px] text-green-400 font-bold uppercase tracking-widest bg-green-900/20 px-3 py-1.5 rounded-full border border-green-500/20 shadow-lg"><i class="fas fa-shield-alt mr-1"></i> Valor Fixo Mensal</span>
                     </div>
 
                     <!-- LINHA DO TEMPO REFINADA -->
-                    <div class="timeline-container text-left mb-6 pl-4 border-l border-white/10 ml-1">
-                        <div class="timeline-item pb-4">
-                            <div class="timeline-marker active" style="left: -21px;"></div>
+                    <div class="timeline-container text-left mb-10 pl-5 border-l border-brand-gold/20 ml-2 flex-grow relative z-10">
+                        <div class="timeline-item pb-6">
+                            <div class="timeline-marker active" style="left: -25px; box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);"></div>
                             <div class="flex justify-between items-center text-xs">
                                 <div class="flex flex-col">
-                                    <span class="text-white font-bold">Ideal (30d)</span>
-                                    <span class="text-[8px] text-green-400 uppercase tracking-widest font-bold">Mais Vantajoso</span>
+                                    <span class="text-white font-bold text-sm tracking-wide">Ideal (Até 30d)</span>
+                                    <span class="text-[8px] text-green-400 uppercase tracking-widest font-bold mt-1">Mais Vantajoso</span>
                                 </div>
-                                <span class="text-brand-gold font-bold">R$ 159,90</span>
+                                <span class="text-brand-gold font-bold text-sm bg-brand-gold/10 border border-brand-gold/20 px-2 py-1 rounded">R$ 159,90</span>
                             </div>
                         </div>
-                        <div class="timeline-item pb-4">
-                            <div class="timeline-marker warn" style="left: -21px; background: #fbbf24; border-color: #f59e0b;"></div>
+                        <div class="timeline-item pb-6">
+                            <div class="timeline-marker warn" style="left: -25px; background: #fbbf24; border-color: #f59e0b;"></div>
                             <div class="flex justify-between items-center text-xs">
-                                <span class="text-yellow-500 font-bold">⚠️ Alerta (31-60d)</span>
-                                <span class="text-yellow-500">R$ 219,90</span>
+                                <div class="flex flex-col">
+                                    <span class="text-yellow-500 font-bold text-sm tracking-wide">Alerta (31 a 60d)</span>
+                                    <span class="text-[9px] text-yellow-500/70 uppercase tracking-widest mt-1">Manutenção Tardia</span>
+                                </div>
+                                <span class="text-yellow-500 font-bold text-sm">R$ 219,90</span>
                             </div>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-marker danger" style="left: -21px;"></div>
-                            <div class="flex justify-between items-center text-xs opacity-60 group-hover:opacity-100 transition-opacity">
-                                <span class="text-red-400">Avulso (61d+)</span>
-                                <span class="text-red-400 line-through text-[10px]">A partir de R$ 420,00</span>
+                            <div class="timeline-marker danger" style="left: -25px; background: #ef4444; border-color: #b91c1c;"></div>
+                            <div class="flex justify-between items-center text-xs opacity-70 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="flex flex-col">
+                                    <span class="text-red-400 font-bold text-sm tracking-wide">Avulso (61d+)</span>
+                                    <span class="text-[9px] text-red-400/70 uppercase tracking-widest mt-1">Começa tudo de novo</span>
+                                </div>
+                                <span class="text-red-400 line-through text-[10px] mt-1 border border-red-500/20 px-2 py-0.5 rounded bg-red-900/10">Tabela Cheia</span>
                             </div>
                         </div>
                     </div>
 
-                    <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Absoluto%20e%20pagar%20R$%20159,90." class="btn-luxury-cta block w-full py-4 text-center border border-white/20 text-white text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all rounded-lg mt-auto">Assinar Absoluto</a>
+                    <a href="https://wa.me/5549999954052?text=Ol%C3%A1!%20Quero%20entrar%20para%20o%20Clube%20Absoluto%20(Fios%20Grossos)%20e%20pagar%20R$%20159,90." class="relative overflow-hidden group/btn block w-full py-4 text-center rounded-2xl text-[10px] font-bold tracking-[0.2em] mt-auto bg-gradient-to-r from-brand-gold-dark via-brand-gold to-brand-gold-dark text-brand-black shadow-[0_10px_20px_rgba(197,160,89,0.3)] hover:shadow-[0_15px_30px_rgba(197,160,89,0.5)] hover:scale-[1.02] transition-all duration-300 z-10">
+                        <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]"></span>
+                        ASSINAR ABSOLUTO
+                    </a>
                 </div>
              </div>
 
