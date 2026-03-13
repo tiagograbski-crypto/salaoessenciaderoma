@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Melhor Salão de Chapecó - Progressiva, Semi Definitiva e Alisamento | Essência de Romã</title>
     
     <meta name="description" content="O melhor salão de Chapecó especialista em progressiva sem formol, semi definitiva, Liso Soberano 8K e Tratamento Glass Molecular. Garanta seu Voucher de Mês das Mães!">
@@ -128,7 +128,7 @@
         /* Animações de Scroll (Cinematic Reveal) */
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(30px);
             transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
         }
         .reveal.active {
@@ -137,7 +137,7 @@
         }
     </style>
 </head>
-<body class="text-white font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+<body class="text-white font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-brand-500 selection:text-white">
 
     <!-- Imagem de Fundo (Capa) -->
     <div class="fixed inset-0 z-0">
@@ -149,7 +149,7 @@
     <nav class="fixed top-0 w-full z-50 bg-[#0f0c0b]/80 backdrop-blur-lg border-b border-white/5 transition-all duration-300" id="navbar">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <span class="font-serif text-lg md:text-xl text-brand-50 tracking-wide italic">Essência de Romã</span>
-            <a href="#oferta" class="bg-white/10 hover:bg-brand-500 hover:text-brand-950 text-white text-[10px] md:text-xs font-bold uppercase tracking-widest px-5 py-2 rounded-full transition-all border border-white/10 shadow-lg">
+            <a href="#oferta" class="bg-white/10 hover:bg-brand-500 hover:text-brand-950 text-white text-xs font-bold uppercase tracking-widest px-5 py-2 rounded-full transition-all border border-white/10 shadow-lg">
                 Ver Valores
             </a>
         </div>
@@ -161,81 +161,80 @@
         <!-- Cabeçalho & Urgência -->
         <header class="text-center fade-in max-w-4xl w-full">
             
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-500/10 text-green-400 border border-green-500/20 mb-4 text-xs font-semibold tracking-wide uppercase shadow-[0_0_15px_rgba(34,197,94,0.1)]">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-500/10 text-green-400 border border-green-500/20 mb-6 text-[10px] md:text-xs font-semibold tracking-wide uppercase shadow-[0_0_15px_rgba(34,197,94,0.1)]">
                 <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
                 Estamos Online • Agendamentos Abertos
             </div>
-            <br>
             
             <!-- Gatilho de Urgência Extrema -->
-            <div class="flex flex-col sm:flex-row items-center gap-3 mb-8 justify-center">
-                <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 text-sm font-bold tracking-wide uppercase shadow-[0_0_20px_rgba(239,68,68,0.2)] animate-pulse">
+            <div class="flex flex-col sm:flex-row items-center gap-3 mb-10 justify-center">
+                <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 text-xs md:text-sm font-bold tracking-wide uppercase shadow-[0_0_20px_rgba(239,68,68,0.2)] animate-pulse w-full sm:w-auto justify-center">
                     <i data-lucide="alert-circle" class="w-4 h-4"></i>
                     Apenas 4 vagas restantes!
                 </div>
-                <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 text-gray-300 border border-white/10 text-sm font-semibold tracking-wide uppercase">
+                <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 text-gray-300 border border-white/10 text-xs md:text-sm font-semibold tracking-wide uppercase w-full sm:w-auto justify-center">
                     <i data-lucide="clock" class="w-4 h-4 text-red-400 animate-pulse"></i>
                     Válido SOMENTE <span id="dynamic-dates">carregando...</span>
                 </div>
             </div>
 
             <!-- OFERTA PRINCIPAL: Voucher Mês das Mães -->
-            <div class="w-full bg-gradient-to-r from-pink-900/40 via-purple-900/40 to-pink-900/40 border border-pink-500/50 rounded-3xl p-8 md:p-12 mb-8 shadow-[0_0_50px_rgba(236,72,153,0.2)] relative overflow-hidden text-center transform transition-transform hover:scale-[1.02]">
-                <div class="absolute -top-20 -left-20 w-48 h-48 bg-pink-500/20 rounded-full blur-3xl"></div>
-                <div class="absolute -bottom-20 -right-20 w-48 h-48 bg-purple-500/20 rounded-full blur-3xl"></div>
+            <div class="w-full bg-gradient-to-r from-pink-900/40 via-purple-900/40 to-pink-900/40 border border-pink-500/50 rounded-[2rem] p-8 md:p-14 mb-10 shadow-[0_0_50px_rgba(236,72,153,0.2)] relative overflow-hidden text-center transform transition-transform hover:scale-[1.02]">
+                <div class="absolute -top-20 -left-20 w-48 h-48 bg-pink-500/20 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-20 -right-20 w-48 h-48 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
                 
                 <h2 class="text-pink-300 font-bold tracking-widest uppercase text-xs md:text-sm mb-4 flex items-center justify-center gap-2 drop-shadow-md">
                     <i data-lucide="gift" class="w-4 h-4"></i> A Maior Campanha do Ano
                 </h2>
-                <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6 tracking-tight drop-shadow-lg leading-tight">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 tracking-tight drop-shadow-lg leading-tight">
                     VOUCHER <br class="md:hidden"><span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">MÊS DAS MÃES</span>
                 </h1>
-                <p class="text-gray-200 text-lg md:text-xl font-light max-w-2xl mx-auto relative z-10 leading-relaxed">
+                <p class="text-gray-200 text-base md:text-xl font-light max-w-2xl mx-auto relative z-10 leading-relaxed px-2">
                     Reconhecido como o <strong class="text-white font-medium">melhor salão de Chapecó</strong> para progressiva, semi definitiva e tratamentos de alto padrão. Presenteie-se com a sua melhor versão.
                 </p>
             </div>
 
             <!-- Trust Badges (Autoridade Instantânea) -->
-            <div class="w-full flex justify-center gap-6 md:gap-16 mb-16 border-y border-white/5 py-6 fade-in delay-2">
-                <div class="flex flex-col items-center text-center">
+            <div class="w-full flex justify-center items-center gap-4 md:gap-16 mb-16 md:mb-24 border-y border-white/5 py-8 fade-in delay-2">
+                <div class="flex flex-col items-center text-center px-2">
                     <span class="text-2xl md:text-4xl font-serif text-brand-500 mb-1">+5k</span>
-                    <span class="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-widest font-semibold">Cabelos<br>Transformados</span>
+                    <span class="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest font-semibold leading-tight">Cabelos<br>Transformados</span>
                 </div>
-                <div class="flex flex-col items-center text-center px-4 md:px-0 border-x border-white/5 md:border-none">
+                <div class="flex flex-col items-center text-center px-4 md:px-8 border-x border-white/10">
                     <span class="text-2xl md:text-4xl font-serif text-brand-500 mb-1">0%</span>
-                    <span class="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-widest font-semibold">Formol ou<br>Ardor</span>
+                    <span class="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest font-semibold leading-tight">Formol ou<br>Ardor</span>
                 </div>
-                <div class="flex flex-col items-center text-center">
+                <div class="flex flex-col items-center text-center px-2">
                     <span class="text-2xl md:text-4xl font-serif text-brand-500 mb-1">100%</span>
-                    <span class="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-widest font-semibold">Seguro para<br>Loiras</span>
+                    <span class="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest font-semibold leading-tight">Seguro para<br>Loiras</span>
                 </div>
             </div>
         </header>
 
         <!-- IMAGENS PRIMEIRO: Carrossel UX Ultra Luxo -->
-        <section aria-labelledby="galeria-title" class="w-full max-w-[100vw] mb-24 reveal overflow-hidden relative">
+        <section aria-labelledby="galeria-title" class="w-full max-w-[100vw] mb-16 md:mb-24 reveal overflow-hidden relative">
             <h2 id="galeria-title" class="sr-only">Nosso Padrão de Excelência em Fotos</h2>
             
-            <div class="absolute top-0 left-0 w-8 md:w-24 h-full bg-gradient-to-r from-[#0f0c0b] to-transparent z-10 pointer-events-none"></div>
-            <div class="absolute top-0 right-0 w-8 md:w-24 h-full bg-gradient-to-l from-[#0f0c0b] to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute top-0 left-0 w-8 md:w-32 h-full bg-gradient-to-r from-[#0f0c0b] to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute top-0 right-0 w-8 md:w-32 h-full bg-gradient-to-l from-[#0f0c0b] to-transparent z-10 pointer-events-none"></div>
 
-            <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 px-[10vw] md:px-[calc(50vw-450px)] pb-8 hide-scrollbar items-center">
-                <figure class="snap-center shrink-0 w-[80vw] md:w-[320px] group relative overflow-hidden rounded-2xl aspect-[3/4] bg-neutral-900 border border-white/5 shadow-2xl">
+            <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 md:gap-8 px-6 md:px-[calc(50vw-480px)] pb-8 hide-scrollbar items-center">
+                <figure class="snap-center shrink-0 w-[85vw] max-w-[320px] group relative overflow-hidden rounded-2xl aspect-[3/4] bg-neutral-900 border border-white/5 shadow-2xl">
                     <img src="https://testeessencia.carrd.co/assets/images/image65.jpg?v=54da9d95" alt="Cabelo com Brilho Espelhado Chapecó" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-90 group-hover:opacity-100">
-                    <figcaption class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-                        <span class="text-white font-medium text-xl font-serif tracking-wide">Brilho Espelhado</span>
+                    <figcaption class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 md:p-8">
+                        <span class="text-white font-medium text-lg md:text-xl font-serif tracking-wide">Brilho Espelhado</span>
                     </figcaption>
                 </figure>
-                <figure class="snap-center shrink-0 w-[80vw] md:w-[320px] group relative overflow-hidden rounded-2xl aspect-[3/4] bg-neutral-900 border border-white/5 shadow-2xl">
+                <figure class="snap-center shrink-0 w-[85vw] max-w-[320px] group relative overflow-hidden rounded-2xl aspect-[3/4] bg-neutral-900 border border-white/5 shadow-2xl">
                     <img src="https://testeessencia.carrd.co/assets/images/image31.jpg?v=54da9d95" alt="Alisamento Perfeito Essência de Romã" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-90 group-hover:opacity-100">
-                    <figcaption class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-                        <span class="text-white font-medium text-xl font-serif tracking-wide">Textura Impecável</span>
+                    <figcaption class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 md:p-8">
+                        <span class="text-white font-medium text-lg md:text-xl font-serif tracking-wide">Textura Impecável</span>
                     </figcaption>
                 </figure>
-                <figure class="snap-center shrink-0 w-[80vw] md:w-[320px] group relative overflow-hidden rounded-2xl aspect-[3/4] bg-neutral-900 border border-white/5 shadow-2xl">
+                <figure class="snap-center shrink-0 w-[85vw] max-w-[320px] group relative overflow-hidden rounded-2xl aspect-[3/4] bg-neutral-900 border border-white/5 shadow-2xl">
                     <img src="https://testeessencia.carrd.co/assets/images/image23.jpg?v=54da9d95" alt="Cabelo Saudável Pós Química" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-90 group-hover:opacity-100">
-                    <figcaption class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-                        <span class="text-white font-medium text-xl font-serif tracking-wide">Fios 100% Saudáveis</span>
+                    <figcaption class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 md:p-8">
+                        <span class="text-white font-medium text-lg md:text-xl font-serif tracking-wide">Fios 100% Saudáveis</span>
                     </figcaption>
                 </figure>
             </div>
@@ -243,16 +242,16 @@
         </section>
 
         <!-- SERVIÇO 1: Liso Soberano 8K -->
-        <section aria-labelledby="liso-8k-title" id="oferta" class="w-full max-w-4xl bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-12 reveal shadow-2xl relative overflow-hidden mb-24">
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-brand-500/10 blur-[100px] pointer-events-none"></div>
+        <section aria-labelledby="liso-8k-title" id="oferta" class="w-full max-w-4xl bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2rem] p-6 md:p-12 reveal shadow-2xl relative overflow-hidden mb-16 md:mb-24">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-40 bg-brand-500/10 blur-[100px] pointer-events-none"></div>
             
-            <header class="text-center mb-12 relative z-10">
-                <h2 id="liso-8k-title" class="text-4xl md:text-5xl font-serif text-brand-50 mb-6">Liso Soberano 8K</h2>
-                <p class="text-gray-300 text-lg md:text-xl font-light leading-relaxed">A evolução da <strong class="text-white font-medium">progressiva e semi definitiva</strong> em Chapecó. Alisamento 100% livre de formol, resultado definitivo, seguro para loiras e com um liso espelhado de alta performance.</p>
+            <header class="text-center mb-10 md:mb-14 relative z-10">
+                <h2 id="liso-8k-title" class="text-4xl md:text-5xl font-serif text-brand-50 mb-4 md:mb-6">Liso Soberano 8K</h2>
+                <p class="text-gray-300 text-base md:text-xl font-light leading-relaxed px-2">A evolução da <strong class="text-white font-medium">progressiva e semi definitiva</strong> em Chapecó. Alisamento 100% livre de formol, resultado definitivo, seguro para loiras e com um liso espelhado de alta performance.</p>
             </header>
 
             <!-- Slider Interativo 1: Liso 8K -->
-            <div class="relative w-full max-w-3xl mx-auto aspect-[4/5] md:aspect-video rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 select-none touch-none group before-after-container mb-16">
+            <div class="relative w-full max-w-3xl mx-auto aspect-[4/5] md:aspect-video rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 select-none touch-none group before-after-container mb-12 md:mb-16">
                 <img src="https://testeessencia.carrd.co/assets/images/image48.jpg?v=54da9d95" alt="Cabelo Antes do Liso 8K" class="absolute inset-0 w-full h-full object-cover select-none pointer-events-none">
                 <img src="https://testeessencia.carrd.co/assets/images/image49.jpg?v=54da9d95" alt="Cabelo Depois do Liso 8K" class="after-img absolute inset-0 w-full h-full object-cover select-none pointer-events-none" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
                 <input type="range" min="0" max="100" value="50" class="slider-input absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20 m-0" aria-label="Arraste para comparar">
@@ -271,142 +270,142 @@
                 
                 <div class="hidden md:grid grid-cols-4 gap-4 py-3 border-b border-brand-500/30 text-xs font-semibold text-brand-500 uppercase tracking-wider mb-2" role="row">
                     <div role="columnheader">Perfil / Tamanho</div>
-                    <div role="columnheader">Fibra Fina<br><span class="text-[10px] font-normal text-gray-400 capitalize">Baixa Densidade</span></div>
-                    <div role="columnheader">Fibra Média<br><span class="text-[10px] font-normal text-gray-400 capitalize">Densidade Média</span></div>
-                    <div role="columnheader">Fibra Grossa<br><span class="text-[10px] font-normal text-gray-400 capitalize">Alta Densidade</span></div>
+                    <div role="columnheader">Fibra Fina<br><span class="text-[10px] font-normal text-gray-400 capitalize mt-1">Baixa Densidade</span></div>
+                    <div role="columnheader">Fibra Média<br><span class="text-[10px] font-normal text-gray-400 capitalize mt-1">Densidade Média</span></div>
+                    <div role="columnheader">Fibra Grossa<br><span class="text-[10px] font-normal text-gray-400 capitalize mt-1">Alta Densidade</span></div>
                 </div>
 
-                <!-- 01. PERFIL P -->
-                <article class="flex flex-col md:grid md:grid-cols-4 md:gap-4 py-5 border-b border-white/10 hover:bg-white/5 transition-colors rounded-lg px-2 -mx-2">
-                    <div class="mb-4 md:mb-0 flex flex-col justify-center">
-                        <h4 class="font-serif text-lg text-brand-100 leading-tight">01. PERFIL P</h4>
-                        <p class="text-xs text-gray-400 mt-1">Até o Maxilar</p>
+                <!-- Perfil Items (Ajuste de Padding Mobile) -->
+                <article class="flex flex-col md:grid md:grid-cols-4 md:gap-4 py-6 md:py-5 border-b border-white/10 hover:bg-white/5 transition-colors rounded-xl px-4 md:px-2 -mx-4 md:-mx-2">
+                    <div class="mb-5 md:mb-0 flex flex-col justify-center">
+                        <h4 class="font-serif text-xl md:text-lg text-brand-100 leading-tight">01. PERFIL P</h4>
+                        <p class="text-sm md:text-xs text-gray-400 mt-1">Até o Maxilar</p>
                     </div>
-                    <div class="flex justify-between md:flex-col mb-3 md:mb-0 md:justify-center">
-                        <span class="md:hidden text-sm text-gray-300 flex items-center">Fibra Fina:</span>
-                        <div class="text-right md:text-left">
-                            <span class="text-xs text-gray-500 line-through mr-2 md:mr-0 md:block">De R$ 397,00</span>
-                            <span class="text-base md:text-lg font-bold text-[#25D366] md:block">R$ 157,00</span>
+                    <div class="flex justify-between md:flex-col mb-3 md:mb-0 md:justify-center items-center md:items-start">
+                        <span class="md:hidden text-sm text-gray-300">Fibra Fina:</span>
+                        <div class="text-right md:text-center md:w-full">
+                            <span class="text-xs text-gray-500 line-through md:block">De R$ 397,00</span>
+                            <span class="text-lg md:text-lg font-bold text-[#25D366] md:block mt-0.5">R$ 157,00</span>
                         </div>
                     </div>
-                    <div class="flex justify-between md:flex-col mb-3 md:mb-0 md:justify-center">
-                        <span class="md:hidden text-sm text-gray-300 flex items-center">Fibra Média:</span>
-                        <div class="text-right md:text-left">
-                            <span class="text-xs text-gray-500 line-through mr-2 md:mr-0 md:block">De R$ 497,00</span>
-                            <span class="text-base md:text-lg font-bold text-[#25D366] md:block">R$ 197,00</span>
+                    <div class="flex justify-between md:flex-col mb-3 md:mb-0 md:justify-center items-center md:items-start">
+                        <span class="md:hidden text-sm text-gray-300">Fibra Média:</span>
+                        <div class="text-right md:text-center md:w-full">
+                            <span class="text-xs text-gray-500 line-through md:block">De R$ 497,00</span>
+                            <span class="text-lg font-bold text-[#25D366] md:block mt-0.5">R$ 197,00</span>
                         </div>
                     </div>
-                    <div class="flex justify-between md:flex-col md:justify-center">
-                        <span class="md:hidden text-sm text-gray-300 flex items-center">Fibra Grossa:</span>
-                        <div class="text-right md:text-left">
-                            <span class="text-xs text-gray-500 line-through mr-2 md:mr-0 md:block">De R$ 597,00</span>
-                            <span class="text-base md:text-lg font-bold text-[#25D366] md:block">R$ 247,00</span>
+                    <div class="flex justify-between md:flex-col md:justify-center items-center md:items-start">
+                        <span class="md:hidden text-sm text-gray-300">Fibra Grossa:</span>
+                        <div class="text-right md:text-center md:w-full">
+                            <span class="text-xs text-gray-500 line-through md:block">De R$ 597,00</span>
+                            <span class="text-lg font-bold text-[#25D366] md:block mt-0.5">R$ 247,00</span>
                         </div>
                     </div>
                 </article>
 
                 <!-- 02. PERFIL M -->
-                <article class="flex flex-col md:grid md:grid-cols-4 md:gap-4 py-5 border-b border-white/10 hover:bg-white/5 transition-colors rounded-lg px-2 -mx-2">
-                    <div class="mb-4 md:mb-0 flex flex-col justify-center">
-                        <h4 class="font-serif text-lg text-brand-100 leading-tight">02. PERFIL M</h4>
-                        <p class="text-xs text-gray-400 mt-1">Até os ombros</p>
+                <article class="flex flex-col md:grid md:grid-cols-4 md:gap-4 py-6 md:py-5 border-b border-white/10 hover:bg-white/5 transition-colors rounded-xl px-4 md:px-2 -mx-4 md:-mx-2">
+                    <div class="mb-5 md:mb-0 flex flex-col justify-center">
+                        <h4 class="font-serif text-xl md:text-lg text-brand-100 leading-tight">02. PERFIL M</h4>
+                        <p class="text-sm md:text-xs text-gray-400 mt-1">Até os ombros</p>
                     </div>
-                    <div class="flex justify-between md:flex-col mb-3 md:mb-0 md:justify-center">
-                        <span class="md:hidden text-sm text-gray-300 flex items-center">Fibra Fina:</span>
-                        <div class="text-right md:text-left">
-                            <span class="text-xs text-gray-500 line-through mr-2 md:mr-0 md:block">De R$ 597,00</span>
-                            <span class="text-base md:text-lg font-bold text-[#25D366] md:block">R$ 299,00</span>
+                    <div class="flex justify-between md:flex-col mb-3 md:mb-0 md:justify-center items-center md:items-start">
+                        <span class="md:hidden text-sm text-gray-300">Fibra Fina:</span>
+                        <div class="text-right md:text-center md:w-full">
+                            <span class="text-xs text-gray-500 line-through md:block">De R$ 597,00</span>
+                            <span class="text-lg font-bold text-[#25D366] md:block mt-0.5">R$ 299,00</span>
                         </div>
                     </div>
-                    <div class="flex justify-between md:flex-col mb-3 md:mb-0 md:justify-center">
-                        <span class="md:hidden text-sm text-gray-300 flex items-center">Fibra Média:</span>
-                        <div class="text-right md:text-left">
-                            <span class="text-xs text-gray-500 line-through mr-2 md:mr-0 md:block">De R$ 697,00</span>
-                            <span class="text-base md:text-lg font-bold text-[#25D366] md:block">R$ 347,00</span>
+                    <div class="flex justify-between md:flex-col mb-3 md:mb-0 md:justify-center items-center md:items-start">
+                        <span class="md:hidden text-sm text-gray-300">Fibra Média:</span>
+                        <div class="text-right md:text-center md:w-full">
+                            <span class="text-xs text-gray-500 line-through md:block">De R$ 697,00</span>
+                            <span class="text-lg font-bold text-[#25D366] md:block mt-0.5">R$ 347,00</span>
                         </div>
                     </div>
-                    <div class="flex justify-between md:flex-col md:justify-center">
-                        <span class="md:hidden text-sm text-gray-300 flex items-center">Fibra Grossa:</span>
-                        <div class="text-right md:text-left">
-                            <span class="text-xs text-gray-500 line-through mr-2 md:mr-0 md:block">De R$ 797,00</span>
-                            <span class="text-base md:text-lg font-bold text-[#25D366] md:block">R$ 397,00</span>
+                    <div class="flex justify-between md:flex-col md:justify-center items-center md:items-start">
+                        <span class="md:hidden text-sm text-gray-300">Fibra Grossa:</span>
+                        <div class="text-right md:text-center md:w-full">
+                            <span class="text-xs text-gray-500 line-through md:block">De R$ 797,00</span>
+                            <span class="text-lg font-bold text-[#25D366] md:block mt-0.5">R$ 397,00</span>
                         </div>
                     </div>
                 </article>
 
                 <!-- 03. PERFIL G -->
-                <article class="flex flex-col md:grid md:grid-cols-4 md:gap-4 py-5 border-b border-white/10 hover:bg-white/5 transition-colors rounded-lg px-2 -mx-2">
-                    <div class="mb-4 md:mb-0 flex flex-col justify-center">
-                        <h4 class="font-serif text-lg text-brand-100 leading-tight">03. PERFIL G</h4>
-                        <p class="text-xs text-gray-400 mt-1">Até as Escápulas</p>
+                <article class="flex flex-col md:grid md:grid-cols-4 md:gap-4 py-6 md:py-5 border-b border-white/10 hover:bg-white/5 transition-colors rounded-xl px-4 md:px-2 -mx-4 md:-mx-2">
+                    <div class="mb-5 md:mb-0 flex flex-col justify-center">
+                        <h4 class="font-serif text-xl md:text-lg text-brand-100 leading-tight">03. PERFIL G</h4>
+                        <p class="text-sm md:text-xs text-gray-400 mt-1">Até as Escápulas</p>
                     </div>
-                    <div class="flex justify-between md:flex-col mb-3 md:mb-0 md:justify-center">
-                        <span class="md:hidden text-sm text-gray-300 flex items-center">Fibra Fina:</span>
-                        <div class="text-right md:text-left">
-                            <span class="text-xs text-gray-500 line-through mr-2 md:mr-0 md:block">De R$ 797,00</span>
-                            <span class="text-base md:text-lg font-bold text-[#25D366] md:block">R$ 397,00</span>
+                    <div class="flex justify-between md:flex-col mb-3 md:mb-0 md:justify-center items-center md:items-start">
+                        <span class="md:hidden text-sm text-gray-300">Fibra Fina:</span>
+                        <div class="text-right md:text-center md:w-full">
+                            <span class="text-xs text-gray-500 line-through md:block">De R$ 797,00</span>
+                            <span class="text-lg font-bold text-[#25D366] md:block mt-0.5">R$ 397,00</span>
                         </div>
                     </div>
-                    <div class="flex justify-between md:flex-col mb-3 md:mb-0 md:justify-center">
-                        <span class="md:hidden text-sm text-gray-300 flex items-center">Fibra Média:</span>
-                        <div class="text-right md:text-left">
-                            <span class="text-xs text-gray-500 line-through mr-2 md:mr-0 md:block">De R$ 897,00</span>
-                            <span class="text-base md:text-lg font-bold text-[#25D366] md:block">R$ 447,00</span>
+                    <div class="flex justify-between md:flex-col mb-3 md:mb-0 md:justify-center items-center md:items-start">
+                        <span class="md:hidden text-sm text-gray-300">Fibra Média:</span>
+                        <div class="text-right md:text-center md:w-full">
+                            <span class="text-xs text-gray-500 line-through md:block">De R$ 897,00</span>
+                            <span class="text-lg font-bold text-[#25D366] md:block mt-0.5">R$ 447,00</span>
                         </div>
                     </div>
-                    <div class="flex justify-between md:flex-col md:justify-center">
-                        <span class="md:hidden text-sm text-gray-300 flex items-center">Fibra Grossa:</span>
-                        <div class="text-right md:text-left">
-                            <span class="text-xs text-gray-500 line-through mr-2 md:mr-0 md:block">De R$ 997,00</span>
-                            <span class="text-base md:text-lg font-bold text-[#25D366] md:block">R$ 497,00</span>
+                    <div class="flex justify-between md:flex-col md:justify-center items-center md:items-start">
+                        <span class="md:hidden text-sm text-gray-300">Fibra Grossa:</span>
+                        <div class="text-right md:text-center md:w-full">
+                            <span class="text-xs text-gray-500 line-through md:block">De R$ 997,00</span>
+                            <span class="text-lg font-bold text-[#25D366] md:block mt-0.5">R$ 497,00</span>
                         </div>
                     </div>
                 </article>
 
                 <!-- 04. PERFIL GG -->
-                <article class="flex flex-col md:grid md:grid-cols-4 md:gap-4 py-5 last:border-0 hover:bg-white/5 transition-colors rounded-lg px-2 -mx-2">
-                    <div class="mb-4 md:mb-0 flex flex-col justify-center">
-                        <h4 class="font-serif text-lg text-brand-100 leading-tight">04. PERFIL GG</h4>
-                        <p class="text-xs text-gray-400 mt-1">Cintura em diante</p>
+                <article class="flex flex-col md:grid md:grid-cols-4 md:gap-4 py-6 md:py-5 last:border-0 hover:bg-white/5 transition-colors rounded-xl px-4 md:px-2 -mx-4 md:-mx-2">
+                    <div class="mb-5 md:mb-0 flex flex-col justify-center">
+                        <h4 class="font-serif text-xl md:text-lg text-brand-100 leading-tight">04. PERFIL GG</h4>
+                        <p class="text-sm md:text-xs text-gray-400 mt-1">Cintura em diante</p>
                     </div>
-                    <div class="flex justify-between md:flex-col mb-3 md:mb-0 md:justify-center">
-                        <span class="md:hidden text-sm text-gray-300 flex items-center">Fibra Fina:</span>
-                        <div class="text-right md:text-left">
-                            <span class="text-xs text-gray-500 line-through mr-2 md:mr-0 md:block">De R$ 897,00</span>
-                            <span class="text-base md:text-lg font-bold text-[#25D366] md:block">R$ 447,00</span>
+                    <div class="flex justify-between md:flex-col mb-3 md:mb-0 md:justify-center items-center md:items-start">
+                        <span class="md:hidden text-sm text-gray-300">Fibra Fina:</span>
+                        <div class="text-right md:text-center md:w-full">
+                            <span class="text-xs text-gray-500 line-through md:block">De R$ 897,00</span>
+                            <span class="text-lg font-bold text-[#25D366] md:block mt-0.5">R$ 447,00</span>
                         </div>
                     </div>
-                    <div class="flex justify-between md:flex-col mb-3 md:mb-0 md:justify-center">
-                        <span class="md:hidden text-sm text-gray-300 flex items-center">Fibra Média:</span>
-                        <div class="text-right md:text-left">
-                            <span class="text-xs text-gray-500 line-through mr-2 md:mr-0 md:block">De R$ 997,00</span>
-                            <span class="text-base md:text-lg font-bold text-[#25D366] md:block">R$ 497,00</span>
+                    <div class="flex justify-between md:flex-col mb-3 md:mb-0 md:justify-center items-center md:items-start">
+                        <span class="md:hidden text-sm text-gray-300">Fibra Média:</span>
+                        <div class="text-right md:text-center md:w-full">
+                            <span class="text-xs text-gray-500 line-through md:block">De R$ 997,00</span>
+                            <span class="text-lg font-bold text-[#25D366] md:block mt-0.5">R$ 497,00</span>
                         </div>
                     </div>
-                    <div class="flex justify-between md:flex-col md:justify-center">
-                        <span class="md:hidden text-sm text-gray-300 flex items-center">Fibra Grossa:</span>
-                        <div class="text-right md:text-left">
-                            <span class="text-[10px] text-brand-500 font-medium border border-brand-500/30 rounded px-1 mr-1 mb-1 hidden md:inline-block">Max</span>
-                            <span class="text-xs text-gray-500 line-through mr-2 md:mr-0">De R$ 1.297,00</span>
-                            <span class="text-base md:text-lg font-bold text-[#25D366] md:block"><span class="md:hidden text-[10px] text-brand-500 font-medium border border-brand-500/30 rounded px-1 mr-1">Max</span>R$ 647,00</span>
+                    <div class="flex justify-between md:flex-col md:justify-center items-center md:items-start">
+                        <span class="md:hidden text-sm text-gray-300">Fibra Grossa:</span>
+                        <div class="text-right md:text-center md:w-full">
+                            <span class="text-[10px] text-brand-500 font-medium border border-brand-500/30 rounded px-1.5 py-0.5 mr-1 hidden md:inline-block relative -top-0.5">Max</span>
+                            <span class="text-xs text-gray-500 line-through md:block">De R$ 1.297,00</span>
+                            <span class="text-lg font-bold text-[#25D366] md:block mt-0.5 flex items-center justify-end md:justify-center gap-1"><span class="md:hidden text-[10px] text-brand-500 font-medium border border-brand-500/30 rounded px-1 py-0.5">Max</span>R$ 647,00</span>
                         </div>
                     </div>
                 </article>
             </div>
 
-            <!-- Botão CTA Alto CTR Liso 8K -->
-            <div class="mt-12 flex flex-col items-center border-t border-white/10 pt-10">
-                <p class="text-sm text-gray-400 mb-6 font-medium tracking-wide uppercase">Selecione sua unidade:</p>
-                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <!-- Botões CTA Alto CTR Liso 8K (Full Width no Mobile) -->
+            <div class="mt-12 flex flex-col items-center border-t border-white/10 pt-10 px-2 md:px-0">
+                <p class="text-xs md:text-sm text-gray-400 mb-6 font-medium tracking-wide uppercase text-center">Selecione sua unidade e garanta sua vaga:</p>
+                <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
                     <a href="#" 
                        onclick="return gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1%2C%20Ess%C3%AAncia%20de%20Rom%C3%A3%20Hair%21%20Quero%20resgatar%20meu%20Voucher%20do%20M%C3%AAs%20das%20M%C3%A3es%20para%20o%20LISO%20SOBERANO%208K%20em%20Chapec%C3%B3.')"
-                       class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(37,211,102,0.3)]">
+                       class="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-full font-bold text-base md:text-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(37,211,102,0.3)]">
                         <i data-lucide="map-pin" class="w-5 h-5"></i>
                         Unidade Chapecó
                     </a>
                     <a href="#" 
                        onclick="return gtag_report_conversion('https://wa.me/554999157323?text=Ol%C3%A1%2C%20Studio%20T%21%20Quero%20resgatar%20meu%20Voucher%20do%20M%C3%AAs%20das%20M%C3%A3es%20para%20o%20LISO%20SOBERANO%208K%20em%20Seara.')"
-                       class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border border-white/20 hover:border-[#25D366] hover:bg-[#25D366]/10 text-white hover:text-[#25D366] rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105">
+                       class="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-white/20 hover:border-[#25D366] hover:bg-[#25D366]/10 text-white hover:text-[#25D366] rounded-full font-bold text-base md:text-lg transition-all duration-300 transform hover:scale-105">
                         <i data-lucide="map-pin" class="w-5 h-5"></i>
                         Studio T • Seara
                     </a>
@@ -415,10 +414,10 @@
         </section>
 
         <!-- SERVIÇO 2: Glass Molecular -->
-        <section aria-labelledby="glass-molecular-title" class="w-full max-w-4xl bg-gradient-to-b from-[#1a1413] to-brand-950 backdrop-blur-xl border border-white/5 rounded-3xl p-6 md:p-12 reveal shadow-2xl relative overflow-hidden mb-24">
-            <header class="text-center mb-12 relative z-10">
-                <h2 id="glass-molecular-title" class="text-4xl md:text-5xl font-serif text-brand-50 mb-6">Tratamento Glass Molecular</h2>
-                <p class="text-gray-300 text-lg md:text-xl font-light leading-relaxed">O tratamento definitivo contra o frizz para quem <strong class="text-white font-medium">não quer alisar</strong> o cabelo. O Glass Molecular elimina o "ruído visual" dos fios rebeldes, devolvendo sedosidade e um brilho espelhado surreal.</p>
+        <section aria-labelledby="glass-molecular-title" class="w-full max-w-4xl bg-gradient-to-b from-[#1a1413] to-brand-950 backdrop-blur-xl border border-white/5 rounded-[2rem] p-6 md:p-12 reveal shadow-2xl relative overflow-hidden mb-16 md:mb-24">
+            <header class="text-center mb-10 md:mb-12 relative z-10">
+                <h2 id="glass-molecular-title" class="text-4xl md:text-5xl font-serif text-brand-50 mb-4 md:mb-6">Tratamento Glass Molecular</h2>
+                <p class="text-gray-300 text-base md:text-xl font-light leading-relaxed px-2">O tratamento definitivo contra o frizz para quem <strong class="text-white font-medium">não quer alisar</strong> o cabelo. O Glass Molecular elimina o "ruído visual" dos fios rebeldes, devolvendo sedosidade e um brilho espelhado surreal.</p>
             </header>
 
             <!-- Slider Interativo 2: Glass Molecular -->
@@ -435,19 +434,19 @@
                 <div class="absolute top-4 right-4 z-10 bg-black/50 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold tracking-widest pointer-events-none border border-white/10">ANTES</div>
             </div>
 
-            <!-- Botão CTA Alto CTR Glass Molecular -->
-            <div class="mt-12 flex flex-col items-center pt-6">
-                <p class="text-sm text-gray-400 mb-6 font-medium tracking-wide uppercase">Selecione sua unidade:</p>
-                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <!-- Botões CTA Alto CTR Glass Molecular -->
+            <div class="mt-10 flex flex-col items-center pt-4 px-2 md:px-0">
+                <p class="text-xs md:text-sm text-gray-400 mb-6 font-medium tracking-wide uppercase text-center">Selecione sua unidade e garanta sua vaga:</p>
+                <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
                     <a href="#" 
                        onclick="return gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1%2C%20Ess%C3%AAncia%20de%20Rom%C3%A3%20Hair%21%20Quero%20resgatar%20meu%20Voucher%20do%20M%C3%AAs%20das%20M%C3%A3es%20para%20o%20tratamento%20GLASS%20MOLECULAR%20em%20Chapec%C3%B3.')"
-                       class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(37,211,102,0.3)]">
+                       class="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-full font-bold text-base md:text-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(37,211,102,0.3)]">
                         <i data-lucide="sparkles" class="w-5 h-5"></i>
                         Unidade Chapecó
                     </a>
                     <a href="#" 
                        onclick="return gtag_report_conversion('https://wa.me/554999157323?text=Ol%C3%A1%2C%20Studio%20T%21%20Quero%20resgatar%20meu%20Voucher%20do%20M%C3%AAs%20das%20M%C3%A3es%20para%20o%20tratamento%20GLASS%20MOLECULAR%20em%20Seara.')"
-                       class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border border-white/20 hover:border-[#25D366] hover:bg-[#25D366]/10 text-white hover:text-[#25D366] rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105">
+                       class="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-white/20 hover:border-[#25D366] hover:bg-[#25D366]/10 text-white hover:text-[#25D366] rounded-full font-bold text-base md:text-lg transition-all duration-300 transform hover:scale-105">
                         <i data-lucide="sparkles" class="w-5 h-5"></i>
                         Studio T • Seara
                     </a>
@@ -456,9 +455,9 @@
         </section>
 
         <!-- PROVA SOCIAL: Depoimentos -->
-        <section aria-labelledby="depoimentos-title" class="w-full max-w-4xl reveal mb-24">
-            <h2 id="depoimentos-title" class="text-center text-brand-100 font-serif text-3xl mb-12 italic opacity-90 drop-shadow-md">O que dizem nossas clientes</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <section aria-labelledby="depoimentos-title" class="w-full max-w-4xl reveal mb-16 md:mb-24">
+            <h2 id="depoimentos-title" class="text-center text-brand-100 font-serif text-3xl md:text-4xl mb-10 md:mb-12 italic opacity-90 drop-shadow-md">O que dizem nossas clientes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                 <article class="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm relative hover:bg-white/10 transition-colors">
                     <div class="flex gap-1 text-yellow-400 mb-4">
                         <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -484,53 +483,53 @@
         </section>
 
         <!-- VÍDEOS CINEMATOGRÁFICOS: Autoplay & Loop -->
-        <section aria-labelledby="videos-title" class="w-full max-w-[100vw] reveal mb-24 overflow-hidden relative">
-            <h2 id="videos-title" class="text-center text-brand-100 font-serif text-3xl mb-12 italic opacity-90 drop-shadow-md">Veja o balanço real</h2>
+        <section aria-labelledby="videos-title" class="w-full max-w-[100vw] reveal mb-16 md:mb-24 overflow-hidden relative">
+            <h2 id="videos-title" class="text-center text-brand-100 font-serif text-3xl md:text-4xl mb-10 md:mb-12 italic opacity-90 drop-shadow-md">Veja o balanço real</h2>
             
-            <div class="absolute top-0 left-0 w-8 md:w-24 h-full bg-gradient-to-r from-[#0f0c0b] to-transparent z-10 pointer-events-none"></div>
-            <div class="absolute top-0 right-0 w-8 md:w-24 h-full bg-gradient-to-l from-[#0f0c0b] to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute top-0 left-0 w-8 md:w-32 h-full bg-gradient-to-r from-[#0f0c0b] to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute top-0 right-0 w-8 md:w-32 h-full bg-gradient-to-l from-[#0f0c0b] to-transparent z-10 pointer-events-none"></div>
 
-            <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 px-[10vw] md:px-[calc(50vw-450px)] pb-8 hide-scrollbar items-center">
-                <figure class="snap-center shrink-0 w-[75vw] md:w-[280px] group relative overflow-hidden rounded-2xl aspect-[9/16] bg-neutral-900 border border-brand-500/10 shadow-[0_0_30px_rgba(197,168,159,0.05)]">
+            <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 md:gap-8 px-6 md:px-[calc(50vw-480px)] pb-8 hide-scrollbar items-center">
+                <figure class="snap-center shrink-0 w-[80vw] max-w-[300px] group relative overflow-hidden rounded-2xl aspect-[9/16] bg-neutral-900 border border-brand-500/10 shadow-[0_0_30px_rgba(197,168,159,0.05)]">
                     <video src="https://testeessencia.carrd.co/assets/videos/video12.mp4?v=36e3212d" autoplay loop muted playsinline class="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105 pointer-events-none"></video>
                 </figure>
-                <figure class="snap-center shrink-0 w-[75vw] md:w-[280px] group relative overflow-hidden rounded-2xl aspect-[9/16] bg-neutral-900 border border-brand-500/10 shadow-[0_0_30px_rgba(197,168,159,0.05)] md:-translate-y-4">
+                <figure class="snap-center shrink-0 w-[80vw] max-w-[300px] group relative overflow-hidden rounded-2xl aspect-[9/16] bg-neutral-900 border border-brand-500/10 shadow-[0_0_30px_rgba(197,168,159,0.05)] md:-translate-y-4">
                     <video src="https://testeessencia.carrd.co/assets/videos/video13.mp4?v=36e3212d" autoplay loop muted playsinline class="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105 pointer-events-none"></video>
                 </figure>
-                <figure class="snap-center shrink-0 w-[75vw] md:w-[280px] group relative overflow-hidden rounded-2xl aspect-[9/16] bg-neutral-900 border border-brand-500/10 shadow-[0_0_30px_rgba(197,168,159,0.05)]">
+                <figure class="snap-center shrink-0 w-[80vw] max-w-[300px] group relative overflow-hidden rounded-2xl aspect-[9/16] bg-neutral-900 border border-brand-500/10 shadow-[0_0_30px_rgba(197,168,159,0.05)]">
                     <video src="https://testeessencia.carrd.co/assets/videos/video10.mp4?v=36e3212d" autoplay loop muted playsinline class="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105 pointer-events-none"></video>
                 </figure>
             </div>
         </section>
 
         <!-- FAQ: Quebra de Objeções -->
-        <section aria-labelledby="faq-title" class="w-full max-w-3xl reveal">
-            <h2 id="faq-title" class="text-center text-brand-100 font-serif text-3xl mb-10">Dúvidas Frequentes</h2>
+        <section aria-labelledby="faq-title" class="w-full max-w-3xl reveal mb-10">
+            <h2 id="faq-title" class="text-center text-brand-100 font-serif text-3xl md:text-4xl mb-10">Dúvidas Frequentes</h2>
             <div class="space-y-4">
                 <details class="bg-white/5 border border-white/10 rounded-xl group cursor-pointer">
-                    <summary class="list-none flex justify-between items-center p-6 font-medium text-white group-open:text-brand-500 transition-colors outline-none">
+                    <summary class="list-none flex justify-between items-center p-5 md:p-6 font-medium text-white group-open:text-brand-500 transition-colors outline-none text-sm md:text-base">
                         O alisamento tem formol? Arde o olho?
-                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180"></i>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-4"></i>
                     </summary>
-                    <div class="p-6 pt-0 text-gray-400 text-sm font-light border-t border-white/5 mt-2 leading-relaxed">
+                    <div class="p-5 md:p-6 pt-0 text-gray-400 text-sm font-light border-t border-white/5 mt-2 leading-relaxed">
                         Não! Nosso protocolo Liso Soberano 8K é 100% livre de formol. Ele não causa ardência nos olhos, não tem cheiro forte e é totalmente seguro para a saúde dos seus fios e couro cabeludo.
                     </div>
                 </details>
                 <details class="bg-white/5 border border-white/10 rounded-xl group cursor-pointer">
-                    <summary class="list-none flex justify-between items-center p-6 font-medium text-white group-open:text-brand-500 transition-colors outline-none">
+                    <summary class="list-none flex justify-between items-center p-5 md:p-6 font-medium text-white group-open:text-brand-500 transition-colors outline-none text-sm md:text-base">
                         Meu cabelo é loiro/descolorido, posso fazer? Vai desbotar?
-                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180"></i>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-4"></i>
                     </summary>
-                    <div class="p-6 pt-0 text-gray-400 text-sm font-light border-t border-white/5 mt-2 leading-relaxed">
+                    <div class="p-5 md:p-6 pt-0 text-gray-400 text-sm font-light border-t border-white/5 mt-2 leading-relaxed">
                         Sim, pode fazer tranquilamente! Trabalhamos com produtos específicos e controle térmico exato para cabelos loiros e com mechas, garantindo o alisamento sem amarelar ou oxidar a cor do seu cabelo.
                     </div>
                 </details>
                 <details class="bg-white/5 border border-white/10 rounded-xl group cursor-pointer">
-                    <summary class="list-none flex justify-between items-center p-6 font-medium text-white group-open:text-brand-500 transition-colors outline-none">
+                    <summary class="list-none flex justify-between items-center p-5 md:p-6 font-medium text-white group-open:text-brand-500 transition-colors outline-none text-sm md:text-base">
                         Quanto tempo dura o efeito liso?
-                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180"></i>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-4"></i>
                     </summary>
-                    <div class="p-6 pt-0 text-gray-400 text-sm font-light border-t border-white/5 mt-2 leading-relaxed">
+                    <div class="p-5 md:p-6 pt-0 text-gray-400 text-sm font-light border-t border-white/5 mt-2 leading-relaxed">
                         A durabilidade média é de 3 a 6 meses, dependendo do crescimento da sua raiz e dos cuidados em casa (uso de shampoos adequados e cronograma capilar). A parte alisada não volta a enrolar, fazemos apenas o retoque de raiz!
                     </div>
                 </details>
@@ -538,18 +537,18 @@
         </section>
 
         <!-- SEO Texto Orgânico Oculto/Discreto -->
-        <section class="w-full max-w-4xl text-center text-gray-500 text-xs mt-20 px-4 reveal">
+        <section class="w-full max-w-4xl text-center text-gray-500 text-[10px] md:text-xs mt-16 md:mt-20 px-4 reveal">
             <h3 class="font-bold mb-3 text-gray-400 uppercase tracking-widest">Por que somos considerados o melhor salão de Chapecó?</h3>
             <p class="leading-relaxed">A Essência de Romã Hair é referência no Centro de Chapecó - SC em alisamento capilar saudável e estético. Se você busca por uma progressiva sem formol, semi definitiva de alta durabilidade ou tratamentos de reconstrução profunda e controle de frizz como o Glass Molecular, nosso espaço oferece tecnologia de ponta e profissionais altamente capacitados para transformar a saúde e a beleza dos seus fios com total segurança.</p>
         </section>
     </main>
 
     <!-- Botão WhatsApp Flutuante Simples (UX Limpa) -->
-    <aside aria-label="Contato Rápido" class="fixed bottom-6 right-6 z-50">
+    <aside aria-label="Contato Rápido" class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50">
         <a href="#" 
            onclick="return gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1%2C%20Ess%C3%AAncia%20de%20Rom%C3%A3%20Hair%21%20Gostaria%20de%20garantir%20meu%20Voucher%20do%20M%C3%AAs%20das%20M%C3%A3es.')"
-           class="flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:bg-[#1EBE5D] transition-transform hover:scale-110 animate-bounce group">
-            <svg viewBox="0 0 24 24" class="w-9 h-9 fill-current" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+           class="flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] text-white rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:bg-[#1EBE5D] transition-transform hover:scale-110 animate-bounce group">
+            <svg viewBox="0 0 24 24" class="w-8 h-8 md:w-9 md:h-9 fill-current" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
             </svg>
             <span class="sr-only">Agendar pelo WhatsApp</span>
@@ -557,7 +556,7 @@
     </aside>
 
     <!-- Rodapé & Política de Privacidade -->
-    <footer class="relative z-10 py-12 mt-10 border-t border-white/5 text-center text-gray-500 text-sm bg-brand-950/80 backdrop-blur-md">
+    <footer class="relative z-10 py-12 border-t border-white/5 text-center text-gray-500 text-sm bg-brand-950/80 backdrop-blur-md">
         <h4 class="font-serif text-2xl text-brand-100 mb-4 opacity-80">Essência de Romã Hair</h4>
         <p>&copy; 2026 Todos os direitos reservados.</p>
         <p class="mt-2 flex items-center justify-center gap-1 font-medium text-gray-400 mb-10">
@@ -565,7 +564,7 @@
         </p>
 
         <!-- Política de Privacidade (Sanfona) -->
-        <div class="max-w-3xl mx-auto px-4">
+        <div class="max-w-3xl mx-auto px-4 pb-6">
             <details class="text-left bg-black/30 border border-white/5 rounded-xl p-5 cursor-pointer group hover:bg-black/50 transition-colors">
                 <summary class="font-semibold text-gray-400 group-hover:text-white transition-colors list-none flex justify-between items-center outline-none">
                     <span class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-brand-500"></i> Política de Privacidade e Termos de Uso</span>
@@ -595,7 +594,7 @@
                         entry.target.classList.add('active');
                     }
                 });
-            }, { threshold: 0.15 });
+            }, { threshold: 0.1 });
             
             reveals.forEach(reveal => revealOnScroll.observe(reveal));
         });
