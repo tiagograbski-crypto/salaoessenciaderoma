@@ -5,6 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Essência de Romã Hair - Especial Alisamento</title>
     
+    <!-- Meta Domain Verification -->
+    <meta name="facebook-domain-verification" content="qv2s2b5jb5v1cswia122tvhz9cd2bw" />
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '639959835745383');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=639959835745383&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11442509118"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-11442509118');
+    </script>
+
+    <!-- Event snippet for Compra conversion page (Load) -->
+    <script>
+    gtag('event', 'conversion', {
+    'send_to': 'AW-11442509118/CNfICPrhpYAZEL6qm9Aq',
+    'transaction_id': ''
+    });
+    </script>
+
+    <!-- Event snippet for Compra conversion page (Click) -->
+    <script>
+    function gtag_report_conversion(url) {
+        var callback = function () {
+            if (typeof(url) != 'undefined') {
+                window.open(url, '_blank'); // Modificado para abrir o WhatsApp em nova aba
+            }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-11442509118/CNfICPrhpYAZEL6qm9Aq',
+            'transaction_id': '',
+            'event_callback': callback
+        });
+        return false;
+    }
+    </script>
+    
     <!-- Tailwind CSS para estilização rápida e responsiva -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -30,7 +86,7 @@
                             50: '#fdf8f6',
                             100: '#f2e8e5',
                             500: '#c5a89f',
-                            900: '#1a1413', /* Modo Noite profundo */
+                            900: '#1a1413',
                             950: '#0f0c0b',
                         }
                     }
@@ -42,7 +98,6 @@
         body {
             background-color: #0f0c0b;
         }
-        /* Animações de entrada suaves */
         .fade-in {
             animation: fadeIn 1s ease-in-out forwards;
             opacity: 0;
@@ -56,7 +111,6 @@
         .delay-3 { animation-delay: 0.6s; }
         .delay-4 { animation-delay: 0.8s; }
 
-        /* Customização da barra do slider de Antes/Depois para mobile e desktop */
         input[type=range]::-webkit-slider-thumb {
             pointer-events: all;
             width: 50px;
@@ -68,27 +122,25 @@
 </head>
 <body class="text-white font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden">
 
-    <!-- Imagem de Fundo (Capa) com Overlay Modo Noite -->
+    <!-- Imagem de Fundo (Capa) -->
     <div class="fixed inset-0 z-0">
-        <img src="https://testeessencia.carrd.co/assets/images/image37.jpg?v=54da9d95" alt="Fundo Essência de Romã" class="w-full h-full object-cover" />
-        <!-- Gradiente escuro para garantir leitura perfeita (Modo Noite) -->
+        <img src="https://testeessencia.carrd.co/assets/images/image37.jpg?v=54da9d95" alt="Ambiente Essência de Romã Hair Chapecó" class="w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-b from-brand-950/90 via-brand-950/80 to-brand-950 backdrop-blur-[2px]"></div>
     </div>
 
-    <!-- Conteúdo Principal -->
-    <main class="relative z-10 flex-grow flex flex-col items-center justify-center px-4 py-16 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
+    <!-- Conteúdo Principal - Funil de Conversão -->
+    <main class="relative z-10 flex-grow flex flex-col items-center justify-center px-4 py-12 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
         
-        <!-- Cabeçalho Funil -->
-        <header class="text-center fade-in max-w-3xl">
+        <!-- Cabeçalho & Urgência -->
+        <header class="text-center fade-in max-w-4xl w-full">
             
-            <!-- Aviso de Status (Verde/Online) -->
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-500/10 text-green-400 border border-green-500/20 mb-4 text-xs font-semibold tracking-wide uppercase shadow-[0_0_15px_rgba(34,197,94,0.1)]">
                 <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
                 Estamos Online • Agendamentos Abertos
             </div>
             <br>
             
-            <!-- Gatilho de Urgência Extrema e Dias -->
+            <!-- Gatilho de Urgência Extrema -->
             <div class="flex flex-col sm:flex-row items-center gap-3 mb-8 justify-center">
                 <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 text-sm font-bold tracking-wide uppercase shadow-[0_0_20px_rgba(239,68,68,0.2)] animate-pulse">
                     <i data-lucide="alert-circle" class="w-4 h-4"></i>
@@ -96,100 +148,79 @@
                 </div>
                 <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 text-gray-300 border border-white/10 text-sm font-semibold tracking-wide uppercase">
                     <i data-lucide="clock" class="w-4 h-4 text-red-400 animate-pulse"></i>
-                    Válido SOMENTE 10,11 e 12 Março
+                    Válido SOMENTE <span id="dynamic-dates">carregando...</span>
                 </div>
             </div>
-            
-            <h1 class="text-5xl md:text-6xl font-serif font-bold text-white mb-4 tracking-tight">
-                Essência de Romã <span class="text-brand-500 font-light italic">Hair</span>
-            </h1>
-            
-            <p class="text-xl md:text-2xl text-gray-300 mb-12 font-light leading-relaxed">
-                Descubra o <strong class="text-white font-medium">LISO SOBERANO 8K</strong>. Resultados reais, sem danos, no Centro de Chapecó.
-            </p>
+
+            <!-- OFERTA PRINCIPAL: Voucher Mês das Mães (Trabalhado) -->
+            <div class="w-full bg-gradient-to-r from-pink-900/40 via-purple-900/40 to-pink-900/40 border border-pink-500/50 rounded-3xl p-10 mb-12 shadow-[0_0_50px_rgba(236,72,153,0.2)] relative overflow-hidden text-center transform transition-transform hover:scale-[1.02]">
+                <div class="absolute -top-20 -left-20 w-48 h-48 bg-pink-500/20 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-20 -right-20 w-48 h-48 bg-purple-500/20 rounded-full blur-3xl"></div>
+                
+                <h2 class="text-pink-300 font-bold tracking-widest uppercase text-sm mb-4 flex items-center justify-center gap-2 drop-shadow-md">
+                    <i data-lucide="gift" class="w-4 h-4"></i> A Maior Campanha do Ano
+                </h2>
+                <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-4 tracking-tight drop-shadow-lg">
+                    VOUCHER <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">MÊS DAS MÃES</span>
+                </h1>
+                <p class="text-gray-200 text-lg md:text-xl font-light max-w-2xl mx-auto relative z-10">
+                    O mais alto padrão em Alisamento e Tratamento Capilar no Centro de Chapecó. Presenteie-se com a sua melhor versão.
+                </p>
+            </div>
         </header>
 
-        <!-- Componente Interativo: Antes e Depois -->
-        <section aria-labelledby="antes-depois-title" class="w-full max-w-3xl fade-in delay-1 mb-16 relative">
-            <h2 id="antes-depois-title" class="sr-only">Comparativo Antes e Depois</h2>
-            <h3 class="text-center text-brand-100 font-serif text-2xl mb-6 italic opacity-90" aria-hidden="true">Deslize e veja a transformação</h3>
+        <!-- IMAGENS PRIMEIRO: Impacto Visual Imediato -->
+        <section aria-labelledby="galeria-title" class="w-full mb-20 fade-in delay-1">
+            <h2 id="galeria-title" class="sr-only">Nosso Padrão de Excelência em Fotos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <figure class="group relative overflow-hidden rounded-2xl aspect-[3/4] bg-neutral-900 border border-white/5 shadow-2xl">
+                    <img src="https://testeessencia.carrd.co/assets/images/image65.jpg?v=54da9d95" alt="Cabelo com Brilho Espelhado Chapecó" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                    <figcaption class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-medium text-lg font-serif">Brilho Espelhado</span>
+                    </figcaption>
+                </figure>
+                <figure class="group relative overflow-hidden rounded-2xl aspect-[3/4] bg-neutral-900 border border-white/5 md:-translate-y-6 shadow-2xl">
+                    <img src="https://testeessencia.carrd.co/assets/images/image31.jpg?v=54da9d95" alt="Alisamento Perfeito Essência de Romã" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                    <figcaption class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-medium text-lg font-serif">Textura Impecável</span>
+                    </figcaption>
+                </figure>
+                <figure class="group relative overflow-hidden rounded-2xl aspect-[3/4] bg-neutral-900 border border-white/5 shadow-2xl">
+                    <img src="https://testeessencia.carrd.co/assets/images/image23.jpg?v=54da9d95" alt="Cabelo Saudável Pós Química" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                    <figcaption class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-medium text-lg font-serif">Fios 100% Saudáveis</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- SERVIÇO 1: Liso Soberano 8K -->
+        <section aria-labelledby="liso-8k-title" class="w-full max-w-4xl bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-10 fade-in delay-2 shadow-2xl relative overflow-hidden mb-20">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-brand-500/20 blur-[100px] pointer-events-none"></div>
             
-            <!-- Container do Slider -->
-            <div class="relative w-full aspect-[4/5] md:aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 select-none touch-none group">
-                <!-- Imagem Antes (Fundo) -->
-                <img src="https://testeessencia.carrd.co/assets/images/image48.jpg?v=54da9d95" alt="Cabelo Antes" class="absolute inset-0 w-full h-full object-cover select-none pointer-events-none">
-                
-                <!-- Imagem Depois (Frente com corte dinâmico via clip-path) -->
-                <img src="https://testeessencia.carrd.co/assets/images/image49.jpg?v=54da9d95" alt="Cabelo Depois" id="after-img" class="absolute inset-0 w-full h-full object-cover select-none pointer-events-none" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
-                
-                <!-- Input Range Invisível (Controlador) -->
-                <input type="range" min="0" max="100" value="50" id="slider" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20 m-0">
-                
-                <!-- Linha Divisória Visual -->
-                <div id="slider-line" class="absolute top-0 bottom-0 left-[50%] w-1 bg-white/80 z-10 pointer-events-none transform -translate-x-1/2 flex items-center justify-center shadow-[0_0_10px_rgba(0,0,0,0.5)]">
-                    <!-- Botão Central da Linha -->
+            <header class="text-center mb-10 relative z-10">
+                <h2 id="liso-8k-title" class="text-4xl md:text-5xl font-serif text-brand-50 mb-4">Liso Soberano 8K</h2>
+                <p class="text-gray-300 text-lg md:text-xl font-light">Alisamento 100% livre de formol. Resultado definitivo, seguro para loiras e com um liso espelhado de alta performance.</p>
+            </header>
+
+            <!-- Slider Interativo 1: Liso 8K -->
+            <div class="relative w-full max-w-3xl mx-auto aspect-[4/5] md:aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 select-none touch-none group before-after-container mb-12">
+                <img src="https://testeessencia.carrd.co/assets/images/image48.jpg?v=54da9d95" alt="Cabelo Antes do Liso 8K" class="absolute inset-0 w-full h-full object-cover select-none pointer-events-none">
+                <img src="https://testeessencia.carrd.co/assets/images/image49.jpg?v=54da9d95" alt="Cabelo Depois do Liso 8K" class="after-img absolute inset-0 w-full h-full object-cover select-none pointer-events-none" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+                <input type="range" min="0" max="100" value="50" class="slider-input absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20 m-0" aria-label="Arraste para comparar Antes e Depois">
+                <div class="slider-line absolute top-0 bottom-0 left-[50%] w-1 bg-white/80 z-10 pointer-events-none transform -translate-x-1/2 flex items-center justify-center shadow-[0_0_10px_rgba(0,0,0,0.5)]">
                     <div class="w-10 h-10 bg-white rounded-full shadow-xl flex items-center justify-center text-brand-900 ring-4 ring-white/30 transition-transform group-hover:scale-110">
                         <i data-lucide="chevrons-left-right" class="w-6 h-6"></i>
                     </div>
                 </div>
-
-                <!-- Etiquetas Visuais -->
                 <div class="absolute top-4 left-4 z-10 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold tracking-wider pointer-events-none">DEPOIS</div>
                 <div class="absolute top-4 right-4 z-10 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold tracking-wider pointer-events-none">ANTES</div>
             </div>
-        </section>
 
-        <!-- PROVA SOCIAL: Depoimentos (Gatilho de Confiança) -->
-        <section aria-labelledby="depoimentos-title" class="w-full max-w-4xl fade-in delay-2 mb-16">
-            <h2 id="depoimentos-title" class="text-center text-brand-100 font-serif text-2xl mb-8 italic opacity-90">O que dizem nossas clientes</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Depoimento 1 -->
-                <div class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm relative">
-                    <div class="flex gap-1 text-yellow-400 mb-3">
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    </div>
-                    <p class="text-gray-300 text-sm font-light italic mb-4">"O melhor liso que já fiz na vida! Zero cheiro de química, não ardeu nada e o brilho está surreal. Vale cada centavo."</p>
-                    <p class="text-brand-500 text-xs font-bold uppercase">— Ana Carolina S.</p>
-                </div>
-                <!-- Depoimento 2 -->
-                <div class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm relative">
-                    <div class="flex gap-1 text-yellow-400 mb-3">
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    </div>
-                    <p class="text-gray-300 text-sm font-light italic mb-4">"Tinha medo de afinar as pontas porque meu cabelo é loiro, mas o Liso 8K além de não desbotar, deixou o fio super encorpado!"</p>
-                    <p class="text-brand-500 text-xs font-bold uppercase">— Mariana T.</p>
-                </div>
-                <!-- Depoimento 3 -->
-                <div class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm relative">
-                    <div class="flex gap-1 text-yellow-400 mb-3">
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    </div>
-                    <p class="text-gray-300 text-sm font-light italic mb-4">"O atendimento da Jô e da Vanessa são excepcionais, e o espaço é muito aconchegante! Aproveitei a promoção do mês da mulher e já quero voltar sempre."</p>
-                    <p class="text-brand-500 text-xs font-bold uppercase">— Júlia R.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Tabela de Preços (Semântica 2.0 e Valores em Verde) -->
-        <section id="oferta" aria-labelledby="oferta-title" class="w-full max-w-4xl bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-10 fade-in delay-2 shadow-2xl relative overflow-hidden">
-            <h2 id="oferta-title" class="sr-only">Valores e Investimento por Perfil</h2>
-            
-            <!-- Efeito de brilho de fundo -->
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-brand-500/20 blur-[100px] pointer-events-none"></div>
-
+            <!-- Tabela de Preços -->
             <div class="relative z-10">
-                <h3 class="text-center text-3xl font-serif text-brand-50 mb-4" aria-hidden="true">Investimento por Perfil</h3>
+                <h3 class="text-center text-2xl font-serif text-brand-50 mb-8" aria-hidden="true">Tabela de Investimento - Liso 8K</h3>
                 
-                <!-- Destaque Mês da Mulher -->
-                <div class="flex justify-center mb-10">
-                    <span class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/30 text-pink-300 font-bold uppercase tracking-widest shadow-[0_0_20px_rgba(236,72,153,0.15)]">
-                        <i data-lucide="sparkles" class="w-5 h-5 text-pink-400"></i>
-                        Condição Especial: Mês da Mulher
-                        <i data-lucide="sparkles" class="w-5 h-5 text-pink-400"></i>
-                    </span>
-                </div>
-                
-                <!-- Cabeçalho da Tabela (Desktop) -->
                 <div class="hidden md:grid grid-cols-4 gap-4 py-3 border-b border-brand-500/30 text-xs font-semibold text-brand-500 uppercase tracking-wider mb-2" role="row">
                     <div role="columnheader">Perfil / Tamanho</div>
                     <div role="columnheader">Fibra Fina<br><span class="text-[10px] font-normal text-gray-400 capitalize">Baixa Densidade</span></div>
@@ -315,25 +346,100 @@
                 </article>
             </div>
 
-            <!-- Botão de Ação Inferior (WhatsApp com link pré-formatado) -->
+            <!-- Botão CTA Alto CTR Liso 8K -->
             <div class="mt-10 flex flex-col items-center border-t border-white/10 pt-8">
-                <a href="https://wa.me/5549999954052?text=Ol%C3%A1%2C%20Ess%C3%AAncia%20de%20Rom%C3%A3%20Hair%21%20Gostaria%20de%20garantir%20uma%20das%204%20vagas%20restantes%20para%20a%20condi%C3%A7%C3%A3o%20do%20M%C3%AAs%20da%20Mulher." 
-                   target="_blank"
+                <a href="#" 
+                   onclick="return gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1%2C%20Ess%C3%AAncia%20de%20Rom%C3%A3%20Hair%21%20Quero%20resgatar%20meu%20Voucher%20do%20M%C3%AAs%20das%20M%C3%A3es%20para%20o%20LISO%20SOBERANO%208K.')"
                    class="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-10 py-5 bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-full font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(37,211,102,0.3)] group">
-                    <i data-lucide="calendar-check" class="w-7 h-7 group-hover:animate-pulse"></i>
-                    Garantir Minha Vaga Agora
+                    <i data-lucide="gift" class="w-7 h-7 group-hover:animate-bounce"></i>
+                    Resgatar Voucher Liso 8K
                 </a>
-                <p class="mt-4 text-sm text-pink-400 font-medium flex items-center gap-2">
-                    <i data-lucide="alert-circle" class="w-4 h-4"></i> Restam apenas 4 vagas com este valor
-                </p>
+            </div>
+        </section>
+
+        <!-- SERVIÇO 2: Glass Molecular -->
+        <section aria-labelledby="glass-molecular-title" class="w-full max-w-4xl bg-gradient-to-b from-neutral-900 to-[#1a1413] backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-10 fade-in delay-2 shadow-2xl relative overflow-hidden mb-20">
+            <header class="text-center mb-10 relative z-10">
+                <h2 id="glass-molecular-title" class="text-4xl md:text-5xl font-serif text-brand-50 mb-4">Tratamento Glass Molecular</h2>
+                <p class="text-gray-300 text-lg md:text-xl font-light">O tratamento definitivo contra o frizz para quem <strong class="text-white font-medium">não quer alisar</strong> o cabelo. O Glass Molecular elimina o "ruído visual" dos fios rebeldes, devolvendo sedosidade e um brilho espelhado surreal. Nossa finalização especial com escova revela um cabelo luxuoso, tratado e 100% alinhado.</p>
+            </header>
+
+            <!-- Slider Interativo 2: Glass Molecular -->
+            <div class="relative w-full max-w-3xl mx-auto aspect-[4/5] md:aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 select-none touch-none group before-after-container mb-12">
+                <img src="https://testeessencia.carrd.co/assets/images/image24.jpg?v=36e3212d" alt="Cabelo Danificado Antes do Glass Molecular" class="absolute inset-0 w-full h-full object-cover select-none pointer-events-none">
+                <img src="https://testeessencia.carrd.co/assets/images/image28.jpg?v=36e3212d" alt="Cabelo Tratado Depois do Glass Molecular" class="after-img absolute inset-0 w-full h-full object-cover select-none pointer-events-none" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+                <input type="range" min="0" max="100" value="50" class="slider-input absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20 m-0" aria-label="Arraste para comparar Antes e Depois Glass Molecular">
+                <div class="slider-line absolute top-0 bottom-0 left-[50%] w-1 bg-white/80 z-10 pointer-events-none transform -translate-x-1/2 flex items-center justify-center shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+                    <div class="w-10 h-10 bg-white rounded-full shadow-xl flex items-center justify-center text-brand-900 ring-4 ring-white/30 transition-transform group-hover:scale-110">
+                        <i data-lucide="chevrons-left-right" class="w-6 h-6"></i>
+                    </div>
+                </div>
+                <div class="absolute top-4 left-4 z-10 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold tracking-wider pointer-events-none">DEPOIS</div>
+                <div class="absolute top-4 right-4 z-10 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold tracking-wider pointer-events-none">ANTES</div>
+            </div>
+
+            <!-- Botão CTA Alto CTR Glass Molecular -->
+            <div class="mt-10 flex flex-col items-center pt-4">
+                <a href="#" 
+                   onclick="return gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1%2C%20Ess%C3%AAncia%20de%20Rom%C3%A3%20Hair%21%20Quero%20resgatar%20meu%20Voucher%20do%20M%C3%AAs%20das%20M%C3%A3es%20para%20o%20tratamento%20GLASS%20MOLECULAR.')"
+                   class="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-10 py-5 bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-full font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(37,211,102,0.3)] group">
+                    <i data-lucide="sparkles" class="w-7 h-7 group-hover:animate-spin-slow"></i>
+                    Resgatar Voucher Glass Molecular
+                </a>
+            </div>
+        </section>
+
+        <!-- PROVA SOCIAL: Depoimentos -->
+        <section aria-labelledby="depoimentos-title" class="w-full max-w-4xl fade-in delay-2 mb-16">
+            <h2 id="depoimentos-title" class="text-center text-brand-100 font-serif text-2xl mb-8 italic opacity-90">O que dizem nossas clientes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Depoimento 1 -->
+                <article class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm relative">
+                    <div class="flex gap-1 text-yellow-400 mb-3" aria-label="5 estrelas">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm font-light italic mb-4">"O melhor liso que já fiz na vida! Zero cheiro de química, não ardeu nada e o brilho está surreal. Vale cada centavo."</p>
+                    <p class="text-brand-500 text-xs font-bold uppercase">— Ana Carolina S.</p>
+                </article>
+                <!-- Depoimento 2 -->
+                <article class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm relative">
+                    <div class="flex gap-1 text-yellow-400 mb-3" aria-label="5 estrelas">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm font-light italic mb-4">"Tinha medo de afinar as pontas porque meu cabelo é loiro, mas o Liso 8K além de não desbotar, deixou o fio super encorpado!"</p>
+                    <p class="text-brand-500 text-xs font-bold uppercase">— Mariana T.</p>
+                </article>
+                <!-- Depoimento 3 -->
+                <article class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm relative">
+                    <div class="flex gap-1 text-yellow-400 mb-3" aria-label="5 estrelas">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm font-light italic mb-4">"O atendimento da Jô e da Vanessa são excepcionais, e o espaço é muito aconchegante! Aproveitei a promoção do mês da mulher e já quero voltar sempre."</p>
+                    <p class="text-brand-500 text-xs font-bold uppercase">— Júlia R.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Vídeos de Resultados em Movimento -->
+        <section aria-labelledby="videos-title" class="w-full mt-10 fade-in delay-3 mb-20">
+            <h2 id="videos-title" class="text-center text-brand-100 font-serif text-2xl mb-10 italic opacity-80">Veja o balanço e a textura real</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <figure class="group relative overflow-hidden rounded-2xl aspect-[9/16] bg-neutral-900 border border-white/5 shadow-2xl">
+                    <video src="https://testeessencia.carrd.co/assets/videos/video12.mp4?v=36e3212d" controls playsinline preload="metadata" class="w-full h-full object-cover"></video>
+                </figure>
+                <figure class="group relative overflow-hidden rounded-2xl aspect-[9/16] bg-neutral-900 border border-white/5 md:-translate-y-6 shadow-2xl">
+                    <video src="https://testeessencia.carrd.co/assets/videos/video13.mp4?v=36e3212d" controls playsinline preload="metadata" class="w-full h-full object-cover"></video>
+                </figure>
+                <figure class="group relative overflow-hidden rounded-2xl aspect-[9/16] bg-neutral-900 border border-white/5 shadow-2xl">
+                    <video src="https://testeessencia.carrd.co/assets/videos/video10.mp4?v=36e3212d" controls playsinline preload="metadata" class="w-full h-full object-cover"></video>
+                </figure>
             </div>
         </section>
 
         <!-- FAQ: Quebra de Objeções -->
-        <section aria-labelledby="faq-title" class="w-full max-w-3xl mt-20 fade-in delay-3">
+        <section aria-labelledby="faq-title" class="w-full max-w-3xl fade-in delay-3">
             <h2 id="faq-title" class="text-center text-brand-100 font-serif text-3xl mb-8">Dúvidas Frequentes</h2>
             <div class="space-y-4">
-                <!-- Pergunta 1 -->
                 <details class="bg-white/5 border border-white/10 rounded-xl group cursor-pointer">
                     <summary class="list-none flex justify-between items-center p-5 font-medium text-white group-open:text-brand-500 transition-colors">
                         O alisamento tem formol? Arde o olho?
@@ -343,7 +449,6 @@
                         Não! Nosso protocolo Liso Soberano 8K é 100% livre de formol. Ele não causa ardência nos olhos, não tem cheiro forte e é totalmente seguro para a saúde dos seus fios e couro cabeludo.
                     </div>
                 </details>
-                <!-- Pergunta 2 -->
                 <details class="bg-white/5 border border-white/10 rounded-xl group cursor-pointer">
                     <summary class="list-none flex justify-between items-center p-5 font-medium text-white group-open:text-brand-500 transition-colors">
                         Meu cabelo é loiro/descolorido, posso fazer? Vai desbotar?
@@ -353,7 +458,6 @@
                         Sim, pode fazer tranquilamente! Trabalhamos com produtos específicos e controle térmico exato para cabelos loiros e com mechas, garantindo o alisamento sem amarelar ou oxidar a cor do seu cabelo.
                     </div>
                 </details>
-                <!-- Pergunta 3 -->
                 <details class="bg-white/5 border border-white/10 rounded-xl group cursor-pointer">
                     <summary class="list-none flex justify-between items-center p-5 font-medium text-white group-open:text-brand-500 transition-colors">
                         Quanto tempo dura o efeito liso?
@@ -366,79 +470,99 @@
             </div>
         </section>
 
-        <!-- Galeria de Imagens (Resultado Final) -->
-        <section aria-labelledby="galeria-title" class="w-full mt-24 fade-in delay-3">
-            <h2 id="galeria-title" class="text-center text-brand-100 font-serif text-2xl mb-10 italic opacity-80">Nosso padrão de excelência</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Imagem 1 (Card image65) -->
-                <div class="group relative overflow-hidden rounded-2xl aspect-[3/4] bg-neutral-900 border border-white/5">
-                    <img src="https://testeessencia.carrd.co/assets/images/image65.jpg?v=54da9d95" alt="Resultado Essência de Romã" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <span class="text-white font-medium text-lg font-serif">Brilho Espelhado</span>
-                    </div>
-                </div>
-                <!-- Imagem 2 (Card image31) -->
-                <div class="group relative overflow-hidden rounded-2xl aspect-[3/4] bg-neutral-900 border border-white/5 md:-translate-y-6 shadow-2xl">
-                    <img src="https://testeessencia.carrd.co/assets/images/image31.jpg?v=54da9d95" alt="Alisamento Essência de Romã" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <span class="text-white font-medium text-lg font-serif">Textura Impecável</span>
-                    </div>
-                </div>
-                <!-- Imagem 3 (Card image23) -->
-                <div class="group relative overflow-hidden rounded-2xl aspect-[3/4] bg-neutral-900 border border-white/5">
-                    <img src="https://testeessencia.carrd.co/assets/images/image23.jpg?v=54da9d95" alt="Finalização Essência de Romã" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <span class="text-white font-medium text-lg font-serif">Fios Saudáveis</span>
-                    </div>
-                </div>
-            </div>
+        <!-- SEO Texto Orgânico Oculto/Discreto -->
+        <section class="w-full max-w-4xl text-center text-gray-500 text-xs mt-16 px-4">
+            <h3 class="font-bold mb-2 text-gray-400">Por que somos considerados o melhor salão de Chapecó?</h3>
+            <p>A Essência de Romã Hair é referência no Centro de Chapecó - SC em alisamento capilar saudável e estético. Se você busca por uma progressiva sem formol, semi definitiva de alta durabilidade ou tratamentos de reconstrução profunda e controle de frizz como o Glass Molecular, nosso espaço oferece tecnologia de ponta e profissionais altamente capacitados para transformar a saúde e a beleza dos seus fios com total segurança.</p>
         </section>
     </main>
 
-    <!-- Botão WhatsApp Flutuante (Conversão e Acessibilidade) -->
+    <!-- Botão WhatsApp Flutuante com Rastreamento Google Ads -->
     <aside aria-label="Contato Rápido">
-        <a href="https://wa.me/5549999954052?text=Ol%C3%A1%2C%20Ess%C3%AAncia%20de%20Rom%C3%A3%20Hair%21%20Gostaria%20de%20garantir%20uma%20das%204%20vagas%20restantes%20para%20a%20condi%C3%A7%C3%A3o%20do%20M%C3%AAs%20da%20Mulher." 
-           target="_blank"
+        <a href="#" 
+           onclick="return gtag_report_conversion('https://wa.me/5549999954052?text=Ol%C3%A1%2C%20Ess%C3%AAncia%20de%20Rom%C3%A3%20Hair%21%20Gostaria%20de%20garantir%20meu%20Voucher%20do%20M%C3%AAs%20das%20M%C3%A3es.')"
            class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:bg-[#1EBE5D] transition-transform hover:scale-110 flex items-center justify-center animate-bounce group">
             
-            <!-- Logo oficial do WhatsApp (SVG) -->
-            <svg viewBox="0 0 24 24" class="w-9 h-9 fill-current" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 24 24" class="w-9 h-9 fill-current" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
             </svg>
             <span class="sr-only">Agendar pelo WhatsApp</span>
         </a>
     </aside>
 
-    <!-- Rodapé -->
+    <!-- Rodapé & Política de Privacidade (Obrigatório Google) -->
     <footer class="relative z-10 py-10 mt-10 border-t border-white/5 text-center text-gray-500 text-sm fade-in delay-4 bg-brand-950/80 backdrop-blur-md">
         <h4 class="font-serif text-xl text-brand-100 mb-4 opacity-80">Essência de Romã Hair</h4>
         <p>&copy; 2026 Todos os direitos reservados.</p>
-        <p class="mt-2 flex items-center justify-center gap-1 font-medium text-gray-400">
+        <p class="mt-2 flex items-center justify-center gap-1 font-medium text-gray-400 mb-8">
             <i data-lucide="map-pin" class="w-4 h-4 text-brand-500"></i> Centro de Chapecó, SC
         </p>
+
+        <!-- Política de Privacidade (Sanfona para não sair da página) -->
+        <div class="max-w-3xl mx-auto px-4">
+            <details class="text-left bg-black/30 border border-white/5 rounded-xl p-4 cursor-pointer group hover:bg-black/50 transition-colors">
+                <summary class="font-semibold text-gray-400 group-hover:text-white transition-colors list-none flex justify-between items-center outline-none">
+                    <span class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-brand-500"></i> Política de Privacidade e Termos de Uso</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-open:rotate-180"></i>
+                </summary>
+                <div class="mt-4 text-xs text-gray-500 leading-relaxed border-t border-white/10 pt-4">
+                    <p class="mb-2"><strong class="text-gray-400">1. Coleta de Dados:</strong> Coletamos informações básicas (como nome e WhatsApp) apenas quando você entra em contato voluntariamente conosco para agendamentos ou dúvidas através dos nossos botões de ação.</p>
+                    <p class="mb-2"><strong class="text-gray-400">2. Uso das Informações:</strong> Seus dados são utilizados exclusivamente para o fornecimento do serviço solicitado, confirmação de agendamentos no salão e envio de promoções (caso autorizado). Não vendemos ou alugamos seus dados para terceiros.</p>
+                    <p class="mb-2"><strong class="text-gray-400">3. Rastreamento e Cookies:</strong> Utilizamos cookies e pixels de rastreamento (Google Ads, Meta Pixel) para entender a interação com nosso site, medir conversões e otimizar campanhas publicitárias. Você pode desativar os cookies nas configurações do seu navegador a qualquer momento.</p>
+                    <p><strong class="text-gray-400">4. Aceitação:</strong> Ao continuar utilizando nossa Landing Page e nossos canais de atendimento, você concorda com os termos aqui descritos conforme a Lei Geral de Proteção de Dados (LGPD).</p>
+                </div>
+            </details>
+        </div>
     </footer>
 
-    <!-- Scripts (Ícones e Lógica do Slider Antes/Depois) -->
+    <!-- Scripts da Página -->
     <script>
         // Inicializar ícones do Lucide
         lucide.createIcons();
 
-        // Lógica do Slider Interativo (Antes e Depois)
+        // 1. Lógica Avançada para Múltiplos Sliders (Liso 8K e Glass Molecular)
         document.addEventListener('DOMContentLoaded', () => {
-            const slider = document.getElementById('slider');
-            const afterImg = document.getElementById('after-img');
-            const sliderLine = document.getElementById('slider-line');
+            const beforeAfterContainers = document.querySelectorAll('.before-after-container');
+            
+            beforeAfterContainers.forEach(container => {
+                const slider = container.querySelector('.slider-input');
+                const afterImg = container.querySelector('.after-img');
+                const sliderLine = container.querySelector('.slider-line');
 
-            // Atualiza o slider quando movido (tanto no toque do celular quanto no rato)
-            slider.addEventListener('input', (e) => {
-                const val = e.target.value;
-                // Ajusta o corte da imagem da frente revelando a de trás
-                afterImg.style.clipPath = `polygon(0 0, ${val}% 0, ${val}% 100%, 0 100%)`;
-                // Move a barra central divisória
-                sliderLine.style.left = `${val}%`;
+                if (slider && afterImg && sliderLine) {
+                    slider.addEventListener('input', (e) => {
+                        const val = e.target.value;
+                        afterImg.style.clipPath = `polygon(0 0, ${val}% 0, ${val}% 100%, 0 100%)`;
+                        sliderLine.style.left = `${val}%`;
+                    });
+                }
             });
         });
+
+        // 2. Lógica para as Datas Dinâmicas Automáticas (Pula Domingos)
+        function setDynamicDates() {
+            const months = ["Jan", "Fev", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+            let validDates = [];
+            let date = new Date();
+            
+            while(validDates.length < 3) {
+                if(date.getDay() !== 0) { // Ignora domingos
+                    validDates.push({ day: date.getDate(), month: months[date.getMonth()] });
+                }
+                date.setDate(date.getDate() + 1);
+            }
+            
+            let text = "";
+            if(validDates[0].month === validDates[2].month) {
+                text = `${validDates[0].day}, ${validDates[1].day} e ${validDates[2].day} de ${validDates[2].month}`;
+            } else {
+                text = `${validDates[0].day} de ${validDates[0].month}, ${validDates[1].day} e ${validDates[2].day} de ${validDates[2].month}`;
+            }
+            
+            document.getElementById('dynamic-dates').innerText = text;
+        }
+
+        setDynamicDates();
     </script>
 </body>
 </html>
-```
