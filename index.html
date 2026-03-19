@@ -301,7 +301,7 @@
         <!-- SEÇÃO LADO A LADO: OS DOIS SERVIÇOS PREMIUM -->
         <section id="oferta" class="w-full max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 px-4 mb-12 reveal items-stretch">
             
-            <!-- LISO SOBERANO 8K (Lado Esquerdo no Desktop) -->
+            <!-- LISO SOBERANO 8K -->
             <article aria-labelledby="liso-8k-title" class="flex flex-col h-full bg-white/80 dark:bg-[#1a1413]/60 backdrop-blur-2xl border border-brand-900/10 dark:border-white/5 hover:border-brand-500/30 dark:hover:border-brand-500/20 rounded-[2rem] p-6 sm:p-8 shadow-xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden transition-all duration-500 group">
                 <header class="text-center mb-8 relative z-10 flex-grow-0">
                     <h2 id="liso-8k-title" class="text-3xl sm:text-4xl md:text-5xl font-serif text-brand-950 dark:text-white mb-4 sm:mb-6 font-normal transition-colors">Liso Soberano 8K</h2>
@@ -344,7 +344,7 @@
                 </div>
             </article>
 
-            <!-- GLASS MOLECULAR (Lado Direito no Desktop) -->
+            <!-- GLASS MOLECULAR -->
             <article aria-labelledby="glass-molecular-title" class="flex flex-col h-full bg-white/80 dark:bg-[#1a1413]/60 backdrop-blur-2xl border border-brand-900/10 dark:border-white/5 hover:border-brand-500/30 dark:hover:border-brand-500/20 rounded-[2rem] p-6 sm:p-8 shadow-xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden transition-all duration-500 group">
                 <header class="text-center mb-8 relative z-10 flex-grow-0">
                     <h2 id="glass-molecular-title" class="text-3xl sm:text-4xl md:text-5xl font-serif text-brand-950 dark:text-white mb-4 sm:mb-6 font-normal transition-colors">Glass Molecular</h2>
@@ -367,7 +367,6 @@
                 <div class="mt-auto flex flex-col items-center pt-2 w-full transition-colors flex-grow-0">
                     <div class="flex flex-col gap-3 w-full max-w-sm mx-auto">
                         <div class="w-full flex items-center justify-center px-4 py-3 bg-transparent text-transparent select-none pointer-events-none text-xs sm:text-sm">
-                            <!-- Espaçador invisível para igualar a altura do botão "Ver Tabela" do card vizinho -->
                             &nbsp;
                         </div>
                         <a href="https://wa.me/5549999954052?text=Ol%C3%A1%2C%20Ess%C3%AAncia%20de%20Rom%C3%A3%20Hair%21%20Quero%20agendar%20meu%20GLASS%20MOLECULAR%20em%20Chapec%C3%B3." 
@@ -388,7 +387,7 @@
             </article>
         </section>
 
-        <!-- TABELA DE PREÇOS DEDICADA -->
+        <!-- TABELA DE PREÇOS DEDICADA COM ANCORAGEM NEURO-VENDAS -->
         <section id="tabela-valores" class="w-full max-w-4xl mx-auto mb-20 scroll-mt-[100px] px-4 reveal">
             <div class="bg-white/80 dark:bg-[#1a1413]/60 backdrop-blur-2xl border border-brand-900/10 dark:border-white/5 rounded-[2rem] p-6 sm:p-8 md:p-12 shadow-xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-colors duration-700">
                 <h3 class="text-center text-2xl md:text-3xl font-serif text-brand-900 dark:text-brand-100 mb-2 font-normal transition-colors">A Sua Transformação</h3>
@@ -410,128 +409,224 @@
                     </div>
                 </div>
 
-                <!-- Tabela Reformulada em Colunas/Lista para Total Responsividade -->
+                <!-- Tabela de Preços com Ancoragem Psicológica -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                     
                     <!-- 01. PERFIL P -->
-                    <article class="flex flex-col py-5 px-5 border border-brand-900/5 dark:border-white/5 bg-brand-50/30 dark:bg-white/5 rounded-2xl transition-colors">
+                    <article class="flex flex-col py-6 px-6 border border-brand-900/5 dark:border-white/5 bg-brand-50/30 dark:bg-white/5 rounded-2xl transition-colors shadow-sm">
                         <div class="mb-5 text-center border-b border-brand-900/5 dark:border-white/5 pb-4">
                             <h4 class="font-serif text-xl text-brand-950 dark:text-brand-100 font-medium transition-colors">01. Perfil P</h4>
                             <p class="text-[10px] text-brand-800 dark:text-gray-400 mt-1 font-light transition-colors uppercase tracking-widest">Até o Maxilar</p>
                         </div>
-                        <div class="flex flex-col gap-4">
-                            <div class="flex justify-between items-center">
-                                <span class="text-xs text-brand-800 dark:text-gray-300 font-light transition-colors">Fibra Fina</span>
-                                <div class="text-right">
-                                    <del class="text-[10px] text-brand-800/50 dark:text-gray-400 transition-colors price-old">De R$ 397</del>
-                                    <div class="text-base font-semibold text-[#128C7E] dark:text-[#25D366] transition-colors price-new">R$ 157</div>
+                        <div class="flex flex-col gap-5">
+                            <div class="flex justify-between items-center group/price">
+                                <span class="text-xs text-brand-800 dark:text-gray-300 font-medium transition-colors">Fibra Fina</span>
+                                <div class="text-right flex flex-col items-end">
+                                    <div class="flex items-center gap-2 mb-0.5">
+                                        <span class="text-[7px] font-bold text-white bg-brand-900 dark:bg-white dark:text-brand-950 px-1.5 py-0.5 rounded shadow-sm uppercase tracking-widest price-badge transition-colors">240 OFF</span>
+                                        <span class="sr-only">Preço normal:</span>
+                                        <del class="text-[10px] text-brand-800/40 dark:text-gray-500 font-medium transition-colors price-old">R$ 397</del>
+                                    </div>
+                                    <div class="flex items-baseline gap-1">
+                                        <span class="sr-only">Preço promocional:</span>
+                                        <span class="text-[9px] text-[#128C7E] dark:text-[#25D366] font-semibold price-new-currency transition-colors">R$</span>
+                                        <span class="text-2xl font-serif font-medium text-[#128C7E] dark:text-[#25D366] transition-colors price-new leading-none">157</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex justify-between items-center border-t border-brand-900/5 dark:border-white/5 pt-3">
-                                <span class="text-xs text-brand-800 dark:text-gray-300 font-light transition-colors">Fibra Média</span>
-                                <div class="text-right">
-                                    <del class="text-[10px] text-brand-800/50 dark:text-gray-400 transition-colors price-old">De R$ 497</del>
-                                    <div class="text-base font-semibold text-[#128C7E] dark:text-[#25D366] transition-colors price-new">R$ 197</div>
+                            <div class="flex justify-between items-center border-t border-brand-900/5 dark:border-white/5 pt-4 group/price">
+                                <span class="text-xs text-brand-800 dark:text-gray-300 font-medium transition-colors">Fibra Média</span>
+                                <div class="text-right flex flex-col items-end">
+                                    <div class="flex items-center gap-2 mb-0.5">
+                                        <span class="text-[7px] font-bold text-white bg-brand-900 dark:bg-white dark:text-brand-950 px-1.5 py-0.5 rounded shadow-sm uppercase tracking-widest price-badge transition-colors">300 OFF</span>
+                                        <span class="sr-only">Preço normal:</span>
+                                        <del class="text-[10px] text-brand-800/40 dark:text-gray-500 font-medium transition-colors price-old">R$ 497</del>
+                                    </div>
+                                    <div class="flex items-baseline gap-1">
+                                        <span class="sr-only">Preço promocional:</span>
+                                        <span class="text-[9px] text-[#128C7E] dark:text-[#25D366] font-semibold price-new-currency transition-colors">R$</span>
+                                        <span class="text-2xl font-serif font-medium text-[#128C7E] dark:text-[#25D366] transition-colors price-new leading-none">197</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex justify-between items-center border-t border-brand-900/5 dark:border-white/5 pt-3">
-                                <span class="text-xs text-brand-800 dark:text-gray-300 font-light transition-colors">Fibra Grossa</span>
-                                <div class="text-right">
-                                    <del class="text-[10px] text-brand-800/50 dark:text-gray-400 transition-colors price-old">De R$ 597</del>
-                                    <div class="text-base font-semibold text-[#128C7E] dark:text-[#25D366] transition-colors price-new">R$ 247</div>
+                            <div class="flex justify-between items-center border-t border-brand-900/5 dark:border-white/5 pt-4 group/price">
+                                <span class="text-xs text-brand-800 dark:text-gray-300 font-medium transition-colors">Fibra Grossa</span>
+                                <div class="text-right flex flex-col items-end">
+                                    <div class="flex items-center gap-2 mb-0.5">
+                                        <span class="text-[7px] font-bold text-white bg-brand-900 dark:bg-white dark:text-brand-950 px-1.5 py-0.5 rounded shadow-sm uppercase tracking-widest price-badge transition-colors">350 OFF</span>
+                                        <span class="sr-only">Preço normal:</span>
+                                        <del class="text-[10px] text-brand-800/40 dark:text-gray-500 font-medium transition-colors price-old">R$ 597</del>
+                                    </div>
+                                    <div class="flex items-baseline gap-1">
+                                        <span class="sr-only">Preço promocional:</span>
+                                        <span class="text-[9px] text-[#128C7E] dark:text-[#25D366] font-semibold price-new-currency transition-colors">R$</span>
+                                        <span class="text-2xl font-serif font-medium text-[#128C7E] dark:text-[#25D366] transition-colors price-new leading-none">247</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </article>
 
                     <!-- 02. PERFIL M -->
-                    <article class="flex flex-col py-5 px-5 border border-brand-900/5 dark:border-white/5 bg-brand-50/30 dark:bg-white/5 rounded-2xl transition-colors">
+                    <article class="flex flex-col py-6 px-6 border border-brand-900/5 dark:border-white/5 bg-brand-50/30 dark:bg-white/5 rounded-2xl transition-colors shadow-sm">
                         <div class="mb-5 text-center border-b border-brand-900/5 dark:border-white/5 pb-4">
                             <h4 class="font-serif text-xl text-brand-950 dark:text-brand-100 font-medium transition-colors">02. Perfil M</h4>
                             <p class="text-[10px] text-brand-800 dark:text-gray-400 mt-1 font-light transition-colors uppercase tracking-widest">Até os ombros</p>
                         </div>
-                        <div class="flex flex-col gap-4">
-                            <div class="flex justify-between items-center">
-                                <span class="text-xs text-brand-800 dark:text-gray-300 font-light transition-colors">Fibra Fina</span>
-                                <div class="text-right">
-                                    <del class="text-[10px] text-brand-800/50 dark:text-gray-400 transition-colors price-old">De R$ 597</del>
-                                    <div class="text-base font-semibold text-[#128C7E] dark:text-[#25D366] transition-colors price-new">R$ 299</div>
+                        <div class="flex flex-col gap-5">
+                            <div class="flex justify-between items-center group/price">
+                                <span class="text-xs text-brand-800 dark:text-gray-300 font-medium transition-colors">Fibra Fina</span>
+                                <div class="text-right flex flex-col items-end">
+                                    <div class="flex items-center gap-2 mb-0.5">
+                                        <span class="text-[7px] font-bold text-white bg-brand-900 dark:bg-white dark:text-brand-950 px-1.5 py-0.5 rounded shadow-sm uppercase tracking-widest price-badge transition-colors">298 OFF</span>
+                                        <span class="sr-only">Preço normal:</span>
+                                        <del class="text-[10px] text-brand-800/40 dark:text-gray-500 font-medium transition-colors price-old">R$ 597</del>
+                                    </div>
+                                    <div class="flex items-baseline gap-1">
+                                        <span class="sr-only">Preço promocional:</span>
+                                        <span class="text-[9px] text-[#128C7E] dark:text-[#25D366] font-semibold price-new-currency transition-colors">R$</span>
+                                        <span class="text-2xl font-serif font-medium text-[#128C7E] dark:text-[#25D366] transition-colors price-new leading-none">299</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex justify-between items-center border-t border-brand-900/5 dark:border-white/5 pt-3">
-                                <span class="text-xs text-brand-800 dark:text-gray-300 font-light transition-colors">Fibra Média</span>
-                                <div class="text-right">
-                                    <del class="text-[10px] text-brand-800/50 dark:text-gray-400 transition-colors price-old">De R$ 697</del>
-                                    <div class="text-base font-semibold text-[#128C7E] dark:text-[#25D366] transition-colors price-new">R$ 347</div>
+                            <div class="flex justify-between items-center border-t border-brand-900/5 dark:border-white/5 pt-4 group/price">
+                                <span class="text-xs text-brand-800 dark:text-gray-300 font-medium transition-colors">Fibra Média</span>
+                                <div class="text-right flex flex-col items-end">
+                                    <div class="flex items-center gap-2 mb-0.5">
+                                        <span class="text-[7px] font-bold text-white bg-brand-900 dark:bg-white dark:text-brand-950 px-1.5 py-0.5 rounded shadow-sm uppercase tracking-widest price-badge transition-colors">350 OFF</span>
+                                        <span class="sr-only">Preço normal:</span>
+                                        <del class="text-[10px] text-brand-800/40 dark:text-gray-500 font-medium transition-colors price-old">R$ 697</del>
+                                    </div>
+                                    <div class="flex items-baseline gap-1">
+                                        <span class="sr-only">Preço promocional:</span>
+                                        <span class="text-[9px] text-[#128C7E] dark:text-[#25D366] font-semibold price-new-currency transition-colors">R$</span>
+                                        <span class="text-2xl font-serif font-medium text-[#128C7E] dark:text-[#25D366] transition-colors price-new leading-none">347</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex justify-between items-center border-t border-brand-900/5 dark:border-white/5 pt-3">
-                                <span class="text-xs text-brand-800 dark:text-gray-300 font-light transition-colors">Fibra Grossa</span>
-                                <div class="text-right">
-                                    <del class="text-[10px] text-brand-800/50 dark:text-gray-400 transition-colors price-old">De R$ 797</del>
-                                    <div class="text-base font-semibold text-[#128C7E] dark:text-[#25D366] transition-colors price-new">R$ 397</div>
+                            <div class="flex justify-between items-center border-t border-brand-900/5 dark:border-white/5 pt-4 group/price">
+                                <span class="text-xs text-brand-800 dark:text-gray-300 font-medium transition-colors">Fibra Grossa</span>
+                                <div class="text-right flex flex-col items-end">
+                                    <div class="flex items-center gap-2 mb-0.5">
+                                        <span class="text-[7px] font-bold text-white bg-brand-900 dark:bg-white dark:text-brand-950 px-1.5 py-0.5 rounded shadow-sm uppercase tracking-widest price-badge transition-colors">400 OFF</span>
+                                        <span class="sr-only">Preço normal:</span>
+                                        <del class="text-[10px] text-brand-800/40 dark:text-gray-500 font-medium transition-colors price-old">R$ 797</del>
+                                    </div>
+                                    <div class="flex items-baseline gap-1">
+                                        <span class="sr-only">Preço promocional:</span>
+                                        <span class="text-[9px] text-[#128C7E] dark:text-[#25D366] font-semibold price-new-currency transition-colors">R$</span>
+                                        <span class="text-2xl font-serif font-medium text-[#128C7E] dark:text-[#25D366] transition-colors price-new leading-none">397</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </article>
 
                     <!-- 03. PERFIL G -->
-                    <article class="flex flex-col py-5 px-5 border border-brand-900/5 dark:border-white/5 bg-brand-50/30 dark:bg-white/5 rounded-2xl transition-colors">
+                    <article class="flex flex-col py-6 px-6 border border-brand-900/5 dark:border-white/5 bg-brand-50/30 dark:bg-white/5 rounded-2xl transition-colors shadow-sm">
                         <div class="mb-5 text-center border-b border-brand-900/5 dark:border-white/5 pb-4">
                             <h4 class="font-serif text-xl text-brand-950 dark:text-brand-100 font-medium transition-colors">03. Perfil G</h4>
                             <p class="text-[10px] text-brand-800 dark:text-gray-400 mt-1 font-light transition-colors uppercase tracking-widest">Até as Escápulas</p>
                         </div>
-                        <div class="flex flex-col gap-4">
-                            <div class="flex justify-between items-center">
-                                <span class="text-xs text-brand-800 dark:text-gray-300 font-light transition-colors">Fibra Fina</span>
-                                <div class="text-right">
-                                    <del class="text-[10px] text-brand-800/50 dark:text-gray-400 transition-colors price-old">De R$ 797</del>
-                                    <div class="text-base font-semibold text-[#128C7E] dark:text-[#25D366] transition-colors price-new">R$ 397</div>
+                        <div class="flex flex-col gap-5">
+                            <div class="flex justify-between items-center group/price">
+                                <span class="text-xs text-brand-800 dark:text-gray-300 font-medium transition-colors">Fibra Fina</span>
+                                <div class="text-right flex flex-col items-end">
+                                    <div class="flex items-center gap-2 mb-0.5">
+                                        <span class="text-[7px] font-bold text-white bg-brand-900 dark:bg-white dark:text-brand-950 px-1.5 py-0.5 rounded shadow-sm uppercase tracking-widest price-badge transition-colors">400 OFF</span>
+                                        <span class="sr-only">Preço normal:</span>
+                                        <del class="text-[10px] text-brand-800/40 dark:text-gray-500 font-medium transition-colors price-old">R$ 797</del>
+                                    </div>
+                                    <div class="flex items-baseline gap-1">
+                                        <span class="sr-only">Preço promocional:</span>
+                                        <span class="text-[9px] text-[#128C7E] dark:text-[#25D366] font-semibold price-new-currency transition-colors">R$</span>
+                                        <span class="text-2xl font-serif font-medium text-[#128C7E] dark:text-[#25D366] transition-colors price-new leading-none">397</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex justify-between items-center border-t border-brand-900/5 dark:border-white/5 pt-3">
-                                <span class="text-xs text-brand-800 dark:text-gray-300 font-light transition-colors">Fibra Média</span>
-                                <div class="text-right">
-                                    <del class="text-[10px] text-brand-800/50 dark:text-gray-400 transition-colors price-old">De R$ 897</del>
-                                    <div class="text-base font-semibold text-[#128C7E] dark:text-[#25D366] transition-colors price-new">R$ 447</div>
+                            <div class="flex justify-between items-center border-t border-brand-900/5 dark:border-white/5 pt-4 group/price">
+                                <span class="text-xs text-brand-800 dark:text-gray-300 font-medium transition-colors">Fibra Média</span>
+                                <div class="text-right flex flex-col items-end">
+                                    <div class="flex items-center gap-2 mb-0.5">
+                                        <span class="text-[7px] font-bold text-white bg-brand-900 dark:bg-white dark:text-brand-950 px-1.5 py-0.5 rounded shadow-sm uppercase tracking-widest price-badge transition-colors">450 OFF</span>
+                                        <span class="sr-only">Preço normal:</span>
+                                        <del class="text-[10px] text-brand-800/40 dark:text-gray-500 font-medium transition-colors price-old">R$ 897</del>
+                                    </div>
+                                    <div class="flex items-baseline gap-1">
+                                        <span class="sr-only">Preço promocional:</span>
+                                        <span class="text-[9px] text-[#128C7E] dark:text-[#25D366] font-semibold price-new-currency transition-colors">R$</span>
+                                        <span class="text-2xl font-serif font-medium text-[#128C7E] dark:text-[#25D366] transition-colors price-new leading-none">447</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex justify-between items-center border-t border-brand-900/5 dark:border-white/5 pt-3">
-                                <span class="text-xs text-brand-800 dark:text-gray-300 font-light transition-colors">Fibra Grossa</span>
-                                <div class="text-right">
-                                    <del class="text-[10px] text-brand-800/50 dark:text-gray-400 transition-colors price-old">De R$ 997</del>
-                                    <div class="text-base font-semibold text-[#128C7E] dark:text-[#25D366] transition-colors price-new">R$ 497</div>
+                            <div class="flex justify-between items-center border-t border-brand-900/5 dark:border-white/5 pt-4 group/price">
+                                <span class="text-xs text-brand-800 dark:text-gray-300 font-medium transition-colors">Fibra Grossa</span>
+                                <div class="text-right flex flex-col items-end">
+                                    <div class="flex items-center gap-2 mb-0.5">
+                                        <span class="text-[7px] font-bold text-white bg-brand-900 dark:bg-white dark:text-brand-950 px-1.5 py-0.5 rounded shadow-sm uppercase tracking-widest price-badge transition-colors">500 OFF</span>
+                                        <span class="sr-only">Preço normal:</span>
+                                        <del class="text-[10px] text-brand-800/40 dark:text-gray-500 font-medium transition-colors price-old">R$ 997</del>
+                                    </div>
+                                    <div class="flex items-baseline gap-1">
+                                        <span class="sr-only">Preço promocional:</span>
+                                        <span class="text-[9px] text-[#128C7E] dark:text-[#25D366] font-semibold price-new-currency transition-colors">R$</span>
+                                        <span class="text-2xl font-serif font-medium text-[#128C7E] dark:text-[#25D366] transition-colors price-new leading-none">497</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </article>
 
                     <!-- 04. PERFIL GG -->
-                    <article class="flex flex-col py-5 px-5 border border-brand-900/5 dark:border-white/5 bg-brand-50/30 dark:bg-white/5 rounded-2xl transition-colors">
+                    <article class="flex flex-col py-6 px-6 border border-brand-900/5 dark:border-white/5 bg-brand-50/30 dark:bg-white/5 rounded-2xl transition-colors shadow-sm">
                         <div class="mb-5 text-center border-b border-brand-900/5 dark:border-white/5 pb-4">
                             <h4 class="font-serif text-xl text-brand-950 dark:text-brand-100 font-medium transition-colors">04. Perfil GG</h4>
                             <p class="text-[10px] text-brand-800 dark:text-gray-400 mt-1 font-light transition-colors uppercase tracking-widest">Cintura em diante</p>
                         </div>
-                        <div class="flex flex-col gap-4">
-                            <div class="flex justify-between items-center">
-                                <span class="text-xs text-brand-800 dark:text-gray-300 font-light transition-colors">Fibra Fina</span>
-                                <div class="text-right">
-                                    <del class="text-[10px] text-brand-800/50 dark:text-gray-400 transition-colors price-old">De R$ 897</del>
-                                    <div class="text-base font-semibold text-[#128C7E] dark:text-[#25D366] transition-colors price-new">R$ 447</div>
+                        <div class="flex flex-col gap-5">
+                            <div class="flex justify-between items-center group/price">
+                                <span class="text-xs text-brand-800 dark:text-gray-300 font-medium transition-colors">Fibra Fina</span>
+                                <div class="text-right flex flex-col items-end">
+                                    <div class="flex items-center gap-2 mb-0.5">
+                                        <span class="text-[7px] font-bold text-white bg-brand-900 dark:bg-white dark:text-brand-950 px-1.5 py-0.5 rounded shadow-sm uppercase tracking-widest price-badge transition-colors">450 OFF</span>
+                                        <span class="sr-only">Preço normal:</span>
+                                        <del class="text-[10px] text-brand-800/40 dark:text-gray-500 font-medium transition-colors price-old">R$ 897</del>
+                                    </div>
+                                    <div class="flex items-baseline gap-1">
+                                        <span class="sr-only">Preço promocional:</span>
+                                        <span class="text-[9px] text-[#128C7E] dark:text-[#25D366] font-semibold price-new-currency transition-colors">R$</span>
+                                        <span class="text-2xl font-serif font-medium text-[#128C7E] dark:text-[#25D366] transition-colors price-new leading-none">447</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex justify-between items-center border-t border-brand-900/5 dark:border-white/5 pt-3">
-                                <span class="text-xs text-brand-800 dark:text-gray-300 font-light transition-colors">Fibra Média</span>
-                                <div class="text-right">
-                                    <del class="text-[10px] text-brand-800/50 dark:text-gray-400 transition-colors price-old">De R$ 997</del>
-                                    <div class="text-base font-semibold text-[#128C7E] dark:text-[#25D366] transition-colors price-new">R$ 497</div>
+                            <div class="flex justify-between items-center border-t border-brand-900/5 dark:border-white/5 pt-4 group/price">
+                                <span class="text-xs text-brand-800 dark:text-gray-300 font-medium transition-colors">Fibra Média</span>
+                                <div class="text-right flex flex-col items-end">
+                                    <div class="flex items-center gap-2 mb-0.5">
+                                        <span class="text-[7px] font-bold text-white bg-brand-900 dark:bg-white dark:text-brand-950 px-1.5 py-0.5 rounded shadow-sm uppercase tracking-widest price-badge transition-colors">500 OFF</span>
+                                        <span class="sr-only">Preço normal:</span>
+                                        <del class="text-[10px] text-brand-800/40 dark:text-gray-500 font-medium transition-colors price-old">R$ 997</del>
+                                    </div>
+                                    <div class="flex items-baseline gap-1">
+                                        <span class="sr-only">Preço promocional:</span>
+                                        <span class="text-[9px] text-[#128C7E] dark:text-[#25D366] font-semibold price-new-currency transition-colors">R$</span>
+                                        <span class="text-2xl font-serif font-medium text-[#128C7E] dark:text-[#25D366] transition-colors price-new leading-none">497</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex justify-between items-center border-t border-brand-900/5 dark:border-white/5 pt-3">
-                                <span class="text-xs text-brand-800 dark:text-gray-300 font-light transition-colors">Fibra Grossa</span>
-                                <div class="text-right">
-                                    <del class="text-[10px] text-brand-800/50 dark:text-gray-400 transition-colors price-old">De R$ 1.297</del>
-                                    <div class="text-base font-semibold text-[#128C7E] dark:text-[#25D366] transition-colors price-new">R$ 647</div>
+                            <div class="flex justify-between items-center border-t border-brand-900/5 dark:border-white/5 pt-4 group/price">
+                                <span class="text-xs text-brand-800 dark:text-gray-300 font-medium transition-colors">Fibra Grossa</span>
+                                <div class="text-right flex flex-col items-end">
+                                    <div class="flex items-center gap-2 mb-0.5">
+                                        <span class="text-[7px] font-bold text-white bg-brand-900 dark:bg-white dark:text-brand-950 px-1.5 py-0.5 rounded shadow-sm uppercase tracking-widest price-badge transition-colors">650 OFF</span>
+                                        <span class="sr-only">Preço normal:</span>
+                                        <del class="text-[10px] text-brand-800/40 dark:text-gray-500 font-medium transition-colors price-old">R$ 1.297</del>
+                                    </div>
+                                    <div class="flex items-baseline gap-1">
+                                        <span class="sr-only">Preço promocional:</span>
+                                        <span class="text-[9px] text-[#128C7E] dark:text-[#25D366] font-semibold price-new-currency transition-colors">R$</span>
+                                        <span class="text-2xl font-serif font-medium text-[#128C7E] dark:text-[#25D366] transition-colors price-new leading-none">647</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -793,12 +888,13 @@
                     timerContainer.classList.add('border-red-500/50', 'bg-red-500/10');
                 }
 
+                // Ajuste no JS para matar as classes de "Luxo" e forçar a "Dor" do preço caro
                 document.querySelectorAll('.price-old').forEach(el => {
-                    el.classList.remove('text-brand-800/50', 'dark:text-gray-400', 'text-[10px]', 'line-through');
+                    el.classList.remove('text-brand-800/40', 'dark:text-gray-500', 'text-[10px]', 'line-through');
                     el.classList.add('text-lg', 'sm:text-xl', 'font-bold', 'text-red-600', 'dark:text-red-500', 'no-underline');
                 });
 
-                document.querySelectorAll('.price-new').forEach(el => {
+                document.querySelectorAll('.price-new, .price-new-currency, .price-badge').forEach(el => {
                     el.style.display = 'none';
                 });
 
