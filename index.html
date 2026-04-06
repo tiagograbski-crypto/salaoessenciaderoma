@@ -54,7 +54,7 @@
     <meta property="og:description" content="Atendimento Premium. Agendamentos limitados, reserve a sua vaga.">
     <meta property="og:image" content="https://testeessencia.carrd.co/assets/images/image37.jpg?v=54da9d95">
 
-    <link rel="preload" as="image" href="https://testeessencia.carrd.co/assets/images/image37.jpg?v=54da9d95" fetchpriority="high">
+    <link rel="preload" as="image" href="https://testeessencia.carrd.co/assets/images/image38.jpg?v=0bcae317" fetchpriority="high">
     <meta name="facebook-domain-verification" content="qv2s2b5jb5v1cswia122tvhz9cd2bw" />
 
     <link rel="icon" type="image/jpeg" href="https://testeessencia.carrd.co/assets/images/image78.jpg?v=be105ac7">
@@ -91,6 +91,25 @@
     gtag('js', new Date());
     gtag('config', 'AW-11442509118');
     </script>
+    
+    <!-- ONESIGNAL: Notificações Push (Preparado) -->
+    <!-- NOTA: O código abaixo está comentado para evitar erros no console. -->
+    <!-- Assim que tiver o seu App ID oficial, ative o script removendo as marcações de comentário. -->
+    <!--
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      OneSignalDeferred.push(async function(OneSignal) {
+        await OneSignal.init({
+          appId: "COLOQUE_AQUI_O_SEU_APP_ID_DO_ONESIGNAL",
+          safari_web_id: "COLOQUE_O_SEU_SAFARI_ID_AQUI_SE_TIVER",
+          notifyButton: {
+            enable: true, /* Mostra o sininho no canto inferior para o utilizador se inscrever */
+          },
+        });
+      });
+    </script>
+    -->
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -231,6 +250,12 @@
         details[open] summary ~ * { animation: slideDown 0.3s ease-in-out; }
         @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
         
+        /* OTIMIZAÇÃO CIRÚRGICA: Previne a tela preta (gaveta) caindo no carregamento (FOUC) sem travar as animações bonitas */
+        body:not(.tailwind-loaded) #cart-drawer,
+        body:not(.tailwind-loaded) #cookie-banner {
+            display: none !important;
+        }
+
         /* Transições globais de modo escuro otimizadas para métricas do Google (INP) */
         .transition-colors { transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); will-change: background-color, border-color, color, fill, stroke; }
     </style>
@@ -241,16 +266,13 @@
     <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-brand-600 to-brand-400 dark:from-brand-400 dark:to-brand-200 z-[80] transition-all duration-100 ease-out" style="width: 0%;"></div>
 
     <!-- BARRA DE AVISO (Timeline Rotativa Estratégica B2C + B2B) -->
-    <!-- OTIMIZADO: Removido os 2 blocos duplicados desnecessários. 2 são suficientes para scroll infinito -->
     <div id="top-alert-bar" class="fixed top-0 left-0 w-full bg-brand-950/90 dark:bg-luxury-card/80 backdrop-blur-md text-brand-100 dark:text-luxury-muted border-b border-white/10 dark:border-luxury-border/50 text-[9px] sm:text-[10px] font-medium tracking-[0.25em] uppercase h-9 z-[60] shadow-sm transition-colors overflow-hidden flex items-center">
         <div class="animate-marquee">
-            <!-- Sequência 1 (Original) -->
             <span class="mx-4 sm:mx-6 text-emerald-400 dark:text-emerald-300 font-bold">✦ 50% OFF NA TABELA OFICIAL ATÉ 10/04</span>
             <span class="mx-4 sm:mx-6 text-white dark:text-brand-300">O ÚNICO LISO SOBERANO 8K DA REGIÃO</span>
             <span class="mx-4 sm:mx-6 text-sky-400 dark:text-sky-300 font-bold">✦ CREDENCIAMENTO: LEVE O LISO 8K PARA O SEU SALÃO</span>
             <span class="mx-4 sm:mx-6 text-white dark:text-brand-300">+25 MIL TRANSFORMAÇÕES EM SC</span>
             
-            <!-- Sequência 2 (A única Cópia necessária para o efeito Infinito) -->
             <span class="mx-4 sm:mx-6 text-emerald-400 dark:text-emerald-300 font-bold">✦ 50% OFF NA TABELA OFICIAL ATÉ 10/04</span>
             <span class="mx-4 sm:mx-6 text-white dark:text-brand-300">O ÚNICO LISO SOBERANO 8K DA REGIÃO</span>
             <span class="mx-4 sm:mx-6 text-sky-400 dark:text-sky-300 font-bold">✦ CREDENCIAMENTO: LEVE O LISO 8K PARA O SEU SALÃO</span>
@@ -258,22 +280,33 @@
         </div>
     </div>
 
-    <!-- IMAGEM DE FUNDO E LUZES (CARROSSEL CINEMATOGRÁFICO) -->
+    <!-- IMAGEM DE FUNDO E LUZES DINÂMICAS -->
     <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-brand-50 dark:bg-luxury-bg transition-colors duration-300">
-        <!-- O container controla a opacidade para o Modo Noite de forma global -->
-        <div class="absolute inset-0 w-full h-full opacity-100 dark:opacity-80 transition-opacity duration-300">
-            <img src="https://testeessencia.carrd.co/assets/images/image38.jpg?v=0bcae317" alt="Ambiente do Salão 1" class="slide-bg slide-bg-1" fetchpriority="high" decoding="async" loading="eager" />
-            <img src="https://testeessencia.carrd.co/assets/images/image41.jpg?v=0bcae317" alt="Ambiente do Salão 2" class="slide-bg slide-bg-2" decoding="async" loading="lazy" />
-            <img src="https://testeessencia.carrd.co/assets/images/image40.jpg?v=0bcae317" alt="Ambiente do Salão 3" class="slide-bg slide-bg-3" decoding="async" loading="lazy" />
+        
+        <!-- FUNDO 1: Salão e Clube -->
+        <div id="bg-salao" class="absolute inset-0 w-full h-full opacity-100 transition-opacity duration-1000 ease-in-out">
+            <div class="absolute inset-0 w-full h-full opacity-100 dark:opacity-80 transition-opacity duration-300">
+                <img src="https://testeessencia.carrd.co/assets/images/image38.jpg?v=0bcae317" alt="Ambiente do Salão 1" class="slide-bg slide-bg-1" fetchpriority="high" decoding="async" loading="eager" />
+                <img src="https://testeessencia.carrd.co/assets/images/image41.jpg?v=0bcae317" alt="Ambiente do Salão 2" class="slide-bg slide-bg-2" decoding="async" loading="lazy" />
+                <img src="https://testeessencia.carrd.co/assets/images/image40.jpg?v=0bcae317" alt="Ambiente do Salão 3" class="slide-bg slide-bg-3" decoding="async" loading="lazy" />
+            </div>
         </div>
 
+        <!-- FUNDO 2: Boutique (Home Care) -->
+        <div id="bg-boutique" class="absolute inset-0 w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out">
+            <div class="absolute inset-0 w-full h-full opacity-100 dark:opacity-80 transition-opacity duration-300">
+                <!-- Imagem com o mesmo efeito de animação cinematográfica lenta -->
+                <img src="https://testeessencia.carrd.co/assets/images/image59.jpg?v=0dcd7ee2" alt="Ambiente Boutique" class="slide-bg slide-bg-1" loading="lazy" decoding="async" />
+            </div>
+        </div>
+
+        <!-- Degradê de Transição e Leitura (Mantém-se para ambos) -->
         <div class="absolute inset-0 bg-gradient-to-b from-brand-50/20 via-brand-50/70 to-brand-50/100 dark:from-luxury-bg/40 dark:via-luxury-bg/90 dark:to-luxury-bg/100 backdrop-blur-[2px] transition-colors duration-300"></div>
     </div>
 
-    <!-- NAVBAR INTELIGENTE E UNIFICADA (Verdadeiro Vidro Jateado) -->
+    <!-- NAVBAR INTELIGENTE E UNIFICADA -->
     <nav class="fixed top-9 w-full z-50 bg-white/60 dark:bg-luxury-bg/60 backdrop-blur-xl border-b border-white/40 dark:border-luxury-border/50 shadow-sm transition-colors duration-300" id="navbar">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 h-20 flex items-center justify-between relative">
-            
             <div class="flex items-center gap-2.5 cursor-pointer group" onclick="navigateTo('view-home')">
                 <img src="https://testeessencia.carrd.co/assets/images/image78.jpg?v=be105ac7" alt="Logo Essência de Romã" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-brand-200 dark:border-luxury-border shadow-sm group-hover:scale-105 transition-all duration-300 shrink-0" decoding="async">
                 <span class="hidden sm:block font-serif text-xl md:text-2xl font-medium text-brand-950 dark:text-luxury-text tracking-wider italic transition-colors">Essência de Romã</span>
@@ -352,11 +385,11 @@
                             "Entendemos que o seu tempo é valioso e a sua imagem é o seu maior patrimônio. Por isso, criamos a Essência de Romã: um espaço pensado para mulheres exigentes que buscam técnica apurada e responsabilidade capilar."
                         </p>
                         <p class="text-[13px] sm:text-sm md:text-base text-brand-800 dark:text-luxury-muted font-light leading-relaxed mb-8 transition-colors">
-                            Sob a liderança de <strong>Jô</strong>, CEO e especialista em visagismo e cor, e a execução minuciosa de <strong>Vanessa</strong>, nossa expert em piastra e alisamentos, entregamos resultados definitivos num ambiente acolhedor e totalmente focado em si.
+                            Sob a liderança de <strong>Jô</strong>, CEO e specialist em visagismo e cor, e a execução minuciosa de <strong>Vanessa</strong>, nossa expert em piastra e alisamentos, entregamos resultados definitivos num ambiente acolhedor e totalmente focado em si.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-6 mt-4">
                             <div class="flex items-center gap-4">
-                                <img src="https://testeessencia.carrd.co/assets/images/image80.jpg?v=2f7533f2" alt="Jô" class="w-14 h-14 rounded-full object-cover border-2 border-brand-200 dark:border-luxury-border shadow-sm bg-brand-200 dark:bg-luxury-card animate-pulse text-transparent" onload="this.classList.remove('animate-pulse', 'bg-brand-200', 'dark:bg-luxury-card', 'text-transparent')" loading="lazy" decoding="async">
+                                <img src="https://testeessencia.carrd.co/assets/images/image80.jpg?v=fc76b993" alt="Jô" class="w-14 h-14 rounded-full object-cover border-2 border-brand-200 dark:border-luxury-border shadow-sm bg-brand-200 dark:bg-luxury-card animate-pulse text-transparent" onload="this.classList.remove('animate-pulse', 'bg-brand-200', 'dark:bg-luxury-card', 'text-transparent')" loading="lazy" decoding="async">
                                 <div>
                                     <p class="font-serif text-brand-950 dark:text-luxury-text font-medium text-lg transition-colors">Jô</p>
                                     <p class="text-[10px] uppercase tracking-widest text-brand-700 dark:text-brand-400 font-bold transition-colors">CEO • Cortes & Cores</p>
@@ -393,16 +426,13 @@
                 <div class="absolute top-0 right-0 w-12 sm:w-16 h-full bg-gradient-to-l from-brand-50 dark:from-luxury-bg to-transparent z-10 pointer-events-none md:hidden transition-colors duration-300"></div>
 
                 <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:gap-6 px-6 sm:px-8 md:px-4 custom-scrollbar items-stretch max-w-6xl mx-auto pb-6">
-                    
-                    <!-- Card 1 -->
-                    <article class="snap-start shrink-0 w-[75vw] sm:w-[280px] flex flex-col justify-between bg-white/90 dark:bg-luxury-card/90 backdrop-blur-md border border-brand-900/10 dark:border-luxury-border rounded-[2rem] p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1">
+                    <article class="snap-start shrink-0 w-[75vw] sm:w-[280px] flex flex-col justify-between bg-white dark:bg-luxury-card backdrop-blur-md border-2 border-brand-200 dark:border-brand-800/60 hover:border-brand-400 dark:hover:border-brand-500/50 rounded-[2rem] p-6 sm:p-8 shadow-md hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
                         <div class="flex flex-col flex-grow">
                             <div class="w-12 h-12 rounded-full bg-brand-50 dark:bg-luxury-border flex items-center justify-center mb-5 border border-brand-200 dark:border-transparent group-hover:scale-110 transition-transform shadow-sm">
                                 <i data-lucide="sparkles" class="w-5 h-5 text-brand-600 dark:text-brand-300"></i>
                             </div>
                             <h3 class="font-serif text-xl sm:text-2xl font-medium text-brand-950 dark:text-luxury-text mb-2 transition-colors">Terapias & Spa</h3>
                             <p class="text-[12px] sm:text-[13px] text-brand-800 dark:text-luxury-muted font-light leading-relaxed transition-colors">Rituais personalizados de nutrição e reconstrução profunda para a saúde máxima e vitalidade absoluta dos fios.</p>
-                            
                             <div class="mt-auto pt-5 border-t border-brand-900/5 dark:border-luxury-border mt-5 mb-5 flex flex-col gap-0.5">
                                 <span class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-700 dark:text-brand-400 transition-colors">Investimento</span>
                                 <span class="font-serif text-2xl font-medium text-brand-950 dark:text-luxury-text">R$ 250</span>
@@ -413,8 +443,7 @@
                         </button>
                     </article>
 
-                    <!-- Card 2 -->
-                    <article class="snap-start shrink-0 w-[75vw] sm:w-[280px] flex flex-col justify-between bg-white/90 dark:bg-luxury-card/90 backdrop-blur-md border border-brand-900/10 dark:border-luxury-border rounded-[2rem] p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1">
+                    <article class="snap-start shrink-0 w-[75vw] sm:w-[280px] flex flex-col justify-between bg-white dark:bg-luxury-card backdrop-blur-md border-2 border-brand-200 dark:border-brand-800/60 hover:border-brand-400 dark:hover:border-brand-500/50 rounded-[2rem] p-6 sm:p-8 shadow-md hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
                         <div class="flex flex-col flex-grow">
                             <div class="w-12 h-12 rounded-full bg-brand-50 dark:bg-luxury-border flex items-center justify-center mb-5 border border-brand-200 dark:border-transparent group-hover:scale-110 transition-transform shadow-sm">
                                 <i data-lucide="scissors" class="w-5 h-5 text-brand-600 dark:text-brand-300"></i>
@@ -431,8 +460,7 @@
                         </button>
                     </article>
 
-                    <!-- Card 3 -->
-                    <article class="snap-start shrink-0 w-[75vw] sm:w-[280px] flex flex-col justify-between bg-white/90 dark:bg-luxury-card/90 backdrop-blur-md border border-brand-900/10 dark:border-luxury-border rounded-[2rem] p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1">
+                    <article class="snap-start shrink-0 w-[75vw] sm:w-[280px] flex flex-col justify-between bg-white dark:bg-luxury-card backdrop-blur-md border-2 border-brand-200 dark:border-brand-800/60 hover:border-brand-400 dark:hover:border-brand-500/50 rounded-[2rem] p-6 sm:p-8 shadow-md hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
                         <div class="flex flex-col flex-grow">
                             <div class="w-12 h-12 rounded-full bg-brand-50 dark:bg-luxury-border flex items-center justify-center mb-5 border border-brand-200 dark:border-transparent group-hover:scale-110 transition-transform shadow-sm">
                                 <i data-lucide="palette" class="w-5 h-5 text-brand-600 dark:text-brand-300"></i>
@@ -449,8 +477,7 @@
                         </button>
                     </article>
 
-                    <!-- Card 4 -->
-                    <article class="snap-start shrink-0 w-[75vw] sm:w-[280px] flex flex-col justify-between bg-white/90 dark:bg-luxury-card/90 backdrop-blur-md border border-brand-900/10 dark:border-luxury-border rounded-[2rem] p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1">
+                    <article class="snap-start shrink-0 w-[75vw] sm:w-[280px] flex flex-col justify-between bg-white dark:bg-luxury-card backdrop-blur-md border-2 border-brand-200 dark:border-brand-800/60 hover:border-brand-400 dark:hover:border-brand-500/50 rounded-[2rem] p-6 sm:p-8 shadow-md hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
                         <div class="flex flex-col flex-grow">
                             <div class="w-12 h-12 rounded-full bg-brand-50 dark:bg-luxury-border flex items-center justify-center mb-5 border border-brand-200 dark:border-transparent group-hover:scale-110 transition-transform shadow-sm">
                                 <i data-lucide="sun" class="w-5 h-5 text-brand-600 dark:text-brand-300"></i>
@@ -467,8 +494,7 @@
                         </button>
                     </article>
 
-                    <!-- Card 5 -->
-                    <article class="snap-start shrink-0 w-[75vw] sm:w-[280px] flex flex-col justify-between bg-white/90 dark:bg-luxury-card/90 backdrop-blur-md border border-brand-900/10 dark:border-luxury-border rounded-[2rem] p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1">
+                    <article class="snap-start shrink-0 w-[75vw] sm:w-[280px] flex flex-col justify-between bg-white dark:bg-luxury-card backdrop-blur-md border-2 border-brand-200 dark:border-brand-800/60 hover:border-brand-400 dark:hover:border-brand-500/50 rounded-[2rem] p-6 sm:p-8 shadow-md hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
                         <div class="flex flex-col flex-grow">
                             <div class="w-12 h-12 rounded-full bg-brand-50 dark:bg-luxury-border flex items-center justify-center mb-5 border border-brand-200 dark:border-transparent group-hover:scale-110 transition-transform shadow-sm">
                                 <i data-lucide="star" class="w-5 h-5 text-brand-600 dark:text-brand-300"></i>
@@ -484,7 +510,6 @@
                             Consultar Agenda
                         </button>
                     </article>
-
                 </div>
                 
                 <div class="md:hidden flex items-center justify-center mt-6 mb-2 relative z-20 pointer-events-none">
@@ -506,21 +531,36 @@
                 <div class="absolute top-0 left-0 w-12 sm:w-16 h-full bg-gradient-to-r from-brand-50 dark:from-luxury-bg to-transparent z-10 pointer-events-none md:hidden transition-colors duration-300"></div>
                 <div class="absolute top-0 right-0 w-12 sm:w-16 h-full bg-gradient-to-l from-brand-50 dark:from-luxury-bg to-transparent z-10 pointer-events-none md:hidden transition-colors duration-300"></div>
 
-                <div class="flex overflow-x-auto md:overflow-visible snap-x snap-mandatory gap-5 sm:gap-6 md:gap-6 lg:gap-8 px-6 sm:px-8 md:px-0 pb-6 custom-scrollbar items-center md:justify-center">
+                <!-- OTIMIZAÇÃO CIRÚRGICA: Container ajustado para 5 vídeos com scroll fluido também em ecrãs grandes -->
+                <div class="flex overflow-x-auto snap-x snap-mandatory gap-5 sm:gap-6 md:gap-6 lg:gap-8 px-6 sm:px-8 md:px-4 pb-6 custom-scrollbar items-center md:justify-start">
+                    
+                    <!-- NOVO VÍDEO (Inserido em primeiro lugar) -->
                     <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-brand-100 dark:bg-luxury-card border border-brand-900/10 dark:border-luxury-border shadow-alvorada dark:shadow-crepusculo hover:-translate-y-2 transition-all duration-700 cursor-pointer">
-                        <video src="https://testeessencia.carrd.co/assets/videos/video03.mp4?v=701b88d2#t=0.1" preload="metadata" loop muted playsinline class="smart-video w-full h-full object-cover transform transition-transform duration-[3s] group-hover:scale-105 pointer-events-none opacity-90 dark:opacity-80 transition-opacity"></video>
+                        <video data-src="https://testeessencia.carrd.co/assets/videos/video20.mp4?v=0dcd7ee2#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover transform transition-transform duration-[3s] group-hover:scale-105 pointer-events-none opacity-90 dark:opacity-80 transition-opacity"></video>
                         <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-3 sm:p-2.5 rounded-full shadow-lg border border-white/20 transition-all hover:bg-black/90 active:scale-95 focus:outline-none flex items-center justify-center"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                     </figure>
+
+                    <!-- VÍDEO 2 (Ajustado o balanço) -->
                     <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-brand-100 dark:bg-luxury-card border border-brand-900/10 dark:border-luxury-border shadow-alvorada dark:shadow-crepusculo md:-translate-y-8 hover:-translate-y-10 transition-all duration-700 cursor-pointer">
-                        <video src="https://testeessencia.carrd.co/assets/videos/video13.mp4?v=36e3212d#t=0.1" preload="metadata" loop muted playsinline class="smart-video w-full h-full object-cover transform transition-transform duration-[3s] group-hover:scale-105 pointer-events-none opacity-90 dark:opacity-80 transition-opacity"></video>
+                        <video data-src="https://testeessencia.carrd.co/assets/videos/video03.mp4?v=701b88d2#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover transform transition-transform duration-[3s] group-hover:scale-105 pointer-events-none opacity-90 dark:opacity-80 transition-opacity"></video>
                         <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-3 sm:p-2.5 rounded-full shadow-lg border border-white/20 transition-all hover:bg-black/90 active:scale-95 focus:outline-none flex items-center justify-center"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                     </figure>
+
+                    <!-- VÍDEO 3 (Ajustado o balanço) -->
                     <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-brand-100 dark:bg-luxury-card border border-brand-900/10 dark:border-luxury-border shadow-alvorada dark:shadow-crepusculo hover:-translate-y-2 transition-all duration-700 cursor-pointer">
-                        <video src="https://testeessencia.carrd.co/assets/videos/video02.mp4?v=7c53f00c#t=0.1" preload="metadata" loop muted playsinline class="smart-video w-full h-full object-cover transform transition-transform duration-[3s] group-hover:scale-105 pointer-events-none opacity-90 dark:opacity-80 transition-opacity"></video>
+                        <video data-src="https://testeessencia.carrd.co/assets/videos/video13.mp4?v=36e3212d#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover transform transition-transform duration-[3s] group-hover:scale-105 pointer-events-none opacity-90 dark:opacity-80 transition-opacity"></video>
                         <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-3 sm:p-2.5 rounded-full shadow-lg border border-white/20 transition-all hover:bg-black/90 active:scale-95 focus:outline-none flex items-center justify-center"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                     </figure>
+
+                    <!-- VÍDEO 4 (Ajustado o balanço) -->
                     <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-brand-100 dark:bg-luxury-card border border-brand-900/10 dark:border-luxury-border shadow-alvorada dark:shadow-crepusculo md:-translate-y-8 hover:-translate-y-10 transition-all duration-700 cursor-pointer">
-                        <video src="https://testeessencia.carrd.co/assets/videos/video10.mp4?v=701b88d2#t=0.1" preload="metadata" loop muted playsinline class="smart-video w-full h-full object-cover transform transition-transform duration-[3s] group-hover:scale-105 pointer-events-none opacity-90 dark:opacity-80 transition-opacity"></video>
+                        <video data-src="https://testeessencia.carrd.co/assets/videos/video02.mp4?v=7c53f00c#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover transform transition-transform duration-[3s] group-hover:scale-105 pointer-events-none opacity-90 dark:opacity-80 transition-opacity"></video>
+                        <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-3 sm:p-2.5 rounded-full shadow-lg border border-white/20 transition-all hover:bg-black/90 active:scale-95 focus:outline-none flex items-center justify-center"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
+                    </figure>
+
+                    <!-- VÍDEO 5 (Ajustado o balanço) -->
+                    <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-brand-100 dark:bg-luxury-card border border-brand-900/10 dark:border-luxury-border shadow-alvorada dark:shadow-crepusculo hover:-translate-y-2 transition-all duration-700 cursor-pointer">
+                        <video data-src="https://testeessencia.carrd.co/assets/videos/video10.mp4?v=701b88d2#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover transform transition-transform duration-[3s] group-hover:scale-105 pointer-events-none opacity-90 dark:opacity-80 transition-opacity"></video>
                         <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-3 sm:p-2.5 rounded-full shadow-lg border border-white/20 transition-all hover:bg-black/90 active:scale-95 focus:outline-none flex items-center justify-center"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                     </figure>
                 </div>
@@ -838,7 +878,7 @@
                     <article class="bg-brand-50/50 dark:bg-luxury-bg/50 border border-brand-900/5 dark:border-luxury-border rounded-[24px] p-5 sm:p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-10 items-center shadow-sm transition-colors">
                         <div class="w-full md:w-1/3 aspect-[4/5] rounded-xl overflow-hidden relative shadow-sm border border-brand-900/10 dark:border-luxury-border bg-white dark:bg-luxury-bg transition-colors group/media">
                             <img src="https://testeessencia.carrd.co/assets/images/image53.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Banho Repair Master" class="media-photo absolute inset-0 w-full h-full object-cover transition-opacity duration-700 z-10">
-                            <video src="https://testeessencia.carrd.co/assets/videos/video17.mp4?v=701b88d2#t=0.1" loop muted playsinline class="media-video absolute inset-0 w-full h-full object-cover transition-opacity duration-700 z-0 opacity-0 pointer-events-none"></video>
+                            <video data-src="https://testeessencia.carrd.co/assets/videos/video17.mp4?v=701b88d2#t=0.1" preload="none" loop muted playsinline class="media-video absolute inset-0 w-full h-full object-cover transition-opacity duration-700 z-0 opacity-0 pointer-events-none"></video>
                             <span class="absolute top-4 left-4 bg-brand-900 dark:bg-luxury-border text-white dark:text-luxury-text text-[10px] font-black px-3 py-1.5 rounded-md uppercase tracking-wider shadow-md transition-colors z-20">Passo 1</span>
                             
                             <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/60 backdrop-blur-md rounded-full p-1 flex gap-1 z-30 shadow-lg border border-white/10">
@@ -896,7 +936,7 @@
                     <article class="bg-brand-50/50 dark:bg-luxury-bg/50 border border-brand-900/5 dark:border-luxury-border rounded-[24px] p-5 sm:p-6 md:p-8 flex flex-col md:flex-row-reverse gap-6 md:gap-10 items-center shadow-sm transition-colors">
                         <div class="w-full md:w-1/3 aspect-[4/5] rounded-xl overflow-hidden relative shadow-sm border border-brand-900/10 dark:border-luxury-border bg-white dark:bg-luxury-bg transition-colors group/media">
                             <img src="https://testeessencia.carrd.co/assets/images/image56.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Ampola Ouro Repair Gloss" class="media-photo absolute inset-0 w-full h-full object-cover transition-opacity duration-700 z-10">
-                            <video src="https://testeessencia.carrd.co/assets/videos/video18.mp4?v=701b88d2#t=0.1" loop muted playsinline class="media-video absolute inset-0 w-full h-full object-cover transition-opacity duration-700 z-0 opacity-0 pointer-events-none"></video>
+                            <video data-src="https://testeessencia.carrd.co/assets/videos/video18.mp4?v=701b88d2#t=0.1" preload="none" loop muted playsinline class="media-video absolute inset-0 w-full h-full object-cover transition-opacity duration-700 z-0 opacity-0 pointer-events-none"></video>
                             <span class="absolute top-4 right-4 md:left-4 md:right-auto bg-brand-900 dark:bg-luxury-border text-white dark:text-luxury-text text-[10px] font-black px-3 py-1.5 rounded-md uppercase tracking-wider shadow-md transition-colors z-20">Passo 2</span>
                             
                             <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/60 backdrop-blur-md rounded-full p-1 flex gap-1 z-30 shadow-lg border border-white/10">
@@ -949,7 +989,7 @@
                     <article class="bg-brand-50/50 dark:bg-luxury-bg/50 border border-brand-900/5 dark:border-luxury-border rounded-[24px] p-5 sm:p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-10 items-center shadow-sm transition-colors">
                         <div class="w-full md:w-1/3 aspect-[4/5] rounded-xl overflow-hidden relative shadow-sm border border-brand-900/10 dark:border-luxury-border bg-white dark:bg-luxury-bg transition-colors group/media">
                             <img src="https://testeessencia.carrd.co/assets/images/image63.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Baby Queen" class="media-photo absolute inset-0 w-full h-full object-cover transition-opacity duration-700 z-10">
-                            <video src="https://testeessencia.carrd.co/assets/videos/video02.mp4?v=7c53f00c#t=0.1" loop muted playsinline class="media-video absolute inset-0 w-full h-full object-cover transition-opacity duration-700 z-0 opacity-0 pointer-events-none"></video>
+                            <video data-src="https://testeessencia.carrd.co/assets/videos/video02.mp4?v=7c53f00c#t=0.1" preload="none" loop muted playsinline class="media-video absolute inset-0 w-full h-full object-cover transition-opacity duration-700 z-0 opacity-0 pointer-events-none"></video>
                             <span class="absolute top-4 left-4 bg-brand-900 dark:bg-luxury-border text-white dark:text-luxury-text text-[10px] font-black px-3 py-1.5 rounded-md uppercase tracking-wider shadow-md transition-colors z-20">Passo 3</span>
                             
                             <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/60 backdrop-blur-md rounded-full p-1 flex gap-1 z-30 shadow-lg border border-white/10">
@@ -1013,7 +1053,7 @@
                     <article class="bg-brand-50/50 dark:bg-luxury-bg/50 border border-brand-900/5 dark:border-luxury-border rounded-[24px] p-5 sm:p-6 md:p-8 flex flex-col md:flex-row-reverse gap-6 md:gap-10 items-center shadow-sm transition-colors">
                         <div class="w-full md:w-1/3 aspect-[4/5] rounded-xl overflow-hidden relative shadow-sm border border-brand-900/10 dark:border-luxury-border bg-white dark:bg-luxury-bg transition-colors group/media">
                             <img src="https://testeessencia.carrd.co/assets/images/image79.jpg?v=7c53f00c" loading="lazy" decoding="async" alt="American Argan Oil" class="media-photo absolute inset-0 w-full h-full object-cover opacity-95 dark:opacity-85 transition-opacity duration-700 z-10">
-                            <video src="https://testeessencia.carrd.co/assets/videos/video12.mp4?v=36e3212d#t=0.1" loop muted playsinline class="media-video absolute inset-0 w-full h-full object-cover transition-opacity duration-700 z-0 opacity-0 pointer-events-none"></video>
+                            <video data-src="https://testeessencia.carrd.co/assets/videos/video12.mp4?v=36e3212d#t=0.1" preload="none" loop muted playsinline class="media-video absolute inset-0 w-full h-full object-cover transition-opacity duration-700 z-0 opacity-0 pointer-events-none"></video>
                             <span class="absolute top-4 right-4 md:left-4 md:right-auto bg-brand-900 dark:bg-luxury-border text-white dark:text-luxury-text text-[10px] font-black px-3 py-1.5 rounded-md uppercase tracking-wider shadow-md transition-colors z-20">Passo 4</span>
                             
                             <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/60 backdrop-blur-md rounded-full p-1 flex gap-1 z-30 shadow-lg border border-white/10">
@@ -1073,7 +1113,7 @@
                     <div class="w-full lg:w-1/2 aspect-[4/5] rounded-3xl overflow-hidden relative shadow-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-4 flex items-center justify-center transition-colors group/media">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 pointer-events-none"></div>
                         <img src="https://testeessencia.carrd.co/assets/images/image68.jpg?v=7c53f00c" loading="lazy" decoding="async" alt="Kit Completo Home Care com Sacola Orange" class="media-photo absolute inset-0 w-full h-full object-cover rounded-2xl mix-blend-overlay opacity-90 dark:opacity-80 transition-opacity duration-700 z-10">
-                        <video src="https://testeessencia.carrd.co/assets/videos/video13.mp4?v=36e3212d#t=0.1" loop muted playsinline class="media-video absolute inset-0 w-full h-full object-cover rounded-2xl mix-blend-overlay transition-opacity duration-700 z-0 opacity-0 pointer-events-none"></video>
+                        <video data-src="https://testeessencia.carrd.co/assets/videos/video13.mp4?v=36e3212d#t=0.1" preload="none" loop muted playsinline class="media-video absolute inset-0 w-full h-full object-cover rounded-2xl mix-blend-overlay transition-opacity duration-700 z-0 opacity-0 pointer-events-none"></video>
 
                         <div class="absolute bottom-6 left-6 z-20 pointer-events-none">
                             <span class="bg-white text-brand-950 px-4 py-2 rounded-full text-[10px] font-black tracking-widest uppercase shadow-lg">A Experiência Completa</span>
@@ -1345,7 +1385,7 @@
                     <div class="absolute top-0 left-0 w-12 sm:w-16 h-full bg-gradient-to-r from-brand-950 dark:from-[#110d0c] to-transparent z-10 pointer-events-none lg:hidden transition-colors duration-300"></div>
                     <div class="absolute top-0 right-0 w-12 sm:w-16 h-full bg-gradient-to-l from-brand-950 dark:from-[#110d0c] to-transparent z-10 pointer-events-none lg:hidden transition-colors duration-300"></div>
 
-                    <div id="clube-cards-container" class="flex overflow-x-auto lg:grid lg:grid-cols-3 snap-x snap-mandatory gap-6 lg:gap-8 items-center mt-6 pb-6 lg:pb-0 custom-scrollbar px-6 sm:px-8 lg:px-0 -mx-6 sm:-mx-8 lg:mx-0"></div>
+                    <div id="clube-cards-container" class="flex overflow-x-auto lg:grid lg:grid-cols-3 snap-x snap-mandatory gap-6 lg:gap-8 items-center mt-2 py-8 custom-scrollbar px-6 sm:px-8 lg:px-0 -mx-6 sm:-mx-8 lg:mx-0"></div>
 
                     <div class="lg:hidden flex items-center justify-center mt-4 relative z-20 pointer-events-none">
                         <div class="animate-bounce-horizontal flex items-center gap-3 bg-white/10 dark:bg-luxury-border/30 px-6 py-2.5 rounded-full border border-white/20 dark:border-luxury-border/50 shadow-lg backdrop-blur-md">
@@ -1396,6 +1436,21 @@
             <span id="cart-badge" class="absolute -top-1 -right-1 bg-brand-600 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-md hidden border border-white dark:border-luxury-card transition-colors">0</span>
         </button>
     </div>
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP (Apenas Desktop/Tablet) -->
+    <div id="floating-whatsapp" class="fixed bottom-8 right-8 z-[75] hidden md:flex transition-all duration-300 transform hover:scale-110">
+        <span class="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-75"></span>
+        <a href="https://wa.me/5549999954052?text=Ol%C3%A1%21%20Estou%20no%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20um%20especialista." target="_blank" class="relative flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] focus:outline-none border border-white/20 transition-colors group">
+            <!-- Ícone SVG Oficial do WhatsApp -->
+            <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.405-.883-.733-1.48-1.64-1.653-1.938-.173-.298-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                </svg>
+                <!-- Dica Flutuante (Aparece ao passar o rato) -->
+                <div class="absolute right-full mr-4 bg-white dark:bg-luxury-card border border-brand-100 dark:border-luxury-border text-brand-950 dark:text-luxury-text px-3 py-1.5 rounded-xl shadow-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    Fale Connosco
+                </div>
+            </a>
+        </div>
 
     <!-- OVERLAY GAVETAS -->
     <div id="drawer-overlay" class="fixed inset-0 z-[115] bg-brand-950/60 dark:bg-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300 transition-colors" onclick="closeAllDrawers()"></div>
@@ -1852,6 +1907,20 @@
                 'view-clube': document.getElementById('tab-clube')
             };
             
+            // Troca cirúrgica de fundo (Crossfade suave)
+            const bgSalao = document.getElementById('bg-salao');
+            const bgBoutique = document.getElementById('bg-boutique');
+            
+            if (bgSalao && bgBoutique) {
+                if (viewId === 'view-homecare') {
+                    bgSalao.classList.remove('opacity-100'); bgSalao.classList.add('opacity-0');
+                    bgBoutique.classList.remove('opacity-0'); bgBoutique.classList.add('opacity-100');
+                } else {
+                    bgSalao.classList.remove('opacity-0'); bgSalao.classList.add('opacity-100');
+                    bgBoutique.classList.remove('opacity-100'); bgBoutique.classList.add('opacity-0');
+                }
+            }
+
             views.forEach(v => {
                 const el = document.getElementById(v);
                 if(el) {
@@ -1913,6 +1982,10 @@
 
         window.addEventListener('popstate', handleRouting);
 
+        window.addEventListener('load', () => {
+            document.body.classList.remove('no-fouc');
+        });
+
         document.addEventListener('DOMContentLoaded', () => {
             renderPricing(); 
             cartSystem.init(); 
@@ -1950,6 +2023,10 @@
             const videoObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
+                        if (!entry.target.src && entry.target.dataset.src) {
+                            entry.target.src = entry.target.dataset.src;
+                            entry.target.load();
+                        }
                         if (entry.target.muted) entry.target.play().catch(e => console.warn('Autoplay evitado', e));
                     } else {
                         entry.target.pause();
