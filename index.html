@@ -856,6 +856,42 @@
                 </p>
             </header>
 
+            <!-- FLASH SALE BANNER (Lote Exclusivo de 10 Kits) -->
+            <section class="w-full max-w-[1400px] mx-auto px-4 mb-16 reveal">
+                <div class="w-full bg-brand-950 dark:bg-[#110d0c] border border-brand-500/30 rounded-[2rem] p-6 sm:p-10 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden group transition-colors">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-brand-500/20 rounded-full filter blur-[80px] pointer-events-none transition-colors"></div>
+                    <div class="absolute bottom-0 left-0 w-1.5 h-full bg-gradient-to-t from-brand-600 to-brand-400"></div>
+                    
+                    <div class="relative z-10 w-full lg:w-3/5 text-center lg:text-left">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-red-500/10 border border-red-500/20 text-red-400 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-4">
+                            <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span> Lote VIP Liberado
+                        </span>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif font-medium text-white mb-3 drop-shadow-md">A Manutenção Definitiva do Liso</h2>
+                        <p class="text-brand-100/80 text-[13px] sm:text-sm font-light leading-relaxed mb-6 max-w-xl mx-auto lg:mx-0">
+                            Chegou a hora de investir no cuidado correto. Se você faz alisamentos, esta é a sua oportunidade única: liberámos <strong class="text-white font-medium">apenas 10 coleções exclusivas</strong> com <strong class="text-brand-400">30% de Desconto</strong> na sua sacola ao utilizar o cupom <span class="bg-white/10 px-2 py-0.5 rounded font-bold tracking-widest">BOUTIQUE30</span>.
+                        </p>
+                        
+                        <!-- Barra de Escassez Visual -->
+                        <div class="w-full max-w-md mx-auto lg:mx-0 bg-black/40 border border-white/10 rounded-xl p-4 backdrop-blur-sm">
+                            <div class="flex justify-between items-end mb-2">
+                                <span class="text-[10px] font-bold text-white uppercase tracking-widest flex items-center gap-1.5"><i data-lucide="flame" class="w-3.5 h-3.5 text-orange-500"></i> Kits Disponíveis</span>
+                                <span class="text-brand-400 text-xs font-bold">3 / 10 Restantes</span>
+                            </div>
+                            <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                                <div class="w-[30%] h-full bg-gradient-to-r from-red-500 via-orange-500 to-brand-500 rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative z-10 shrink-0 w-full lg:w-auto flex flex-col items-center mt-4 lg:mt-0">
+                        <button onclick="document.getElementById('produtos-homecare').scrollIntoView({behavior: 'smooth'})" class="w-full sm:w-auto px-8 py-4 sm:py-5 bg-brand-500 hover:bg-brand-400 text-white rounded-full font-bold text-[11px] md:text-xs uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(197,168,159,0.4)] hover:shadow-[0_0_30px_rgba(197,168,159,0.6)] focus:outline-none flex items-center justify-center gap-2 hover:-translate-y-1">
+                            <i data-lucide="shopping-bag" class="w-4 h-4"></i> Garantir Meu Kit com 30% OFF
+                        </button>
+                        <span class="text-[9px] text-brand-200/50 mt-3 uppercase tracking-widest flex items-center gap-1 font-bold"><i data-lucide="clock" class="w-3 h-3"></i> Oferta por tempo limitado</span>
+                    </div>
+                </div>
+            </section>
+
             <section id="produtos-homecare" class="w-full max-w-5xl mx-auto bg-white/95 dark:bg-luxury-card/95 backdrop-blur-2xl border-y md:border border-brand-900/5 dark:border-luxury-border rounded-none md:rounded-[2.5rem] p-5 sm:p-8 md:p-12 relative overflow-hidden mb-12 shadow-alvorada dark:shadow-crepusculo transition-colors duration-300 -mx-4 md:mx-0 w-[100vw] md:w-full">
                 <header class="text-center mb-12 relative z-10">
                     <span class="inline-block px-4 py-1.5 bg-brand-50 dark:bg-luxury-bg text-brand-700 dark:text-brand-300 border border-brand-100 dark:border-luxury-border text-[10px] md:text-xs font-bold uppercase tracking-widest rounded-full mb-4 transition-colors">Rituais Individuais</span>
@@ -915,8 +951,17 @@
 
                             <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-5 border-t border-brand-900/10 dark:border-luxury-border mt-auto transition-colors">
                                 <div class="flex flex-col text-center sm:text-left">
-                                    <span class="text-3xl font-serif font-medium text-brand-950 dark:text-luxury-text transition-colors">R$ 147</span>
-                                    <div class="flex items-center justify-center sm:justify-start gap-2 mt-1 opacity-80">
+                                    <div class="flex items-center justify-center sm:justify-start gap-2 mb-1">
+                                        <span class="text-[9px] font-bold text-white bg-brand-900 dark:bg-luxury-text dark:text-luxury-bg px-1.5 py-0.5 rounded shadow-sm uppercase tracking-widest">30% OFF</span>
+                                        <del class="text-[11px] text-brand-400 dark:text-luxury-muted font-medium">R$ 147,00</del>
+                                    </div>
+                                    <div class="flex items-baseline justify-center sm:justify-start gap-1">
+                                        <span class="text-sm text-[#128C7E] dark:text-[#25D366] font-bold">R$</span>
+                                        <span class="text-3xl font-serif font-medium text-[#128C7E] dark:text-[#25D366] transition-colors leading-none">102,90</span>
+                                    </div>
+                                    <span class="text-[9px] font-bold text-brand-600 dark:text-brand-400 uppercase tracking-widest mt-1.5 flex items-center justify-center sm:justify-start gap-1"><i data-lucide="ticket" class="w-3 h-3"></i> C/ Cupom BOUTIQUE30</span>
+                                    
+                                    <div class="flex items-center justify-center sm:justify-start gap-2 mt-2 opacity-80">
                                         <span class="flex items-center gap-1 text-[9px] font-bold text-brand-700 dark:text-brand-400 uppercase tracking-widest transition-colors"><i data-lucide="credit-card" class="w-3 h-3"></i> Pix / Parcelado</span>
                                         <span class="text-brand-300 dark:text-luxury-border">•</span>
                                         <span class="flex items-center gap-1 text-[9px] font-bold text-brand-700 dark:text-brand-400 uppercase tracking-widest transition-colors"><i data-lucide="truck" class="w-3 h-3"></i> Envio / Retirada</span>
@@ -975,8 +1020,17 @@
 
                             <div class="flex flex-col sm:flex-row md:flex-row-reverse items-center justify-between gap-4 pt-5 border-t border-brand-900/10 dark:border-luxury-border mt-auto transition-colors">
                                 <div class="flex flex-col text-center sm:text-left md:text-right md:items-end">
-                                    <span class="text-3xl font-serif font-medium text-brand-950 dark:text-luxury-text transition-colors">R$ 289</span>
-                                    <div class="flex items-center justify-center sm:justify-start md:justify-end gap-2 mt-1 opacity-80">
+                                    <div class="flex items-center justify-center sm:justify-start md:justify-end gap-2 mb-1">
+                                        <span class="text-[9px] font-bold text-white bg-brand-900 dark:bg-luxury-text dark:text-luxury-bg px-1.5 py-0.5 rounded shadow-sm uppercase tracking-widest">30% OFF</span>
+                                        <del class="text-[11px] text-brand-400 dark:text-luxury-muted font-medium">R$ 289,00</del>
+                                    </div>
+                                    <div class="flex items-baseline justify-center sm:justify-start md:justify-end gap-1">
+                                        <span class="text-sm text-[#128C7E] dark:text-[#25D366] font-bold">R$</span>
+                                        <span class="text-3xl font-serif font-medium text-[#128C7E] dark:text-[#25D366] transition-colors leading-none">202,30</span>
+                                    </div>
+                                    <span class="text-[9px] font-bold text-brand-600 dark:text-brand-400 uppercase tracking-widest mt-1.5 flex items-center justify-center sm:justify-start md:justify-end gap-1"><i data-lucide="ticket" class="w-3 h-3"></i> C/ Cupom BOUTIQUE30</span>
+                                    
+                                    <div class="flex items-center justify-center sm:justify-start md:justify-end gap-2 mt-2 opacity-80">
                                         <span class="flex items-center gap-1 text-[9px] font-bold text-brand-700 dark:text-brand-400 uppercase tracking-widest transition-colors"><i data-lucide="credit-card" class="w-3 h-3"></i> Pix / Parcelado</span>
                                         <span class="text-brand-300 dark:text-luxury-border">•</span>
                                         <span class="flex items-center gap-1 text-[9px] font-bold text-brand-700 dark:text-brand-400 uppercase tracking-widest transition-colors"><i data-lucide="truck" class="w-3 h-3"></i> Envio / Retirada</span>
@@ -1046,8 +1100,17 @@
 
                             <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-5 border-t border-brand-900/10 dark:border-luxury-border mt-auto transition-colors">
                                 <div class="flex flex-col text-center sm:text-left">
-                                    <span class="text-3xl font-serif font-medium text-brand-950 dark:text-luxury-text transition-colors">R$ 247</span>
-                                    <div class="flex items-center justify-center sm:justify-start gap-2 mt-1 opacity-80">
+                                    <div class="flex items-center justify-center sm:justify-start gap-2 mb-1">
+                                        <span class="text-[9px] font-bold text-white bg-brand-900 dark:bg-luxury-text dark:text-luxury-bg px-1.5 py-0.5 rounded shadow-sm uppercase tracking-widest">30% OFF</span>
+                                        <del class="text-[11px] text-brand-400 dark:text-luxury-muted font-medium">R$ 247,00</del>
+                                    </div>
+                                    <div class="flex items-baseline justify-center sm:justify-start gap-1">
+                                        <span class="text-sm text-[#128C7E] dark:text-[#25D366] font-bold">R$</span>
+                                        <span class="text-3xl font-serif font-medium text-[#128C7E] dark:text-[#25D366] transition-colors leading-none">172,90</span>
+                                    </div>
+                                    <span class="text-[9px] font-bold text-brand-600 dark:text-brand-400 uppercase tracking-widest mt-1.5 flex items-center justify-center sm:justify-start gap-1"><i data-lucide="ticket" class="w-3 h-3"></i> C/ Cupom BOUTIQUE30</span>
+                                    
+                                    <div class="flex items-center justify-center sm:justify-start gap-2 mt-2 opacity-80">
                                         <span class="flex items-center gap-1 text-[9px] font-bold text-brand-700 dark:text-brand-400 uppercase tracking-widest transition-colors"><i data-lucide="credit-card" class="w-3 h-3"></i> Pix / Parcelado</span>
                                         <span class="text-brand-300 dark:text-luxury-border">•</span>
                                         <span class="flex items-center gap-1 text-[9px] font-bold text-brand-700 dark:text-brand-400 uppercase tracking-widest transition-colors"><i data-lucide="truck" class="w-3 h-3"></i> Envio / Retirada</span>
@@ -1106,14 +1169,23 @@
 
                             <div class="flex flex-col sm:flex-row md:flex-row-reverse items-center justify-between gap-4 pt-5 border-t border-brand-900/10 dark:border-luxury-border mt-auto transition-colors">
                                 <div class="flex flex-col text-center sm:text-left md:text-right md:items-end">
-                                    <span class="text-3xl font-serif font-medium text-brand-950 dark:text-luxury-text transition-colors">R$ 197</span>
-                                    <div class="flex items-center justify-center sm:justify-start md:justify-end gap-2 mt-1 opacity-80">
+                                    <div class="flex items-center justify-center sm:justify-start md:justify-end gap-2 mb-1">
+                                        <span class="text-[9px] font-bold text-white bg-brand-900 dark:bg-luxury-text dark:text-luxury-bg px-1.5 py-0.5 rounded shadow-sm uppercase tracking-widest">30% OFF</span>
+                                        <del class="text-[11px] text-brand-400 dark:text-luxury-muted font-medium">R$ 147,00</del>
+                                    </div>
+                                    <div class="flex items-baseline justify-center sm:justify-start md:justify-end gap-1">
+                                        <span class="text-sm text-[#128C7E] dark:text-[#25D366] font-bold">R$</span>
+                                        <span class="text-3xl font-serif font-medium text-[#128C7E] dark:text-[#25D366] transition-colors leading-none">102,90</span>
+                                    </div>
+                                    <span class="text-[9px] font-bold text-brand-600 dark:text-brand-400 uppercase tracking-widest mt-1.5 flex items-center justify-center sm:justify-start md:justify-end gap-1"><i data-lucide="ticket" class="w-3 h-3"></i> C/ Cupom BOUTIQUE30</span>
+                                    
+                                    <div class="flex items-center justify-center sm:justify-start md:justify-end gap-2 mt-2 opacity-80">
                                         <span class="flex items-center gap-1 text-[9px] font-bold text-brand-700 dark:text-brand-400 uppercase tracking-widest transition-colors"><i data-lucide="credit-card" class="w-3 h-3"></i> Pix / Parcelado</span>
                                         <span class="text-brand-300 dark:text-luxury-border">•</span>
                                         <span class="flex items-center gap-1 text-[9px] font-bold text-brand-700 dark:text-brand-400 uppercase tracking-widest transition-colors"><i data-lucide="truck" class="w-3 h-3"></i> Envio / Retirada</span>
                                     </div>
                                 </div>
-                                <button onclick="cartSystem.add('American Argan Oil (100ml)', 197, 'https://testeessencia.carrd.co/assets/images/image79.jpg?v=7c53f00c', this)" class="w-full sm:w-auto bg-brand-900 hover:bg-brand-800 dark:bg-white dark:hover:bg-luxury-text text-white dark:text-brand-950 text-[11px] md:text-xs font-bold uppercase px-8 py-3.5 sm:py-4 rounded-full transition-transform active:scale-95 shadow-md flex items-center justify-center gap-2 focus:outline-none">
+                                <button onclick="cartSystem.add('American Argan Oil (100ml)', 147, 'https://testeessencia.carrd.co/assets/images/image79.jpg?v=7c53f00c', this)" class="w-full sm:w-auto bg-brand-900 hover:bg-brand-800 dark:bg-white dark:hover:bg-luxury-text text-white dark:text-brand-950 text-[11px] md:text-xs font-bold uppercase px-8 py-3.5 sm:py-4 rounded-full transition-transform active:scale-95 shadow-md flex items-center justify-center gap-2 focus:outline-none">
                                     <i data-lucide="shopping-bag" class="w-4 h-4"></i> Adicionar
                                 </button>
                             </div>
@@ -1171,9 +1243,17 @@
 
                         <div class="flex flex-col sm:flex-row items-center justify-between gap-5 mt-auto pt-6 border-t border-white/10">
                             <div class="flex flex-col w-full sm:w-auto text-center sm:text-left">
-                                <span class="text-[11px] text-brand-400 line-through mb-0.5 font-medium">De R$ 880</span>
-                                <span class="text-4xl font-serif font-medium text-white">R$ 797</span>
-                                <div class="flex items-center justify-center sm:justify-start gap-2 mt-1.5 opacity-90">
+                                <div class="flex items-center justify-center sm:justify-start gap-2 mb-1">
+                                    <span class="text-[9px] font-bold text-brand-950 bg-brand-400 px-1.5 py-0.5 rounded shadow-sm uppercase tracking-widest">30% OFF</span>
+                                    <del class="text-[11px] text-brand-400 font-medium">De R$ 797,00</del>
+                                </div>
+                                <div class="flex items-baseline justify-center sm:justify-start gap-1">
+                                    <span class="text-sm text-[#25D366] font-bold">R$</span>
+                                    <span class="text-4xl font-serif font-medium text-[#25D366] leading-none">557,90</span>
+                                </div>
+                                <span class="text-[9px] font-bold text-white/70 uppercase tracking-widest mt-1.5 flex items-center justify-center sm:justify-start gap-1"><i data-lucide="ticket" class="w-3 h-3"></i> C/ Cupom BOUTIQUE30</span>
+                                
+                                <div class="flex items-center justify-center sm:justify-start gap-2 mt-2.5 opacity-90">
                                     <span class="flex items-center gap-1 text-[9px] font-bold text-brand-300 uppercase tracking-widest"><i data-lucide="credit-card" class="w-3 h-3"></i> Pix ou Parcelado</span>
                                     <span class="text-white/20">•</span>
                                     <span class="flex items-center gap-1 text-[9px] font-bold text-brand-300 uppercase tracking-widest"><i data-lucide="truck" class="w-3 h-3"></i> Envio ou Retirada</span>
@@ -1395,7 +1475,7 @@
     <div id="drawer-overlay" class="fixed inset-0 z-[115] bg-brand-950/60 dark:bg-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300 transition-colors" onclick="closeAllDrawers()"></div>
     
     <!-- GAVETA DA SACOLA (BOTTOM SHEET) -->
-    <div id="cart-drawer" class="fixed bottom-0 left-0 w-full z-[120] bg-white dark:bg-luxury-card rounded-t-[2.5rem] shadow-[0_-20px_40px_rgba(0,0,0,0.2)] transform translate-y-full transition-transform duration-500 flex flex-col max-h-[90vh] border-t border-brand-900/10 dark:border-luxury-border transition-colors">
+    <div id="cart-drawer" class="fixed bottom-0 left-0 md:left-auto md:right-6 w-full md:w-[420px] z-[120] bg-white dark:bg-luxury-card rounded-t-[2.5rem] shadow-[0_-20px_50px_rgba(0,0,0,0.3)] transform translate-y-full transition-transform duration-500 flex flex-col max-h-[90vh] md:max-h-[85vh] border-t md:border-x border-brand-900/10 dark:border-luxury-border transition-colors">
         <div class="flex justify-center pt-5 pb-3 cursor-pointer" onclick="cartSystem.toggle()">
             <div class="w-12 h-1.5 bg-brand-200 dark:bg-luxury-border rounded-full transition-colors"></div>
         </div>
@@ -1409,16 +1489,36 @@
         
         <div id="cart-items-container" class="overflow-y-auto px-4 sm:px-6 py-6 flex-grow hide-scrollbar space-y-4"></div>
 
-        <div class="px-6 py-6 border-t border-brand-900/10 dark:border-luxury-border bg-brand-50/50 dark:bg-luxury-bg/50 rounded-t-[1.5rem] transition-colors">
+        <div class="px-6 py-6 border-t border-brand-900/10 dark:border-luxury-border bg-brand-50/50 dark:bg-luxury-bg/50 rounded-t-[1.5rem] transition-colors flex flex-col">
+            
+            <!-- SISTEMA DE CUPOM -->
+            <div class="flex items-center gap-2 mb-5">
+                <div class="relative flex-grow">
+                    <i data-lucide="ticket" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-brand-400 dark:text-luxury-muted"></i>
+                    <input type="text" id="coupon-input" placeholder="Cupom de Desconto" class="w-full bg-white dark:bg-luxury-card border border-brand-200 dark:border-luxury-border rounded-xl pl-9 pr-4 py-3 text-[11px] uppercase font-bold tracking-widest text-brand-950 dark:text-luxury-text placeholder-brand-400 dark:placeholder-luxury-muted focus:outline-none focus:border-brand-500 transition-colors shadow-sm">
+                </div>
+                <button onclick="cartSystem.applyCoupon()" class="shrink-0 bg-brand-900 dark:bg-luxury-border text-white px-5 py-3 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-brand-800 transition-colors focus:outline-none shadow-sm">Aplicar</button>
+            </div>
+
+            <!-- EXIBIÇÃO DO DESCONTO (Escondido por padrão) -->
+            <div id="discount-display" class="hidden flex justify-between items-center px-4 py-2.5 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-emerald-600 dark:text-emerald-400 transition-colors mb-4">
+                <span class="text-[10px] font-bold uppercase tracking-widest flex items-center gap-1.5"><i data-lucide="tag" class="w-3.5 h-3.5"></i> Desconto (30%)</span>
+                <span id="cart-discount-value" class="text-[12px] font-bold">- R$ 0</span>
+            </div>
+
             <div class="flex justify-between items-end mb-5">
-                <span class="text-xs font-bold text-brand-800 dark:text-luxury-muted uppercase tracking-widest transition-colors">Total da Reserva:</span>
+                <div class="flex flex-col">
+                    <span class="text-xs font-bold text-brand-800 dark:text-luxury-muted uppercase tracking-widest transition-colors">Total da Reserva:</span>
+                    <del id="cart-subtotal" class="text-[10px] text-brand-400 dark:text-luxury-muted/50 font-medium hidden transition-colors mt-0.5">R$ 0</del>
+                </div>
                 <span id="cart-total" class="text-3xl font-serif font-medium text-brand-950 dark:text-luxury-text leading-none transition-colors">R$ 0</span>
             </div>
+            
             <button onclick="cartSystem.checkout()" class="w-full bg-[#128C7E] dark:bg-[#1EBE5D] hover:bg-[#075E54] dark:hover:bg-[#25D366] text-white dark:text-luxury-bg text-[13px] font-bold uppercase px-8 py-4 rounded-2xl transition-all active:scale-95 shadow-md flex items-center justify-center gap-2 focus:outline-none dark:shadow-[0_0_15px_rgba(30,190,93,0.2)]">
                 <i data-lucide="message-square" class="w-5 h-5"></i> Finalizar Reserva
             </button>
             
-            <!-- NOVA SECÇÃO DE PAGAMENTO (Cirúrgica e Elegante) -->
+            <!-- NOVA SECÇÃO DE PAGAMENTO -->
             <div class="mt-4 pt-4 border-t border-brand-900/10 dark:border-luxury-border/50 flex flex-col items-center justify-center gap-1.5 opacity-90 transition-colors">
                 <div class="flex gap-3 text-brand-600 dark:text-brand-400">
                     <i data-lucide="qr-code" class="w-4 h-4"></i>
@@ -1435,7 +1535,7 @@
     </div>
 
     <!-- GAVETA VIP DO CLUBE (BOTTOM SHEET) -->
-    <div id="vip-drawer" class="fixed bottom-0 left-0 w-full z-[120] bg-brand-950 dark:bg-[#110d0c] rounded-t-[2.5rem] shadow-[0_-20px_40px_rgba(0,0,0,0.5)] transform translate-y-full transition-transform duration-500 flex flex-col max-h-[92vh] border-t border-brand-900/20 dark:border-luxury-border">
+    <div id="vip-drawer" class="fixed bottom-0 left-0 right-0 mx-auto w-full md:w-[90vw] max-w-[1200px] z-[120] bg-brand-950 dark:bg-[#110d0c] rounded-t-[2.5rem] shadow-[0_-20px_50px_rgba(0,0,0,0.6)] transform translate-y-full transition-transform duration-500 flex flex-col max-h-[92vh] md:max-h-[85vh] border-t md:border-x border-brand-900/20 dark:border-luxury-border">
         <div class="flex justify-center pt-5 pb-3 cursor-pointer shrink-0" onclick="vipSystem.toggle()">
             <div class="w-12 h-1.5 bg-white/20 dark:bg-luxury-border rounded-full"></div>
         </div>
@@ -2010,13 +2110,37 @@
                         const fallbackImg = 'https://via.placeholder.com/150';
                         const displayImg = item.img ? item.img : fallbackImg;
                         const decreaseIcon = item.quantity === 1 ? '<svg class="w-3.5 h-3.5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>' : '-';
-                        html += `<div class="flex items-center gap-4 bg-brand-50/50 dark:bg-luxury-bg border border-brand-900/5 dark:border-luxury-border p-3 rounded-2xl shadow-sm relative overflow-hidden group/item transition-colors">
-                                <div class="w-16 h-16 shrink-0 rounded-xl overflow-hidden border border-brand-900/10 dark:border-transparent bg-white"><img src="${displayImg}" class="w-full h-full object-cover opacity-95 dark:opacity-85" alt="${item.name}" loading="lazy" decoding="async"></div>
-                                <div class="flex flex-col flex-grow pr-1"><span class="text-[11px] sm:text-xs font-bold text-brand-950 dark:text-luxury-text uppercase tracking-wider leading-tight line-clamp-2 mb-1 transition-colors">${item.name}</span><span class="text-[12px] text-[#128C7E] dark:text-[#25D366] font-bold transition-colors">R$ ${item.price}</span></div>
-                                <div class="flex items-center bg-white dark:bg-luxury-card border border-brand-200 dark:border-luxury-border rounded-lg overflow-hidden shadow-sm shrink-0 transition-colors">
-                                    <button onclick="cartSystem.updateQtd('${item.name}', -1)" class="px-3 py-2 text-brand-800 dark:text-luxury-muted hover:bg-brand-50 dark:hover:bg-luxury-border transition-colors focus:outline-none flex items-center justify-center">${decreaseIcon}</button>
-                                    <span class="text-[11px] font-bold w-5 text-center text-brand-950 dark:text-luxury-text transition-colors">${item.quantity}</span>
-                                    <button onclick="cartSystem.updateQtd('${item.name}', 1)" class="px-3 py-2 text-brand-800 dark:text-luxury-muted hover:bg-brand-50 dark:hover:bg-luxury-border transition-colors focus:outline-none flex items-center justify-center">+</button>
+                        
+                        // LÓGICA DE PREÇO POR ITEM (Ancoragem e Urgência)
+                        let priceHtml = '';
+                        if(this.discountPercent > 0) {
+                            let discountedPrice = item.price * (1 - this.discountPercent);
+                            priceHtml = `
+                                <div class="flex flex-col mt-1">
+                                    <del class="text-[10px] text-brand-400 dark:text-luxury-muted font-medium opacity-70">De R$ ${item.price.toFixed(2).replace('.', ',')}</del>
+                                    <span class="text-[15px] text-[#128C7E] dark:text-[#25D366] font-bold transition-colors leading-none mt-0.5">Por R$ ${discountedPrice.toFixed(2).replace('.', ',')}</span>
+                                </div>
+                            `;
+                        } else {
+                            let simulatedDiscount = item.price * 0.70; // 30% off simulado para incentivo
+                            priceHtml = `
+                                <div class="flex flex-col mt-1">
+                                    <span class="text-[14px] text-brand-950 dark:text-luxury-text font-bold transition-colors leading-none">R$ ${item.price.toFixed(2).replace('.', ',')}</span>
+                                    <span class="text-[9px] text-[#128C7E] dark:text-[#25D366] font-bold uppercase tracking-widest mt-1.5 flex items-center gap-1"><i data-lucide="ticket" class="w-3 h-3"></i> Fica R$ ${simulatedDiscount.toFixed(2).replace('.', ',')} c/ cupom</span>
+                                </div>
+                            `;
+                        }
+
+                        html += `<div class="flex items-center gap-4 bg-white dark:bg-luxury-bg border border-brand-900/5 dark:border-luxury-border p-4 rounded-2xl shadow-sm relative overflow-hidden group/item transition-colors mb-3">
+                                <div class="w-20 h-20 shrink-0 rounded-xl overflow-hidden border border-brand-900/10 dark:border-transparent bg-brand-50 dark:bg-luxury-card"><img src="${displayImg}" class="w-full h-full object-cover opacity-95 dark:opacity-85" alt="${item.name}" loading="lazy" decoding="async"></div>
+                                <div class="flex flex-col flex-grow pr-1">
+                                    <span class="text-[11px] sm:text-[12px] font-bold text-brand-950 dark:text-luxury-text uppercase tracking-wider leading-tight line-clamp-2 transition-colors">${item.name}</span>
+                                    ${priceHtml}
+                                </div>
+                                <div class="flex items-center bg-brand-50 dark:bg-luxury-card border border-brand-200 dark:border-luxury-border rounded-lg overflow-hidden shadow-sm shrink-0 transition-colors h-10">
+                                    <button onclick="cartSystem.updateQtd('${item.name}', -1)" class="px-3 h-full text-brand-800 dark:text-luxury-muted hover:bg-brand-100 dark:hover:bg-luxury-border transition-colors focus:outline-none flex items-center justify-center">${decreaseIcon}</button>
+                                    <span class="text-[12px] font-bold w-6 text-center text-brand-950 dark:text-luxury-text transition-colors">${item.quantity}</span>
+                                    <button onclick="cartSystem.updateQtd('${item.name}', 1)" class="px-3 h-full text-brand-800 dark:text-luxury-muted hover:bg-brand-100 dark:hover:bg-luxury-border transition-colors focus:outline-none flex items-center justify-center">+</button>
                                 </div>
                             </div>`;
                     });
@@ -2027,7 +2151,7 @@
                 let finalTotal = subtotal;
                 let discountAmount = 0;
                 
-                // Lógica de visualização do Desconto
+                // Lógica de visualização do Desconto Final
                 if(this.discountPercent > 0 && subtotal > 0) {
                     discountAmount = subtotal * this.discountPercent;
                     finalTotal = subtotal - discountAmount;
@@ -2241,6 +2365,23 @@
             renderPricing(); 
             cartSystem.init(); 
             handleRouting(); 
+            
+            // OTIMIZAÇÃO CIRÚRGICA: Cronómetro do Cupom
+            let countdownMinutes = 15;
+            let countdownSeconds = 0;
+            setInterval(() => {
+                if(countdownMinutes === 0 && countdownSeconds === 0) return;
+                if(countdownSeconds === 0) {
+                    countdownMinutes--;
+                    countdownSeconds = 59;
+                } else {
+                    countdownSeconds--;
+                }
+                const timerEl = document.getElementById('cart-timer');
+                if(timerEl) {
+                    timerEl.innerText = `${countdownMinutes.toString().padStart(2, '0')}:${countdownSeconds.toString().padStart(2, '0')}`;
+                }
+            }, 1000);
             
             // OTIMIZAÇÃO: Permite desbloquear o clube VIP carregando na tecla "Enter"
             const vipInput = document.getElementById('vip-pass-input');
