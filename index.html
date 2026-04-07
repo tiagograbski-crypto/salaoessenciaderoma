@@ -236,6 +236,18 @@
         .slide-bg-2 { animation-delay: 5.6s; }
         .slide-bg-3 { animation-delay: 13.6s; }
 
+        /* SLIDER DE PRODUTOS BOUTIQUE (DESLIZAMENTO LATERAL) */
+        @keyframes slideHorizontal {
+            0%, 25% { transform: translateX(0); }
+            33%, 58% { transform: translateX(-33.3333%); }
+            66%, 91% { transform: translateX(-66.6666%); }
+            100% { transform: translateX(0); }
+        }
+        .animate-slide-horizontal {
+            animation: slideHorizontal 12s infinite cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
         /* NOVA ANIMAÇÃO: INDICADOR DE CARROSSEL MOBILE (Deslizamento Direcional) */
         @keyframes bounce-horizontal {
             0%, 100% { transform: translateX(0); }
@@ -903,12 +915,14 @@
                     <!-- Passo 1 (Shampoo: Slider + Vídeo) -->
                     <article class="bg-brand-50/50 dark:bg-luxury-bg/50 border border-brand-900/5 dark:border-luxury-border rounded-[24px] p-5 sm:p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-10 items-center shadow-sm transition-colors">
                         <div class="w-full md:w-1/3 aspect-[4/5] rounded-xl overflow-hidden relative shadow-sm border border-brand-900/10 dark:border-luxury-border bg-white dark:bg-luxury-bg transition-colors group/media">
-                            <!-- FOTO MODO SLIDER -->
-                            <div class="media-photo absolute inset-0 w-full h-full transition-opacity duration-700 z-10">
-                                <img src="https://testeessencia.carrd.co/assets/images/image53.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Banho Repair Master 1" class="product-slide product-slide-1">
-                                <!-- Substitua as duas imagens abaixo pelas novas fotos do shampoo -->
-                                <img src="https://testeessencia.carrd.co/assets/images/image53.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Banho Repair Master 2" class="product-slide product-slide-2">
-                                <img src="https://testeessencia.carrd.co/assets/images/image53.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Banho Repair Master 3" class="product-slide product-slide-3">
+                            <!-- FOTO MODO SLIDER LATERAL -->
+                            <div class="media-photo absolute inset-0 w-full h-full transition-opacity duration-700 z-10 overflow-hidden">
+                                <div class="flex w-[300%] h-full animate-slide-horizontal">
+                                    <img src="https://testeessencia.carrd.co/assets/images/image53.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Banho Repair Master 1" class="w-1/3 h-full object-cover shrink-0">
+                                    <!-- Substitua as duas imagens abaixo pelas novas fotos do shampoo -->
+                                    <img src="https://testeessencia.carrd.co/assets/images/image53.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Banho Repair Master 2" class="w-1/3 h-full object-cover shrink-0">
+                                    <img src="https://testeessencia.carrd.co/assets/images/image53.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Banho Repair Master 3" class="w-1/3 h-full object-cover shrink-0">
+                                </div>
                             </div>
                             <video data-src="https://testeessencia.carrd.co/assets/videos/video17.mp4?v=701b88d2#t=0.1" preload="none" loop muted playsinline class="media-video absolute inset-0 w-full h-full object-cover transition-opacity duration-700 z-0 opacity-0 pointer-events-none"></video>
                             <span class="absolute top-4 left-4 bg-brand-900 dark:bg-luxury-border text-white dark:text-luxury-text text-[10px] font-black px-3 py-1.5 rounded-md uppercase tracking-wider shadow-md transition-colors z-20">Passo 1</span>
@@ -983,12 +997,14 @@
                     <!-- Passo 2 (Ampola: Slider + Vídeo) -->
                     <article class="bg-brand-50/50 dark:bg-luxury-bg/50 border border-brand-900/5 dark:border-luxury-border rounded-[24px] p-5 sm:p-6 md:p-8 flex flex-col md:flex-row-reverse gap-6 md:gap-10 items-center shadow-sm transition-colors">
                         <div class="w-full md:w-1/3 aspect-[4/5] rounded-xl overflow-hidden relative shadow-sm border border-brand-900/10 dark:border-luxury-border bg-white dark:bg-luxury-bg transition-colors group/media">
-                            <!-- FOTO MODO SLIDER -->
-                            <div class="media-photo absolute inset-0 w-full h-full transition-opacity duration-700 z-10">
-                                <img src="https://testeessencia.carrd.co/assets/images/image56.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Ampola Ouro 1" class="product-slide product-slide-1">
-                                <!-- Substitua as duas imagens abaixo pelas novas fotos da ampola -->
-                                <img src="https://testeessencia.carrd.co/assets/images/image56.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Ampola Ouro 2" class="product-slide product-slide-2">
-                                <img src="https://testeessencia.carrd.co/assets/images/image56.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Ampola Ouro 3" class="product-slide product-slide-3">
+                            <!-- FOTO MODO SLIDER LATERAL -->
+                            <div class="media-photo absolute inset-0 w-full h-full transition-opacity duration-700 z-10 overflow-hidden">
+                                <div class="flex w-[300%] h-full animate-slide-horizontal">
+                                    <img src="https://testeessencia.carrd.co/assets/images/image56.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Ampola Ouro 1" class="w-1/3 h-full object-cover shrink-0">
+                                    <!-- Substitua as duas imagens abaixo pelas novas fotos da ampola -->
+                                    <img src="https://testeessencia.carrd.co/assets/images/image56.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Ampola Ouro 2" class="w-1/3 h-full object-cover shrink-0">
+                                    <img src="https://testeessencia.carrd.co/assets/images/image56.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Ampola Ouro 3" class="w-1/3 h-full object-cover shrink-0">
+                                </div>
                             </div>
                             <video data-src="https://testeessencia.carrd.co/assets/videos/video18.mp4?v=701b88d2#t=0.1" preload="none" loop muted playsinline class="media-video absolute inset-0 w-full h-full object-cover transition-opacity duration-700 z-0 opacity-0 pointer-events-none"></video>
                             <span class="absolute top-4 right-4 md:left-4 md:right-auto bg-brand-900 dark:bg-luxury-border text-white dark:text-luxury-text text-[10px] font-black px-3 py-1.5 rounded-md uppercase tracking-wider shadow-md transition-colors z-20">Passo 2</span>
@@ -1059,11 +1075,13 @@
                     <article class="bg-brand-50/50 dark:bg-luxury-bg/50 border border-brand-900/5 dark:border-luxury-border rounded-[24px] p-5 sm:p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-10 items-center shadow-sm transition-colors">
                         <div class="w-full md:w-1/3 aspect-[4/5] rounded-xl overflow-hidden relative shadow-sm border border-brand-900/10 dark:border-luxury-border bg-white dark:bg-luxury-bg transition-colors">
                             <!-- SLIDER EXCLUSIVO (SEM VÍDEO) -->
-                            <div class="absolute inset-0 w-full h-full z-10">
-                                <img src="https://testeessencia.carrd.co/assets/images/image63.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Baby Queen 1" class="product-slide product-slide-1">
-                                <!-- Substitua as duas imagens abaixo pelas novas fotos do Baby Queen -->
-                                <img src="https://testeessencia.carrd.co/assets/images/image63.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Baby Queen 2" class="product-slide product-slide-2">
-                                <img src="https://testeessencia.carrd.co/assets/images/image63.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Baby Queen 3" class="product-slide product-slide-3">
+                            <div class="absolute inset-0 w-full h-full z-10 overflow-hidden">
+                                <div class="flex w-[300%] h-full animate-slide-horizontal">
+                                    <img src="https://testeessencia.carrd.co/assets/images/image63.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Baby Queen 1" class="w-1/3 h-full object-cover shrink-0">
+                                    <!-- Substitua as duas imagens abaixo pelas novas fotos do Baby Queen -->
+                                    <img src="https://testeessencia.carrd.co/assets/images/image63.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Baby Queen 2" class="w-1/3 h-full object-cover shrink-0">
+                                    <img src="https://testeessencia.carrd.co/assets/images/image63.jpg?v=f5d26855" loading="lazy" decoding="async" alt="Baby Queen 3" class="w-1/3 h-full object-cover shrink-0">
+                                </div>
                             </div>
                             <span class="absolute top-4 left-4 bg-brand-900 dark:bg-luxury-border text-white dark:text-luxury-text text-[10px] font-black px-3 py-1.5 rounded-md uppercase tracking-wider shadow-md transition-colors z-20">Passo 3</span>
                         </div>
@@ -1135,11 +1153,13 @@
                     <article class="bg-brand-50/50 dark:bg-luxury-bg/50 border border-brand-900/5 dark:border-luxury-border rounded-[24px] p-5 sm:p-6 md:p-8 flex flex-col md:flex-row-reverse gap-6 md:gap-10 items-center shadow-sm transition-colors">
                         <div class="w-full md:w-1/3 aspect-[4/5] rounded-xl overflow-hidden relative shadow-sm border border-brand-900/10 dark:border-luxury-border bg-white dark:bg-luxury-bg transition-colors">
                             <!-- SLIDER EXCLUSIVO (SEM VÍDEO) -->
-                            <div class="absolute inset-0 w-full h-full z-10">
-                                <img src="https://testeessencia.carrd.co/assets/images/image79.jpg?v=7c53f00c" loading="lazy" decoding="async" alt="American Argan 1" class="product-slide product-slide-1">
-                                <!-- Substitua as duas imagens abaixo pelas novas fotos do Óleo de Argan -->
-                                <img src="https://testeessencia.carrd.co/assets/images/image79.jpg?v=7c53f00c" loading="lazy" decoding="async" alt="American Argan 2" class="product-slide product-slide-2">
-                                <img src="https://testeessencia.carrd.co/assets/images/image79.jpg?v=7c53f00c" loading="lazy" decoding="async" alt="American Argan 3" class="product-slide product-slide-3">
+                            <div class="absolute inset-0 w-full h-full z-10 overflow-hidden">
+                                <div class="flex w-[300%] h-full animate-slide-horizontal">
+                                    <img src="https://testeessencia.carrd.co/assets/images/image79.jpg?v=7c53f00c" loading="lazy" decoding="async" alt="American Argan 1" class="w-1/3 h-full object-cover shrink-0">
+                                    <!-- Substitua as duas imagens abaixo pelas novas fotos do Óleo de Argan -->
+                                    <img src="https://testeessencia.carrd.co/assets/images/image79.jpg?v=7c53f00c" loading="lazy" decoding="async" alt="American Argan 2" class="w-1/3 h-full object-cover shrink-0">
+                                    <img src="https://testeessencia.carrd.co/assets/images/image79.jpg?v=7c53f00c" loading="lazy" decoding="async" alt="American Argan 3" class="w-1/3 h-full object-cover shrink-0">
+                                </div>
                             </div>
                             <span class="absolute top-4 right-4 md:left-4 md:right-auto bg-brand-900 dark:bg-luxury-border text-white dark:text-luxury-text text-[10px] font-black px-3 py-1.5 rounded-md uppercase tracking-wider shadow-md transition-colors z-20">Passo 4</span>
                         </div>
@@ -1480,10 +1500,10 @@
     
     <!-- GAVETA DA SACOLA (BOTTOM SHEET) -->
     <div id="cart-drawer" class="fixed bottom-0 left-0 md:left-auto md:right-6 w-full md:w-[420px] z-[120] bg-white dark:bg-luxury-card rounded-t-[2.5rem] shadow-[0_-20px_50px_rgba(0,0,0,0.3)] transform translate-y-full transition-transform duration-500 flex flex-col max-h-[90vh] md:max-h-[85vh] border-t md:border-x border-brand-900/10 dark:border-luxury-border transition-colors">
-        <div class="flex justify-center pt-5 pb-3 cursor-pointer" onclick="cartSystem.toggle()">
+        <div class="flex justify-center pt-5 pb-3 cursor-pointer shrink-0" onclick="cartSystem.toggle()">
             <div class="w-12 h-1.5 bg-brand-200 dark:bg-luxury-border rounded-full transition-colors"></div>
         </div>
-        <div class="px-6 pb-4 flex justify-between items-center border-b border-brand-900/10 dark:border-luxury-border transition-colors">
+        <div class="px-6 pb-4 flex justify-between items-center border-b border-brand-900/10 dark:border-luxury-border transition-colors shrink-0">
             <div class="flex items-center gap-3">
                 <div class="p-2 bg-brand-50 dark:bg-luxury-bg rounded-full transition-colors"><i data-lucide="shopping-bag" class="w-5 h-5 text-brand-950 dark:text-luxury-text transition-colors"></i></div>
                 <h3 class="font-serif text-2xl font-bold text-brand-950 dark:text-luxury-text transition-colors">Sua Sacola</h3>
@@ -1491,17 +1511,31 @@
             <button onclick="cartSystem.toggle()" class="p-2 bg-brand-50 dark:bg-luxury-bg rounded-full text-brand-950 dark:text-luxury-text shadow-sm border border-brand-900/5 dark:border-transparent focus:outline-none transition-colors"><i data-lucide="x" class="w-5 h-5"></i></button>
         </div>
         
-        <div id="cart-items-container" class="overflow-y-auto px-4 sm:px-6 py-6 flex-grow hide-scrollbar space-y-4"></div>
+        <!-- OTIMIZAÇÃO CIRÚRGICA: A lista agora abraça o conteúdo e rola naturalmente com a scrollbar elegante -->
+        <div id="cart-items-container" class="overflow-y-auto px-4 sm:px-6 py-6 max-h-[50vh] md:max-h-[55vh] custom-scrollbar space-y-4"></div>
 
-        <div class="px-6 py-6 border-t border-brand-900/10 dark:border-luxury-border bg-brand-50/50 dark:bg-luxury-bg/50 rounded-t-[1.5rem] transition-colors flex flex-col">
+        <div class="px-6 py-6 border-t border-brand-900/10 dark:border-luxury-border bg-brand-50/50 dark:bg-luxury-bg/50 rounded-t-[1.5rem] transition-colors flex flex-col shrink-0">
             
-            <!-- SISTEMA DE CUPOM -->
-            <div class="flex items-center gap-2 mb-5">
-                <div class="relative flex-grow">
-                    <i data-lucide="ticket" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-brand-400 dark:text-luxury-muted"></i>
-                    <input type="text" id="coupon-input" placeholder="Cupom de Desconto" class="w-full bg-white dark:bg-luxury-card border border-brand-200 dark:border-luxury-border rounded-xl pl-9 pr-4 py-3 text-[11px] uppercase font-bold tracking-widest text-brand-950 dark:text-luxury-text placeholder-brand-400 dark:placeholder-luxury-muted focus:outline-none focus:border-brand-500 transition-colors shadow-sm">
+            <!-- SISTEMA DE CUPOM E URGÊNCIA (1-Click Coupon) -->
+            <div class="flex flex-col gap-3 mb-6">
+                <div class="flex justify-between items-center bg-brand-100/50 dark:bg-luxury-border/30 px-4 py-3 rounded-xl border border-brand-200/50 dark:border-luxury-border/50">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="timer" class="w-4 h-4 text-brand-600 dark:text-brand-400 animate-pulse"></i>
+                        <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-brand-900 dark:text-luxury-text">
+                            Oferta Exclusiva
+                        </span>
+                    </div>
+                    <span class="text-[11px] font-bold text-brand-600 dark:text-brand-400 bg-white dark:bg-luxury-card px-2 py-1 rounded-md shadow-sm" id="cart-timer">15:00</span>
                 </div>
-                <button onclick="cartSystem.applyCoupon()" class="shrink-0 bg-brand-900 dark:bg-luxury-border text-white px-5 py-3 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-brand-800 transition-colors focus:outline-none shadow-sm">Aplicar</button>
+                
+                <!-- Botão de Cupom Automático -->
+                <button id="btn-auto-coupon" onclick="cartSystem.applyCoupon()" class="w-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 hover:bg-emerald-100 dark:hover:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 px-5 py-3.5 rounded-xl text-[11px] font-bold uppercase tracking-widest transition-all focus:outline-none shadow-sm flex items-center justify-between group cursor-pointer">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="ticket" class="w-4 h-4"></i>
+                        <span>Ativar Cupom BOUTIQUE30</span>
+                    </div>
+                    <span class="bg-emerald-600 text-white text-[9px] px-2 py-1 rounded-md shadow-sm group-hover:scale-105 transition-transform">-30% OFF</span>
+                </button>
             </div>
 
             <!-- EXIBIÇÃO DO DESCONTO (Escondido por padrão) -->
@@ -1998,22 +2032,12 @@
                 this.render();
             },
             applyCoupon: function() {
-                const input = document.getElementById('coupon-input');
-                if(!input) return;
-                const code = input.value.toUpperCase().trim();
+                // OTIMIZAÇÃO CIRÚRGICA: O Cupom agora aplica os 30% com um clique direto!
+                if(this.items.length === 0) return;
                 
-                if(code === '') return;
-
-                if(this.validCoupons[code]) {
-                    this.discountPercent = this.validCoupons[code];
-                    this.save();
-                    this.showToast('Cupom Aplicado!', 'success');
-                    input.value = '';
-                } else {
-                    this.discountPercent = 0;
-                    this.save();
-                    this.showToast('Cupom Inválido', 'error');
-                }
+                this.discountPercent = 0.30;
+                this.save();
+                this.showToast('Cupom Aplicado com Sucesso!', 'success');
             },
             add: function(productName, price, imgUrl, btnElement) {
                 if(btnElement && btnElement.disabled) return;
@@ -2154,6 +2178,18 @@
                 
                 let finalTotal = subtotal;
                 let discountAmount = 0;
+                
+                // LÓGICA VISUAL DO BOTÃO 1-CLICK COUPON
+                const couponBtn = document.getElementById('btn-auto-coupon');
+                if (couponBtn) {
+                    if (this.discountPercent > 0 && subtotal > 0) {
+                        couponBtn.innerHTML = `<div class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4"></i><span>Cupom BOUTIQUE30 Aplicado</span></div><span class="bg-white/20 text-white text-[9px] px-2 py-1 rounded-md shadow-sm border border-white/20">-30% OFF</span>`;
+                        couponBtn.className = "w-full bg-[#128C7E] dark:bg-[#1EBE5D] border border-transparent text-white px-5 py-3.5 rounded-xl text-[11px] font-bold uppercase tracking-widest transition-all focus:outline-none shadow-md flex items-center justify-between pointer-events-none";
+                    } else {
+                        couponBtn.innerHTML = `<div class="flex items-center gap-2"><i data-lucide="ticket" class="w-4 h-4"></i><span>Ativar Cupom BOUTIQUE30</span></div><span class="bg-emerald-600 text-white text-[9px] px-2 py-1 rounded-md shadow-sm group-hover:scale-105 transition-transform">-30% OFF</span>`;
+                        couponBtn.className = "w-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 hover:bg-emerald-100 dark:hover:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 px-5 py-3.5 rounded-xl text-[11px] font-bold uppercase tracking-widest transition-all focus:outline-none shadow-sm flex items-center justify-between group cursor-pointer";
+                    }
+                }
                 
                 // Lógica de visualização do Desconto Final
                 if(this.discountPercent > 0 && subtotal > 0) {
@@ -2361,11 +2397,13 @@
 
         window.addEventListener('popstate', handleRouting);
 
-        window.addEventListener('load', () => {
-            document.body.classList.remove('no-fouc');
-        });
+        // CORREÇÃO DE VELOCIDADE 1: Fallback de segurança contra Tela Branca Infinita (FOUC)
+        setTimeout(() => document.body.classList.remove('no-fouc'), 1500);
 
         document.addEventListener('DOMContentLoaded', () => {
+            // CORREÇÃO DE VELOCIDADE 2: Liberta a visualização da tela assim que a estrutura base (DOM) for lida
+            document.body.classList.remove('no-fouc');
+            
             renderPricing(); 
             cartSystem.init(); 
             handleRouting(); 
@@ -2546,17 +2584,26 @@
             });
         });
 
+        // CORREÇÃO DE VELOCIDADE 3: Otimização Extrema de Scroll (60 FPS constantes) usando requestAnimationFrame e passive flag
+        let isScrolling = false;
         window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 20) { if(nav) nav.classList.add('shadow-sm', 'dark:shadow-none'); } 
-            else { if(nav) nav.classList.remove('shadow-sm', 'dark:shadow-none'); }
+            if (!isScrolling) {
+                window.requestAnimationFrame(() => {
+                    const nav = document.getElementById('navbar');
+                    if (window.scrollY > 20) { if(nav) nav.classList.add('shadow-sm', 'dark:shadow-none'); } 
+                    else { if(nav) nav.classList.remove('shadow-sm', 'dark:shadow-none'); }
 
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            const progressBar = document.getElementById('scroll-progress');
-            if(progressBar) progressBar.style.width = scrolled + '%';
-        });
+                    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    const scrolled = (winScroll / height) * 100;
+                    const progressBar = document.getElementById('scroll-progress');
+                    if(progressBar) progressBar.style.width = scrolled + '%';
+                    
+                    isScrolling = false;
+                });
+                isScrolling = true;
+            }
+        }, { passive: true });
 
         function toggleNightMode() {
             const html = document.documentElement;
