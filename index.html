@@ -251,8 +251,9 @@
         @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
         
         /* OTIMIZAÇÃO CIRÚRGICA: Previne a tela preta (gaveta) caindo no carregamento (FOUC) sem travar as animações bonitas */
-        body:not(.tailwind-loaded) #cart-drawer,
-        body:not(.tailwind-loaded) #cookie-banner {
+        body.no-fouc #cart-drawer,
+        body.no-fouc #cookie-banner,
+        body.no-fouc #vip-drawer {
             display: none !important;
         }
 
@@ -260,7 +261,7 @@
         .transition-colors { transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); will-change: background-color, border-color, color, fill, stroke; }
     </style>
 </head>
-<body class="bg-brand-50 dark:bg-luxury-bg text-brand-950 dark:text-luxury-text font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-brand-500 selection:text-white pt-8 pb-20 md:pb-0 transition-colors duration-300">
+<body class="no-fouc bg-brand-50 dark:bg-luxury-bg text-brand-950 dark:text-luxury-text font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-brand-500 selection:text-white pt-8 pb-20 md:pb-0 transition-colors duration-300">
 
     <!-- BARRA DE PROGRESSO DE LEITURA -->
     <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-brand-600 to-brand-400 dark:from-brand-400 dark:to-brand-200 z-[80] transition-all duration-100 ease-out" style="width: 0%;"></div>
@@ -531,34 +532,23 @@
                 <div class="absolute top-0 left-0 w-12 sm:w-16 h-full bg-gradient-to-r from-brand-50 dark:from-luxury-bg to-transparent z-10 pointer-events-none md:hidden transition-colors duration-300"></div>
                 <div class="absolute top-0 right-0 w-12 sm:w-16 h-full bg-gradient-to-l from-brand-50 dark:from-luxury-bg to-transparent z-10 pointer-events-none md:hidden transition-colors duration-300"></div>
 
-                <!-- OTIMIZAÇÃO CIRÚRGICA: Container ajustado para 5 vídeos com scroll fluido também em ecrãs grandes -->
-                <div class="flex overflow-x-auto snap-x snap-mandatory gap-5 sm:gap-6 md:gap-6 lg:gap-8 px-6 sm:px-8 md:px-4 pb-6 custom-scrollbar items-center md:justify-start">
-                    
-                    <!-- NOVO VÍDEO (Inserido em primeiro lugar) -->
+                <div class="flex overflow-x-auto md:overflow-visible snap-x snap-mandatory gap-5 sm:gap-6 md:gap-6 lg:gap-8 px-6 sm:px-8 md:px-0 pb-6 custom-scrollbar items-center md:justify-start lg:justify-center">
                     <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-brand-100 dark:bg-luxury-card border border-brand-900/10 dark:border-luxury-border shadow-alvorada dark:shadow-crepusculo hover:-translate-y-2 transition-all duration-700 cursor-pointer">
                         <video data-src="https://testeessencia.carrd.co/assets/videos/video20.mp4?v=0dcd7ee2#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover transform transition-transform duration-[3s] group-hover:scale-105 pointer-events-none opacity-90 dark:opacity-80 transition-opacity"></video>
                         <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-3 sm:p-2.5 rounded-full shadow-lg border border-white/20 transition-all hover:bg-black/90 active:scale-95 focus:outline-none flex items-center justify-center"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                     </figure>
-
-                    <!-- VÍDEO 2 (Ajustado o balanço) -->
                     <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-brand-100 dark:bg-luxury-card border border-brand-900/10 dark:border-luxury-border shadow-alvorada dark:shadow-crepusculo md:-translate-y-8 hover:-translate-y-10 transition-all duration-700 cursor-pointer">
                         <video data-src="https://testeessencia.carrd.co/assets/videos/video03.mp4?v=701b88d2#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover transform transition-transform duration-[3s] group-hover:scale-105 pointer-events-none opacity-90 dark:opacity-80 transition-opacity"></video>
                         <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-3 sm:p-2.5 rounded-full shadow-lg border border-white/20 transition-all hover:bg-black/90 active:scale-95 focus:outline-none flex items-center justify-center"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                     </figure>
-
-                    <!-- VÍDEO 3 (Ajustado o balanço) -->
                     <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-brand-100 dark:bg-luxury-card border border-brand-900/10 dark:border-luxury-border shadow-alvorada dark:shadow-crepusculo hover:-translate-y-2 transition-all duration-700 cursor-pointer">
                         <video data-src="https://testeessencia.carrd.co/assets/videos/video13.mp4?v=36e3212d#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover transform transition-transform duration-[3s] group-hover:scale-105 pointer-events-none opacity-90 dark:opacity-80 transition-opacity"></video>
                         <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-3 sm:p-2.5 rounded-full shadow-lg border border-white/20 transition-all hover:bg-black/90 active:scale-95 focus:outline-none flex items-center justify-center"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                     </figure>
-
-                    <!-- VÍDEO 4 (Ajustado o balanço) -->
                     <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-brand-100 dark:bg-luxury-card border border-brand-900/10 dark:border-luxury-border shadow-alvorada dark:shadow-crepusculo md:-translate-y-8 hover:-translate-y-10 transition-all duration-700 cursor-pointer">
                         <video data-src="https://testeessencia.carrd.co/assets/videos/video02.mp4?v=7c53f00c#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover transform transition-transform duration-[3s] group-hover:scale-105 pointer-events-none opacity-90 dark:opacity-80 transition-opacity"></video>
                         <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-3 sm:p-2.5 rounded-full shadow-lg border border-white/20 transition-all hover:bg-black/90 active:scale-95 focus:outline-none flex items-center justify-center"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                     </figure>
-
-                    <!-- VÍDEO 5 (Ajustado o balanço) -->
                     <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-brand-100 dark:bg-luxury-card border border-brand-900/10 dark:border-luxury-border shadow-alvorada dark:shadow-crepusculo hover:-translate-y-2 transition-all duration-700 cursor-pointer">
                         <video data-src="https://testeessencia.carrd.co/assets/videos/video10.mp4?v=701b88d2#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover transform transition-transform duration-[3s] group-hover:scale-105 pointer-events-none opacity-90 dark:opacity-80 transition-opacity"></video>
                         <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-3 sm:p-2.5 rounded-full shadow-lg border border-white/20 transition-all hover:bg-black/90 active:scale-95 focus:outline-none flex items-center justify-center"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
@@ -620,8 +610,8 @@
                     </header>
 
                     <div class="relative w-full max-w-lg mx-auto aspect-[4/5] lg:aspect-square rounded-3xl overflow-hidden shadow-md border border-brand-900/5 dark:border-luxury-border select-none touch-none before-after-container mb-10 transition-colors flex-grow-0 bg-brand-50 dark:bg-luxury-bg">
-                        <img src="https://testeessencia.carrd.co/assets/images/image48.jpg?v=54da9d95" alt="Cabelo Antes do Liso 8K" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover object-top select-none pointer-events-none filter contrast-[0.95] opacity-95 dark:opacity-85 transition-opacity">
-                        <img src="https://testeessencia.carrd.co/assets/images/image49.jpg?v=54da9d95" alt="Cabelo Depois do Liso 8K" loading="lazy" decoding="async" class="after-img absolute inset-0 w-full h-full object-cover object-top select-none pointer-events-none opacity-95 dark:opacity-85 transition-opacity" style="clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);">
+                        <img src="https://testeessencia.carrd.co/assets/images/image48.jpg?v=54da9d95" alt="Cabelo Antes do Liso 8K" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover select-none pointer-events-none filter contrast-[0.95] opacity-95 dark:opacity-85 transition-opacity">
+                        <img src="https://testeessencia.carrd.co/assets/images/image49.jpg?v=54da9d95" alt="Cabelo Depois do Liso 8K" loading="lazy" decoding="async" class="after-img absolute inset-0 w-full h-full object-cover select-none pointer-events-none opacity-95 dark:opacity-85 transition-opacity" style="clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);">
                         
                         <input type="range" min="0" max="100" value="50" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" class="slider-input absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20 m-0" aria-label="Arraste para comparar">
                         <div class="slider-line absolute top-0 bottom-0 left-[50%] w-[1.5px] bg-brand-950 dark:bg-luxury-text z-10 pointer-events-none transform -translate-x-1/2 flex items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.3)] transition-colors">
@@ -680,7 +670,7 @@
                                 <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-500"></i>
                             </button>
                             <button onclick="openCityModal('Glass Molecular')" class="cta-btn-primary w-full flex items-center justify-center gap-2 px-4 py-3.5 sm:py-4 bg-[#128C7E] dark:bg-[#1EBE5D] hover:bg-[#075E54] dark:hover:bg-[#25D366] text-white dark:text-luxury-bg rounded-full font-semibold text-[13px] sm:text-sm transition-all duration-300 shadow-md dark:shadow-[0_0_20px_rgba(30,190,93,0.15)] group/btn border border-transparent focus:outline-none">
-                                <span class="w-2 h-2 rounded-full bg-white dark:bg-luxury-bg animate-pulse btn-pulse flex-shrink-0 transition-colors"></span> Agendar Avaliação
+                                <span class="w-2 h-2 rounded-full bg-white dark:bg-luxury-bg animate-pulse btn-pulse flex-shrink-0 transition-colors"></span> Reservar Tratamento
                             </button>
                         </div>
                     </div>
@@ -924,7 +914,14 @@
                             </div>
 
                             <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-5 border-t border-brand-900/10 dark:border-luxury-border mt-auto transition-colors">
-                                <span class="text-3xl font-serif font-medium text-brand-950 dark:text-luxury-text transition-colors">R$ 147</span>
+                                <div class="flex flex-col text-center sm:text-left">
+                                    <span class="text-3xl font-serif font-medium text-brand-950 dark:text-luxury-text transition-colors">R$ 147</span>
+                                    <div class="flex items-center justify-center sm:justify-start gap-2 mt-1 opacity-80">
+                                        <span class="flex items-center gap-1 text-[9px] font-bold text-brand-700 dark:text-brand-400 uppercase tracking-widest transition-colors"><i data-lucide="credit-card" class="w-3 h-3"></i> Pix / Parcelado</span>
+                                        <span class="text-brand-300 dark:text-luxury-border">•</span>
+                                        <span class="flex items-center gap-1 text-[9px] font-bold text-brand-700 dark:text-brand-400 uppercase tracking-widest transition-colors"><i data-lucide="truck" class="w-3 h-3"></i> Envio / Retirada</span>
+                                    </div>
+                                </div>
                                 <button onclick="cartSystem.add('Banho Repair Master (300ml)', 147, 'https://testeessencia.carrd.co/assets/images/image53.jpg?v=f5d26855', this)" class="w-full sm:w-auto bg-brand-900 hover:bg-brand-800 dark:bg-white dark:hover:bg-luxury-text text-white dark:text-brand-950 text-[11px] md:text-xs font-bold uppercase px-8 py-3.5 sm:py-4 rounded-full transition-transform active:scale-95 shadow-md flex items-center justify-center gap-2 focus:outline-none">
                                     <i data-lucide="shopping-bag" class="w-4 h-4"></i> Adicionar
                                 </button>
@@ -977,7 +974,14 @@
                             </div>
 
                             <div class="flex flex-col sm:flex-row md:flex-row-reverse items-center justify-between gap-4 pt-5 border-t border-brand-900/10 dark:border-luxury-border mt-auto transition-colors">
-                                <span class="text-3xl font-serif font-medium text-brand-950 dark:text-luxury-text transition-colors">R$ 289</span>
+                                <div class="flex flex-col text-center sm:text-left md:text-right md:items-end">
+                                    <span class="text-3xl font-serif font-medium text-brand-950 dark:text-luxury-text transition-colors">R$ 289</span>
+                                    <div class="flex items-center justify-center sm:justify-start md:justify-end gap-2 mt-1 opacity-80">
+                                        <span class="flex items-center gap-1 text-[9px] font-bold text-brand-700 dark:text-brand-400 uppercase tracking-widest transition-colors"><i data-lucide="credit-card" class="w-3 h-3"></i> Pix / Parcelado</span>
+                                        <span class="text-brand-300 dark:text-luxury-border">•</span>
+                                        <span class="flex items-center gap-1 text-[9px] font-bold text-brand-700 dark:text-brand-400 uppercase tracking-widest transition-colors"><i data-lucide="truck" class="w-3 h-3"></i> Envio / Retirada</span>
+                                    </div>
+                                </div>
                                 <button onclick="cartSystem.add('Ampola Ouro Repair Gloss (20ml)', 289, 'https://testeessencia.carrd.co/assets/images/image56.jpg?v=f5d26855', this)" class="w-full sm:w-auto bg-brand-900 hover:bg-brand-800 dark:bg-white dark:hover:bg-luxury-text text-white dark:text-brand-950 text-[11px] md:text-xs font-bold uppercase px-8 py-3.5 sm:py-4 rounded-full transition-transform active:scale-95 shadow-md flex items-center justify-center gap-2 focus:outline-none">
                                     <i data-lucide="shopping-bag" class="w-4 h-4"></i> Adicionar
                                 </button>
@@ -1041,7 +1045,14 @@
                             </div>
 
                             <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-5 border-t border-brand-900/10 dark:border-luxury-border mt-auto transition-colors">
-                                <span class="text-3xl font-serif font-medium text-brand-950 dark:text-luxury-text transition-colors">R$ 247</span>
+                                <div class="flex flex-col text-center sm:text-left">
+                                    <span class="text-3xl font-serif font-medium text-brand-950 dark:text-luxury-text transition-colors">R$ 247</span>
+                                    <div class="flex items-center justify-center sm:justify-start gap-2 mt-1 opacity-80">
+                                        <span class="flex items-center gap-1 text-[9px] font-bold text-brand-700 dark:text-brand-400 uppercase tracking-widest transition-colors"><i data-lucide="credit-card" class="w-3 h-3"></i> Pix / Parcelado</span>
+                                        <span class="text-brand-300 dark:text-luxury-border">•</span>
+                                        <span class="flex items-center gap-1 text-[9px] font-bold text-brand-700 dark:text-brand-400 uppercase tracking-widest transition-colors"><i data-lucide="truck" class="w-3 h-3"></i> Envio / Retirada</span>
+                                    </div>
+                                </div>
                                 <button onclick="cartSystem.add('Baby Queen 10 em 1 (260ml)', 247, 'https://testeessencia.carrd.co/assets/images/image63.jpg?v=f5d26855', this)" class="w-full sm:w-auto bg-brand-900 hover:bg-brand-800 dark:bg-white dark:hover:bg-luxury-text text-white dark:text-brand-950 text-[11px] md:text-xs font-bold uppercase px-8 py-3.5 sm:py-4 rounded-full transition-transform active:scale-95 shadow-md flex items-center justify-center gap-2 focus:outline-none">
                                     <i data-lucide="shopping-bag" class="w-4 h-4"></i> Adicionar
                                 </button>
@@ -1094,7 +1105,14 @@
                             </div>
 
                             <div class="flex flex-col sm:flex-row md:flex-row-reverse items-center justify-between gap-4 pt-5 border-t border-brand-900/10 dark:border-luxury-border mt-auto transition-colors">
-                                <span class="text-3xl font-serif font-medium text-brand-950 dark:text-luxury-text transition-colors">R$ 197</span>
+                                <div class="flex flex-col text-center sm:text-left md:text-right md:items-end">
+                                    <span class="text-3xl font-serif font-medium text-brand-950 dark:text-luxury-text transition-colors">R$ 197</span>
+                                    <div class="flex items-center justify-center sm:justify-start md:justify-end gap-2 mt-1 opacity-80">
+                                        <span class="flex items-center gap-1 text-[9px] font-bold text-brand-700 dark:text-brand-400 uppercase tracking-widest transition-colors"><i data-lucide="credit-card" class="w-3 h-3"></i> Pix / Parcelado</span>
+                                        <span class="text-brand-300 dark:text-luxury-border">•</span>
+                                        <span class="flex items-center gap-1 text-[9px] font-bold text-brand-700 dark:text-brand-400 uppercase tracking-widest transition-colors"><i data-lucide="truck" class="w-3 h-3"></i> Envio / Retirada</span>
+                                    </div>
+                                </div>
                                 <button onclick="cartSystem.add('American Argan Oil (100ml)', 197, 'https://testeessencia.carrd.co/assets/images/image79.jpg?v=7c53f00c', this)" class="w-full sm:w-auto bg-brand-900 hover:bg-brand-800 dark:bg-white dark:hover:bg-luxury-text text-white dark:text-brand-950 text-[11px] md:text-xs font-bold uppercase px-8 py-3.5 sm:py-4 rounded-full transition-transform active:scale-95 shadow-md flex items-center justify-center gap-2 focus:outline-none">
                                     <i data-lucide="shopping-bag" class="w-4 h-4"></i> Adicionar
                                 </button>
@@ -1151,10 +1169,15 @@
                             </ul>
                         </div>
 
-                        <div class="flex flex-col sm:flex-row items-center justify-between gap-5 mt-auto">
+                        <div class="flex flex-col sm:flex-row items-center justify-between gap-5 mt-auto pt-6 border-t border-white/10">
                             <div class="flex flex-col w-full sm:w-auto text-center sm:text-left">
                                 <span class="text-[11px] text-brand-400 line-through mb-0.5 font-medium">De R$ 880</span>
                                 <span class="text-4xl font-serif font-medium text-white">R$ 797</span>
+                                <div class="flex items-center justify-center sm:justify-start gap-2 mt-1.5 opacity-90">
+                                    <span class="flex items-center gap-1 text-[9px] font-bold text-brand-300 uppercase tracking-widest"><i data-lucide="credit-card" class="w-3 h-3"></i> Pix ou Parcelado</span>
+                                    <span class="text-white/20">•</span>
+                                    <span class="flex items-center gap-1 text-[9px] font-bold text-brand-300 uppercase tracking-widest"><i data-lucide="truck" class="w-3 h-3"></i> Envio ou Retirada</span>
+                                </div>
                             </div>
                             <button onclick="cartSystem.add('Coleção Completa Home Care 8K + Sacola Orange', 797, 'https://testeessencia.carrd.co/assets/images/image68.jpg?v=7c53f00c', this)" class="w-full sm:w-auto bg-[#25D366] hover:bg-[#1EBE5D] text-white text-[11px] md:text-xs font-bold uppercase px-8 py-4 rounded-full transition-transform active:scale-95 shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] flex items-center justify-center gap-2 focus:outline-none">
                                 <i data-lucide="shopping-bag" class="w-4 h-4"></i> Adicionar à Sacola
@@ -1239,21 +1262,12 @@
                     <p class="text-[11px] md:text-xs font-bold text-brand-600 dark:text-brand-400 uppercase tracking-widest block transition-colors">Tabela Oficial de Iniciação e Reinício</p>
                 </header>
                 
-                <div class="relative w-full z-10">
-                    <div class="lg:hidden absolute top-0 left-[-1.25rem] w-8 h-full bg-gradient-to-r from-white dark:from-luxury-card to-transparent z-10 pointer-events-none transition-colors duration-300"></div>
-                    <div class="lg:hidden absolute top-0 right-[-1.25rem] w-12 h-full bg-gradient-to-l from-white dark:from-luxury-card to-transparent z-10 pointer-events-none transition-colors duration-300"></div>
-                    <div id="clube-pricing-grid-liso" class="flex overflow-x-auto lg:grid lg:grid-cols-4 snap-x snap-mandatory gap-4 custom-scrollbar w-[calc(100%+2rem)] -mx-4 lg:mx-0 lg:w-full px-4 lg:px-0 pb-4 lg:pb-0 relative z-0"></div>
+                <!-- OTIMIZAÇÃO: Gavetas Acordeão (Zero Sobrecarga Cognitiva) -->
+                <div class="relative w-full max-w-3xl mx-auto z-10">
+                    <div id="clube-pricing-grid-liso" class="flex flex-col gap-4 relative z-0"></div>
                 </div>
                 
-                <div class="lg:hidden flex items-center justify-center mt-4 mb-6 relative z-20 pointer-events-none">
-                    <div class="animate-bounce-horizontal flex items-center gap-3 bg-brand-50/95 dark:bg-luxury-border/95 px-6 py-2.5 rounded-full border border-brand-200/80 dark:border-luxury-border/80 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.4)] backdrop-blur-md">
-                        <i data-lucide="arrow-left" class="w-3.5 h-3.5 text-brand-400 dark:text-luxury-muted"></i>
-                        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-brand-900 dark:text-luxury-text">Deslize a tabela</span>
-                        <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-brand-600 dark:text-brand-400"></i>
-                    </div>
-                </div>
-                
-                <div class="mt-6 md:mt-10 text-center relative z-10 flex flex-col items-center">
+                <div class="mt-8 md:mt-10 text-center relative z-10 flex flex-col items-center">
                     <button onclick="openCityModal('Iniciação Liso Soberano 8K')" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#128C7E] dark:bg-[#1EBE5D] hover:bg-[#075E54] dark:hover:bg-[#25D366] text-white dark:text-luxury-bg rounded-full font-bold text-[11px] md:text-xs uppercase tracking-widest transition-all duration-300 shadow-[0_0_15px_rgba(37,211,102,0.4)] dark:shadow-[0_0_20px_rgba(30,190,93,0.15)] focus:outline-none group/btn">
                         <span class="w-2 h-2 rounded-full bg-white dark:bg-luxury-bg animate-pulse flex-shrink-0 transition-colors"></span> Reservar Avaliação
                     </button>
@@ -1271,21 +1285,12 @@
                     <p class="text-[11px] md:text-xs font-bold text-brand-600 dark:text-brand-400 uppercase tracking-widest block transition-colors">Tabela Oficial de Investimento</p>
                 </header>
                 
-                <div class="relative w-full z-10">
-                    <div class="lg:hidden absolute top-0 left-[-1.25rem] w-8 h-full bg-gradient-to-r from-white dark:from-luxury-card to-transparent z-10 pointer-events-none transition-colors duration-300"></div>
-                    <div class="lg:hidden absolute top-0 right-[-1.25rem] w-12 h-full bg-gradient-to-l from-white dark:from-luxury-card to-transparent z-10 pointer-events-none transition-colors duration-300"></div>
-                    <div id="clube-pricing-grid-glass" class="flex overflow-x-auto lg:grid lg:grid-cols-4 snap-x snap-mandatory gap-4 custom-scrollbar w-[calc(100%+2rem)] -mx-4 lg:mx-0 lg:w-full px-4 lg:px-0 pb-4 lg:pb-0 relative z-0"></div>
+                <!-- OTIMIZAÇÃO: Gavetas Acordeão (Zero Sobrecarga Cognitiva) -->
+                <div class="relative w-full max-w-3xl mx-auto z-10">
+                    <div id="clube-pricing-grid-glass" class="flex flex-col gap-4 relative z-0"></div>
                 </div>
                 
-                <div class="lg:hidden flex items-center justify-center mt-4 mb-6 relative z-20 pointer-events-none">
-                    <div class="animate-bounce-horizontal flex items-center gap-3 bg-brand-50/95 dark:bg-luxury-border/95 px-6 py-2.5 rounded-full border border-brand-200/80 dark:border-luxury-border/80 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.4)] backdrop-blur-md">
-                        <i data-lucide="arrow-left" class="w-3.5 h-3.5 text-brand-400 dark:text-luxury-muted"></i>
-                        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-brand-900 dark:text-luxury-text">Deslize a tabela</span>
-                        <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-brand-600 dark:text-brand-400"></i>
-                    </div>
-                </div>
-                
-                <div class="mt-6 md:mt-10 text-center relative z-10 flex flex-col items-center">
+                <div class="mt-8 md:mt-10 text-center relative z-10 flex flex-col items-center">
                     <button onclick="openCityModal('Glass Molecular')" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#128C7E] dark:bg-[#1EBE5D] hover:bg-[#075E54] dark:hover:bg-[#25D366] text-white dark:text-luxury-bg rounded-full font-bold text-[11px] md:text-xs uppercase tracking-widest transition-all duration-300 shadow-[0_0_15px_rgba(37,211,102,0.4)] dark:shadow-[0_0_20px_rgba(30,190,93,0.15)] focus:outline-none group/btn">
                         <span class="w-2 h-2 rounded-full bg-white dark:bg-luxury-bg animate-pulse flex-shrink-0 transition-colors"></span> Reservar Tratamento
                     </button>
@@ -1293,116 +1298,50 @@
                 </div>
             </section>
 
-            <!-- NOVO BANNER ESTRATÉGICO DE REAJUSTE (CASH INJECTION) -->
-            <section id="regras-clube" class="w-full max-w-[1400px] mx-auto bg-brand-950 dark:bg-[#110d0c] border-y md:border border-brand-900/10 dark:border-luxury-border rounded-none md:rounded-[2.5rem] p-8 sm:p-12 md:p-16 relative overflow-hidden shadow-2xl transition-colors group">
-                <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-brand-800/30 dark:from-luxury-border/10 to-transparent opacity-50 pointer-events-none transition-colors"></div>
-                <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-brand-600/20 dark:bg-brand-800/10 rounded-full filter blur-[100px] pointer-events-none transition-colors"></div>
-
-                <header class="text-center mb-16 relative z-10">
-                    <span class="inline-block px-4 py-1.5 bg-white/10 dark:bg-luxury-border/30 text-brand-300 dark:text-luxury-muted border border-white/10 dark:border-luxury-border text-[10px] md:text-xs font-bold uppercase tracking-widest rounded-full mb-4 shadow-sm transition-colors">A Ciência da Previsibilidade</span>
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-medium text-white dark:text-luxury-text mb-6 transition-colors">Gestão do Tempo e da Beleza</h2>
-                    <p class="text-brand-100/90 dark:text-luxury-muted text-[14px] sm:text-base font-light max-w-3xl mx-auto leading-relaxed transition-colors">
-                        O nosso modelo de negócio não é a venda de serviços avulsos. Trabalhamos com <strong class="text-white dark:text-luxury-text font-medium transition-colors">4 Janelas de Tempo</strong> que determinam de forma justa o nível de intervenção química e técnica necessária para manter o seu cabelo impecável.
-                    </p>
-                </header>
-
-                <div class="relative max-w-5xl mx-auto mb-10">
-                    <div class="hidden md:block absolute top-[24px] left-[10%] right-[10%] h-[2px] bg-white/10 dark:bg-luxury-border/50 z-0 transition-colors"></div>
-                    <div class="md:hidden absolute top-[24px] bottom-[24px] left-[39px] w-[2px] bg-white/10 dark:bg-luxury-border/50 z-0 transition-colors"></div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-6 relative z-10">
-                        <div class="flex flex-col relative pl-24 md:pl-0 md:items-center text-left md:text-center group/step">
-                            <div class="absolute left-6 md:left-1/2 md:-translate-x-1/2 top-0 w-12 h-12 rounded-full bg-[#110d0c] border-[3px] border-[#25D366] shadow-[0_0_15px_rgba(37,211,102,0.2)] z-10 flex items-center justify-center transition-transform duration-500 group-hover/step:scale-110 transition-colors">
-                                <i data-lucide="star" class="w-5 h-5 text-[#25D366]"></i>
-                            </div>
-                            <div class="md:mt-16">
-                                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#25D366] mb-2 block">0 a 30 dias</span>
-                                <h3 class="font-serif text-lg sm:text-xl font-medium text-white dark:text-luxury-text mb-2 transition-colors">Janela Assinatura</h3>
-                                <p class="text-[12px] sm:text-[13px] text-brand-100/70 dark:text-luxury-muted font-light leading-relaxed transition-colors">Fase de ouro. Manutenção preventiva com química mínima e valor super reduzido.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-col relative pl-24 md:pl-0 md:items-center text-left md:text-center group/step">
-                            <div class="absolute left-6 md:left-1/2 md:-translate-x-1/2 top-0 w-12 h-12 rounded-full bg-[#110d0c] border-[3px] border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.2)] z-10 flex items-center justify-center transition-transform duration-500 group-hover/step:scale-110 transition-colors">
-                                <i data-lucide="clock-3" class="w-5 h-5 text-yellow-500"></i>
-                            </div>
-                            <div class="md:mt-16">
-                                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-yellow-500 mb-2 block">31 a 60 dias</span>
-                                <h3 class="font-serif text-lg sm:text-xl font-medium text-white dark:text-luxury-text mb-2 transition-colors">Atraso Flex</h3>
-                                <p class="text-[12px] sm:text-[13px] text-brand-100/70 dark:text-luxury-muted font-light leading-relaxed transition-colors">Raiz a desestabilizar. Exige ajuste maior, mas ainda protege o seu investimento.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-col relative pl-24 md:pl-0 md:items-center text-left md:text-center group/step">
-                            <div class="absolute left-6 md:left-1/2 md:-translate-x-1/2 top-0 w-12 h-12 rounded-full bg-[#110d0c] border-[3px] border-orange-500 shadow-[0_0_15px_rgba(249,115,22,0.2)] z-10 flex items-center justify-center transition-transform duration-500 group-hover/step:scale-110 transition-colors">
-                                <i data-lucide="alert-circle" class="w-5 h-5 text-orange-500"></i>
-                            </div>
-                            <div class="md:mt-16">
-                                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-orange-500 mb-2 block">61 a 90 dias</span>
-                                <h3 class="font-serif text-lg sm:text-xl font-medium text-white dark:text-luxury-text mb-2 transition-colors">Zona Crítica</h3>
-                                <p class="text-[12px] sm:text-[13px] text-brand-100/70 dark:text-luxury-muted font-light leading-relaxed transition-colors">Transição estrutural. Resgatamos o alinhamento antes da perda total da técnica.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-col relative pl-24 md:pl-0 md:items-center text-left md:text-center group/step">
-                            <div class="absolute left-6 md:left-1/2 md:-translate-x-1/2 top-0 w-12 h-12 rounded-full bg-[#110d0c] border-[3px] border-red-500 shadow-[0_0_15px_rgba(239,68,68,0.2)] z-10 flex items-center justify-center transition-transform duration-500 group-hover/step:scale-110 transition-colors">
-                                <i data-lucide="refresh-cw" class="w-5 h-5 text-red-500"></i>
-                            </div>
-                            <div class="md:mt-16">
-                                <span class="text-[10px] font-bold uppercase tracking-widest text-red-500 mb-2 block">+ 90 dias</span>
-                                <h3 class="font-serif text-lg sm:text-xl font-medium text-white dark:text-luxury-text mb-2 transition-colors">Iniciação</h3>
-                                <p class="text-[12px] sm:text-[13px] text-brand-100/70 dark:text-luxury-muted font-light leading-relaxed transition-colors">Perda da base do protocolo. O tratamento retorna à estaca zero (Valor Oficial).</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="relative z-10 mt-20 border-t border-white/10 dark:border-luxury-border pt-16 transition-colors">
-                    <div class="text-center mb-10">
-                        <h3 class="text-2xl md:text-3xl font-serif font-medium text-white dark:text-luxury-text uppercase tracking-wide transition-colors">Tabelas de Assinatura</h3>
-                        <p class="text-brand-100/70 dark:text-luxury-muted text-[13px] md:text-sm mt-3 font-light max-w-2xl mx-auto mb-8 transition-colors">Valores exclusivos para clientes ativas que respeitam a janela de manutenção.</p>
-                        
-                        <div class="flex flex-col md:flex-row gap-4 items-center justify-center max-w-4xl mx-auto transition-colors">
-                            <div class="w-full md:w-1/2 bg-brand-500/5 dark:bg-luxury-bg/50 border border-brand-500/20 dark:border-luxury-border rounded-2xl p-5 text-left shadow-sm transition-colors">
-                                <h4 class="text-brand-300 dark:text-[#E6DFD9] font-bold uppercase tracking-widest text-[10px] mb-2 flex items-center gap-1.5 transition-colors">
-                                    <i data-lucide="info" class="w-3.5 h-3.5"></i> Precisão Técnica
-                                </h4>
-                                <p class="text-brand-100/80 dark:text-luxury-muted text-[12px] font-light leading-relaxed transition-colors">
-                                    As tabelas abaixo já refletem o ajuste de densidade capilar. A sua estrutura exata será validada no momento da avaliação.
-                                </p>
-                            </div>
-                            <div class="w-full md:w-1/2 bg-brand-500/5 dark:bg-luxury-bg/50 border border-brand-500/20 dark:border-luxury-border rounded-2xl p-5 text-left shadow-sm transition-colors">
-                                <h4 class="text-brand-300 dark:text-[#E6DFD9] font-bold uppercase tracking-widest text-[10px] mb-2 flex items-center gap-1.5 transition-colors">
-                                    <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Regra da Iniciação
-                                </h4>
-                                <p class="text-brand-100/80 dark:text-luxury-muted text-[12px] font-light leading-relaxed transition-colors">
-                                    A <strong class="text-white dark:text-luxury-text transition-colors">primeira visita</strong> ou retornos superiores a 90 dias seguem a <button onclick="document.getElementById('tabela-liso').scrollIntoView({behavior: 'smooth'})" class="text-white dark:text-luxury-text underline font-medium hover:text-brand-300 dark:hover:text-brand-400 transition-colors focus:outline-none">Tabela Oficial</button>.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="absolute top-0 left-0 w-12 sm:w-16 h-full bg-gradient-to-r from-brand-950 dark:from-[#110d0c] to-transparent z-10 pointer-events-none lg:hidden transition-colors duration-300"></div>
-                    <div class="absolute top-0 right-0 w-12 sm:w-16 h-full bg-gradient-to-l from-brand-950 dark:from-[#110d0c] to-transparent z-10 pointer-events-none lg:hidden transition-colors duration-300"></div>
-
-                    <div id="clube-cards-container" class="flex overflow-x-auto lg:grid lg:grid-cols-3 snap-x snap-mandatory gap-6 lg:gap-8 items-center mt-2 py-8 custom-scrollbar px-6 sm:px-8 lg:px-0 -mx-6 sm:-mx-8 lg:mx-0"></div>
-
-                    <div class="lg:hidden flex items-center justify-center mt-4 relative z-20 pointer-events-none">
-                        <div class="animate-bounce-horizontal flex items-center gap-3 bg-white/10 dark:bg-luxury-border/30 px-6 py-2.5 rounded-full border border-white/20 dark:border-luxury-border/50 shadow-lg backdrop-blur-md">
-                            <i data-lucide="arrow-left" class="w-3.5 h-3.5 text-brand-300 dark:text-luxury-muted"></i>
-                            <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-white dark:text-luxury-text">Deslize os planos</span>
-                            <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-brand-300 dark:text-luxury-muted"></i>
-                        </div>
-                    </div>
+            <!-- ========================================================= -->
+            <!-- 🔒 ÁREA VIP BLOQUEADA (CLUBE ESSÊNCIA)                      -->
+            <!-- ========================================================= -->
+            
+            <!-- TELA DE BLOQUEIO (Visível por padrão) -->
+            <section id="clube-locked-banner" class="w-full max-w-[1400px] mx-auto bg-brand-950 dark:bg-[#110d0c] border-y md:border border-brand-900/20 dark:border-luxury-border rounded-none md:rounded-[2.5rem] p-8 sm:p-12 relative overflow-hidden shadow-2xl transition-all duration-500 mb-16 -mx-4 md:mx-0 w-[100vw] md:w-full flex flex-col items-center text-center group">
+                <div class="absolute inset-0 bg-[url('https://testeessencia.carrd.co/assets/images/image38.jpg?v=0bcae317')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-950 via-brand-950/90 to-transparent dark:from-[#110d0c] dark:via-[#110d0c]/90"></div>
+                
+                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center mb-6 relative z-10 group-hover:scale-110 transition-transform duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+                    <i data-lucide="lock" class="w-8 h-8 sm:w-10 sm:h-10 text-brand-200"></i>
                 </div>
                 
-                <div class="mt-16 text-center relative z-10 transition-colors">
-                    <button onclick="navigateTo('view-home')" class="inline-flex items-center gap-2 px-8 py-4 bg-white/10 dark:bg-luxury-border hover:bg-white/20 dark:hover:bg-luxury-border/80 border border-white/10 dark:border-transparent rounded-xl text-[11px] font-bold uppercase tracking-widest text-white dark:text-luxury-text transition-all shadow-md focus:outline-none flex items-center justify-center gap-2 group/btn">
-                        <i data-lucide="arrow-left" class="w-4 h-4 text-brand-300 dark:text-luxury-text group-hover/btn:text-white transition-colors"></i> Voltar ao Menu
+                <h3 class="font-serif text-2xl sm:text-3xl md:text-4xl font-medium text-white mb-3 relative z-10 tracking-wide">Área Restrita</h3>
+                <p class="text-[12px] sm:text-[14px] text-brand-200/80 font-light max-w-lg mb-8 relative z-10 leading-relaxed">
+                    O <strong>Clube Essência</strong> contém as nossas janelas de tempo e tabelas de valores exclusivas para clientes ativas. Insira a sua <span class="text-white font-medium">Chave VIP</span> para desbloquear a gaveta.
+                </p>
+
+                <div class="relative z-10 flex flex-col sm:flex-row w-full max-w-sm gap-3">
+                    <input type="password" id="vip-pass-input" placeholder="Digite a Senha" class="w-full bg-black/40 border border-white/20 rounded-xl px-5 py-4 text-center sm:text-left text-white placeholder-white/40 focus:outline-none focus:border-brand-400 focus:ring-1 focus:ring-brand-400 transition-all uppercase font-bold tracking-widest text-[12px]">
+                    <button id="btn-unlock" onclick="vipSystem.unlock()" class="shrink-0 bg-brand-500 hover:bg-brand-400 text-white rounded-xl px-6 py-4 font-bold text-[11px] uppercase tracking-widest transition-colors shadow-md flex items-center justify-center gap-2 focus:outline-none">
+                        <i data-lucide="key" class="w-4 h-4"></i> Desbloquear
                     </button>
                 </div>
+                <p class="text-[9px] text-white/40 mt-6 relative z-10 uppercase tracking-widest">Solicite a sua chave de acesso à nossa equipa pelo WhatsApp</p>
             </section>
 
+            <!-- TELA DESBLOQUEADA (Oculto por padrão) -->
+            <section id="clube-unlocked-banner" class="w-full max-w-[1400px] mx-auto bg-[#110d0c] border border-[#25D366]/30 rounded-none md:rounded-[2.5rem] p-8 sm:p-12 relative overflow-hidden shadow-[0_10px_40px_-10px_rgba(37,211,102,0.2)] transition-all duration-500 mb-16 hidden flex flex-col items-center text-center -mx-4 md:mx-0 w-[100vw] md:w-full">
+                <div class="w-16 h-16 rounded-full bg-[#25D366]/20 border border-[#25D366]/50 flex items-center justify-center mb-6 text-[#25D366] shadow-[0_0_20px_rgba(37,211,102,0.2)] animate-pulse">
+                    <i data-lucide="unlock" class="w-8 h-8"></i>
+                </div>
+                <h3 class="font-serif text-2xl sm:text-3xl font-medium text-white mb-3">Acesso VIP Liberado</h3>
+                <p class="text-[13px] text-brand-200/80 font-light mb-8 max-w-md">A sua sessão está autenticada. A gaveta com as Tabelas e Planos do Clube está pronta para ser consultada.</p>
+                <button onclick="vipSystem.toggle()" class="bg-[#25D366] hover:bg-[#1EBE5D] text-[#110d0c] rounded-full px-8 py-4 font-bold text-[11px] md:text-xs uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(37,211,102,0.4)] flex items-center justify-center gap-2 focus:outline-none active:scale-95">
+                    <i data-lucide="layout-grid" class="w-4 h-4"></i> Abrir Tabelas VIP
+                </button>
+            </section>
+
+            <div class="mt-4 mb-8 text-center relative z-10 transition-colors w-full">
+                <button onclick="navigateTo('view-home')" class="inline-flex items-center gap-2 px-8 py-4 bg-brand-50/50 dark:bg-luxury-border/50 hover:bg-brand-100 dark:hover:bg-luxury-border/80 border border-brand-200 dark:border-transparent rounded-xl text-[11px] font-bold uppercase tracking-widest text-brand-950 dark:text-luxury-text transition-all shadow-sm focus:outline-none flex items-center justify-center gap-2 group/btn">
+                    <i data-lucide="arrow-left" class="w-4 h-4 text-brand-600 dark:text-luxury-text group-hover/btn:-translate-x-1 transition-all"></i> Voltar ao Menu
+                </button>
+            </div>
         </div>
     </main>
 
@@ -1444,13 +1383,13 @@
             <!-- Ícone SVG Oficial do WhatsApp -->
             <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.405-.883-.733-1.48-1.64-1.653-1.938-.173-.298-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
-                </svg>
-                <!-- Dica Flutuante (Aparece ao passar o rato) -->
-                <div class="absolute right-full mr-4 bg-white dark:bg-luxury-card border border-brand-100 dark:border-luxury-border text-brand-950 dark:text-luxury-text px-3 py-1.5 rounded-xl shadow-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                    Fale Connosco
-                </div>
-            </a>
-        </div>
+            </svg>
+            <!-- Dica Flutuante (Aparece ao passar o rato) -->
+            <div class="absolute right-full mr-4 bg-white dark:bg-luxury-card border border-brand-100 dark:border-luxury-border text-brand-950 dark:text-luxury-text px-3 py-1.5 rounded-xl shadow-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                Fale Connosco
+            </div>
+        </a>
+    </div>
 
     <!-- OVERLAY GAVETAS -->
     <div id="drawer-overlay" class="fixed inset-0 z-[115] bg-brand-950/60 dark:bg-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300 transition-colors" onclick="closeAllDrawers()"></div>
@@ -1478,6 +1417,109 @@
             <button onclick="cartSystem.checkout()" class="w-full bg-[#128C7E] dark:bg-[#1EBE5D] hover:bg-[#075E54] dark:hover:bg-[#25D366] text-white dark:text-luxury-bg text-[13px] font-bold uppercase px-8 py-4 rounded-2xl transition-all active:scale-95 shadow-md flex items-center justify-center gap-2 focus:outline-none dark:shadow-[0_0_15px_rgba(30,190,93,0.2)]">
                 <i data-lucide="message-square" class="w-5 h-5"></i> Finalizar Reserva
             </button>
+            
+            <!-- NOVA SECÇÃO DE PAGAMENTO (Cirúrgica e Elegante) -->
+            <div class="mt-4 pt-4 border-t border-brand-900/10 dark:border-luxury-border/50 flex flex-col items-center justify-center gap-1.5 opacity-90 transition-colors">
+                <div class="flex gap-3 text-brand-600 dark:text-brand-400">
+                    <i data-lucide="qr-code" class="w-4 h-4"></i>
+                    <i data-lucide="credit-card" class="w-4 h-4"></i>
+                </div>
+                <p class="text-[9px] sm:text-[10px] text-center font-bold text-brand-900 dark:text-luxury-text uppercase tracking-widest transition-colors">
+                    Pix ou Cartões (Parcelado)
+                </p>
+                <p class="text-[9px] text-center font-light text-brand-800/80 dark:text-luxury-muted leading-relaxed transition-colors">
+                    O link de pagamento 100% seguro será<br>gerado e enviado a si pelo WhatsApp.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- GAVETA VIP DO CLUBE (BOTTOM SHEET) -->
+    <div id="vip-drawer" class="fixed bottom-0 left-0 w-full z-[120] bg-brand-950 dark:bg-[#110d0c] rounded-t-[2.5rem] shadow-[0_-20px_40px_rgba(0,0,0,0.5)] transform translate-y-full transition-transform duration-500 flex flex-col max-h-[92vh] border-t border-brand-900/20 dark:border-luxury-border">
+        <div class="flex justify-center pt-5 pb-3 cursor-pointer shrink-0" onclick="vipSystem.toggle()">
+            <div class="w-12 h-1.5 bg-white/20 dark:bg-luxury-border rounded-full"></div>
+        </div>
+        <div class="px-6 pb-4 flex justify-between items-center border-b border-white/10 dark:border-luxury-border shrink-0">
+            <div class="flex items-center gap-3">
+                <div class="p-2 bg-brand-800 dark:bg-luxury-bg rounded-full"><i data-lucide="crown" class="w-5 h-5 text-brand-400"></i></div>
+                <h3 class="font-serif text-2xl font-bold text-white">Clube Essência</h3>
+            </div>
+            <button onclick="vipSystem.toggle()" class="p-2 bg-brand-800 dark:bg-luxury-bg rounded-full text-white shadow-sm border border-transparent focus:outline-none"><i data-lucide="x" class="w-5 h-5"></i></button>
+        </div>
+        
+        <div class="overflow-y-auto flex-grow custom-scrollbar space-y-8 pb-10">
+            <!-- Timeline (A Ciência da Previsibilidade) -->
+            <section class="w-full px-6 pt-8 text-center">
+                <span class="inline-block px-4 py-1.5 bg-white/10 text-brand-300 border border-white/10 text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">A Ciência da Previsibilidade</span>
+                <h2 class="text-2xl sm:text-3xl font-serif font-medium text-white mb-4">Gestão do Tempo</h2>
+                <p class="text-brand-100/90 text-[13px] font-light max-w-xl mx-auto leading-relaxed mb-8">
+                    Trabalhamos com <strong class="text-white font-medium">4 Janelas de Tempo</strong> que determinam de forma justa o nível de intervenção.
+                </p>
+
+                <div class="relative max-w-4xl mx-auto mb-6">
+                    <div class="hidden md:block absolute top-[24px] left-[10%] right-[10%] h-[2px] bg-white/10 z-0"></div>
+                    <div class="md:hidden absolute top-[24px] bottom-[24px] left-[39px] w-[2px] bg-white/10 z-0"></div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 relative z-10">
+                        <div class="flex flex-col relative pl-20 md:pl-0 md:items-center text-left md:text-center">
+                            <div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-0 w-12 h-12 rounded-full bg-[#110d0c] border-[3px] border-[#25D366] shadow-[0_0_15px_rgba(37,211,102,0.2)] z-10 flex items-center justify-center">
+                                <i data-lucide="star" class="w-5 h-5 text-[#25D366]"></i>
+                            </div>
+                            <div class="md:mt-16">
+                                <span class="text-[9px] font-bold uppercase tracking-widest text-[#25D366] mb-1 block">0 a 30 dias</span>
+                                <h3 class="font-serif text-lg font-medium text-white mb-1">Assinatura</h3>
+                                <p class="text-[11px] text-brand-100/70 font-light leading-relaxed">Valor super reduzido.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col relative pl-20 md:pl-0 md:items-center text-left md:text-center">
+                            <div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-0 w-12 h-12 rounded-full bg-[#110d0c] border-[3px] border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.2)] z-10 flex items-center justify-center">
+                                <i data-lucide="clock-3" class="w-5 h-5 text-yellow-500"></i>
+                            </div>
+                            <div class="md:mt-16">
+                                <span class="text-[9px] font-bold uppercase tracking-widest text-yellow-500 mb-1 block">31 a 60 dias</span>
+                                <h3 class="font-serif text-lg font-medium text-white mb-1">Atraso Flex</h3>
+                                <p class="text-[11px] text-brand-100/70 font-light leading-relaxed">Ajuste maior.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col relative pl-20 md:pl-0 md:items-center text-left md:text-center">
+                            <div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-0 w-12 h-12 rounded-full bg-[#110d0c] border-[3px] border-orange-500 shadow-[0_0_15px_rgba(249,115,22,0.2)] z-10 flex items-center justify-center">
+                                <i data-lucide="alert-circle" class="w-5 h-5 text-orange-500"></i>
+                            </div>
+                            <div class="md:mt-16">
+                                <span class="text-[9px] font-bold uppercase tracking-widest text-orange-500 mb-1 block">61 a 90 dias</span>
+                                <h3 class="font-serif text-lg font-medium text-white mb-1">Zona Crítica</h3>
+                                <p class="text-[11px] text-brand-100/70 font-light leading-relaxed">Resgate do alinhamento.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col relative pl-20 md:pl-0 md:items-center text-left md:text-center">
+                            <div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-0 w-12 h-12 rounded-full bg-[#110d0c] border-[3px] border-red-500 shadow-[0_0_15px_rgba(239,68,68,0.2)] z-10 flex items-center justify-center">
+                                <i data-lucide="refresh-cw" class="w-5 h-5 text-red-500"></i>
+                            </div>
+                            <div class="md:mt-16">
+                                <span class="text-[9px] font-bold uppercase tracking-widest text-red-500 mb-1 block">+ 90 dias</span>
+                                <h3 class="font-serif text-lg font-medium text-white mb-1">Iniciação</h3>
+                                <p class="text-[11px] text-brand-100/70 font-light leading-relaxed">Retorna ao Valor Oficial.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="border-t border-white/10 pt-8">
+                <div class="text-center mb-6">
+                    <h3 class="text-xl sm:text-2xl font-serif font-medium text-white uppercase tracking-wide">Tabelas de Assinatura</h3>
+                </div>
+                <!-- Injeta os cards gerados pelo JS no estilo Netflix -->
+                <div id="clube-cards-container" class="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:gap-6 px-6 sm:px-8 pb-6 custom-scrollbar items-stretch"></div>
+                
+                <div class="flex items-center justify-center mt-2 relative z-20 pointer-events-none md:hidden">
+                    <div class="animate-bounce-horizontal flex items-center gap-3 bg-white/10 px-6 py-2.5 rounded-full border border-white/20 shadow-lg backdrop-blur-md">
+                        <i data-lucide="arrow-left" class="w-3.5 h-3.5 text-brand-300"></i>
+                        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-white">Deslize os planos</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-brand-300"></i>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1625,11 +1667,11 @@
             ];
             
             function buildHTML(data) {
-                let htmlCarousel = '';
+                let htmlAccordion = '';
                 data.forEach(p => {
                     let itemsHtml = '';
                     p.items.forEach((item, idx) => {
-                        const bTop = idx > 0 ? 'border-t border-brand-900/10 dark:border-luxury-border pt-3 ' : '';
+                        const bTop = idx > 0 ? 'border-t border-brand-900/10 dark:border-luxury-border pt-3 mt-3 ' : '';
                         
                         let discountHtml = '';
                         if (item.old && item.off) {
@@ -1640,29 +1682,38 @@
                             </div>`;
                         }
 
-                        itemsHtml += `<div class="${bTop}flex justify-between items-center p-3 -mx-3 transition-colors group/price">
+                        itemsHtml += `<div class="${bTop}flex justify-between items-center transition-colors group/price">
                             <span class="text-xs sm:text-sm font-semibold text-brand-950 dark:text-luxury-text transition-colors">${item.label}</span>
                             <div class="text-right flex flex-col items-end justify-center">
                                 ${discountHtml}
                                 <div class="flex items-baseline gap-0.5 sm:gap-1 price-new">
                                     <span class="text-[10px] sm:text-[11px] text-[#128C7E] dark:text-[#25D366] font-bold price-new-currency transition-colors dark:drop-shadow-[0_0_8px_rgba(37,211,102,0.3)]">R$</span>
-                                    <span class="text-2xl sm:text-3xl font-serif font-bold text-[#128C7E] dark:text-[#25D366] transition-colors leading-none dark:drop-shadow-[0_0_8px_rgba(37,211,102,0.3)]">${item.price}</span>
+                                    <span class="text-xl sm:text-2xl font-serif font-bold text-[#128C7E] dark:text-[#25D366] transition-colors leading-none dark:drop-shadow-[0_0_8px_rgba(37,211,102,0.3)]">${item.price}</span>
                                 </div>
                             </div>
                         </div>`;
                     });
 
-                    const innerHtml = `
-                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-400 to-brand-600"></div>
-                        <div class="mb-5 text-center border-b border-brand-900/10 dark:border-luxury-border pb-4 pt-2 transition-colors">
-                            <h4 class="font-serif text-xl sm:text-2xl font-bold text-brand-950 dark:text-luxury-text transition-colors">${p.title}</h4>
-                            <p class="text-[11px] sm:text-xs text-brand-800 dark:text-brand-300 mt-1.5 font-bold transition-colors uppercase tracking-widest">${p.subtitle}</p>
-                        </div>
-                        <div class="flex flex-col gap-2 sm:gap-4">${itemsHtml}</div>`;
-                    
-                    htmlCarousel += `<article class="snap-start shrink-0 w-[80vw] sm:w-[320px] lg:w-auto flex flex-col py-6 px-6 sm:px-8 border border-brand-200 dark:border-luxury-border bg-brand-50/50 dark:bg-luxury-card rounded-3xl transition-all duration-300 shadow-sm relative overflow-hidden">${innerHtml}</article>`;
+                    htmlAccordion += `
+                        <details class="bg-white/50 dark:bg-luxury-card/60 backdrop-blur-md border border-brand-200 dark:border-luxury-border rounded-2xl group overflow-hidden shadow-sm transition-all duration-300">
+                            <summary class="list-none p-5 sm:p-6 flex items-center justify-between cursor-pointer focus:outline-none outline-none group-open:bg-brand-50 dark:group-open:bg-luxury-border/30 transition-colors">
+                                <div class="flex flex-col text-left">
+                                    <h4 class="font-serif text-lg sm:text-xl font-bold text-brand-950 dark:text-luxury-text transition-colors">Perfil ${p.title}</h4>
+                                    <p class="text-[11px] sm:text-xs text-brand-700 dark:text-brand-400 font-bold uppercase tracking-widest mt-1 transition-colors">${p.subtitle}</p>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-white dark:bg-luxury-bg flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-open:rotate-180 border border-brand-100 dark:border-luxury-border shadow-sm">
+                                    <i data-lucide="chevron-down" class="w-4 h-4 text-brand-600 dark:text-luxury-muted"></i>
+                                </div>
+                            </summary>
+                            <div class="p-5 sm:p-6 pt-0 border-t border-brand-900/10 dark:border-luxury-border bg-white dark:bg-luxury-card transition-colors">
+                                <div class="flex flex-col mt-4">
+                                    ${itemsHtml}
+                                </div>
+                            </div>
+                        </details>
+                    `;
                 });
-                return htmlCarousel;
+                return htmlAccordion;
             }
 
             function buildClubeCards(data) {
@@ -1703,15 +1754,16 @@
                     });
 
                     const popularBadge = p.popular ? `<div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#128C7E] to-[#25D366] dark:from-[#1EBE5D] dark:to-[#25D366] text-white px-5 py-1.5 rounded-full text-[9px] font-bold uppercase tracking-widest shadow-[0_4px_15px_rgba(37,211,102,0.4)] z-20 whitespace-nowrap flex items-center gap-1.5"><i data-lucide="award" class="w-3 h-3"></i> O Mais Escolhido</div>` : '';
-                    const cardClasses = p.popular ? 'border-[#25D366]/40 shadow-[0_10px_40px_-10px_rgba(37,211,102,0.15)] dark:shadow-[0_10px_40px_-10px_rgba(37,211,102,0.1)] scale-100 lg:scale-[1.02] z-10 opacity-100 ring-1 ring-[#25D366]/20' : 'border-white/10 dark:border-luxury-border opacity-90 hover:opacity-100 scale-100 z-0 hover:-translate-y-1 hover:border-white/20 transition-all';
+                    const cardClasses = p.popular ? 'border-[#25D366]/40 shadow-[0_10px_40px_-10px_rgba(37,211,102,0.15)] dark:shadow-[0_10px_40px_-10px_rgba(37,211,102,0.1)] scale-100 z-10 opacity-100 ring-1 ring-[#25D366]/20' : 'border-white/10 dark:border-luxury-border opacity-90 hover:opacity-100 scale-100 z-0 hover:-translate-y-1 hover:border-white/20 transition-all';
                     const savingsTag = `<div class="mt-3 inline-flex items-center justify-center gap-1.5 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[9px] font-bold uppercase tracking-widest rounded-full w-max mx-auto"><i data-lucide="trending-down" class="w-3 h-3"></i> Economia Premium</div>`;
                     
                     const btnHtml = p.popular 
-                        ? `<button onclick="openCityModal('Clube Essência - ${p.title}')" class="w-full py-3.5 px-4 bg-[#128C7E] dark:bg-[#1EBE5D] hover:bg-[#075E54] dark:hover:bg-[#25D366] rounded-xl text-[11px] font-bold uppercase tracking-widest text-white dark:text-luxury-bg transition-all shadow-[0_0_15px_rgba(37,211,102,0.3)] focus:outline-none flex items-center justify-center gap-2 group/btn"><i data-lucide="calendar-check" class="w-4 h-4"></i> Garantir Minha Janela</button>`
-                        : `<button onclick="openCityModal('Clube Essência - ${p.title}')" class="w-full py-3.5 px-4 bg-white/5 dark:bg-luxury-border hover:bg-white/10 dark:hover:bg-luxury-border/80 border border-white/10 dark:border-transparent rounded-xl text-[11px] font-bold uppercase tracking-widest text-white dark:text-luxury-text transition-all shadow-md focus:outline-none flex items-center justify-center gap-2 group/btn"><i data-lucide="calendar-check" class="w-4 h-4 text-brand-400 dark:text-luxury-muted group-hover/btn:text-white transition-colors"></i> Reservar Janela</button>`;
+                        ? `<button onclick="vipSystem.toggle(); document.getElementById('tabela-liso').scrollIntoView({behavior: 'smooth'})" class="w-full py-3.5 px-4 bg-[#128C7E] dark:bg-[#1EBE5D] hover:bg-[#075E54] dark:hover:bg-[#25D366] rounded-xl text-[11px] font-bold uppercase tracking-widest text-white dark:text-luxury-bg transition-all shadow-[0_0_15px_rgba(37,211,102,0.3)] focus:outline-none flex items-center justify-center gap-2 group/btn"><i data-lucide="calendar-check" class="w-4 h-4"></i> Agendar Janela</button>`
+                        : `<button onclick="vipSystem.toggle(); document.getElementById('tabela-liso').scrollIntoView({behavior: 'smooth'})" class="w-full py-3.5 px-4 bg-white/5 dark:bg-luxury-border hover:bg-white/10 dark:hover:bg-luxury-border/80 border border-white/10 dark:border-transparent rounded-xl text-[11px] font-bold uppercase tracking-widest text-white dark:text-luxury-text transition-all shadow-md focus:outline-none flex items-center justify-center gap-2 group/btn"><i data-lucide="calendar-check" class="w-4 h-4 text-brand-400 dark:text-luxury-muted group-hover/btn:text-white transition-colors"></i> Agendar Janela</button>`;
 
+                    // OTIMIZAÇÃO: Cartões agora são shrink-0 e têm um tamanho fixo flexível (w-[85vw] sm:w-[320px]) para rolar lado a lado na Gaveta.
                     html += `
-                        <article class="snap-start shrink-0 w-[85vw] lg:w-auto bg-white/5 dark:bg-luxury-card/60 backdrop-blur-md border rounded-[2rem] p-6 sm:p-8 flex flex-col transition-all duration-500 relative overflow-visible ${cardClasses}">
+                        <article class="snap-start shrink-0 w-[85vw] sm:w-[340px] bg-white/5 dark:bg-luxury-card/60 backdrop-blur-md border rounded-[2rem] p-6 sm:p-8 flex flex-col transition-all duration-500 relative overflow-visible ${cardClasses}">
                             ${popularBadge}
                             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-400 to-brand-600 rounded-t-[2rem]"></div>
                             <div class="text-center mb-6 border-b border-white/10 dark:border-luxury-border pb-6 transition-colors mt-2 flex flex-col items-center">
@@ -1722,16 +1774,8 @@
                             </div>
                             <div class="flex flex-col flex-grow">
                                 ${windowsHtml}
-                                <div class="flex justify-between items-center py-4 px-4 mt-2 bg-red-500/10 dark:bg-red-500/5 border border-red-500/20 dark:border-red-500/20 rounded-xl transition-colors">
-                                    <span class="text-[11px] sm:text-[12px] text-red-400 dark:text-red-300 font-bold flex items-center gap-2 transition-colors uppercase tracking-widest">
-                                        <div class="w-2 h-2 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.6)]"></div> > 90 dias
-                                    </span>
-                                    <span class="text-[10px] sm:text-[11px] font-bold text-brand-300 dark:text-luxury-text uppercase tracking-widest cursor-pointer hover:text-white dark:hover:text-[#E6DFD9] transition-colors flex items-center gap-1" onclick="document.getElementById('tabela-liso').scrollIntoView({behavior: 'smooth'})">
-                                        Tabela Oficial <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
-                                    </span>
-                                </div>
                             </div>
-                            <div class="mt-6 pt-6 border-t border-white/10 dark:border-luxury-border transition-colors">
+                            <div class="mt-4 pt-6 border-t border-white/10 dark:border-luxury-border transition-colors">
                                 ${btnHtml}
                             </div>
                         </article>
@@ -1749,19 +1793,123 @@
             if(clubeCardsContainer) clubeCardsContainer.innerHTML = buildClubeCards(pricingDataClube);
         }
 
+        // --- SISTEMA VIP (Cadeado e Gaveta) ---
+        const vipSystem = {
+            isUnlocked: false,
+            unlock: function() {
+                const inputEl = document.getElementById('vip-pass-input');
+                const btn = document.getElementById('btn-unlock');
+                if(!inputEl || !btn) return;
+                
+                const input = inputEl.value.toUpperCase().trim();
+                // Senhas válidas!
+                const validPass = ['VIP', 'ROMA8K', 'ESSENCIAVIP', 'SOUCLIENTE']; 
+                
+                if (validPass.includes(input)) {
+                    this.isUnlocked = true;
+                    inputEl.value = ''; // Limpa a senha
+                    
+                    // Oculta o cadeado, mostra o banner de acesso liberado
+                    document.getElementById('clube-locked-banner').classList.add('hidden');
+                    document.getElementById('clube-unlocked-banner').classList.remove('hidden');
+                    
+                    if(typeof fbq === 'function') fbq('trackCustom', 'UnlockVIPClub'); 
+                    
+                    // Abre a gaveta mágica
+                    this.toggle();
+                } else {
+                    // Animação de erro vermelha
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '<i data-lucide="x-circle" class="w-4 h-4"></i> Inválida';
+                    btn.classList.remove('bg-brand-500', 'hover:bg-brand-400');
+                    btn.classList.add('bg-red-600');
+                    if(window.lucide) lucide.createIcons();
+                    
+                    // Tremor (Shake) no input
+                    inputEl.classList.add('translate-x-2');
+                    setTimeout(() => inputEl.classList.remove('translate-x-2'), 100);
+                    setTimeout(() => inputEl.classList.add('-translate-x-2'), 200);
+                    setTimeout(() => inputEl.classList.remove('-translate-x-2'), 300);
+
+                    // Volta ao normal após 2s
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.classList.remove('bg-red-600');
+                        btn.classList.add('bg-brand-500', 'hover:bg-brand-400');
+                        if(window.lucide) lucide.createIcons();
+                    }, 2000);
+                }
+            },
+            toggle: function() {
+                if(!this.isUnlocked) {
+                    const inputEl = document.getElementById('vip-pass-input');
+                    if(inputEl) inputEl.focus();
+                    return;
+                }
+                
+                const overlay = document.getElementById('drawer-overlay');
+                const drawer = document.getElementById('vip-drawer');
+                if(!overlay || !drawer) return;
+
+                if(drawer.classList.contains('translate-y-full')) {
+                    // ABRIR A GAVETA VIP
+                    overlay.classList.remove('hidden');
+                    setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+                    drawer.classList.remove('translate-y-full');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    // FECHAR A GAVETA VIP
+                    drawer.classList.add('translate-y-full');
+                    // Verifica se a gaveta da sacola também está fechada antes de ocultar o fundo escuro
+                    const cartDrawer = document.getElementById('cart-drawer');
+                    if(cartDrawer && cartDrawer.classList.contains('translate-y-full')){
+                        overlay.classList.add('opacity-0');
+                        setTimeout(() => {
+                            overlay.classList.add('hidden');
+                            document.body.style.overflow = 'auto';
+                        }, 300);
+                    }
+                }
+            }
+        };
+
         const cartSystem = {
             items: [],
+            discountPercent: 0,
+            validCoupons: { 'ROMA30': 0.30, 'BOUTIQUE30': 0.30 },
+
             init: function() {
                 const saved = localStorage.getItem('roma_cart');
+                const savedDiscount = localStorage.getItem('roma_cart_discount');
                 if(saved) {
                     this.items = JSON.parse(saved);
+                    if(savedDiscount) this.discountPercent = parseFloat(savedDiscount);
                     this.updateBadge();
                 }
             },
             save: function() {
                 localStorage.setItem('roma_cart', JSON.stringify(this.items));
+                localStorage.setItem('roma_cart_discount', this.discountPercent.toString());
                 this.updateBadge();
                 this.render();
+            },
+            applyCoupon: function() {
+                const input = document.getElementById('coupon-input');
+                if(!input) return;
+                const code = input.value.toUpperCase().trim();
+                
+                if(code === '') return;
+
+                if(this.validCoupons[code]) {
+                    this.discountPercent = this.validCoupons[code];
+                    this.save();
+                    this.showToast('Cupom Aplicado!', 'success');
+                    input.value = '';
+                } else {
+                    this.discountPercent = 0;
+                    this.save();
+                    this.showToast('Cupom Inválido', 'error');
+                }
             },
             add: function(productName, price, imgUrl, btnElement) {
                 if(btnElement && btnElement.disabled) return;
@@ -1788,10 +1936,11 @@
                 
                 this.save();
                 if(typeof fbq === 'function') fbq('track', 'AddToCart', { content_name: productName, value: price, currency: 'BRL' });
-                this.showToast();
+                this.showToast('Adicionada à Sacola', 'success');
             },
             remove: function(productName) {
                 this.items = this.items.filter(i => i.name !== productName);
+                if(this.items.length === 0) this.discountPercent = 0; // Remove cupom se esvaziar
                 this.save();
             },
             updateQtd: function(productName, delta) {
@@ -1815,11 +1964,15 @@
                     document.body.style.overflow = 'hidden';
                 } else {
                     drawer.classList.add('translate-y-full');
-                    overlay.classList.add('opacity-0');
-                    setTimeout(() => {
-                        overlay.classList.add('hidden');
-                        document.body.style.overflow = 'auto';
-                    }, 300);
+                    
+                    const vipDrawer = document.getElementById('vip-drawer');
+                    if(vipDrawer && vipDrawer.classList.contains('translate-y-full')){
+                        overlay.classList.add('opacity-0');
+                        setTimeout(() => {
+                            overlay.classList.add('hidden');
+                            document.body.style.overflow = 'auto';
+                        }, 300);
+                    }
                 }
             },
             updateBadge: function() {
@@ -1842,14 +1995,18 @@
             render: function() {
                 const container = document.getElementById('cart-items-container');
                 const totalEl = document.getElementById('cart-total');
+                const subtotalEl = document.getElementById('cart-subtotal');
+                const discountDisplay = document.getElementById('discount-display');
+                const discountValueEl = document.getElementById('cart-discount-value');
+                
                 let html = '';
-                let total = 0;
+                let subtotal = 0;
 
                 if(this.items.length === 0) {
                     html = `<div class="flex flex-col items-center justify-center py-10 text-brand-800/50 dark:text-luxury-muted/50 transition-colors"><i data-lucide="shopping-bag" class="w-12 h-12 mb-4 opacity-50"></i><p class="text-sm font-medium">Sua sacola está vazia.</p></div>`;
                 } else {
                     this.items.forEach(item => {
-                        total += item.price * item.quantity;
+                        subtotal += item.price * item.quantity;
                         const fallbackImg = 'https://via.placeholder.com/150';
                         const displayImg = item.img ? item.img : fallbackImg;
                         const decreaseIcon = item.quantity === 1 ? '<svg class="w-3.5 h-3.5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>' : '-';
@@ -1864,26 +2021,70 @@
                             </div>`;
                     });
                 }
+                
                 if(container) container.innerHTML = html;
-                if(totalEl) totalEl.innerText = `R$ ${total}`;
+                
+                let finalTotal = subtotal;
+                let discountAmount = 0;
+                
+                // Lógica de visualização do Desconto
+                if(this.discountPercent > 0 && subtotal > 0) {
+                    discountAmount = subtotal * this.discountPercent;
+                    finalTotal = subtotal - discountAmount;
+                    
+                    if(discountDisplay) discountDisplay.classList.remove('hidden');
+                    if(subtotalEl) {
+                        subtotalEl.classList.remove('hidden');
+                        subtotalEl.innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+                    }
+                    if(discountValueEl) discountValueEl.innerText = `- R$ ${discountAmount.toFixed(2).replace('.', ',')}`;
+                } else {
+                    if(discountDisplay) discountDisplay.classList.add('hidden');
+                    if(subtotalEl) subtotalEl.classList.add('hidden');
+                }
+
+                if(totalEl) totalEl.innerText = `R$ ${finalTotal.toFixed(2).replace('.', ',')}`;
                 if(window.lucide) lucide.createIcons();
             },
             checkout: function() {
                 if(this.items.length === 0) return;
                 let text = 'Olá, clínica Essência de Romã! Gostaria de finalizar a minha reserva da Boutique:\n\n';
-                let total = 0;
+                let subtotal = 0;
                 this.items.forEach(item => {
                     text += `🛍️ ${item.quantity}x *${item.name}* - R$ ${item.price * item.quantity}\n`;
-                    total += item.price * item.quantity;
+                    subtotal += item.price * item.quantity;
                 });
-                text += `\n💰 *Total: R$ ${total},00*\n\nComo procedo com o pagamento e a retirada/entrega?`;
+                
+                let finalTotal = subtotal;
+                if(this.discountPercent > 0) {
+                    let discountAmount = subtotal * this.discountPercent;
+                    finalTotal = subtotal - discountAmount;
+                    text += `\n🏷️ *Desconto (30%):* - R$ ${discountAmount.toFixed(2).replace('.', ',')}`;
+                }
+                
+                text += `\n💰 *Total Final: R$ ${finalTotal.toFixed(2).replace('.', ',')}*\n\nPoderiam gerar o meu link de pagamento (Pix/Cartão)? E como procedemos com a retirada/entrega?`;
+                
                 const encodedText = encodeURIComponent(text);
-                if(typeof fbq === 'function') fbq('track', 'InitiateCheckout', { value: total, currency: 'BRL' });
+                if(typeof fbq === 'function') fbq('track', 'InitiateCheckout', { value: finalTotal, currency: 'BRL' });
                 window.open(`https://wa.me/5549999954052?text=${encodedText}`, '_blank');
             },
-            showToast: function() {
+            showToast: function(msg = 'Adicionada à Sacola', type = 'success') {
                 const toast = document.getElementById('cart-toast');
-                if(toast) {
+                const toastMsg = document.getElementById('cart-toast-msg');
+                const iconWrapper = document.getElementById('cart-toast-icon-wrapper');
+                
+                if(toast && toastMsg && iconWrapper) {
+                    toastMsg.innerText = msg;
+                    
+                    if(type === 'error') {
+                        iconWrapper.className = 'bg-red-500 rounded-full p-1 transition-colors';
+                        iconWrapper.innerHTML = '<i data-lucide="x" class="w-3 h-3 text-white transition-colors"></i>';
+                    } else {
+                        iconWrapper.className = 'bg-[#25D366] dark:bg-[#1EBE5D] rounded-full p-1 transition-colors';
+                        iconWrapper.innerHTML = '<i data-lucide="check" class="w-3 h-3 text-white dark:text-luxury-bg transition-colors"></i>';
+                    }
+                    if(window.lucide) lucide.createIcons();
+
                     toast.classList.remove('-translate-y-full', 'opacity-0');
                     toast.classList.add('translate-y-4', 'opacity-100');
                     setTimeout(() => {
@@ -1897,6 +2098,9 @@
         function closeAllDrawers() {
             const cartDrawer = document.getElementById('cart-drawer');
             if(cartDrawer && !cartDrawer.classList.contains('translate-y-full')) cartSystem.toggle();
+            
+            const vipDrawer = document.getElementById('vip-drawer');
+            if(vipDrawer && !vipDrawer.classList.contains('translate-y-full')) vipSystem.toggle();
         }
 
         function navigateTo(viewId, targetId = null) {
@@ -1980,6 +2184,53 @@
             else navigateTo('view-home');
         }
 
+        // Lógica de Desbloqueio da Área VIP do Clube
+        function unlockClube() {
+            const inputEl = document.getElementById('vip-pass-input');
+            const btn = document.getElementById('btn-unlock');
+            if(!inputEl || !btn) return;
+            
+            const input = inputEl.value.toUpperCase().trim();
+            // Defina aqui as senhas válidas que a sua equipa vai passar no WhatsApp
+            const validPass = ['VIP', 'ROMA8K', 'ESSENCIAVIP', 'SOUCLIENTE']; 
+            
+            if (validPass.includes(input)) {
+                // SUCESSO: Oculta o banner de bloqueio e revela o conteúdo
+                document.getElementById('clube-locked-banner').classList.add('hidden');
+                
+                const privateContent = document.getElementById('clube-private-content');
+                privateContent.classList.remove('hidden');
+                privateContent.classList.add('fade-in'); // Adiciona animação suave
+                
+                setTimeout(() => {
+                    document.getElementById('regras-clube').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 300);
+                
+                if(typeof fbq === 'function') fbq('trackCustom', 'UnlockVIPClub'); // Rastreia quem desbloqueia
+
+            } else {
+                // ERRO: Senha incorreta
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i data-lucide="x-circle" class="w-4 h-4"></i> Senha Inválida';
+                btn.classList.remove('bg-brand-500', 'hover:bg-brand-400');
+                btn.classList.add('bg-red-600');
+                if(window.lucide) lucide.createIcons();
+                
+                // Agita o campo de input
+                inputEl.classList.add('translate-x-2');
+                setTimeout(() => inputEl.classList.remove('translate-x-2'), 100);
+                setTimeout(() => inputEl.classList.add('-translate-x-2'), 200);
+                setTimeout(() => inputEl.classList.remove('-translate-x-2'), 300);
+
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('bg-red-600');
+                    btn.classList.add('bg-brand-500', 'hover:bg-brand-400');
+                    if(window.lucide) lucide.createIcons();
+                }, 2000);
+            }
+        }
+
         window.addEventListener('popstate', handleRouting);
 
         window.addEventListener('load', () => {
@@ -1990,6 +2241,17 @@
             renderPricing(); 
             cartSystem.init(); 
             handleRouting(); 
+            
+            // OTIMIZAÇÃO: Permite desbloquear o clube VIP carregando na tecla "Enter"
+            const vipInput = document.getElementById('vip-pass-input');
+            if(vipInput) {
+                vipInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        vipSystem.unlock();
+                    }
+                });
+            }
             
             const btnTheme = document.getElementById('theme-toggle-btn');
             if (document.documentElement.classList.contains('dark') && btnTheme) {
