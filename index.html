@@ -40,14 +40,17 @@
     </script>
     
     <!-- =================================================================== -->
-    <!-- 2. RASTREAMENTO GOOGLE TAG MANAGER (PADRÃO) -->
+    <!-- 2. RASTREAMENTO SERVER-SIDE (STAPE.IO + GTM) -->
+    <!-- Domínio disfarçado para evitar bloqueadores (AdBlockers / iOS) -->
     <!-- =================================================================== -->
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KSC788J2');</script>
+    'https://kkzrytar.sad.stape.io/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5Q9T4W5F');
+    </script>
     <!-- End Google Tag Manager -->
     
     <meta name="theme-color" id="meta-theme-color" content="#090706">
@@ -93,7 +96,8 @@
                 }
             }
         }
-        // Early theme initialization to prevent flash of wrong theme
+        
+        // Inicialização Segura do Tema
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
@@ -154,9 +158,8 @@
 </head>
 <body class="no-fouc bg-brand-50 dark:bg-luxury-bg text-brand-950 dark:text-luxury-text font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden pt-8 pb-12 transition-colors duration-300">
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSC788J2"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- RASTREAMENTO SERVER-SIDE (NOSCRIPT) -->
+    <noscript><iframe src="https://kkzrytar.sad.stape.io/ns.html?id=GTM-5Q9T4W5F" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- BARRA DE PROGRESSO -->
@@ -181,9 +184,9 @@
 
     <!-- IMAGEM DE FUNDO E LUZES DINÂMICAS -->
     <div class="fixed inset-0 z-0 pointer-events-none">
-        <img src="https://testeessencia.carrd.co/assets/images/image38.jpg?v=0bcae317" alt="Bg 1" class="slide-bg slide-bg-1" />
-        <img src="https://testeessencia.carrd.co/assets/images/image41.jpg?v=0bcae317" alt="Bg 2" class="slide-bg slide-bg-2" />
-        <img src="https://testeessencia.carrd.co/assets/images/image40.jpg?v=0bcae317" alt="Bg 3" class="slide-bg slide-bg-3" />
+        <img src="https://testeessencia.carrd.co/assets/images/image38.jpg?v=0bcae317" alt="Ambiente do Salão 1" class="slide-bg slide-bg-1" />
+        <img src="https://testeessencia.carrd.co/assets/images/image41.jpg?v=0bcae317" alt="Ambiente do Salão 2" class="slide-bg slide-bg-2" />
+        <img src="https://testeessencia.carrd.co/assets/images/image40.jpg?v=0bcae317" alt="Ambiente do Salão 3" class="slide-bg slide-bg-3" />
         <div class="absolute inset-0 bg-gradient-to-b from-brand-50/20 via-brand-50/80 to-brand-50 dark:from-luxury-bg/40 dark:via-luxury-bg/90 dark:to-luxury-bg backdrop-blur-[2px]"></div>
     </div>
 
@@ -257,19 +260,19 @@
             <div class="flex overflow-x-auto snap-x snap-mandatory gap-5 sm:gap-6 md:gap-6 lg:gap-8 px-6 sm:px-8 md:px-0 pb-6 custom-scrollbar items-center md:justify-start lg:justify-center">
                 <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-black shadow-alvorada dark:shadow-crepusculo hover:-translate-y-2 transition-all duration-500 cursor-pointer">
                     <video data-src="https://testeessencia.carrd.co/assets/videos/video20.mp4?v=0dcd7ee2#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[3s]"></video>
-                    <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-2.5 rounded-full border border-white/20 transition-colors hover:bg-black/90"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
+                    <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-2.5 rounded-full border border-white/20 transition-colors hover:bg-black/90" aria-label="Mutar vídeo"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                 </figure>
                 <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-black shadow-alvorada dark:shadow-crepusculo md:-translate-y-8 hover:-translate-y-10 transition-all duration-500 cursor-pointer">
                     <video data-src="https://testeessencia.carrd.co/assets/videos/video03.mp4?v=701b88d2#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[3s]"></video>
-                    <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-2.5 rounded-full border border-white/20 transition-colors hover:bg-black/90"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
+                    <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-2.5 rounded-full border border-white/20 transition-colors hover:bg-black/90" aria-label="Mutar vídeo"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                 </figure>
                 <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-black shadow-alvorada dark:shadow-crepusculo hover:-translate-y-2 transition-all duration-500 cursor-pointer">
                     <video data-src="https://testeessencia.carrd.co/assets/videos/video13.mp4?v=36e3212d#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[3s]"></video>
-                    <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-2.5 rounded-full border border-white/20 transition-colors hover:bg-black/90"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
+                    <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-2.5 rounded-full border border-white/20 transition-colors hover:bg-black/90" aria-label="Mutar vídeo"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                 </figure>
                 <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-black shadow-alvorada dark:shadow-crepusculo md:-translate-y-8 hover:-translate-y-10 transition-all duration-500 cursor-pointer">
                     <video data-src="https://testeessencia.carrd.co/assets/videos/video02.mp4?v=7c53f00c#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[3s]"></video>
-                    <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-2.5 rounded-full shadow-lg border border-white/20 transition-colors hover:bg-black/90"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
+                    <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-2.5 rounded-full shadow-lg border border-white/20 transition-colors hover:bg-black/90" aria-label="Mutar vídeo"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                 </figure>
             </div>
             
@@ -715,7 +718,7 @@
             <div class="absolute top-0 left-0 w-12 sm:w-16 h-full bg-gradient-to-r from-brand-50 dark:from-luxury-bg to-transparent z-10 pointer-events-none md:hidden transition-colors duration-300"></div>
             <div class="absolute top-0 right-0 w-12 sm:w-16 h-full bg-gradient-to-l from-brand-50 dark:from-luxury-bg to-transparent z-10 pointer-events-none md:hidden transition-colors duration-300"></div>
 
-            <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:gap-6 px-6 sm:px-8 md:px-4 custom-scrollbar items-stretch max-w-6xl mx-auto pb-6">
+            <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:gap-6 px-6 sm:px-8 md:px-4 custom-scrollbar items-stretch max-w-6xl mx-auto pb-6 lg:justify-center">
                 <!-- Terapias -->
                 <article class="snap-start shrink-0 w-[75vw] sm:w-[280px] flex flex-col justify-between bg-white dark:bg-luxury-card backdrop-blur-md border-2 border-brand-200 dark:border-brand-800/60 hover:border-brand-400 dark:hover:border-brand-500/50 rounded-[2rem] p-6 sm:p-8 shadow-md hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
                     <div class="flex flex-col flex-grow">
@@ -970,6 +973,9 @@
         <p class="text-gray-400 text-sm md:text-base max-w-md animate-pulse font-medium">A sua mensagem personalizada está a ser gerada. Fale com a nossa equipa!</p>
     </div>
 
+    <!-- BOTÃO TOPO -->
+    <button id="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-24 left-6 md:bottom-8 md:left-8 z-[70] translate-y-10 opacity-0 pointer-events-none transition-all duration-500 bg-white/90 dark:bg-luxury-card/90 backdrop-blur-md p-3 rounded-full shadow-2xl border border-brand-200 dark:border-white/10 text-brand-950 dark:text-white"><i data-lucide="chevron-up" class="w-5 h-5"></i></button>
+
     <!-- BARRA FIXA MOBILE -->
     <div class="fixed bottom-0 left-0 w-full bg-white dark:bg-[#0f0c0b] border-t border-brand-900/10 dark:border-luxury-border p-3 z-[70] md:hidden flex justify-center pb-safe shadow-[0_-10px_20px_rgba(0,0,0,0.05)] transition-colors duration-300" id="mobile-fixed-bar">
         <button type="button" onclick="openCityModal('Falar com Especialista')" class="w-full flex items-center justify-center gap-2 bg-[#128C7E] dark:bg-[#1EBE5D] text-white dark:text-luxury-bg rounded-xl font-bold text-[14px] py-4 shadow-[0_4px_15px_rgba(18,140,126,0.3)] dark:shadow-[0_4px_15px_rgba(30,190,93,0.15)] active:scale-95 transition-all uppercase focus:outline-none">
@@ -1043,7 +1049,6 @@
             return utmString;
         }
 
-        // Executar logo no load
         storeUTMs();
 
         function openCityModal(service) {
@@ -1222,9 +1227,10 @@
             const videoObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        if (!entry.target.src && entry.target.dataset.src) {
-                            entry.target.src = entry.target.dataset.src;
-                            entry.target.load();
+                        const targetSrc = entry.target.getAttribute('data-src');
+                        if (!entry.target.getAttribute('src') && targetSrc) { 
+                            entry.target.setAttribute('src', targetSrc); 
+                            entry.target.load(); 
                         }
                         if (entry.target.muted) entry.target.play().catch(e => console.warn('Autoplay evitado pela política do navegador', e));
                     } else {
@@ -1296,10 +1302,10 @@
             });
         });
 
-        // DOM Caching for Scroll Event
         const DOM = {
             navbar: document.getElementById('navbar'),
-            progressBar: document.getElementById('scroll-progress')
+            progressBar: document.getElementById('scroll-progress'),
+            backToTopBtn: document.getElementById('back-to-top-btn')
         };
 
         let isScrolling = false;
@@ -1313,10 +1319,22 @@
                         else DOM.navbar.classList.remove('shadow-lg', 'dark:border-white/10');
                     }
 
+                    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    const scrolledPercentage = (winScroll / height) * 100;
+
                     if (DOM.progressBar) {
-                        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-                        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                        DOM.progressBar.style.width = (winScroll / height) * 100 + '%';
+                        DOM.progressBar.style.width = scrolledPercentage + '%';
+                    }
+
+                    if (DOM.backToTopBtn) {
+                        if (scrolledPercentage > 50) {
+                            DOM.backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-10');
+                            DOM.backToTopBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                        } else {
+                            DOM.backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10');
+                            DOM.backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                        }
                     }
 
                     isScrolling = false;
@@ -1342,7 +1360,6 @@
             grantConsent(); 
         }
         
-        // Textos Legais Completos para Conformidade Meta/Google/LGPD
         const legalTexts = {
             termos: { 
                 title: "Termos e Condições de Uso", 
