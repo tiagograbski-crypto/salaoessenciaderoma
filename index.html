@@ -44,11 +44,9 @@
     <!-- Domínio disfarçado para evitar bloqueadores (AdBlockers / iOS) -->
     <!-- =================================================================== -->
     <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://tgnpce.7.6.io/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-T788J2M');
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://tggnpcie.sad.stape.io/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KSC788J2');
     </script>
     <!-- End Google Tag Manager -->
     
@@ -157,7 +155,7 @@
 <body class="bg-brand-50 dark:bg-luxury-bg text-brand-950 dark:text-luxury-text font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden pt-8 pb-12 transition-colors duration-300">
 
     <!-- FALLBACK STAPE NOSCRIPT -->
-    <noscript><iframe src="https://tgnpce.7.6.io/ns.html?id=GTM-T788J2M" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://tggnpcie.sad.stape.io/ns.html?id=GTM-KSC788J2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- BARRA DE PROGRESSO -->
     <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-brand-600 to-brand-400 z-[80] transition-all duration-100 ease-out" style="width: 0%;"></div>
@@ -1083,113 +1081,19 @@
             setTimeout(() => m.classList.add('hidden'), 300);
         }
 
-        function processB2BLead() {
-            if(isRedirecting) return;
-            
-            const nome = document.getElementById('b2b-nome').value.trim();
-            const cidade = document.getElementById('b2b-cidade').value.trim();
-            const salao = document.getElementById('b2b-salao').value;
-
-            // VALIDAÇÃO RIGOROSA
-            if(!nome || !cidade || !salao) {
-                alert('Por favor, preencha todos os campos para que a nossa equipe de expansão possa analisá-la.');
-                return;
-            }
-
-            isRedirecting = true;
-
-            // NÚMERO EXCLUSIVO DA EXPANSÃO (B2B)
-            const phone = '5549991618389'; 
-            const eventId = 'evt_' + Date.now() + '_' + Math.floor(Math.random() * 10000);
-            
-            const cleanCity = cidade.substring(0,3).toUpperCase();
-            let crmTag = `\n\n[Ref: B2B-${cleanCity}-${eventId.substring(0,8)}]`;
-            crmTag += getStoredUTMsText();
-
-            // DASHBOARD PARA A EQUIPA B2B LER NO WHATSAPP
-            let msg = `Olá! Tenho interesse no Credenciamento / Parceria exclusiva da Essência de Romã para a minha região.\n\n` +
-                      `👤 *Nome:* ${nome}\n` +
-                      `📍 *Cidade/Estado:* ${cidade}\n` +
-                      `✂️ *Status:* ${salao}\n\n` +
-                      `Aguardo o retorno da equipe de expansão!${crmTag}`;
-            
-            // RASTREAMENTO ESPECÍFICO (B2B)
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'generate_lead',
-                'lead_type': 'Parceria B2B',
-                'event_id': eventId,
-                'service_intent': 'Credenciamento',
-                'location_intent': cidade,
-                'maintenance_cycle': 'n/a'
-            });
-
-            const finalUrl = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-
-            // TELA DE REDIRECIONAMENTO COM PROTEÇÃO
-            const redirectPage = document.getElementById('redirect-page');
-            closeB2BModal();
-            if(redirectPage) {
-                redirectPage.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-                if(window.lucide) lucide.createIcons();
-                setTimeout(() => redirectPage.classList.remove('opacity-0'), 10);
-            }
-
-            setTimeout(() => {
-                window.location.href = finalUrl;
-                isRedirecting = false;
-                
-                if(redirectPage) {
-                    setTimeout(() => {
-                        redirectPage.classList.add('opacity-0');
-                        setTimeout(() => {
-                            redirectPage.classList.add('hidden');
-                            document.body.style.overflow = 'auto';
-                        }, 500);
-                    }, 2000);
-                }
-            }, 1500);
-        }
-
         let isRedirecting = false;
 
+        // RASTREAMENTO CLIENTE SALÃO (WHATSAPP PRINCIPAL)
         function handleCitySelection(rawCity) {
             if(isRedirecting) return;
             isRedirecting = true;
 
+            // Identificador único para deduplicação CAPI
+            const eventId = 'evt_' + Date.now() + '_' + Math.floor(Math.random() * 1000);
             const phone = '5549999954052';
-            const eventId = 'evt_' + Date.now() + '_' + Math.floor(Math.random() * 10000);
-            const safeService = currentSelectedService || 'Atendimento Geral';
-            const safeCity = rawCity || 'Não Informada';
+            const finalUrl = `https://wa.me/${phone}?text=${encodeURIComponent('Olá! Desejo agendar ' + currentSelectedService + ' em ' + rawCity + getStoredUTMsText())}`;
 
-            let intentType = "Agendamento de Avaliação";
-            if (safeService === 'Falar com Especialista') {
-                intentType = "Dúvida / Atendimento";
-            } else if (safeService.includes('Glass') || safeService.includes('Platinum') || safeService.includes('Liso') || safeService.includes('Soberano') || safeService.includes('Fusion') || safeService.includes('Standard')) {
-                intentType = "Interesse em Protocolo Químico/Alisamento";
-            } else if (safeService.includes('Terapia') || safeService.includes('Spa') || safeService.includes('Colorimetria') || safeService.includes('Corte') || safeService.includes('Visagismo')) {
-                intentType = "Interesse em Serviços de Salão";
-            }
-
-            const cleanService = safeService.replace(/\s+/g, '').substring(0,10).toUpperCase();
-            const cleanCity = safeCity.substring(0,3).toUpperCase();
-            let crmTag = `\n\n[Ref: SITE-${cleanCity}-${cleanService}]\n[Evt: ${eventId}]`;
-            crmTag += getStoredUTMsText();
-
-            let msg = `Olá! Vim pelo site e gostaria de atendimento.\n\n📍 *Unidade Desejada:* ${safeCity}\n✨ *Serviço/Interesse:* ${safeService}\n🎯 *Objetivo:* ${intentType}\n\nAguardo o retorno!${crmTag}`;
-            const finalUrl = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'generate_lead',
-                'event_id': eventId,
-                'lead_type': intentType.includes('Dúvida') ? 'Duvida' : 'Agendamento',
-                'service_intent': safeService,
-                'location_intent': safeCity,
-                'maintenance_cycle': '30_days'
-            });
-
+            // UI Feedback (Página Ponte)
             const redirectPage = document.getElementById('redirect-page');
             closeCityModal();
             if(redirectPage) {
@@ -1199,8 +1103,21 @@
                 setTimeout(() => redirectPage.classList.remove('opacity-0'), 10);
             }
 
-            setTimeout(() => {
-                window.location.href = finalUrl;
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'generate_lead',
+                'event_id': eventId,
+                'service_intent': currentSelectedService,
+                'location_intent': rawCity,
+                'eventCallback': function() { 
+                    window.location.href = finalUrl; 
+                    isRedirecting = false;
+                }
+            });
+
+            // Redirecionamento forçado em 1.2s se o rastreio falhar
+            setTimeout(() => { 
+                window.location.href = finalUrl; 
                 isRedirecting = false;
                 
                 if(redirectPage) {
@@ -1212,7 +1129,61 @@
                         }, 500);
                     }, 2000);
                 }
-            }, 1500);
+            }, 1200);
+        }
+
+        // RASTREAMENTO B2B (WHATSAPP GL PRO)
+        function processB2BLead() {
+            if(isRedirecting) return;
+
+            const nome = document.getElementById('b2b-nome').value;
+            const cidade = document.getElementById('b2b-cidade').value;
+            const salao = document.getElementById('b2b-salao').value;
+
+            if(!nome || !cidade || !salao) { alert('Preencha os dados.'); return; }
+
+            isRedirecting = true;
+
+            const phoneB2B = '5549991618389';
+            const eventId = 'b2b_' + Date.now();
+            const msg = `*SOLICITAÇÃO DE CREDENCIAMENTO GL PRO*\n\n👤 Nome: ${nome}\n📍 Cidade: ${cidade}\n✂️ Status: ${salao}${getStoredUTMsText()}`;
+            const finalUrl = `https://wa.me/${phoneB2B}?text=${encodeURIComponent(msg)}`;
+
+            // UI Feedback (Página Ponte)
+            const redirectPage = document.getElementById('redirect-page');
+            closeB2BModal();
+            if(redirectPage) {
+                redirectPage.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                if(window.lucide) lucide.createIcons();
+                setTimeout(() => redirectPage.classList.remove('opacity-0'), 10);
+            }
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'generate_b2b_lead',
+                'event_id': eventId,
+                'eventCallback': function() { 
+                    window.location.href = finalUrl; 
+                    isRedirecting = false;
+                }
+            });
+
+            // Redirecionamento forçado em 1.2s se o rastreio falhar
+            setTimeout(() => { 
+                window.location.href = finalUrl; 
+                isRedirecting = false;
+                
+                if(redirectPage) {
+                    setTimeout(() => {
+                        redirectPage.classList.add('opacity-0');
+                        setTimeout(() => {
+                            redirectPage.classList.add('hidden');
+                            document.body.style.overflow = 'auto';
+                        }, 500);
+                    }, 2000);
+                }
+            }, 1200);
         }
 
         document.addEventListener('DOMContentLoaded', () => {
