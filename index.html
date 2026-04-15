@@ -40,14 +40,14 @@
     </script>
     
     <!-- =================================================================== -->
-    <!-- 2. RASTREAMENTO SERVER-SIDE (STAPE.IO + GTM) -->
-    <!-- Domínio disfarçado para evitar bloqueadores (AdBlockers / iOS) -->
+    <!-- 2. RASTREAMENTO GOOGLE TAG MANAGER (PADRÃO) -->
     <!-- =================================================================== -->
-    <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://tggnpcie.sad.stape.io/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KSC788J2');
-    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KSC788J2');</script>
     <!-- End Google Tag Manager -->
     
     <meta name="theme-color" id="meta-theme-color" content="#090706">
@@ -152,10 +152,12 @@
         .transition-colors { transition-duration: 300ms; transition-timing-function: ease-in-out; will-change: background-color, border-color, color; }
     </style>
 </head>
-<body class="bg-brand-50 dark:bg-luxury-bg text-brand-950 dark:text-luxury-text font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden pt-8 pb-12 transition-colors duration-300">
+<body class="no-fouc bg-brand-50 dark:bg-luxury-bg text-brand-950 dark:text-luxury-text font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden pt-8 pb-12 transition-colors duration-300">
 
-    <!-- FALLBACK STAPE NOSCRIPT -->
-    <noscript><iframe src="https://tggnpcie.sad.stape.io/ns.html?id=GTM-KSC788J2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSC788J2"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- BARRA DE PROGRESSO -->
     <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-brand-600 to-brand-400 z-[80] transition-all duration-100 ease-out" style="width: 0%;"></div>
@@ -992,16 +994,21 @@
                 <h3 id="modal-title" class="font-serif text-xl sm:text-2xl text-brand-950 dark:text-luxury-text font-medium transition-colors">Título</h3>
                 <button onclick="closeLegalModal()" class="p-2 text-brand-700 hover:text-brand-900 dark:text-brand-400 dark:hover:text-luxury-text transition-colors bg-brand-50 dark:bg-luxury-bg rounded-full focus:outline-none hover:rotate-90 duration-300"><i data-lucide="x" class="w-5 h-5 stroke-[1.5]"></i></button>
             </div>
-            <div id="modal-content" class="p-5 sm:p-8 overflow-y-auto text-[11px] sm:text-[13px] text-brand-800 dark:text-luxury-muted font-light leading-relaxed space-y-4 transition-colors"></div>
+            <div id="modal-content" class="p-5 sm:p-8 overflow-y-auto text-[11px] sm:text-[13px] text-brand-800 dark:text-luxury-muted font-light leading-relaxed space-y-4 transition-colors custom-scrollbar"></div>
         </div>
     </div>
 
     <footer class="py-20 bg-white dark:bg-[#09090B] border-t border-brand-900/5 dark:border-white/10 text-center pb-32 md:pb-20 transition-colors">
-        <h4 class="font-serif text-2xl mb-2 text-brand-950 dark:text-white transition-colors">Essência de Romã</h4>
+        <h4 class="font-serif text-2xl mb-2 text-brand-950 dark:text-white transition-colors">Essência de Romã Hair</h4>
         <p class="text-[10px] text-brand-600 dark:text-gray-500 uppercase tracking-widest mb-8 transition-colors">Engenharia de Alisamentos e Estética Capilar Avançada</p>
-        <div class="flex flex-col items-center gap-2 opacity-60 text-[10px] uppercase font-bold tracking-widest text-brand-800 dark:text-gray-400 transition-colors">
-            <p>Dias Grabski Holding • CNPJ: 28.842.798/0001-38</p>
-            <p>© 2026 Todos os direitos reservados.</p>
+        <div class="flex flex-col items-center gap-4 opacity-80 text-[10px] uppercase font-bold tracking-widest text-brand-800 dark:text-gray-400 transition-colors">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="openLegalModal('termos')" class="hover:text-brand-500 transition-colors">Termos de Uso</button>
+                <span class="opacity-50">|</span>
+                <button onclick="openLegalModal('privacidade')" class="hover:text-brand-500 transition-colors">Política de Privacidade</button>
+            </div>
+            <p>CNPJ: 28.842.798/0001-38</p>
+            <p>© 2026 Essência de Romã. Todos os direitos reservados.</p>
         </div>
     </footer>
 
@@ -1047,12 +1054,14 @@
 
             if(!m) return;
             
-            nameEl.innerText = service;
+            if(nameEl) nameEl.innerText = service;
             
-            if(service === 'Falar com Especialista') {
-                descEl.innerHTML = `Selecione a sua região para direcionarmos o seu <strong>Atendimento</strong>.`;
-            } else {
-                descEl.innerHTML = `Selecione onde prefere realizar a sua avaliação para <strong class="font-semibold text-brand-950 dark:text-luxury-text transition-colors">${service}</strong>.`;
+            if(descEl) {
+                if(service === 'Falar com Especialista') {
+                    descEl.innerHTML = `Selecione a sua região para direcionarmos o seu <strong>Atendimento</strong>.`;
+                } else {
+                    descEl.innerHTML = `Selecione onde prefere realizar a sua avaliação para <strong class="font-semibold text-brand-950 dark:text-luxury-text transition-colors">${service}</strong>.`;
+                }
             }
 
             m.classList.remove('hidden');
@@ -1206,6 +1215,7 @@
                 setTimeout(() => { cookieBanner.classList.remove('translate-y-full'); }, 2000);
             }
 
+            // A otimização dos vídeos já está no ponto máximo de performance. O IntersectionObserver impede downloads pesados no loading inicial.
             const videos = document.querySelectorAll('.smart-video');
             const muteToggles = document.querySelectorAll('.mute-toggle');
 
@@ -1216,7 +1226,7 @@
                             entry.target.src = entry.target.dataset.src;
                             entry.target.load();
                         }
-                        if (entry.target.muted) entry.target.play().catch(e => console.warn('Autoplay evitado', e));
+                        if (entry.target.muted) entry.target.play().catch(e => console.warn('Autoplay evitado pela política do navegador', e));
                     } else {
                         entry.target.pause();
                         const figure = entry.target.closest('figure');
@@ -1325,15 +1335,77 @@
             if(window.lucide) lucide.createIcons(); 
         }
 
-        function acceptCookies() { localStorage.setItem('roma_cookies_accepted', 'true'); const b = document.getElementById('cookie-banner'); if(b) b.classList.add('translate-y-full'); grantConsent(); }
+        function acceptCookies() { 
+            localStorage.setItem('roma_cookies_accepted', 'true'); 
+            const b = document.getElementById('cookie-banner'); 
+            if(b) b.classList.add('translate-y-full'); 
+            grantConsent(); 
+        }
         
+        // Textos Legais Completos para Conformidade Meta/Google/LGPD
         const legalTexts = {
-            termos: { title: "Termos de Uso", content: `<h4 class="font-semibold text-brand-950 dark:text-white mb-1.5 text-[14px]">1. Condições de Serviço</h4><p class="mb-4">Bem-vindo à Essência de Romã Hair. Ao utilizar o nosso site e solicitar agendamentos, concorda com os presentes termos. A nossa especialidade é o alisamento capilar seguro e tratamentos reconstrutores.</p><h4 class="font-semibold text-brand-950 dark:text-white mb-1.5 text-[14px]">2. Avaliações e Restrições Clínicas</h4><p class="mb-4">O agendamento garante a sua vaga, mas a execução do procedimento químico está estritamente sujeita à aprovação no nosso Diagnóstico Capilar (Teste de Mecha). Caso o fio não apresente saúde estrutural, o salão reserva-se o direito de não realizar a química visando a integridade da cliente.</p><h4 class="font-semibold text-brand-950 dark:text-white mb-1.5 text-[14px]">3. Valores e Campanhas</h4><p>As promoções anunciadas estão sujeitas à disponibilidade de vagas diárias nas unidades de Chapecó e Seara. Os valores finais podem sofrer ajustes após a avaliação presencial.</p>` },
-            privacidade: { title: "Política de Privacidade", content: `<h4 class="font-semibold text-brand-950 dark:text-white mb-1.5 text-[14px]">1. Tratamento de Dados Pessoais</h4><p class="mb-4">A sua privacidade é um pilar da Essência de Romã. Atuamos em conformidade com as leis de proteção de dados, recolhendo unicamente os dados necessários fornecidos de forma voluntária para fins exclusivos de agendamento e contacto.</p><h4 class="font-semibold text-brand-950 dark:text-white mb-1.5 text-[14px]">2. Segurança e Partilha</h4><p>Os dados recolhidos não são vendidos nem partilhados com redes externas, transitando apenas pelas plataformas de infraestrutura encriptadas necessárias ao funcionamento das nossas operações diárias.</p>` }
+            termos: { 
+                title: "Termos e Condições de Uso", 
+                content: `
+                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">1. Aceitação dos Termos</h4>
+                    <p class="mb-4">Ao acessar e utilizar a Landing Page da Essência de Romã Hair, você concorda expressamente com os presentes Termos e Condições. Este site destina-se a fornecer informações sobre nossos protocolos de alisamento de alta performance e captar intenções de agendamento ou parcerias comerciais.</p>
+                    
+                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">2. Descrição dos Serviços e Diagnóstico</h4>
+                    <p class="mb-4">A Essência de Romã Hair oferece serviços premium de bioarquitetura capilar (Liso Soberano 8K, Gloss Premium, Molecular Fusion). O agendamento via WhatsApp representa uma intenção de reserva, mas a execução de qualquer procedimento químico está <strong>rigorosamente condicionada à aprovação prévia em nosso Diagnóstico Capilar (Teste de Mecha) presencial</strong>. Caso o fio não apresente saúde estrutural suficiente, reservamo-nos o direito de não realizar a química, visando sempre a segurança e a integridade da cliente. O salão isenta-se de qualquer responsabilidade caso a cliente omita o histórico químico recente durante o diagnóstico.</p>
+                    
+                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">3. Política de Valores e Investimentos</h4>
+                    <p class="mb-4">Os valores apresentados neste site ("A partir de R$ X") são referenciais e baseados na tabela anatômica (comprimento e espessura do fio). O orçamento final e definitivo será fornecido exclusivamente de forma presencial ou mediante avaliação fotográfica validada pela equipe técnica. Promoções ou campanhas digitais estão sujeitas à disponibilidade diária da agenda nas unidades de Chapecó e Seara.</p>
+                    
+                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">4. Parceiros Comerciais e B2B</h4>
+                    <p class="mb-4">O preenchimento do formulário de "Credenciamento/Parceria" (B2B) não estabelece qualquer vínculo empregatício ou contratual automático com a Essência de Romã Hair ou com a Dias Grabski Holding. As informações são utilizadas apenas para análise de viabilidade de expansão territorial.</p>
+
+                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">5. Propriedade Intelectual</h4>
+                    <p class="mb-4">Todo o conteúdo deste site (textos, vídeos, imagens, depoimentos e marcas) é de propriedade exclusiva da Dias Grabski Holding e Essência de Romã. É estritamente proibida a cópia, reprodução ou distribuição não autorizada, sujeita às sanções legais previstas na Lei de Direitos Autorais e Propriedade Industrial vigente.</p>
+                ` 
+            },
+            privacidade: { 
+                title: "Política de Privacidade e Proteção de Dados", 
+                content: `
+                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">1. Compromisso com a Privacidade (LGPD)</h4>
+                    <p class="mb-4">A Essência de Romã Hair (Dias Grabski Holding) está fortemente comprometida com a proteção dos seus dados pessoais. Atuamos em estrita conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018), garantindo transparência, segurança e respeito pela sua privacidade.</p>
+                    
+                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">2. Coleta de Dados Pessoais</h4>
+                    <p class="mb-4">Coletamos informações apenas quando fornecidas voluntariamente por você (como Nome, Cidade e intenção de serviço) ao utilizar nossos formulários ou botões de redirecionamento para o WhatsApp. Automaticamente, nosso sistema capta dados de navegação anonimizados (como tipo de dispositivo, tempo de página e parâmetros UTM de campanhas) para melhorar a experiência do usuário.</p>
+                    
+                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">3. Uso e Processamento dos Dados</h4>
+                    <p class="mb-4">Os dados coletados são utilizados exclusivamente para as seguintes finalidades: (I) Personalização e direcionamento do atendimento via WhatsApp; (II) Criação de orçamentos e agendamentos no salão; (III) Análise de viabilidade comercial (no caso do formulário B2B); (IV) Otimização de campanhas publicitárias e medição de performance analítica.</p>
+
+                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">4. Rastreamento Avançado e Cookies (Google/Meta)</h4>
+                    <p class="mb-4">Utilizamos Cookies e tecnologias de rastreamento Server-Side (como Stape.io e API de Conversões da Meta) para entender o comportamento de navegação e fornecer anúncios mais relevantes. Operamos com o <strong>Google Consent Mode V3</strong> integrado. Ao continuar a navegação e clicar em "Entendi e Aceito" no aviso inferior, você concorda com a ativação das tags de marketing e análise de dados. Você pode revogar esse consentimento limpando o histórico de cookies do seu navegador.</p>
+
+                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">5. Compartilhamento e Segurança</h4>
+                    <p class="mb-4">A Essência de Romã <strong>não vende, aluga ou compartilha seus dados pessoais com terceiros</strong> para fins comerciais obscuros. Seus dados transitam apenas entre nossa equipe de atendimento interno, nosso sistema de CRM (Customer Relationship Management) e os processadores de dados necessários para operar nossa publicidade (ex: Google, Meta Platforms), todos os quais mantêm os mais altos padrões de criptografia e conformidade global.</p>
+
+                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">6. Direitos do Titular dos Dados</h4>
+                    <p>Você tem o direito de solicitar o acesso, a retificação ou a eliminação definitiva dos seus dados pessoais da nossa base de contatos comerciais a qualquer momento. Basta enviar uma solicitação formal através do nosso número oficial de WhatsApp ou canais de atendimento direto do salão.</p>
+                ` 
+            }
         };
         
-        function openLegalModal(type) { const m = document.getElementById('legal-modal'); if(!m) return; document.getElementById('modal-title').innerText = legalTexts[type].title; document.getElementById('modal-content').innerHTML = legalTexts[type].content; m.classList.remove('hidden'); setTimeout(() => m.classList.remove('opacity-0'), 10); document.body.style.overflow = 'hidden'; }
-        function closeLegalModal() { const m = document.getElementById('legal-modal'); if(!m) return; m.classList.add('opacity-0'); setTimeout(() => { m.classList.add('hidden'); document.body.style.overflow = 'auto'; }, 300); }
+        function openLegalModal(type) { 
+            const m = document.getElementById('legal-modal'); 
+            if(!m) return; 
+            document.getElementById('modal-title').innerText = legalTexts[type].title; 
+            document.getElementById('modal-content').innerHTML = legalTexts[type].content; 
+            m.classList.remove('hidden'); 
+            setTimeout(() => m.classList.remove('opacity-0'), 10); 
+            document.body.style.overflow = 'hidden'; 
+        }
+        
+        function closeLegalModal() { 
+            const m = document.getElementById('legal-modal'); 
+            if(!m) return; 
+            m.classList.add('opacity-0'); 
+            setTimeout(() => { 
+                m.classList.add('hidden'); 
+                document.body.style.overflow = 'auto'; 
+            }, 300); 
+        }
 
     </script>
 </body>
