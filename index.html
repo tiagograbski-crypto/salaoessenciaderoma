@@ -19,10 +19,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         
-        // NOTA DE QA/TRACKING: 
-        // O status 'denied' é obrigatório para LGPD. Isso fará com que extensões como 
-        // o Pixel Helper ou Tag Assistant não mostrem conversões de imediato em abas anônimas 
-        // (falso positivo de erro) até que o usuário clique em "Entendi e Aceito" no rodapé.
         gtag('consent', 'default', {
             'ad_storage': 'denied',
             'ad_user_data': 'denied',
@@ -32,7 +28,6 @@
         });
         
         function grantConsent() {
-            // SINAL DE UPDATE ESTRITO CONFORME TASK 3
             gtag('consent', 'update', {
                 'ad_storage': 'granted',
                 'analytics_storage': 'granted',
@@ -53,7 +48,7 @@
     })(window,document,'script','dataLayer','GTM-KSC788J2');
     </script>
     
-    <meta name="theme-color" id="meta-theme-color" content="#090706">
+    <meta name="theme-color" id="meta-theme-color" content="#0B0908">
     <meta name="color-scheme" content="light dark">
     
     <link rel="preload" as="image" href="https://testeessencia.carrd.co/assets/images/image38.jpg?v=0bcae317" fetchpriority="high">
@@ -76,18 +71,28 @@
                     },
                     colors: {
                         brand: {
-                            50: '#fdf8f6', 100: '#f2e8e5', 200: '#eaddd8', 300: '#dfcfc8', 400: '#d2beb6', 500: '#c5a89f', 600: '#b0948c', 700: '#8c726a', 800: '#2a2220', 900: '#1a1413', 950: '#0f0c0b',
+                            50: '#FDF8F5',   
+                            100: '#F4EAE6',
+                            200: '#E8D5CD',
+                            300: '#DABBAE',
+                            400: '#CCA08E',
+                            500: '#BA826A',
+                            600: '#A36852',
+                            700: '#875340',
+                            800: '#4A362E',  
+                            900: '#30221D',  
+                            950: '#1C120F',  
                         },
                         luxury: {
-                            bg: '#090706',
-                            card: '#110D0B',
-                            border: '#241C1A',
-                            text: '#E6DFD9',
-                            muted: '#A69892',
+                            bg: '#0B0908',     
+                            card: '#14110F',   
+                            border: '#261F1C', 
+                            text: '#EAE5DF',   
+                            muted: '#A89F9A',  
                         },
                         platinum: {
-                            500: '#737373',
-                            900: '#050505'
+                            500: '#8C8C8C',
+                            900: '#080605'
                         }
                     },
                     animation: {
@@ -99,9 +104,10 @@
         
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
+            document.getElementById('meta-theme-color')?.setAttribute('content', '#0B0908');
         } else {
             document.documentElement.classList.remove('dark');
-            document.getElementById('meta-theme-color')?.setAttribute('content', '#fdf8f6');
+            document.getElementById('meta-theme-color')?.setAttribute('content', '#FDF8F5');
         }
     </script>
     <style>
@@ -112,12 +118,40 @@
         input[type=range]::-webkit-slider-thumb { pointer-events: all; width: 40px; height: 40px; -webkit-appearance: none; cursor: ew-resize; background: transparent; }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s cubic-bezier(0.5, 0, 0, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        .text-gradient-premium { background: linear-gradient(135deg, #2a2220 0%, #c5a89f 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .dark .text-gradient-premium { background: linear-gradient(135deg, #E6DFD9 0%, #C5A89F 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .platinum-fusion-text { background: linear-gradient(to right, #737373 0%, #FFFFFF 20%, #737373 40%, #52525B 50%, #737373 60%, #FFFFFF 80%, #737373 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 5s linear infinite; }
+        
+        .text-gradient-premium { background: linear-gradient(135deg, #1C120F 0%, #BA826A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .dark .text-gradient-premium { background: linear-gradient(135deg, #EAE5DF 0%, #DABBAE 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .platinum-fusion-text { background: linear-gradient(to right, #8C8C8C 0%, #FFFFFF 20%, #8C8C8C 40%, #52525B 50%, #8C8C8C 60%, #FFFFFF 80%, #8C8C8C 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 5s linear infinite; }
         @keyframes shine { to { background-position: 200% center; } }
-        .noise-overlay { position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; mix-blend-mode: overlay; z-index: 1; }
+        
+        .noise-overlay { position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); opacity: 0.02; pointer-events: none; mix-blend-mode: overlay; z-index: 1; }
+        
         .glass-glacial { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(24px) saturate(200%); -webkit-backdrop-filter: blur(24px) saturate(200%); border-top: 1px solid rgba(227, 168, 87, 0.15); border-left: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(0, 0, 0, 0.5); border-right: 1px solid rgba(0, 0, 0, 0.5); box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05); }
+        
+        /* BOTÕES ESMERALDA LUXURY - CIRURGIA DE CORES E DESIGN */
+        .btn-emerald-luxury {
+            background: linear-gradient(135deg, #094F3A 0%, #107853 100%);
+            color: #ffffff !important;
+            box-shadow: 0 10px 25px -5px rgba(16, 120, 83, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-emerald-luxury:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px -5px rgba(16, 120, 83, 0.5);
+            background: linear-gradient(135deg, #0C6148 0%, #138E62 100%);
+        }
+        .dark .btn-emerald-luxury {
+            background: linear-gradient(135deg, #138250 0%, #1FBB76 100%);
+            box-shadow: 0 10px 25px -5px rgba(31, 187, 118, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .btn-emerald-luxury:hover {
+            box-shadow: 0 15px 35px -5px rgba(31, 187, 118, 0.4);
+            background: linear-gradient(135deg, #16985E 0%, #24D486 100%);
+        }
+
         @keyframes scroll-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
         .animate-marquee { animation: scroll-marquee 30s linear infinite; display: flex; align-items: center; white-space: nowrap; width: max-content; }
         @keyframes kenBurnsFade { 0% { opacity: 0; transform: scale(1.0); } 10% { opacity: 1; } 43% { opacity: 1; } 53% { opacity: 0; } 100% { opacity: 0; transform: scale(1.15); } }
@@ -125,6 +159,7 @@
         .slide-bg-1 { animation-delay: -2.4s; } .slide-bg-2 { animation-delay: 5.6s; } .slide-bg-3 { animation-delay: 13.6s; }
         .animate-bounce-horizontal { animation: bounce-horizontal 1.5s infinite; }
         @keyframes bounce-horizontal { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(8px); } }
+        
         details > summary { list-style: none; min-height: 48px; cursor: pointer; }
         details > summary::-webkit-details-marker { display: none; }
         details[open] summary ~ * { animation: slideDown 0.3s ease-in-out; }
@@ -133,7 +168,7 @@
         .custom-scrollbar::-webkit-scrollbar { height: 6px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #eaddd8; border-radius: 10px; }
-        .dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #2A201D; }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #261F1C; }
         
         body.no-fouc #cookie-banner { display: none !important; }
         .transition-colors { transition-duration: 300ms; transition-timing-function: ease-in-out; will-change: background-color, border-color, color; }
@@ -141,26 +176,25 @@
 </head>
 <body class="no-fouc bg-brand-50 dark:bg-luxury-bg text-brand-950 dark:text-luxury-text font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden pt-8 pb-12 transition-colors duration-300">
 
-    <!-- FALLBACK STAPE NOSCRIPT -->
     <noscript><iframe src="https://kkzrytar.sad.stape.io/ns.html?id=GTM-KSC788J2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- BARRA DE PROGRESSO -->
     <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-brand-600 to-brand-400 z-[80] transition-all duration-100 ease-out" style="width: 0%;"></div>
 
     <!-- TIMELINE TOPO -->
-    <div class="fixed top-0 left-0 w-full bg-brand-950/90 dark:bg-luxury-card/80 backdrop-blur-md text-brand-100 border-b border-white/10 text-[9px] sm:text-[10px] font-medium tracking-[0.25em] uppercase h-9 z-[60] overflow-hidden flex items-center">
+    <div class="fixed top-0 left-0 w-full bg-brand-950/90 dark:bg-luxury-card/80 backdrop-blur-md text-brand-100 border-b border-brand-800/10 dark:border-luxury-border text-[9px] sm:text-[10px] font-medium tracking-[0.25em] uppercase h-9 z-[60] overflow-hidden flex items-center">
         <div class="animate-marquee">
             <span class="mx-6 text-emerald-400 font-bold">✦ PATO BRANCO ESTAMOS DE VOLTA</span>
             <span class="mx-6">O ÚNICO LISO SOBERANO 8K DA REGIÃO</span>
-            <span class="mx-6 text-orange-400 font-bold">✦ VAGAS LIMITADAS PARA AVALIAÇÃO</span>
-            <span class="mx-6 text-sky-400 font-bold">✦ MULHERES DE PATO BRANCO-PR</span>
-            <span class="mx-6 text-white">+25 MIL TRANSFORMAÇÕES EM SC</span>
+            <span class="mx-6 text-amber-500 font-bold">✦ SEARA: STUDIO T É REFERÊNCIA EM LISO 8K</span>
+            <span class="mx-6 text-sky-400 font-bold">✦ VAGAS LIMITADAS PARA AVALIAÇÃO</span>
+            <span class="mx-6 text-brand-50 dark:text-luxury-text">+25 MIL TRANSFORMAÇÕES EM SC</span>
             
             <span class="mx-6 text-emerald-400 font-bold">✦ PATO BRANCO ESTAMOS DE VOLTA</span>
             <span class="mx-6">O ÚNICO LISO SOBERANO 8K DA REGIÃO</span>
-            <span class="mx-6 text-orange-400 font-bold">✦ VAGAS LIMITADAS PARA AVALIAÇÃO</span>
-            <span class="mx-6 text-sky-400 font-bold">✦ CREDENCIAMENTO: LEVE A GATA LAMBEU PARA O SEU SALÃO</span>
-            <span class="mx-6 text-white">+25 MIL TRANSFORMAÇÕES EM SC</span>
+            <span class="mx-6 text-amber-500 font-bold">✦ SEARA: STUDIO T É REFERÊNCIA EM LISO 8K</span>
+            <span class="mx-6 text-sky-400 font-bold">✦ VAGAS LIMITADAS PARA AVALIAÇÃO</span>
+            <span class="mx-6 text-brand-50 dark:text-luxury-text">+25 MIL TRANSFORMAÇÕES EM SC</span>
         </div>
     </div>
 
@@ -169,17 +203,17 @@
         <img id="bg-slide-1" alt="Ambiente do Salão 1" class="slide-bg slide-bg-1 object-cover" />
         <img id="bg-slide-2" alt="Ambiente do Salão 2" class="slide-bg slide-bg-2 object-cover" />
         <img id="bg-slide-3" alt="Ambiente do Salão 3" class="slide-bg slide-bg-3 object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-b from-brand-50/20 via-brand-50/80 to-brand-50 dark:from-luxury-bg/40 dark:via-luxury-bg/90 dark:to-luxury-bg backdrop-blur-[2px]"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-50/40 via-brand-50/90 to-brand-50 dark:from-luxury-bg/60 dark:via-luxury-bg/95 dark:to-luxury-bg backdrop-blur-[4px]"></div>
     </div>
 
     <!-- NAVBAR -->
-    <nav class="fixed top-9 w-full z-50 bg-white/60 dark:bg-luxury-bg/60 backdrop-blur-xl border-b border-white/40 dark:border-luxury-border/50 h-20 flex items-center transition-all duration-300" id="navbar">
+    <nav class="fixed top-9 w-full z-50 bg-white/70 dark:bg-luxury-bg/70 backdrop-blur-xl border-b border-brand-900/5 dark:border-luxury-border/50 h-20 flex items-center transition-all duration-300" id="navbar">
         <div class="max-w-6xl mx-auto px-6 w-full flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <img src="https://testeessencia.carrd.co/assets/images/image78.jpg?v=be105ac7" alt="Logo" class="w-10 h-10 rounded-full border border-brand-200">
-                <span class="font-serif text-xl md:text-2xl font-medium tracking-wider italic">Essência de Romã</span>
+                <img src="https://testeessencia.carrd.co/assets/images/image78.jpg?v=be105ac7" alt="Logo" class="w-10 h-10 rounded-full border border-brand-200 dark:border-luxury-border">
+                <span class="font-serif text-xl md:text-2xl font-medium tracking-wider italic text-brand-950 dark:text-luxury-text">Essência de Romã</span>
             </div>
-            <button onclick="toggleNightMode()" aria-label="Alterar Tema" class="p-2.5 text-brand-600 dark:text-luxury-muted bg-transparent rounded-full" id="theme-toggle-btn">
+            <button onclick="toggleNightMode()" aria-label="Alterar Tema" class="p-2.5 text-brand-600 dark:text-luxury-muted bg-transparent rounded-full focus:outline-none" id="theme-toggle-btn">
                 <i data-lucide="moon" class="w-5 h-5"></i>
             </button>
         </div>
@@ -189,7 +223,7 @@
         
         <!-- 1. HERO -->
         <header class="max-w-5xl mx-auto min-h-[85vh] flex flex-col items-center justify-center text-center px-6 pt-24 fade-in">
-            <span class="px-5 py-2 rounded-full border border-brand-500/20 text-brand-900 dark:text-luxury-muted text-[10px] font-semibold uppercase tracking-[0.25em] mb-8 bg-white/80 dark:bg-luxury-card/80 backdrop-blur-md shadow-sm cursor-default">
+            <span class="px-5 py-2 rounded-full border border-brand-200 dark:border-luxury-border text-brand-800 dark:text-luxury-muted text-[10px] font-semibold uppercase tracking-[0.25em] mb-8 bg-white/80 dark:bg-luxury-card/80 backdrop-blur-md shadow-sm cursor-default transition-colors">
                 <i data-lucide="sparkles" class="w-3.5 h-3.5 stroke-[2] text-brand-600 dark:text-brand-300 inline-block align-middle mr-1"></i>
                 Liberdade Capilar • Brilho Espelhado
             </span>
@@ -204,12 +238,12 @@
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-6 w-full max-w-md mx-auto">
-                <button onclick="document.getElementById('tabelas').scrollIntoView({behavior: 'smooth'})" class="w-full sm:w-auto px-8 py-4 bg-[#128C7E] dark:bg-[#1EBE5D] text-white dark:text-luxury-bg rounded-full font-bold text-[13px] uppercase tracking-widest transition-all hover:scale-105 shadow-[0_4px_20px_rgba(18,140,126,0.4)] dark:shadow-[0_4px_20px_rgba(30,190,93,0.3)] focus:outline-none flex items-center justify-center gap-2">
+                <button onclick="document.getElementById('tabelas').scrollIntoView({behavior: 'smooth'})" class="w-full sm:w-auto px-8 py-4 btn-emerald-luxury rounded-full font-bold text-[13px] uppercase tracking-widest focus:outline-none flex items-center justify-center gap-2">
                     Ver Valores e Agendar
                 </button>
                 <button onclick="document.getElementById('prova-incontestavel').scrollIntoView({behavior: 'smooth'})" class="group flex items-center gap-3 text-brand-800 dark:text-luxury-muted hover:text-brand-950 dark:hover:text-luxury-text transition-colors duration-300 focus:outline-none">
                     <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-medium transition-colors">Ver Resultados</span>
-                    <div class="p-2.5 rounded-full bg-white/50 dark:bg-luxury-border/50 backdrop-blur-md border border-brand-900/10 dark:border-luxury-border group-hover:bg-white/80 dark:group-hover:bg-luxury-border transition-colors shadow-sm">
+                    <div class="p-2.5 rounded-full bg-white/50 dark:bg-luxury-card/50 backdrop-blur-md border border-brand-200 dark:border-luxury-border group-hover:bg-brand-50 dark:group-hover:bg-luxury-card transition-colors shadow-sm">
                         <i data-lucide="arrow-down" class="w-4 h-4 stroke-[2] animate-bounce"></i>
                     </div>
                 </button>
@@ -218,56 +252,56 @@
 
         <!-- 2. TRUST BADGES -->
         <section class="max-w-4xl mx-auto my-16 reveal px-6">
-            <div class="bg-white/90 dark:bg-luxury-card/95 backdrop-blur-xl border border-brand-900/5 dark:border-luxury-border rounded-3xl py-8 md:py-12 shadow-xl grid grid-cols-3 gap-2 sm:gap-8 md:gap-16">
-                <div class="flex flex-col items-center text-center group border-r border-brand-900/10 dark:border-luxury-border">
+            <div class="bg-white/90 dark:bg-luxury-card/80 backdrop-blur-xl border border-brand-100 dark:border-luxury-border rounded-3xl py-8 md:py-12 shadow-sm dark:shadow-none grid grid-cols-3 gap-2 sm:gap-8 md:gap-16 transition-colors">
+                <div class="flex flex-col items-center text-center group border-r border-brand-100 dark:border-luxury-border transition-colors">
                     <i data-lucide="shield-check" class="w-8 h-8 text-brand-500 mb-3 mx-auto transition-transform group-hover:scale-110"></i>
-                    <span class="text-[9px] sm:text-[10px] md:text-xs text-brand-950 dark:text-luxury-text uppercase tracking-widest font-bold">0% Formol</span>
+                    <span class="text-[9px] sm:text-[10px] md:text-xs text-brand-900 dark:text-luxury-text uppercase tracking-widest font-bold transition-colors">0% Formol</span>
                 </div>
-                <div class="flex flex-col items-center text-center group border-r border-brand-900/10 dark:border-luxury-border">
+                <div class="flex flex-col items-center text-center group border-r border-brand-100 dark:border-luxury-border transition-colors">
                     <i data-lucide="star" class="w-8 h-8 text-brand-500 mb-3 mx-auto transition-transform group-hover:scale-110"></i>
-                    <span class="text-[9px] sm:text-[10px] md:text-xs text-brand-950 dark:text-luxury-text uppercase tracking-widest font-bold">Loiras 100%</span>
+                    <span class="text-[9px] sm:text-[10px] md:text-xs text-brand-900 dark:text-luxury-text uppercase tracking-widest font-bold transition-colors">Loiras 100%</span>
                 </div>
                 <div class="flex flex-col items-center text-center group">
                     <i data-lucide="info" class="w-8 h-8 text-brand-500 mb-3 mx-auto transition-transform group-hover:scale-110"></i>
-                    <span class="text-[9px] sm:text-[10px] md:text-xs text-brand-950 dark:text-luxury-text uppercase tracking-widest font-bold">Diagnóstico</span>
+                    <span class="text-[9px] sm:text-[10px] md:text-xs text-brand-900 dark:text-luxury-text uppercase tracking-widest font-bold transition-colors">Diagnóstico</span>
                 </div>
             </div>
         </section>
 
-        <!-- 3. VÍDEOS (DESEJO IMEDIATO COM POSTERS DINÂMICOS) -->
+        <!-- 3. VÍDEOS (DESEJO IMEDIATO) -->
         <section id="prova-incontestavel" class="w-full max-w-[100vw] reveal mb-24 overflow-hidden relative">
             <div class="text-center mb-10 sm:mb-16">
-                <span class="text-brand-800 dark:text-brand-300 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.3em] mb-4 block">Transparência Real</span>
-                <h2 class="font-serif text-3xl md:text-5xl font-medium text-brand-950 dark:text-luxury-text italic px-4">O Balanço Real dos Fios</h2>
+                <span class="text-brand-800 dark:text-brand-300 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.3em] mb-4 block transition-colors">Transparência Real</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-medium text-brand-950 dark:text-luxury-text italic px-4 transition-colors">O Balanço Real dos Fios</h2>
             </div>
             
-            <div class="absolute top-0 left-0 w-12 sm:w-16 h-full bg-gradient-to-r from-brand-50 dark:from-luxury-bg to-transparent z-10 pointer-events-none md:hidden"></div>
-            <div class="absolute top-0 right-0 w-12 sm:w-16 h-full bg-gradient-to-l from-brand-50 dark:from-luxury-bg to-transparent z-10 pointer-events-none md:hidden"></div>
+            <div class="absolute top-0 left-0 w-12 sm:w-16 h-full bg-gradient-to-r from-brand-50 dark:from-luxury-bg to-transparent z-10 pointer-events-none md:hidden transition-colors"></div>
+            <div class="absolute top-0 right-0 w-12 sm:w-16 h-full bg-gradient-to-l from-brand-50 dark:from-luxury-bg to-transparent z-10 pointer-events-none md:hidden transition-colors"></div>
 
             <div class="flex overflow-x-auto snap-x snap-mandatory gap-5 sm:gap-6 md:gap-6 lg:gap-8 px-6 sm:px-8 md:px-0 pb-6 custom-scrollbar items-center md:justify-start lg:justify-center">
-                <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-black shadow-lg hover:-translate-y-2 transition-all duration-500 cursor-pointer">
+                <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-[#050404] shadow-md border border-brand-900/5 dark:border-luxury-border hover:-translate-y-2 transition-all duration-500 cursor-pointer">
                     <video id="dyn-vid-1" data-src="" poster="" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[3s]"></video>
                     <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-2.5 rounded-full border border-white/20 transition-colors hover:bg-black/90" aria-label="Mutar vídeo"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                 </figure>
-                <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-black shadow-lg md:-translate-y-8 hover:-translate-y-10 transition-all duration-500 cursor-pointer">
+                <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-[#050404] shadow-md border border-brand-900/5 dark:border-luxury-border md:-translate-y-8 hover:-translate-y-10 transition-all duration-500 cursor-pointer">
                     <video id="dyn-vid-2" data-src="" poster="" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[3s]"></video>
                     <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-2.5 rounded-full border border-white/20 transition-colors hover:bg-black/90" aria-label="Mutar vídeo"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                 </figure>
-                <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-black shadow-lg hover:-translate-y-2 transition-all duration-500 cursor-pointer">
+                <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-[#050404] shadow-md border border-brand-900/5 dark:border-luxury-border hover:-translate-y-2 transition-all duration-500 cursor-pointer">
                     <video id="dyn-vid-3" data-src="" poster="" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[3s]"></video>
                     <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-2.5 rounded-full border border-white/20 transition-colors hover:bg-black/90" aria-label="Mutar vídeo"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                 </figure>
-                <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-black shadow-lg md:-translate-y-8 hover:-translate-y-10 transition-all duration-500 cursor-pointer">
+                <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-[#050404] shadow-md border border-brand-900/5 dark:border-luxury-border md:-translate-y-8 hover:-translate-y-10 transition-all duration-500 cursor-pointer">
                     <video id="dyn-vid-4" data-src="" poster="" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[3s]"></video>
                     <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-2.5 rounded-full shadow-lg border border-white/20 transition-colors hover:bg-black/90" aria-label="Mutar vídeo"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                 </figure>
             </div>
             
             <div class="md:hidden flex items-center justify-center mt-6 mb-2 relative z-20 pointer-events-none">
-                <div class="animate-bounce-horizontal flex items-center gap-3 bg-white/95 dark:bg-luxury-card/95 px-6 py-2.5 rounded-full border border-brand-200/80 dark:border-luxury-border/80 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.4)] backdrop-blur-md">
-                    <i data-lucide="arrow-left" class="w-3.5 h-3.5 text-brand-400 dark:text-luxury-muted"></i>
-                    <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-brand-900 dark:text-luxury-text">Explore os vídeos</span>
-                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-brand-600 dark:text-brand-400"></i>
+                <div class="animate-bounce-horizontal flex items-center gap-3 bg-white/95 dark:bg-luxury-card/95 px-6 py-2.5 rounded-full border border-brand-200/80 dark:border-luxury-border shadow-sm backdrop-blur-md transition-colors">
+                    <i data-lucide="arrow-left" class="w-3.5 h-3.5 text-brand-400 dark:text-luxury-muted transition-colors"></i>
+                    <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-brand-900 dark:text-luxury-text transition-colors">Explore os vídeos</span>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-brand-600 dark:text-brand-400 transition-colors"></i>
                 </div>
             </div>
         </section>
@@ -276,63 +310,63 @@
         <section id="oferta" class="max-w-7xl mx-auto px-6 mb-24 space-y-10 reveal">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <!-- Protocolo Standard / Gloss Premium -->
-                <article aria-labelledby="liso-8k-title" class="flex flex-col h-full bg-white/95 dark:bg-luxury-card/95 backdrop-blur-2xl border border-brand-900/5 dark:border-luxury-border hover:border-brand-500/20 dark:hover:border-brand-500/30 rounded-[2.5rem] p-6 sm:p-10 shadow-xl dark:shadow-2xl relative overflow-hidden transition-all duration-500 group hover:-translate-y-2">
+                <article aria-labelledby="liso-8k-title" class="flex flex-col h-full bg-white/95 dark:bg-luxury-card/95 backdrop-blur-2xl border border-brand-200 dark:border-luxury-border hover:border-brand-300 dark:hover:border-brand-500/30 rounded-[2.5rem] p-6 sm:p-10 shadow-sm dark:shadow-md relative overflow-hidden transition-all duration-500 group hover:-translate-y-2">
                     <header class="text-center mb-8 relative z-10 flex-grow-0">
                         <span class="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-brand-600 dark:text-brand-400 mb-3 transition-colors">O Clássico Intocável</span>
                         <h2 id="liso-8k-title" class="text-3xl sm:text-4xl md:text-5xl font-serif font-medium text-brand-950 dark:text-luxury-text mb-4 sm:mb-6 transition-colors group-hover:text-gradient-premium">Liso Soberano <br><span class="italic text-brand-600 dark:text-brand-400">Gloss Premium</span></h2>
                         <p class="text-brand-800 dark:text-luxury-muted text-sm md:text-base font-light leading-relaxed px-2 transition-colors">A bioarquitetura capilar que garante um liso espelhado, natural e livre de danos. Performance absoluta com durabilidade de 3 a 5 meses.</p>
                     </header>
 
-                    <div class="relative w-full max-w-lg mx-auto aspect-[4/5] lg:aspect-square rounded-3xl overflow-hidden shadow-md border border-brand-900/5 dark:border-luxury-border select-none touch-pan-y before-after-container mb-10 transition-colors flex-grow-0 bg-brand-50 dark:bg-luxury-bg">
+                    <div class="relative w-full max-w-lg mx-auto aspect-[4/5] lg:aspect-square rounded-3xl overflow-hidden shadow-sm border border-brand-200 dark:border-luxury-border select-none touch-pan-y before-after-container mb-10 transition-colors flex-grow-0 bg-brand-50 dark:bg-luxury-bg">
                         <img src="https://testeessencia.carrd.co/assets/images/image48.jpg?v=54da9d95" alt="Cabelo Antes do Liso 8K" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover select-none pointer-events-none filter contrast-[0.95] opacity-95 dark:opacity-85 transition-opacity">
                         <img src="https://testeessencia.carrd.co/assets/images/image49.jpg?v=54da9d95" alt="Cabelo Depois do Liso 8K" loading="lazy" decoding="async" class="after-img absolute inset-0 w-full h-full object-cover select-none pointer-events-none opacity-95 dark:opacity-85 transition-opacity" style="clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);">
                         
                         <input type="range" min="0" max="100" value="50" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" class="slider-input touch-none absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20 m-0" aria-label="Arraste para comparar">
                         <div class="slider-line absolute top-0 bottom-0 left-[50%] w-[1.5px] bg-brand-950 dark:bg-luxury-text z-10 pointer-events-none transform -translate-x-1/2 flex items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.3)] transition-colors">
-                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white dark:bg-luxury-bg rounded-full shadow-lg flex items-center justify-center text-brand-950 dark:text-luxury-text ring-4 ring-brand-950/5 dark:ring-white/10 transition-all group-hover:scale-110 duration-300">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white dark:bg-luxury-bg rounded-full shadow-md flex items-center justify-center text-brand-950 dark:text-luxury-text ring-4 ring-brand-950/5 dark:ring-white/10 transition-all group-hover:scale-110 duration-300">
                                 <i data-lucide="chevrons-left-right" class="w-4 h-4 sm:w-5 sm:h-5 stroke-[2]"></i>
                             </div>
                         </div>
-                        <div class="absolute top-4 left-4 z-10 bg-white/90 dark:bg-luxury-card/90 backdrop-blur-md text-brand-950 dark:text-luxury-text px-3 py-1 rounded-full text-[10px] font-semibold tracking-[0.2em] pointer-events-none border border-brand-900/5 dark:border-luxury-border transition-colors uppercase">Original</div>
-                        <div class="absolute top-4 right-4 z-10 bg-brand-900 dark:bg-brand-600 text-white dark:text-brand-50 px-3 py-1 rounded-full text-[10px] font-bold tracking-[0.2em] pointer-events-none border border-white/10 transition-colors uppercase shadow-md">Resultado</div>
+                        <div class="absolute top-4 left-4 z-10 bg-white/90 dark:bg-luxury-card/90 backdrop-blur-md text-brand-950 dark:text-luxury-text px-3 py-1 rounded-full text-[10px] font-semibold tracking-[0.2em] pointer-events-none border border-brand-200 dark:border-luxury-border transition-colors uppercase">Original</div>
+                        <div class="absolute top-4 right-4 z-10 bg-brand-900 dark:bg-brand-600 text-white dark:text-brand-50 px-3 py-1 rounded-full text-[10px] font-bold tracking-[0.2em] pointer-events-none border border-white/10 transition-colors uppercase shadow-sm">Resultado</div>
                     </div>
 
                     <div class="mt-auto flex flex-col items-center pt-2 w-full transition-colors flex-grow-0">
                         <div class="flex flex-col gap-3 w-full max-w-sm mx-auto relative z-20">
-                            <button onclick="document.getElementById('tabelas').scrollIntoView({behavior: 'smooth'})" class="w-full flex items-center justify-center px-5 py-3.5 sm:py-4 bg-brand-50 dark:bg-luxury-bg hover:bg-brand-100 dark:hover:bg-luxury-border/50 text-brand-950 dark:text-luxury-text rounded-full font-semibold text-[11px] uppercase tracking-widest transition-all duration-300 border border-brand-900/5 dark:border-luxury-border shadow-sm focus:outline-none gap-2">
+                            <button onclick="document.getElementById('tabelas').scrollIntoView({behavior: 'smooth'})" class="w-full flex items-center justify-center px-5 py-3.5 sm:py-4 bg-brand-50 dark:bg-luxury-bg hover:bg-brand-100 dark:hover:bg-luxury-border/50 text-brand-950 dark:text-luxury-text rounded-full font-semibold text-[11px] uppercase tracking-widest transition-all duration-300 border border-brand-200 dark:border-luxury-border shadow-sm focus:outline-none gap-2">
                                 <i data-lucide="calculator" class="w-4 h-4"></i> Ver Investimento
                             </button>
-                            <button onclick="openCityModal('Liso Soberano - Gloss Premium')" class="w-full flex items-center justify-center gap-2 px-4 py-3.5 sm:py-4 bg-[#128C7E] dark:bg-[#1EBE5D] hover:bg-[#075E54] dark:hover:bg-[#25D366] text-white dark:text-luxury-bg rounded-full font-semibold text-[13px] sm:text-sm transition-all duration-300 shadow-md dark:shadow-[0_0_20px_rgba(30,190,93,0.15)] group/btn border border-transparent focus:outline-none">
-                                <span class="w-2 h-2 rounded-full bg-white dark:bg-luxury-bg animate-pulse btn-pulse flex-shrink-0 transition-colors"></span> Agendar Avaliação
+                            <button onclick="openCityModal('Liso Soberano - Gloss Premium')" class="w-full flex items-center justify-center gap-2 px-4 py-3.5 sm:py-4 btn-emerald-luxury rounded-full font-bold text-[13px] sm:text-sm uppercase tracking-widest focus:outline-none group/btn">
+                                <span class="w-2 h-2 rounded-full bg-white animate-pulse btn-pulse flex-shrink-0 transition-colors"></span> Agendar Avaliação
                             </button>
                         </div>
                     </div>
                 </article>
 
                 <!-- Técnica Glass Molecular -->
-                <article aria-labelledby="glass-molecular-title" class="flex flex-col h-full bg-white/95 dark:bg-luxury-card/95 backdrop-blur-2xl border border-brand-900/5 dark:border-luxury-border hover:border-brand-500/20 dark:hover:border-brand-500/30 rounded-[2.5rem] p-6 sm:p-10 shadow-xl dark:shadow-2xl relative overflow-hidden transition-all duration-500 group hover:-translate-y-2">
+                <article aria-labelledby="glass-molecular-title" class="flex flex-col h-full bg-white/95 dark:bg-luxury-card/95 backdrop-blur-2xl border border-brand-200 dark:border-luxury-border hover:border-brand-300 dark:hover:border-brand-500/30 rounded-[2.5rem] p-6 sm:p-10 shadow-sm dark:shadow-md relative overflow-hidden transition-all duration-500 group hover:-translate-y-2">
                     <header class="text-center mb-8 relative z-10 flex-grow-0">
                         <span class="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-brand-600 dark:text-brand-400 mb-3 transition-colors">Técnica de Finalização</span>
                         <h2 id="glass-molecular-title" class="text-3xl sm:text-4xl md:text-5xl font-serif font-medium text-brand-950 dark:text-luxury-text mb-4 sm:mb-6 transition-colors group-hover:text-gradient-premium">Glass <span class="italic text-brand-600 dark:text-brand-400">Molecular</span></h2>
-                        <p class="text-brand-800 dark:text-luxury-muted text-sm md:text-base font-light leading-relaxed px-2 transition-colors">Um banho de brilho inteligente e antifrizz em apenas 15 minutos. <strong class="font-medium text-brand-950 dark:text-white">Pode ser aplicado como complemento perfeito a qualquer um dos nossos protocolos de alisamento.</strong></p>
+                        <p class="text-brand-800 dark:text-luxury-muted text-sm md:text-base font-light leading-relaxed px-2 transition-colors">Um banho de brilho inteligente e antifrizz em apenas 15 minutos. <strong class="font-medium text-brand-950 dark:text-luxury-text">Pode ser aplicado como complemento perfeito a qualquer um dos nossos protocolos de alisamento.</strong></p>
                     </header>
 
-                    <div class="relative w-full max-w-lg mx-auto aspect-[4/5] lg:aspect-square rounded-3xl overflow-hidden shadow-md border border-brand-900/5 dark:border-luxury-border select-none touch-pan-y before-after-container mb-10 transition-colors flex-grow-0 bg-brand-50 dark:bg-luxury-bg">
+                    <div class="relative w-full max-w-lg mx-auto aspect-[4/5] lg:aspect-square rounded-3xl overflow-hidden shadow-sm border border-brand-200 dark:border-luxury-border select-none touch-pan-y before-after-container mb-10 transition-colors flex-grow-0 bg-brand-50 dark:bg-luxury-bg">
                         <img src="https://testeessencia.carrd.co/assets/images/image24.jpg?v=36e3212d" alt="Cabelo Danificado Antes do Glass Molecular" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover select-none pointer-events-none filter contrast-[0.95] opacity-95 dark:opacity-85 transition-opacity">
                         <img src="https://testeessencia.carrd.co/assets/images/image28.jpg?v=36e3212d" alt="Cabelo Tratado Depois do Glass Molecular" loading="lazy" decoding="async" class="after-img absolute inset-0 w-full h-full object-cover select-none pointer-events-none opacity-95 dark:opacity-85 transition-opacity" style="clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);">
                         <input type="range" min="0" max="100" value="50" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" class="slider-input touch-none absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20 m-0" aria-label="Arraste para comparar o antes e depois">
                         <div class="slider-line absolute top-0 bottom-0 left-[50%] w-[1.5px] bg-brand-950 dark:bg-luxury-text z-10 pointer-events-none transform -translate-x-1/2 flex items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.3)] transition-colors">
-                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white dark:bg-luxury-bg rounded-full shadow-lg flex items-center justify-center text-brand-950 dark:text-luxury-text ring-4 ring-brand-950/5 dark:ring-white/10 transition-all group-hover:scale-110 duration-300">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white dark:bg-luxury-bg rounded-full shadow-md flex items-center justify-center text-brand-950 dark:text-luxury-text ring-4 ring-brand-950/5 dark:ring-white/10 transition-all group-hover:scale-110 duration-300">
                                 <i data-lucide="chevrons-left-right" class="w-4 h-4 sm:w-5 sm:h-5 stroke-[2]"></i>
                             </div>
                         </div>
-                        <div class="absolute top-4 left-4 z-10 bg-white/90 dark:bg-luxury-card/90 backdrop-blur-md text-brand-950 dark:text-luxury-text px-3 py-1 rounded-full text-[10px] font-semibold tracking-[0.2em] pointer-events-none border border-brand-900/5 dark:border-luxury-border transition-colors uppercase">Original</div>
-                        <div class="absolute top-4 right-4 z-10 bg-brand-900 dark:bg-brand-600 text-white dark:text-brand-50 px-3 py-1 rounded-full text-[10px] font-bold tracking-[0.2em] pointer-events-none border border-white/10 transition-colors uppercase shadow-md">Adicional Glass</div>
+                        <div class="absolute top-4 left-4 z-10 bg-white/90 dark:bg-luxury-card/90 backdrop-blur-md text-brand-950 dark:text-luxury-text px-3 py-1 rounded-full text-[10px] font-semibold tracking-[0.2em] pointer-events-none border border-brand-200 dark:border-luxury-border transition-colors uppercase">Original</div>
+                        <div class="absolute top-4 right-4 z-10 bg-brand-900 dark:bg-brand-600 text-white dark:text-brand-50 px-3 py-1 rounded-full text-[10px] font-bold tracking-[0.2em] pointer-events-none border border-white/10 transition-colors uppercase shadow-sm">Adicional Glass</div>
                     </div>
 
                     <div class="mt-auto flex flex-col items-center pt-2 w-full transition-colors flex-grow-0">
                         <div class="flex flex-col gap-3 w-full max-w-sm mx-auto relative z-20">
-                            <button onclick="openCityModal('Técnica Glass Molecular')" class="w-full flex items-center justify-center gap-2 px-4 py-3.5 sm:py-4 bg-brand-900 dark:bg-white/10 hover:bg-brand-800 dark:hover:bg-white/20 border border-transparent dark:border-white/20 text-white rounded-full font-semibold text-[13px] sm:text-sm transition-all duration-300 shadow-md group/btn focus:outline-none">
+                            <button onclick="openCityModal('Técnica Glass Molecular')" class="w-full flex items-center justify-center gap-2 px-4 py-3.5 sm:py-4 bg-brand-900 dark:bg-luxury-border hover:bg-brand-800 dark:hover:bg-luxury-border/80 border border-transparent dark:border-white/10 text-white dark:text-luxury-text rounded-full font-semibold text-[13px] sm:text-sm transition-all duration-300 shadow-sm group/btn focus:outline-none">
                                 Adicionar Técnica Glass
                             </button>
                         </div>
@@ -341,10 +375,10 @@
             </div>
 
             <!-- Molecular Fusion (Ultra Luxo) -->
-            <article class="flex flex-col lg:flex-row items-center justify-between gap-10 bg-[#050505] rounded-[3rem] p-10 lg:p-16 shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-platinum-500/20 relative overflow-hidden transition-all duration-500 hover:border-brand-400/50 group mt-10">
+            <article class="flex flex-col lg:flex-row items-center justify-between gap-10 bg-[#080605] rounded-[3rem] p-10 lg:p-16 shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-platinum-500/20 relative overflow-hidden transition-all duration-500 hover:border-brand-400/50 group mt-10">
                 <div class="noise-overlay"></div>
-                <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-white opacity-[0.03] blur-[100px] rounded-full pointer-events-none"></div>
-                <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white opacity-[0.03] blur-[100px] rounded-full pointer-events-none"></div>
+                <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-white opacity-[0.02] blur-[100px] rounded-full pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white opacity-[0.02] blur-[100px] rounded-full pointer-events-none"></div>
                 
                 <div class="w-full lg:w-1/2 relative z-10 flex flex-col justify-center text-center lg:text-left">
                     <div class="inline-flex items-center justify-center lg:justify-start gap-3 mb-6">
@@ -356,36 +390,36 @@
                         Molecular Fusion
                     </h2>
                     
-                    <p class="text-platinum-500 text-sm md:text-base font-semibold leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+                    <p class="text-[#A89F9A] text-sm md:text-base font-semibold leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
                         O ápice da tecnologia capilar. Realinhamento no núcleo da fibra com preservação máxima. A escolha absoluta para quem exige o mais alto nível de sofisticação estrutural a longo prazo.
                     </p>
                     
-                    <ul class="space-y-4 mb-10 text-sm font-bold text-platinum-500 text-left max-w-md mx-auto lg:mx-0">
-                        <li class="flex items-start gap-3"><i data-lucide="sparkles" class="w-5 h-5 text-white shrink-0"></i> <span><strong class="text-white">Longevidade Extrema:</strong> Até 7 meses de estrutura intacta.</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="sparkles" class="w-5 h-5 text-white shrink-0"></i> <span><strong class="text-white">Fusão Molecular:</strong> Realinhamento sem afinar o fio.</span></li>
-                        <li class="flex items-start gap-3"><i data-lucide="sparkles" class="w-5 h-5 text-white shrink-0"></i> <span><strong class="text-white">Alta Performance:</strong> Manutenção apenas do crescimento.</span></li>
+                    <ul class="space-y-4 mb-10 text-sm font-bold text-[#A89F9A] text-left max-w-md mx-auto lg:mx-0">
+                        <li class="flex items-start gap-3"><i data-lucide="sparkles" class="w-5 h-5 text-white shrink-0"></i> <span><strong class="text-[#EAE5DF]">Longevidade Extrema:</strong> Até 7 meses de estrutura intacta.</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="sparkles" class="w-5 h-5 text-white shrink-0"></i> <span><strong class="text-[#EAE5DF]">Fusão Molecular:</strong> Realinhamento sem afinar o fio.</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="sparkles" class="w-5 h-5 text-white shrink-0"></i> <span><strong class="text-[#EAE5DF]">Alta Performance:</strong> Manutenção apenas do crescimento.</span></li>
                     </ul>
                     
                     <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md mx-auto lg:mx-0">
-                        <button onclick="document.getElementById('tabelas').scrollIntoView({behavior: 'smooth'})" class="w-full flex items-center justify-center px-6 py-4 bg-white/5 hover:bg-white/10 text-white rounded-full font-bold text-[11px] uppercase tracking-widest transition-all duration-300 border border-white/20 shadow-sm focus:outline-none gap-2">
+                        <button onclick="document.getElementById('tabelas').scrollIntoView({behavior: 'smooth'})" class="w-full flex items-center justify-center px-6 py-4 bg-white/5 hover:bg-white/10 text-white rounded-full font-bold text-[11px] uppercase tracking-widest transition-all duration-300 border border-white/10 shadow-sm focus:outline-none gap-2">
                             <i data-lucide="calculator" class="w-4 h-4"></i> Ver Tabela
                         </button>
-                        <button onclick="openCityModal('Molecular Fusion')" class="w-full flex items-center justify-center gap-2 px-6 py-4 bg-white hover:bg-gray-200 text-black rounded-full font-bold text-[11px] uppercase tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.2)] focus:outline-none">
+                        <button onclick="openCityModal('Molecular Fusion')" class="w-full flex items-center justify-center gap-2 px-6 py-4 bg-white hover:bg-gray-200 text-black rounded-full font-bold text-[11px] uppercase tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)] focus:outline-none">
                             Reservar Molecular Fusion
                         </button>
                     </div>
                 </div>
                 
                 <div class="w-full lg:w-1/2 relative z-10 flex justify-center lg:justify-end">
-                    <div class="relative w-full max-w-sm aspect-[4/5] rounded-2xl overflow-hidden border border-white/10 bg-[#0A0A0C] shadow-[0_0_50px_rgba(255,255,255,0.05)] group-hover:shadow-[0_0_50px_rgba(255,255,255,0.1)] transition-shadow duration-500">
+                    <div class="relative w-full max-w-sm aspect-[4/5] rounded-2xl overflow-hidden border border-white/10 bg-[#0B0908] shadow-[0_0_50px_rgba(255,255,255,0.05)] group-hover:shadow-[0_0_50px_rgba(255,255,255,0.08)] transition-shadow duration-500">
                         <img src="https://imagensagata.carrd.co/assets/images/image30.jpg?v=373e1272" alt="Rótulo Molecular Fusion" loading="lazy" class="w-full h-full object-cover object-center opacity-80 mix-blend-luminosity group-hover:scale-105 transition-transform duration-[3s]" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent pointer-events-none"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#080605] via-[#080605]/40 to-transparent pointer-events-none"></div>
                         <div class="absolute bottom-8 left-8 text-left pointer-events-none">
                             <div class="flex items-center gap-3 mb-3">
                                 <i data-lucide="star" class="w-5 h-5 text-gray-300"></i>
                                 <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-300 drop-shadow-md">Até 7 Meses</span>
                             </div>
-                            <p class="text-white font-serif text-3xl font-bold drop-shadow-lg">Tecnologia de Fusão</p>
+                            <p class="text-[#EAE5DF] font-serif text-3xl font-bold drop-shadow-lg">Tecnologia de Fusão</p>
                         </div>
                     </div>
                 </div>
@@ -395,296 +429,339 @@
         <!-- 5. AUTORIDADE (JÔ & JULIA) -->
         <section class="max-w-6xl mx-auto px-6 py-24 reveal grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-                <span class="text-brand-500 text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Especialistas Certificadas</span>
-                <h2 class="font-serif text-4xl md:text-6xl mb-8 text-brand-950 dark:text-white">Quem cuida do seu <br><span class="italic">património visual?</span></h2>
-                <p class="text-brand-800 dark:text-gray-400 text-lg font-medium leading-relaxed mb-8">Sob a liderança de Jô (CEO e Colorista) e a precisão técnica de Julia (Expert em Alisamentos), garantimos que o seu cabelo receba engenharia, não apenas química.</p>
+                <span class="text-brand-500 text-xs font-bold uppercase tracking-[0.3em] mb-4 block transition-colors">Especialistas Certificadas</span>
+                <h2 class="font-serif text-4xl md:text-6xl mb-8 text-brand-950 dark:text-luxury-text transition-colors">Quem cuida do seu <br><span class="italic">património visual?</span></h2>
+                <p class="text-brand-800 dark:text-luxury-muted text-lg font-medium leading-relaxed mb-8 transition-colors">Sob a liderança de Jô (CEO e Colorista) e a precisão técnica de Julia (Expert em Alisamentos), garantimos que o seu cabelo receba engenharia, não apenas química.</p>
                 <div class="flex gap-8">
                     <div class="flex items-center gap-4">
-                        <img src="https://testeessencia.carrd.co/assets/images/image80.jpg" alt="Jô" loading="lazy" class="w-16 h-16 rounded-full object-cover border-2 border-brand-300 dark:border-luxury-border">
-                        <div><p class="font-bold text-brand-950 dark:text-white">Jô</p><p class="text-[10px] uppercase font-bold text-brand-500">Cortes & Cores</p></div>
+                        <img src="https://testeessencia.carrd.co/assets/images/image80.jpg" alt="Jô" loading="lazy" class="w-16 h-16 rounded-full object-cover border-2 border-brand-300 dark:border-luxury-border transition-colors">
+                        <div><p class="font-bold text-brand-950 dark:text-luxury-text transition-colors">Jô</p><p class="text-[10px] uppercase font-bold text-brand-500">Cortes & Cores</p></div>
                     </div>
                     <div class="flex items-center gap-4">
-                        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f" alt="Julia" loading="lazy" class="w-16 h-16 rounded-full object-cover border-2 border-brand-300 dark:border-luxury-border">
-                        <div><p class="font-bold text-brand-950 dark:text-white">Julia</p><p class="text-[10px] uppercase font-bold text-brand-500">Expert Piastra</p></div>
+                        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f" alt="Julia" loading="lazy" class="w-16 h-16 rounded-full object-cover border-2 border-brand-300 dark:border-luxury-border transition-colors">
+                        <div><p class="font-bold text-brand-950 dark:text-luxury-text transition-colors">Julia</p><p class="text-[10px] uppercase font-bold text-brand-500">Expert Piastra</p></div>
                     </div>
                 </div>
             </div>
-            <div class="relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-2xl">
+            <div class="relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-lg border border-brand-100 dark:border-luxury-border transition-colors">
                 <img src="https://testeessencia.carrd.co/assets/images/image38.jpg" alt="Salão" loading="lazy" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-black/20"></div>
+                <div class="absolute inset-0 bg-brand-950/10 dark:bg-black/30 transition-colors"></div>
             </div>
         </section>
 
-        <!-- 6. DEPOIMENTOS (PROVA SOCIAL) -->
-        <section class="w-full py-24 bg-[#09090B] border-y border-white/5 reveal mb-24">
+        <!-- 6. DEPOIMENTOS (CARROSSEL DINÂMICO LOOP) -->
+        <section class="w-full py-24 bg-white dark:bg-[#0B0908] border-y border-brand-100 dark:border-luxury-border transition-colors reveal mb-24">
             <div class="max-w-[1440px] mx-auto px-6 md:px-12">
-               <div class="text-center mb-16">
-                  <span class="text-xs uppercase tracking-[0.3em] font-bold text-brand-400 block mb-3">Experiências Comprovadas</span>
-                  <h3 class="font-serif text-4xl md:text-5xl text-white font-medium leading-snug">
+               <div class="text-center mb-12 sm:mb-16">
+                  <span class="text-xs uppercase tracking-[0.3em] font-bold text-brand-500 block mb-3 transition-colors">Experiências Comprovadas</span>
+                  <h3 class="font-serif text-4xl md:text-5xl text-brand-950 dark:text-luxury-text font-medium leading-snug transition-colors">
                     A Voz das Nossas Clientes. <br/>Resultados Incontestáveis.
                   </h3>
                </div>
                
-               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <!-- Depoimento 1 -->
-                  <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl relative hover:-translate-y-2 transition-transform duration-500 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-                     <i data-lucide="quote" class="absolute top-6 right-6 w-8 h-8 text-white/10"></i>
-                     <div class="flex gap-1 mb-6 text-brand-400">
-                       <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                     </div>
-                     <p class="text-gray-400 text-sm md:text-base font-medium leading-relaxed mb-8">
-                       "O Liso Soberano salvou o meu cabelo. Já tinha tentado de tudo em Chapecó e só aqui consegui o liso perfeito sem arder os olhos. Zero formol de verdade, ambiente de puro cuidado e conforto!"
-                     </p>
-                     <div class="flex items-center gap-4 border-t border-white/10 pt-6">
-                        <div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center font-serif text-2xl text-brand-400 border border-brand-500/30">M</div>
-                        <div>
-                           <span class="text-white font-bold text-sm block uppercase tracking-wider mb-1">Mariana C.</span>
-                           <span class="text-brand-400 text-[10px] font-bold uppercase tracking-widest">✨ Liso Soberano • Chapecó</span>
-                        </div>
-                     </div>
+               <!-- CAROUSEL ENGINE CSS/HTML -->
+               <div class="relative w-full max-w-3xl mx-auto testimonial-carousel min-h-[320px] sm:min-h-[250px]">
+                  
+                  <!-- Slide 1 -->
+                  <div class="testimonial-slide absolute inset-0 opacity-100 z-10 transition-all duration-1000 transform translate-x-0">
+                      <div class="bg-brand-50 dark:bg-luxury-card border border-brand-200 dark:border-luxury-border p-8 rounded-3xl relative shadow-md mx-2 transition-colors">
+                         <i data-lucide="quote" class="absolute top-6 right-6 w-8 h-8 text-brand-200 dark:text-white/5 transition-colors"></i>
+                         <div class="flex gap-1 mb-6 text-[#E3A857]">
+                           <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                         </div>
+                         <p class="text-brand-800 dark:text-luxury-muted text-sm md:text-base font-medium leading-relaxed mb-8 transition-colors">
+                           "O Liso Soberano salvou o meu cabelo. Já tinha tentado de tudo em Chapecó e só aqui consegui o liso perfeito sem arder os olhos. Zero formol de verdade, ambiente de puro cuidado e conforto!"
+                         </p>
+                         <div class="flex items-center gap-4 border-t border-brand-200 dark:border-luxury-border pt-6 transition-colors">
+                            <div class="w-12 h-12 rounded-full bg-brand-200 dark:bg-brand-500/10 flex items-center justify-center font-serif text-2xl text-brand-700 dark:text-brand-400 border border-brand-300 dark:border-brand-500/20 transition-colors">M</div>
+                            <div>
+                               <span class="text-brand-950 dark:text-luxury-text font-bold text-sm block uppercase tracking-wider mb-1 transition-colors">Mariana C.</span>
+                               <span class="text-brand-500 text-[10px] font-bold uppercase tracking-widest transition-colors">✨ Liso Soberano • Chapecó</span>
+                            </div>
+                         </div>
+                      </div>
                   </div>
                   
-                  <!-- Depoimento 2 -->
-                  <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl relative hover:-translate-y-2 transition-transform duration-500 delay-100 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-                     <i data-lucide="quote" class="absolute top-6 right-6 w-8 h-8 text-white/10"></i>
-                     <div class="flex gap-1 mb-6 text-brand-400">
-                       <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                     </div>
-                     <p class="text-gray-400 text-sm md:text-base font-medium leading-relaxed mb-8">
-                       "O Glass Molecular é surreal! Não queria perder as minhas ondas, só queria tirar o aspeto espigado. O cabelo ficou um espelho autêntico. Ganhei liberdade no meu dia a dia em Seara."
-                     </p>
-                     <div class="flex items-center gap-4 border-t border-white/10 pt-6">
-                        <div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center font-serif text-2xl text-brand-400 border border-brand-500/30">J</div>
-                        <div>
-                           <span class="text-white font-bold text-sm block uppercase tracking-wider mb-1">Juliana T.</span>
-                           <span class="text-brand-400 text-[10px] font-bold uppercase tracking-widest">✨ Glass Molecular • Seara</span>
-                        </div>
-                     </div>
+                  <!-- Slide 2 -->
+                  <div class="testimonial-slide absolute inset-0 opacity-0 z-0 transition-all duration-1000 transform translate-x-8 pointer-events-none">
+                      <div class="bg-brand-50 dark:bg-luxury-card border border-brand-200 dark:border-luxury-border p-8 rounded-3xl relative shadow-md mx-2 transition-colors">
+                         <i data-lucide="quote" class="absolute top-6 right-6 w-8 h-8 text-brand-200 dark:text-white/5 transition-colors"></i>
+                         <div class="flex gap-1 mb-6 text-[#E3A857]">
+                           <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                         </div>
+                         <p class="text-brand-800 dark:text-luxury-muted text-sm md:text-base font-medium leading-relaxed mb-8 transition-colors">
+                           "O Glass Molecular é surreal! Não queria perder as minhas ondas, só queria tirar o aspeto espigado. O cabelo ficou um espelho autêntico. Ganhei liberdade no meu dia a dia em Seara."
+                         </p>
+                         <div class="flex items-center gap-4 border-t border-brand-200 dark:border-luxury-border pt-6 transition-colors">
+                            <div class="w-12 h-12 rounded-full bg-brand-200 dark:bg-brand-500/10 flex items-center justify-center font-serif text-2xl text-brand-700 dark:text-brand-400 border border-brand-300 dark:border-brand-500/20 transition-colors">J</div>
+                            <div>
+                               <span class="text-brand-950 dark:text-luxury-text font-bold text-sm block uppercase tracking-wider mb-1 transition-colors">Juliana T.</span>
+                               <span class="text-brand-500 text-[10px] font-bold uppercase tracking-widest transition-colors">✨ Glass Molecular • Seara</span>
+                            </div>
+                         </div>
+                      </div>
                   </div>
 
-                  <!-- Depoimento 3 -->
-                  <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl relative hover:-translate-y-2 transition-transform duration-500 delay-200 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-                     <i data-lucide="quote" class="absolute top-6 right-6 w-8 h-8 text-white/10"></i>
-                     <div class="flex gap-1 mb-6 text-brand-400">
-                       <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                     </div>
-                     <p class="text-gray-400 text-sm md:text-base font-medium leading-relaxed mb-8">
-                       "Fiz o Molecular Fusion e foi um antes e depois na minha vida. O cabelo não perde a espessura, ficou com um balanço maravilhoso e a durabilidade justifica cada centavo investido!"
-                     </p>
-                     <div class="flex items-center gap-4 border-t border-white/10 pt-6">
-                        <div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center font-serif text-2xl text-brand-400 border border-brand-500/30">P</div>
-                        <div>
-                           <span class="text-white font-bold text-sm block uppercase tracking-wider mb-1">Patrícia D.</span>
-                           <span class="text-brand-400 text-[10px] font-bold uppercase tracking-widest">✨ Molecular Fusion • SC</span>
-                        </div>
-                     </div>
+                  <!-- Slide 3 -->
+                  <div class="testimonial-slide absolute inset-0 opacity-0 z-0 transition-all duration-1000 transform translate-x-8 pointer-events-none">
+                      <div class="bg-brand-50 dark:bg-luxury-card border border-brand-200 dark:border-luxury-border p-8 rounded-3xl relative shadow-md mx-2 transition-colors">
+                         <i data-lucide="quote" class="absolute top-6 right-6 w-8 h-8 text-brand-200 dark:text-white/5 transition-colors"></i>
+                         <div class="flex gap-1 mb-6 text-[#E3A857]">
+                           <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                         </div>
+                         <p class="text-brand-800 dark:text-luxury-muted text-sm md:text-base font-medium leading-relaxed mb-8 transition-colors">
+                           "Fiz o Molecular Fusion e foi um antes e depois na minha vida. O cabelo não perde a espessura, ficou com um balanço maravilhoso e a durabilidade justifica cada centavo investido!"
+                         </p>
+                         <div class="flex items-center gap-4 border-t border-brand-200 dark:border-luxury-border pt-6 transition-colors">
+                            <div class="w-12 h-12 rounded-full bg-brand-200 dark:bg-brand-500/10 flex items-center justify-center font-serif text-2xl text-brand-700 dark:text-brand-400 border border-brand-300 dark:border-brand-500/20 transition-colors">P</div>
+                            <div>
+                               <span class="text-brand-950 dark:text-luxury-text font-bold text-sm block uppercase tracking-wider mb-1 transition-colors">Patrícia D.</span>
+                               <span class="text-brand-500 text-[10px] font-bold uppercase tracking-widest transition-colors">✨ Molecular Fusion • SC</span>
+                            </div>
+                         </div>
+                      </div>
                   </div>
                </div>
+
+               <!-- Indicadores do Carrossel -->
+               <div class="flex justify-center gap-3 mt-6 testimonial-indicators">
+                    <button class="w-8 h-1.5 rounded-full bg-brand-500 transition-all duration-500 focus:outline-none"></button>
+                    <button class="w-2 h-1.5 rounded-full bg-brand-200 dark:bg-luxury-border transition-all duration-500 focus:outline-none"></button>
+                    <button class="w-2 h-1.5 rounded-full bg-brand-200 dark:bg-luxury-border transition-all duration-500 focus:outline-none"></button>
+               </div>
+
             </div>
         </section>
 
         <!-- 7. 3 PASSOS (LÓGICA E CONVERSÃO) -->
         <section class="max-w-5xl mx-auto px-6 mb-24 reveal">
-            <h3 class="text-center font-serif text-3xl md:text-5xl font-medium mb-12 text-brand-950 dark:text-white">3 Passos para o Liso Perfeito</h3>
+            <h3 class="text-center font-serif text-3xl md:text-5xl font-medium mb-12 text-brand-950 dark:text-luxury-text transition-colors">3 Passos para o Liso Perfeito</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="flex flex-col items-center text-center">
-                    <div class="w-20 h-20 rounded-full bg-white dark:bg-luxury-card flex items-center justify-center mb-6 shadow-xl border border-brand-100 dark:border-white/10">
+                    <div class="w-20 h-20 rounded-full bg-white dark:bg-luxury-card flex items-center justify-center mb-6 shadow-sm border border-brand-100 dark:border-luxury-border transition-colors">
                         <span class="text-xl font-bold text-brand-500">1</span>
                     </div>
-                    <h4 class="font-bold uppercase tracking-widest text-sm mb-2 text-brand-950 dark:text-white">Garanta a Vaga</h4>
-                    <p class="text-sm text-brand-800 dark:text-gray-400">Clique no botão de agendamento das tabelas. O processo é seguro e rápido.</p>
+                    <h4 class="font-bold uppercase tracking-widest text-sm mb-2 text-brand-950 dark:text-luxury-text transition-colors">Garanta a Vaga</h4>
+                    <p class="text-sm text-brand-800 dark:text-luxury-muted transition-colors">Clique no botão de agendamento das tabelas. O processo é seguro e rápido.</p>
                 </div>
                 <div class="flex flex-col items-center text-center">
-                    <div class="w-20 h-20 rounded-full bg-white dark:bg-luxury-card flex items-center justify-center mb-6 shadow-xl border border-brand-100 dark:border-white/10">
+                    <div class="w-20 h-20 rounded-full bg-white dark:bg-luxury-card flex items-center justify-center mb-6 shadow-sm border border-brand-100 dark:border-luxury-border transition-colors">
                         <span class="text-xl font-bold text-brand-500">2</span>
                     </div>
-                    <h4 class="font-bold uppercase tracking-widest text-sm mb-2 text-brand-950 dark:text-white">Diagnóstico Especializado</h4>
-                    <p class="text-sm text-brand-800 dark:text-gray-400">Avaliamos a saúde e a estrutura do fio para garantir 100% de segurança.</p>
+                    <h4 class="font-bold uppercase tracking-widest text-sm mb-2 text-brand-950 dark:text-luxury-text transition-colors">Diagnóstico Especializado</h4>
+                    <p class="text-sm text-brand-800 dark:text-luxury-muted transition-colors">Avaliamos a saúde e a estrutura do fio para garantir 100% de segurança.</p>
                 </div>
                 <div class="flex flex-col items-center text-center">
-                    <div class="w-20 h-20 rounded-full bg-white dark:bg-luxury-card flex items-center justify-center mb-6 shadow-xl border border-brand-100 dark:border-white/10">
+                    <div class="w-20 h-20 rounded-full bg-white dark:bg-luxury-card flex items-center justify-center mb-6 shadow-sm border border-brand-100 dark:border-luxury-border transition-colors">
                         <span class="text-xl font-bold text-brand-500">3</span>
                     </div>
-                    <h4 class="font-bold uppercase tracking-widest text-sm mb-2 text-brand-950 dark:text-white">A Transformação</h4>
-                    <p class="text-sm text-brand-800 dark:text-gray-400">Receba a melhor engenharia de alisamento e saia pronta para o dia a dia.</p>
+                    <h4 class="font-bold uppercase tracking-widest text-sm mb-2 text-brand-950 dark:text-luxury-text transition-colors">A Transformação</h4>
+                    <p class="text-sm text-brand-800 dark:text-luxury-muted transition-colors">Receba a melhor engenharia de alisamento e saia pronta para o dia a dia.</p>
                 </div>
             </div>
         </section>
 
         <!-- 8. TABELAS DE PREÇOS (GAVETAS/ACCORDION) -->
-        <section id="tabelas" class="w-full max-w-[1400px] mx-auto bg-white/95 dark:bg-luxury-card/95 backdrop-blur-xl border-y md:border border-brand-900/5 dark:border-luxury-border md:rounded-[2.5rem] p-4 sm:p-10 md:p-16 mb-24 reveal shadow-xl">
+        <section id="tabelas" class="w-full max-w-[1400px] mx-auto bg-white/80 dark:bg-luxury-bg/80 backdrop-blur-xl border-y md:border border-brand-200 dark:border-luxury-border md:rounded-[2.5rem] p-4 sm:p-10 md:p-16 mb-24 reveal shadow-sm transition-colors">
             <div class="text-center mb-10 sm:mb-12">
-                <span class="text-brand-800 dark:text-brand-300 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.3em] mb-4 block">Transparência em Cada Etapa</span>
-                <h2 class="font-serif text-3xl md:text-5xl font-medium text-brand-950 dark:text-white mb-4 transition-colors">Tabelas de Investimento</h2>
-                <p class="text-sm text-brand-800 dark:text-gray-400 font-medium max-w-2xl mx-auto transition-colors px-2">Valores justos baseados na anatomia do seu cabelo.</p>
+                <span class="text-brand-800 dark:text-brand-300 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.3em] mb-4 block transition-colors">Transparência em Cada Etapa</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-medium text-brand-950 dark:text-luxury-text mb-4 transition-colors">Tabelas de Investimento</h2>
+                <p class="text-sm text-brand-800 dark:text-luxury-muted font-medium max-w-2xl mx-auto transition-colors px-2">Valores justos baseados na anatomia do seu cabelo.</p>
             </div>
 
             <!-- Aviso de Alívio (Fricção Eliminada) -->
-            <div class="max-w-3xl mx-auto mb-8 bg-brand-100/50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-700/30 rounded-2xl p-4 sm:p-5 flex items-start sm:items-center gap-4 text-left shadow-sm">
-                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white dark:bg-black/50 flex items-center justify-center shrink-0 border border-brand-200 dark:border-white/10">
+            <div class="max-w-3xl mx-auto mb-8 bg-brand-50 dark:bg-luxury-card border border-brand-200 dark:border-luxury-border rounded-2xl p-4 sm:p-5 flex items-start sm:items-center gap-4 text-left shadow-sm transition-colors">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white dark:bg-luxury-bg flex items-center justify-center shrink-0 border border-brand-200 dark:border-luxury-border transition-colors">
                     <i data-lucide="help-circle" class="w-5 h-5 text-brand-600 dark:text-brand-400"></i>
                 </div>
-                <p class="text-[11px] sm:text-xs text-brand-800 dark:text-gray-300 leading-relaxed">
-                    <strong class="text-brand-950 dark:text-white block mb-0.5 text-[12px] sm:text-[13px]">Não sabe a espessura do seu fio?</strong>
+                <p class="text-[11px] sm:text-xs text-brand-800 dark:text-luxury-muted leading-relaxed transition-colors">
+                    <strong class="text-brand-950 dark:text-luxury-text block mb-0.5 text-[12px] sm:text-[13px] transition-colors">Não sabe a espessura do seu fio?</strong>
                     Não se preocupe! Os valores abaixo são uma estimativa. O diagnóstico exato (Fino, Médio ou Grosso) é feito <strong>gratuitamente</strong> pela nossa equipa no dia da sua avaliação.
                 </p>
             </div>
 
             <div class="max-w-3xl mx-auto space-y-4 mb-12 text-left">
                 
-                <!-- Tabela Standard -->
-                <details class="bg-brand-50/50 dark:bg-[#09090B] border border-brand-200/50 dark:border-white/10 rounded-2xl group cursor-pointer shadow-sm hover:shadow-md transition-all duration-300">
+                <!-- Tabela Standard (Cor: Pastel Stone neutro, Rating: 4.8) -->
+                <details class="bg-[#F9F7F5] dark:bg-[#12100E] border border-brand-200 dark:border-luxury-border rounded-2xl group cursor-pointer shadow-sm hover:shadow-md transition-all duration-300">
                     <summary class="list-none flex justify-between items-center p-5 sm:p-8 font-bold outline-none">
                         <div class="flex items-center gap-4 text-left">
-                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border border-brand-200/50 dark:border-white/10 shrink-0 bg-brand-50 dark:bg-black relative">
+                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border border-brand-200 dark:border-luxury-border shrink-0 bg-white dark:bg-luxury-bg relative transition-colors">
                                 <img id="dyn-thumb-1" src="https://testeessencia.carrd.co/assets/images/image90.jpg?v=7108f2a1" class="w-full h-full object-cover" alt="Produto Standard">
                             </div>
                             <div class="flex flex-col">
-                                <span class="font-serif text-xl sm:text-2xl text-brand-950 dark:text-white group-open:text-brand-600 dark:group-open:text-brand-400 transition-colors">Protocolo Standard</span>
-                                <span class="text-[9px] sm:text-[10px] uppercase tracking-widest text-brand-600 dark:text-gray-400 font-bold mt-1">Alisamento Clássico (Até 3 Meses)</span>
-                                <span class="text-[12px] font-bold text-brand-900 dark:text-gray-300 mt-1.5 tracking-wide transition-colors">De R$ 159 a R$ 549</span>
+                                <span class="font-serif text-xl sm:text-2xl text-brand-950 dark:text-luxury-text group-open:text-brand-600 dark:group-open:text-brand-400 transition-colors">Protocolo Standard</span>
+                                <div class="flex items-center gap-0.5 mt-1">
+                                    <i data-lucide="star" class="w-3 h-3 fill-[#E3A857] text-[#E3A857]"></i>
+                                    <i data-lucide="star" class="w-3 h-3 fill-[#E3A857] text-[#E3A857]"></i>
+                                    <i data-lucide="star" class="w-3 h-3 fill-[#E3A857] text-[#E3A857]"></i>
+                                    <i data-lucide="star" class="w-3 h-3 fill-[#E3A857] text-[#E3A857]"></i>
+                                    <i data-lucide="star-half" class="w-3 h-3 fill-[#E3A857] text-[#E3A857]"></i>
+                                    <span class="text-[9px] text-brand-800 dark:text-luxury-muted font-bold ml-1.5 uppercase tracking-wider transition-colors">4.8/5 (Iniciação)</span>
+                                </div>
+                                <span class="text-[9px] sm:text-[10px] uppercase tracking-widest text-brand-600 dark:text-gray-400 font-bold mt-1.5">Alisamento Clássico (Até 3 Meses)</span>
+                                <span class="text-[12px] font-bold text-brand-900 dark:text-luxury-text mt-1.5 tracking-wide transition-colors">De R$ 159 a R$ 549</span>
                             </div>
                         </div>
-                        <div class="w-8 h-8 rounded-full bg-white dark:bg-white/5 flex items-center justify-center flex-shrink-0 transition-colors shadow-sm border border-brand-100 dark:border-white/10">
-                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180 text-brand-600 dark:text-gray-400"></i>
+                        <div class="w-8 h-8 rounded-full bg-white dark:bg-luxury-card flex items-center justify-center flex-shrink-0 transition-colors shadow-sm border border-brand-200 dark:border-luxury-border">
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180 text-brand-600 dark:text-luxury-muted"></i>
                         </div>
                     </summary>
-                    <div class="p-5 sm:p-8 pt-0 border-t border-brand-200/50 dark:border-white/10 mt-2 text-left">
-                        <div class="bg-brand-100/50 dark:bg-white/5 border border-brand-200/50 dark:border-white/10 rounded-xl p-4 mt-4 flex items-start gap-3 shadow-sm transition-colors">
-                            <i data-lucide="calendar" class="w-4 h-4 text-brand-600 dark:text-gray-400 shrink-0 mt-0.5"></i>
-                            <p class="text-[10px] sm:text-[11px] text-brand-800 dark:text-gray-400 leading-relaxed font-medium">
-                                <strong class="text-brand-950 dark:text-white uppercase tracking-widest text-[9px] block mb-1">Disponibilidade Limitada</strong>
+                    <div class="p-5 sm:p-8 pt-0 border-t border-brand-200 dark:border-luxury-border mt-2 text-left transition-colors">
+                        <div class="bg-brand-50 dark:bg-luxury-card border border-brand-200 dark:border-luxury-border rounded-xl p-4 mt-4 flex items-start gap-3 shadow-sm transition-colors">
+                            <i data-lucide="calendar" class="w-4 h-4 text-brand-600 dark:text-luxury-muted shrink-0 mt-0.5 transition-colors"></i>
+                            <p class="text-[10px] sm:text-[11px] text-brand-800 dark:text-luxury-muted leading-relaxed font-medium transition-colors">
+                                <strong class="text-brand-950 dark:text-luxury-text uppercase tracking-widest text-[9px] block mb-1 transition-colors">Disponibilidade Limitada</strong>
                                 Protocolo realizado exclusivamente de <strong>Segunda a Quinta-feira</strong>. (Indisponível Sextas e Sábados).
                             </p>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 mt-5">
                             <div>
-                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-brand-950 dark:text-white mb-2 pb-2 border-b border-brand-100 dark:border-white/5">Curto <span class="text-[9px] text-brand-500 font-normal lowercase tracking-normal">(Até o maxilar)</span></h4>
-                                <div class="flex justify-between text-sm mt-2"><span class="text-brand-800 dark:text-gray-400">Fibra Fina</span><span class="font-bold text-brand-950 dark:text-white">R$ 159</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-gray-400">Fibra Média</span><span class="font-bold text-brand-950 dark:text-white">R$ 199</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-gray-400">Fibra Grossa</span><span class="font-bold text-brand-950 dark:text-white">R$ 249</span></div>
+                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-brand-950 dark:text-luxury-text mb-2 pb-2 border-b border-brand-200 dark:border-luxury-border transition-colors">Curto <span class="text-[9px] text-brand-500 font-normal lowercase tracking-normal">(Até o maxilar)</span></h4>
+                                <div class="flex justify-between text-sm mt-2"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Fina</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 159</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Média</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 199</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Grossa</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 249</span></div>
                             </div>
                             <div>
-                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-brand-950 dark:text-white mb-2 pb-2 border-b border-brand-100 dark:border-white/5">Médio <span class="text-[9px] text-brand-500 font-normal lowercase tracking-normal">(Até os ombros)</span></h4>
-                                <div class="flex justify-between text-sm mt-2"><span class="text-brand-800 dark:text-gray-400">Fibra Fina</span><span class="font-bold text-brand-950 dark:text-white">R$ 259</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-gray-400">Fibra Média</span><span class="font-bold text-brand-950 dark:text-white">R$ 299</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-gray-400">Fibra Grossa</span><span class="font-bold text-brand-950 dark:text-white">R$ 349</span></div>
+                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-brand-950 dark:text-luxury-text mb-2 pb-2 border-b border-brand-200 dark:border-luxury-border transition-colors">Médio <span class="text-[9px] text-brand-500 font-normal lowercase tracking-normal">(Até os ombros)</span></h4>
+                                <div class="flex justify-between text-sm mt-2"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Fina</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 259</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Média</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 299</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Grossa</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 349</span></div>
                             </div>
                             <div>
-                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-brand-950 dark:text-white mb-2 pb-2 border-b border-brand-100 dark:border-white/5">Longo <span class="text-[9px] text-brand-500 font-normal lowercase tracking-normal">(Até as escápulas)</span></h4>
-                                <div class="flex justify-between text-sm mt-2"><span class="text-brand-800 dark:text-gray-400">Fibra Fina</span><span class="font-bold text-brand-950 dark:text-white">R$ 359</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-gray-400">Fibra Média</span><span class="font-bold text-brand-950 dark:text-white">R$ 399</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-gray-400">Fibra Grossa</span><span class="font-bold text-brand-950 dark:text-white">R$ 449</span></div>
+                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-brand-950 dark:text-luxury-text mb-2 pb-2 border-b border-brand-200 dark:border-luxury-border transition-colors">Longo <span class="text-[9px] text-brand-500 font-normal lowercase tracking-normal">(Até as escápulas)</span></h4>
+                                <div class="flex justify-between text-sm mt-2"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Fina</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 359</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Média</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 399</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Grossa</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 449</span></div>
                             </div>
                             <div>
-                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-brand-950 dark:text-white mb-2 pb-2 border-b border-brand-100 dark:border-white/5">Ext. Longo <span class="text-[9px] text-brand-500 font-normal lowercase tracking-normal">(Da cintura em diante)</span></h4>
-                                <div class="flex justify-between text-sm mt-2"><span class="text-brand-800 dark:text-gray-400">Fibra Fina</span><span class="font-bold text-brand-950 dark:text-white">R$ 459</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-gray-400">Fibra Média</span><span class="font-bold text-brand-950 dark:text-white">R$ 499</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-gray-400">Fibra Grossa</span><span class="font-bold text-brand-950 dark:text-white">R$ 549</span></div>
+                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-brand-950 dark:text-luxury-text mb-2 pb-2 border-b border-brand-200 dark:border-luxury-border transition-colors">Ext. Longo <span class="text-[9px] text-brand-500 font-normal lowercase tracking-normal">(Da cintura em diante)</span></h4>
+                                <div class="flex justify-between text-sm mt-2"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Fina</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 459</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Média</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 499</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Grossa</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 549</span></div>
                             </div>
                         </div>
-                        <button onclick="openCityModal('Protocolo Standard')" class="w-full mt-6 sm:mt-8 py-4 bg-brand-900 dark:bg-white/10 hover:bg-brand-800 dark:hover:bg-white/20 text-white border border-transparent dark:border-white/20 rounded-xl font-bold text-[13px] uppercase tracking-widest transition-colors focus:outline-none flex items-center justify-center gap-2">
+                        <!-- NOVO BOTÃO ESMERALDA LUXO -->
+                        <button onclick="openCityModal('Protocolo Standard')" class="w-full mt-6 sm:mt-8 py-4 btn-emerald-luxury rounded-xl font-bold text-[13px] uppercase tracking-widest focus:outline-none flex items-center justify-center gap-2">
                             Agendar Avaliação Standard
                         </button>
                     </div>
                 </details>
 
-                <!-- Tabela Gloss Premium -->
-                <details class="bg-white dark:bg-[#050505] border-2 border-brand-400 dark:border-brand-500/50 rounded-2xl group cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden" open>
+                <!-- Tabela Gloss Premium (Cor: Pastel Peach/Amber quente, Rating: 5.0) -->
+                <details class="bg-[#FFF4ED] dark:bg-[#1C1614] border-2 border-brand-400 dark:border-brand-500/50 rounded-2xl group cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden" open>
                     <div class="absolute top-0 right-4 sm:right-8 bg-brand-400 text-brand-950 px-3 py-1 rounded-b-lg text-[9px] font-black uppercase tracking-widest shadow-md">Mais Procurado</div>
                     <summary class="list-none flex justify-between items-center p-5 sm:p-8 font-bold outline-none">
                         <div class="flex items-center gap-4 text-left">
-                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border border-brand-400/50 shrink-0 shadow-[0_0_15px_rgba(227,168,87,0.2)] bg-black relative">
+                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border border-brand-400/50 shrink-0 shadow-[0_0_15px_rgba(227,168,87,0.2)] bg-brand-50 relative transition-colors">
                                 <img id="dyn-thumb-2" src="https://testeessencia.carrd.co/assets/images/image91.jpg?v=7108f2a1" class="w-full h-full object-cover" alt="Produto Gloss Premium">
                             </div>
                             <div class="flex flex-col">
-                                <span class="font-serif text-xl sm:text-2xl text-brand-950 dark:text-white group-open:text-brand-600 dark:group-open:text-brand-400 transition-colors">Gloss Premium</span>
-                                <span class="text-[9px] sm:text-[10px] uppercase tracking-widest text-brand-600 dark:text-gray-400 font-bold mt-1">Exclusivo (De 4 a 5 Meses)</span>
-                                <span class="text-[12px] font-bold text-brand-900 dark:text-gray-300 mt-1.5 tracking-wide transition-colors">De R$ 397 a R$ 1.497</span>
+                                <span class="font-serif text-xl sm:text-2xl text-brand-950 dark:text-luxury-text group-open:text-brand-600 dark:group-open:text-brand-400 transition-colors">Gloss Premium</span>
+                                <div class="flex items-center gap-0.5 mt-1">
+                                    <i data-lucide="star" class="w-3 h-3 fill-[#E3A857] text-[#E3A857]"></i>
+                                    <i data-lucide="star" class="w-3 h-3 fill-[#E3A857] text-[#E3A857]"></i>
+                                    <i data-lucide="star" class="w-3 h-3 fill-[#E3A857] text-[#E3A857]"></i>
+                                    <i data-lucide="star" class="w-3 h-3 fill-[#E3A857] text-[#E3A857]"></i>
+                                    <i data-lucide="star" class="w-3 h-3 fill-[#E3A857] text-[#E3A857]"></i>
+                                    <span class="text-[9px] text-brand-900 dark:text-brand-300 font-bold ml-1.5 uppercase tracking-wider transition-colors">5.0/5 (O Favorito)</span>
+                                </div>
+                                <span class="text-[9px] sm:text-[10px] uppercase tracking-widest text-brand-600 dark:text-gray-400 font-bold mt-1.5">Exclusivo (De 4 a 5 Meses)</span>
+                                <span class="text-[12px] font-bold text-brand-900 dark:text-luxury-text mt-1.5 tracking-wide transition-colors">De R$ 397 a R$ 1.497</span>
                             </div>
                         </div>
-                        <div class="w-8 h-8 rounded-full bg-white dark:bg-white/5 flex items-center justify-center flex-shrink-0 transition-colors shadow-sm border border-brand-100 dark:border-white/10">
-                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180 text-brand-600 dark:text-gray-400"></i>
+                        <div class="w-8 h-8 rounded-full bg-white dark:bg-luxury-card flex items-center justify-center flex-shrink-0 transition-colors shadow-sm border border-brand-200 dark:border-luxury-border">
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180 text-brand-600 dark:text-luxury-muted"></i>
                         </div>
                     </summary>
-                    <div class="p-5 sm:p-8 pt-0 border-t border-brand-200/50 dark:border-white/10 mt-2 text-left">
+                    <div class="p-5 sm:p-8 pt-0 border-t border-brand-200/50 dark:border-luxury-border mt-2 text-left transition-colors">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 mt-5">
                             <div>
-                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-brand-950 dark:text-white mb-2 pb-2 border-b border-brand-100 dark:border-white/5">Curto <span class="text-[9px] text-brand-500 font-normal lowercase tracking-normal">(Até o maxilar)</span></h4>
-                                <div class="flex justify-between text-sm mt-2"><span class="text-brand-800 dark:text-gray-400">Fibra Fina</span><span class="font-bold text-brand-950 dark:text-white">R$ 397</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-gray-400">Fibra Média</span><span class="font-bold text-brand-950 dark:text-white">R$ 497</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-gray-400">Fibra Grossa</span><span class="font-bold text-brand-950 dark:text-white">R$ 597</span></div>
+                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-brand-950 dark:text-luxury-text mb-2 pb-2 border-b border-brand-200 dark:border-luxury-border transition-colors">Curto <span class="text-[9px] text-brand-500 font-normal lowercase tracking-normal">(Até o maxilar)</span></h4>
+                                <div class="flex justify-between text-sm mt-2"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Fina</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 397</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Média</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 497</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Grossa</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 597</span></div>
                             </div>
                             <div>
-                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-brand-950 dark:text-white mb-2 pb-2 border-b border-brand-100 dark:border-white/5">Médio <span class="text-[9px] text-brand-500 font-normal lowercase tracking-normal">(Até os ombros)</span></h4>
-                                <div class="flex justify-between text-sm mt-2"><span class="text-brand-800 dark:text-gray-400">Fibra Fina</span><span class="font-bold text-brand-950 dark:text-white">R$ 697</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-gray-400">Fibra Média</span><span class="font-bold text-brand-950 dark:text-white">R$ 797</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-gray-400">Fibra Grossa</span><span class="font-bold text-brand-950 dark:text-white">R$ 897</span></div>
+                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-brand-950 dark:text-luxury-text mb-2 pb-2 border-b border-brand-200 dark:border-luxury-border transition-colors">Médio <span class="text-[9px] text-brand-500 font-normal lowercase tracking-normal">(Até os ombros)</span></h4>
+                                <div class="flex justify-between text-sm mt-2"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Fina</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 697</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Média</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 797</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Grossa</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 897</span></div>
                             </div>
                             <div>
-                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-brand-950 dark:text-white mb-2 pb-2 border-b border-brand-100 dark:border-white/5">Longo <span class="text-[9px] text-brand-500 font-normal lowercase tracking-normal">(Até as escápulas)</span></h4>
-                                <div class="flex justify-between text-sm mt-2"><span class="text-brand-800 dark:text-gray-400">Fibra Fina</span><span class="font-bold text-brand-950 dark:text-white">R$ 997</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-gray-400">Fibra Média</span><span class="font-bold text-brand-950 dark:text-white">R$ 1.097</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-gray-400">Fibra Grossa</span><span class="font-bold text-brand-950 dark:text-white">R$ 1.197</span></div>
+                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-brand-950 dark:text-luxury-text mb-2 pb-2 border-b border-brand-200 dark:border-luxury-border transition-colors">Longo <span class="text-[9px] text-brand-500 font-normal lowercase tracking-normal">(Até as escápulas)</span></h4>
+                                <div class="flex justify-between text-sm mt-2"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Fina</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 997</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Média</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 1.097</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Grossa</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 1.197</span></div>
                             </div>
                             <div>
-                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-brand-950 dark:text-white mb-2 pb-2 border-b border-brand-100 dark:border-white/5">Ext. Longo <span class="text-[9px] text-brand-500 font-normal lowercase tracking-normal">(Da cintura em diante)</span></h4>
-                                <div class="flex justify-between text-sm mt-2"><span class="text-brand-800 dark:text-gray-400">Fibra Fina</span><span class="font-bold text-brand-950 dark:text-white">R$ 1.297</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-gray-400">Fibra Média</span><span class="font-bold text-brand-950 dark:text-white">R$ 1.397</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-gray-400">Fibra Grossa</span><span class="font-bold text-brand-950 dark:text-white">R$ 1.497</span></div>
+                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-brand-950 dark:text-luxury-text mb-2 pb-2 border-b border-brand-200 dark:border-luxury-border transition-colors">Ext. Longo <span class="text-[9px] text-brand-500 font-normal lowercase tracking-normal">(Da cintura em diante)</span></h4>
+                                <div class="flex justify-between text-sm mt-2"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Fina</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 1.297</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Média</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 1.397</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Grossa</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 1.497</span></div>
                             </div>
                         </div>
-                        <button onclick="openCityModal('Gloss Premium')" class="w-full mt-6 sm:mt-8 py-4 bg-[#128C7E] dark:bg-[#1EBE5D] hover:bg-[#075E54] dark:hover:bg-[#25D366] text-white dark:text-luxury-bg rounded-xl font-bold text-[13px] uppercase tracking-widest transition-colors focus:outline-none flex items-center justify-center gap-2 shadow-md">
+                        <!-- NOVO BOTÃO ESMERALDA LUXO -->
+                        <button onclick="openCityModal('Gloss Premium')" class="w-full mt-6 sm:mt-8 py-4 btn-emerald-luxury rounded-xl font-bold text-[13px] uppercase tracking-widest focus:outline-none flex items-center justify-center gap-2">
                             Agendar Gloss Premium
                         </button>
                     </div>
                 </details>
 
-                <!-- Tabela Molecular Fusion -->
-                <details class="bg-[#050505] border border-brand-400/50 dark:border-white/20 rounded-2xl group cursor-pointer shadow-xl transition-all duration-300">
+                <!-- Tabela Molecular Fusion (Cor: Dark Luxo absoluto, Rating: 5.0 + Diamante) -->
+                <details class="bg-[#080605] border border-brand-400/50 dark:border-luxury-border rounded-2xl group cursor-pointer shadow-xl transition-all duration-300">
                     <summary class="list-none flex justify-between items-center p-5 sm:p-8 font-bold outline-none">
                         <div class="flex items-center gap-4 text-left">
-                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border border-white/20 shrink-0 shadow-[0_0_20px_rgba(255,255,255,0.1)] bg-black relative">
+                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border border-luxury-border shrink-0 shadow-[0_0_20px_rgba(255,255,255,0.05)] bg-black relative transition-colors">
                                 <img id="dyn-thumb-3" src="https://testeessencia.carrd.co/assets/images/image92.jpg?v=7108f2a1" class="w-full h-full object-cover opacity-80 mix-blend-luminosity" alt="Produto Molecular Fusion">
                             </div>
                             <div class="flex flex-col">
-                                <span class="font-serif text-xl sm:text-2xl text-white transition-colors flex items-center gap-2">Molecular Fusion <span class="bg-white text-black text-[8px] px-1.5 py-0.5 rounded-sm uppercase tracking-widest hidden sm:inline-block">Julho</span></span>
-                                <span class="text-[9px] sm:text-[10px] uppercase tracking-widest text-gray-400 font-bold mt-1">Lançamento Oficial (Até 7 Meses)</span>
-                                <span class="text-[12px] font-bold text-gray-300 mt-1.5 tracking-wide transition-colors">De R$ 427 a R$ 1.527</span>
+                                <span class="font-serif text-xl sm:text-2xl text-luxury-text transition-colors flex items-center gap-2">Molecular Fusion <span class="bg-luxury-text text-black text-[8px] px-1.5 py-0.5 rounded-sm uppercase tracking-widest hidden sm:inline-block transition-colors">Julho</span></span>
+                                <div class="flex items-center gap-0.5 mt-1">
+                                    <i data-lucide="star" class="w-3 h-3 fill-luxury-muted text-luxury-muted transition-colors"></i>
+                                    <i data-lucide="star" class="w-3 h-3 fill-luxury-muted text-luxury-muted transition-colors"></i>
+                                    <i data-lucide="star" class="w-3 h-3 fill-luxury-muted text-luxury-muted transition-colors"></i>
+                                    <i data-lucide="star" class="w-3 h-3 fill-luxury-muted text-luxury-muted transition-colors"></i>
+                                    <i data-lucide="star" class="w-3 h-3 fill-luxury-muted text-luxury-muted transition-colors"></i>
+                                    <i data-lucide="gem" class="w-3 h-3 text-sky-400 ml-1"></i>
+                                    <span class="text-[9px] text-luxury-muted font-bold ml-1.5 uppercase tracking-wider transition-colors">Padrão Ouro Absoluto</span>
+                                </div>
+                                <span class="text-[9px] sm:text-[10px] uppercase tracking-widest text-luxury-muted font-bold mt-1.5 transition-colors">Lançamento Oficial (Até 7 Meses)</span>
+                                <span class="text-[12px] font-bold text-luxury-text mt-1.5 tracking-wide transition-colors">De R$ 427 a R$ 1.527</span>
                             </div>
                         </div>
-                        <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 transition-colors shadow-sm border border-white/10">
-                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180 text-gray-400"></i>
+                        <div class="w-8 h-8 rounded-full bg-luxury-card flex items-center justify-center flex-shrink-0 transition-colors shadow-sm border border-luxury-border">
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180 text-luxury-muted transition-colors"></i>
                         </div>
                     </summary>
-                    <div class="p-5 sm:p-8 pt-0 border-t border-white/10 mt-2 text-left">
+                    <div class="p-5 sm:p-8 pt-0 border-t border-luxury-border mt-2 text-left transition-colors">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 mt-5">
                             <div>
-                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-white mb-2 pb-2 border-b border-white/5">Curto <span class="text-[9px] text-gray-500 font-normal lowercase tracking-normal">(Até o maxilar)</span></h4>
-                                <div class="flex justify-between text-sm mt-2"><span class="text-gray-400">Fibra Fina</span><span class="font-bold text-white">R$ 427</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-gray-400">Fibra Média</span><span class="font-bold text-white">R$ 527</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-gray-400">Fibra Grossa</span><span class="font-bold text-white">R$ 627</span></div>
+                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-luxury-text mb-2 pb-2 border-b border-luxury-border transition-colors">Curto <span class="text-[9px] text-luxury-muted font-normal lowercase tracking-normal">(Até o maxilar)</span></h4>
+                                <div class="flex justify-between text-sm mt-2"><span class="text-luxury-muted transition-colors">Fibra Fina</span><span class="font-bold text-luxury-text transition-colors">R$ 427</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-luxury-muted transition-colors">Fibra Média</span><span class="font-bold text-luxury-text transition-colors">R$ 527</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-luxury-muted transition-colors">Fibra Grossa</span><span class="font-bold text-luxury-text transition-colors">R$ 627</span></div>
                             </div>
                             <div>
-                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-white mb-2 pb-2 border-b border-white/5">Médio <span class="text-[9px] text-gray-500 font-normal lowercase tracking-normal">(Até os ombros)</span></h4>
-                                <div class="flex justify-between text-sm mt-2"><span class="text-gray-400">Fibra Fina</span><span class="font-bold text-white">R$ 727</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-gray-400">Fibra Média</span><span class="font-bold text-white">R$ 827</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-gray-400">Fibra Grossa</span><span class="font-bold text-white">R$ 927</span></div>
+                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-luxury-text mb-2 pb-2 border-b border-luxury-border transition-colors">Médio <span class="text-[9px] text-luxury-muted font-normal lowercase tracking-normal">(Até os ombros)</span></h4>
+                                <div class="flex justify-between text-sm mt-2"><span class="text-luxury-muted transition-colors">Fibra Fina</span><span class="font-bold text-luxury-text transition-colors">R$ 727</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-luxury-muted transition-colors">Fibra Média</span><span class="font-bold text-luxury-text transition-colors">R$ 827</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-luxury-muted transition-colors">Fibra Grossa</span><span class="font-bold text-luxury-text transition-colors">R$ 927</span></div>
                             </div>
                             <div>
-                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-white mb-2 pb-2 border-b border-white/5">Longo <span class="text-[9px] text-gray-500 font-normal lowercase tracking-normal">(Até as escápulas)</span></h4>
-                                <div class="flex justify-between text-sm mt-2"><span class="text-gray-400">Fibra Fina</span><span class="font-bold text-white">R$ 1.027</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-gray-400">Fibra Média</span><span class="font-bold text-white">R$ 1.127</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-gray-400">Fibra Grossa</span><span class="font-bold text-white">R$ 1.227</span></div>
+                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-luxury-text mb-2 pb-2 border-b border-luxury-border transition-colors">Longo <span class="text-[9px] text-luxury-muted font-normal lowercase tracking-normal">(Até as escápulas)</span></h4>
+                                <div class="flex justify-between text-sm mt-2"><span class="text-luxury-muted transition-colors">Fibra Fina</span><span class="font-bold text-luxury-text transition-colors">R$ 1.027</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-luxury-muted transition-colors">Fibra Média</span><span class="font-bold text-luxury-text transition-colors">R$ 1.127</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-luxury-muted transition-colors">Fibra Grossa</span><span class="font-bold text-luxury-text transition-colors">R$ 1.227</span></div>
                             </div>
                             <div>
-                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-white mb-2 pb-2 border-b border-white/5">Ext. Longo <span class="text-[9px] text-gray-500 font-normal lowercase tracking-normal">(Da cintura em diante)</span></h4>
-                                <div class="flex justify-between text-sm mt-2"><span class="text-gray-400">Fibra Fina</span><span class="font-bold text-white">R$ 1.327</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-gray-400">Fibra Média</span><span class="font-bold text-white">R$ 1.427</span></div>
-                                <div class="flex justify-between text-sm mt-1"><span class="text-gray-400">Fibra Grossa</span><span class="font-bold text-white">R$ 1.527</span></div>
+                                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-luxury-text mb-2 pb-2 border-b border-luxury-border transition-colors">Ext. Longo <span class="text-[9px] text-luxury-muted font-normal lowercase tracking-normal">(Da cintura em diante)</span></h4>
+                                <div class="flex justify-between text-sm mt-2"><span class="text-luxury-muted transition-colors">Fibra Fina</span><span class="font-bold text-luxury-text transition-colors">R$ 1.327</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-luxury-muted transition-colors">Fibra Média</span><span class="font-bold text-luxury-text transition-colors">R$ 1.427</span></div>
+                                <div class="flex justify-between text-sm mt-1"><span class="text-luxury-muted transition-colors">Fibra Grossa</span><span class="font-bold text-luxury-text transition-colors">R$ 1.527</span></div>
                             </div>
                         </div>
-                        <button onclick="openCityModal('Molecular Fusion')" class="w-full mt-6 sm:mt-8 py-4 bg-white hover:bg-gray-200 text-black rounded-xl font-bold text-[13px] uppercase tracking-widest transition-colors focus:outline-none flex items-center justify-center gap-2">
+                        <button onclick="openCityModal('Molecular Fusion')" class="w-full mt-6 sm:mt-8 py-4 bg-luxury-text hover:bg-white text-black rounded-xl font-bold text-[13px] uppercase tracking-widest transition-colors focus:outline-none flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(234,229,223,0.1)]">
                             Reservar Molecular Fusion
                         </button>
                     </div>
@@ -693,14 +770,14 @@
             </div>
 
             <!-- DOIS PILARES -->
-            <div class="max-w-4xl mx-auto bg-brand-100/50 dark:bg-[#110d0b] border border-brand-200 dark:border-white/10 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 shadow-sm">
-                <div class="w-16 h-16 shrink-0 bg-brand-50 dark:bg-black/50 rounded-full flex items-center justify-center border border-brand-200 dark:border-white/20">
+            <div class="max-w-4xl mx-auto bg-brand-100/50 dark:bg-luxury-card border border-brand-200 dark:border-luxury-border rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 shadow-sm transition-colors">
+                <div class="w-16 h-16 shrink-0 bg-white dark:bg-luxury-bg rounded-full flex items-center justify-center border border-brand-200 dark:border-luxury-border transition-colors">
                     <i data-lucide="shield-check" class="w-8 h-8 text-brand-600 dark:text-brand-400"></i>
                 </div>
                 <div class="text-center md:text-left">
-                    <h4 class="font-serif text-xl font-bold text-brand-950 dark:text-white mb-2">Compromisso de Resultados: Os Dois Pilares</h4>
-                    <p class="text-[13px] sm:text-sm text-brand-800 dark:text-gray-400 leading-relaxed">
-                        A performance contínua e a durabilidade dependem da união de dois pilares: a <strong class="text-brand-950 dark:text-white">execução técnica perfeita no salão</strong> e a sua <strong class="text-brand-950 dark:text-white">adesão estrita ao Protocolo de Manutenção (Home Care)</strong> em casa.
+                    <h4 class="font-serif text-xl font-bold text-brand-950 dark:text-luxury-text mb-2 transition-colors">Compromisso de Resultados: Os Dois Pilares</h4>
+                    <p class="text-[13px] sm:text-sm text-brand-800 dark:text-luxury-muted leading-relaxed transition-colors">
+                        A performance contínua e a durabilidade dependem da união de dois pilares: a <strong class="text-brand-950 dark:text-luxury-text transition-colors">execução técnica perfeita no salão</strong> e a sua <strong class="text-brand-950 dark:text-luxury-text transition-colors">adesão estrita ao Protocolo de Manutenção (Home Care)</strong> em casa.
                     </p>
                 </div>
             </div>
@@ -718,65 +795,65 @@
 
             <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:gap-6 px-6 sm:px-8 md:px-4 custom-scrollbar items-stretch max-w-6xl mx-auto pb-6 lg:justify-center">
                 <!-- Terapias -->
-                <article class="snap-start shrink-0 w-[75vw] sm:w-[280px] flex flex-col justify-between bg-white dark:bg-luxury-card backdrop-blur-md border-2 border-brand-200 dark:border-brand-800/60 hover:border-brand-400 dark:hover:border-brand-500/50 rounded-[2rem] p-6 sm:p-8 shadow-md hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                <article class="snap-start shrink-0 w-[75vw] sm:w-[280px] flex flex-col justify-between bg-white dark:bg-luxury-card backdrop-blur-md border border-brand-200 dark:border-luxury-border hover:border-brand-400 dark:hover:border-brand-500/50 rounded-[2rem] p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-2">
                     <div class="flex flex-col flex-grow">
-                        <div class="w-12 h-12 rounded-full bg-brand-50 dark:bg-luxury-border flex items-center justify-center mb-5 border border-brand-200 dark:border-transparent group-hover:scale-110 transition-transform shadow-sm">
+                        <div class="w-12 h-12 rounded-full bg-brand-50 dark:bg-luxury-bg flex items-center justify-center mb-5 border border-brand-200 dark:border-luxury-border group-hover:scale-110 transition-transform shadow-sm">
                             <i data-lucide="sparkles" class="w-5 h-5 text-brand-600 dark:text-brand-300"></i>
                         </div>
                         <h3 class="font-serif text-xl sm:text-2xl font-medium text-brand-950 dark:text-luxury-text mb-2 transition-colors">Terapias & Spa</h3>
                         <p class="text-[12px] sm:text-[13px] text-brand-800 dark:text-luxury-muted font-light leading-relaxed transition-colors">Rituais personalizados de nutrição e reconstrução profunda para a saúde máxima e vitalidade absoluta dos fios.</p>
-                        <div class="mt-auto pt-5 border-t border-brand-900/5 dark:border-luxury-border mt-5 mb-5 flex flex-col gap-0.5">
+                        <div class="mt-auto pt-5 border-t border-brand-100 dark:border-luxury-border mt-5 mb-5 flex flex-col gap-0.5 transition-colors">
                             <span class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-700 dark:text-brand-400 transition-colors">Investimento</span>
-                            <span class="font-serif text-2xl font-medium text-brand-950 dark:text-luxury-text">R$ 250</span>
+                            <span class="font-serif text-2xl font-medium text-brand-950 dark:text-luxury-text transition-colors">R$ 250</span>
                         </div>
                     </div>
-                    <button onclick="openCityModal('Terapias e Spa')" class="w-full py-3 px-4 border border-brand-900/20 dark:border-luxury-border rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-center text-brand-950 dark:text-luxury-text hover:bg-brand-900 hover:text-white dark:hover:bg-luxury-text/10 transition-colors focus:outline-none">
+                    <button onclick="openCityModal('Terapias e Spa')" class="w-full py-3 px-4 border border-brand-200 dark:border-luxury-border rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-center text-brand-950 dark:text-luxury-text hover:bg-brand-900 hover:text-white dark:hover:bg-luxury-text/10 transition-colors focus:outline-none">
                         Agendar Sessão
                     </button>
                 </article>
 
                 <!-- Corte -->
-                <article class="snap-start shrink-0 w-[75vw] sm:w-[280px] flex flex-col justify-between bg-white dark:bg-luxury-card backdrop-blur-md border-2 border-brand-200 dark:border-brand-800/60 hover:border-brand-400 dark:hover:border-brand-500/50 rounded-[2rem] p-6 sm:p-8 shadow-md hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                <article class="snap-start shrink-0 w-[75vw] sm:w-[280px] flex flex-col justify-between bg-white dark:bg-luxury-card backdrop-blur-md border border-brand-200 dark:border-luxury-border hover:border-brand-400 dark:hover:border-brand-500/50 rounded-[2rem] p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-2">
                     <div class="flex flex-col flex-grow">
-                        <div class="w-12 h-12 rounded-full bg-brand-50 dark:bg-luxury-border flex items-center justify-center mb-5 border border-brand-200 dark:border-transparent group-hover:scale-110 transition-transform shadow-sm">
+                        <div class="w-12 h-12 rounded-full bg-brand-50 dark:bg-luxury-bg flex items-center justify-center mb-5 border border-brand-200 dark:border-luxury-border group-hover:scale-110 transition-transform shadow-sm">
                             <i data-lucide="scissors" class="w-5 h-5 text-brand-600 dark:text-brand-300"></i>
                         </div>
                         <h3 class="font-serif text-xl sm:text-2xl font-medium text-brand-950 dark:text-luxury-text mb-2 transition-colors">Visagismo & Corte</h3>
                         <p class="text-[12px] sm:text-[13px] text-brand-800 dark:text-luxury-muted font-light leading-relaxed transition-colors">Desenho estratégico do visual com técnicas de precisão para um caimento sofisticado e muito prático no dia a dia.</p>
-                        <div class="mt-auto pt-5 border-t border-brand-900/5 dark:border-luxury-border mt-5 mb-5 flex flex-col gap-0.5">
+                        <div class="mt-auto pt-5 border-t border-brand-100 dark:border-luxury-border mt-5 mb-5 flex flex-col gap-0.5 transition-colors">
                             <span class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-700 dark:text-brand-400 transition-colors">Investimento</span>
-                            <span class="font-serif text-2xl font-medium text-brand-950 dark:text-luxury-text">R$ 210</span>
+                            <span class="font-serif text-2xl font-medium text-brand-950 dark:text-luxury-text transition-colors">R$ 210</span>
                         </div>
                     </div>
-                    <button onclick="openCityModal('Visagismo e Corte')" class="w-full py-3 px-4 border border-brand-900/20 dark:border-luxury-border rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-center text-brand-950 dark:text-luxury-text hover:bg-brand-900 hover:text-white dark:hover:bg-luxury-text/10 transition-colors focus:outline-none">
+                    <button onclick="openCityModal('Visagismo e Corte')" class="w-full py-3 px-4 border border-brand-200 dark:border-luxury-border rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-center text-brand-950 dark:text-luxury-text hover:bg-brand-900 hover:text-white dark:hover:bg-luxury-text/10 transition-colors focus:outline-none">
                         Reservar Horário
                     </button>
                 </article>
 
                 <!-- Colorimetria -->
-                <article class="snap-start shrink-0 w-[75vw] sm:w-[280px] flex flex-col justify-between bg-white dark:bg-luxury-card backdrop-blur-md border-2 border-brand-200 dark:border-brand-800/60 hover:border-brand-400 dark:hover:border-brand-500/50 rounded-[2rem] p-6 sm:p-8 shadow-md hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                <article class="snap-start shrink-0 w-[75vw] sm:w-[280px] flex flex-col justify-between bg-white dark:bg-luxury-card backdrop-blur-md border border-brand-200 dark:border-luxury-border hover:border-brand-400 dark:hover:border-brand-500/50 rounded-[2rem] p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-2">
                     <div class="flex flex-col flex-grow">
-                        <div class="w-12 h-12 rounded-full bg-brand-50 dark:bg-luxury-border flex items-center justify-center mb-5 border border-brand-200 dark:border-transparent group-hover:scale-110 transition-transform shadow-sm">
+                        <div class="w-12 h-12 rounded-full bg-brand-50 dark:bg-luxury-bg flex items-center justify-center mb-5 border border-brand-200 dark:border-luxury-border group-hover:scale-110 transition-transform shadow-sm">
                             <i data-lucide="palette" class="w-5 h-5 text-brand-600 dark:text-brand-300"></i>
                         </div>
                         <h3 class="font-serif text-xl sm:text-2xl font-medium text-brand-950 dark:text-luxury-text mb-2 transition-colors">Colorimetria</h3>
                         <p class="text-[12px] sm:text-[13px] text-brand-800 dark:text-luxury-muted font-light leading-relaxed transition-colors">Cores vibrantes, cobertura impecável e brilho espelhado com as lines europeias mais conceituadas do mercado.</p>
-                        <div class="mt-auto pt-5 border-t border-brand-900/5 dark:border-luxury-border mt-5 mb-5 flex flex-col gap-0.5">
+                        <div class="mt-auto pt-5 border-t border-brand-100 dark:border-luxury-border mt-5 mb-5 flex flex-col gap-0.5 transition-colors">
                             <span class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-700 dark:text-brand-400 transition-colors">Investimento</span>
-                            <span class="font-serif text-lg font-medium text-brand-950 dark:text-luxury-text italic">Sob Avaliação</span>
+                            <span class="font-serif text-lg font-medium text-brand-950 dark:text-luxury-text italic transition-colors">Sob Avaliação</span>
                         </div>
                     </div>
-                    <button onclick="openCityModal('Colorimetria')" class="w-full py-3 px-4 border border-brand-900/20 dark:border-luxury-border rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-center text-brand-950 dark:text-luxury-text hover:bg-brand-900 hover:text-white dark:hover:bg-luxury-text/10 transition-colors focus:outline-none">
+                    <button onclick="openCityModal('Colorimetria')" class="w-full py-3 px-4 border border-brand-200 dark:border-luxury-border rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-center text-brand-950 dark:text-luxury-text hover:bg-brand-900 hover:text-white dark:hover:bg-luxury-text/10 transition-colors focus:outline-none">
                         Agendar Diagnóstico
                     </button>
                 </article>
             </div>
             
             <div class="md:hidden flex items-center justify-center mt-6 mb-2 relative z-20 pointer-events-none">
-                <div class="animate-bounce-horizontal flex items-center gap-3 bg-white/95 dark:bg-luxury-card/95 px-6 py-2.5 rounded-full border border-brand-200/80 dark:border-luxury-border/80 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.4)] backdrop-blur-md">
-                    <i data-lucide="arrow-left" class="w-3.5 h-3.5 text-brand-400 dark:text-luxury-muted"></i>
-                    <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-brand-900 dark:text-luxury-text">Deslize a lista</span>
-                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-brand-600 dark:text-brand-400"></i>
+                <div class="animate-bounce-horizontal flex items-center gap-3 bg-white/95 dark:bg-luxury-card/95 px-6 py-2.5 rounded-full border border-brand-200/80 dark:border-luxury-border shadow-sm backdrop-blur-md transition-colors">
+                    <i data-lucide="arrow-left" class="w-3.5 h-3.5 text-brand-400 dark:text-luxury-muted transition-colors"></i>
+                    <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-brand-900 dark:text-luxury-text transition-colors">Deslize a lista</span>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-brand-600 dark:text-brand-400 transition-colors"></i>
                 </div>
             </div>
         </section>
@@ -784,59 +861,59 @@
         <!-- 10. A VERDADE REVELADA (FAQ) -->
         <section aria-labelledby="faq-title" class="w-full max-w-4xl mx-auto reveal py-24 w-full px-4 md:px-0">
             <div class="text-center mb-12">
-                <h3 id="faq-title" class="font-serif text-4xl md:text-5xl text-brand-950 dark:text-white font-medium leading-snug transition-colors">
+                <h3 id="faq-title" class="font-serif text-4xl md:text-5xl text-brand-950 dark:text-luxury-text font-medium leading-snug transition-colors">
                     A Verdade Revelada
                 </h3>
-                <p class="mt-4 text-brand-800 dark:text-gray-400 font-medium text-base max-w-2xl mx-auto transition-colors">
+                <p class="mt-4 text-brand-800 dark:text-luxury-muted font-medium text-base max-w-2xl mx-auto transition-colors">
                     Transparência absoluta sobre as nossas tecnologias.
                 </p>
             </div>
             
             <div class="space-y-4 text-left">
-                <details class="bg-white/95 dark:bg-[#0A0A0C] backdrop-blur-xl border border-brand-900/5 dark:border-white/10 rounded-2xl group cursor-pointer shadow-sm hover:shadow-md transition-all duration-300">
-                    <summary class="list-none flex justify-between items-center p-6 sm:p-8 font-bold text-brand-950 dark:text-white group-open:text-brand-700 dark:group-open:text-brand-400 transition-colors outline-none text-[15px] sm:text-lg font-serif">
+                <details class="bg-white/95 dark:bg-luxury-card backdrop-blur-xl border border-brand-100 dark:border-luxury-border rounded-2xl group cursor-pointer shadow-sm hover:shadow-md transition-all duration-300">
+                    <summary class="list-none flex justify-between items-center p-6 sm:p-8 font-bold text-brand-950 dark:text-luxury-text group-open:text-brand-700 dark:group-open:text-brand-400 transition-colors outline-none text-[15px] sm:text-lg font-serif">
                         <span class="pr-4">Os alisamentos contêm formol ou derivados?</span>
-                        <div class="w-8 h-8 rounded-full bg-brand-50 dark:bg-white/5 flex items-center justify-center flex-shrink-0 transition-colors">
-                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180 dark:text-gray-400"></i>
+                        <div class="w-8 h-8 rounded-full bg-brand-50 dark:bg-luxury-bg flex items-center justify-center flex-shrink-0 transition-colors border border-brand-200 dark:border-luxury-border">
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180 text-brand-600 dark:text-luxury-muted"></i>
                         </div>
                     </summary>
-                    <div class="p-6 sm:p-8 pt-0 text-brand-800 dark:text-gray-400 text-[14px] sm:text-base font-medium border-t border-brand-900/5 dark:border-white/10 mt-2 leading-relaxed cursor-text transition-colors">
+                    <div class="p-6 sm:p-8 pt-0 text-brand-800 dark:text-luxury-muted text-[14px] sm:text-base font-medium border-t border-brand-100 dark:border-luxury-border mt-2 leading-relaxed cursor-text transition-colors">
                         Absolutamente zero. A nossa tecnologia é desenvolvida com engenharia limpa e ativos nobres. Não causa ardência nos olhos, não irrita o couro cabeludo e é totalmente segura.
                     </div>
                 </details>
                 
-                <details class="bg-white/95 dark:bg-[#0A0A0C] backdrop-blur-xl border border-brand-900/5 dark:border-white/10 rounded-2xl group cursor-pointer shadow-sm hover:shadow-md transition-all duration-300">
-                    <summary class="list-none flex justify-between items-center p-6 sm:p-8 font-bold text-brand-950 dark:text-white group-open:text-brand-700 dark:group-open:text-brand-400 transition-colors outline-none text-[15px] sm:text-lg font-serif">
+                <details class="bg-white/95 dark:bg-luxury-card backdrop-blur-xl border border-brand-100 dark:border-luxury-border rounded-2xl group cursor-pointer shadow-sm hover:shadow-md transition-all duration-300">
+                    <summary class="list-none flex justify-between items-center p-6 sm:p-8 font-bold text-brand-950 dark:text-luxury-text group-open:text-brand-700 dark:group-open:text-brand-400 transition-colors outline-none text-[15px] sm:text-lg font-serif">
                         <span class="pr-4">O meu cabelo é loiro. Vai desbotar a cor?</span>
-                        <div class="w-8 h-8 rounded-full bg-brand-50 dark:bg-white/5 flex items-center justify-center flex-shrink-0 transition-colors">
-                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180 dark:text-gray-400"></i>
+                        <div class="w-8 h-8 rounded-full bg-brand-50 dark:bg-luxury-bg flex items-center justify-center flex-shrink-0 transition-colors border border-brand-200 dark:border-luxury-border">
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180 text-brand-600 dark:text-luxury-muted"></i>
                         </div>
                     </summary>
-                    <div class="p-6 sm:p-8 pt-0 text-brand-800 dark:text-gray-400 text-[14px] sm:text-base font-medium border-t border-brand-900/5 dark:border-white/10 mt-2 leading-relaxed cursor-text transition-colors">
+                    <div class="p-6 sm:p-8 pt-0 text-brand-800 dark:text-luxury-muted text-[14px] sm:text-base font-medium border-t border-brand-100 dark:border-luxury-border mt-2 leading-relaxed cursor-text transition-colors">
                         É exatamente por isso que criámos o <strong>Molecular Platinum Infusion</strong>. Ele é um protocolo com Pigment Code V 43, desenvolvido especificamente para blindar e matizar o loiro durante o processo de selagem térmica, garantindo um liso espelhado e um tom frio impecável.
                     </div>
                 </details>
 
-                <details class="bg-white/95 dark:bg-[#0A0A0C] backdrop-blur-xl border border-brand-900/5 dark:border-white/10 rounded-2xl group cursor-pointer shadow-sm hover:shadow-md transition-all duration-300">
-                    <summary class="list-none flex justify-between items-center p-6 sm:p-8 font-bold text-brand-950 dark:text-white group-open:text-brand-700 dark:group-open:text-brand-400 transition-colors outline-none text-[15px] sm:text-lg font-serif">
+                <details class="bg-white/95 dark:bg-luxury-card backdrop-blur-xl border border-brand-100 dark:border-luxury-border rounded-2xl group cursor-pointer shadow-sm hover:shadow-md transition-all duration-300">
+                    <summary class="list-none flex justify-between items-center p-6 sm:p-8 font-bold text-brand-950 dark:text-luxury-text group-open:text-brand-700 dark:group-open:text-brand-400 transition-colors outline-none text-[15px] sm:text-lg font-serif">
                         <span class="pr-4">Gestantes e lactantes podem realizar os protocolos?</span>
-                        <div class="w-8 h-8 rounded-full bg-brand-50 dark:bg-white/5 flex items-center justify-center flex-shrink-0 transition-colors">
-                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180 dark:text-gray-400"></i>
+                        <div class="w-8 h-8 rounded-full bg-brand-50 dark:bg-luxury-bg flex items-center justify-center flex-shrink-0 transition-colors border border-brand-200 dark:border-luxury-border">
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180 text-brand-600 dark:text-luxury-muted"></i>
                         </div>
                     </summary>
-                    <div class="p-6 sm:p-8 pt-0 text-brand-800 dark:text-gray-400 text-[14px] sm:text-base font-medium border-t border-brand-900/5 dark:border-white/10 mt-2 leading-relaxed cursor-text transition-colors">
+                    <div class="p-6 sm:p-8 pt-0 text-brand-800 dark:text-luxury-muted text-[14px] sm:text-base font-medium border-t border-brand-100 dark:border-luxury-border mt-2 leading-relaxed cursor-text transition-colors">
                         Sim! Por sermos 0% formol e usarmos biotecnologia segura, os nossos protocolos são liberados para gestantes e lactantes. Recomendamos apenas a avaliação obrigatória prévia para garantia total.
                     </div>
                 </details>
 
-                <details class="bg-white/95 dark:bg-[#0A0A0C] backdrop-blur-xl border border-brand-900/5 dark:border-white/10 rounded-2xl group cursor-pointer shadow-sm hover:shadow-md transition-all duration-300">
-                    <summary class="list-none flex justify-between items-center p-6 sm:p-8 font-bold text-brand-950 dark:text-white group-open:text-brand-700 dark:group-open:text-brand-400 transition-colors outline-none text-[15px] sm:text-lg font-serif">
+                <details class="bg-white/95 dark:bg-luxury-card backdrop-blur-xl border border-brand-100 dark:border-luxury-border rounded-2xl group cursor-pointer shadow-sm hover:shadow-md transition-all duration-300">
+                    <summary class="list-none flex justify-between items-center p-6 sm:p-8 font-bold text-brand-950 dark:text-luxury-text group-open:text-brand-700 dark:group-open:text-brand-400 transition-colors outline-none text-[15px] sm:text-lg font-serif">
                         <span class="pr-4">Qual a diferença do Protocolo Standard para o Molecular Fusion?</span>
-                        <div class="w-8 h-8 rounded-full bg-brand-50 dark:bg-white/5 flex items-center justify-center flex-shrink-0 transition-colors">
-                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180 dark:text-gray-400"></i>
+                        <div class="w-8 h-8 rounded-full bg-brand-50 dark:bg-luxury-bg flex items-center justify-center flex-shrink-0 transition-colors border border-brand-200 dark:border-luxury-border">
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180 text-brand-600 dark:text-luxury-muted"></i>
                         </div>
                     </summary>
-                    <div class="p-6 sm:p-8 pt-0 text-brand-800 dark:text-gray-400 text-[14px] sm:text-base font-medium border-t border-brand-900/5 dark:border-white/10 mt-2 leading-relaxed cursor-text transition-colors">
+                    <div class="p-6 sm:p-8 pt-0 text-brand-800 dark:text-luxury-muted text-[14px] sm:text-base font-medium border-t border-brand-100 dark:border-luxury-border mt-2 leading-relaxed cursor-text transition-colors">
                         O <strong>Protocolo Standard</strong> é excelente para iniciação, entregando praticidade com durabilidade de até 3 meses. Já o <strong>Molecular Fusion</strong> é a nossa coroa de performance: utiliza tecnologia de fusão para uma longevidade extrema de <strong>até 7 meses</strong>, preservando a máxima integridade do fio a longo prazo.
                     </div>
                 </details>
@@ -844,53 +921,53 @@
         </section>
 
         <!-- 11. A REFERÊNCIA (EXPANSÃO B2B) -->
-        <section class="relative w-[100vw] py-24 border-y border-brand-200/50 dark:border-white/10 bg-brand-50/50 dark:bg-[#050505] -mx-4 px-4 transition-colors">
+        <section class="relative w-[100vw] py-24 border-y border-brand-200/50 dark:border-luxury-border bg-brand-50/50 dark:bg-[#080605] -mx-4 px-4 transition-colors">
             <div class="max-w-[1440px] mx-auto px-2 md:px-12">
                 <div class="text-center mb-16">
                     <i data-lucide="shield-check" class="mx-auto text-brand-600 dark:text-brand-400 mb-6 w-12 h-12 transition-colors"></i>
-                    <h3 class="font-serif text-4xl md:text-5xl text-brand-950 dark:text-white font-medium leading-snug transition-colors">
+                    <h3 class="font-serif text-4xl md:text-5xl text-brand-950 dark:text-luxury-text font-medium leading-snug transition-colors">
                         A Referência em Engenharia Capilar
                     </h3>
-                    <p class="mt-6 text-brand-800 dark:text-gray-400 font-medium text-base md:text-lg max-w-2xl mx-auto leading-relaxed transition-colors">
+                    <p class="mt-6 text-brand-800 dark:text-luxury-muted font-medium text-base md:text-lg max-w-2xl mx-auto leading-relaxed transition-colors">
                         O ecossistema Essência de Romã opera sob um rigoroso padrão de qualidade nas nossas unidades próprias e em expansão.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
                     <!-- Matriz -->
-                    <div class="p-6 md:p-8 rounded-xl border border-brand-300 dark:border-brand-500/40 bg-white dark:bg-brand-500/10 text-center shadow-md flex flex-col justify-center transition-transform hover:-translate-y-1 cursor-default">
-                        <span class="text-brand-950 dark:text-white font-serif text-xl lg:text-2xl font-bold mb-2 transition-colors">Chapecó</span>
+                    <div class="p-6 md:p-8 rounded-xl border border-brand-300 dark:border-luxury-border bg-white dark:bg-luxury-card text-center shadow-sm flex flex-col justify-center transition-all hover:-translate-y-1 cursor-default">
+                        <span class="text-brand-950 dark:text-luxury-text font-serif text-xl lg:text-2xl font-bold mb-2 transition-colors">Chapecó</span>
                         <span class="text-xs uppercase tracking-widest text-brand-600 dark:text-brand-400 font-bold transition-colors">Matriz</span>
                     </div>
                     
                     <!-- Seara -->
-                    <div class="p-6 md:p-8 rounded-xl border border-brand-200 dark:border-white/10 bg-white/50 dark:bg-white/5 text-center flex flex-col justify-center transition-transform hover:-translate-y-1 cursor-default shadow-sm">
-                        <span class="text-brand-950 dark:text-white font-serif text-xl lg:text-2xl font-bold mb-2 transition-colors">Seara</span>
-                        <span class="text-xs uppercase tracking-widest text-brand-600 dark:text-gray-400 font-bold transition-colors">Studio T</span>
+                    <div class="p-6 md:p-8 rounded-xl border border-brand-200 dark:border-luxury-border bg-white/50 dark:bg-luxury-bg text-center flex flex-col justify-center transition-all hover:-translate-y-1 cursor-default shadow-sm">
+                        <span class="text-brand-950 dark:text-luxury-text font-serif text-xl lg:text-2xl font-bold mb-2 transition-colors">Seara</span>
+                        <span class="text-xs uppercase tracking-widest text-brand-600 dark:text-luxury-muted font-bold transition-colors">Studio T</span>
                     </div>
 
                     <!-- Concórdia -->
-                    <div class="p-6 md:p-8 rounded-xl border border-brand-200/50 dark:border-white/5 bg-transparent text-center flex flex-col justify-center opacity-70 grayscale cursor-not-allowed">
-                        <span class="text-brand-800 dark:text-gray-500 font-serif text-xl lg:text-2xl font-bold mb-2 transition-colors">Concórdia</span>
-                        <span class="text-[10px] uppercase tracking-widest text-brand-800 dark:text-gray-500 font-bold flex items-center justify-center gap-1.5 transition-colors">
+                    <div class="p-6 md:p-8 rounded-xl border border-brand-200/50 dark:border-luxury-border bg-transparent text-center flex flex-col justify-center opacity-70 grayscale cursor-not-allowed">
+                        <span class="text-brand-800 dark:text-luxury-muted font-serif text-xl lg:text-2xl font-bold mb-2 transition-colors">Concórdia</span>
+                        <span class="text-[10px] uppercase tracking-widest text-brand-800 dark:text-luxury-muted font-bold flex items-center justify-center gap-1.5 transition-colors">
                             <i data-lucide="lock" class="w-3 h-3"></i> Fechado
                         </span>
                     </div>
 
                     <!-- Pato Branco -->
-                    <div class="p-6 md:p-8 rounded-xl border border-brand-400/50 dark:border-brand-400/30 bg-brand-100/50 dark:bg-black/40 text-center flex flex-col justify-center relative overflow-hidden group transition-transform hover:-translate-y-1 cursor-default">
+                    <div class="p-6 md:p-8 rounded-xl border border-brand-400/50 dark:border-brand-500/30 bg-brand-100/50 dark:bg-luxury-card text-center flex flex-col justify-center relative overflow-hidden group transition-all hover:-translate-y-1 cursor-default shadow-sm">
                         <div class="absolute inset-0 bg-brand-400/10 animate-pulse"></div>
-                        <span class="text-brand-950 dark:text-white font-serif text-xl lg:text-2xl font-bold mb-2 relative z-10 transition-colors">Pato Branco</span>
+                        <span class="text-brand-950 dark:text-luxury-text font-serif text-xl lg:text-2xl font-bold mb-2 relative z-10 transition-colors">Pato Branco</span>
                         <span class="text-[10px] uppercase tracking-widest text-brand-700 dark:text-brand-400 font-bold relative z-10 leading-tight transition-colors">Em Negociação</span>
                     </div>
 
                     <!-- Franquia -->
                     <div onclick="openB2BModal()" 
-                         class="p-6 md:p-8 rounded-xl border border-[#128C7E]/50 dark:border-[#25D366]/50 bg-[#128C7E]/10 dark:bg-[#25D366]/10 text-center flex flex-col justify-center shadow-sm cursor-pointer hover:bg-[#128C7E]/20 dark:hover:bg-[#25D366]/20 transition-all hover:-translate-y-1 group">
-                        <span class="text-brand-950 dark:text-white font-serif text-xl lg:text-2xl font-bold mb-4 leading-tight transition-colors">Sua Cidade</span>
-                        <div class="flex items-center justify-center gap-2 bg-[#128C7E] dark:bg-[#25D366] px-3 py-2 rounded-md mx-auto shadow-md transition-colors">
-                            <i data-lucide="user-plus" class="w-4 h-4 text-white dark:text-black"></i>
-                            <span class="text-[10px] uppercase tracking-widest font-bold text-white dark:text-black">Seja Parceira</span>
+                         class="p-6 md:p-8 rounded-xl border border-[#128C7E]/50 dark:border-[#1EBE5D]/30 bg-[#128C7E]/10 dark:bg-[#1EBE5D]/10 text-center flex flex-col justify-center shadow-sm cursor-pointer hover:bg-[#128C7E]/20 dark:hover:bg-[#1EBE5D]/20 transition-all hover:-translate-y-1 group">
+                        <span class="text-brand-950 dark:text-luxury-text font-serif text-xl lg:text-2xl font-bold mb-4 leading-tight transition-colors">Sua Cidade</span>
+                        <div class="flex items-center justify-center gap-2 bg-[#128C7E] dark:bg-[#1EBE5D] px-3 py-2 rounded-md mx-auto shadow-md transition-colors">
+                            <i data-lucide="user-plus" class="w-4 h-4 text-white dark:text-luxury-bg"></i>
+                            <span class="text-[10px] uppercase tracking-widest font-bold text-white dark:text-luxury-bg">Seja Parceira</span>
                         </div>
                     </div>
                 </div>
@@ -898,7 +975,7 @@
         </section>
 
         <!-- 12. SEO Orgânico Oculto -->
-        <section class="w-full max-w-4xl text-center text-brand-800/60 dark:text-luxury-border text-[10px] sm:text-[11px] mt-8 sm:mt-16 px-4 reveal transition-colors">
+        <section class="w-full max-w-4xl text-center text-brand-800/60 dark:text-luxury-muted text-[10px] sm:text-[11px] mt-8 sm:mt-16 px-4 reveal transition-colors">
             <h2 class="sr-only">O Melhor Salão de Chapecó e Seara</h2>
             <p class="leading-relaxed font-light">A Essência de Romã Hair é indiscutivelmente o <strong>melhor salão de Chapecó</strong> e o <strong>melhor salão em Seara</strong> quando o assunto é <strong>alisamento de alta performance</strong>. Atuamos com a verdadeira evolução da <strong>estética capilar em seara</strong>, <strong>alisamentos</strong> e <strong>selagens</strong>. Além disso, somos pioneiros num incrível <strong>redutor do Frizz</strong> e no melhor <strong>produto para o frizz</strong> do mercado.</p>
         </section>
@@ -907,21 +984,21 @@
     <!-- MODAL DE ESCOLHA DE UNIDADE -->
     <div id="city-modal" class="fixed inset-0 z-[150] hidden opacity-0 transition-opacity duration-300 transition-colors">
         <div class="absolute inset-0 bg-brand-950/60 dark:bg-black/80 backdrop-blur-sm transition-colors" onclick="closeCityModal()"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-sm bg-white dark:bg-luxury-card rounded-3xl shadow-2xl border border-brand-900/10 dark:border-luxury-border p-5 sm:p-8 flex flex-col items-center text-center transition-colors">
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-sm bg-white dark:bg-luxury-card rounded-3xl shadow-2xl border border-brand-200 dark:border-luxury-border p-5 sm:p-8 flex flex-col items-center text-center transition-colors">
             <button onclick="closeCityModal()" class="absolute top-2 right-2 p-4 text-brand-700 dark:text-brand-400 hover:text-brand-900 dark:hover:text-luxury-text transition-colors rounded-full focus:outline-none"><i data-lucide="x" class="w-5 h-5 stroke-[2]"></i></button>
-            <div class="w-12 h-12 rounded-full bg-brand-50 dark:bg-luxury-bg flex items-center justify-center mb-4 transition-colors">
+            <div class="w-12 h-12 rounded-full bg-brand-50 dark:bg-luxury-bg flex items-center justify-center mb-4 transition-colors border border-brand-200 dark:border-luxury-border">
                 <i data-lucide="map-pin" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
             </div>
             <h3 class="font-serif text-xl sm:text-2xl text-brand-950 dark:text-luxury-text font-medium mb-2 transition-colors">Escolha a Unidade</h3>
             <p id="modal-service-desc" class="text-[12px] sm:text-[13px] text-brand-800 dark:text-luxury-muted font-light mb-6 transition-colors">Selecione onde prefere realizar a sua avaliação para <strong id="modal-service-name" class="font-semibold text-brand-950 dark:text-luxury-text transition-colors">...</strong>.</p>
             <div class="flex flex-col gap-3 w-full">
-                <button onclick="handleCitySelection('Chapecó')" class="w-full py-3.5 px-4 bg-[#128C7E] dark:bg-[#1EBE5D] hover:bg-[#075E54] dark:hover:bg-[#25D366] text-white dark:text-luxury-bg rounded-xl font-bold text-[13px] transition-colors shadow-md focus:outline-none flex items-center justify-center gap-2">
+                <button onclick="handleCitySelection('Chapecó')" class="w-full py-3.5 px-4 btn-emerald-luxury rounded-xl font-bold text-[13px] transition-colors focus:outline-none flex items-center justify-center gap-2">
                     Centro de Chapecó
                 </button>
-                <button onclick="handleCitySelection('Seara')" class="w-full py-3.5 px-4 bg-transparent border border-brand-200 dark:border-luxury-border hover:border-brand-500 dark:hover:border-brand-400 text-brand-950 dark:text-luxury-text rounded-xl font-bold text-[13px] transition-colors focus:outline-none flex items-center justify-center gap-2">
+                <button onclick="handleCitySelection('Seara')" class="w-full py-3.5 px-4 bg-transparent border border-brand-200 dark:border-luxury-border hover:border-brand-500 text-brand-950 dark:text-luxury-text rounded-xl font-bold text-[13px] transition-colors focus:outline-none flex items-center justify-center gap-2">
                     Centro de Seara
                 </button>
-                <button onclick="handleCitySelection('Pato Branco')" class="w-full py-3.5 px-4 bg-brand-900 dark:bg-white/10 hover:bg-brand-800 dark:hover:bg-white/20 text-white border border-transparent dark:border-white/20 rounded-xl font-bold text-[13px] transition-colors focus:outline-none flex items-center justify-center gap-2">
+                <button onclick="handleCitySelection('Pato Branco')" class="w-full py-3.5 px-4 bg-brand-900 dark:bg-luxury-bg hover:bg-brand-800 text-white dark:text-luxury-text border border-transparent dark:border-luxury-border rounded-xl font-bold text-[13px] transition-colors focus:outline-none flex items-center justify-center gap-2">
                     Pato Branco - PR (Lista de Espera)
                 </button>
             </div>
@@ -931,27 +1008,27 @@
     <!-- MODAL B2B DE QUALIFICAÇÃO / FRANQUIA -->
     <div id="b2b-modal" class="fixed inset-0 z-[150] hidden opacity-0 transition-opacity duration-300 transition-colors">
         <div class="absolute inset-0 bg-brand-950/60 dark:bg-black/80 backdrop-blur-sm transition-colors" onclick="closeB2BModal()"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-sm bg-white dark:bg-luxury-card rounded-3xl shadow-2xl border border-brand-900/10 dark:border-luxury-border p-5 sm:p-8 flex flex-col items-center text-center transition-colors">
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-sm bg-white dark:bg-luxury-card rounded-3xl shadow-2xl border border-brand-200 dark:border-luxury-border p-5 sm:p-8 flex flex-col items-center text-center transition-colors">
             <button onclick="closeB2BModal()" class="absolute top-2 right-2 p-4 text-brand-700 dark:text-brand-400 hover:text-brand-900 dark:hover:text-luxury-text transition-colors rounded-full focus:outline-none"><i data-lucide="x" class="w-5 h-5 stroke-[2]"></i></button>
-            <div class="w-12 h-12 rounded-full bg-[#128C7E]/10 dark:bg-[#25D366]/10 flex items-center justify-center mb-4 transition-colors border border-[#128C7E]/20 dark:border-[#25D366]/20">
-                <i data-lucide="user-plus" class="w-6 h-6 text-[#128C7E] dark:text-[#25D366]"></i>
+            <div class="w-12 h-12 rounded-full bg-[#128C7E]/10 dark:bg-[#1EBE5D]/10 flex items-center justify-center mb-4 transition-colors border border-[#128C7E]/20 dark:border-[#1EBE5D]/20">
+                <i data-lucide="user-plus" class="w-6 h-6 text-[#128C7E] dark:text-[#1EBE5D]"></i>
             </div>
             <h3 class="font-serif text-xl sm:text-2xl text-brand-950 dark:text-luxury-text font-medium mb-2 transition-colors">Parceria Premium</h3>
             <p class="text-[12px] sm:text-[13px] text-brand-800 dark:text-luxury-muted font-light mb-6 transition-colors">Preencha os dados abaixo para analisarmos a viabilidade do credenciamento na sua região.</p>
             
             <div class="flex flex-col gap-4 w-full text-left">
-                <input type="text" id="b2b-nome" placeholder="Seu Nome Completo" class="w-full bg-brand-50 dark:bg-black/40 border border-brand-200 dark:border-white/20 rounded-xl px-4 py-3 text-brand-950 dark:text-white placeholder-brand-800/50 dark:placeholder-white/40 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all text-[13px]">
+                <input type="text" id="b2b-nome" placeholder="Seu Nome Completo" class="w-full bg-brand-50 dark:bg-luxury-bg border border-brand-200 dark:border-luxury-border rounded-xl px-4 py-3 text-brand-950 dark:text-luxury-text placeholder-brand-800/50 dark:placeholder-luxury-muted focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all text-[13px]">
                 
-                <input type="text" id="b2b-cidade" placeholder="Sua Cidade e Estado (Ex: Londrina - PR)" class="w-full bg-brand-50 dark:bg-black/40 border border-brand-200 dark:border-white/20 rounded-xl px-4 py-3 text-brand-950 dark:text-white placeholder-brand-800/50 dark:placeholder-white/40 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all text-[13px]">
+                <input type="text" id="b2b-cidade" placeholder="Sua Cidade e Estado (Ex: Londrina - PR)" class="w-full bg-brand-50 dark:bg-luxury-bg border border-brand-200 dark:border-luxury-border rounded-xl px-4 py-3 text-brand-950 dark:text-luxury-text placeholder-brand-800/50 dark:placeholder-luxury-muted focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all text-[13px]">
                 
-                <select id="b2b-salao" class="w-full bg-brand-50 dark:bg-black/40 border border-brand-200 dark:border-white/20 rounded-xl px-4 py-3 text-brand-950 dark:text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all text-[13px] appearance-none">
+                <select id="b2b-salao" class="w-full bg-brand-50 dark:bg-luxury-bg border border-brand-200 dark:border-luxury-border rounded-xl px-4 py-3 text-brand-950 dark:text-luxury-text focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all text-[13px] appearance-none">
                     <option value="" disabled selected>Você já possui um salão?</option>
                     <option value="Sim, já possuo salão e atendo">Sim, já possuo e atendo</option>
                     <option value="Ainda não, mas quero abrir">Não, mas pretendo abrir</option>
                     <option value="Apenas curiosidade">Apenas curiosidade</option>
                 </select>
                 
-                <button onclick="processB2BLead()" class="w-full mt-2 py-3.5 px-4 bg-[#128C7E] dark:bg-[#1EBE5D] hover:bg-[#075E54] dark:hover:bg-[#25D366] text-white dark:text-luxury-bg rounded-xl font-bold text-[13px] uppercase tracking-widest transition-colors shadow-md focus:outline-none flex items-center justify-center gap-2">
+                <button onclick="processB2BLead()" class="w-full mt-2 py-3.5 px-4 btn-emerald-luxury rounded-xl font-bold text-[13px] uppercase tracking-widest focus:outline-none flex items-center justify-center gap-2">
                     Solicitar Análise
                 </button>
             </div>
@@ -959,42 +1036,42 @@
     </div>
 
     <!-- PÁGINA FINAL / BRIDGE DE RASTREAMENTO -->
-    <div id="redirect-page" class="fixed inset-0 z-[200] hidden opacity-0 transition-opacity duration-500 bg-[#09090B] flex flex-col items-center justify-center px-4 text-center">
+    <div id="redirect-page" class="fixed inset-0 z-[200] hidden opacity-0 transition-opacity duration-500 bg-[#0B0908] flex flex-col items-center justify-center px-4 text-center">
         <div class="relative w-24 h-24 mb-8">
-            <div class="absolute inset-0 border-4 border-white/10 rounded-full"></div>
-            <div class="absolute inset-0 border-4 border-[#E3A857] rounded-full border-t-transparent animate-spin-slow"></div>
+            <div class="absolute inset-0 border-4 border-[#261F1C] rounded-full"></div>
+            <div class="absolute inset-0 border-4 border-brand-500 rounded-full border-t-transparent animate-spin-slow"></div>
             <div class="absolute inset-0 flex items-center justify-center">
-                <i data-lucide="message-circle" class="w-8 h-8 text-[#E3A857]"></i>
+                <i data-lucide="message-circle" class="w-8 h-8 text-brand-500"></i>
             </div>
         </div>
-        <h2 class="font-serif text-3xl md:text-4xl text-white font-bold mb-4">A abrir o WhatsApp...</h2>
-        <p class="text-gray-400 text-sm md:text-base max-w-md animate-pulse font-medium">A sua mensagem personalizada está a ser gerada. Fale com a nossa equipa!</p>
+        <h2 class="font-serif text-3xl md:text-4xl text-[#EAE5DF] font-bold mb-4">A abrir o WhatsApp...</h2>
+        <p class="text-[#A89F9A] text-sm md:text-base max-w-md animate-pulse font-medium">A sua mensagem personalizada está a ser gerada. Fale com a nossa equipa!</p>
     </div>
 
     <!-- BOTÃO TOPO -->
-    <button id="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-[85px] left-4 md:bottom-8 md:left-8 z-[90] translate-y-10 opacity-0 pointer-events-none transition-all duration-500 bg-white/90 dark:bg-luxury-card/90 backdrop-blur-md p-3 rounded-full shadow-2xl border border-brand-200 dark:border-white/10 text-brand-950 dark:text-white" aria-label="Voltar ao topo"><i data-lucide="chevron-up" class="w-5 h-5"></i></button>
+    <button id="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-[85px] left-4 md:bottom-8 md:left-8 z-[90] translate-y-10 opacity-0 pointer-events-none transition-all duration-500 bg-white/90 dark:bg-luxury-card/90 backdrop-blur-md p-3 rounded-full shadow-2xl border border-brand-200 dark:border-luxury-border text-brand-950 dark:text-luxury-text" aria-label="Voltar ao topo"><i data-lucide="chevron-up" class="w-5 h-5"></i></button>
 
     <!-- BARRA FIXA MOBILE -->
-    <div class="fixed bottom-0 left-0 w-full bg-white dark:bg-[#0f0c0b] border-t border-brand-900/10 dark:border-luxury-border p-3 z-[70] md:hidden flex justify-center pb-safe shadow-[0_-10px_20px_rgba(0,0,0,0.05)] transition-colors duration-300" id="mobile-fixed-bar">
-        <button type="button" onclick="openCityModal('Falar com Especialista')" class="w-full flex items-center justify-center gap-2 bg-[#128C7E] dark:bg-[#1EBE5D] text-white dark:text-luxury-bg rounded-xl font-bold text-[14px] py-4 shadow-[0_4px_15px_rgba(18,140,126,0.3)] dark:shadow-[0_4px_15px_rgba(30,190,93,0.15)] active:scale-95 transition-all uppercase focus:outline-none">
+    <div class="fixed bottom-0 left-0 w-full bg-white dark:bg-luxury-card border-t border-brand-200 dark:border-luxury-border p-3 z-[70] md:hidden flex justify-center pb-safe shadow-[0_-10px_20px_rgba(0,0,0,0.05)] transition-colors duration-300" id="mobile-fixed-bar">
+        <button type="button" onclick="openCityModal('Falar com Especialista')" class="w-full flex items-center justify-center gap-2 btn-emerald-luxury rounded-xl font-bold text-[14px] py-4 active:scale-95 uppercase focus:outline-none">
             <i data-lucide="message-circle" class="w-5 h-5"></i>
             <span>Falar com Especialista</span>
         </button>
     </div>
 
     <!-- LGPD BANNER -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-white dark:bg-luxury-card border-t border-brand-900/10 dark:border-luxury-border p-4 z-[100] transform translate-y-full transition-transform duration-700 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] dark:shadow-[0_-10px_40px_rgba(0,0,0,0.6)] flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 transition-colors">
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-white dark:bg-luxury-card border-t border-brand-200 dark:border-luxury-border p-4 z-[100] transform translate-y-full transition-transform duration-700 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] dark:shadow-[0_-10px_40px_rgba(0,0,0,0.6)] flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 transition-colors">
         <p class="text-[10px] sm:text-xs text-brand-800 dark:text-luxury-muted font-light text-center sm:text-left max-w-4xl leading-relaxed transition-colors">
             Para garantir uma navegação otimizada e o envio de novidades exclusivas do salão, este site utiliza cookies. Ao continuar, concorda com a <button onclick="openLegalModal('privacidade')" class="underline font-medium text-brand-950 dark:text-luxury-text focus:outline-none transition-colors">Política de Privacidade</button>.
         </p>
-        <button onclick="acceptCookies()" class="shrink-0 bg-brand-900 dark:bg-luxury-border text-white dark:text-luxury-text px-6 py-3 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider hover:bg-brand-800 dark:hover:bg-luxury-border/80 transition-colors focus:outline-none shadow-sm">Entendi e Aceito</button>
+        <button onclick="acceptCookies()" class="shrink-0 bg-brand-900 dark:bg-luxury-bg border border-transparent dark:border-luxury-border text-white dark:text-luxury-text px-6 py-3 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider hover:bg-brand-800 transition-colors focus:outline-none shadow-sm">Entendi e Aceito</button>
     </div>
 
     <!-- MODAIS LEGAIS -->
     <div id="legal-modal" class="fixed inset-0 z-[110] hidden opacity-0 transition-opacity duration-300">
         <div class="absolute inset-0 bg-brand-950/40 dark:bg-black/80 backdrop-blur-sm transition-colors" onclick="closeLegalModal()"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-white dark:bg-luxury-card rounded-3xl shadow-2xl border border-brand-900/10 dark:border-luxury-border flex flex-col max-h-[85vh] transition-colors">
-            <div class="flex items-center justify-between p-5 sm:p-6 border-b border-brand-900/10 dark:border-luxury-border transition-colors">
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-white dark:bg-luxury-card rounded-3xl shadow-2xl border border-brand-200 dark:border-luxury-border flex flex-col max-h-[85vh] transition-colors">
+            <div class="flex items-center justify-between p-5 sm:p-6 border-b border-brand-200 dark:border-luxury-border transition-colors">
                 <h3 id="modal-title" class="font-serif text-xl sm:text-2xl text-brand-950 dark:text-luxury-text font-medium transition-colors">Título</h3>
                 <button onclick="closeLegalModal()" class="p-2 text-brand-700 hover:text-brand-900 dark:text-brand-400 dark:hover:text-luxury-text transition-colors bg-brand-50 dark:bg-luxury-bg rounded-full focus:outline-none hover:rotate-90 duration-300"><i data-lucide="x" class="w-5 h-5 stroke-[1.5]"></i></button>
             </div>
@@ -1002,10 +1079,10 @@
         </div>
     </div>
 
-    <footer class="py-20 bg-white dark:bg-[#09090B] border-t border-brand-900/5 dark:border-white/10 text-center pb-32 md:pb-20 transition-colors">
-        <h4 class="font-serif text-2xl mb-2 text-brand-950 dark:text-white transition-colors">Essência de Romã Hair</h4>
-        <p class="text-[10px] text-brand-600 dark:text-gray-500 uppercase tracking-widest mb-8 transition-colors">Engenharia de Alisamentos e Estética Capilar Avançada</p>
-        <div class="flex flex-col items-center gap-4 opacity-80 text-[10px] uppercase font-bold tracking-widest text-brand-800 dark:text-gray-400 transition-colors">
+    <footer class="py-20 bg-white dark:bg-[#0B0908] border-t border-brand-100 dark:border-luxury-border text-center pb-32 md:pb-20 transition-colors">
+        <h4 class="font-serif text-2xl mb-2 text-brand-950 dark:text-luxury-text transition-colors">Essência de Romã Hair</h4>
+        <p class="text-[10px] text-brand-600 dark:text-luxury-muted uppercase tracking-widest mb-8 transition-colors">Engenharia de Alisamentos e Estética Capilar Avançada</p>
+        <div class="flex flex-col items-center gap-4 opacity-80 text-[10px] uppercase font-bold tracking-widest text-brand-800 dark:text-luxury-muted transition-colors">
             <div class="flex flex-wrap justify-center gap-4">
                 <button onclick="openLegalModal('termos')" class="hover:text-brand-500 transition-colors">Termos de Uso</button>
                 <span class="opacity-50">|</span>
@@ -1054,7 +1131,7 @@
             if(v1) v1.dataset.src = transformVideos[today % transformVideos.length];
             if(v2) v2.dataset.src = transformVideos[(today + 1) % transformVideos.length];
             if(v3) v3.dataset.src = transformVideos[(today + 2) % transformVideos.length];
-            if(v4) v4.dataset.src = 'https://testeessencia.carrd.co/assets/videos/video02.mp4?v=7108f2a1'; // Fixo Educativo
+            if(v4) v4.dataset.src = 'https://testeessencia.carrd.co/assets/videos/video02.mp4?v=7108f2a1'; 
 
             // 3. Rotação de Capas/Posters para os Vídeos (Evita caixa preta)
             const posters = [
@@ -1396,7 +1473,7 @@
                             });
                             currentVideo.muted = false;
                             currentVideo.play().catch(() => {});
-                            btn.innerHTML = '<i data-lucide="volume-2" class="w-5 h-5 text-[#25D366] dark:text-[#1EBE5D]"></i>';
+                            btn.innerHTML = '<i data-lucide="volume-2" class="w-5 h-5 text-white"></i>';
                         } else {
                             currentVideo.muted = true;
                             btn.innerHTML = '<i data-lucide="volume-x" class="w-5 h-5"></i>';
@@ -1430,6 +1507,53 @@
                     });
                 }
             });
+
+            // CAROUSEL ENGINE (DEPOIMENTOS)
+            const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+            const testimonialIndicators = document.querySelectorAll('.testimonial-indicators button');
+            let currentTestimonial = 0;
+            let testimonialInterval;
+
+            function showTestimonial(index) {
+                if(testimonialSlides.length === 0) return;
+                
+                testimonialSlides[currentTestimonial].classList.remove('opacity-100', 'z-10', 'translate-x-0');
+                testimonialSlides[currentTestimonial].classList.add('opacity-0', 'z-0', 'translate-x-8', 'pointer-events-none');
+                testimonialIndicators[currentTestimonial].classList.remove('w-8', 'bg-brand-500');
+                testimonialIndicators[currentTestimonial].classList.add('w-2', 'bg-brand-200', 'dark:bg-luxury-border');
+
+                currentTestimonial = index;
+
+                testimonialSlides[currentTestimonial].classList.remove('opacity-0', 'z-0', 'translate-x-8', 'pointer-events-none');
+                testimonialSlides[currentTestimonial].classList.add('opacity-100', 'z-10', 'translate-x-0');
+                testimonialIndicators[currentTestimonial].classList.remove('w-2', 'bg-brand-200', 'dark:bg-luxury-border');
+                testimonialIndicators[currentTestimonial].classList.add('w-8', 'bg-brand-500');
+            }
+
+            function nextTestimonial() {
+                showTestimonial((currentTestimonial + 1) % testimonialSlides.length);
+            }
+
+            if(testimonialSlides.length > 0) {
+                // 8 Segundos - Tempo perfeito para ler ~35 palavras
+                testimonialInterval = setInterval(nextTestimonial, 8000); 
+                
+                const carouselContainer = document.querySelector('.testimonial-carousel');
+                if(carouselContainer) {
+                    carouselContainer.addEventListener('mouseenter', () => clearInterval(testimonialInterval));
+                    carouselContainer.addEventListener('mouseleave', () => testimonialInterval = setInterval(nextTestimonial, 8000));
+                    carouselContainer.addEventListener('touchstart', () => clearInterval(testimonialInterval), {passive: true});
+                    carouselContainer.addEventListener('touchend', () => testimonialInterval = setInterval(nextTestimonial, 8000));
+                }
+
+                testimonialIndicators.forEach((ind, i) => {
+                    ind.addEventListener('click', () => {
+                        clearInterval(testimonialInterval);
+                        showTestimonial(i);
+                        testimonialInterval = setInterval(nextTestimonial, 8000);
+                    });
+                });
+            }
         });
 
         const DOM = {
@@ -1445,8 +1569,8 @@
                     const scrollY = window.scrollY;
                     
                     if (DOM.navbar) {
-                        if (scrollY > 20) DOM.navbar.classList.add('shadow-lg', 'dark:border-white/10'); 
-                        else DOM.navbar.classList.remove('shadow-lg', 'dark:border-white/10');
+                        if (scrollY > 20) DOM.navbar.classList.add('shadow-md', 'dark:border-luxury-border/50'); 
+                        else DOM.navbar.classList.remove('shadow-md', 'dark:border-luxury-border/50');
                     }
 
                     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -1482,6 +1606,7 @@
                 localStorage.theme = isDark ? 'dark' : 'light';
             } catch (e) {}
             if (b) b.innerHTML = isDark ? '<i data-lucide="sun" class="w-5 h-5"></i>' : '<i data-lucide="moon" class="w-5 h-5"></i>';
+            document.getElementById('meta-theme-color')?.setAttribute('content', isDark ? '#0B0908' : '#FDF8F5');
             if(window.lucide) lucide.createIcons(); 
         }
 
@@ -1501,41 +1626,41 @@
             termos: { 
                 title: "Termos e Condições de Uso", 
                 content: `
-                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">1. Aceitação dos Termos</h4>
+                    <h4 class="font-bold text-brand-950 dark:text-luxury-text mb-2 text-[14px]">1. Aceitação dos Termos</h4>
                     <p class="mb-4">Ao acessar e utilizar a Landing Page da Essência de Romã Hair, você concorda expressamente com os presentes Termos e Condições. Este site destina-se a fornecer informações sobre nossos protocolos de alisamento de alta performance e captar intenções de agendamento ou parcerias comerciais.</p>
                     
-                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">2. Descrição dos Serviços e Diagnóstico</h4>
+                    <h4 class="font-bold text-brand-950 dark:text-luxury-text mb-2 text-[14px]">2. Descrição dos Serviços e Diagnóstico</h4>
                     <p class="mb-4">A Essência de Romã Hair oferece serviços premium de bioarquitetura capilar (Liso Soberano 8K, Gloss Premium, Molecular Fusion). O agendamento via WhatsApp representa uma intenção de reserva, mas a execução de qualquer procedimento químico está <strong>rigorosamente condicionada à aprovação prévia em nosso Diagnóstico Capilar (Teste de Mecha) presencial</strong>. Caso o fio não apresente saúde estrutural suficiente, reservamo-nos o direito de não realizar a química, visando sempre a segurança e a integridade da cliente. O salão isenta-se de qualquer responsabilidade caso a cliente omita o histórico químico recente durante o diagnóstico.</p>
                     
-                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">3. Política de Valores e Investimentos</h4>
+                    <h4 class="font-bold text-brand-950 dark:text-luxury-text mb-2 text-[14px]">3. Política de Valores e Investimentos</h4>
                     <p class="mb-4">Os valores apresentados neste site ("A partir de R$ X") são referenciais e baseados na tabela anatômica (comprimento e espessura do fio). O orçamento final e definitivo será fornecido exclusivamente de forma presencial ou mediante avaliação fotográfica validada pela equipe técnica. Promoções ou campanhas digitais estão sujeitas à disponibilidade diária da agenda nas unidades de Chapecó e Seara.</p>
                     
-                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">4. Parceiros Comerciais e B2B</h4>
+                    <h4 class="font-bold text-brand-950 dark:text-luxury-text mb-2 text-[14px]">4. Parceiros Comerciais e B2B</h4>
                     <p class="mb-4">O preenchimento do formulário de "Credenciamento/Parceria" (B2B) não estabelece qualquer vínculo empregatício ou contratual automático com a Essência de Romã Hair ou com a Dias Grabski Holding. As informações são utilizadas apenas para análise de viabilidade de expansão territorial.</p>
 
-                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">5. Propriedade Intelectual</h4>
+                    <h4 class="font-bold text-brand-950 dark:text-luxury-text mb-2 text-[14px]">5. Propriedade Intelectual</h4>
                     <p class="mb-4">Todo o conteúdo deste site (textos, vídeos, imagens, depoimentos e marcas) é de propriedade exclusiva da Dias Grabski Holding e Essência de Romã. É estritamente proibida a cópia, reprodução ou distribuição não autorizada, sujeita às sanções legais previstas na Lei de Direitos Autorais e Propriedade Industrial vigente.</p>
                 ` 
             },
             privacidade: { 
                 title: "Política de Privacidade e Proteção de Dados", 
                 content: `
-                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">1. Compromisso com a Privacidade (LGPD)</h4>
+                    <h4 class="font-bold text-brand-950 dark:text-luxury-text mb-2 text-[14px]">1. Compromisso com a Privacidade (LGPD)</h4>
                     <p class="mb-4">A Essência de Romã Hair (Dias Grabski Holding) está fortemente comprometida com a proteção dos seus dados pessoais. Atuamos em estrita conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018), garantindo transparência, segurança e respeito pela sua privacidade.</p>
                     
-                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">2. Coleta de Dados Pessoais</h4>
+                    <h4 class="font-bold text-brand-950 dark:text-luxury-text mb-2 text-[14px]">2. Coleta de Dados Pessoais</h4>
                     <p class="mb-4">Coletamos informações apenas quando fornecidas voluntariamente por você (como Nome, Cidade e intenção de serviço) ao utilizar nossos formulários ou botões de redirecionamento para o WhatsApp. Automaticamente, nosso sistema capta dados de navegação anonimizados (como tipo de dispositivo, tempo de página e parâmetros UTM de campanhas) para melhorar a experiência do usuário.</p>
                     
-                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">3. Uso e Processamento dos Dados</h4>
+                    <h4 class="font-bold text-brand-950 dark:text-luxury-text mb-2 text-[14px]">3. Uso e Processamento dos Dados</h4>
                     <p class="mb-4">Os dados coletados são utilizados exclusivamente para as seguintes finalidades: (I) Personalização e direcionamento do atendimento via WhatsApp; (II) Criação de orçamentos e agendamentos no salão; (III) Análise de viabilidade comercial (no caso do formulário B2B); (IV) Otimização de campanhas publicitárias e medição de performance analítica.</p>
 
-                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">4. Rastreamento Avançado e Cookies (Google/Meta)</h4>
+                    <h4 class="font-bold text-brand-950 dark:text-luxury-text mb-2 text-[14px]">4. Rastreamento Avançado e Cookies (Google/Meta)</h4>
                     <p class="mb-4">Utilizamos Cookies e tecnologias de rastreamento Server-Side (como Stape.io e API de Conversões da Meta) para entender o comportamento de navegação e fornecer anúncios mais relevantes. Operamos com o <strong>Google Consent Mode V3</strong> integrado. Ao continuar a navegação e clicar em "Entendi e Aceito" no aviso inferior, você concorda com a ativação das tags de marketing e análise de dados. Você pode revogar esse consentimento limpando o histórico de cookies do seu navegador.</p>
 
-                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">5. Compartilhamento e Segurança</h4>
+                    <h4 class="font-bold text-brand-950 dark:text-luxury-text mb-2 text-[14px]">5. Compartilhamento e Segurança</h4>
                     <p class="mb-4">A Essência de Romã <strong>não vende, aluga ou compartilha seus dados pessoais com terceiros</strong> para fins comerciais obscuros. Seus dados transitam apenas entre nossa equipe de atendimento interno, nosso sistema de CRM (Customer Relationship Management) e os processadores de dados necessários para operar nossa publicidade (ex: Google, Meta Platforms), todos os quais mantêm os mais altos padrões de criptografia e conformidade global.</p>
 
-                    <h4 class="font-bold text-brand-950 dark:text-white mb-2 text-[14px]">6. Direitos do Titular dos Dados</h4>
+                    <h4 class="font-bold text-brand-950 dark:text-luxury-text mb-2 text-[14px]">6. Direitos do Titular dos Dados</h4>
                     <p>Você tem o direito de solicitar o acesso, a retificação ou a eliminação definitiva dos seus dados pessoais da nossa base de contatos comerciais a qualquer momento. Basta enviar uma solicitação formal através do nosso número oficial de WhatsApp ou canais de atendimento direto do salão.</p>
                 ` 
             }
