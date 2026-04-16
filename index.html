@@ -41,6 +41,16 @@
         }
     </script>
     
+    <!-- Google tag (gtag.js) - GA4 Nativo -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3DTGCM17MK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3DTGCM17MK');
+    </script>
+
     <!-- =================================================================== -->
     <!-- 2. RASTREAMENTO SERVER-SIDE (STAPE.IO + GTM) -->
     <!-- =================================================================== -->
@@ -163,11 +173,11 @@
         </div>
     </div>
 
-    <!-- IMAGEM DE FUNDO E LUZES DINÂMICAS -->
+    <!-- IMAGEM DE FUNDO E LUZES DINÂMICAS (INJETADAS PELO ENGINE JS) -->
     <div class="fixed inset-0 z-0 pointer-events-none">
-        <img src="https://testeessencia.carrd.co/assets/images/image38.jpg?v=0bcae317" alt="Ambiente do Salão 1" class="slide-bg slide-bg-1" />
-        <img src="https://testeessencia.carrd.co/assets/images/image41.jpg?v=0bcae317" alt="Ambiente do Salão 2" class="slide-bg slide-bg-2" />
-        <img src="https://testeessencia.carrd.co/assets/images/image40.jpg?v=0bcae317" alt="Ambiente do Salão 3" class="slide-bg slide-bg-3" />
+        <img id="bg-slide-1" alt="Ambiente do Salão 1" class="slide-bg slide-bg-1 object-cover" />
+        <img id="bg-slide-2" alt="Ambiente do Salão 2" class="slide-bg slide-bg-2 object-cover" />
+        <img id="bg-slide-3" alt="Ambiente do Salão 3" class="slide-bg slide-bg-3 object-cover" />
         <div class="absolute inset-0 bg-gradient-to-b from-brand-50/20 via-brand-50/80 to-brand-50 dark:from-luxury-bg/40 dark:via-luxury-bg/90 dark:to-luxury-bg backdrop-blur-[2px]"></div>
     </div>
 
@@ -198,16 +208,21 @@
                 <span class="text-gradient-premium italic font-semibold">Liso Soberano 8K</span>
             </h1>
             
-            <p class="text-brand-800 dark:text-luxury-muted text-sm sm:text-base md:text-xl font-light max-w-2xl mx-auto leading-relaxed tracking-wide mb-12 sm:mb-16 transition-colors">
+            <p class="text-brand-800 dark:text-luxury-muted text-sm sm:text-base md:text-xl font-light max-w-2xl mx-auto leading-relaxed tracking-wide mb-10 sm:mb-12 transition-colors">
                 A engenharia capilar que devolve o seu tempo e valoriza a sua imagem. O liso espelhado intocável que garante a saúde absoluta dos fios.
             </p>
 
-            <button onclick="document.getElementById('prova-incontestavel').scrollIntoView({behavior: 'smooth'})" class="group flex flex-col items-center gap-3 sm:gap-4 text-brand-800 dark:text-luxury-muted hover:text-brand-950 dark:hover:text-luxury-text transition-colors duration-300 focus:outline-none">
-                <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-medium transition-colors">Aprecie os Resultados</span>
-                <div class="p-3 rounded-full bg-white/50 dark:bg-luxury-border/50 backdrop-blur-md border border-brand-900/10 dark:border-luxury-border group-hover:bg-white/80 dark:group-hover:bg-luxury-border transition-colors shadow-sm">
-                    <i data-lucide="chevron-down" class="w-4 h-4 stroke-[2] animate-bounce"></i>
-                </div>
-            </button>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 w-full max-w-md mx-auto">
+                <button onclick="document.getElementById('tabelas').scrollIntoView({behavior: 'smooth'})" class="w-full sm:w-auto px-8 py-4 bg-[#128C7E] dark:bg-[#1EBE5D] text-white dark:text-luxury-bg rounded-full font-bold text-[13px] uppercase tracking-widest transition-all hover:scale-105 shadow-[0_4px_20px_rgba(18,140,126,0.4)] dark:shadow-[0_4px_20px_rgba(30,190,93,0.3)] focus:outline-none flex items-center justify-center gap-2">
+                    Ver Valores e Agendar
+                </button>
+                <button onclick="document.getElementById('prova-incontestavel').scrollIntoView({behavior: 'smooth'})" class="group flex items-center gap-3 text-brand-800 dark:text-luxury-muted hover:text-brand-950 dark:hover:text-luxury-text transition-colors duration-300 focus:outline-none">
+                    <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-medium transition-colors">Ver Resultados</span>
+                    <div class="p-2.5 rounded-full bg-white/50 dark:bg-luxury-border/50 backdrop-blur-md border border-brand-900/10 dark:border-luxury-border group-hover:bg-white/80 dark:group-hover:bg-luxury-border transition-colors shadow-sm">
+                        <i data-lucide="arrow-down" class="w-4 h-4 stroke-[2] animate-bounce"></i>
+                    </div>
+                </button>
+            </div>
         </header>
 
         <!-- 2. TRUST BADGES -->
@@ -228,7 +243,7 @@
             </div>
         </section>
 
-        <!-- 3. VÍDEOS (DESEJO IMEDIATO) -->
+        <!-- 3. VÍDEOS (DESEJO IMEDIATO COM POSTERS DINÂMICOS) -->
         <section id="prova-incontestavel" class="w-full max-w-[100vw] reveal mb-24 overflow-hidden relative">
             <div class="text-center mb-10 sm:mb-16">
                 <span class="text-brand-800 dark:text-brand-300 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.3em] mb-4 block">Transparência Real</span>
@@ -240,19 +255,19 @@
 
             <div class="flex overflow-x-auto snap-x snap-mandatory gap-5 sm:gap-6 md:gap-6 lg:gap-8 px-6 sm:px-8 md:px-0 pb-6 custom-scrollbar items-center md:justify-start lg:justify-center">
                 <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-black shadow-lg hover:-translate-y-2 transition-all duration-500 cursor-pointer">
-                    <video data-src="https://testeessencia.carrd.co/assets/videos/video20.mp4?v=0dcd7ee2#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[3s]"></video>
+                    <video id="dyn-vid-1" data-src="" poster="" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[3s]"></video>
                     <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-2.5 rounded-full border border-white/20 transition-colors hover:bg-black/90" aria-label="Mutar vídeo"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                 </figure>
                 <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-black shadow-lg md:-translate-y-8 hover:-translate-y-10 transition-all duration-500 cursor-pointer">
-                    <video data-src="https://testeessencia.carrd.co/assets/videos/video03.mp4?v=701b88d2#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[3s]"></video>
+                    <video id="dyn-vid-2" data-src="" poster="" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[3s]"></video>
                     <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-2.5 rounded-full border border-white/20 transition-colors hover:bg-black/90" aria-label="Mutar vídeo"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                 </figure>
                 <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-black shadow-lg hover:-translate-y-2 transition-all duration-500 cursor-pointer">
-                    <video data-src="https://testeessencia.carrd.co/assets/videos/video13.mp4?v=36e3212d#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[3s]"></video>
+                    <video id="dyn-vid-3" data-src="" poster="" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[3s]"></video>
                     <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-2.5 rounded-full border border-white/20 transition-colors hover:bg-black/90" aria-label="Mutar vídeo"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                 </figure>
                 <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-black shadow-lg md:-translate-y-8 hover:-translate-y-10 transition-all duration-500 cursor-pointer">
-                    <video data-src="https://testeessencia.carrd.co/assets/videos/video02.mp4?v=7c53f00c#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[3s]"></video>
+                    <video id="dyn-vid-4" data-src="" poster="" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[3s]"></video>
                     <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-2.5 rounded-full shadow-lg border border-white/20 transition-colors hover:bg-black/90" aria-label="Mutar vídeo"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                 </figure>
             </div>
@@ -266,7 +281,7 @@
             </div>
         </section>
 
-        <!-- 4. OFERTAS TÉCNICAS (SLIDERS) -->
+        <!-- 4. OFERTAS TÉCNICAS E SLIDERS -->
         <section id="oferta" class="max-w-7xl mx-auto px-6 mb-24 space-y-10 reveal">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <!-- Protocolo Standard / Gloss Premium -->
@@ -433,7 +448,7 @@
                         <div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center font-serif text-2xl text-brand-400 border border-brand-500/30">M</div>
                         <div>
                            <span class="text-white font-bold text-sm block uppercase tracking-wider mb-1">Mariana C.</span>
-                           <span class="text-brand-400 text-[10px] font-bold uppercase tracking-widest">Cliente Verificada • Chapecó</span>
+                           <span class="text-brand-400 text-[10px] font-bold uppercase tracking-widest">✨ Liso Soberano • Chapecó</span>
                         </div>
                      </div>
                   </div>
@@ -451,7 +466,7 @@
                         <div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center font-serif text-2xl text-brand-400 border border-brand-500/30">J</div>
                         <div>
                            <span class="text-white font-bold text-sm block uppercase tracking-wider mb-1">Juliana T.</span>
-                           <span class="text-brand-400 text-[10px] font-bold uppercase tracking-widest">Cliente Verificada • Seara</span>
+                           <span class="text-brand-400 text-[10px] font-bold uppercase tracking-widest">✨ Glass Molecular • Seara</span>
                         </div>
                      </div>
                   </div>
@@ -469,7 +484,7 @@
                         <div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center font-serif text-2xl text-brand-400 border border-brand-500/30">P</div>
                         <div>
                            <span class="text-white font-bold text-sm block uppercase tracking-wider mb-1">Patrícia D.</span>
-                           <span class="text-brand-400 text-[10px] font-bold uppercase tracking-widest">Cliente Verificada • SC</span>
+                           <span class="text-brand-400 text-[10px] font-bold uppercase tracking-widest">✨ Molecular Fusion • SC</span>
                         </div>
                      </div>
                   </div>
@@ -510,7 +525,18 @@
             <div class="text-center mb-10 sm:mb-12">
                 <span class="text-brand-800 dark:text-brand-300 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.3em] mb-4 block">Transparência em Cada Etapa</span>
                 <h2 class="font-serif text-3xl md:text-5xl font-medium text-brand-950 dark:text-white mb-4 transition-colors">Tabelas de Investimento</h2>
-                <p class="text-sm text-brand-800 dark:text-gray-400 font-medium max-w-2xl mx-auto transition-colors px-2">Valores justos baseados na anatomia do seu cabelo. O investimento exato é confirmado na sua avaliação presencial (Teste de Mecha).</p>
+                <p class="text-sm text-brand-800 dark:text-gray-400 font-medium max-w-2xl mx-auto transition-colors px-2">Valores justos baseados na anatomia do seu cabelo.</p>
+            </div>
+
+            <!-- Aviso de Alívio (Fricção Eliminada) -->
+            <div class="max-w-3xl mx-auto mb-8 bg-brand-100/50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-700/30 rounded-2xl p-4 sm:p-5 flex items-start sm:items-center gap-4 text-left shadow-sm">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white dark:bg-black/50 flex items-center justify-center shrink-0 border border-brand-200 dark:border-white/10">
+                    <i data-lucide="help-circle" class="w-5 h-5 text-brand-600 dark:text-brand-400"></i>
+                </div>
+                <p class="text-[11px] sm:text-xs text-brand-800 dark:text-gray-300 leading-relaxed">
+                    <strong class="text-brand-950 dark:text-white block mb-0.5 text-[12px] sm:text-[13px]">Não sabe a espessura do seu fio?</strong>
+                    Não se preocupe! Os valores abaixo são uma estimativa. O diagnóstico exato (Fino, Médio ou Grosso) é feito <strong>gratuitamente</strong> pela nossa equipa no dia da sua avaliação.
+                </p>
             </div>
 
             <div class="max-w-3xl mx-auto space-y-4 mb-12 text-left">
@@ -520,7 +546,7 @@
                     <summary class="list-none flex justify-between items-center p-5 sm:p-8 font-bold outline-none">
                         <div class="flex items-center gap-4 text-left">
                             <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border border-brand-200/50 dark:border-white/10 shrink-0 bg-brand-50 dark:bg-black relative">
-                                <img src="https://imagensagata.carrd.co/assets/images/image45.jpg?v=6b4b2f98" class="w-full h-full object-cover" alt="Produto Standard">
+                                <img id="dyn-thumb-1" src="https://testeessencia.carrd.co/assets/images/image90.jpg?v=7108f2a1" class="w-full h-full object-cover" alt="Produto Standard">
                             </div>
                             <div class="flex flex-col">
                                 <span class="font-serif text-xl sm:text-2xl text-brand-950 dark:text-white group-open:text-brand-600 dark:group-open:text-brand-400 transition-colors">Protocolo Standard</span>
@@ -578,7 +604,7 @@
                     <summary class="list-none flex justify-between items-center p-5 sm:p-8 font-bold outline-none">
                         <div class="flex items-center gap-4 text-left">
                             <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border border-brand-400/50 shrink-0 shadow-[0_0_15px_rgba(227,168,87,0.2)] bg-black relative">
-                                <img src="https://imagensagata.carrd.co/assets/images/image10.jpg?v=373e1272" class="w-full h-full object-cover" alt="Produto Gloss Premium">
+                                <img id="dyn-thumb-2" src="https://testeessencia.carrd.co/assets/images/image91.jpg?v=7108f2a1" class="w-full h-full object-cover" alt="Produto Gloss Premium">
                             </div>
                             <div class="flex flex-col">
                                 <span class="font-serif text-xl sm:text-2xl text-brand-950 dark:text-white group-open:text-brand-600 dark:group-open:text-brand-400 transition-colors">Gloss Premium</span>
@@ -586,7 +612,7 @@
                                 <span class="text-[12px] font-bold text-brand-900 dark:text-gray-300 mt-1.5 tracking-wide transition-colors">De R$ 397 a R$ 1.497</span>
                             </div>
                         </div>
-                        <div class="w-8 h-8 rounded-full bg-brand-50 dark:bg-white/5 flex items-center justify-center flex-shrink-0 transition-colors shadow-sm border border-brand-100 dark:border-white/10">
+                        <div class="w-8 h-8 rounded-full bg-white dark:bg-white/5 flex items-center justify-center flex-shrink-0 transition-colors shadow-sm border border-brand-100 dark:border-white/10">
                             <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180 text-brand-600 dark:text-gray-400"></i>
                         </div>
                     </summary>
@@ -628,7 +654,7 @@
                     <summary class="list-none flex justify-between items-center p-5 sm:p-8 font-bold outline-none">
                         <div class="flex items-center gap-4 text-left">
                             <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border border-white/20 shrink-0 shadow-[0_0_20px_rgba(255,255,255,0.1)] bg-black relative">
-                                <img src="https://imagensagata.carrd.co/assets/images/image30.jpg?v=373e1272" class="w-full h-full object-cover opacity-80 mix-blend-luminosity" alt="Produto Molecular Fusion">
+                                <img id="dyn-thumb-3" src="https://testeessencia.carrd.co/assets/images/image92.jpg?v=7108f2a1" class="w-full h-full object-cover opacity-80 mix-blend-luminosity" alt="Produto Molecular Fusion">
                             </div>
                             <div class="flex flex-col">
                                 <span class="font-serif text-xl sm:text-2xl text-white transition-colors flex items-center gap-2">Molecular Fusion <span class="bg-white text-black text-[8px] px-1.5 py-0.5 rounded-sm uppercase tracking-widest hidden sm:inline-block">Julho</span></span>
@@ -999,6 +1025,79 @@
         </div>
     </footer>
 
+    <!-- ENGINE DE ROTAÇÃO DIÁRIA DE ATIVOS -->
+    <!-- Este script é executado instantaneamente antes do DOMContentLoaded, substituindo as fontes das imagens dinâmicas e evitando lentidão. -->
+    <script>
+        (function() {
+            const today = Math.floor(Date.now() / 86400000); 
+            
+            // 1. Rotação de Fundo (Imagens do Espaço)
+            const spaceBgs = [
+                'https://testeessencia.carrd.co/assets/images/image37.jpg?v=7108f2a1',
+                'https://testeessencia.carrd.co/assets/images/image38.jpg?v=7108f2a1',
+                'https://testeessencia.carrd.co/assets/images/image39.jpg?v=7108f2a1',
+                'https://testeessencia.carrd.co/assets/images/image40.jpg?v=7108f2a1',
+                'https://testeessencia.carrd.co/assets/images/image41.jpg?v=7108f2a1'
+            ];
+            
+            const bg1 = document.getElementById('bg-slide-1');
+            const bg2 = document.getElementById('bg-slide-2');
+            const bg3 = document.getElementById('bg-slide-3');
+            
+            if(bg1) bg1.src = spaceBgs[today % spaceBgs.length];
+            if(bg2) bg2.src = spaceBgs[(today + 1) % spaceBgs.length];
+            if(bg3) bg3.src = spaceBgs[(today + 2) % spaceBgs.length];
+
+            // 2. Rotação de Vídeos de Transformação
+            const transformVideos = [
+                'https://testeessencia.carrd.co/assets/videos/video19.mp4?v=7108f2a1',
+                'https://testeessencia.carrd.co/assets/videos/video12.mp4?v=7108f2a1',
+                'https://testeessencia.carrd.co/assets/videos/video10.mp4?v=7108f2a1',
+                'https://testeessencia.carrd.co/assets/videos/video20.mp4?v=7108f2a1'
+            ];
+            
+            const v1 = document.getElementById('dyn-vid-1');
+            const v2 = document.getElementById('dyn-vid-2');
+            const v3 = document.getElementById('dyn-vid-3');
+            const v4 = document.getElementById('dyn-vid-4'); 
+            
+            if(v1) v1.dataset.src = transformVideos[today % transformVideos.length];
+            if(v2) v2.dataset.src = transformVideos[(today + 1) % transformVideos.length];
+            if(v3) v3.dataset.src = transformVideos[(today + 2) % transformVideos.length];
+            if(v4) v4.dataset.src = 'https://testeessencia.carrd.co/assets/videos/video02.mp4?v=7108f2a1'; // Fixo Educativo
+
+            // 3. Rotação de Capas/Posters para os Vídeos (Evita caixa preta)
+            const posters = [
+                'https://testeessencia.carrd.co/assets/images/image65.jpg?v=7108f2a1',
+                'https://testeessencia.carrd.co/assets/images/image86.jpg?v=7108f2a1',
+                'https://testeessencia.carrd.co/assets/images/image85.jpg?v=7108f2a1',
+                'https://testeessencia.carrd.co/assets/images/image87.jpg?v=7108f2a1'
+            ];
+            
+            if(v1) v1.setAttribute('poster', posters[today % posters.length]);
+            if(v2) v2.setAttribute('poster', posters[(today + 1) % posters.length]);
+            if(v3) v3.setAttribute('poster', posters[(today + 2) % posters.length]);
+            if(v4) v4.setAttribute('poster', posters[(today + 3) % posters.length]);
+
+            // 4. Rotação de Thumbnails das Gavetas (Fotos Juntos 1.1)
+            const thumbs = [
+                'https://testeessencia.carrd.co/assets/images/image90.jpg?v=7108f2a1',
+                'https://testeessencia.carrd.co/assets/images/image91.jpg?v=7108f2a1',
+                'https://testeessencia.carrd.co/assets/images/image92.jpg?v=7108f2a1',
+                'https://testeessencia.carrd.co/assets/images/image93.jpg?v=7108f2a1'
+            ];
+            
+            const thumb1 = document.getElementById('dyn-thumb-1');
+            const thumb2 = document.getElementById('dyn-thumb-2');
+            const thumb3 = document.getElementById('dyn-thumb-3');
+
+            if(thumb1) thumb1.src = thumbs[today % thumbs.length];
+            if(thumb2) thumb2.src = thumbs[(today + 1) % thumbs.length];
+            if(thumb3) thumb3.src = thumbs[(today + 2) % thumbs.length];
+
+        })();
+    </script>
+
     <script>
         let currentSelectedService = '';
 
@@ -1093,21 +1192,12 @@
                 setTimeout(() => redirectPage.classList.remove('opacity-0'), 10);
             }
 
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'generate_lead',
-                'event_id': eventId,
-                'service_intent': currentSelectedService,
-                'location_intent': rawCity,
-                'eventCallback': function() { 
-                    window.location.href = finalUrl; 
-                    isRedirecting = false;
-                }
-            });
-
-            setTimeout(() => { 
-                window.location.href = finalUrl; 
+            let redirectTimeout;
+            const doRedirect = () => {
+                if(!isRedirecting) return;
                 isRedirecting = false;
+                clearTimeout(redirectTimeout);
+                window.location.href = finalUrl;
                 
                 if(redirectPage) {
                     setTimeout(() => {
@@ -1118,7 +1208,19 @@
                         }, 500);
                     }, 2000);
                 }
-            }, 1200);
+            };
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'generate_lead',
+                'event_id': eventId,
+                'service_intent': currentSelectedService,
+                'location_intent': rawCity,
+                'eventCallback': doRedirect,
+                'eventTimeout': 1200 
+            });
+
+            redirectTimeout = setTimeout(doRedirect, 1500);
         }
 
         function processB2BLead() {
@@ -1146,19 +1248,12 @@
                 setTimeout(() => redirectPage.classList.remove('opacity-0'), 10);
             }
 
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'generate_b2b_lead',
-                'event_id': eventId,
-                'eventCallback': function() { 
-                    window.location.href = finalUrl; 
-                    isRedirecting = false;
-                }
-            });
-
-            setTimeout(() => { 
-                window.location.href = finalUrl; 
+            let redirectTimeout;
+            const doRedirect = () => {
+                if(!isRedirecting) return;
                 isRedirecting = false;
+                clearTimeout(redirectTimeout);
+                window.location.href = finalUrl;
                 
                 if(redirectPage) {
                     setTimeout(() => {
@@ -1169,7 +1264,17 @@
                         }, 500);
                     }, 2000);
                 }
-            }, 1200);
+            };
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'generate_b2b_lead',
+                'event_id': eventId,
+                'eventCallback': doRedirect,
+                'eventTimeout': 1200
+            });
+
+            redirectTimeout = setTimeout(doRedirect, 1500);
         }
 
         document.addEventListener('DOMContentLoaded', () => {
