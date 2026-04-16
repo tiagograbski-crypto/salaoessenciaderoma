@@ -14,12 +14,15 @@
 
     <!-- =================================================================== -->
     <!-- 1. GOOGLE CONSENT MODE V3 -->
-    <!-- Essencial para o GA4 e para não ter o tráfego ocultado por navegadores restritos -->
     <!-- =================================================================== -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         
+        // NOTA DE QA/TRACKING: 
+        // O status 'denied' é obrigatório para LGPD. Isso fará com que extensões como 
+        // o Pixel Helper ou Tag Assistant não mostrem conversões de imediato em abas anônimas 
+        // (falso positivo de erro) até que o usuário clique em "Entendi e Aceito" no rodapé.
         gtag('consent', 'default', {
             'ad_storage': 'denied',
             'ad_user_data': 'denied',
@@ -28,7 +31,6 @@
             'wait_for_update': 500
         });
         
-        // Quando a cliente aceitar no cookie banner do final da página, chamamos o update
         function grantConsent() {
             gtag('consent', 'update', {
                 'ad_storage': 'granted',
@@ -41,9 +43,7 @@
     
     <!-- =================================================================== -->
     <!-- 2. RASTREAMENTO SERVER-SIDE (STAPE.IO + GTM) -->
-    <!-- Domínio disfarçado para evitar bloqueadores (AdBlockers / iOS) -->
     <!-- =================================================================== -->
-    <!-- Google Tag Manager -->
     <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -51,7 +51,6 @@
     'https://kkzrytar.sad.stape.io/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-KSC788J2');
     </script>
-    <!-- End Google Tag Manager -->
     
     <meta name="theme-color" id="meta-theme-color" content="#090706">
     <meta name="color-scheme" content="light dark">
@@ -59,10 +58,10 @@
     <link rel="preload" as="image" href="https://testeessencia.carrd.co/assets/images/image38.jpg?v=0bcae317" fetchpriority="high">
     <link rel="icon" type="image/jpeg" href="https://testeessencia.carrd.co/assets/images/image78.jpg?v=be105ac7">
 
+    <!-- CDN do Tailwind Ativado para o Preview funcionar corretamente -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
     
-    <!-- OPTIMIZATION: Defer Lucide icons to prevent render-blocking -->
     <script src="https://unpkg.com/lucide@latest" defer></script>
 
     <script>
@@ -97,7 +96,6 @@
             }
         }
         
-        // Inicialização Segura do Tema
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
@@ -110,36 +108,15 @@
         .fade-in { animation: fadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; opacity: 0; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .smart-video { will-change: transform, opacity; }
-        input[type=range]::-webkit-slider-thumb {
-            pointer-events: all; width: 40px; height: 40px; -webkit-appearance: none; cursor: ew-resize; background: transparent;
-        }
+        input[type=range]::-webkit-slider-thumb { pointer-events: all; width: 40px; height: 40px; -webkit-appearance: none; cursor: ew-resize; background: transparent; }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s cubic-bezier(0.5, 0, 0, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        .text-gradient-premium {
-            background: linear-gradient(135deg, #2a2220 0%, #c5a89f 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .dark .text-gradient-premium {
-            background: linear-gradient(135deg, #E6DFD9 0%, #C5A89F 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .platinum-fusion-text {
-            background: linear-gradient(to right, #737373 0%, #FFFFFF 20%, #737373 40%, #52525B 50%, #737373 60%, #FFFFFF 80%, #737373 100%);
-            background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 5s linear infinite;
-        }
+        .text-gradient-premium { background: linear-gradient(135deg, #2a2220 0%, #c5a89f 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .dark .text-gradient-premium { background: linear-gradient(135deg, #E6DFD9 0%, #C5A89F 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .platinum-fusion-text { background: linear-gradient(to right, #737373 0%, #FFFFFF 20%, #737373 40%, #52525B 50%, #737373 60%, #FFFFFF 80%, #737373 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 5s linear infinite; }
         @keyframes shine { to { background-position: 200% center; } }
-        .noise-overlay {
-            position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            opacity: 0.03; pointer-events: none; mix-blend-mode: overlay; z-index: 1;
-        }
-        .glass-glacial {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(24px) saturate(200%);
-            -webkit-backdrop-filter: blur(24px) saturate(200%);
-            border-top: 1px solid rgba(227, 168, 87, 0.15);
-            border-left: 1px solid rgba(255, 255, 255, 0.05);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-            border-right: 1px solid rgba(0, 0, 0, 0.5);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05);
-        }
+        .noise-overlay { position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; mix-blend-mode: overlay; z-index: 1; }
+        .glass-glacial { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(24px) saturate(200%); -webkit-backdrop-filter: blur(24px) saturate(200%); border-top: 1px solid rgba(227, 168, 87, 0.15); border-left: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(0, 0, 0, 0.5); border-right: 1px solid rgba(0, 0, 0, 0.5); box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05); }
         @keyframes scroll-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
         .animate-marquee { animation: scroll-marquee 30s linear infinite; display: flex; align-items: center; white-space: nowrap; width: max-content; }
         @keyframes kenBurnsFade { 0% { opacity: 0; transform: scale(1.0); } 10% { opacity: 1; } 43% { opacity: 1; } 53% { opacity: 0; } 100% { opacity: 0; transform: scale(1.15); } }
@@ -147,10 +124,15 @@
         .slide-bg-1 { animation-delay: -2.4s; } .slide-bg-2 { animation-delay: 5.6s; } .slide-bg-3 { animation-delay: 13.6s; }
         .animate-bounce-horizontal { animation: bounce-horizontal 1.5s infinite; }
         @keyframes bounce-horizontal { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(8px); } }
-        details > summary { list-style: none; min-height: 48px; }
+        details > summary { list-style: none; min-height: 48px; cursor: pointer; }
         details > summary::-webkit-details-marker { display: none; }
         details[open] summary ~ * { animation: slideDown 0.3s ease-in-out; }
         @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .custom-scrollbar::-webkit-scrollbar { height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #eaddd8; border-radius: 10px; }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #2A201D; }
         
         body.no-fouc #cookie-banner { display: none !important; }
         .transition-colors { transition-duration: 300ms; transition-timing-function: ease-in-out; will-change: background-color, border-color, color; }
@@ -158,9 +140,8 @@
 </head>
 <body class="no-fouc bg-brand-50 dark:bg-luxury-bg text-brand-950 dark:text-luxury-text font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden pt-8 pb-12 transition-colors duration-300">
 
-    <!-- RASTREAMENTO SERVER-SIDE (NOSCRIPT) -->
-    <noscript><iframe src="https://kkzrytar.sad.stape.io/ns.html?id=GTM-5Q9T4W5F" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <!-- FALLBACK STAPE NOSCRIPT -->
+    <noscript><iframe src="https://kkzrytar.sad.stape.io/ns.html?id=GTM-KSC788J2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- BARRA DE PROGRESSO -->
     <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-brand-600 to-brand-400 z-[80] transition-all duration-100 ease-out" style="width: 0%;"></div>
@@ -206,7 +187,7 @@
     <main class="relative z-10 flex-grow w-full mt-4">
         
         <!-- 1. HERO -->
-        <header class="max-w-5xl mx-auto min-h-[85vh] flex flex-col items-center justify-center text-center px-6 pt-24">
+        <header class="max-w-5xl mx-auto min-h-[85vh] flex flex-col items-center justify-center text-center px-6 pt-24 fade-in">
             <span class="px-5 py-2 rounded-full border border-brand-500/20 text-brand-900 dark:text-luxury-muted text-[10px] font-semibold uppercase tracking-[0.25em] mb-8 bg-white/80 dark:bg-luxury-card/80 backdrop-blur-md shadow-sm cursor-default">
                 <i data-lucide="sparkles" class="w-3.5 h-3.5 stroke-[2] text-brand-600 dark:text-brand-300 inline-block align-middle mr-1"></i>
                 Liberdade Capilar • Brilho Espelhado
@@ -258,19 +239,19 @@
             <div class="absolute top-0 right-0 w-12 sm:w-16 h-full bg-gradient-to-l from-brand-50 dark:from-luxury-bg to-transparent z-10 pointer-events-none md:hidden"></div>
 
             <div class="flex overflow-x-auto snap-x snap-mandatory gap-5 sm:gap-6 md:gap-6 lg:gap-8 px-6 sm:px-8 md:px-0 pb-6 custom-scrollbar items-center md:justify-start lg:justify-center">
-                <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-black shadow-alvorada dark:shadow-crepusculo hover:-translate-y-2 transition-all duration-500 cursor-pointer">
+                <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-black shadow-lg hover:-translate-y-2 transition-all duration-500 cursor-pointer">
                     <video data-src="https://testeessencia.carrd.co/assets/videos/video20.mp4?v=0dcd7ee2#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[3s]"></video>
                     <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-2.5 rounded-full border border-white/20 transition-colors hover:bg-black/90" aria-label="Mutar vídeo"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                 </figure>
-                <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-black shadow-alvorada dark:shadow-crepusculo md:-translate-y-8 hover:-translate-y-10 transition-all duration-500 cursor-pointer">
+                <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-black shadow-lg md:-translate-y-8 hover:-translate-y-10 transition-all duration-500 cursor-pointer">
                     <video data-src="https://testeessencia.carrd.co/assets/videos/video03.mp4?v=701b88d2#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[3s]"></video>
                     <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-2.5 rounded-full border border-white/20 transition-colors hover:bg-black/90" aria-label="Mutar vídeo"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                 </figure>
-                <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-black shadow-alvorada dark:shadow-crepusculo hover:-translate-y-2 transition-all duration-500 cursor-pointer">
+                <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-black shadow-lg hover:-translate-y-2 transition-all duration-500 cursor-pointer">
                     <video data-src="https://testeessencia.carrd.co/assets/videos/video13.mp4?v=36e3212d#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[3s]"></video>
                     <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-2.5 rounded-full border border-white/20 transition-colors hover:bg-black/90" aria-label="Mutar vídeo"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                 </figure>
-                <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-black shadow-alvorada dark:shadow-crepusculo md:-translate-y-8 hover:-translate-y-10 transition-all duration-500 cursor-pointer">
+                <figure class="snap-center shrink-0 w-[75vw] sm:w-[75vw] md:w-1/4 max-w-[260px] lg:max-w-[280px] group relative overflow-hidden rounded-3xl aspect-[9/16] bg-black shadow-lg md:-translate-y-8 hover:-translate-y-10 transition-all duration-500 cursor-pointer">
                     <video data-src="https://testeessencia.carrd.co/assets/videos/video02.mp4?v=7c53f00c#t=0.1" preload="none" loop muted playsinline class="smart-video w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[3s]"></video>
                     <button class="mute-toggle absolute bottom-5 right-5 z-20 bg-black/60 backdrop-blur-md text-white p-2.5 rounded-full shadow-lg border border-white/20 transition-colors hover:bg-black/90" aria-label="Mutar vídeo"><i data-lucide="volume-x" class="w-5 h-5"></i></button>
                 </figure>
@@ -647,7 +628,7 @@
                     <summary class="list-none flex justify-between items-center p-6 sm:p-8 font-bold outline-none">
                         <div class="flex items-center gap-4 text-left">
                             <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border border-white/20 shrink-0 shadow-[0_0_20px_rgba(255,255,255,0.1)] bg-black relative">
-                                <img src="https://imagensagata.carrd.co/assets/images/image24.jpg?v=373e1272" class="w-full h-full object-cover opacity-80 mix-blend-luminosity" alt="Produto Molecular Fusion">
+                                <img src="https://imagensagata.carrd.co/assets/images/image30.jpg?v=373e1272" class="w-full h-full object-cover opacity-80 mix-blend-luminosity" alt="Produto Molecular Fusion">
                             </div>
                             <div class="flex flex-col">
                                 <span class="font-serif text-2xl text-white transition-colors flex items-center gap-2">Molecular Fusion <span class="bg-white text-black text-[8px] px-1.5 py-0.5 rounded-sm uppercase tracking-widest hidden sm:inline-block">Julho</span></span>
@@ -1021,7 +1002,6 @@
     <script>
         let currentSelectedService = '';
 
-        // FUNÇÃO DE PERSISTÊNCIA DE UTMS
         function storeUTMs() {
             const urlParams = new URLSearchParams(window.location.search);
             const utms = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
@@ -1080,7 +1060,6 @@
             setTimeout(() => m.classList.add('hidden'), 300);
         }
 
-        // LÓGICA EXCLUSIVA PARA CREDENCIAMENTO / B2B
         function openB2BModal() {
             const m = document.getElementById('b2b-modal');
             if(!m) return;
@@ -1097,17 +1076,14 @@
 
         let isRedirecting = false;
 
-        // RASTREAMENTO CLIENTE SALÃO (WHATSAPP PRINCIPAL)
         function handleCitySelection(rawCity) {
             if(isRedirecting) return;
             isRedirecting = true;
 
-            // Identificador único para deduplicação CAPI
             const eventId = 'evt_' + Date.now() + '_' + Math.floor(Math.random() * 1000);
             const phone = '5549999954052';
             const finalUrl = `https://wa.me/${phone}?text=${encodeURIComponent('Olá! Desejo agendar ' + currentSelectedService + ' em ' + rawCity + getStoredUTMsText())}`;
 
-            // UI Feedback (Página Ponte)
             const redirectPage = document.getElementById('redirect-page');
             closeCityModal();
             if(redirectPage) {
@@ -1129,7 +1105,6 @@
                 }
             });
 
-            // Redirecionamento forçado em 1.2s se o rastreio falhar
             setTimeout(() => { 
                 window.location.href = finalUrl; 
                 isRedirecting = false;
@@ -1146,7 +1121,6 @@
             }, 1200);
         }
 
-        // RASTREAMENTO B2B (WHATSAPP GL PRO)
         function processB2BLead() {
             if(isRedirecting) return;
 
@@ -1163,7 +1137,6 @@
             const msg = `*SOLICITAÇÃO DE CREDENCIAMENTO GL PRO*\n\n👤 Nome: ${nome}\n📍 Cidade: ${cidade}\n✂️ Status: ${salao}${getStoredUTMsText()}`;
             const finalUrl = `https://wa.me/${phoneB2B}?text=${encodeURIComponent(msg)}`;
 
-            // UI Feedback (Página Ponte)
             const redirectPage = document.getElementById('redirect-page');
             closeB2BModal();
             if(redirectPage) {
@@ -1183,7 +1156,6 @@
                 }
             });
 
-            // Redirecionamento forçado em 1.2s se o rastreio falhar
             setTimeout(() => { 
                 window.location.href = finalUrl; 
                 isRedirecting = false;
@@ -1220,7 +1192,6 @@
                 setTimeout(() => { cookieBanner.classList.remove('translate-y-full'); }, 2000);
             }
 
-            // A otimização dos vídeos já está no ponto máximo de performance. O IntersectionObserver impede downloads pesados no loading inicial.
             const videos = document.querySelectorAll('.smart-video');
             const muteToggles = document.querySelectorAll('.mute-toggle');
 
