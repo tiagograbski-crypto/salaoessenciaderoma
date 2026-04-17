@@ -1281,6 +1281,7 @@
 
             const redirectPage = document.getElementById('redirect-page');
             closeCityModal();
+            
             if(redirectPage) {
                 redirectPage.classList.remove('hidden');
                 document.body.style.overflow = 'hidden';
@@ -1288,22 +1289,20 @@
                 setTimeout(() => redirectPage.classList.remove('opacity-0'), 10);
             }
 
-            let redirectTimeout;
+            // NERO: Função de redirecionamento com trava de segurança
             const doRedirect = () => {
-                if(!isRedirecting) return;
-                isRedirecting = false;
-                clearTimeout(redirectTimeout);
                 window.location.href = finalUrl;
-                
-                if(redirectPage) {
-                    setTimeout(() => {
+                // Mantém a tela de carregamento ativa por 2s extras para evitar "pisca" antes de sair
+                setTimeout(() => {
+                    isRedirecting = false;
+                    if(redirectPage) {
                         redirectPage.classList.add('opacity-0');
                         setTimeout(() => {
                             redirectPage.classList.add('hidden');
                             document.body.style.overflow = 'auto';
                         }, 500);
-                    }, 2000);
-                }
+                    }
+                }, 2000);
             };
 
             const metaCookies = typeof getMetaCookies === 'function' ? getMetaCookies() : { fbp: '', fbc: '' };
@@ -1317,8 +1316,8 @@
 
             window.dataLayer = window.dataLayer || [];
 
+            // NERO: Disparo de rastreamento prioritário
             if (isPurchase) {
-                window.dataLayer.push({ ecommerce: null }); 
                 window.dataLayer.push({
                     'event': 'purchase',
                     'event_id': eventId,
@@ -1328,15 +1327,12 @@
                     'location_intent': safeCity,
                     'fbp': metaCookies.fbp,
                     'fbc': metaCookies.fbc,
-                    'utm_source': utmObj.utm_source || '',
-                    'utm_medium': utmObj.utm_medium || '',
-                    'utm_campaign': utmObj.utm_campaign || '',
                     'ecommerce': {
                         'transaction_id': eventId,
                         'value': purchaseValue,
                         'currency': 'BRL',
                         'items': [{
-                            'item_id': cleanService,     
+                            'item_id': cleanService,
                             'item_name': safeService,
                             'item_category': safeCity,
                             'price': purchaseValue,
@@ -1344,7 +1340,7 @@
                         }]
                     },
                     'eventCallback': doRedirect,
-                    'eventTimeout': 1500 
+                    'eventTimeout': 2000 // Aumentamos o tempo para garantir que a Stape receba
                 });
             } else {
                 window.dataLayer.push({
@@ -1354,17 +1350,16 @@
                     'location_intent': safeCity,
                     'fbp': metaCookies.fbp,
                     'fbc': metaCookies.fbc,
-                    'utm_source': utmObj.utm_source || '',
-                    'utm_medium': utmObj.utm_medium || '',
-                    'utm_campaign': utmObj.utm_campaign || '',
                     'eventCallback': doRedirect,
-                    'eventTimeout': 1500 
+                    'eventTimeout': 2000
                 });
             }
-
-            redirectTimeout = setTimeout(doRedirect, 1500);
+            
+            // Segurança caso o GTM falhe em responder
+            setTimeout(() => { if(isRedirecting) doRedirect(); }, 2500);
         }
 
+        // Funções de Suporte (B2B, Legais e UI)
         function processB2BLead() {
             if(isRedirecting) return;
 
@@ -1391,22 +1386,19 @@
                 setTimeout(() => redirectPage.classList.remove('opacity-0'), 10);
             }
 
-            let redirectTimeout;
+            // NERO: Replicando a trava de segurança também no funil B2B
             const doRedirect = () => {
-                if(!isRedirecting) return;
-                isRedirecting = false;
-                clearTimeout(redirectTimeout);
                 window.location.href = finalUrl;
-                
-                if(redirectPage) {
-                    setTimeout(() => {
+                setTimeout(() => {
+                    isRedirecting = false;
+                    if(redirectPage) {
                         redirectPage.classList.add('opacity-0');
                         setTimeout(() => {
                             redirectPage.classList.add('hidden');
                             document.body.style.overflow = 'auto';
                         }, 500);
-                    }, 2000);
-                }
+                    }
+                }, 2000);
             };
 
             const metaCookies = typeof getMetaCookies === 'function' ? getMetaCookies() : { fbp: '', fbc: '' };
@@ -1415,6 +1407,7 @@
 
             window.dataLayer = window.dataLayer || [];
             
+            // Preservando o tracking avançado (CAPI) do Lead de Franquia
             window.dataLayer.push({
                 'event': 'generate_b2b_lead',
                 'event_id': eventId,
@@ -1431,10 +1424,11 @@
                 'utm_medium': utmObj.utm_medium || '',
                 'utm_campaign': utmObj.utm_campaign || '',
                 'eventCallback': doRedirect,
-                'eventTimeout': 1500
+                'eventTimeout': 2000
             });
 
-            redirectTimeout = setTimeout(doRedirect, 1500);
+            // Segurança B2B caso GTM falhe
+            setTimeout(() => { if(isRedirecting) doRedirect(); }, 2500);
         }
 
         document.addEventListener('DOMContentLoaded', () => {
