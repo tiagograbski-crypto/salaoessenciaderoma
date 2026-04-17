@@ -1253,6 +1253,8 @@
             let crmTag = `\n\n[Ref: SITE-${cleanCity}-${cleanService}]`;
             
             const msg = `Olá! Vim pelo site e gostaria de atendimento.\n\n📍 *Unidade Desejada:* ${safeCity}\n✨ *Serviço/Interesse:* ${safeService}\n🎯 *Objetivo:* ${intentType}\n\nAguardo o retorno!${crmTag}${getStoredUTMsText()}`;
+            
+            // CIRURGIA DE PERFORMANCE E UX: Rota oficial wa.me anula o erro 404 de manifest.json do servidor da Meta
             const finalUrl = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
 
             const redirectPage = document.getElementById('redirect-page');
@@ -1353,6 +1355,8 @@
             const phoneB2B = '5549991618389';
             const eventId = 'b2b_' + Date.now() + '_' + Math.floor(Math.random() * 1000000);
             const msg = `*SOLICITAÇÃO DE CREDENCIAMENTO GL PRO*\n\n👤 Nome: ${nome}\n📍 Cidade: ${cidade}\n✂️ Status: ${salao}${getStoredUTMsText()}`;
+            
+            // CIRURGIA DE PERFORMANCE E UX: Rota oficial wa.me anula o erro 404 de manifest.json do servidor da Meta (B2B)
             const finalUrl = `https://wa.me/${phoneB2B}?text=${encodeURIComponent(msg)}`;
 
             const redirectPage = document.getElementById('redirect-page');
