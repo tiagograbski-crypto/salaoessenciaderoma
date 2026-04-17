@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://testeessencia.carrd.co" crossorigin>
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 
+    <!-- =================================================================== -->
+    <!-- 1. GOOGLE CONSENT MODE V3 -->
+    <!-- =================================================================== -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -34,6 +37,9 @@
         }
     </script>
     
+    <!-- =================================================================== -->
+    <!-- 2. RASTREAMENTO SERVER-SIDE (STAPE.IO + GTM) -->
+    <!-- =================================================================== -->
     <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -41,7 +47,10 @@
     'https://kkzrytar.sad.stape.io/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-KSC788J2');
     </script>
-
+    
+    <!-- =================================================================== -->
+    <!-- 3. TIKTOK PIXEL (Eventos e Base) -->
+    <!-- =================================================================== -->
     <script>
     !function (w, d, t) {
       w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
@@ -49,7 +58,7 @@
       ttq.page();
     }(window, document, 'ttq');
     </script>
-    
+
     <meta name="theme-color" id="meta-theme-color" content="#0B0908">
     <meta name="color-scheme" content="light dark">
     
@@ -61,8 +70,9 @@
     
     <script src="https://unpkg.com/lucide@latest" defer crossorigin="anonymous"></script>
 
-    <script src="https://widget.manychat.com/1394285950786346.js" defer="defer"></script>
-    <script src="https://mccdn.me/assets/js/widget.js" defer="defer"></script>
+    <!-- WIDGET DE ATENDIMENTO (MANYCHAT) -->
+    <script src="https://widget.manychat.com/1394285950786346.js" defer="defer" crossorigin="anonymous"></script>
+    <script src="https://mccdn.me/assets/js/widget.js" defer="defer" crossorigin="anonymous"></script>
 
     <script>
         tailwind.config = {
@@ -135,26 +145,43 @@
         
         .glass-glacial { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(24px) saturate(200%); -webkit-backdrop-filter: blur(24px) saturate(200%); border-top: 1px solid rgba(227, 168, 87, 0.15); border-left: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(0, 0, 0, 0.5); border-right: 1px solid rgba(0, 0, 0, 0.5); box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05); }
         
-        .btn-emerald-luxury {
-            background: linear-gradient(135deg, #094F3A 0%, #107853 100%);
-            color: #ffffff !important;
-            box-shadow: 0 10px 25px -5px rgba(16, 120, 83, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+        /* NOVO BOTÃO LUXO (Ouro/Café) - Substitui o Verde Varejo */
+        .btn-primary-luxury {
+            background: linear-gradient(135deg, #30221D 0%, #1C120F 100%);
+            color: #EAE5DF !important;
+            box-shadow: 0 10px 25px -5px rgba(28, 18, 15, 0.4);
+            border: 1px solid rgba(227, 168, 87, 0.4);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .btn-emerald-luxury:hover {
+        .btn-primary-luxury:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 15px 35px -5px rgba(16, 120, 83, 0.5);
-            background: linear-gradient(135deg, #0C6148 0%, #138E62 100%);
+            box-shadow: 0 15px 35px -5px rgba(227, 168, 87, 0.25);
+            background: linear-gradient(135deg, #4A362E 0%, #30221D 100%);
+            border: 1px solid rgba(227, 168, 87, 0.8);
         }
-        .dark .btn-emerald-luxury {
-            background: linear-gradient(135deg, #138250 0%, #1FBB76 100%);
-            box-shadow: 0 10px 25px -5px rgba(31, 187, 118, 0.3);
+        .dark .btn-primary-luxury {
+            background: linear-gradient(135deg, #14110F 0%, #0B0908 100%);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(227, 168, 87, 0.3);
+        }
+        .dark .btn-primary-luxury:hover {
+            box-shadow: 0 15px 35px -5px rgba(227, 168, 87, 0.2);
+            background: linear-gradient(135deg, #1C120F 0%, #000000 100%);
+            border: 1px solid rgba(227, 168, 87, 0.6);
+        }
+
+        /* BOTÃO FLUTUANTE WHATSAPP DESKTOP (Magnético e Autêntico) */
+        .btn-whatsapp-float {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white !important;
+            box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .dark .btn-emerald-luxury:hover {
-            box-shadow: 0 15px 35px -5px rgba(31, 187, 118, 0.4);
-            background: linear-gradient(135deg, #16985E 0%, #24D486 100%);
+        .btn-whatsapp-float:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px -5px rgba(37, 211, 102, 0.6);
+            background: linear-gradient(135deg, #1EBE5D 0%, #075E54 100%);
         }
 
         @keyframes scroll-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -238,7 +265,7 @@
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-6 w-full max-w-md mx-auto">
-                <button onclick="document.getElementById('tabelas').scrollIntoView({behavior: 'smooth'})" class="w-full sm:w-auto px-8 py-4 btn-emerald-luxury rounded-full font-bold text-[13px] uppercase tracking-widest focus:outline-none flex items-center justify-center gap-2">
+                <button onclick="document.getElementById('tabelas').scrollIntoView({behavior: 'smooth'})" class="w-full sm:w-auto px-8 py-4 btn-primary-luxury rounded-full font-bold text-[13px] uppercase tracking-widest focus:outline-none flex items-center justify-center gap-2">
                     Ver Valores e Agendar
                 </button>
                 <button onclick="document.getElementById('prova-incontestavel').scrollIntoView({behavior: 'smooth'})" class="group flex items-center gap-3 text-brand-800 dark:text-luxury-muted hover:text-brand-950 dark:hover:text-luxury-text transition-colors duration-300 focus:outline-none">
@@ -332,8 +359,8 @@
                             <button onclick="document.getElementById('tabelas').scrollIntoView({behavior: 'smooth'})" class="w-full flex items-center justify-center px-5 py-3.5 sm:py-4 bg-brand-50 dark:bg-luxury-bg hover:bg-brand-100 dark:hover:bg-luxury-border/50 text-brand-950 dark:text-luxury-text rounded-full font-semibold text-[11px] uppercase tracking-widest transition-all duration-300 border border-brand-200 dark:border-luxury-border shadow-sm focus:outline-none gap-2">
                                 <i data-lucide="calculator" class="w-4 h-4"></i> Ver Investimento
                             </button>
-                            <button onclick="openCityModal('Liso Soberano - Gloss Premium')" class="w-full flex items-center justify-center gap-2 px-4 py-3.5 sm:py-4 btn-emerald-luxury rounded-full font-bold text-[13px] sm:text-sm uppercase tracking-widest focus:outline-none group/btn">
-                                <span class="w-2 h-2 rounded-full bg-white animate-pulse btn-pulse flex-shrink-0 transition-colors"></span> Agendar Avaliação
+                            <button onclick="openCityModal('Liso Soberano - Gloss Premium')" class="w-full flex items-center justify-center gap-2 px-4 py-3.5 sm:py-4 btn-primary-luxury rounded-full font-bold text-[13px] sm:text-sm uppercase tracking-widest focus:outline-none group/btn">
+                                <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse btn-pulse flex-shrink-0 transition-colors"></span> Agendar Avaliação
                             </button>
                         </div>
                     </div>
@@ -550,7 +577,7 @@
         <section id="tabelas" class="w-full max-w-[1400px] mx-auto bg-white/80 dark:bg-luxury-bg/80 backdrop-blur-xl border-y md:border border-brand-200 dark:border-luxury-border md:rounded-[2.5rem] p-4 sm:p-10 md:p-16 mb-24 reveal shadow-sm transition-colors">
             <div class="text-center mb-10 sm:mb-12">
                 <span class="text-brand-800 dark:text-brand-300 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.3em] mb-4 block transition-colors">Transparência em Cada Etapa</span>
-                <h2 class="font-serif text-3xl md:text-5xl font-medium text-brand-950 dark:text-luxury-text mb-4 transition-colors">Tabelas de Investimento</h2>
+                <h2 class="font-serif text-3xl md:text-5xl font-medium text-brand-950 dark:text-white mb-4 transition-colors">Tabelas de Investimento</h2>
                 <p class="text-sm text-brand-800 dark:text-luxury-muted font-medium max-w-2xl mx-auto transition-colors px-2">Valores justos baseados na anatomia do seu cabelo.</p>
             </div>
 
@@ -624,7 +651,7 @@
                                 <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Grossa</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 549</span></div>
                             </div>
                         </div>
-                        <button onclick="openCityModal('Protocolo Standard')" class="w-full mt-6 sm:mt-8 py-4 btn-emerald-luxury rounded-xl font-bold text-[13px] uppercase tracking-widest focus:outline-none flex items-center justify-center gap-2">
+                        <button onclick="openCityModal('Protocolo Standard')" class="w-full mt-6 sm:mt-8 py-4 btn-primary-luxury rounded-xl font-bold text-[13px] uppercase tracking-widest focus:outline-none flex items-center justify-center gap-2">
                             Agendar Avaliação Standard
                         </button>
                     </div>
@@ -682,7 +709,7 @@
                                 <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Grossa</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 1.497</span></div>
                             </div>
                         </div>
-                        <button onclick="openCityModal('Gloss Premium')" class="w-full mt-6 sm:mt-8 py-4 btn-emerald-luxury rounded-xl font-bold text-[13px] uppercase tracking-widest focus:outline-none flex items-center justify-center gap-2 shadow-md">
+                        <button onclick="openCityModal('Gloss Premium')" class="w-full mt-6 sm:mt-8 py-4 btn-primary-luxury rounded-xl font-bold text-[13px] uppercase tracking-widest focus:outline-none flex items-center justify-center gap-2 shadow-md">
                             Agendar Gloss Premium
                         </button>
                     </div>
@@ -930,11 +957,11 @@
                     </div>
 
                     <div onclick="openB2BModal()" 
-                         class="p-6 md:p-8 rounded-xl border border-[#128C7E]/50 dark:border-[#1EBE5D]/30 bg-[#128C7E]/10 dark:bg-[#1EBE5D]/10 text-center flex flex-col justify-center shadow-sm cursor-pointer hover:bg-[#128C7E]/20 dark:hover:bg-[#1EBE5D]/20 transition-all hover:-translate-y-1 group">
+                         class="p-6 md:p-8 rounded-xl border border-brand-300 dark:border-luxury-border bg-brand-50 dark:bg-luxury-bg text-center flex flex-col justify-center shadow-sm cursor-pointer hover:bg-brand-100 dark:hover:bg-luxury-card transition-all hover:-translate-y-1 group">
                         <span class="text-brand-950 dark:text-luxury-text font-serif text-xl lg:text-2xl font-bold mb-4 leading-tight transition-colors">Sua Cidade</span>
-                        <div class="flex items-center justify-center gap-2 btn-emerald-luxury px-3 py-2 rounded-md mx-auto shadow-md transition-colors">
-                            <i data-lucide="user-plus" class="w-4 h-4 text-white dark:text-luxury-bg"></i>
-                            <span class="text-[10px] uppercase tracking-widest font-bold text-white dark:text-luxury-bg">Seja Parceira</span>
+                        <div class="flex items-center justify-center gap-2 btn-primary-luxury px-3 py-2 rounded-md mx-auto shadow-md transition-colors">
+                            <i data-lucide="user-plus" class="w-4 h-4 text-white"></i>
+                            <span class="text-[10px] uppercase tracking-widest font-bold text-white">Seja Parceira</span>
                         </div>
                     </div>
                 </div>
@@ -957,7 +984,7 @@
             <h3 class="font-serif text-xl sm:text-2xl text-brand-950 dark:text-luxury-text font-medium mb-2 transition-colors">Escolha a Unidade</h3>
             <p id="modal-service-desc" class="text-[12px] sm:text-[13px] text-brand-800 dark:text-luxury-muted font-light mb-6 transition-colors">Selecione onde prefere realizar a sua avaliação para <strong id="modal-service-name" class="font-semibold text-brand-950 dark:text-luxury-text transition-colors">...</strong>.</p>
             <div class="flex flex-col gap-3 w-full">
-                <button onclick="handleCitySelection('Chapecó')" class="w-full py-3.5 px-4 btn-emerald-luxury rounded-xl font-bold text-[13px] transition-colors focus:outline-none flex items-center justify-center gap-2">
+                <button onclick="handleCitySelection('Chapecó')" class="w-full py-3.5 px-4 btn-primary-luxury rounded-xl font-bold text-[13px] transition-colors focus:outline-none flex items-center justify-center gap-2">
                     Centro de Chapecó
                 </button>
                 <button onclick="handleCitySelection('Seara')" class="w-full py-3.5 px-4 bg-transparent border border-brand-200 dark:border-luxury-border hover:border-brand-500 text-brand-950 dark:text-luxury-text rounded-xl font-bold text-[13px] transition-colors focus:outline-none flex items-center justify-center gap-2">
@@ -974,8 +1001,8 @@
         <div class="absolute inset-0 bg-brand-950/60 dark:bg-black/80 backdrop-blur-sm transition-colors" onclick="closeB2BModal()"></div>
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-sm bg-white dark:bg-luxury-card rounded-3xl shadow-2xl border border-brand-200 dark:border-luxury-border p-5 sm:p-8 flex flex-col items-center text-center transition-colors">
             <button onclick="closeB2BModal()" class="absolute top-2 right-2 p-4 text-brand-700 dark:text-brand-400 hover:text-brand-900 dark:hover:text-luxury-text transition-colors rounded-full focus:outline-none"><i data-lucide="x" class="w-5 h-5 stroke-[2]"></i></button>
-            <div class="w-12 h-12 rounded-full bg-[#128C7E]/10 dark:bg-[#1EBE5D]/10 flex items-center justify-center mb-4 transition-colors border border-[#128C7E]/20 dark:border-[#1EBE5D]/20">
-                <i data-lucide="user-plus" class="w-6 h-6 text-[#128C7E] dark:text-[#1EBE5D]"></i>
+            <div class="w-12 h-12 rounded-full bg-brand-50 dark:bg-luxury-bg flex items-center justify-center mb-4 transition-colors border border-brand-200 dark:border-luxury-border">
+                <i data-lucide="user-plus" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
             </div>
             <h3 class="font-serif text-xl sm:text-2xl text-brand-950 dark:text-luxury-text font-medium mb-2 transition-colors">Parceria Premium</h3>
             <p class="text-[12px] sm:text-[13px] text-brand-800 dark:text-luxury-muted font-light mb-6 transition-colors">Preencha os dados abaixo para analisarmos a viabilidade do credenciamento na sua região.</p>
@@ -992,7 +1019,7 @@
                     <option value="Apenas curiosidade">Apenas curiosidade</option>
                 </select>
                 
-                <button onclick="processB2BLead()" class="w-full mt-2 py-3.5 px-4 btn-emerald-luxury rounded-xl font-bold text-[13px] uppercase tracking-widest focus:outline-none flex items-center justify-center gap-2">
+                <button onclick="processB2BLead()" class="w-full mt-2 py-3.5 px-4 btn-primary-luxury rounded-xl font-bold text-[13px] uppercase tracking-widest focus:outline-none flex items-center justify-center gap-2">
                     Solicitar Análise
                 </button>
             </div>
@@ -1011,10 +1038,24 @@
         <p class="text-[#A89F9A] text-sm md:text-base max-w-md animate-pulse font-medium">A sua mensagem personalizada está a ser gerada. Fale com a nossa equipa!</p>
     </div>
 
+    <!-- BOTÃO TOPO -->
     <button id="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-[85px] left-4 md:bottom-8 md:left-8 z-[90] translate-y-10 opacity-0 pointer-events-none transition-all duration-500 bg-white/90 dark:bg-luxury-card/90 backdrop-blur-md p-3 rounded-full shadow-2xl border border-brand-200 dark:border-luxury-border text-brand-950 dark:text-luxury-text" aria-label="Voltar ao topo"><i data-lucide="chevron-up" class="w-5 h-5"></i></button>
 
+    <!-- BOTÃO WHATSAPP FLUTUANTE (DESKTOP) -->
+    <button onclick="openCityModal('Falar com Especialista')" class="hidden md:flex fixed bottom-8 right-8 z-[90] btn-whatsapp-float rounded-full p-3.5 items-center justify-center gap-3 group focus:outline-none" aria-label="Falar com Especialista via WhatsApp">
+        <div class="relative flex items-center justify-center">
+            <span class="absolute inset-0 rounded-full bg-white opacity-30 animate-ping"></span>
+            <!-- Ícone Oficial do WhatsApp em SVG Vetorial -->
+            <svg viewBox="0 0 24 24" class="w-7 h-7 relative z-10 fill-current" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.405-.883-.733-1.48-1.638-1.653-1.935-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+        </div>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap opacity-0 group-hover:max-w-[150px] group-hover:opacity-100 group-hover:pr-2 transition-all duration-500 ease-in-out font-bold tracking-wider text-[13px] uppercase">Agendar Agora</span>
+    </button>
+
+    <!-- BARRA FIXA MOBILE -->
     <div class="fixed bottom-0 left-0 w-full bg-white dark:bg-luxury-card border-t border-brand-200 dark:border-luxury-border p-3 z-[70] md:hidden flex justify-center pb-safe shadow-[0_-10px_20px_rgba(0,0,0,0.05)] transition-colors duration-300" id="mobile-fixed-bar">
-        <button type="button" onclick="openCityModal('Falar com Especialista')" class="w-full flex items-center justify-center gap-2 btn-emerald-luxury rounded-xl font-bold text-[14px] py-4 active:scale-95 uppercase focus:outline-none">
+        <button type="button" onclick="openCityModal('Falar com Especialista')" class="w-full flex items-center justify-center gap-2 btn-primary-luxury rounded-xl font-bold text-[14px] py-4 active:scale-95 uppercase focus:outline-none">
             <i data-lucide="message-circle" class="w-5 h-5"></i>
             <span>Falar com Especialista</span>
         </button>
@@ -1024,7 +1065,7 @@
         <p class="text-[10px] sm:text-xs text-brand-800 dark:text-luxury-muted font-light text-center sm:text-left max-w-4xl leading-relaxed transition-colors">
             Para garantir uma navegação otimizada e o envio de novidades exclusivas do salão, este site utiliza cookies. Ao continuar, concorda com a <button onclick="openLegalModal('privacidade')" class="underline font-medium text-brand-950 dark:text-luxury-text focus:outline-none transition-colors">Política de Privacidade</button>.
         </p>
-        <button onclick="acceptCookies()" class="shrink-0 bg-brand-900 dark:bg-luxury-bg border border-transparent dark:border-luxury-border text-white dark:text-luxury-text px-6 py-3 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider hover:bg-brand-800 transition-colors focus:outline-none shadow-sm">Entendi e Aceito</button>
+        <button onclick="acceptCookies()" class="shrink-0 btn-primary-luxury text-white px-6 py-3 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider transition-colors focus:outline-none shadow-sm">Entendi e Aceito</button>
     </div>
 
     <div id="legal-modal" class="fixed inset-0 z-[110] hidden opacity-0 transition-opacity duration-300">
@@ -1052,11 +1093,11 @@
         </div>
     </footer>
 
+    <!-- ENGINE DE ROTAÇÃO DIÁRIA DE ATIVOS -->
     <script>
         (function() {
             const today = Math.floor(Date.now() / 86400000); 
             
-            // 1. Rotação de Fundo (Imagens do Espaço)
             const spaceBgs = [
                 'https://testeessencia.carrd.co/assets/images/image37.jpg?v=7108f2a1',
                 'https://testeessencia.carrd.co/assets/images/image38.jpg?v=7108f2a1',
@@ -1073,7 +1114,6 @@
             if(bg2) bg2.src = spaceBgs[(today + 1) % spaceBgs.length];
             if(bg3) bg3.src = spaceBgs[(today + 2) % spaceBgs.length];
 
-            // 2. Rotação de Vídeos de Transformação
             const transformVideos = [
                 'https://testeessencia.carrd.co/assets/videos/video19.mp4?v=7108f2a1',
                 'https://testeessencia.carrd.co/assets/videos/video12.mp4?v=7108f2a1',
@@ -1091,7 +1131,6 @@
             if(v3) v3.dataset.src = transformVideos[(today + 2) % transformVideos.length];
             if(v4) v4.dataset.src = 'https://testeessencia.carrd.co/assets/videos/video02.mp4?v=7108f2a1'; 
 
-            // 3. Rotação de Capas/Posters para os Vídeos (Evita caixa preta)
             const posters = [
                 'https://testeessencia.carrd.co/assets/images/image65.jpg?v=7108f2a1',
                 'https://testeessencia.carrd.co/assets/images/image86.jpg?v=7108f2a1',
@@ -1104,7 +1143,6 @@
             if(v3) v3.setAttribute('poster', posters[(today + 2) % posters.length]);
             if(v4) v4.setAttribute('poster', posters[(today + 3) % posters.length]);
 
-            // 4. Rotação de Thumbnails das Gavetas (Fotos Juntos 1.1)
             const thumbs = [
                 'https://testeessencia.carrd.co/assets/images/image90.jpg?v=7108f2a1',
                 'https://testeessencia.carrd.co/assets/images/image91.jpg?v=7108f2a1',
@@ -1126,7 +1164,6 @@
     <script>
         let currentSelectedService = '';
 
-        // FUNÇÃO DE CAPTURA DE COOKIES META (fbp / fbc)
         function getMetaCookies() {
             let fbp = '';
             let fbc = '';
@@ -1143,7 +1180,6 @@
             return { fbp, fbc };
         }
 
-        // FUNÇÃO DE PERSISTÊNCIA DE UTMS
         function storeUTMs() {
             try {
                 const urlParams = new URLSearchParams(window.location.search);
@@ -1226,7 +1262,6 @@
 
         let isRedirecting = false;
 
-        // RASTREAMENTO CLIENTE SALÃO (WHATSAPP PRINCIPAL)
         function handleCitySelection(rawCity) {
             if(isRedirecting) return;
             isRedirecting = true;
@@ -1282,7 +1317,6 @@
 
             const metaCookies = getMetaCookies();
 
-            // Disparo Nativo TikTok
             if (typeof ttq !== 'undefined') {
                 ttq.track('Contact', {
                     content_name: safeService,
@@ -1305,7 +1339,6 @@
             redirectTimeout = setTimeout(doRedirect, 800);
         }
 
-        // RASTREAMENTO B2B (WHATSAPP GL PRO)
         function processB2BLead() {
             if(isRedirecting) return;
 
@@ -1351,7 +1384,6 @@
 
             const metaCookies = getMetaCookies();
 
-            // Disparo Nativo TikTok (B2B)
             if (typeof ttq !== 'undefined') {
                 ttq.track('SubmitForm', {
                     content_name: 'Credenciamento B2B'
@@ -1479,7 +1511,6 @@
                 }
             });
 
-            // CAROUSEL ENGINE (DEPOIMENTOS)
             const testimonialSlides = document.querySelectorAll('.testimonial-slide');
             const testimonialIndicators = document.querySelectorAll('.testimonial-indicators button');
             let currentTestimonial = 0;
