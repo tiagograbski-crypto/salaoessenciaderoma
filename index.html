@@ -62,11 +62,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" crossorigin="anonymous">
     
-    <script src="https://unpkg.com/lucide@latest" defer crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 
     <!-- WIDGET DE ATENDIMENTO (MANYCHAT) -->
-    <script src="https://widget.manychat.com/1394285950786346.js" defer="defer" crossorigin="anonymous"></script>
-    <script src="https://mccdn.me/assets/js/widget.js" defer="defer" crossorigin="anonymous"></script>
+    <script src="https://widget.manychat.com/1394285950786346.js" defer="defer"></script>
+    <script src="https://mccdn.me/assets/js/widget.js" defer="defer"></script>
 
     <script>
         tailwind.config = {
@@ -704,7 +704,7 @@
                                 <div class="flex justify-between text-sm mt-1"><span class="text-brand-800 dark:text-luxury-muted transition-colors">Fibra Grossa</span><span class="font-bold text-brand-950 dark:text-luxury-text transition-colors">R$ 1.497</span></div>
                             </div>
                         </div>
-                        <button onclick="openCityModal('Gloss Premium')" class="w-full mt-6 sm:mt-8 py-4 btn-primary-luxury rounded-xl font-bold text-[13px] uppercase tracking-widest focus:outline-none flex items-center justify-center gap-2 shadow-md">
+                        <button onclick="openCityModal('Gloss Premium')" class="w-full mt-6 sm:mt-8 py-4 btn-primary-luxury rounded-xl font-bold text-[13px] uppercase tracking-widest transition-colors focus:outline-none flex items-center justify-center gap-2 shadow-md">
                             Agendar Gloss Premium
                         </button>
                     </div>
@@ -1314,6 +1314,10 @@
             };
 
             const metaCookies = typeof getMetaCookies === 'function' ? getMetaCookies() : { fbp: '', fbc: '' };
+            
+            // Resgate das UTMs para enriquecer o DataLayer e o ROAS
+            let utmObj = {};
+            try { utmObj = JSON.parse(localStorage.getItem('roma_utms') || '{}'); } catch(e) {}
 
             let purchaseValue = 0;
             if (safeCity === 'Chapecó') purchaseValue = 250.00;
@@ -1326,15 +1330,32 @@
                 if (typeof ttq !== 'undefined') {
                     ttq.track('PlaceAnOrder', { content_name: safeService, content_category: safeCity, value: purchaseValue, currency: 'BRL' });
                 }
+                
+                // Disparo de Compra (Purchase) Ultra-Enriquecido (Meta + GA4)
+                window.dataLayer.push({ ecommerce: null }); // Boas práticas GA4
                 window.dataLayer.push({
                     'event': 'purchase',
                     'event_id': eventId,
-                    'value': purchaseValue,
+                    'value': purchaseValue,        // Raiz para Meta CAPI
                     'currency': 'BRL',
                     'service_intent': safeService,
                     'location_intent': safeCity,
                     'fbp': metaCookies.fbp,
                     'fbc': metaCookies.fbc,
+                    'utm_source': utmObj.utm_source || '',
+                    'utm_medium': utmObj.utm_medium || '',
+                    'utm_campaign': utmObj.utm_campaign || '',
+                    'ecommerce': {                 // Objeto nativo GA4
+                        'transaction_id': eventId,
+                        'value': purchaseValue,
+                        'currency': 'BRL',
+                        'items': [{
+                            'item_name': safeService,
+                            'item_category': safeCity,
+                            'price': purchaseValue,
+                            'quantity': 1
+                        }]
+                    },
                     'eventCallback': doRedirect,
                     'eventTimeout': 800 
                 });
@@ -1342,6 +1363,7 @@
                 if (typeof ttq !== 'undefined') {
                     ttq.track('Contact', { content_name: safeService, content_category: safeCity });
                 }
+                // Disparo de Lead Enriquecido
                 window.dataLayer.push({
                     'event': 'generate_lead',
                     'event_id': eventId,
@@ -1349,6 +1371,9 @@
                     'location_intent': safeCity,
                     'fbp': metaCookies.fbp,
                     'fbc': metaCookies.fbc,
+                    'utm_source': utmObj.utm_source || '',
+                    'utm_medium': utmObj.utm_medium || '',
+                    'utm_campaign': utmObj.utm_campaign || '',
                     'eventCallback': doRedirect,
                     'eventTimeout': 800 
                 });
@@ -1401,6 +1426,8 @@
             };
 
             const metaCookies = typeof getMetaCookies === 'function' ? getMetaCookies() : { fbp: '', fbc: '' };
+            let utmObj = {};
+            try { utmObj = JSON.parse(localStorage.getItem('roma_utms') || '{}'); } catch(e) {}
 
             if (typeof ttq !== 'undefined') {
                 ttq.track('SubmitForm', {
@@ -1409,11 +1436,18 @@
             }
 
             window.dataLayer = window.dataLayer || [];
+            // Injeção de Parâmetros de Usuário (Match Rate Supremo Meta CAPI)
             window.dataLayer.push({
                 'event': 'generate_b2b_lead',
                 'event_id': eventId,
                 'fbp': metaCookies.fbp,
                 'fbc': metaCookies.fbc,
+                'user_name': nome,
+                'user_city': cidade,
+                'partner_status': salao,
+                'utm_source': utmObj.utm_source || '',
+                'utm_medium': utmObj.utm_medium || '',
+                'utm_campaign': utmObj.utm_campaign || '',
                 'eventCallback': doRedirect,
                 'eventTimeout': 800
             });
