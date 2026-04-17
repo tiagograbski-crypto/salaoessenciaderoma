@@ -19,10 +19,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         
-        // NOTA DE QA/TRACKING: 
-        // O status 'denied' é obrigatório para LGPD. Isso fará com que extensões como 
-        // o Pixel Helper ou Tag Assistant não mostrem conversões de imediato em abas anônimas 
-        // (falso positivo de erro) até que o usuário clique em "Entendi e Aceito" no rodapé.
         gtag('consent', 'default', {
             'ad_storage': 'denied',
             'ad_user_data': 'denied',
@@ -42,15 +38,9 @@
     </script>
     
     <!-- =================================================================== -->
-    <!-- 2. RASTREAMENTO SERVER-SIDE (STAPE.IO + GTM) -->
+    <!-- 2. RASTREAMENTO SERVER-SIDE (STAPE.IO NOVO CARREGADOR BLINDADO) -->
     <!-- =================================================================== -->
-    <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://kkzrytar.sad.stape.io/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KSC788J2');
-    </script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src="https://kkzrytar.sad.stape.io/amkkzrytar.js?"+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','5=GwVJPiY3RiAhIkNBSjBZTQRcRldDXBgEAlxbFBcOGQIREg%3D%3D');</script>
     
     <!-- =================================================================== -->
     <!-- 3. TIKTOK PIXEL (Eventos e Base) -->
@@ -149,7 +139,7 @@
         
         .glass-glacial { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(24px) saturate(200%); -webkit-backdrop-filter: blur(24px) saturate(200%); border-top: 1px solid rgba(227, 168, 87, 0.15); border-left: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(0, 0, 0, 0.5); border-right: 1px solid rgba(0, 0, 0, 0.5); box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05); }
         
-        /* NOVO BOTÃO LUXO (Ouro/Café) - Substitui o Verde Varejo */
+        /* BOTÃO LUXO (Ouro/Café) - Botões de Funil Padrão */
         .btn-primary-luxury {
             background: linear-gradient(135deg, #30221D 0%, #1C120F 100%);
             color: #EAE5DF !important;
@@ -212,12 +202,11 @@
 </head>
 <body class="no-fouc bg-brand-50 dark:bg-luxury-bg text-brand-950 dark:text-luxury-text font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden pt-8 pb-12 transition-colors duration-300">
 
+    <!-- NOSCRIPT DO STAPE.IO (Instalado perfeitamente no topo do body) -->
     <noscript><iframe src="https://kkzrytar.sad.stape.io/ns.html?id=GTM-KSC788J2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- BARRA DE PROGRESSO -->
     <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-brand-600 to-brand-400 z-[80] transition-all duration-100 ease-out" style="width: 0%;"></div>
 
-    <!-- TIMELINE TOPO -->
     <div class="fixed top-0 left-0 w-full bg-brand-950/90 dark:bg-luxury-card/80 backdrop-blur-md text-brand-100 border-b border-brand-800/10 dark:border-luxury-border text-[9px] sm:text-[10px] font-medium tracking-[0.25em] uppercase h-9 z-[60] overflow-hidden flex items-center">
         <div class="animate-marquee">
             <span class="mx-6 text-emerald-400 font-bold">✦ PATO BRANCO ESTAMOS DE VOLTA</span>
@@ -234,7 +223,6 @@
         </div>
     </div>
 
-    <!-- IMAGEM DE FUNDO E LUZES DINÂMICAS -->
     <div class="fixed inset-0 z-0 pointer-events-none">
         <img id="bg-slide-1" alt="Ambiente do Salão 1" class="slide-bg slide-bg-1 object-cover" />
         <img id="bg-slide-2" alt="Ambiente do Salão 2" class="slide-bg slide-bg-2 object-cover" />
@@ -242,7 +230,6 @@
         <div class="absolute inset-0 bg-gradient-to-b from-brand-50/40 via-brand-50/90 to-brand-50 dark:from-luxury-bg/60 dark:via-luxury-bg/95 dark:to-luxury-bg backdrop-blur-[4px]"></div>
     </div>
 
-    <!-- NAVBAR -->
     <nav class="fixed top-9 w-full z-50 bg-white/70 dark:bg-luxury-bg/70 backdrop-blur-xl border-b border-brand-900/5 dark:border-luxury-border/50 h-20 flex items-center transition-all duration-300" id="navbar">
         <div class="max-w-6xl mx-auto px-6 w-full flex justify-between items-center">
             <div class="flex items-center gap-3">
@@ -257,7 +244,6 @@
 
     <main class="relative z-10 flex-grow w-full mt-4">
         
-        <!-- 1. HERO -->
         <header class="max-w-5xl mx-auto min-h-[85vh] flex flex-col items-center justify-center text-center px-6 pt-24 fade-in">
             <span class="px-5 py-2 rounded-full border border-brand-200 dark:border-luxury-border text-brand-800 dark:text-luxury-muted text-[10px] font-semibold uppercase tracking-[0.25em] mb-8 bg-white/80 dark:bg-luxury-card/80 backdrop-blur-md shadow-sm cursor-default transition-colors">
                 <i data-lucide="sparkles" class="w-3.5 h-3.5 stroke-[2] text-brand-600 dark:text-brand-300 inline-block align-middle mr-1"></i>
@@ -286,7 +272,6 @@
             </div>
         </header>
 
-        <!-- 2. TRUST BADGES -->
         <section class="max-w-4xl mx-auto my-16 reveal px-6">
             <div class="bg-white/90 dark:bg-luxury-card/80 backdrop-blur-xl border border-brand-100 dark:border-luxury-border rounded-3xl py-8 md:py-12 shadow-sm dark:shadow-none grid grid-cols-3 gap-2 sm:gap-8 md:gap-16 transition-colors">
                 <div class="flex flex-col items-center text-center group border-r border-brand-100 dark:border-luxury-border transition-colors">
@@ -304,7 +289,6 @@
             </div>
         </section>
 
-        <!-- 3. VÍDEOS (DESEJO IMEDIATO) -->
         <section id="prova-incontestavel" class="w-full max-w-[100vw] reveal mb-24 overflow-hidden relative">
             <div class="text-center mb-10 sm:mb-16">
                 <span class="text-brand-800 dark:text-brand-300 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.3em] mb-4 block transition-colors">Transparência Real</span>
@@ -342,7 +326,6 @@
             </div>
         </section>
 
-        <!-- 4. OFERTAS TÉCNICAS E SLIDERS -->
         <section id="oferta" class="max-w-7xl mx-auto px-6 mb-24 space-y-10 reveal">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <article aria-labelledby="liso-8k-title" class="flex flex-col h-full bg-white/95 dark:bg-luxury-card/95 backdrop-blur-2xl border border-brand-200 dark:border-luxury-border hover:border-brand-300 dark:hover:border-brand-500/30 rounded-[2.5rem] p-6 sm:p-10 shadow-sm dark:shadow-md relative overflow-hidden transition-all duration-500 group hover:-translate-y-2">
@@ -1057,7 +1040,6 @@
     <button onclick="openCityModal('Falar com Especialista')" class="hidden md:flex fixed bottom-8 right-8 z-[90] btn-whatsapp-float rounded-full p-3.5 items-center justify-center gap-3 group focus:outline-none" aria-label="Falar com Especialista via WhatsApp">
         <div class="relative flex items-center justify-center">
             <span class="absolute inset-0 rounded-full bg-white opacity-30 animate-ping"></span>
-            <!-- Ícone Oficial do WhatsApp em SVG Vetorial -->
             <svg viewBox="0 0 24 24" class="w-7 h-7 relative z-10 fill-current" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.405-.883-.733-1.48-1.638-1.653-1.935-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
             </svg>
@@ -1331,7 +1313,7 @@
                 }
             };
 
-            const metaCookies = getMetaCookies();
+            const metaCookies = typeof getMetaCookies === 'function' ? getMetaCookies() : { fbp: '', fbc: '' };
 
             let purchaseValue = 0;
             if (safeCity === 'Chapecó') purchaseValue = 250.00;
@@ -1418,7 +1400,7 @@
                 }
             };
 
-            const metaCookies = getMetaCookies();
+            const metaCookies = typeof getMetaCookies === 'function' ? getMetaCookies() : { fbp: '', fbc: '' };
 
             if (typeof ttq !== 'undefined') {
                 ttq.track('SubmitForm', {
