@@ -41,17 +41,6 @@
     <!-- 2. RASTREAMENTO SERVER-SIDE (STAPE.IO NOVO CARREGADOR BLINDADO) -->
     <!-- =================================================================== -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src="https://kkzrytar.sad.stape.io/amkkzrytar.js?"+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','5=GwVJPiY3RiAhIkNBSjBZTQRcRldDXBgEAlxbFBcOGQIREg%3D%3D');</script>
-    
-    <!-- =================================================================== -->
-    <!-- 3. TIKTOK PIXEL (Eventos e Base) -->
-    <!-- =================================================================== -->
-    <script>
-    !function (w, d, t) {
-      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
-      ttq.load('D4TEU2JC77U1QNJ4VQ90');
-      ttq.page();
-    }(window, document, 'ttq');
-    </script>
 
     <meta name="theme-color" id="meta-theme-color" content="#0B0908">
     <meta name="color-scheme" content="light dark">
@@ -1325,46 +1314,33 @@
             window.dataLayer = window.dataLayer || [];
 
             if (isPurchase) {
-                if (typeof ttq !== 'undefined') {
-                    ttq.track('PlaceAnOrder', { content_name: safeService, content_category: safeCity, value: purchaseValue, currency: 'BRL' });
-                }
-                
-                // ROTEADOR: DISPARO DE COMPRA (PURCHASE) 100% AUDITADO E OTIMIZADO PARA GA4/META
-                window.dataLayer.push({ ecommerce: null }); // Previne cache de arrays antigos
+                // GTM / GA4: DISPARO DE COMPRA (PURCHASE) 100% NO PADRÃO OFICIAL (Centralizado via GTM)
+                window.dataLayer.push({ ecommerce: null }); // Limpa o objeto ecommerce anterior (Obrigatório)
                 window.dataLayer.push({
                     'event': 'purchase',
-                    'event_id': eventId,
-                    'value': purchaseValue,        // Raiz para Meta CAPI
-                    'currency': 'BRL',
-                    'service_intent': safeService,
-                    'location_intent': safeCity,
+                    'event_id': eventId,                           // ID de deduplicação Meta/Stape
                     'fbp': metaCookies.fbp,
                     'fbc': metaCookies.fbc,
                     'utm_source': utmObj.utm_source || '',
                     'utm_medium': utmObj.utm_medium || '',
                     'utm_campaign': utmObj.utm_campaign || '',
-                    'ecommerce': {                 // Objeto E-commerce Estrito do GA4
-                        'transaction_id': eventId,
-                        'value': purchaseValue,
-                        'currency': 'BRL',
-                        'items': [{
-                            'item_id': cleanService,     // Otimização: ID requerido para relatórios dinâmicos
+                    'ecommerce': {                                 // Objeto E-commerce Estrito do GA4
+                        'transaction_id': eventId,                 // Obrigatório: ID da transação
+                        'value': purchaseValue,                    // Obrigatório: Valor total
+                        'currency': 'BRL',                         // Obrigatório: Moeda
+                        'items': [{                                // Obrigatório: Array de itens (produtos)
+                            'item_id': cleanService,     
                             'item_name': safeService,
                             'item_category': safeCity,
                             'price': purchaseValue,
-                            'quantity': 1,
-                            'currency': 'BRL'            // Otimização: Exigido no Array para não gerar Warnings no GA4
+                            'quantity': 1
                         }]
                     },
                     'eventCallback': doRedirect,
                     'eventTimeout': 800 
                 });
             } else {
-                if (typeof ttq !== 'undefined') {
-                    ttq.track('Contact', { content_name: safeService, content_category: safeCity });
-                }
-                
-                // ROTEADOR: DISPARO DE LEAD
+                // ROTEADOR: DISPARO DE LEAD GENÉRICO (Centralizado via GTM)
                 window.dataLayer.push({
                     'event': 'generate_lead',
                     'event_id': eventId,
@@ -1430,15 +1406,9 @@
             let utmObj = {};
             try { utmObj = JSON.parse(localStorage.getItem('roma_utms') || '{}'); } catch(e) {}
 
-            if (typeof ttq !== 'undefined') {
-                ttq.track('SubmitForm', {
-                    content_name: 'Credenciamento B2B'
-                });
-            }
-
             window.dataLayer = window.dataLayer || [];
             
-            // DISPARO LEAD B2B: INJEÇÃO OFICIAL DO USER_DATA (Match Rate CAPI)
+            // DISPARO LEAD B2B: INJEÇÃO OFICIAL DO USER_DATA (Match Rate CAPI - Centralizado via GTM)
             window.dataLayer.push({
                 'event': 'generate_b2b_lead',
                 'event_id': eventId,
