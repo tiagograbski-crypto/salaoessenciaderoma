@@ -1403,6 +1403,61 @@
             redirectTimeout = setTimeout(doRedirect, 800);
         }
 
+        // ===================================================================
+        // 1. EVENTO PURCHASE BLINDADO COM REDIRECIONAMENTO E CAPI
+        // ===================================================================
+        function dataLayerPurchaseAndRedirect(url, valorCompra, moeda = 'BRL') {
+            // Prevenção de duplo clique
+            if (window.isRedirectingPurchase) return;
+            window.isRedirectingPurchase = true;
+
+            // Gerador de ID para Deduplicação (CAPI Meta)
+            const event_id_purchase = 'pur_' + Date.now() + '_' + Math.floor(Math.random() * 1000000);
+            
+            // Resgate de Cookies para Match Rate máximo
+            const metaCookies = typeof getMetaCookies === 'function' ? getMetaCookies() : { fbp: '', fbc: '' };
+
+            // Função de Redirecionamento (Callback)
+            let redirectTimeout;
+            const doRedirect = () => {
+                if (!window.isRedirectingPurchase) return;
+                window.isRedirectingPurchase = false;
+                clearTimeout(redirectTimeout);
+                if (typeof url === 'string' && url !== '') {
+                    window.location.href = url;
+                }
+            };
+
+            // Disparo para o Cofre (GTM Server-Side)
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'purchase',
+                'event_id': event_id_purchase,
+                'value': valorCompra,
+                'currency': moeda,
+                'fbp': metaCookies.fbp,
+                'fbc': metaCookies.fbc,
+                'eventCallback': doRedirect,
+                'eventTimeout': 800 // Fallback cravado em 800ms
+            });
+
+            // Gatilho de Segurança
+            redirectTimeout = setTimeout(doRedirect, 800);
+        }
+
+        // 2. Funções de Acionamento para cada Unidade/Botão
+        function acionarCompraChapeco(urlDestino) {
+            dataLayerPurchaseAndRedirect(urlDestino, 250.00);
+        }
+
+        function acionarCompraPatoBranco(urlDestino) {
+            dataLayerPurchaseAndRedirect(urlDestino, 275.00);
+        }
+
+        function acionarCompraSeara(urlDestino) {
+            dataLayerPurchaseAndRedirect(urlDestino, 210.00);
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.remove('no-fouc');
             
