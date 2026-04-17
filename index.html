@@ -1171,7 +1171,7 @@
         function storeUTMs() {
             try {
                 const urlParams = new URLSearchParams(window.location.search);
-                const utms = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+                const utms = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid', 'wbraid'];
                 let hasNewUtms = false;
                 let storedUtms = JSON.parse(localStorage.getItem('roma_utms') || '{}');
 
