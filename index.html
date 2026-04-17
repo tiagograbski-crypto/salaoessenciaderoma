@@ -1314,8 +1314,6 @@
             };
 
             const metaCookies = typeof getMetaCookies === 'function' ? getMetaCookies() : { fbp: '', fbc: '' };
-            
-            // Resgate das UTMs para enriquecer o DataLayer e o ROAS
             let utmObj = {};
             try { utmObj = JSON.parse(localStorage.getItem('roma_utms') || '{}'); } catch(e) {}
 
@@ -1331,8 +1329,8 @@
                     ttq.track('PlaceAnOrder', { content_name: safeService, content_category: safeCity, value: purchaseValue, currency: 'BRL' });
                 }
                 
-                // Disparo de Compra (Purchase) Ultra-Enriquecido (Meta + GA4)
-                window.dataLayer.push({ ecommerce: null }); // Boas práticas GA4
+                // ROTEADOR: DISPARO DE COMPRA (PURCHASE) 100% AUDITADO E OTIMIZADO PARA GA4/META
+                window.dataLayer.push({ ecommerce: null }); // Previne cache de arrays antigos
                 window.dataLayer.push({
                     'event': 'purchase',
                     'event_id': eventId,
@@ -1345,15 +1343,17 @@
                     'utm_source': utmObj.utm_source || '',
                     'utm_medium': utmObj.utm_medium || '',
                     'utm_campaign': utmObj.utm_campaign || '',
-                    'ecommerce': {                 // Objeto nativo GA4
+                    'ecommerce': {                 // Objeto E-commerce Estrito do GA4
                         'transaction_id': eventId,
                         'value': purchaseValue,
                         'currency': 'BRL',
                         'items': [{
+                            'item_id': cleanService,     // Otimização: ID requerido para relatórios dinâmicos
                             'item_name': safeService,
                             'item_category': safeCity,
                             'price': purchaseValue,
-                            'quantity': 1
+                            'quantity': 1,
+                            'currency': 'BRL'            // Otimização: Exigido no Array para não gerar Warnings no GA4
                         }]
                     },
                     'eventCallback': doRedirect,
@@ -1363,7 +1363,8 @@
                 if (typeof ttq !== 'undefined') {
                     ttq.track('Contact', { content_name: safeService, content_category: safeCity });
                 }
-                // Disparo de Lead Enriquecido
+                
+                // ROTEADOR: DISPARO DE LEAD
                 window.dataLayer.push({
                     'event': 'generate_lead',
                     'event_id': eventId,
@@ -1436,14 +1437,19 @@
             }
 
             window.dataLayer = window.dataLayer || [];
-            // Injeção de Parâmetros de Usuário (Match Rate Supremo Meta CAPI)
+            
+            // DISPARO LEAD B2B: INJEÇÃO OFICIAL DO USER_DATA (Match Rate CAPI)
             window.dataLayer.push({
                 'event': 'generate_b2b_lead',
                 'event_id': eventId,
                 'fbp': metaCookies.fbp,
                 'fbc': metaCookies.fbc,
-                'user_name': nome,
-                'user_city': cidade,
+                'user_data': {
+                    'name': nome,
+                    'address': {
+                        'city': cidade
+                    }
+                },
                 'partner_status': salao,
                 'utm_source': utmObj.utm_source || '',
                 'utm_medium': utmObj.utm_medium || '',
