@@ -164,6 +164,27 @@
         body.no-fouc #cookie-banner { display: none !important; }
         .transition-colors { transition-duration: 300ms; transition-timing-function: ease-in-out; will-change: background-color, border-color, color; }
     </style>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied',
+            'wait_for_update': 500
+        });
+        
+        window.grantConsent = function() {
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'analytics_storage': 'granted',
+                'personalization_storage': 'granted',
+                'marketing_storage': 'granted'
+            });
+        };
+    </script>
 </head>
 <body class="no-fouc bg-brand-50 dark:bg-luxury-bg text-brand-950 dark:text-luxury-text font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden pt-8 pb-12 transition-colors duration-300">
 
@@ -775,16 +796,23 @@
                     </button>
                 </article>
 
-                <article class="snap-start shrink-0 w-[75vw] sm:w-[280px] flex flex-col justify-between bg-white dark:bg-luxury-card backdrop-blur-md border border-brand-200 dark:border-luxury-border hover:border-brand-400 dark:hover:border-brand-500/50 rounded-[2rem] p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-2">
-                    <div class="flex flex-col flex-grow">
-                        <div class="w-12 h-12 rounded-full bg-brand-50 dark:bg-luxury-bg flex items-center justify-center mb-5 border border-brand-200 dark:border-luxury-border group-hover:scale-110 transition-transform shadow-sm">
+                <article class="snap-start shrink-0 w-[75vw] sm:w-[280px] flex flex-col justify-between bg-white dark:bg-luxury-card backdrop-blur-md border border-brand-200 dark:border-luxury-border hover:border-brand-400 dark:hover:border-brand-500/50 rounded-[2rem] p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-6 bg-brand-500 text-white px-3 py-1 rounded-b-lg text-[8px] font-black uppercase tracking-widest shadow-sm z-10">Especial</div>
+                    <div class="flex flex-col flex-grow relative z-0">
+                        <div class="w-12 h-12 rounded-full bg-brand-50 dark:bg-luxury-bg flex items-center justify-center mb-5 border border-brand-200 dark:border-luxury-border group-hover:scale-110 transition-transform shadow-sm mt-2">
                             <i data-lucide="scissors" class="w-5 h-5 text-brand-600 dark:text-brand-300"></i>
                         </div>
                         <h3 class="font-serif text-xl sm:text-2xl font-medium text-brand-950 dark:text-luxury-text mb-2 transition-colors">Visagismo & Corte</h3>
                         <p class="text-[12px] sm:text-[13px] text-brand-800 dark:text-luxury-muted font-light leading-relaxed transition-colors">Desenho estratégico do visual com técnicas de precisão para um caimento sofisticado e muito prático no dia a dia.</p>
-                        <div class="mt-auto pt-5 border-t border-brand-100 dark:border-luxury-border mt-5 mb-5 flex flex-col gap-0.5 transition-colors">
-                            <span class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-700 dark:text-brand-400 transition-colors">Investimento</span>
-                            <span class="font-serif text-2xl font-medium text-brand-950 dark:text-luxury-text transition-colors">R$ 210</span>
+                        <div class="mt-auto pt-5 border-t border-brand-100 dark:border-luxury-border mt-5 mb-5 flex flex-col transition-colors">
+                            <div class="flex justify-between items-end mb-1">
+                                <span class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-700 dark:text-brand-400 transition-colors">Investimento</span>
+                                <span class="text-[8px] font-bold bg-brand-50 text-brand-800 dark:bg-luxury-bg dark:text-brand-400 px-1.5 py-0.5 rounded border border-brand-200 dark:border-luxury-border shadow-sm uppercase tracking-widest whitespace-nowrap">- R$ 70 OFF</span>
+                            </div>
+                            <div class="flex items-baseline gap-2">
+                                <span class="font-serif text-2xl font-medium text-brand-950 dark:text-luxury-text transition-colors">R$ 210</span>
+                                <span class="font-serif text-sm text-brand-800/50 dark:text-luxury-muted/50 line-through decoration-brand-500/40 transition-colors">R$ 280</span>
+                            </div>
                         </div>
                     </div>
                     <button onclick="openCityModal('Visagismo e Corte')" class="w-full py-3 px-4 border border-brand-200 dark:border-luxury-border rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-center text-brand-950 dark:text-luxury-text hover:bg-brand-900 hover:text-white dark:hover:bg-luxury-text/10 transition-colors focus:outline-none">
@@ -1250,7 +1278,6 @@
             
             const msg = `Olá! Vim pelo site e gostaria de atendimento.\n\n📍 *Unidade Desejada:* ${safeCity}\n✨ *Serviço/Interesse:* ${safeService}\n🎯 *Objetivo:* ${intentType}\n\nAguardo o retorno!${crmTag}${getStoredUTMsText()}`;
             
-            // CIRURGIA DE PERFORMANCE E UX: Rota API web direta para prevenir erros 404 (manifest) em in-app browsers
             const finalUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(msg)}`;
 
             const redirectPage = document.getElementById('redirect-page');
@@ -1292,21 +1319,27 @@
             window.dataLayer = window.dataLayer || [];
 
             if (isPurchase) {
-                // 1. GTM / GA4: DISPARO DE COMPRA (PURCHASE) 100% NO PADRÃO OFICIAL CENTRALIZADO NO GTM
-                window.dataLayer.push({ ecommerce: null }); // Limpa o objeto ecommerce anterior (Obrigatório)
+                // 1. LIMPEZA DO CACHE DE ITENS GA4
+                window.dataLayer.push({ ecommerce: null }); 
+                
+                // 2. DISPARO GA4 / META (PURCHASE 100% NO PADRÃO)
                 window.dataLayer.push({
                     'event': 'purchase',
-                    'event_id': eventId,                           // ID de deduplicação Meta/Stape
+                    'event_id': eventId,
+                    'value': purchaseValue,        // Parâmetro raiz para Meta CAPI
+                    'currency': 'BRL',             // Parâmetro raiz para Meta CAPI
+                    'service_intent': safeService,
+                    'location_intent': safeCity,
                     'fbp': metaCookies.fbp,
                     'fbc': metaCookies.fbc,
                     'utm_source': utmObj.utm_source || '',
                     'utm_medium': utmObj.utm_medium || '',
                     'utm_campaign': utmObj.utm_campaign || '',
-                    'ecommerce': {                                 // Objeto E-commerce Estrito do GA4
-                        'transaction_id': eventId,                 // Obrigatório: ID da transação
-                        'value': purchaseValue,                    // Obrigatório: Valor total
-                        'currency': 'BRL',                         // Obrigatório: Moeda
-                        'items': [{                                // Obrigatório: Array de itens (produtos)
+                    'ecommerce': {                 // Objeto Oficial GA4 (Perfeito)
+                        'transaction_id': eventId,
+                        'value': purchaseValue,
+                        'currency': 'BRL',
+                        'items': [{
                             'item_id': cleanService,     
                             'item_name': safeService,
                             'item_category': safeCity,
@@ -1315,10 +1348,10 @@
                         }]
                     },
                     'eventCallback': doRedirect,
-                    'eventTimeout': 800 
+                    'eventTimeout': 1500 // AUMENTADO: Dá fôlego para o Tag Assistant exibir os dados sem "sumir"
                 });
             } else {
-                // 2. ROTEADOR: DISPARO DE LEAD GENÉRICO CENTRALIZADO NO GTM
+                // ROTEADOR: DISPARO DE LEAD GENÉRICO
                 window.dataLayer.push({
                     'event': 'generate_lead',
                     'event_id': eventId,
@@ -1330,11 +1363,12 @@
                     'utm_medium': utmObj.utm_medium || '',
                     'utm_campaign': utmObj.utm_campaign || '',
                     'eventCallback': doRedirect,
-                    'eventTimeout': 800 
+                    'eventTimeout': 1500 // AUMENTADO
                 });
             }
 
-            redirectTimeout = setTimeout(doRedirect, 800);
+            // GATILHO DE SEGURANÇA: Previne a perda de cliente
+            redirectTimeout = setTimeout(doRedirect, 1500);
         }
 
         function processB2BLead() {
@@ -1352,7 +1386,6 @@
             const eventId = 'b2b_' + Date.now() + '_' + Math.floor(Math.random() * 1000000);
             const msg = `*SOLICITAÇÃO DE CREDENCIAMENTO GL PRO*\n\n👤 Nome: ${nome}\n📍 Cidade: ${cidade}\n✂️ Status: ${salao}${getStoredUTMsText()}`;
             
-            // CIRURGIA DE PERFORMANCE E UX: Rota API web direta para prevenir erros 404 (manifest) em in-app browsers (B2B)
             const finalUrl = `https://api.whatsapp.com/send?phone=${phoneB2B}&text=${encodeURIComponent(msg)}`;
 
             const redirectPage = document.getElementById('redirect-page');
@@ -1388,7 +1421,7 @@
 
             window.dataLayer = window.dataLayer || [];
             
-            // DISPARO LEAD B2B: INJEÇÃO OFICIAL DO USER_DATA (Match Rate CAPI - Centralizado via GTM)
+            // DISPARO LEAD B2B: INJEÇÃO DE PARÂMETROS DE USUÁRIO (user_data)
             window.dataLayer.push({
                 'event': 'generate_b2b_lead',
                 'event_id': eventId,
@@ -1405,10 +1438,10 @@
                 'utm_medium': utmObj.utm_medium || '',
                 'utm_campaign': utmObj.utm_campaign || '',
                 'eventCallback': doRedirect,
-                'eventTimeout': 800
+                'eventTimeout': 1500
             });
 
-            redirectTimeout = setTimeout(doRedirect, 800);
+            redirectTimeout = setTimeout(doRedirect, 1500);
         }
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -1634,7 +1667,9 @@
                 b.classList.remove('translate-y-0');
                 b.classList.add('translate-y-full'); 
             }
-            grantConsent(); 
+            if (typeof window.grantConsent === 'function') {
+                window.grantConsent(); 
+            }
         }
         
         const legalTexts = {
