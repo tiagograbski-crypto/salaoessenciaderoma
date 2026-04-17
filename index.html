@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 
     <!-- =================================================================== -->
-    <!-- 2. RASTREAMENTO SERVER-SIDE (STAPE.IO GTM OFICIAL) -->
+    <!-- RASTREAMENTO SERVER-SIDE BLINDADO (STAPE.IO GTM OFICIAL) -->
     <!-- =================================================================== -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://kkzrytar.sad.stape.io/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -188,7 +188,6 @@
 </head>
 <body class="no-fouc bg-brand-50 dark:bg-luxury-bg text-brand-950 dark:text-luxury-text font-sans antialiased min-h-screen flex flex-col relative overflow-x-hidden pt-8 pb-12 transition-colors duration-300">
 
-    <!-- NOSCRIPT DO STAPE.IO (Instalado perfeitamente no topo do body) -->
     <noscript><iframe src="https://kkzrytar.sad.stape.io/ns.html?id=GTM-KSC788J2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-brand-600 to-brand-400 z-[80] transition-all duration-100 ease-out" style="width: 0%;"></div>
@@ -1319,15 +1318,12 @@
             window.dataLayer = window.dataLayer || [];
 
             if (isPurchase) {
-                // 1. LIMPEZA DO CACHE DE ITENS GA4
                 window.dataLayer.push({ ecommerce: null }); 
-                
-                // 2. DISPARO GA4 / META (PURCHASE 100% NO PADRÃO)
                 window.dataLayer.push({
                     'event': 'purchase',
                     'event_id': eventId,
-                    'value': purchaseValue,        // Parâmetro raiz para Meta CAPI
-                    'currency': 'BRL',             // Parâmetro raiz para Meta CAPI
+                    'value': purchaseValue,
+                    'currency': 'BRL',
                     'service_intent': safeService,
                     'location_intent': safeCity,
                     'fbp': metaCookies.fbp,
@@ -1335,7 +1331,7 @@
                     'utm_source': utmObj.utm_source || '',
                     'utm_medium': utmObj.utm_medium || '',
                     'utm_campaign': utmObj.utm_campaign || '',
-                    'ecommerce': {                 // Objeto Oficial GA4 (Perfeito)
+                    'ecommerce': {
                         'transaction_id': eventId,
                         'value': purchaseValue,
                         'currency': 'BRL',
@@ -1348,10 +1344,9 @@
                         }]
                     },
                     'eventCallback': doRedirect,
-                    'eventTimeout': 1500 // AUMENTADO: Dá fôlego para o Tag Assistant exibir os dados sem "sumir"
+                    'eventTimeout': 1500 
                 });
             } else {
-                // ROTEADOR: DISPARO DE LEAD GENÉRICO
                 window.dataLayer.push({
                     'event': 'generate_lead',
                     'event_id': eventId,
@@ -1363,11 +1358,10 @@
                     'utm_medium': utmObj.utm_medium || '',
                     'utm_campaign': utmObj.utm_campaign || '',
                     'eventCallback': doRedirect,
-                    'eventTimeout': 1500 // AUMENTADO
+                    'eventTimeout': 1500 
                 });
             }
 
-            // GATILHO DE SEGURANÇA: Previne a perda de cliente
             redirectTimeout = setTimeout(doRedirect, 1500);
         }
 
@@ -1421,7 +1415,6 @@
 
             window.dataLayer = window.dataLayer || [];
             
-            // DISPARO LEAD B2B: INJEÇÃO DE PARÂMETROS DE USUÁRIO (user_data)
             window.dataLayer.push({
                 'event': 'generate_b2b_lead',
                 'event_id': eventId,
