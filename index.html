@@ -1250,7 +1250,7 @@
 
         let isRedirecting = false;
 
-        function handleCitySelection(rawCity) {
+function handleCitySelection(rawCity) {
             if(isRedirecting) return;
             isRedirecting = true;
 
@@ -1289,10 +1289,9 @@
                 setTimeout(() => redirectPage.classList.remove('opacity-0'), 10);
             }
 
-            // NERO: Função de redirecionamento com trava de segurança
+            // NERO: Trava de segurança de 2 segundos para a Stape.io processar os dados
             const doRedirect = () => {
                 window.location.href = finalUrl;
-                // Mantém a tela de carregamento ativa por 2s extras para evitar "pisca" antes de sair
                 setTimeout(() => {
                     isRedirecting = false;
                     if(redirectPage) {
@@ -1316,7 +1315,7 @@
 
             window.dataLayer = window.dataLayer || [];
 
-            // NERO: Disparo de rastreamento prioritário
+            // NERO: Disparo de rastreamento com tempo estendido e Fallback
             if (isPurchase) {
                 window.dataLayer.push({
                     'event': 'purchase',
@@ -1340,7 +1339,7 @@
                         }]
                     },
                     'eventCallback': doRedirect,
-                    'eventTimeout': 2000 // Aumentamos o tempo para garantir que a Stape receba
+                    'eventTimeout': 2000
                 });
             } else {
                 window.dataLayer.push({
@@ -1355,7 +1354,7 @@
                 });
             }
             
-            // Segurança caso o GTM falhe em responder
+            // Segurança extrema: Se o GTM travar, libera a cliente pro WhatsApp após 2.5s
             setTimeout(() => { if(isRedirecting) doRedirect(); }, 2500);
         }
 
