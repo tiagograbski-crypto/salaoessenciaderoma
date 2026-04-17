@@ -19,6 +19,10 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         
+        // NOTA DE QA/TRACKING: 
+        // O status 'denied' é obrigatório para LGPD. Isso fará com que extensões como 
+        // o Pixel Helper ou Tag Assistant não mostrem conversões de imediato em abas anônimas 
+        // (falso positivo de erro) até que o usuário clique em "Entendi e Aceito" no rodapé.
         gtag('consent', 'default', {
             'ad_storage': 'denied',
             'ad_user_data': 'denied',
@@ -210,8 +214,10 @@
 
     <noscript><iframe src="https://kkzrytar.sad.stape.io/ns.html?id=GTM-KSC788J2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
+    <!-- BARRA DE PROGRESSO -->
     <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-brand-600 to-brand-400 z-[80] transition-all duration-100 ease-out" style="width: 0%;"></div>
 
+    <!-- TIMELINE TOPO -->
     <div class="fixed top-0 left-0 w-full bg-brand-950/90 dark:bg-luxury-card/80 backdrop-blur-md text-brand-100 border-b border-brand-800/10 dark:border-luxury-border text-[9px] sm:text-[10px] font-medium tracking-[0.25em] uppercase h-9 z-[60] overflow-hidden flex items-center">
         <div class="animate-marquee">
             <span class="mx-6 text-emerald-400 font-bold">✦ PATO BRANCO ESTAMOS DE VOLTA</span>
@@ -228,6 +234,7 @@
         </div>
     </div>
 
+    <!-- IMAGEM DE FUNDO E LUZES DINÂMICAS -->
     <div class="fixed inset-0 z-0 pointer-events-none">
         <img id="bg-slide-1" alt="Ambiente do Salão 1" class="slide-bg slide-bg-1 object-cover" />
         <img id="bg-slide-2" alt="Ambiente do Salão 2" class="slide-bg slide-bg-2 object-cover" />
@@ -235,6 +242,7 @@
         <div class="absolute inset-0 bg-gradient-to-b from-brand-50/40 via-brand-50/90 to-brand-50 dark:from-luxury-bg/60 dark:via-luxury-bg/95 dark:to-luxury-bg backdrop-blur-[4px]"></div>
     </div>
 
+    <!-- NAVBAR -->
     <nav class="fixed top-9 w-full z-50 bg-white/70 dark:bg-luxury-bg/70 backdrop-blur-xl border-b border-brand-900/5 dark:border-luxury-border/50 h-20 flex items-center transition-all duration-300" id="navbar">
         <div class="max-w-6xl mx-auto px-6 w-full flex justify-between items-center">
             <div class="flex items-center gap-3">
@@ -249,6 +257,7 @@
 
     <main class="relative z-10 flex-grow w-full mt-4">
         
+        <!-- 1. HERO -->
         <header class="max-w-5xl mx-auto min-h-[85vh] flex flex-col items-center justify-center text-center px-6 pt-24 fade-in">
             <span class="px-5 py-2 rounded-full border border-brand-200 dark:border-luxury-border text-brand-800 dark:text-luxury-muted text-[10px] font-semibold uppercase tracking-[0.25em] mb-8 bg-white/80 dark:bg-luxury-card/80 backdrop-blur-md shadow-sm cursor-default transition-colors">
                 <i data-lucide="sparkles" class="w-3.5 h-3.5 stroke-[2] text-brand-600 dark:text-brand-300 inline-block align-middle mr-1"></i>
@@ -277,6 +286,7 @@
             </div>
         </header>
 
+        <!-- 2. TRUST BADGES -->
         <section class="max-w-4xl mx-auto my-16 reveal px-6">
             <div class="bg-white/90 dark:bg-luxury-card/80 backdrop-blur-xl border border-brand-100 dark:border-luxury-border rounded-3xl py-8 md:py-12 shadow-sm dark:shadow-none grid grid-cols-3 gap-2 sm:gap-8 md:gap-16 transition-colors">
                 <div class="flex flex-col items-center text-center group border-r border-brand-100 dark:border-luxury-border transition-colors">
@@ -294,6 +304,7 @@
             </div>
         </section>
 
+        <!-- 3. VÍDEOS (DESEJO IMEDIATO) -->
         <section id="prova-incontestavel" class="w-full max-w-[100vw] reveal mb-24 overflow-hidden relative">
             <div class="text-center mb-10 sm:mb-16">
                 <span class="text-brand-800 dark:text-brand-300 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.3em] mb-4 block transition-colors">Transparência Real</span>
@@ -331,6 +342,7 @@
             </div>
         </section>
 
+        <!-- 4. OFERTAS TÉCNICAS E SLIDERS -->
         <section id="oferta" class="max-w-7xl mx-auto px-6 mb-24 space-y-10 reveal">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <article aria-labelledby="liso-8k-title" class="flex flex-col h-full bg-white/95 dark:bg-luxury-card/95 backdrop-blur-2xl border border-brand-200 dark:border-luxury-border hover:border-brand-300 dark:hover:border-brand-500/30 rounded-[2.5rem] p-6 sm:p-10 shadow-sm dark:shadow-md relative overflow-hidden transition-all duration-500 group hover:-translate-y-2">
@@ -451,7 +463,7 @@
             <div>
                 <span class="text-brand-500 text-xs font-bold uppercase tracking-[0.3em] mb-4 block transition-colors">Especialistas Certificadas</span>
                 <h2 class="font-serif text-4xl md:text-6xl mb-8 text-brand-950 dark:text-luxury-text transition-colors">Quem cuida do seu <br><span class="italic">património visual?</span></h2>
-                <p class="text-brand-800 dark:text-luxury-muted text-lg font-medium leading-relaxed mb-8 transition-colors">Sob a liderança de Jô (CEO e Colorista) e a precisão técnica de Julia (Expert em Alisamentos), garantimos que o seu cabelo receba engenharia, não apenas química.</p>
+                <p class="text-brand-800 dark:text-luxury-muted text-lg font-medium leading-relaxed mb-8 transition-colors">Sob a liderança de Jô (CEO e Colorista) e a precisão técnica de Julia (Expert em Alisamentos), garantimos que o seu cabelo receive engenharia, não apenas química.</p>
                 <div class="flex gap-8">
                     <div class="flex items-center gap-4">
                         <img src="https://testeessencia.carrd.co/assets/images/image80.jpg" alt="Jô" loading="lazy" class="w-16 h-16 rounded-full object-cover border-2 border-brand-300 dark:border-luxury-border transition-colors">
@@ -474,7 +486,7 @@
                <div class="text-center mb-12 sm:mb-16">
                   <span class="text-xs uppercase tracking-[0.3em] font-bold text-brand-500 block mb-3 transition-colors">Experiências Comprovadas</span>
                   <h3 class="font-serif text-4xl md:text-5xl text-brand-950 dark:text-luxury-text font-medium leading-snug transition-colors">
-                    A Voz das Nossas Clientes. <br/>Resultados Incontestáveis.
+                    A Voz Das Nossas Clientes. <br/>Resultados Incontestáveis.
                   </h3>
                </div>
                
@@ -1001,8 +1013,8 @@
         <div class="absolute inset-0 bg-brand-950/60 dark:bg-black/80 backdrop-blur-sm transition-colors" onclick="closeB2BModal()"></div>
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-sm bg-white dark:bg-luxury-card rounded-3xl shadow-2xl border border-brand-200 dark:border-luxury-border p-5 sm:p-8 flex flex-col items-center text-center transition-colors">
             <button onclick="closeB2BModal()" class="absolute top-2 right-2 p-4 text-brand-700 dark:text-brand-400 hover:text-brand-900 dark:hover:text-luxury-text transition-colors rounded-full focus:outline-none"><i data-lucide="x" class="w-5 h-5 stroke-[2]"></i></button>
-            <div class="w-12 h-12 rounded-full bg-brand-50 dark:bg-luxury-bg flex items-center justify-center mb-4 transition-colors border border-brand-200 dark:border-luxury-border">
-                <i data-lucide="user-plus" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
+            <div class="w-12 h-12 rounded-full bg-[#128C7E]/10 dark:bg-[#1EBE5D]/10 flex items-center justify-center mb-4 transition-colors border border-[#128C7E]/20 dark:border-[#1EBE5D]/20">
+                <i data-lucide="user-plus" class="w-6 h-6 text-[#128C7E] dark:text-[#1EBE5D]"></i>
             </div>
             <h3 class="font-serif text-xl sm:text-2xl text-brand-950 dark:text-luxury-text font-medium mb-2 transition-colors">Parceria Premium</h3>
             <p class="text-[12px] sm:text-[13px] text-brand-800 dark:text-luxury-muted font-light mb-6 transition-colors">Preencha os dados abaixo para analisarmos a viabilidade do credenciamento na sua região.</p>
@@ -1061,6 +1073,7 @@
         </button>
     </div>
 
+    <!-- LGPD BANNER -->
     <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-white dark:bg-luxury-card border-t border-brand-200 dark:border-luxury-border p-4 z-[100] transform translate-y-full transition-transform duration-700 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] dark:shadow-[0_-10px_40px_rgba(0,0,0,0.6)] flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 transition-colors">
         <p class="text-[10px] sm:text-xs text-brand-800 dark:text-luxury-muted font-light text-center sm:text-left max-w-4xl leading-relaxed transition-colors">
             Para garantir uma navegação otimizada e o envio de novidades exclusivas do salão, este site utiliza cookies. Ao continuar, concorda com a <button onclick="openLegalModal('privacidade')" class="underline font-medium text-brand-950 dark:text-luxury-text focus:outline-none transition-colors">Política de Privacidade</button>.
@@ -1068,6 +1081,7 @@
         <button onclick="acceptCookies()" class="shrink-0 btn-primary-luxury text-white px-6 py-3 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider transition-colors focus:outline-none shadow-sm">Entendi e Aceito</button>
     </div>
 
+    <!-- MODAIS LEGAIS -->
     <div id="legal-modal" class="fixed inset-0 z-[110] hidden opacity-0 transition-opacity duration-300">
         <div class="absolute inset-0 bg-brand-950/40 dark:bg-black/80 backdrop-blur-sm transition-colors" onclick="closeLegalModal()"></div>
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-white dark:bg-luxury-card rounded-3xl shadow-2xl border border-brand-200 dark:border-luxury-border flex flex-col max-h-[85vh] transition-colors">
@@ -1273,11 +1287,13 @@
             const safeService = currentSelectedService || 'Atendimento Geral';
 
             let intentType = "Agendamento de Avaliação";
+            const isPurchase = safeService.includes('Glass') || safeService.includes('Platinum') || safeService.includes('Liso') || safeService.includes('Soberano') || safeService.includes('Fusion') || safeService.includes('Standard');
+
             if (safeService === 'Falar com Especialista') {
                 intentType = "Dúvida / Atendimento";
-            } else if (safeService.includes('Glass') || safeService.includes('Platinum') || safeService.includes('Liso') || safeService.includes('Soberano') || safeService.includes('Fusion') || safeService.includes('Standard')) {
+            } else if (isPurchase) {
                 intentType = "Interesse em Protocolo Químico/Alisamento";
-            } else if (safeService.includes('Terapia') || safeService.includes('Spa') || safeService.includes('Colorimetria') || safeService.includes('Corte') || safeService.includes('Visagismo')) {
+            } else {
                 intentType = "Interesse em Serviços de Salão";
             }
 
@@ -1317,24 +1333,44 @@
 
             const metaCookies = getMetaCookies();
 
-            if (typeof ttq !== 'undefined') {
-                ttq.track('Contact', {
-                    content_name: safeService,
-                    content_category: safeCity
-                });
-            }
+            let purchaseValue = 0;
+            if (safeCity === 'Chapecó') purchaseValue = 250.00;
+            else if (safeCity === 'Pato Branco') purchaseValue = 275.00;
+            else if (safeCity === 'Seara') purchaseValue = 210.00;
 
             window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'generate_lead',
-                'event_id': eventId,
-                'service_intent': safeService,
-                'location_intent': safeCity,
-                'fbp': metaCookies.fbp,
-                'fbc': metaCookies.fbc,
-                'eventCallback': doRedirect,
-                'eventTimeout': 800 
-            });
+
+            if (isPurchase) {
+                if (typeof ttq !== 'undefined') {
+                    ttq.track('PlaceAnOrder', { content_name: safeService, content_category: safeCity, value: purchaseValue, currency: 'BRL' });
+                }
+                window.dataLayer.push({
+                    'event': 'purchase',
+                    'event_id': eventId,
+                    'value': purchaseValue,
+                    'currency': 'BRL',
+                    'service_intent': safeService,
+                    'location_intent': safeCity,
+                    'fbp': metaCookies.fbp,
+                    'fbc': metaCookies.fbc,
+                    'eventCallback': doRedirect,
+                    'eventTimeout': 800 
+                });
+            } else {
+                if (typeof ttq !== 'undefined') {
+                    ttq.track('Contact', { content_name: safeService, content_category: safeCity });
+                }
+                window.dataLayer.push({
+                    'event': 'generate_lead',
+                    'event_id': eventId,
+                    'service_intent': safeService,
+                    'location_intent': safeCity,
+                    'fbp': metaCookies.fbp,
+                    'fbc': metaCookies.fbc,
+                    'eventCallback': doRedirect,
+                    'eventTimeout': 800 
+                });
+            }
 
             redirectTimeout = setTimeout(doRedirect, 800);
         }
@@ -1401,61 +1437,6 @@
             });
 
             redirectTimeout = setTimeout(doRedirect, 800);
-        }
-
-        // ===================================================================
-        // 1. EVENTO PURCHASE BLINDADO COM REDIRECIONAMENTO E CAPI
-        // ===================================================================
-        function dataLayerPurchaseAndRedirect(url, valorCompra, moeda = 'BRL') {
-            // Prevenção de duplo clique
-            if (window.isRedirectingPurchase) return;
-            window.isRedirectingPurchase = true;
-
-            // Gerador de ID para Deduplicação (CAPI Meta)
-            const event_id_purchase = 'pur_' + Date.now() + '_' + Math.floor(Math.random() * 1000000);
-            
-            // Resgate de Cookies para Match Rate máximo
-            const metaCookies = typeof getMetaCookies === 'function' ? getMetaCookies() : { fbp: '', fbc: '' };
-
-            // Função de Redirecionamento (Callback)
-            let redirectTimeout;
-            const doRedirect = () => {
-                if (!window.isRedirectingPurchase) return;
-                window.isRedirectingPurchase = false;
-                clearTimeout(redirectTimeout);
-                if (typeof url === 'string' && url !== '') {
-                    window.location.href = url;
-                }
-            };
-
-            // Disparo para o Cofre (GTM Server-Side)
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'purchase',
-                'event_id': event_id_purchase,
-                'value': valorCompra,
-                'currency': moeda,
-                'fbp': metaCookies.fbp,
-                'fbc': metaCookies.fbc,
-                'eventCallback': doRedirect,
-                'eventTimeout': 800 // Fallback cravado em 800ms
-            });
-
-            // Gatilho de Segurança
-            redirectTimeout = setTimeout(doRedirect, 800);
-        }
-
-        // 2. Funções de Acionamento para cada Unidade/Botão
-        function acionarCompraChapeco(urlDestino) {
-            dataLayerPurchaseAndRedirect(urlDestino, 250.00);
-        }
-
-        function acionarCompraPatoBranco(urlDestino) {
-            dataLayerPurchaseAndRedirect(urlDestino, 275.00);
-        }
-
-        function acionarCompraSeara(urlDestino) {
-            dataLayerPurchaseAndRedirect(urlDestino, 210.00);
         }
 
         document.addEventListener('DOMContentLoaded', () => {
