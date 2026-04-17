@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melhor Salão de Chapecó e Seara | Liso Soberano e Tratamentos Premium</title>
     
     <meta name="description" content="Referência absoluta em alisamentos de alta performance sem formol, Liso Soberano 8K e Tratamento Glass Molecular. O melhor salão de Chapecó e Seara.">
@@ -13,15 +13,11 @@
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 
     <!-- =================================================================== -->
-    <!-- 3. TIKTOK PIXEL (Eventos e Base) -->
+    <!-- 2. RASTREAMENTO SERVER-SIDE (STAPE.IO GTM OFICIAL) -->
     <!-- =================================================================== -->
-    <script>
-    !function (w, d, t) {
-      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
-      ttq.load('D4TEU2JC77U1QNJ4VQ90');
-      ttq.page();
-    }(window, document, 'ttq');
-    </script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://kkzrytar.sad.stape.io/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KSC788J2');</script>
 
     <meta name="theme-color" id="meta-theme-color" content="#0B0908">
     <meta name="color-scheme" content="light dark">
@@ -1254,8 +1250,8 @@
             
             const msg = `Olá! Vim pelo site e gostaria de atendimento.\n\n📍 *Unidade Desejada:* ${safeCity}\n✨ *Serviço/Interesse:* ${safeService}\n🎯 *Objetivo:* ${intentType}\n\nAguardo o retorno!${crmTag}${getStoredUTMsText()}`;
             
-            // CIRURGIA DE PERFORMANCE E UX: Rota oficial wa.me anula o erro 404 de manifest.json do servidor da Meta
-            const finalUrl = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+            // CIRURGIA DE PERFORMANCE E UX: Rota API web direta para prevenir erros 404 (manifest) em in-app browsers
+            const finalUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(msg)}`;
 
             const redirectPage = document.getElementById('redirect-page');
             closeCityModal();
@@ -1296,7 +1292,7 @@
             window.dataLayer = window.dataLayer || [];
 
             if (isPurchase) {
-                // GTM / GA4: DISPARO DE COMPRA (PURCHASE) 100% NO PADRÃO OFICIAL (Centralizado via GTM)
+                // 1. GTM / GA4: DISPARO DE COMPRA (PURCHASE) 100% NO PADRÃO OFICIAL CENTRALIZADO NO GTM
                 window.dataLayer.push({ ecommerce: null }); // Limpa o objeto ecommerce anterior (Obrigatório)
                 window.dataLayer.push({
                     'event': 'purchase',
@@ -1322,7 +1318,7 @@
                     'eventTimeout': 800 
                 });
             } else {
-                // ROTEADOR: DISPARO DE LEAD GENÉRICO (Centralizado via GTM)
+                // 2. ROTEADOR: DISPARO DE LEAD GENÉRICO CENTRALIZADO NO GTM
                 window.dataLayer.push({
                     'event': 'generate_lead',
                     'event_id': eventId,
@@ -1356,8 +1352,8 @@
             const eventId = 'b2b_' + Date.now() + '_' + Math.floor(Math.random() * 1000000);
             const msg = `*SOLICITAÇÃO DE CREDENCIAMENTO GL PRO*\n\n👤 Nome: ${nome}\n📍 Cidade: ${cidade}\n✂️ Status: ${salao}${getStoredUTMsText()}`;
             
-            // CIRURGIA DE PERFORMANCE E UX: Rota oficial wa.me anula o erro 404 de manifest.json do servidor da Meta (B2B)
-            const finalUrl = `https://wa.me/${phoneB2B}?text=${encodeURIComponent(msg)}`;
+            // CIRURGIA DE PERFORMANCE E UX: Rota API web direta para prevenir erros 404 (manifest) em in-app browsers (B2B)
+            const finalUrl = `https://api.whatsapp.com/send?phone=${phoneB2B}&text=${encodeURIComponent(msg)}`;
 
             const redirectPage = document.getElementById('redirect-page');
             closeB2BModal();
