@@ -932,29 +932,40 @@
         </button>
     </div>
 
-    <!-- MODAIS LEGAIS -->
     <div id="legal-modal" class="fixed inset-0 z-[110] hidden opacity-0 transition-opacity duration-300">
-        <div class="absolute inset-0 bg-brand-950/40 dark:bg-black/80 backdrop-blur-sm transition-colors" onclick="closeLegalModal()"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-white dark:bg-luxury-card rounded-3xl shadow-2xl border border-brand-200 dark:border-luxury-border flex flex-col max-h-[85vh] transition-colors">
-            <div class="flex items-center justify-between p-5 sm:p-6 border-b border-brand-200 dark:border-luxury-border transition-colors">
-                <h3 id="modal-title" class="font-serif text-xl sm:text-2xl text-brand-950 dark:text-luxury-text font-medium transition-colors">Título</h3>
-                <button onclick="closeLegalModal()" class="p-2 text-brand-700 hover:text-brand-900 dark:text-brand-400 dark:hover:text-luxury-text transition-colors bg-brand-50 dark:bg-luxury-bg rounded-full focus:outline-none hover:rotate-90 duration-300"><i data-lucide="x" class="w-5 h-5 stroke-[1.5]"></i></button>
+        <div class="absolute inset-0 bg-[#080605]/80 backdrop-blur-md transition-colors" onclick="closeLegalModal()"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-white/95 dark:bg-[#120E0C]/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-brand-200 dark:border-white/5 flex flex-col max-h-[85vh] transition-colors">
+            <div class="flex items-center justify-between p-5 sm:p-6 border-b border-brand-200 dark:border-white/5 transition-colors">
+                <div class="flex items-center gap-3">
+                    <i data-lucide="scale" class="w-5 h-5 text-brand-600 dark:text-zinc-500"></i>
+                    <h3 id="modal-title" class="font-serif text-xl sm:text-2xl text-brand-950 dark:text-white font-medium transition-colors">Título</h3>
+                </div>
+                <button onclick="closeLegalModal()" class="p-2 text-brand-700 hover:text-brand-900 dark:text-zinc-400 dark:hover:text-white transition-colors bg-brand-50 dark:bg-black rounded-full focus:outline-none hover:rotate-90 duration-300"><i data-lucide="x" class="w-5 h-5 stroke-[1.5]"></i></button>
             </div>
-            <div id="modal-content" class="p-5 sm:p-8 overflow-y-auto text-[11px] sm:text-[13px] text-brand-800 dark:text-luxury-muted font-light leading-relaxed space-y-4 transition-colors custom-scrollbar"></div>
+            <div id="modal-content" class="p-5 sm:p-8 overflow-y-auto text-[11px] sm:text-[13px] text-brand-800 dark:text-zinc-400 font-light leading-relaxed space-y-4 transition-colors custom-scrollbar"></div>
         </div>
     </div>
 
-    <footer class="py-20 bg-white dark:bg-[#0B0908] border-t border-brand-100 dark:border-luxury-border text-center pb-32 md:pb-20 transition-colors">
-        <h4 class="font-serif text-2xl mb-2 text-brand-950 dark:text-luxury-text transition-colors">Essência de Romã Hair</h4>
-        <p class="text-[10px] text-brand-600 dark:text-luxury-muted uppercase tracking-widest mb-8 transition-colors">Engenharia de Alisamentos e Estética Capilar Avançada</p>
-        <div class="flex flex-col items-center gap-4 opacity-80 text-[10px] uppercase font-bold tracking-widest text-brand-800 dark:text-luxury-muted transition-colors">
-            <div class="flex flex-wrap justify-center gap-4">
-<button type="button" onclick="openLegalModal('termos')" class="hover:text-brand-500 dark:hover:text-brand-400 transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-brand-500/30 rounded px-1" aria-label="Ler Termos de Uso">Termos de Uso</button>
-                <span class="opacity-50 text-brand-800 dark:text-luxury-muted mx-1">|</span>
-                <button type="button" onclick="openLegalModal('privacidade')" class="hover:text-brand-500 dark:hover:text-brand-400 transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-brand-500/30 rounded px-1" aria-label="Ler Política de Privacidade">Política de Privacidade</button>
+    <footer class="relative py-20 bg-brand-50/30 dark:bg-[#050404] border-t border-brand-200/50 dark:border-white/5 text-center pb-32 md:pb-20 transition-colors overflow-hidden">
+        
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[60%] h-[150px] bg-brand-400/5 dark:bg-white/5 blur-[80px] rounded-t-full pointer-events-none"></div>
+
+        <div class="relative z-10">
+            <i data-lucide="crown" class="w-6 h-6 mx-auto mb-4 text-brand-600 dark:text-zinc-500 opacity-80"></i>
+            <h4 class="font-serif text-2xl mb-1 text-brand-950 dark:text-white transition-colors">Essência de Romã</h4>
+            <p class="text-[9px] sm:text-[10px] text-brand-600 dark:text-zinc-500 uppercase tracking-[0.3em] mb-10 transition-colors">Estúdio Clínico & Engenharia GL Pro</p>
+            
+            <div class="flex flex-col items-center gap-5 opacity-80 text-[9px] uppercase font-bold tracking-[0.2em] text-brand-800 dark:text-zinc-400 transition-colors">
+                <div class="flex flex-wrap justify-center gap-4 items-center">
+                    <button type="button" onclick="openLegalModal('termos')" class="hover:text-brand-600 dark:hover:text-white transition-colors duration-300 focus:outline-none px-1">Termos de Uso</button>
+                    <span class="w-1 h-1 rounded-full bg-brand-300 dark:bg-zinc-700"></span>
+                    <button type="button" onclick="openLegalModal('privacidade')" class="hover:text-brand-600 dark:hover:text-white transition-colors duration-300 focus:outline-none px-1">Política de Privacidade</button>
+                </div>
+                <div class="flex flex-col gap-1 mt-2">
+                    <p class="tracking-widest opacity-60">CNPJ: 28.842.798/0001-38</p>
+                    <p class="tracking-widest opacity-60">© 2026. Todos os direitos reservados.</p>
+                </div>
             </div>
-            <p>CNPJ: 28.842.798/0001-38</p>
-            <p>© 2026 Essência de Romã. Todos os direitos reservados.</p>
         </div>
     </footer>
 
