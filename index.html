@@ -1033,13 +1033,32 @@
             if(thumb1) thumb1.src = thumbs[today % thumbs.length];
             if(thumb2) thumb2.src = thumbs[(today + 1) % thumbs.length];
             if(thumb3) thumb3.src = thumbs[(today + 2) % thumbs.length];
-
         })();
     </script>
 
     <script>
+        // --- 1. Lógica do Banner LGPD ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const banner = document.getElementById('cookie-banner');
+            if (banner && !localStorage.getItem('glpro_cookies_accepted')) {
+                setTimeout(() => {
+                    banner.classList.remove('translate-y-[150%]', 'opacity-0', 'pointer-events-none');
+                }, 2000);
+            }
+        });
+
+        function acceptCookies() {
+            const banner = document.getElementById('cookie-banner');
+            localStorage.setItem('glpro_cookies_accepted', 'true');
+            if(banner) {
+                banner.classList.add('translate-y-[150%]', 'opacity-0', 'pointer-events-none');
+            }
+        }
+
+        // --- 2. Variáveis de Estado ---
         let currentSelectedService = '';
 
+        // --- 3. Captura Avançada de Cookies e UTMs ---
         function getMetaCookies() {
             let fbp = '';
             let fbc = '';
@@ -1093,6 +1112,7 @@
 
         storeUTMs();
 
+        // --- 4. Funções de Interface (Modais) ---
         function openCityModal(service) {
             currentSelectedService = service;
             const m = document.getElementById('city-modal');
@@ -1107,7 +1127,7 @@
                 if(service === 'Falar com Especialista') {
                     descEl.innerHTML = `Selecione a sua região para direcionarmos o seu <strong>Atendimento</strong>.`;
                 } else {
-                    descEl.innerHTML = `Selecione onde prefere realizar a sua avaliação para <strong class="font-semibold text-brand-950 dark:text-luxury-text transition-colors">${service}</strong>.`;
+                    descEl.innerHTML = `Selecione onde prefere realizar a sua avaliação para <strong class="font-semibold text-brand-950 dark:text-white transition-colors">${service}</strong>.`;
                 }
             }
 
@@ -1136,9 +1156,10 @@
             setTimeout(() => m.classList.add('hidden'), 300);
         }
 
+        // --- 5. Roteamento para o WhatsApp (GTM + API Conversions) ---
         let isRedirecting = false;
 
-function handleCitySelection(rawCity) {
+        function handleCitySelection(rawCity) {
             if(isRedirecting) return;
             isRedirecting = true;
 
@@ -1149,21 +1170,23 @@ function handleCitySelection(rawCity) {
             const safeService = currentSelectedService || 'Atendimento Geral';
 
             let intentType = "Agendamento de Avaliação";
-            const isPurchase = safeService.includes('Glass') || safeService.includes('Platinum') || safeService.includes('Liso') || safeService.includes('Soberano') || safeService.includes('Fusion') || safeService.includes('Standard');
+            // Correção da nomenclatura para garantir captura do pixel
+            const isPurchase = safeService.includes('Gloss') || safeService.includes('Platinum') || safeService.includes('Liso') || safeService.includes('Soberano') || safeService.includes('Fusion') || safeService.includes('Standard') || safeService.includes('Clássico');
 
             if (safeService === 'Falar com Especialista') {
-                intentType = "Dúvida / Atendimento";
+                intentType = "Dúvida / Atendimento Concierge";
             } else if (isPurchase) {
-                intentType = "Interesse em Protocolo Químico/Alisamento";
+                intentType = "Interesse em Engenharia/Alisamento GL Pro";
             } else {
-                intentType = "Interesse em Serviços de Salão";
+                intentType = "Interesse em Serviços Clínicos de Salão";
             }
 
             const cleanService = safeService.replace(/\s+/g, '').substring(0,10).toUpperCase();
             const cleanCity = safeCity.substring(0,3).toUpperCase();
             let crmTag = `\n\n[Ref: SITE-${cleanCity}-${cleanService}]`;
             
-            const msg = `Olá, equipe Essência de Romã. Estou no site e desejo solicitar a minha avaliação.\n\n📍 *Unidade Escolhida:* ${safeCity}\n✨ *Protocolo:* ${safeService}\n🎯 *Intenção:* ${intentType}\n\nAguardo as instruções para o diagnóstico prévio.${crmTag}${getStoredUTMsText()}`;
+            // Copy de Elite para o WhatsApp
+            const msg = `Olá, Concierge GL Pro. Estou no site e desejo solicitar a minha avaliação.\n\n📍 *Unidade:* ${safeCity}\n✨ *Protocolo:* ${safeService}\n🎯 *Intenção:* ${intentType}\n\nAguardo as instruções para o diagnóstico prévio.${crmTag}${getStoredUTMsText()}`;
             
             const finalUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(msg)}`;
 
@@ -1177,7 +1200,7 @@ function handleCitySelection(rawCity) {
                 setTimeout(() => redirectPage.classList.remove('opacity-0'), 10);
             }
 
-            // NERO: Trava de segurança de 2 segundos para a Stape.io processar os dados
+            // Trava de segurança para dados Stape.io
             const doRedirect = () => {
                 window.location.href = finalUrl;
                 setTimeout(() => {
@@ -1193,8 +1216,6 @@ function handleCitySelection(rawCity) {
             };
 
             const metaCookies = typeof getMetaCookies === 'function' ? getMetaCookies() : { fbp: '', fbc: '' };
-            let utmObj = {};
-            try { utmObj = JSON.parse(localStorage.getItem('roma_utms') || '{}'); } catch(e) {}
 
             let purchaseValue = 0;
             if (safeCity === 'Chapecó') purchaseValue = 250.00;
@@ -1203,7 +1224,6 @@ function handleCitySelection(rawCity) {
 
             window.dataLayer = window.dataLayer || [];
 
-            // NERO: Disparo de rastreamento com tempo estendido e Fallback
             if (isPurchase) {
                 window.dataLayer.push({
                     'event': 'purchase',
@@ -1242,11 +1262,11 @@ function handleCitySelection(rawCity) {
                 });
             }
             
-            // Segurança extrema: Se o GTM travar, libera a cliente pro WhatsApp após 2.5s
+            // Segurança extrema anti-adblock
             setTimeout(() => { if(isRedirecting) doRedirect(); }, 2500);
         }
 
-        // Funções de Suporte (B2B, Legais e UI)
+        // --- 6. Roteamento B2B (Salões Parceiros) ---
         function processB2BLead() {
             if(isRedirecting) return;
 
@@ -1254,7 +1274,6 @@ function handleCitySelection(rawCity) {
             const cidade = document.getElementById('b2b-cidade').value;
             const salao = document.getElementById('b2b-salao').value;
 
-       // NERO: Aviso de Erro Ultra Luxo (sem quebrar a estética)
             if(!nome || !cidade || !salao) { 
                 const btn = document.querySelector('#b2b-modal button[onclick="processB2BLead()"]');
                 const originalText = btn.innerHTML;
@@ -1282,7 +1301,6 @@ function handleCitySelection(rawCity) {
                 setTimeout(() => redirectPage.classList.remove('opacity-0'), 10);
             }
 
-            // NERO: Replicando a trava de segurança também no funil B2B
             const doRedirect = () => {
                 window.location.href = finalUrl;
                 setTimeout(() => {
@@ -1302,6 +1320,29 @@ function handleCitySelection(rawCity) {
             try { utmObj = JSON.parse(localStorage.getItem('roma_utms') || '{}'); } catch(e) {}
 
             window.dataLayer = window.dataLayer || [];
+            
+            window.dataLayer.push({
+                'event': 'generate_b2b_lead',
+                'event_id': eventId,
+                'fbp': metaCookies.fbp,
+                'fbc': metaCookies.fbc,
+                'user_data': {
+                    'name': nome,
+                    'address': {
+                        'city': cidade
+                    }
+                },
+                'partner_status': salao,
+                'utm_source': utmObj.utm_source || '',
+                'utm_medium': utmObj.utm_medium || '',
+                'utm_campaign': utmObj.utm_campaign || '',
+                'eventCallback': doRedirect,
+                'eventTimeout': 2000
+            });
+            
+            setTimeout(() => { if(isRedirecting) doRedirect(); }, 2500);
+        }
+    </script>
             
             // Preservando o tracking avançado (CAPI) do Lead de Franquia
             window.dataLayer.push({
