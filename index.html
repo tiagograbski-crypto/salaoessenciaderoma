@@ -891,81 +891,58 @@
     </div>
 
     <!-- BOTÃO TOPO -->
-    <button id="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-[90px] sm:bottom-[85px] left-4 md:bottom-8 md:left-8 z-[90] translate-y-10 opacity-0 pointer-events-none transition-all duration-500 bg-white/90 dark:bg-luxury-card/90 backdrop-blur-md p-3 rounded-full shadow-2xl border border-brand-200 dark:border-luxury-border text-brand-950 dark:text-luxury-text" aria-label="Voltar ao topo">
-            <i data-lucide="chevron-up" class="w-5 h-5"></i>
-        </button>
+    <button id="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-[85px] left-4 md:bottom-8 md:left-8 z-[90] translate-y-10 opacity-0 pointer-events-none transition-all duration-500 bg-white/90 dark:bg-luxury-card/90 backdrop-blur-md p-3 rounded-full shadow-2xl border border-brand-200 dark:border-luxury-border text-brand-950 dark:text-luxury-text" aria-label="Voltar ao topo"><i data-lucide="chevron-up" class="w-5 h-5"></i></button>
 
-        <button onclick="openCityModal('Falar com Especialista')" class="hidden md:flex fixed bottom-8 right-8 z-[90] items-center gap-3 bg-[#064e3b]/80 dark:bg-[#022c22]/90 backdrop-blur-xl border border-[#10b981]/30 pl-5 pr-2 py-2 rounded-full shadow-[0_10px_30px_rgba(6,78,59,0.3)] transition-all duration-500 hover:scale-105 group focus:outline-none" aria-label="Falar com Especialista">
-            <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#34d399] drop-shadow-sm whitespace-nowrap group-hover:text-white transition-colors">Concierge Privado</span>
-            <div class="relative flex items-center justify-center w-10 h-10 rounded-full bg-[#10b981] shadow-[0_0_15px_rgba(16,185,129,0.5)]">
-                <i data-lucide="message-circle" class="w-5 h-5 text-[#022c22] fill-current"></i>
-                <span class="absolute inset-0 rounded-full bg-white opacity-0 group-hover:opacity-30 animate-ping duration-1000"></span>
-            </div>
-        </button>
-
-        <div class="fixed bottom-4 left-4 right-4 z-[90] md:hidden flex justify-center pb-safe pointer-events-none" id="mobile-fixed-bar">
-            <button type="button" onclick="openCityModal('Falar com Especialista')" class="pointer-events-auto w-full max-w-[340px] flex items-center justify-center gap-3 bg-[#18181b]/85 backdrop-blur-2xl border border-[#10b981]/30 rounded-full py-3.5 px-6 active:scale-95 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.4)] relative focus:outline-none group">
-                <div class="relative flex items-center justify-center w-8 h-8 rounded-full bg-[#10b981]/20 border border-[#10b981]/50 shadow-[0_0_10px_rgba(16,185,129,0.2)]">
-                    <i data-lucide="message-circle" class="w-4 h-4 text-[#34d399] fill-current"></i>
-                    <span class="absolute inset-0 rounded-full border border-[#10b981] animate-ping opacity-40 duration-1000"></span>
-                </div>
-                <span class="font-bold text-[12px] uppercase tracking-[0.15em] text-zinc-100 drop-shadow-sm group-active:text-[#34d399] transition-colors">Falar com Especialista</span>
-            </button>
+    <!-- BOTÃO WHATSAPP FLUTUANTE (DESKTOP) -->
+    <button onclick="openCityModal('Falar com Especialista')" class="hidden md:flex fixed bottom-8 right-8 z-[90] btn-whatsapp-float rounded-full p-3.5 items-center justify-center gap-3 group focus:outline-none" aria-label="Falar com Especialista via WhatsApp">
+        <div class="relative flex items-center justify-center">
+            <span class="absolute inset-0 rounded-full bg-white opacity-30 animate-ping"></span>
+            <svg viewBox="0 0 24 24" class="w-7 h-7 relative z-10 fill-current" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.405-.883-.733-1.48-1.638-1.653-1.935-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
         </div>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap opacity-0 group-hover:max-w-[150px] group-hover:opacity-100 group-hover:pr-2 transition-all duration-500 ease-in-out font-bold tracking-wider text-[13px] uppercase">Agendar Agora</span>
+    </button>
+
+    <!-- BARRA FIXA MOBILE -->
+    <div class="fixed bottom-0 left-0 w-full bg-white dark:bg-luxury-card border-t border-brand-200 dark:border-luxury-border p-3 z-[70] md:hidden flex justify-center pb-safe shadow-[0_-10px_20px_rgba(0,0,0,0.05)] transition-colors duration-300" id="mobile-fixed-bar">
+        <button type="button" onclick="openCityModal('Falar com Especialista')" class="w-full flex items-center justify-center gap-2 btn-primary-luxury rounded-xl font-bold text-[14px] py-4 active:scale-95 uppercase focus:outline-none">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            <span>Falar com Especialista</span>
+        </button>
+    </div>
+
     <!-- LGPD BANNER -->
- <div id="cookie-banner" class="fixed bottom-24 left-4 right-4 md:bottom-8 md:left-8 md:right-auto md:max-w-sm bg-[#18181b]/95 backdrop-blur-2xl border border-zinc-700/50 rounded-2xl p-5 z-[100] transform translate-y-[150%] opacity-0 transition-all duration-700 shadow-[0_10px_40px_rgba(0,0,0,0.5)] flex flex-col gap-4 pointer-events-none">
-        
-        <div class="flex items-start gap-3">
-            <div class="mt-0.5 w-6 h-6 rounded-full bg-zinc-800 border border-zinc-600 flex items-center justify-center shrink-0">
-                <i data-lucide="fingerprint" class="w-3.5 h-3.5 text-zinc-300"></i>
-            </div>
-            <div>
-                <h4 class="text-[10px] text-white uppercase tracking-[0.2em] font-bold mb-1">Protocolo de Privacidade</h4>
-                <p class="text-[10px] leading-relaxed text-zinc-400 font-medium">
-                    Utilizamos inteligência de dados para otimizar sua experiência clínica. Ao continuar, você homologa nossa <button onclick="openLegalModal('privacidade')" class="text-zinc-200 underline decoration-zinc-600 underline-offset-2 hover:text-white transition-colors pointer-events-auto">Política de Privacidade</button>.
-                </p>
-            </div>
-        </div>
-
-        <button onclick="acceptCookies()" class="w-full bg-zinc-200 hover:bg-white text-zinc-900 py-3 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] transition-all shadow-sm pointer-events-auto active:scale-95">
-            Homologar Acesso
-        </button>
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-white dark:bg-luxury-card border-t border-brand-200 dark:border-luxury-border p-4 z-[100] transform translate-y-full transition-transform duration-700 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] dark:shadow-[0_-10px_40px_rgba(0,0,0,0.6)] flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 transition-colors">
+        <p class="text-[10px] sm:text-xs text-brand-800 dark:text-luxury-muted font-light text-center sm:text-left max-w-4xl leading-relaxed transition-colors">
+            Para garantir uma navegação otimizada e o envio de novidades exclusivas do salão, este site utiliza cookies. Ao continuar, concorda com a <button onclick="openLegalModal('privacidade')" class="underline font-medium text-brand-950 dark:text-luxury-text focus:outline-none transition-colors">Política de Privacidade</button>.
+        </p>
+        <button onclick="acceptCookies()" class="shrink-0 btn-primary-luxury text-white px-6 py-3 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider transition-colors focus:outline-none shadow-sm">Entendi e Aceito</button>
     </div>
 
+    <!-- MODAIS LEGAIS -->
     <div id="legal-modal" class="fixed inset-0 z-[110] hidden opacity-0 transition-opacity duration-300">
-        <div class="absolute inset-0 bg-[#080605]/80 backdrop-blur-md transition-colors" onclick="closeLegalModal()"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-white/95 dark:bg-[#120E0C]/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-brand-200 dark:border-white/5 flex flex-col max-h-[85vh] transition-colors">
-            <div class="flex items-center justify-between p-5 sm:p-6 border-b border-brand-200 dark:border-white/5 transition-colors">
-                <div class="flex items-center gap-3">
-                    <i data-lucide="scale" class="w-5 h-5 text-brand-600 dark:text-zinc-500"></i>
-                    <h3 id="modal-title" class="font-serif text-xl sm:text-2xl text-brand-950 dark:text-white font-medium transition-colors">Título</h3>
-                </div>
-                <button onclick="closeLegalModal()" class="p-2 text-brand-700 hover:text-brand-900 dark:text-zinc-400 dark:hover:text-white transition-colors bg-brand-50 dark:bg-black rounded-full focus:outline-none hover:rotate-90 duration-300"><i data-lucide="x" class="w-5 h-5 stroke-[1.5]"></i></button>
+        <div class="absolute inset-0 bg-brand-950/40 dark:bg-black/80 backdrop-blur-sm transition-colors" onclick="closeLegalModal()"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-white dark:bg-luxury-card rounded-3xl shadow-2xl border border-brand-200 dark:border-luxury-border flex flex-col max-h-[85vh] transition-colors">
+            <div class="flex items-center justify-between p-5 sm:p-6 border-b border-brand-200 dark:border-luxury-border transition-colors">
+                <h3 id="modal-title" class="font-serif text-xl sm:text-2xl text-brand-950 dark:text-luxury-text font-medium transition-colors">Título</h3>
+                <button onclick="closeLegalModal()" class="p-2 text-brand-700 hover:text-brand-900 dark:text-brand-400 dark:hover:text-luxury-text transition-colors bg-brand-50 dark:bg-luxury-bg rounded-full focus:outline-none hover:rotate-90 duration-300"><i data-lucide="x" class="w-5 h-5 stroke-[1.5]"></i></button>
             </div>
-            <div id="modal-content" class="p-5 sm:p-8 overflow-y-auto text-[11px] sm:text-[13px] text-brand-800 dark:text-zinc-400 font-light leading-relaxed space-y-4 transition-colors custom-scrollbar"></div>
+            <div id="modal-content" class="p-5 sm:p-8 overflow-y-auto text-[11px] sm:text-[13px] text-brand-800 dark:text-luxury-muted font-light leading-relaxed space-y-4 transition-colors custom-scrollbar"></div>
         </div>
     </div>
 
-    <footer class="relative py-20 bg-brand-50/30 dark:bg-[#050404] border-t border-brand-200/50 dark:border-white/5 text-center pb-32 md:pb-20 transition-colors overflow-hidden">
-        
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[60%] h-[150px] bg-brand-400/5 dark:bg-white/5 blur-[80px] rounded-t-full pointer-events-none"></div>
-
-        <div class="relative z-10">
-            <i data-lucide="crown" class="w-6 h-6 mx-auto mb-4 text-brand-600 dark:text-zinc-500 opacity-80"></i>
-            <h4 class="font-serif text-2xl mb-1 text-brand-950 dark:text-white transition-colors">Essência de Romã</h4>
-            <p class="text-[9px] sm:text-[10px] text-brand-600 dark:text-zinc-500 uppercase tracking-[0.3em] mb-10 transition-colors">Estúdio Clínico & Engenharia GL Pro</p>
-            
-            <div class="flex flex-col items-center gap-5 opacity-80 text-[9px] uppercase font-bold tracking-[0.2em] text-brand-800 dark:text-zinc-400 transition-colors">
-                <div class="flex flex-wrap justify-center gap-4 items-center">
-                    <button type="button" onclick="openLegalModal('termos')" class="hover:text-brand-600 dark:hover:text-white transition-colors duration-300 focus:outline-none px-1">Termos de Uso</button>
-                    <span class="w-1 h-1 rounded-full bg-brand-300 dark:bg-zinc-700"></span>
-                    <button type="button" onclick="openLegalModal('privacidade')" class="hover:text-brand-600 dark:hover:text-white transition-colors duration-300 focus:outline-none px-1">Política de Privacidade</button>
-                </div>
-                <div class="flex flex-col gap-1 mt-2">
-                    <p class="tracking-widest opacity-60">CNPJ: 28.842.798/0001-38</p>
-                    <p class="tracking-widest opacity-60">© 2026. Todos os direitos reservados.</p>
-                </div>
+    <footer class="py-20 bg-white dark:bg-[#0B0908] border-t border-brand-100 dark:border-luxury-border text-center pb-32 md:pb-20 transition-colors">
+        <h4 class="font-serif text-2xl mb-2 text-brand-950 dark:text-luxury-text transition-colors">Essência de Romã Hair</h4>
+        <p class="text-[10px] text-brand-600 dark:text-luxury-muted uppercase tracking-widest mb-8 transition-colors">Engenharia de Alisamentos e Estética Capilar Avançada</p>
+        <div class="flex flex-col items-center gap-4 opacity-80 text-[10px] uppercase font-bold tracking-widest text-brand-800 dark:text-luxury-muted transition-colors">
+            <div class="flex flex-wrap justify-center gap-4">
+<button type="button" onclick="openLegalModal('termos')" class="hover:text-brand-500 dark:hover:text-brand-400 transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-brand-500/30 rounded px-1" aria-label="Ler Termos de Uso">Termos de Uso</button>
+                <span class="opacity-50 text-brand-800 dark:text-luxury-muted mx-1">|</span>
+                <button type="button" onclick="openLegalModal('privacidade')" class="hover:text-brand-500 dark:hover:text-brand-400 transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-brand-500/30 rounded px-1" aria-label="Ler Política de Privacidade">Política de Privacidade</button>
             </div>
+            <p>CNPJ: 28.842.798/0001-38</p>
+            <p>© 2026 Essência de Romã. Todos os direitos reservados.</p>
         </div>
     </footer>
 
@@ -1033,32 +1010,13 @@
             if(thumb1) thumb1.src = thumbs[today % thumbs.length];
             if(thumb2) thumb2.src = thumbs[(today + 1) % thumbs.length];
             if(thumb3) thumb3.src = thumbs[(today + 2) % thumbs.length];
+
         })();
     </script>
 
     <script>
-        // --- 1. Lógica do Banner LGPD ---
-        document.addEventListener('DOMContentLoaded', () => {
-            const banner = document.getElementById('cookie-banner');
-            if (banner && !localStorage.getItem('glpro_cookies_accepted')) {
-                setTimeout(() => {
-                    banner.classList.remove('translate-y-[150%]', 'opacity-0', 'pointer-events-none');
-                }, 2000);
-            }
-        });
-
-        function acceptCookies() {
-            const banner = document.getElementById('cookie-banner');
-            localStorage.setItem('glpro_cookies_accepted', 'true');
-            if(banner) {
-                banner.classList.add('translate-y-[150%]', 'opacity-0', 'pointer-events-none');
-            }
-        }
-
-        // --- 2. Variáveis de Estado ---
         let currentSelectedService = '';
 
-        // --- 3. Captura Avançada de Cookies e UTMs ---
         function getMetaCookies() {
             let fbp = '';
             let fbc = '';
@@ -1112,7 +1070,6 @@
 
         storeUTMs();
 
-        // --- 4. Funções de Interface (Modais) ---
         function openCityModal(service) {
             currentSelectedService = service;
             const m = document.getElementById('city-modal');
@@ -1127,7 +1084,7 @@
                 if(service === 'Falar com Especialista') {
                     descEl.innerHTML = `Selecione a sua região para direcionarmos o seu <strong>Atendimento</strong>.`;
                 } else {
-                    descEl.innerHTML = `Selecione onde prefere realizar a sua avaliação para <strong class="font-semibold text-brand-950 dark:text-white transition-colors">${service}</strong>.`;
+                    descEl.innerHTML = `Selecione onde prefere realizar a sua avaliação para <strong class="font-semibold text-brand-950 dark:text-luxury-text transition-colors">${service}</strong>.`;
                 }
             }
 
@@ -1156,10 +1113,9 @@
             setTimeout(() => m.classList.add('hidden'), 300);
         }
 
-        // --- 5. Roteamento para o WhatsApp (GTM + API Conversions) ---
         let isRedirecting = false;
 
-        function handleCitySelection(rawCity) {
+function handleCitySelection(rawCity) {
             if(isRedirecting) return;
             isRedirecting = true;
 
@@ -1170,23 +1126,21 @@
             const safeService = currentSelectedService || 'Atendimento Geral';
 
             let intentType = "Agendamento de Avaliação";
-            // Correção da nomenclatura para garantir captura do pixel
-            const isPurchase = safeService.includes('Gloss') || safeService.includes('Platinum') || safeService.includes('Liso') || safeService.includes('Soberano') || safeService.includes('Fusion') || safeService.includes('Standard') || safeService.includes('Clássico');
+            const isPurchase = safeService.includes('Glass') || safeService.includes('Platinum') || safeService.includes('Liso') || safeService.includes('Soberano') || safeService.includes('Fusion') || safeService.includes('Standard');
 
             if (safeService === 'Falar com Especialista') {
-                intentType = "Dúvida / Atendimento Concierge";
+                intentType = "Dúvida / Atendimento";
             } else if (isPurchase) {
-                intentType = "Interesse em Engenharia/Alisamento GL Pro";
+                intentType = "Interesse em Protocolo Químico/Alisamento";
             } else {
-                intentType = "Interesse em Serviços Clínicos de Salão";
+                intentType = "Interesse em Serviços de Salão";
             }
 
             const cleanService = safeService.replace(/\s+/g, '').substring(0,10).toUpperCase();
             const cleanCity = safeCity.substring(0,3).toUpperCase();
             let crmTag = `\n\n[Ref: SITE-${cleanCity}-${cleanService}]`;
             
-            // Copy de Elite para o WhatsApp
-            const msg = `Olá, Concierge GL Pro. Estou no site e desejo solicitar a minha avaliação.\n\n📍 *Unidade:* ${safeCity}\n✨ *Protocolo:* ${safeService}\n🎯 *Intenção:* ${intentType}\n\nAguardo as instruções para o diagnóstico prévio.${crmTag}${getStoredUTMsText()}`;
+            const msg = `Olá, equipe Essência de Romã. Estou no site e desejo solicitar a minha avaliação.\n\n📍 *Unidade Escolhida:* ${safeCity}\n✨ *Protocolo:* ${safeService}\n🎯 *Intenção:* ${intentType}\n\nAguardo as instruções para o diagnóstico prévio.${crmTag}${getStoredUTMsText()}`;
             
             const finalUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(msg)}`;
 
@@ -1200,7 +1154,7 @@
                 setTimeout(() => redirectPage.classList.remove('opacity-0'), 10);
             }
 
-            // Trava de segurança para dados Stape.io
+            // NERO: Trava de segurança de 2 segundos para a Stape.io processar os dados
             const doRedirect = () => {
                 window.location.href = finalUrl;
                 setTimeout(() => {
@@ -1216,6 +1170,8 @@
             };
 
             const metaCookies = typeof getMetaCookies === 'function' ? getMetaCookies() : { fbp: '', fbc: '' };
+            let utmObj = {};
+            try { utmObj = JSON.parse(localStorage.getItem('roma_utms') || '{}'); } catch(e) {}
 
             let purchaseValue = 0;
             if (safeCity === 'Chapecó') purchaseValue = 250.00;
@@ -1224,6 +1180,7 @@
 
             window.dataLayer = window.dataLayer || [];
 
+            // NERO: Disparo de rastreamento com tempo estendido e Fallback
             if (isPurchase) {
                 window.dataLayer.push({
                     'event': 'purchase',
@@ -1262,11 +1219,11 @@
                 });
             }
             
-            // Segurança extrema anti-adblock
+            // Segurança extrema: Se o GTM travar, libera a cliente pro WhatsApp após 2.5s
             setTimeout(() => { if(isRedirecting) doRedirect(); }, 2500);
         }
 
-        // --- 6. Roteamento B2B (Salões Parceiros) ---
+        // Funções de Suporte (B2B, Legais e UI)
         function processB2BLead() {
             if(isRedirecting) return;
 
@@ -1274,6 +1231,7 @@
             const cidade = document.getElementById('b2b-cidade').value;
             const salao = document.getElementById('b2b-salao').value;
 
+       // NERO: Aviso de Erro Ultra Luxo (sem quebrar a estética)
             if(!nome || !cidade || !salao) { 
                 const btn = document.querySelector('#b2b-modal button[onclick="processB2BLead()"]');
                 const originalText = btn.innerHTML;
@@ -1301,6 +1259,7 @@
                 setTimeout(() => redirectPage.classList.remove('opacity-0'), 10);
             }
 
+            // NERO: Replicando a trava de segurança também no funil B2B
             const doRedirect = () => {
                 window.location.href = finalUrl;
                 setTimeout(() => {
@@ -1320,29 +1279,6 @@
             try { utmObj = JSON.parse(localStorage.getItem('roma_utms') || '{}'); } catch(e) {}
 
             window.dataLayer = window.dataLayer || [];
-            
-            window.dataLayer.push({
-                'event': 'generate_b2b_lead',
-                'event_id': eventId,
-                'fbp': metaCookies.fbp,
-                'fbc': metaCookies.fbc,
-                'user_data': {
-                    'name': nome,
-                    'address': {
-                        'city': cidade
-                    }
-                },
-                'partner_status': salao,
-                'utm_source': utmObj.utm_source || '',
-                'utm_medium': utmObj.utm_medium || '',
-                'utm_campaign': utmObj.utm_campaign || '',
-                'eventCallback': doRedirect,
-                'eventTimeout': 2000
-            });
-            
-            setTimeout(() => { if(isRedirecting) doRedirect(); }, 2500);
-        }
-    </script>
             
             // Preservando o tracking avançado (CAPI) do Lead de Franquia
             window.dataLayer.push({
