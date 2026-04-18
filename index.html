@@ -1288,7 +1288,7 @@ function handleCitySelection(rawCity) {
             const cleanCity = safeCity.substring(0,3).toUpperCase();
             let crmTag = `\n\n[Ref: SITE-${cleanCity}-${cleanService}]`;
             
-            const msg = `Olá! Vim pelo site e gostaria de atendimento.\n\n📍 *Unidade Desejada:* ${safeCity}\n✨ *Serviço/Interesse:* ${safeService}\n🎯 *Objetivo:* ${intentType}\n\nAguardo o retorno!${crmTag}${getStoredUTMsText()}`;
+            const msg = `Olá, equipe Essência de Romã. Estou no site e desejo solicitar a minha avaliação.\n\n📍 *Unidade Escolhida:* ${safeCity}\n✨ *Protocolo:* ${safeService}\n🎯 *Intenção:* ${intentType}\n\nAguardo as instruções para o diagnóstico prévio.${crmTag}${getStoredUTMsText()}`;
             
             const finalUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(msg)}`;
 
