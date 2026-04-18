@@ -1366,7 +1366,16 @@ function handleCitySelection(rawCity) {
             const cidade = document.getElementById('b2b-cidade').value;
             const salao = document.getElementById('b2b-salao').value;
 
-            if(!nome || !cidade || !salao) { alert('Preencha os dados.'); return; }
+       // NERO: Aviso de Erro Ultra Luxo (sem quebrar a estética)
+            if(!nome || !cidade || !salao) { 
+                const btn = document.querySelector('#b2b-modal button[onclick="processB2BLead()"]');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i data-lucide="alert-circle" class="w-4 h-4"></i> Preencha os campos obrigatórios';
+                btn.classList.add('border-brand-500', 'text-brand-500');
+                if(window.lucide) lucide.createIcons();
+                setTimeout(() => { btn.innerHTML = originalText; btn.classList.remove('border-brand-500', 'text-brand-500'); }, 3000);
+                return; 
+            }
 
             isRedirecting = true;
 
