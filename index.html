@@ -428,12 +428,12 @@
                 </article>
             </div> 
             ```
-            <article id="molecular-platinum-banner" class="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16 bg-[#060404] w-full rounded-[2.5rem] sm:rounded-[3rem] p-8 sm:p-10 lg:p-16 shadow-[0_30px_60px_rgba(0,0,0,0.95)] border border-zinc-900 relative overflow-hidden group mt-10" style="--mouse-x: -100%; --mouse-y: -100%;">
+            <article id="molecular-platinum-banner" class="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16 bg-zinc-50 dark:bg-[#060404] w-full rounded-[2.5rem] sm:rounded-[3rem] p-8 sm:p-10 lg:p-16 shadow-xl dark:shadow-[0_30px_60px_rgba(0,0,0,0.95)] border border-zinc-200 dark:border-zinc-900 relative overflow-hidden group mt-10 transition-colors duration-500" style="--mouse-x: -100%; --mouse-y: -100%; --spotlight-size: 0px;">
                 
-                <div class="absolute inset-0 z-0 pointer-events-none transition-opacity duration-300"
-                     style="-webkit-mask-image: radial-gradient(circle 120px at var(--mouse-x) var(--mouse-y), black 0%, transparent 100%); mask-image: radial-gradient(circle 120px at var(--mouse-x) var(--mouse-y), black 0%, transparent 100%);">
+                <div class="absolute inset-0 z-0 pointer-events-none transition-opacity duration-500"
+                     style="-webkit-mask-image: radial-gradient(circle var(--spotlight-size) at var(--mouse-x) var(--mouse-y), black 0%, transparent 100%); mask-image: radial-gradient(circle var(--spotlight-size) at var(--mouse-x) var(--mouse-y), black 0%, transparent 100%);">
                      
-                     <div class="absolute inset-[-50%] w-[200%] h-[200%] opacity-40 mix-blend-screen"
+                     <div class="absolute inset-[-50%] w-[200%] h-[200%] opacity-20 dark:opacity-40 mix-blend-multiply dark:mix-blend-screen transition-opacity duration-500"
                           style="transform: rotate(-45deg); background-image: url('https://imagensagata.carrd.co/assets/images/image03.jpg?v=6b4b2f98'); background-size: 70px; background-repeat: repeat; background-position: center; filter: grayscale(1) contrast(1.5);">
                      </div>
                 </div>
@@ -443,119 +443,156 @@
                         const banner = document.getElementById('molecular-platinum-banner');
                         if(!banner) return;
 
+                        let isTouching = false;
+
+                        // Função para MOUSE e TOQUE manual
                         function updateSpotlight(e) {
+                            isTouching = true;
                             const rect = banner.getBoundingClientRect();
                             let x = e.touches ? e.touches[0].clientX : e.clientX;
                             let y = e.touches ? e.touches[0].clientY : e.clientY;
                             
-                            // Atualiza as coordenadas da máscara sem piscar a tela
                             banner.style.setProperty('--mouse-x', (x - rect.left) + 'px');
                             banner.style.setProperty('--mouse-y', (y - rect.top) + 'px');
+                            // Lanterna concentrada quando o usuário toca
+                            banner.style.setProperty('--spotlight-size', window.innerWidth < 1024 ? '180px' : '150px');
                         }
 
+                        // Função para SCROLL (Sensorial Automático Mobile)
+                        function scrollSpotlight() {
+                            if (isTouching) return; // Se o usuário está tocando, não interfere
+                            
+                            const rect = banner.getBoundingClientRect();
+                            const winHeight = window.innerHeight;
+                            
+                            // Se o banner estiver na tela
+                            if (rect.top <= winHeight && rect.bottom >= 0) {
+                                // Calcula a porcentagem de rolagem (0 a 1)
+                                let progress = 1 - (rect.bottom / (winHeight + rect.height));
+                                progress = Math.max(0, Math.min(1, progress));
+                                
+                                // Faz a luz varrer na diagonal
+                                let x = progress * rect.width;
+                                let y = progress * rect.height;
+                                
+                                banner.style.setProperty('--mouse-x', x + 'px');
+                                banner.style.setProperty('--mouse-y', y + 'px');
+                                // Lanterna imensa no celular para acender uma área maior no scroll
+                                banner.style.setProperty('--spotlight-size', window.innerWidth < 1024 ? '350px' : '250px');
+                            }
+                        }
+
+                        // Escutas de Interação Manual
                         banner.addEventListener('mousemove', updateSpotlight);
                         banner.addEventListener('touchmove', updateSpotlight);
                         
-                        // Joga a lanterna para fora da tela quando o mouse sai
-                        banner.addEventListener('mouseleave', () => {
-                            banner.style.setProperty('--mouse-x', '-100%');
-                            banner.style.setProperty('--mouse-y', '-100%');
-                        });
-                        banner.addEventListener('touchend', () => {
-                            banner.style.setProperty('--mouse-x', '-100%');
-                            banner.style.setProperty('--mouse-y', '-100%');
-                        });
+                        banner.addEventListener('mouseleave', () => { isTouching = false; });
+                        banner.addEventListener('touchend', () => { isTouching = false; });
+
+                        // Escuta de Scroll Sensorial
+                        window.addEventListener('scroll', scrollSpotlight, { passive: true });
+                        // Chama uma vez para inicializar
+                        setTimeout(scrollSpotlight, 100);
                     })();
                 </script>
                 
                 <div class="w-full lg:w-1/2 relative z-10 flex flex-col justify-center text-center lg:text-left pointer-events-none">
                     
                     <div class="inline-flex items-center justify-center lg:justify-start gap-3 mb-6">
-                        <div class="flex items-center justify-center w-6 h-6 rounded-full border border-zinc-800 bg-black">
-                            <span class="w-1.5 h-1.5 rounded-full bg-zinc-600 animate-pulse"></span>
+                        <div class="flex items-center justify-center w-6 h-6 rounded-full border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-black shadow-sm">
+                            <span class="w-1.5 h-1.5 rounded-full bg-zinc-400 dark:bg-zinc-600 animate-pulse"></span>
                         </div>
-                        <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.4em] text-zinc-500">V.43 Purity Control</span>
+                        <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.4em] text-zinc-600 dark:text-zinc-500 transition-colors duration-500">V.43 Purity Control</span>
                     </div>
                     
                     <div class="mb-8 flex flex-col items-center lg:items-start">
-                        <h2 class="font-sans text-5xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-zinc-300 via-white to-zinc-600 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] mb-1">
+                        <h2 class="font-sans text-5xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-zinc-500 via-zinc-800 to-zinc-600 dark:from-zinc-300 dark:via-white dark:to-zinc-600 drop-shadow-sm dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] mb-1 transition-colors duration-500">
                             Molecular
                         </h2>
-                        <h3 class="font-sans text-2xl sm:text-3xl font-light uppercase tracking-[0.25em] text-zinc-400">
+                        <h3 class="font-sans text-2xl sm:text-3xl font-light uppercase tracking-[0.25em] text-zinc-500 dark:text-zinc-400 transition-colors duration-500">
                             Platinum Infusion
                         </h3>
                     </div>
                     
-                    <div class="mb-8 relative p-[1px] rounded-2xl bg-gradient-to-b from-zinc-700 via-zinc-900 to-black max-w-md mx-auto lg:mx-0 text-left pointer-events-auto shadow-2xl">
-                        <div class="bg-[#050404] p-5 sm:p-6 rounded-2xl h-full w-full inset-0">
-                            <div class="flex items-center gap-4 mb-4 pb-4 border-b border-zinc-800/80">
-                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-zinc-800 to-black border border-zinc-700 flex items-center justify-center shadow-inner shrink-0">
-                                    <i data-lucide="droplets" class="w-4 h-4 text-zinc-300"></i>
+                    <div class="w-full max-w-md mx-auto lg:mx-0 space-y-3 mb-8 pointer-events-auto">
+                        
+                        <div class="p-4 rounded-2xl bg-white/60 dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800 backdrop-blur-md text-left transition-colors duration-500 shadow-sm">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 flex items-center justify-center shrink-0 transition-colors duration-500">
+                                    <i data-lucide="droplets" class="w-4 h-4 text-zinc-700 dark:text-zinc-300"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-[11px] font-black uppercase tracking-[0.3em] text-zinc-200">Black Caviar System &reg;</h4>
-                                    <span class="text-[9px] uppercase tracking-[0.2em] text-zinc-500">Synchronized Matrix</span>
+                                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-800 dark:text-zinc-200 transition-colors duration-500">Black Caviar System</h4>
                                 </div>
                             </div>
-                            <p class="text-xs text-zinc-400 font-medium leading-relaxed">
-                                Infusão lipídica ultraconcentrada e complexo de aminoácidos raros. Restaura a elasticidade absoluta e blinda a matriz capilar contra a oxidação, entregando um brilho vitrificado e peso luxuoso aos fios.
+                            <p class="text-[11px] sm:text-xs text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed pl-11 transition-colors duration-500">
+                                Infusão lipídica ultraconcentrada. Restaura a elasticidade e entrega nutrição absoluta ao córtex capilar.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-white/60 dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800 backdrop-blur-md text-left transition-colors duration-500 shadow-sm">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 flex items-center justify-center shrink-0 transition-colors duration-500">
+                                    <i data-lucide="git-merge" class="w-4 h-4 text-zinc-700 dark:text-zinc-300"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-800 dark:text-zinc-200 transition-colors duration-500">Synchronized Matrix</h4>
+                                </div>
+                            </div>
+                            <p class="text-[11px] sm:text-xs text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed pl-11 transition-colors duration-500">
+                                Engenharia de realinhamento inteligente. Mapeia falhas na estrutura e sela os fios sem afinamento.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-gradient-to-r from-zinc-200 to-zinc-100 dark:from-zinc-900 dark:to-black border border-zinc-300 dark:border-zinc-800 backdrop-blur-md text-left transition-colors duration-500 shadow-md">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-full bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 flex items-center justify-center shrink-0 shadow-inner transition-colors duration-500">
+                                    <i data-lucide="sparkles" class="w-4 h-4 text-zinc-800 dark:text-zinc-200"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-900 dark:text-white transition-colors duration-500">Platinum Nano-Shield</h4>
+                                </div>
+                            </div>
+                            <p class="text-[11px] sm:text-xs text-zinc-700 dark:text-zinc-300 font-medium leading-relaxed pl-11 transition-colors duration-500">
+                                Pigmentação prateada de alta reflexão. Neutraliza a oxidação enquanto cria uma superfície espelhada inigualável.
                             </p>
                         </div>
                     </div>
                     
-                    <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md mx-auto lg:mx-0 mt-2 pointer-events-auto">
-                        <button onclick="document.getElementById('tabelas').scrollIntoView({behavior: 'smooth'})" class="w-full sm:w-1/2 flex items-center justify-center px-6 py-4 bg-transparent hover:bg-zinc-900 text-zinc-300 rounded-sm font-bold text-[10px] sm:text-[11px] uppercase tracking-[0.2em] transition-all duration-300 border border-zinc-700 hover:border-zinc-500 shadow-sm focus:outline-none gap-2">
+                    <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md mx-auto lg:mx-0 pointer-events-auto">
+                        <button onclick="document.getElementById('tabelas').scrollIntoView({behavior: 'smooth'})" class="w-full sm:w-1/2 flex items-center justify-center px-6 py-4 bg-zinc-100 dark:bg-transparent hover:bg-zinc-200 dark:hover:bg-zinc-900 text-zinc-800 dark:text-zinc-300 rounded-lg font-bold text-[10px] sm:text-[11px] uppercase tracking-[0.2em] transition-all duration-300 border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-500 shadow-sm focus:outline-none gap-2">
                             Ver Tabela
                         </button>
-                        <button onclick="openCityModal('Molecular Platinum Infusion')" class="w-full sm:w-1/2 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-zinc-300 via-white to-zinc-400 hover:from-white hover:via-zinc-200 hover:to-zinc-300 text-black rounded-sm font-black text-[10px] sm:text-[11px] uppercase tracking-[0.2em] transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.2)] focus:outline-none">
+                        <button onclick="openCityModal('Molecular Platinum Infusion')" class="w-full sm:w-1/2 flex items-center justify-center gap-2 px-6 py-4 bg-zinc-900 dark:bg-gradient-to-r dark:from-zinc-300 dark:via-white dark:to-zinc-400 hover:bg-black dark:hover:from-white dark:hover:via-zinc-200 dark:hover:to-zinc-300 text-white dark:text-black rounded-lg font-black text-[10px] sm:text-[11px] uppercase tracking-[0.2em] transition-all duration-300 shadow-md dark:shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:-translate-y-1 focus:outline-none">
                             Reservar Platinum
                         </button>
                     </div>
                 </div>
                 
-                <div class="w-full lg:w-1/2 relative z-10 flex justify-center lg:justify-end mt-12 lg:mt-0 pointer-events-none">
+                <div class="w-full lg:w-1/2 relative z-10 flex justify-center lg:justify-end mt-12 lg:mt-0 pointer-events-none h-full">
                     
-                    <style>
-                        @keyframes slide1 {
-                            0%, 25% { opacity: 0.9; transform: scale(1); }
-                            33%, 92% { opacity: 0; transform: scale(1.05); }
-                            100% { opacity: 0.9; transform: scale(1); }
-                        }
-                        @keyframes slide2 {
-                            0%, 25% { opacity: 0; transform: scale(1.05); }
-                            33%, 58% { opacity: 0.9; transform: scale(1); }
-                            66%, 100% { opacity: 0; transform: scale(1.05); }
-                        }
-                        @keyframes slide3 {
-                            0%, 58% { opacity: 0; transform: scale(1.05); }
-                            66%, 92% { opacity: 0.9; transform: scale(1); }
-                            100% { opacity: 0; transform: scale(1.05); }
-                        }
-                        .img-1 { animation: slide1 18s infinite ease-in-out; }
-                        .img-2 { animation: slide2 18s infinite ease-in-out; }
-                        .img-3 { animation: slide3 18s infinite ease-in-out; }
-                    </style>
-
-                    <div class="relative w-full max-w-sm aspect-[4/5] rounded-xl overflow-hidden border border-zinc-800 bg-[#020202] shadow-[0_0_50px_rgba(0,0,0,0.8)] transition-shadow duration-500">
+                    <div class="relative w-full max-w-sm aspect-[4/5] rounded-xl overflow-hidden border border-zinc-300 dark:border-zinc-800 bg-zinc-100 dark:bg-[#020202] shadow-lg dark:shadow-[0_0_50px_rgba(0,0,0,0.8)] transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl">
                         
-                        <img src="https://imagensagata.carrd.co/assets/images/image30.jpg?v=6b4b2f98" alt="Rótulo Molecular Platinum" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-center mix-blend-luminosity img-1" />
+                        <img src="https://imagensagata.carrd.co/assets/images/image30.jpg?v=6b4b2f98" alt="Rótulo Molecular Platinum" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-center mix-blend-multiply dark:mix-blend-luminosity scale-100 group-hover:scale-105 transition-transform duration-[2s] ease-out" />
                         
-                        <img src="https://imagensagata.carrd.co/assets/images/image24.jpg?v=6b4b2f98" alt="Textura Capilar 1" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-center mix-blend-luminosity img-2" />
-
-                        <img src="https://imagensagata.carrd.co/assets/images/image29.jpg?v=6b4b2f98" alt="Textura Capilar 2" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-center mix-blend-luminosity img-3" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent dark:from-black dark:via-black/50 dark:to-transparent pointer-events-none z-10 transition-colors duration-500"></div>
                         
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent pointer-events-none z-10"></div>
                         <div class="absolute bottom-8 left-8 text-left pointer-events-none z-20">
                             <div class="flex items-center gap-2 mb-2">
-                                <i data-lucide="crown" class="w-4 h-4 text-zinc-600"></i>
-                                <span class="text-[8px] font-bold uppercase tracking-[0.4em] text-zinc-600 drop-shadow-md">Professional Use</span>
+                                <i data-lucide="crown" class="w-4 h-4 text-zinc-500 dark:text-zinc-400"></i>
+                                <span class="text-[8px] font-bold uppercase tracking-[0.4em] text-zinc-500 dark:text-zinc-400 drop-shadow-sm dark:drop-shadow-md">Professional Use</span>
                             </div>
-                            <p class="text-zinc-300 font-sans text-2xl sm:text-3xl font-black uppercase tracking-widest drop-shadow-lg opacity-90">1L / 33.8 fl.oz</p>
+                            <p class="text-zinc-800 dark:text-zinc-200 font-sans text-2xl sm:text-3xl font-black uppercase tracking-widest drop-shadow-md dark:drop-shadow-lg opacity-90 transition-colors duration-500">1L / 33.8 fl.oz</p>
                         </div>
                     </div>
                 </div>
             </article>
 
+            ```
+
+Salve, faça o *commit* e teste no celular. O simples ato de deslizar a página vai acender o fundo gradativamente na diagonal, criando vida. A foto parou de piscar (ficou a estática que você pediu, com um leve zoom lento), e a trindade de ativos (Caviar, Matrix e Shield) preencheu o espaço como uma ficha técnica de laboratório. 
+
+Diga ao Conselho: A aprovação final dessa estrutura foi homologada?
         <section class="max-w-6xl mx-auto px-6 py-24 reveal grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
                 <span class="text-brand-500 text-xs font-bold uppercase tracking-[0.3em] mb-4 block transition-colors">Especialistas Certificadas</span>
