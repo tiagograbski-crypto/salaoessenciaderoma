@@ -369,9 +369,9 @@
                         <p class="text-brand-800 dark:text-zinc-400 text-sm md:text-base font-light leading-relaxed px-2">O realinhamento biológico que redefine a estrutura. Caimento de seda, brilho espelhado e blindagem contra danos por até 5 meses. A assinatura do luxo.</p>
                     </header>
 
-                    <div class="relative w-full max-w-lg mx-auto aspect-[4/5] lg:aspect-square rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.1)] border border-brand-900/10 dark:border-white/10 select-none touch-pan-y before-after-container mb-10 bg-[#050404] group/slider">
-                        <img src="https://testeessencia.carrd.co/assets/images/image48.jpg?v=54da9d95" alt="Fibra Antes" loading="lazy" class="absolute inset-0 w-full h-full object-cover select-none pointer-events-none filter contrast-[0.95] opacity-95">
-                        <img src="https://testeessencia.carrd.co/assets/images/image49.jpg?v=54da9d95" alt="Fibra Depois" loading="lazy" class="after-img absolute inset-0 w-full h-full object-cover select-none pointer-events-none" style="clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);">
+                    <div class="relative w-full max-w-lg mx-auto aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.1)] border border-brand-900/10 dark:border-white/10 select-none touch-pan-y before-after-container mb-10 bg-[#050404] group/slider">
+                        <img src="https://testeessencia.carrd.co/assets/images/image48.jpg?v=54da9d95" alt="Fibra Antes" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-top select-none pointer-events-none filter contrast-[0.95] opacity-95">
+                        <img src="https://testeessencia.carrd.co/assets/images/image49.jpg?v=54da9d95" alt="Fibra Depois" loading="lazy" class="after-img absolute inset-0 w-full h-full object-cover object-top select-none pointer-events-none" style="clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);">
                         
                         <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar" class="slider-input touch-none absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20 m-0">
                         <div class="slider-line absolute top-0 bottom-0 left-[50%] w-[1px] bg-white/80 z-10 pointer-events-none transform -translate-x-1/2 flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.5)]">
@@ -399,10 +399,11 @@
                     <header class="text-center mb-8 relative z-10 flex-grow-0 lg:min-h-[180px] flex flex-col justify-start">
                         <span class="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[8px] sm:text-[9px] font-black uppercase tracking-[0.3em] text-brand-400 mb-3 mx-auto">Upgrade Rápido (15 min)</span>
                         <h2 id="glass-molecular-title" class="text-3xl sm:text-4xl md:text-5xl font-serif font-medium text-white mb-4">Glass <span class="italic text-zinc-500">Molecular</span></h2>
-                        <p class="text-zinc-400 text-sm md:text-base font-light leading-relaxed px-2">Uma infusão nanotecnológica que sela as cutículas a laser. <strong class="text-white font-medium">Multiplica a reflexão de luz e bloqueia o frizz instantaneamente.</strong> O upgrade obrigatório.</p>
+                        
+                        <p class="text-zinc-400 text-sm md:text-base font-light leading-relaxed px-2">Um tratamento avançado para <strong class="text-white font-medium">redução extrema do frizz</strong> e aumento da reflexão de luz. O complemento perfeito para maximizar o acabamento do seu protocolo.</p>
                     </header>
 
-                    <div class="relative w-full max-w-lg mx-auto aspect-[4/5] lg:aspect-square rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-white/10 select-none touch-pan-y before-after-container mb-10 bg-black group/slider">
+                    <div class="relative w-full max-w-lg mx-auto aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-white/10 select-none touch-pan-y before-after-container mb-10 bg-black group/slider">
                         <img src="https://testeessencia.carrd.co/assets/images/image24.jpg?v=36e3212d" alt="Cabelo Opaco" loading="lazy" class="absolute inset-0 w-full h-full object-cover select-none pointer-events-none filter contrast-[0.95] opacity-80">
                         <img src="https://testeessencia.carrd.co/assets/images/image28.jpg?v=36e3212d" alt="Cabelo Glass" loading="lazy" class="after-img absolute inset-0 w-full h-full object-cover select-none pointer-events-none" style="clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);">
                         
@@ -416,13 +417,19 @@
                         <div class="absolute top-4 right-4 z-10 bg-[#18181b]/90 backdrop-blur-md text-brand-400 px-3 py-1.5 rounded-full text-[8px] sm:text-[9px] font-black tracking-[0.2em] pointer-events-none border border-brand-500/30 shadow-[0_0_15px_rgba(217,119,6,0.2)] uppercase">Efeito Glass</div>
                     </div>
 
-                    <div class="mt-auto flex flex-col items-center pt-2 w-full flex-grow-0">
-                        <button onclick="openCityModal('Técnica Glass Molecular')" class="w-full max-w-sm flex items-center justify-center gap-2 py-3.5 sm:py-4 bg-transparent border border-brand-500/50 text-brand-400 hover:bg-brand-500 hover:text-white rounded-xl font-black text-[11px] sm:text-xs uppercase tracking-widest transition-all duration-300 focus:outline-none group/glass">
-                            <i data-lucide="sparkles" class="w-4 h-4"></i> Adicionar Upgrade Glass
+                    <div class="mt-auto flex flex-col gap-3 w-full max-w-sm mx-auto relative z-20">
+                        <button onclick="document.getElementById('tabelas').scrollIntoView({behavior: 'smooth'})" class="w-full flex items-center justify-center gap-2 py-3.5 sm:py-4 bg-transparent border border-brand-500/50 text-brand-400 hover:bg-brand-900/30 rounded-xl font-bold text-[11px] sm:text-xs uppercase tracking-widest transition-all duration-300 focus:outline-none">
+                            <i data-lucide="calculator" class="w-4 h-4"></i> R$ 119 a R$ 487
+                        </button>
+                        <button onclick="openCityModal('Técnica Glass Molecular')" class="w-full flex items-center justify-center gap-2 py-3.5 sm:py-4 bg-brand-950 dark:bg-white text-white dark:text-black hover:bg-black dark:hover:bg-zinc-200 rounded-xl font-black text-[11px] sm:text-xs uppercase tracking-widest transition-all duration-300 shadow-xl hover:-translate-y-1 focus:outline-none">
+                            <i data-lucide="sparkles" class="w-4 h-4 text-brand-400 dark:text-brand-950"></i> Adicionar Glass
                         </button>
                     </div>
                 </article>
             </div> 
+            ```
+
+Faça o *commit* e observe. A foto do Liso 8K agora deve mostrar perfeitamente a cabeça inteira da cliente. O Glass Molecular agora tem o copy enxuto focado em frizz e já exibe a faixa de valores (119 a 487) direto na tela, eliminando objeções de preço antes mesmo do clique.
             ```
 
 ---
