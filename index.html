@@ -957,7 +957,7 @@
                         <i data-lucide="crown" class="w-5 h-5 text-zinc-400"></i>
                     </div>
                     <h4 class="font-serif text-3xl text-white mb-2 tracking-wide">Essência de Romã</h4>
-                    <p class="text-[10px] text-zinc-500 uppercase tracking-[0.3em] mb-6">Laboratório Clínico & Engenharia GL Pro</p>
+                    <p class="text-[10px] text-zinc-500 uppercase tracking-[0.3em] mb-6">Matriz Chapecó <span class="mx-2 opacity-30">|</span> Engenharia GL Pro</p>
                     <p class="text-zinc-400 text-xs font-light max-w-xs leading-relaxed">
                         Elevando o padrão mundial da bioarquitetura capilar. Diagnóstico preciso e resultados incontestáveis.
                     </p>
@@ -966,21 +966,26 @@
                 <div class="md:col-span-3 flex flex-col items-center md:items-start text-center md:text-left">
                     <h5 class="text-[9px] font-black text-zinc-300 uppercase tracking-[0.4em] mb-6">Infraestrutura</h5>
                     <ul class="flex flex-col gap-4 text-xs font-medium tracking-[0.15em] uppercase text-zinc-500">
-                        <li><span class="hover:text-white transition-colors cursor-default">Sede: Seara - SC</span></li>
-                        <li><button onclick="document.getElementById('tabelas').scrollIntoView({behavior: 'smooth'})" class="hover:text-white transition-colors focus:outline-none">Tabela de Valores</button></li>
-                        <li><button onclick="openB2BModal()" class="hover:text-white transition-colors focus:outline-none">Seja um Credenciado</button></li>
+                        <li><span class="hover:text-white transition-colors cursor-default"><strong class="text-zinc-300 font-bold">Matriz:</strong> Chapecó - SC</span></li>
+                        <li><span class="hover:text-white transition-colors cursor-default"><strong class="text-zinc-300 font-bold">Credenciado:</strong> Seara - SC</span></li>
+                        <li class="mt-2"><button onclick="document.getElementById('tabelas').scrollIntoView({behavior: 'smooth'})" class="hover:text-white transition-colors focus:outline-none">Tabela de Valores</button></li>
+                        <li><button onclick="openB2BModal()" class="hover:text-white transition-colors focus:outline-none text-brand-400">Seja um Credenciado</button></li>
                     </ul>
                 </div>
 
                 <div class="md:col-span-4 flex flex-col items-center md:items-end text-center md:text-right">
-                    <h5 class="text-[9px] font-black text-zinc-300 uppercase tracking-[0.4em] mb-6">Protocolos Legais</h5>
+                    <div class="flex items-center gap-2 mb-6">
+                        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-brand-500"></i>
+                        <h5 class="text-[9px] font-black text-zinc-300 uppercase tracking-[0.4em]">Protocolos Legais & Segurança</h5>
+                    </div>
+                    
                     <div class="flex flex-col gap-4 items-center md:items-end text-xs font-medium tracking-[0.15em] uppercase text-zinc-500 mb-8">
                         <button type="button" onclick="openLegalModal('termos')" class="hover:text-white transition-colors focus:outline-none">Termos de Uso</button>
-                        <button type="button" onclick="openLegalModal('privacidade')" class="hover:text-white transition-colors focus:outline-none">Política de Privacidade</button>
+                        <button type="button" onclick="openLegalModal('privacidade')" class="hover:text-white transition-colors focus:outline-none flex items-center gap-2">Política de Privacidade (LGPD)</button>
                     </div>
                     
                     <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-600 transition-all hover:scale-110 shadow-lg focus:outline-none" aria-label="Instagram">
+                        <a href="https://instagram.com/essenciaderomahair" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-600 transition-all hover:scale-110 shadow-lg focus:outline-none" aria-label="Instagram">
                             <i data-lucide="instagram" class="w-4 h-4"></i>
                         </a>
                         <button onclick="openCityModal('Falar com Especialista')" class="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:border-brand-500 hover:bg-brand-900/30 transition-all hover:scale-110 shadow-lg focus:outline-none" aria-label="WhatsApp Concierge">
@@ -1000,8 +1005,8 @@
                 </div>
                 
                 <div class="flex items-center gap-2 opacity-50 hover:opacity-100 transition-opacity duration-500 cursor-default">
-                    <i data-lucide="code-2" class="w-4 h-4 text-zinc-500"></i>
-                    <span class="text-[9px] font-black uppercase tracking-[0.4em] text-zinc-500">Digital Experience by Veloq</span>
+                    <i data-lucide="shield" class="w-3.5 h-3.5 text-zinc-500"></i>
+                    <span class="text-[9px] font-black uppercase tracking-[0.4em] text-zinc-500">A Hold DG Company</span>
                 </div>
             </div>
         </div>
