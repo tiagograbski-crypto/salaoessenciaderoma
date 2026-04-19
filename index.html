@@ -428,64 +428,43 @@
                 </article>
             </div> 
             ```
-            <article id="molecular-platinum-banner" class="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16 bg-[#060404] w-full rounded-[2.5rem] sm:rounded-[3rem] p-8 sm:p-10 lg:p-16 shadow-[0_30px_60px_rgba(0,0,0,0.95)] border border-zinc-900 relative overflow-hidden transition-colors duration-500 group mt-10" style="background-image: url('data:image/svg+xml;utf8,<svg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'noiseFilter\'><feTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'1\' stitchTiles=\'stitch\'/></filter><rect width=\'100%\' height=\'100%\' filter=\'url(%23noiseFilter)\' opacity=\'0.03\'/></svg>');">
+            <article id="molecular-platinum-banner" class="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16 bg-[#060404] w-full rounded-[2.5rem] sm:rounded-[3rem] p-8 sm:p-10 lg:p-16 shadow-[0_30px_60px_rgba(0,0,0,0.95)] border border-zinc-900 relative overflow-hidden group mt-10" style="--mouse-x: -100%; --mouse-y: -100%;">
                 
-                <div class="spotlight-container absolute inset-0 z-0 pointer-events-none overflow-hidden">
-                    <div class="spotlight-matrix absolute inset-0 opacity-0 transition-opacity duration-300 pointer-events-none mix-blend-screen" 
-                         style="transform: rotate(5deg); transform-origin: center; background-image: url('https://imagensagata.carrd.co/assets/images/image03.jpg?v=6b4b2f98'); background-size: 150px; background-repeat: repeat; background-position: center;">
-                    </div>
-                    
-                    <div class="spotlight-light absolute w-[400px] h-[400px] rounded-full blur-[100px] opacity-0 transition-opacity duration-300 pointer-events-none mix-blend-collor-dodge"
-                         style="background: radial-gradient(circle, rgba(234,232,230,0.4) 0%, rgba(200,198,196,0.1) 40%, rgba(0,0,0,0) 70%);">
-                    </div>
+                <div class="absolute inset-0 z-0 pointer-events-none transition-opacity duration-300"
+                     style="-webkit-mask-image: radial-gradient(circle 120px at var(--mouse-x) var(--mouse-y), black 0%, transparent 100%); mask-image: radial-gradient(circle 120px at var(--mouse-x) var(--mouse-y), black 0%, transparent 100%);">
+                     
+                     <div class="absolute inset-[-50%] w-[200%] h-[200%] opacity-40 mix-blend-screen"
+                          style="transform: rotate(-45deg); background-image: url('https://imagensagata.carrd.co/assets/images/image03.jpg?v=6b4b2f98'); background-size: 70px; background-repeat: repeat; background-position: center; filter: grayscale(1) contrast(1.5);">
+                     </div>
                 </div>
 
                 <script>
                     (function() {
                         const banner = document.getElementById('molecular-platinum-banner');
-                        const spotlightMatrix = banner.querySelector('.spotlight-matrix');
-                        const spotlightLight = banner.querySelector('.spotlight-light');
+                        if(!banner) return;
 
-                        // Função para mover a luz e revelar o monograma
-                        function moveSpotlight(e) {
+                        function updateSpotlight(e) {
                             const rect = banner.getBoundingClientRect();
-                            let x, y;
-
-                            if (e.touches && e.touches.length > 0) {
-                                // Evento de Toque (Smartphone)
-                                x = e.touches[0].clientX - rect.left;
-                                y = e.touches[0].clientY - rect.top;
-                                spotlightLight.style.width = '300px'; // Toque mais preciso no celular
-                                spotlightLight.style.height = '300px';
-                            } else {
-                                // Evento de Mouse (PC)
-                                x = e.clientX - rect.left;
-                                y = e.clientY - rect.top;
-                                spotlightLight.style.width = '400px'; 
-                                spotlightLight.style.height = '400px';
-                            }
-
-                            // Liga a visibilidade
-                            spotlightMatrix.style.opacity = '1';
-                            spotlightLight.style.opacity = '1';
-
-                            // Move o ponto de luz
-                            spotlightLight.style.transform = `translate(${x - spotlightLight.offsetWidth/2}px, ${y - spotlightLight.offsetHeight/2}px)`;
+                            let x = e.touches ? e.touches[0].clientX : e.clientX;
+                            let y = e.touches ? e.touches[0].clientY : e.clientY;
+                            
+                            // Atualiza as coordenadas da máscara sem piscar a tela
+                            banner.style.setProperty('--mouse-x', (x - rect.left) + 'px');
+                            banner.style.setProperty('--mouse-y', (y - rect.top) + 'px');
                         }
 
-                        // Função para desligar a luz quando o dedo/mouse sai
-                        function hideSpotlight() {
-                            spotlightMatrix.style.opacity = '0';
-                            spotlightLight.style.opacity = '0';
-                        }
-
-                        // Escutando os movimentos
-                        banner.addEventListener('mousemove', moveSpotlight);
-                        banner.addEventListener('touchmove', moveSpotlight);
-
-                        // Escutando a saída
-                        banner.addEventListener('mouseleave', hideSpotlight);
-                        banner.addEventListener('touchend', hideSpotlight);
+                        banner.addEventListener('mousemove', updateSpotlight);
+                        banner.addEventListener('touchmove', updateSpotlight);
+                        
+                        // Joga a lanterna para fora da tela quando o mouse sai
+                        banner.addEventListener('mouseleave', () => {
+                            banner.style.setProperty('--mouse-x', '-100%');
+                            banner.style.setProperty('--mouse-y', '-100%');
+                        });
+                        banner.addEventListener('touchend', () => {
+                            banner.style.setProperty('--mouse-x', '-100%');
+                            banner.style.setProperty('--mouse-y', '-100%');
+                        });
                     })();
                 </script>
                 
@@ -507,19 +486,21 @@
                         </h3>
                     </div>
                     
-                    <div class="mb-8 p-5 rounded-2xl bg-gradient-to-br from-[#120f0e] to-black border border-zinc-800 shadow-inner max-w-md mx-auto lg:mx-0 text-left pointer-events-auto">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-700 flex items-center justify-center">
-                                <i data-lucide="droplets" class="w-4 h-4 text-zinc-300"></i>
+                    <div class="mb-8 relative p-[1px] rounded-2xl bg-gradient-to-b from-zinc-700 via-zinc-900 to-black max-w-md mx-auto lg:mx-0 text-left pointer-events-auto shadow-2xl">
+                        <div class="bg-[#050404] p-5 sm:p-6 rounded-2xl h-full w-full inset-0">
+                            <div class="flex items-center gap-4 mb-4 pb-4 border-b border-zinc-800/80">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-zinc-800 to-black border border-zinc-700 flex items-center justify-center shadow-inner shrink-0">
+                                    <i data-lucide="droplets" class="w-4 h-4 text-zinc-300"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-[11px] font-black uppercase tracking-[0.3em] text-zinc-200">Black Caviar System &reg;</h4>
+                                    <span class="text-[9px] uppercase tracking-[0.2em] text-zinc-500">Synchronized Matrix</span>
+                                </div>
                             </div>
-                            <div>
-                                <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-200">Black Caviar System &reg;</h4>
-                                <span class="text-[8px] uppercase tracking-[0.2em] text-zinc-500">Synchronized Matrix</span>
-                            </div>
+                            <p class="text-xs text-zinc-400 font-medium leading-relaxed">
+                                Infusão lipídica ultraconcentrada e complexo de aminoácidos raros. Restaura a elasticidade absoluta e blinda a matriz capilar contra a oxidação, entregando um brilho vitrificado e peso luxuoso aos fios.
+                            </p>
                         </div>
-                        <p class="text-xs text-zinc-400 font-medium leading-relaxed">
-                            Infusão lipídica ultraconcentrada e complexo de aminoácidos raros. Restaura a elasticidade absoluta e blinda a matriz capilar contra a oxidação, garantindo um brilho vitrificado e peso luxuoso aos fios.
-                        </p>
                     </div>
                     
                     <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md mx-auto lg:mx-0 mt-2 pointer-events-auto">
@@ -574,7 +555,6 @@
                     </div>
                 </div>
             </article>
-            ```
 
 Faça o *commit*. O resultado é brutal. No celular, conforme você rola a página ou passa o dedo pelo banner, você vê o monograma `GL PRO` acendendo em prata joia de forma estratégica e sumindo em seguida. É o sensorial total ativado. 
 
