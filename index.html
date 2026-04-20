@@ -14,26 +14,34 @@
     <link rel="preconnect" href="https://api.whatsapp.com" crossorigin>
 
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        
-        gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
+      <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    
+    gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'granted',
+        'wait_for_update': 500
+    });
+    
+    window.grantConsent = function() {
+        // Atualiza o consentimento nativo do Google
+        gtag('consent', 'update', {
+            'ad_storage': 'granted',
             'analytics_storage': 'granted',
-            'wait_for_update': 500
+            'personalization_storage': 'granted',
+            'marketing_storage': 'granted'
         });
-        
-        window.grantConsent = function() {
-            gtag('consent', 'update', {
-                'ad_storage': 'granted',
-                'analytics_storage': 'granted',
-                'personalization_storage': 'granted',
-                'marketing_storage': 'granted'
-            });
-        };
-    </script>
+
+        // Envia o evento e a variável GLPD para o Tag Manager
+        window.dataLayer.push({
+            'event': 'acceptCookies',
+            'GLPD': 'granted'
+        });
+    };
+</script>
 
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://kkzrytar.sad.stape.io/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
