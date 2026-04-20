@@ -277,28 +277,73 @@
 
     <main class="relative z-10 flex-grow w-full mt-4">
         
-<script>
-    let corteEscolhido = "Corte Especial Outono"; 
+<section class="w-full bg-[#0A0A0A] py-16 sm:py-24 relative overflow-hidden z-20 border-y border-[#C5A059]/20">
+                
+                <div class="absolute inset-0 pointer-events-none">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[400px] bg-[#C5A059] opacity-[0.07] blur-[120px] rounded-full"></div>
+                </div>
 
-    function selecionarCorte(elemento, nomeDoCorte) {
-        corteEscolhido = nomeDoCorte; 
-        const todasAsImagens = elemento.parentElement.children;
-        for(let img of todasAsImagens) {
-            img.classList.remove('border-[#C5A059]');
-            img.classList.add('border-transparent');
-        }
-        elemento.classList.remove('border-transparent');
-        elemento.classList.add('border-[#C5A059]');
-        document.getElementById('corteFeedback').innerText = `✓ Excelente escolha! Estilo ${nomeDoCorte} selecionado.`;
-    }
+                <div class="max-w-6xl mx-auto px-6 relative z-10">
+                    <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
+                        
+                        <div class="w-full lg:w-3/5 text-center lg:text-left">
+                            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/30 mb-8">
+                                <span class="w-2 h-2 rounded-full bg-[#C5A059] animate-pulse"></span>
+                                <span class="text-[10px] font-black uppercase tracking-[0.2em] text-[#C5A059]">Oportunidade Chapecó • 20 a 25 de Abril</span>
+                            </div>
+                            
+                            <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-[#FDFCF0] mb-6 leading-[1.1]">
+                                Engenharia <br class="hidden sm:block"/>
+                                <span class="italic text-[#C5A059]">do Corte.</span>
+                            </h2>
+                            
+                            <p class="text-zinc-400 text-sm sm:text-base font-light leading-relaxed max-w-xl mx-auto lg:mx-0 mb-10">
+                                Uma auditoria estrutural focada na remoção de pontas desvitalizadas e na reconstrução do design facial. <strong class="text-white font-medium">Preservamos o seu comprimento</strong> enquanto devolvemos o caimento de seda à sua fibra.
+                            </p>
 
-    function agendarCorte() {
-        const numeroWhatsApp = "5549999999999"; // <-- MUDE PARA O SEU NÚMERO
-        const texto = `Olá! Quero reivindicar a Oportunidade de Chapecó (R$ 210).%0A%0ATenho interesse na tendência: *${corteEscolhido}*.%0A%0APodemos agendar meu horário?`;
-        const url = `https://wa.me/${numeroWhatsApp}?text=${texto}`;
-        window.open(url, '_blank');
-    }
-</script>
+                            <div class="grid grid-cols-2 gap-4 text-left max-w-md mx-auto lg:mx-0">
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="shield-check" class="w-4 h-4 text-[#C5A059] mt-1"></i>
+                                    <span class="text-[10px] uppercase tracking-widest text-zinc-300 font-bold">Mapeamento <br/> Estrutural</span>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="scissors" class="w-4 h-4 text-[#C5A059] mt-1"></i>
+                                    <span class="text-[10px] uppercase tracking-widest text-zinc-300 font-bold">Design de <br/> Autoridade</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-full lg:w-auto flex flex-col items-center bg-[#151515] p-10 rounded-[2.5rem] border border-zinc-800 shadow-2xl transition-all hover:border-[#C5A059]/30">
+                            
+                            <div class="text-center mb-8">
+                                <span class="text-[10px] uppercase tracking-[0.3em] text-zinc-500 mb-2 block">Investimento de Outono</span>
+                                <div class="flex items-center justify-center gap-3 mb-2">
+                                    <span class="text-sm text-zinc-600 line-through decoration-[#C5A059]/50 font-medium">R$ 280</span>
+                                    <span class="px-2 py-0.5 bg-[#C5A059] text-[#151515] text-[9px] font-black rounded-sm uppercase tracking-tighter">Save R$ 70</span>
+                                </div>
+                                <div class="flex items-baseline gap-1.5">
+                                    <span class="text-sm font-bold text-[#C5A059]">R$</span>
+                                    <span class="text-6xl font-black tracking-tighter text-[#FDFCF0]">210</span>
+                                </div>
+                                <span class="text-[9px] uppercase tracking-widest text-zinc-500 mt-2 block">Pagamento em até 3x</span>
+                            </div>
+
+                            <button onclick="openCityModal('Agendar Corte Especial - R$ 210')" class="group relative w-full px-12 py-5 bg-[#C5A059] hover:bg-[#D6B26A] text-[#151515] rounded-sm transition-all duration-300 shadow-[0_20px_40px_rgba(197,160,89,0.2)] hover:-translate-y-1 overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
+                                <span class="flex items-center justify-center gap-2 font-black text-[11px] uppercase tracking-[0.25em]">
+                                    Reivindicar Vaga
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </span>
+                            </button>
+                            
+                            <p class="text-[8px] uppercase tracking-widest text-zinc-600 mt-6 text-center leading-relaxed">
+                                Vagas limitadas por ordem de agendamento. <br/> Unidade Chapecó.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
 
       <section class="max-w-6xl mx-auto my-16 sm:my-24 reveal px-6">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative">
@@ -1092,7 +1137,7 @@
             Apenas Essenciais
         </button>
         
-        <button type="button" id="btn-aceitar-cookies" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'acceptCookies', 'GLPD': 'granted'}); gtag('consent', 'update', {'ad_storage': 'granted', 'analytics_storage': 'granted', 'personalization_storage': 'granted', 'marketing_storage': 'granted'}); document.getElementById('cookie-banner').style.display='none';" class="btn-primary-luxury text-white px-8 py-3 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider transition-colors focus:outline-none shadow-sm w-full sm:w-auto">
+        <button type="button" id="btn-aceitar-cookies" onclick="if(typeof window.grantConsent === 'function') { window.grantConsent(); } document.getElementById('cookie-banner').style.display='none';" class="btn-primary-luxury text-white px-8 py-3 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider transition-colors focus:outline-none shadow-sm w-full sm:w-auto">
             Aceitar e Continuar
         </button>
     </div>
