@@ -1397,7 +1397,25 @@ function handleCitySelection(rawCity) {
             }
 
             // NERO: Trava de segurança de 2 segundos para a Stape.io processar os dados
-           let purchaseValue = 0;
+            const doRedirect = () => {
+                window.location.href = finalUrl;
+                setTimeout(() => {
+                    isRedirecting = false;
+                    if(redirectPage) {
+                        redirectPage.classList.add('opacity-0');
+                        setTimeout(() => {
+                            redirectPage.classList.add('hidden');
+                            document.body.style.overflow = 'auto';
+                        }, 500);
+                    }
+                }, 2000);
+            };
+
+            const metaCookies = typeof getMetaCookies === 'function' ? getMetaCookies() : { fbp: '', fbc: '' };
+            let utmObj = {};
+            try { utmObj = JSON.parse(localStorage.getItem('roma_utms') || '{}'); } catch(e) {}
+
+            let purchaseValue = 0;
             if (safeCity === 'Chapecó') purchaseValue = 250.00;
             else if (safeCity === 'Pato Branco') purchaseValue = 275.00;
             else if (safeCity === 'Seara') purchaseValue = 210.00;
@@ -1445,7 +1463,6 @@ function handleCitySelection(rawCity) {
             
             // Segurança extrema: Se o GTM travar, libera a cliente pro WhatsApp após 2.5s
             setTimeout(() => { if(isRedirecting) doRedirect(); }, 2500);
-        }
 
         // Funções de Suporte (B2B, Legais e UI)
         function processB2BLead() {
