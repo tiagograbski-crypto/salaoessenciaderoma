@@ -228,51 +228,57 @@
 
     <main class="relative z-10 flex-grow w-full mt-4">
         
-<section class="relative w-full min-h-[85vh] sm:min-h-screen flex flex-col justify-center items-center overflow-hidden bg-[#FDFCF0] dark:bg-[#121212] transition-colors duration-700 pt-20 pb-12">
-
-                <div class="absolute inset-0 z-0 pointer-events-none">
-                    <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style="background-image: url('data:image/svg+xml;utf8,<svg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'noise\'><feTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'3\' stitchTiles=\'stitch\'/></filter><rect width=\'100%\' height=\'100%\' filter=\'url(%23noise)\'/></svg>');"></div>
-
-                    <div class="absolute top-0 right-0 w-[80vw] h-[80vw] sm:w-[600px] sm:h-[600px] bg-[#C5A059] opacity-10 dark:opacity-[0.08] blur-[100px] rounded-full translate-x-1/4 -translate-y-1/4 transition-opacity duration-700"></div>
-                    <div class="absolute bottom-0 left-0 w-[80vw] h-[80vw] sm:w-[600px] sm:h-[600px] bg-[#C5A059] opacity-10 dark:opacity-[0.08] blur-[100px] rounded-full -translate-x-1/4 translate-y-1/4 transition-opacity duration-700"></div>
-                </div>
-
-                <div class="relative z-10 w-full max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
-
-                    <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-[#C5A059]/30 bg-white/40 dark:bg-black/40 backdrop-blur-md mb-8">
-                        <span class="w-1.5 h-1.5 rounded-full bg-[#C5A059] animate-pulse shadow-[0_0_8px_#C5A059]"></span>
-                        <span class="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.3em] text-[#C5A059]">Edição Exclusiva Chapecó • Abril 2026</span>
-                    </div>
-
-                    <h1 class="font-serif text-[2.5rem] leading-[1.1] sm:text-6xl md:text-8xl font-medium text-[#1C1C1C] dark:text-[#FDFCF0] tracking-tight mb-6 transition-colors duration-700">
-                        O desapego que <br class="hidden sm:block"/>
-                        revela a <span class="italic text-[#C5A059]">sua força.</span>
-                    </h1>
-
-                    <p class="max-w-[19rem] sm:max-w-lg text-sm sm:text-base text-zinc-600 dark:text-zinc-400 font-light leading-relaxed mb-10 transition-colors duration-700">
-                        O movimento natural de uma fibra renovada. Não é sobre perder comprimento, é sobre <strong class="text-zinc-900 dark:text-white font-medium">ganhar autoridade visual</strong> com a engenharia do corte.
-                    </p>
-
-                    <div class="flex flex-col w-full max-w-[16rem] sm:max-w-xs gap-4 mb-16">
-                        <button onclick="openCityModal('Semana do Corte - Chapecó')" class="group relative w-full flex items-center justify-center gap-3 px-8 py-4 bg-[#1C1C1C] dark:bg-[#FDFCF0] text-[#FDFCF0] dark:text-[#1C1C1C] rounded-sm overflow-hidden transition-all duration-500 shadow-xl hover:-translate-y-1">
-                            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 dark:via-black/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
-                            <i data-lucide="scissors" class="w-4 h-4 text-[#C5A059]"></i>
-                            <span class="font-black text-[10px] sm:text-[11px] uppercase tracking-[0.2em]">Agendar Avaliação</span>
-                        </button>
-                    </div>
-
-                    <div class="flex items-start sm:items-center justify-center gap-3 max-w-sm mx-auto px-4 py-3 border-t border-[#C5A059]/20">
-                        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-[#C5A059] shrink-0 mt-0.5 sm:mt-0"></i>
-                        <p class="text-[8px] sm:text-[9px] uppercase tracking-[0.1em] text-zinc-500 dark:text-zinc-600 text-left sm:text-center leading-relaxed">
-                            O procedimento visa a harmonização da imagem pessoal. <br class="hidden sm:block"/> Resultados dependem da saúde prévia da fibra capilar.
+<section class="w-full bg-[#0A0A0A] py-20 relative z-20 border-b border-[#C5A059]/10">
+                <div class="max-w-6xl mx-auto px-6">
+                    
+                    <div class="text-center mb-16">
+                        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#C5A059] mb-4 block">A Metodologia GL Pro</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-medium text-[#FDFCF0] mb-6">
+                            Esqueça a tesoura comum. <br/>
+                            <span class="italic text-zinc-500">Isto é arquitetura capilar.</span>
+                        </h2>
+                        <p class="max-w-2xl mx-auto text-zinc-400 font-light text-sm sm:text-base leading-relaxed">
+                            A Semana do Corte não é uma promoção de salão. É uma janela de oportunidade restrita para você submeter seus fios a um mapeamento estrutural focado na eliminação de pontas duplas, ralas e sem vida, <strong class="text-white font-medium">sem comprometer o seu comprimento.</strong>
                         </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                        
+                        <div class="bg-[#151515] p-8 rounded-2xl border border-zinc-800 hover:border-[#C5A059]/40 transition-colors group">
+                            <div class="w-12 h-12 rounded-full bg-[#C5A059]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <i data-lucide="microscope" class="w-5 h-5 text-[#C5A059]"></i>
+                            </div>
+                            <h3 class="text-lg font-serif text-white mb-3">1. Auditoria de Pontas</h3>
+                            <p class="text-xs text-zinc-500 leading-relaxed">
+                                Antes de qualquer intervenção, mapeamos a porosidade e a extensão dos danos. Cortamos com precisão cirúrgica apenas a fibra que não tem mais recuperação orgânica.
+                            </p>
+                        </div>
+
+                        <div class="bg-[#151515] p-8 rounded-2xl border border-zinc-800 hover:border-[#C5A059]/40 transition-colors group">
+                            <div class="w-12 h-12 rounded-full bg-[#C5A059]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <i data-lucide="ruler" class="w-5 h-5 text-[#C5A059]"></i>
+                            </div>
+                            <h3 class="text-lg font-serif text-white mb-3">2. Preservação Total</h3>
+                            <p class="text-xs text-zinc-500 leading-relaxed">
+                                A sua maior dor é o nosso maior cuidado. A Engenharia do Corte foi desenvolvida para devolver o balanço de seda e a base encorpada, blindando o seu comprimento atual.
+                            </p>
+                        </div>
+
+                        <div class="bg-[#151515] p-8 rounded-2xl border border-zinc-800 hover:border-[#C5A059]/40 transition-colors group">
+                            <div class="w-12 h-12 rounded-full bg-[#C5A059]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <i data-lucide="sparkles" class="w-5 h-5 text-[#C5A059]"></i>
+                            </div>
+                            <h3 class="text-lg font-serif text-white mb-3">3. Caimento de Autoridade</h3>
+                            <p class="text-xs text-zinc-500 leading-relaxed">
+                                Um rosto não tem linhas aleatórias. O design do corte harmoniza os seus traços, entregando uma postura visual de alto valor para o seu posicionamento diário.
+                            </p>
+                        </div>
+
                     </div>
 
                 </div>
             </section>
-            ```
-
-        <section class="max-w-6xl mx-auto my-16 sm:my-24 reveal px-6">
+      <section class="max-w-6xl mx-auto my-16 sm:my-24 reveal px-6">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative">
                 
                 <div class="group relative bg-[#18181b]/70 backdrop-blur-2xl border border-[#d97706]/20 rounded-2xl p-5 sm:p-8 flex flex-col items-center text-center shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_10px_40px_rgba(217,119,6,0.15)] transition-all duration-500 overflow-hidden">
