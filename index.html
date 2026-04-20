@@ -166,6 +166,8 @@
         body.no-fouc #cookie-banner { display: none !important; }
         .transition-colors { transition-duration: 300ms; transition-timing-function: ease-in-out; will-change: background-color, border-color, color; }
     </style>
+    <link rel="preconnect" href="https://api.whatsapp.com" crossorigin>
+
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -174,7 +176,7 @@
             'ad_storage': 'denied',
             'ad_user_data': 'denied',
             'ad_personalization': 'denied',
-            'analytics_storage': 'denied',
+            'analytics_storage': 'granted', /* <-- AQUI FOI ALTERADO PARA GRANTED */
             'wait_for_update': 500
         });
         
@@ -187,6 +189,12 @@
             });
         };
     </script>
+
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://kkzrytar.sad.stape.io/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KSC788J2');</script>
+
+    <meta name="theme-color" id="meta-theme-color" content="#0B0908">
 <div class="fixed top-0 left-0 w-full bg-[#1C1C1C]/95 dark:bg-[#060404]/95 backdrop-blur-md text-[#FDFCF0] border-b border-[#C5A059]/20 text-[9px] sm:text-[10px] font-medium tracking-[0.25em] uppercase h-9 z-[60] overflow-hidden flex items-center">
         <div class="animate-marquee whitespace-nowrap flex items-center">
             
