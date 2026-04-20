@@ -1376,7 +1376,7 @@ function handleCitySelection(rawCity) {
                 window.dataLayer.push({
                     'event': 'purchase',
                     'event_id': eventId,
-                    'value': purchaseValue,
+                    'value': 250,
                     'currency': 'BRL',
                     'service_intent': safeService,
                     'location_intent': safeCity,
@@ -1384,7 +1384,7 @@ function handleCitySelection(rawCity) {
                     'fbc': metaCookies.fbc,
                     'ecommerce': {
                         'transaction_id': eventId,
-                        'value': purchaseValue,
+                        'value': 250,
                         'currency': 'BRL',
                         'items': [{
                             'item_id': cleanService,
