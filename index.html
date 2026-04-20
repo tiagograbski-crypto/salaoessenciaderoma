@@ -1397,25 +1397,7 @@ function handleCitySelection(rawCity) {
             }
 
             // NERO: Trava de segurança de 2 segundos para a Stape.io processar os dados
-            const doRedirect = () => {
-                window.location.href = finalUrl;
-                setTimeout(() => {
-                    isRedirecting = false;
-                    if(redirectPage) {
-                        redirectPage.classList.add('opacity-0');
-                        setTimeout(() => {
-                            redirectPage.classList.add('hidden');
-                            document.body.style.overflow = 'auto';
-                        }, 500);
-                    }
-                }, 2000);
-            };
-
-            const metaCookies = typeof getMetaCookies === 'function' ? getMetaCookies() : { fbp: '', fbc: '' };
-            let utmObj = {};
-            try { utmObj = JSON.parse(localStorage.getItem('roma_utms') || '{}'); } catch(e) {}
-
-            let purchaseValue = 0;
+           let purchaseValue = 0;
             if (safeCity === 'Chapecó') purchaseValue = 250.00;
             else if (safeCity === 'Pato Branco') purchaseValue = 275.00;
             else if (safeCity === 'Seara') purchaseValue = 210.00;
@@ -1427,7 +1409,7 @@ function handleCitySelection(rawCity) {
                 window.dataLayer.push({
                     'event': 'purchase',
                     'event_id': eventId,
-                    'value': 250,
+                    'value': purchaseValue,
                     'currency': 'BRL',
                     'service_intent': safeService,
                     'location_intent': safeCity,
@@ -1435,7 +1417,7 @@ function handleCitySelection(rawCity) {
                     'fbc': metaCookies.fbc,
                     'ecommerce': {
                         'transaction_id': eventId,
-                        'value': 250,
+                        'value': purchaseValue,
                         'currency': 'BRL',
                         'items': [{
                             'item_id': cleanService,
