@@ -1761,18 +1761,27 @@ function handleCitySelection(rawCity) {
         }
 
         function acceptCookies() { 
-            try {
-                localStorage.setItem('roma_cookies_accepted', 'true'); 
-            } catch (e) {}
-            const b = document.getElementById('cookie-banner'); 
-            if(b) {
-                b.classList.remove('translate-y-0');
-                b.classList.add('translate-y-full'); 
-            }
-            if (typeof window.grantConsent === 'function') {
-                window.grantConsent(); 
-            }
-        }
+    try {
+        localStorage.setItem('roma_cookies_accepted', 'true'); 
+    } catch (e) {}
+
+    const b = document.getElementById('cookie-banner'); 
+    if(b) {
+        b.classList.remove('translate-y-0');
+        b.classList.add('translate-y-full'); 
+    }
+
+    // --- Início da integração com GTM ---
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        'event': 'acceptCookies'
+    });
+    // --- Fim da integração com GTM ---
+
+    if (typeof window.grantConsent === 'function') {
+        window.grantConsent(); 
+    }
+}
         
         const legalTexts = {
             termos: { 
