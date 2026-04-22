@@ -326,17 +326,40 @@
                     </div>
                 </div>
 
-                <div class="mt-auto pt-6 flex items-center gap-4 border-t border-slate-200 dark:border-zinc-800/60">
-                    
-                    <div class="relative w-12 h-16 rounded-lg border border-slate-200 dark:border-zinc-800 bg-white dark:bg-[#111] flex items-center justify-center overflow-hidden shadow-md">
-                        
-                        <img src="URL_DA_SUA_IMAGEM_DO_PRODUTO_AQUI.png" alt="Produto Original" class="w-full h-full object-contain p-1">
-                        
+                <div class="mt-auto pt-6 border-t border-slate-200 dark:border-zinc-800/60">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-slate-800 dark:text-zinc-200 font-bold mb-0.5">Arquitetura Personalizada</p>
+                            <p class="text-[11px] text-slate-500 dark:text-zinc-500 font-light italic">Apenas 6 vagas restantes no sistema</p>
                         </div>
-                    
-                    <div>
-                        <p class="text-[10px] uppercase tracking-[0.2em] text-slate-800 dark:text-zinc-200 font-bold mb-0.5">Fórmula Original</p>
-                        <p class="text-[11px] text-slate-500 dark:text-zinc-500 font-light italic">Padrão de qualidade certificado</p>
+                        <span class="px-2 py-1 bg-red-600/10 dark:bg-red-500/10 border border-red-600/20 dark:border-red-500/20 text-red-700 dark:text-red-400 text-[9px] font-bold uppercase tracking-widest rounded animate-pulse">
+                            Esgotando
+                        </span>
+                    </div>
+
+                    <div class="flex flex-col gap-2.5">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3 rounded-lg border border-slate-200 dark:border-zinc-800/80 bg-white/40 dark:bg-black/20 hover:border-[#C5A059]/40 transition-colors">
+                            <span class="text-[10px] font-semibold text-slate-700 dark:text-zinc-300 uppercase tracking-widest mb-2 sm:mb-0">Amanhã (23/04)</span>
+                            <div class="flex gap-2">
+                                <button onclick="openCityModal('Agendamento: Amanhã 09:00')" class="px-3 py-1.5 rounded bg-[#C5A059]/10 border border-[#C5A059]/20 text-[#C5A059] text-[10px] font-bold tracking-wider hover:bg-[#C5A059] hover:text-black transition-all">09:00</button>
+                                <button onclick="openCityModal('Agendamento: Amanhã 10:00')" class="px-3 py-1.5 rounded bg-[#C5A059]/10 border border-[#C5A059]/20 text-[#C5A059] text-[10px] font-bold tracking-wider hover:bg-[#C5A059] hover:text-black transition-all">10:00</button>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3 rounded-lg border border-slate-200 dark:border-zinc-800/80 bg-white/40 dark:bg-black/20 hover:border-[#C5A059]/40 transition-colors cursor-pointer group" onclick="openCityModal('Agendamento: Sexta-feira')">
+                            <span class="text-[10px] font-semibold text-slate-700 dark:text-zinc-300 uppercase tracking-widest mb-2 sm:mb-0">Sexta-feira (24/04)</span>
+                            <div class="flex gap-2 w-full sm:w-auto">
+                                <button class="w-full px-4 py-1.5 rounded bg-transparent border border-slate-300 dark:border-zinc-700 text-slate-500 dark:text-zinc-400 text-[9px] font-bold tracking-widest uppercase group-hover:text-[#C5A059] group-hover:border-[#C5A059]/50 transition-colors">2 Vagas Restantes</button>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3 rounded-lg border border-slate-200 dark:border-zinc-800/80 bg-white/40 dark:bg-black/20 hover:border-[#C5A059]/40 transition-colors">
+                            <span class="text-[10px] font-semibold text-slate-700 dark:text-zinc-300 uppercase tracking-widest mb-2 sm:mb-0">Sábado (25/04)</span>
+                            <div class="flex gap-2">
+                                <button onclick="openCityModal('Agendamento: Sábado 11:00')" class="px-3 py-1.5 rounded bg-[#C5A059]/10 border border-[#C5A059]/20 text-[#C5A059] text-[10px] font-bold tracking-wider hover:bg-[#C5A059] hover:text-black transition-all">11:00</button>
+                                <button onclick="openCityModal('Agendamento: Sábado 12:00')" class="px-3 py-1.5 rounded bg-[#C5A059]/10 border border-[#C5A059]/20 text-[#C5A059] text-[10px] font-bold tracking-wider hover:bg-[#C5A059] hover:text-black transition-all">12:00</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -390,7 +413,6 @@
         </div>
     </div>
 </section>
-      <section class="max-w-6xl mx-auto my-16 sm:my-24 reveal px-6">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative">
                 
                 <div class="group relative bg-[#18181b]/70 backdrop-blur-2xl border border-[#d97706]/20 rounded-2xl p-5 sm:p-8 flex flex-col items-center text-center shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_10px_40px_rgba(217,119,6,0.15)] transition-all duration-500 overflow-hidden">
