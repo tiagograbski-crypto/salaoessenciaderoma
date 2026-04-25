@@ -1881,7 +1881,7 @@ function handleCitySelection(rawCity) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melhor Salão de Chapecó e Seara | Liso Soberano e Tratamentos Premium</title>
+    <title>Bio Arquitetura Capilar | Liso Soberano e Tratamentos chapecó</title>
     
     <meta name="description" content="Referência absoluta em alisamentos de alta performance sem formol, Liso Soberano 8K e Tratamento Glass Molecular. O melhor salão de Chapecó e Seara.">
     <meta name="keywords" content="alisamento de alta performance, melhor salão de Chapecó, melhor salão em Seara, liso definitivo, alisamentos, selagens, redutor do Frizz, produto para o frizz, tratamento contra o frizz, Liso Soberano 8K, Essência de Romã">
@@ -3807,5 +3807,34 @@ function handleCitySelection(rawCity) {
         }
 
     </script>
+         </footer>
+
+    <script> ... </script>
+    <script> ... </script>
+
+    <script>
+        function registrarEscolhaCookie(status) {
+            localStorage.setItem('roma_cookie_status', status);
+            const banner = document.getElementById('cookie-banner');
+            if(banner) { banner.style.display = 'none'; }
+            if (status === 'aceito' && typeof window.grantConsent === 'function') {
+                window.grantConsent();
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const statusGravado = localStorage.getItem('roma_cookie_status');
+            const banner = document.getElementById('cookie-banner');
+            if (banner) {
+                if (!statusGravado) {
+                    banner.style.display = 'flex';
+                } else {
+                    banner.style.display = 'none';
+                }
+            }
+        });
+    </script>
+    </body>
+</html>
 </body>
 </html>
