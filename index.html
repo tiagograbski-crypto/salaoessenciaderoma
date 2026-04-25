@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melhor Salão de Chapecó e Seara | Liso Soberano e Tratamentos Premium</title>
+    <title>Bio Arquitetura Capilar | Liso Soberano e Tratamentos Premium</title>
     
     <meta name="description" content="Referência absoluta em alisamentos de alta performance sem formol, Liso Soberano 8K e Tratamento Glass Molecular. O melhor salão de Chapecó e Seara.">
     <meta name="keywords" content="alisamento de alta performance, melhor salão de Chapecó, melhor salão em Seara, liso definitivo, alisamentos, selagens, redutor do Frizz, produto para o frizz, tratamento contra o frizz, Liso Soberano 8K, Essência de Romã">
@@ -103,9 +103,9 @@
                             500: '#8C8C8C',
                             900: '#080605'
                         },
-                        // NERO: Adicionado um tom Rose Gold para a campanha das Mães
                         rose: {
-                            gold: '#D4AFB9'
+                            gold: '#D4AFB9',
+                            dark: '#A67B6B'
                         }
                     },
                     animation: {
@@ -145,50 +145,19 @@
         .glass-glacial { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(24px) saturate(200%); -webkit-backdrop-filter: blur(24px) saturate(200%); border-top: 1px solid rgba(227, 168, 87, 0.15); border-left: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(0, 0, 0, 0.5); border-right: 1px solid rgba(0, 0, 0, 0.5); box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05); }
         
         /* BOTÃO LUXO (Ouro/Café) */
-        .btn-primary-luxury {
-            background: linear-gradient(135deg, #30221D 0%, #1C120F 100%);
-            color: #EAE5DF !important;
-            box-shadow: 0 10px 25px -5px rgba(28, 18, 15, 0.4);
-            border: 1px solid rgba(227, 168, 87, 0.4);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .btn-primary-luxury:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 15px 35px -5px rgba(227, 168, 87, 0.25);
-            background: linear-gradient(135deg, #4A362E 0%, #30221D 100%);
-            border: 1px solid rgba(227, 168, 87, 0.8);
-        }
-        .dark .btn-primary-luxury {
-            background: linear-gradient(135deg, #14110F 0%, #0B0908 100%);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(227, 168, 87, 0.3);
-        }
-        .dark .btn-primary-luxury:hover {
-            box-shadow: 0 15px 35px -5px rgba(227, 168, 87, 0.2);
-            background: linear-gradient(135deg, #1C120F 0%, #000000 100%);
-            border: 1px solid rgba(227, 168, 87, 0.6);
-        }
+        .btn-primary-luxury { background: linear-gradient(135deg, #30221D 0%, #1C120F 100%); color: #EAE5DF !important; box-shadow: 0 10px 25px -5px rgba(28, 18, 15, 0.4); border: 1px solid rgba(227, 168, 87, 0.4); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-primary-luxury:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 15px 35px -5px rgba(227, 168, 87, 0.25); background: linear-gradient(135deg, #4A362E 0%, #30221D 100%); border: 1px solid rgba(227, 168, 87, 0.8); }
+        .dark .btn-primary-luxury { background: linear-gradient(135deg, #14110F 0%, #0B0908 100%); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6); border: 1px solid rgba(227, 168, 87, 0.3); }
+        .dark .btn-primary-luxury:hover { box-shadow: 0 15px 35px -5px rgba(227, 168, 87, 0.2); background: linear-gradient(135deg, #1C120F 0%, #000000 100%); border: 1px solid rgba(227, 168, 87, 0.6); }
 
-        .btn-whatsapp-float {
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            color: white !important;
-            box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .btn-whatsapp-float:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 35px -5px rgba(37, 211, 102, 0.6);
-            background: linear-gradient(135deg, #1EBE5D 0%, #075E54 100%);
-        }
+        .btn-whatsapp-float { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); color: white !important; box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-whatsapp-float:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 15px 35px -5px rgba(37, 211, 102, 0.6); background: linear-gradient(135deg, #1EBE5D 0%, #075E54 100%); }
 
         @keyframes scroll-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
         .animate-marquee { animation: scroll-marquee 35s linear infinite; display: flex; align-items: center; white-space: nowrap; width: max-content; will-change: transform; transform: translateZ(0); }
         @keyframes kenBurnsFade { 0% { opacity: 0; transform: scale(1.0); } 10% { opacity: 1; } 43% { opacity: 1; } 53% { opacity: 0; } 100% { opacity: 0; transform: scale(1.15); } }
         .slide-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; animation: kenBurnsFade 24s infinite linear; }
         .slide-bg-1 { animation-delay: -2.4s; } .slide-bg-2 { animation-delay: 5.6s; } .slide-bg-3 { animation-delay: 13.6s; }
-        .animate-bounce-horizontal { animation: bounce-horizontal 1.5s infinite; }
-        @keyframes bounce-horizontal { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(8px); } }
         
         details > summary { list-style: none; min-height: 48px; cursor: pointer; }
         details > summary::-webkit-details-marker { display: none; }
@@ -209,7 +178,6 @@
 
     <div class="fixed top-0 left-0 w-full bg-[#1C1C1C]/95 dark:bg-[#060404]/95 backdrop-blur-md text-[#FDFCF0] border-b border-rose-gold/30 text-[9px] sm:text-[10px] font-medium tracking-[0.25em] uppercase h-9 z-[60] overflow-hidden flex items-center">
         <div class="animate-marquee whitespace-nowrap flex items-center">
-            
             <span class="mx-6 text-[#D4AFB9] font-black drop-shadow-[0_0_8px_rgba(212,175,185,0.4)]">✦ ESPECIAL MÊS DAS MÃES</span>
             <span class="mx-6">MÃE SOBERANA EM CHAPECÓ E SEARA</span>
             <span class="mx-6 text-[#D4AFB9] font-black">✦ O PRESENTE QUE REVELA A FORÇA DELA</span>
@@ -223,7 +191,6 @@
             <span class="mx-6">VAGAS LIMITADAS PARA AVALIAÇÃO DE MAIO</span>
             <span class="mx-6 text-[#D4AFB9] font-black drop-shadow-[0_0_8px_rgba(212,175,185,0.4)]">✦ LISO SOBERANO 8K</span>
             <span class="mx-6">+25 MIL TRANSFORMAÇÕES EM SC</span>
-
         </div>
     </div>
    
@@ -247,6 +214,69 @@
     </nav>
 
     <main class="relative z-10 flex-grow w-full mt-4">
+        
+        <section class="w-full pt-32 pb-20 relative flex items-center justify-center transition-colors duration-700" id="campanha-maes">
+            
+            <div class="absolute inset-0 pointer-events-none overflow-hidden flex justify-center items-center">
+                <div class="w-[700px] h-[500px] bg-[#D4AFB9] opacity-[0.10] dark:opacity-[0.15] blur-[150px] rounded-[100%] rotate-45 transition-opacity"></div>
+            </div>
+
+            <div class="w-full max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+                
+                <div class="backdrop-blur-xl bg-white/80 dark:bg-[#0A0A0A]/90 border border-[#D4AFB9]/30 dark:border-[#D4AFB9]/20 rounded-[2rem] shadow-[0_30px_60px_rgba(212,175,185,0.15)] dark:shadow-[0_40px_80px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col lg:flex-row transition-all duration-500">
+                    
+                    <div class="p-8 sm:p-12 lg:w-3/5 flex flex-col justify-center relative">
+                        
+                        <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-[#D4AFB9]/10 border border-[#D4AFB9]/30 rounded-full w-max">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#D4AFB9] animate-pulse"></span>
+                            <span class="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#A67B6B] dark:text-[#D4AFB9]">
+                                Abertura de Sistema: Agenda de Maio
+                            </span>
+                        </div>
+                        
+                        <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-medium text-brand-950 dark:text-[#EAECEF] leading-[1.1] mb-6 tracking-tight">
+                            Semi Definitiva<br />
+                            <span class="font-bold italic text-transparent bg-clip-text bg-gradient-to-r from-[#A67B6B] via-[#D4AFB9] to-[#A67B6B] bg-[length:200%_auto] animate-[shine_4s_linear_infinite]">
+                                Coleção Herança
+                            </span>
+                        </h2>
+                        
+                        <p class="text-sm sm:text-base text-brand-800 dark:text-luxury-muted font-light leading-relaxed mb-8 max-w-md tracking-wide">
+                            Superfície vitrificada e biotecnologia universal. O protocolo de liso absoluto formulado para celebrar a origem. Reserve para você ou transforme em um presente inesquecível.
+                        </p>
+
+                        <div class="flex flex-wrap gap-4 text-[10px] uppercase tracking-[0.2em] font-bold text-brand-700 dark:text-gray-400">
+                            <span class="flex items-center gap-1"><span class="text-[#D4AFB9]">✓</span> Diagnóstico de Matriz</span>
+                            <span class="flex items-center gap-1"><span class="text-[#D4AFB9]">✓</span> Liso Magnético Espelhado</span>
+                        </div>
+                    </div>
+
+                    <div class="lg:w-2/5 p-8 sm:p-12 bg-brand-100/30 dark:bg-[#080605] border-t lg:border-t-0 lg:border-l border-[#D4AFB9]/20 flex flex-col justify-center items-center text-center">
+                        
+                        <p class="text-[10px] uppercase tracking-[0.3em] text-brand-600 dark:text-gray-500 font-bold mb-3">Cota de Antecipação</p>
+                        
+                        <div class="flex items-baseline justify-center gap-1 mb-4">
+                            <span class="text-xl font-bold text-brand-950 dark:text-white">R$</span>
+                            <span class="text-6xl sm:text-7xl font-black tracking-tighter text-brand-950 dark:text-white drop-shadow-sm">397</span>
+                        </div>
+
+                        <div class="w-full bg-[#D4AFB9]/15 border border-[#D4AFB9]/40 rounded-xl p-4 mb-8">
+                            <span class="block text-[10px] text-[#A67B6B] dark:text-[#D4AFB9] font-bold uppercase tracking-widest mb-1">Privilégio Mês das Mães</span>
+                            <span class="block text-xl font-black text-brand-950 dark:text-white uppercase tracking-tight">R$ 40 OFF</span>
+                            <span class="block text-[9px] text-brand-700 dark:text-gray-500 mt-1">*Ativado automaticamente no WhatsApp</span>
+                        </div>
+
+                        <a href="https://wa.me/5549991618389?text=Olá%2C%20gostaria%20de%20desbloquear%20um%20Slot%20de%20Maio%20(Coleção%20Herança)%20com%20o%20bônus%20de%20R$%2040%20OFF." 
+                           target="_blank" 
+                           class="w-full group relative inline-flex items-center justify-center gap-3 px-8 py-5 bg-[#A67B6B] dark:bg-[#D4AFB9] text-white dark:text-black rounded-xl overflow-hidden transition-all hover:scale-[1.02] shadow-[0_10px_20px_rgba(212,175,185,0.25)]">
+                            <span class="font-bold text-xs uppercase tracking-[0.2em] relative z-10 group-hover:tracking-[0.25em] transition-all">Validar Slot de Maio</span>
+                        </a>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
         
 <section class="relative w-full min-h-[80vh] bg-[#FAFAFA] dark:bg-[#050505] overflow-hidden flex items-center py-20 transition-colors duration-700" id="campanha-maes">
     
