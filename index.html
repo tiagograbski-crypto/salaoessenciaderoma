@@ -288,49 +288,43 @@
 
             <div class="lg:col-span-5 relative">
                 
-                <div class="relative w-full max-w-md mx-auto backdrop-blur-2xl bg-white/70 dark:bg-[#0A0A0A]/80 border border-[#E4B8A6]/30 dark:border-[#E4B8A6]/20 p-8 sm:p-10 rounded-none sm:rounded-[2rem] shadow-[0_40px_80px_rgba(228,184,166,0.1)] dark:shadow-[0_40px_80px_rgba(0,0,0,0.8)] overflow-hidden group hover:border-[#E4B8A6]/50 transition-colors duration-500">
+                <div class="relative w-full max-w-md mx-auto backdrop-blur-2xl bg-white/70 dark:bg-[#0A0A0A]/80 border border-[#E4B8A6]/30 dark:border-[#E4B8A6]/20 p-8 sm:p-10 rounded-none sm:rounded-[2rem] shadow-[0_40px_80px_rgba(228,184,166,0.1)] dark:shadow-[0_40px_80px_rgba(0,0,0,0.8)] overflow-hidden">
                     
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#E4B8A6] to-transparent opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#E4B8A6] to-transparent"></div>
 
                     <div class="text-center mb-8">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-red-500/10 border border-red-500/20 rounded-full mb-4">
-                            <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
-                            <p class="text-[9px] uppercase tracking-[0.2em] text-red-600 dark:text-red-400 font-black">Restam apenas 2 vagas</p>
+                        <p class="text-[10px] uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400 font-bold mb-2">Convite de Acesso</p>
+                        <div class="flex items-baseline justify-center gap-1">
+                            <span class="text-2xl font-medium text-gray-900 dark:text-white">R$</span>
+                            <span class="text-7xl font-black tracking-tighter text-gray-900 dark:text-white drop-shadow-sm">397</span>
                         </div>
-                        
-                        <div class="flex items-baseline justify-center gap-0.5 drop-shadow-sm">
-                            <span class="text-2xl font-medium text-gray-900 dark:text-white mr-1">R$</span>
-                            <span class="text-6xl sm:text-7xl font-black tracking-tighter text-gray-900 dark:text-white">189</span>
-                            <span class="text-2xl font-black text-gray-900 dark:text-white">,90</span>
-                        </div>
-                        
-                        <p class="text-[10px] text-gray-500 dark:text-gray-400 uppercase tracking-widest mt-2 font-bold bg-[#FAFAFA] dark:bg-white/5 py-1.5 rounded-md border border-gray-200 dark:border-white/10">
-                            Para cabelos até as escápulas
-                        </p>
+                        <p class="text-[10px] text-gray-500 italic mt-1">(A partir de)</p>
+                    </div>
+
+                    <div class="w-full bg-[#E4B8A6]/10 dark:bg-[#E4B8A6]/5 border border-[#E4B8A6]/30 rounded-xl p-4 mb-8 text-center flex flex-col items-center justify-center">
+                        <span class="text-xs text-gray-800 dark:text-gray-200 font-medium tracking-wide">Presente de Antecipação</span>
+                        <span class="text-lg font-black text-[#B0897B] dark:text-[#E4B8A6] uppercase tracking-widest mt-1">R$ 40 OFF Garantido</span>
+                        <span class="text-[9px] text-gray-500 mt-2 uppercase tracking-widest">*Na validação via sistema</span>
                     </div>
 
                     <div class="space-y-3 mb-8">
-                        <div class="flex items-center justify-between border-b border-[#E4B8A6]/20 pb-2 mb-4">
-                            <p class="text-[9px] uppercase tracking-[0.2em] text-[#B0897B] dark:text-[#E4B8A6] font-bold">
-                                Horários Disponíveis
-                            </p>
+                        <p class="text-[9px] uppercase tracking-[0.2em] text-[#B0897B] dark:text-[#E4B8A6] font-bold border-b border-[#E4B8A6]/20 pb-2 mb-4 text-left">
+                            Vagas da Semana (27 a 30/04)
+                        </p>
+                        
+                        <div class="flex justify-between items-center gap-2">
+                            <button onclick="openCityModal('Agendamento: Seg 27/04 14:00')" class="flex-1 py-2.5 rounded bg-transparent border border-gray-300 dark:border-white/10 text-gray-700 dark:text-gray-300 text-[10px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/5 transition-all text-center">SEG • 14:00</button>
+                            <button onclick="openCityModal('Agendamento: Ter 28/04 09:00')" class="flex-1 py-2.5 rounded bg-transparent border border-gray-300 dark:border-white/10 text-gray-700 dark:text-gray-300 text-[10px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/5 transition-all text-center">TER • 09:00</button>
                         </div>
                         
                         <div class="flex justify-between items-center gap-2">
-                            <button onclick="openCityModal('Agendamento: HOJE 14:00 - R$ 189,90')" class="flex-1 py-3 rounded-lg bg-[#B0897B] dark:bg-[#E4B8A6] border-none text-white dark:text-black text-[10px] font-black tracking-widest hover:scale-105 transition-all shadow-[0_5px_15px_rgba(176,137,123,0.4)] dark:shadow-[0_5px_15px_rgba(228,184,166,0.3)] text-center animate-pulse">HOJE • 14:00</button>
-                            
-                            <button onclick="openCityModal('Agendamento: AMANHÃ 09:00 - R$ 189,90')" class="flex-1 py-3 rounded-lg bg-white dark:bg-transparent border border-gray-300 dark:border-white/10 text-gray-700 dark:text-gray-300 text-[10px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center shadow-sm dark:shadow-none">AMANHÃ • 09:00</button>
-                        </div>
-                        
-                        <div class="flex justify-between items-center gap-2">
-                            <button onclick="openCityModal('Agendamento: QUA 10:00 - R$ 189,90')" class="flex-1 py-3 rounded-lg bg-white dark:bg-transparent border border-gray-300 dark:border-white/10 text-gray-700 dark:text-gray-300 text-[10px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center shadow-sm dark:shadow-none">QUA • 10:00</button>
-                            
-                            <button disabled class="flex-1 py-3 rounded-lg bg-gray-100 dark:bg-[#151515] border border-gray-200 dark:border-white/5 text-gray-400 dark:text-gray-600 text-[10px] font-bold tracking-widest cursor-not-allowed text-center opacity-70">QUI • ESGOTADO</button>
+                            <button onclick="openCityModal('Agendamento: Qua 29/04 10:00')" class="flex-1 py-2.5 rounded bg-transparent border border-gray-300 dark:border-white/10 text-gray-700 dark:text-gray-300 text-[10px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/5 transition-all text-center">QUA • 10:00</button>
+                            <button onclick="openCityModal('Agendamento: Qui 30/04 14:00')" class="flex-1 py-2.5 rounded bg-[#B0897B] dark:bg-[#E4B8A6] border-none text-white dark:text-black text-[10px] font-black tracking-widest hover:opacity-90 transition-all shadow-md text-center">QUI • 14:00</button>
                         </div>
                     </div>
 
-                    <p class="text-[9px] text-gray-500 dark:text-gray-400 text-center uppercase tracking-widest leading-relaxed font-medium">
-                        Toque no horário para reservar uma das 2 vagas.
+                    <p class="text-[10px] text-gray-500 dark:text-gray-400 text-center uppercase tracking-widest leading-relaxed">
+                        Escolha o horário acima para validar o convite para sua mãe (ou para você).
                     </p>
 
                 </div>
@@ -338,6 +332,13 @@
             
         </div>
     </div>
+    
+    <style>
+        .mask-image-gradient {
+            mask-image: linear-gradient(to right, transparent, black 40%);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 40%);
+        }
+    </style>
 </section>
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative">
                 
