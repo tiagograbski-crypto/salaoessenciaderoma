@@ -258,86 +258,129 @@
 
     <main class="relative z-10 flex-grow w-full mt-4">
         
-        <section class="relative w-full min-h-[80vh] bg-[#FAFAFA] dark:bg-[#050505] overflow-hidden flex items-center py-20 transition-colors duration-700" id="campanha-maes">
-            <div class="absolute top-0 right-0 w-full lg:w-[55%] h-full opacity-20 dark:opacity-40 mask-image-gradient">
-                <div class="absolute inset-0 bg-gradient-to-r from-[#FAFAFA] dark:from-[#050505] via-transparent to-transparent z-10"></div>
-                <img src="https://testeessencia.carrd.co/assets/images/image52.jpg?v=0910aa8a" alt="Mães GL Pro" class="w-full h-full object-cover mix-blend-luminosity">
-            </div>
+        <section class="relative w-full min-h-[80vh] bg-[#050505] overflow-hidden flex items-center py-24 border-b border-white/5" id="campanha-maes">
+    <!-- Background Imagem com Máscara -->
+    <div class="absolute top-0 right-0 w-full lg:w-[55%] h-full opacity-30 pointer-events-none" style="-webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-transparent z-10"></div>
+        <img src="https://testeessencia.carrd.co/assets/images/image52.jpg?v=0910aa8a" alt="Mães GL Pro" class="w-full h-full object-cover mix-blend-luminosity">
+    </div>
 
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] sm:w-[800px] h-[600px] bg-[#E4B8A6] opacity-[0.08] dark:opacity-[0.12] blur-[150px] pointer-events-none rounded-full"></div>
+    <!-- Glow Rose Gold Ambience -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] sm:w-[800px] h-[600px] bg-[#E4B8A6] opacity-[0.06] blur-[120px] pointer-events-none rounded-full"></div>
 
-            <div class="max-w-7xl mx-auto px-6 w-full relative z-20">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-                    
-                    <div class="lg:col-span-7 flex flex-col items-start text-left">
-                        <div class="inline-flex items-center gap-3 px-4 py-1.5 border border-[#E4B8A6]/40 bg-[#E4B8A6]/5 rounded-full backdrop-blur-md mb-8">
-                            <span class="text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] text-[#B0897B] dark:text-[#E4B8A6]">
-                                Mês das Mães: Celebração da Origem
-                            </span>
-                        </div>
-                        
-                        <h2 class="font-editorial text-5xl sm:text-6xl lg:text-[5rem] font-light text-gray-900 dark:text-white leading-[1.05] mb-6 tracking-tight">
-                            Coleção Herança:<br/>
-                            <span class="font-bold italic text-transparent bg-clip-text bg-gradient-to-r from-[#B0897B] via-[#E4B8A6] to-[#B0897B] bg-[length:200%_auto] animate-[shine_4s_linear_infinite]">
-                                Semi Definitiva
-                            </span>
-                        </h2>
-                        
-                        <p class="text-base sm:text-lg text-gray-600 dark:text-gray-400 font-light leading-relaxed max-w-xl mb-10 tracking-wide">
-                            Uma reverência à beleza atemporal. O caimento de seda absoluto da "Gata Lambeu" em uma curadoria desenvolvida para honrar quem te ensinou a brilhar. A alta tecnologia do nosso protocolo agora como o presente definitivo.
-                        </p>
+    <div class="max-w-7xl mx-auto px-6 w-full relative z-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
+            
+            <!-- Bloco de Texto -->
+            <div class="lg:col-span-7 flex flex-col items-start text-left">
+                <div class="inline-flex items-center gap-3 px-5 py-2 border border-[#E4B8A6]/30 bg-[#E4B8A6]/5 rounded-full backdrop-blur-md mb-8 shadow-lg">
+                    <span class="text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] text-[#E4B8A6]">
+                        Mês das Mães: Celebração da Origem
+                    </span>
+                </div>
+                
+                <h2 class="text-5xl sm:text-6xl lg:text-[5.5rem] font-light text-white leading-[1.05] mb-6 tracking-tight" style="font-family: 'Cormorant Garamond', serif;">
+                    Coleção Herança:<br/>
+                    <span class="font-bold italic text-transparent bg-clip-text bg-gradient-to-r from-[#B0897B] via-[#E4B8A6] to-[#B0897B] bg-[length:200%_auto] animate-[shine_4s_linear_infinite]">
+                        Semi Definitiva
+                    </span>
+                </h2>
+                
+                <p class="text-base sm:text-xl text-zinc-400 font-light leading-relaxed max-w-xl mb-12 tracking-wide">
+                    Uma reverência à beleza atemporal. O caimento de seda absoluto da "Gata Lambeu" em uma curadoria desenvolvida para honrar quem te ensinou a brilhar. A alta tecnologia do nosso protocolo agora como o presente definitivo.
+                </p>
 
-                        <div class="hidden lg:flex items-center gap-4 text-[#B0897B] dark:text-[#E4B8A6]">
-                            <span class="h-[1px] w-12 bg-[#E4B8A6]/50"></span>
-                            <span class="text-[10px] uppercase tracking-[0.2em] font-bold">100% Orgânico • Universal</span>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-5 relative">
-                        <div class="relative w-full max-w-md mx-auto backdrop-blur-2xl bg-white/70 dark:bg-[#0A0A0A]/80 border border-[#E4B8A6]/30 dark:border-[#E4B8A6]/20 p-8 sm:p-10 rounded-none sm:rounded-[2rem] shadow-[0_40px_80px_rgba(228,184,166,0.1)] dark:shadow-[0_40px_80px_rgba(0,0,0,0.8)] overflow-hidden">
-                            
-                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#E4B8A6] to-transparent"></div>
-
-                            <div class="text-center mb-8">
-                                <p class="text-[10px] uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400 font-bold mb-2">Convite de Acesso</p>
-                                <div class="flex items-baseline justify-center gap-1">
-                                    <span class="text-2xl font-medium text-gray-900 dark:text-white">R$</span>
-                                    <span class="text-7xl font-black tracking-tighter text-gray-900 dark:text-white drop-shadow-sm">197</span>
-                                </div>
-                                <p class="text-[10px] text-gray-500 italic mt-1">(A partir de)</p>
-                            </div>
-
-                            <div class="w-full bg-[#E4B8A6]/10 dark:bg-[#E4B8A6]/5 border border-[#E4B8A6]/30 rounded-xl p-4 mb-8 text-center flex flex-col items-center justify-center">
-                                <span class="text-xs text-gray-800 dark:text-gray-200 font-medium tracking-wide">Presente de Antecipação</span>
-                                <span class="text-lg font-black text-[#B0897B] dark:text-[#E4B8A6] uppercase tracking-widest mt-1">Exclusivo para cabelos lisos</span>
-                                <span class="text-[9px] text-gray-500 mt-2 uppercase tracking-widest">* até meio das costas</span>
-                            </div>
-
-                            <div class="space-y-3 mb-8">
-                                <p class="text-[9px] uppercase tracking-[0.2em] text-[#B0897B] dark:text-[#E4B8A6] font-bold border-b border-[#E4B8A6]/20 pb-2 mb-4 text-left">
-                                    Vagas da Semana 30/04 . 04/05 A 09/05
-                                </p>
-                                
-                                <div class="flex justify-between items-center gap-2">
-                                    <button onclick="openCityModal('Agendamento: Seg 27/04 14:00')" class="flex-1 py-2.5 rounded bg-transparent border border-gray-300 dark:border-white/10 text-gray-700 dark:text-gray-300 text-[10px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/5 transition-all text-center">SEG • 14:00</button>
-                                    <button onclick="openCityModal('Agendamento: Ter 28/04 09:00')" class="flex-1 py-2.5 rounded bg-transparent border border-gray-300 dark:border-white/10 text-gray-700 dark:text-gray-300 text-[10px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/5 transition-all text-center">QUARTA • 09:00</button>
-                                </div>
-                                
-                                <div class="flex justify-between items-center gap-2">
-                                    <button onclick="openCityModal('Agendamento: Qua 29/04 10:00')" class="flex-1 py-2.5 rounded bg-transparent border border-gray-300 dark:border-white/10 text-gray-700 dark:text-gray-300 text-[10px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/5 transition-all text-center">SÁB • 10:00</button>
-                                    <button onclick="openCityModal('Agendamento: Qui 30/04 14:00')" class="flex-1 py-2.5 rounded bg-[#B0897B] dark:bg-[#E4B8A6] border-none text-white dark:text-black text-[10px] font-black tracking-widest hover:opacity-90 transition-all shadow-md text-center">SÁB • 11:00</button>
-                                </div>
-                            </div>
-
-                            <p class="text-[10px] text-gray-500 dark:text-gray-400 text-center uppercase tracking-widest leading-relaxed">
-                                Escolha o horário acima para validar o convite para sua mãe (ou para você).
-                            </p>
-
-                        </div>
-                    </div>
+                <div class="hidden lg:flex items-center gap-4 text-[#E4B8A6]">
+                    <span class="h-[1px] w-12 bg-[#E4B8A6]/50"></span>
+                    <span class="text-[10px] uppercase tracking-[0.2em] font-bold">100% Orgânico • Universal</span>
                 </div>
             </div>
-        </section>
+
+            <!-- Bilhete de Acesso / Agendamento -->
+            <div class="lg:col-span-5 relative w-full">
+                <div class="relative w-full max-w-md mx-auto backdrop-blur-2xl bg-[#0A0A0A]/80 border border-[#E4B8A6]/20 p-8 sm:p-10 rounded-2xl shadow-[0_40px_80px_rgba(0,0,0,0.8)] overflow-hidden">
+                    
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#E4B8A6] to-transparent opacity-50"></div>
+
+                    <div class="text-center mb-8">
+                        <p class="text-[10px] uppercase tracking-[0.3em] text-zinc-400 font-bold mb-2">Convite de Acesso</p>
+                        <div class="flex items-baseline justify-center gap-1 text-[#E4B8A6]">
+                            <span class="text-2xl font-medium">R$</span>
+                            <span class="text-7xl font-bold tracking-tighter drop-shadow-sm">187</span>
+                        </div>
+                        <p class="text-[10px] text-zinc-500 italic mt-1">(A partir de)</p>
+                    </div>
+
+                    <div class="w-full bg-[#E4B8A6]/5 border border-[#E4B8A6]/20 rounded-xl p-5 mb-8 text-center flex flex-col items-center justify-center shadow-inner">
+                        <span class="text-xs text-white font-medium tracking-wide">Presente de Antecipação</span>
+                        <span class="text-lg font-bold text-[#B0897B] uppercase tracking-widest mt-1">Exclusivo para lisos</span>
+                        <span class="text-[9px] text-zinc-500 mt-2 uppercase tracking-widest">* até meio das costas</span>
+                    </div>
+
+                    <div class="space-y-4 mb-4">
+                        <p class="text-[9px] uppercase tracking-[0.2em] text-[#E4B8A6] font-bold border-b border-[#E4B8A6]/20 pb-2 mb-4 text-left">
+                            Vagas da Semana 30/04 . 04/05 A 09/05
+                        </p>
+                        
+                        <div class="flex justify-between items-center gap-3">
+                            <button onclick="openCityModal('Segunda 14:00')" class="flex-1 py-3 rounded bg-transparent border border-white/10 text-white text-[10px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center cursor-pointer">SEG • 14:00</button>
+                            <button onclick="openCityModal('Quarta 09:00')" class="flex-1 py-3 rounded bg-transparent border border-white/10 text-white text-[10px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center cursor-pointer">QUA • 09:00</button>
+                        </div>
+                        
+                        <div class="flex justify-between items-center gap-3">
+                            <button onclick="openCityModal('Sábado 10:00')" class="flex-1 py-3 rounded bg-transparent border border-white/10 text-white text-[10px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center cursor-pointer">SÁB • 10:00</button>
+                            <button onclick="openCityModal('Sábado 11:00')" class="flex-1 py-3 rounded bg-[#E4B8A6] border border-[#E4B8A6] text-[#09090B] text-[10px] font-black tracking-widest hover:opacity-90 transition-all shadow-[0_0_20px_rgba(228,184,166,0.3)] text-center cursor-pointer">SÁB • 11:00</button>
+                        </div>
+                    </div>
+
+                    <p class="text-[9px] text-zinc-500 text-center uppercase tracking-widest leading-relaxed mt-6">
+                        Escolha o horário acima para validar o convite.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="relative w-full pb-24 pt-16 bg-[#050505] z-10 border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 relative">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative">
+            
+            <div class="group relative bg-[#18181b]/70 backdrop-blur-2xl border border-[#E4B8A6]/10 rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-[#E4B8A6]/30 transition-all duration-500 overflow-hidden">
+                <div class="w-12 h-12 rounded-full bg-[#09090B] flex items-center justify-center mb-5 border border-[#E4B8A6]/20 group-hover:scale-110 group-hover:bg-[#E4B8A6]/10 transition-all duration-500 shadow-inner">
+                    <svg class="w-5 h-5 text-[#E4B8A6]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                </div>
+                <h4 class="text-[10px] sm:text-xs text-white uppercase tracking-[0.2em] font-bold mb-2">Fórmula Limpa</h4>
+                <span class="text-zinc-400 text-[10px] font-medium tracking-widest leading-relaxed">0% Formol e<br/>Derivados</span>
+            </div>
+
+            <div class="group relative bg-[#18181b]/70 backdrop-blur-2xl border border-[#E4B8A6]/10 rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-[#E4B8A6]/30 transition-all duration-500 overflow-hidden lg:-translate-y-4">
+                <div class="w-12 h-12 rounded-full bg-[#09090B] flex items-center justify-center mb-5 border border-[#E4B8A6]/20 group-hover:scale-110 group-hover:bg-[#E4B8A6]/10 transition-all duration-500 shadow-inner">
+                    <svg class="w-5 h-5 text-[#E4B8A6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                </div>
+                <h4 class="text-[10px] sm:text-xs text-white uppercase tracking-[0.2em] font-bold mb-2">DNA Orgânico</h4>
+                <span class="text-zinc-400 text-[10px] font-medium tracking-widest leading-relaxed">Ativos 100%<br/>Botânicos</span>
+            </div>
+
+            <div class="group relative bg-[#18181b]/70 backdrop-blur-2xl border border-[#E4B8A6]/10 rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-[#E4B8A6]/30 transition-all duration-500 overflow-hidden lg:-translate-y-4">
+                <div class="w-12 h-12 rounded-full bg-[#09090B] flex items-center justify-center mb-5 border border-[#E4B8A6]/20 group-hover:scale-110 group-hover:bg-[#E4B8A6]/10 transition-all duration-500 shadow-inner">
+                    <svg class="w-5 h-5 text-[#E4B8A6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path></svg>
+                </div>
+                <h4 class="text-[10px] sm:text-xs text-white uppercase tracking-[0.2em] font-bold mb-2">Cruelty Free</h4>
+                <span class="text-zinc-400 text-[10px] font-medium tracking-widest leading-relaxed">Selo de Ética<br/>e Sustentabilidade</span>
+            </div>
+
+            <div class="group relative bg-[#18181b]/70 backdrop-blur-2xl border border-[#E4B8A6]/10 rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-[#E4B8A6]/30 transition-all duration-500 overflow-hidden">
+                <div class="w-12 h-12 rounded-full bg-[#09090B] flex items-center justify-center mb-5 border border-[#E4B8A6]/20 group-hover:scale-110 group-hover:bg-[#E4B8A6]/10 transition-all duration-500 shadow-inner">
+                    <svg class="w-5 h-5 text-[#E4B8A6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                </div>
+                <h4 class="text-[10px] sm:text-xs text-white uppercase tracking-[0.2em] font-bold mb-2">Alto Sensorial</h4>
+                <span class="text-zinc-400 text-[10px] font-medium tracking-widest leading-relaxed">Livre de Formol<br/>e Ardência</span>
+            </div>
+
+        </div>
+    </div>
+</section>
 
         
 
