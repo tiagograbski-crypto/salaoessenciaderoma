@@ -258,98 +258,96 @@
 
     <main class="relative z-10 flex-grow w-full mt-4">
         
-        <section class="relative w-full min-h-[80vh] bg-[#050505] overflow-hidden flex items-center py-24 border-b border-white/5" id="campanha-maes">
-    <!-- Background Imagem com Máscara -->
-    <div class="absolute top-0 right-0 w-full lg:w-[55%] h-full opacity-30 pointer-events-none" style="-webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-transparent z-10"></div>
-        <img src="https://testeessencia.carrd.co/assets/images/image52.jpg?v=0910aa8a" alt="Mães GL Pro" class="w-full h-full object-cover mix-blend-luminosity">
+        <section class="relative w-full min-h-[80vh] bg-[#050505] overflow-hidden flex items-center py-20 border-y border-[#E3A857]/30" id="campanha-maes">
+    <!-- Background Escurecido para Leitura Máxima -->
+    <div class="absolute inset-0 z-0">
+        <img src="https://testeessencia.carrd.co/assets/images/image52.jpg?v=0910aa8a" alt="Mães GL Pro" class="w-full h-full object-cover opacity-20 grayscale">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#09090B] via-[#09090B]/90 to-transparent"></div>
     </div>
 
-    <!-- Glow Rose Gold Ambience -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] sm:w-[800px] h-[600px] bg-[#E4B8A6] opacity-[0.06] blur-[120px] pointer-events-none rounded-full"></div>
-
     <div class="max-w-7xl mx-auto px-6 w-full relative z-20">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             
-            <!-- Bloco de Texto (Copy Focada em Neurovendas) -->
+            <!-- BLOCO 1: A PROMESSA MATADORA (DOR + SOLUÇÃO) -->
             <div class="lg:col-span-7 flex flex-col items-start text-left">
-                <div class="inline-flex items-center gap-3 px-5 py-2 border border-[#E4B8A6]/40 bg-[#E4B8A6]/10 rounded-full backdrop-blur-md mb-8 shadow-[0_0_15px_rgba(228,184,166,0.2)]">
-                    <span class="text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] text-[#E4B8A6] flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-[#E4B8A6] animate-pulse"></span>
-                        Campanha de Mães • Últimos Dias
-                    </span>
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-red-600/10 border border-red-600/50 rounded text-red-500 text-xs font-black uppercase tracking-widest mb-6">
+                    <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
+                    Plantão Dia das Mães: Últimas Vagas
                 </div>
                 
-                <h2 class="text-5xl sm:text-6xl lg:text-[5.5rem] font-light text-white leading-[1.05] mb-6 tracking-tight" style="font-family: 'Cormorant Garamond', serif;">
-                    O Presente Definitivo:<br/>
-                    <span class="font-bold italic text-transparent bg-clip-text bg-gradient-to-r from-[#B0897B] via-[#E4B8A6] to-[#B0897B] bg-[length:200%_auto] animate-[shine_4s_linear_infinite]">
-                        Liberdade e Brilho
-                    </span>
+                <h2 class="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-tight mb-6 uppercase tracking-tighter">
+                    Diga adeus à chapinha.<br/>
+                    <span class="text-[#E3A857]">Acorde pronta todos os dias.</span>
                 </h2>
                 
-                <p class="text-base sm:text-xl text-zinc-300 font-light leading-relaxed max-w-xl mb-12 tracking-wide">
-                    Surpreenda quem você ama (ou a si mesma) com a tecnologia <strong class="text-white font-medium">Gata Lambeu</strong>. O caimento de seda absoluto e a praticidade de acordar pronta todos os dias. Uma condição de acesso exclusiva que não se repetirá este ano.
+                <p class="text-lg text-zinc-300 font-medium mb-8 max-w-xl">
+                    O presente definitivo para sua mãe (ou para você). O famoso protocolo <strong class="text-white">Gata Lambeu</strong> que entrega o liso espelhado perfeito sem danificar os fios. 
                 </p>
 
-                <div class="hidden lg:flex items-center gap-4 text-[#E4B8A6]">
-                    <span class="h-[1px] w-12 bg-[#E4B8A6]/50"></span>
-                    <span class="text-[10px] uppercase tracking-[0.2em] font-bold">Sem Formol • Brilho Espelhado • Toque de Seda</span>
-                </div>
+                <!-- Checkmarks de Venda Rápida -->
+                <ul class="space-y-4 mb-10 text-sm sm:text-base font-bold text-white">
+                    <li class="flex items-center gap-3">
+                        <div class="bg-green-500/20 p-1 rounded-full"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
+                        0% Formol: Não arde os olhos nem sufoca.
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="bg-green-500/20 p-1 rounded-full"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
+                        Brilho Espelhado e Toque de Seda instantâneo.
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="bg-green-500/20 p-1 rounded-full"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
+                        Compatível com cabelos loiros e descoloridos.
+                    </li>
+                </ul>
             </div>
 
-            <!-- Bilhete de Acesso / Funil de Escassez -->
+            <!-- BLOCO 2: O FUNIL DE CHECKOUT (OFERTA + ESCASSEZ + AÇÃO) -->
             <div class="lg:col-span-5 relative w-full">
-                <div class="relative w-full max-w-md mx-auto backdrop-blur-2xl bg-[#0A0A0A]/90 border border-[#E4B8A6]/30 p-8 sm:p-10 rounded-2xl shadow-[0_40px_80px_rgba(0,0,0,0.8),_0_0_40px_rgba(228,184,166,0.05)] overflow-hidden">
+                <div class="w-full bg-[#121214] border-2 border-[#E3A857] p-6 sm:p-8 rounded-xl shadow-[0_0_40px_rgba(227,168,87,0.15)] relative overflow-hidden">
                     
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#E4B8A6] to-transparent opacity-80"></div>
-
-                    <!-- Ancoragem de Preço -->
-                    <div class="text-center mb-8">
-                        <p class="text-[10px] uppercase tracking-[0.3em] text-zinc-400 font-bold mb-1">Voucher Especial</p>
-                        <div class="text-[12px] text-zinc-500 line-through font-medium mb-[-5px]">De R$ 397,00</div>
-                        <div class="flex items-baseline justify-center gap-1 text-[#E4B8A6]">
-                            <span class="text-2xl font-medium">R$</span>
-                            <span class="text-7xl font-bold tracking-tighter drop-shadow-[0_0_15px_rgba(228,184,166,0.3)]">187</span>
-                        </div>
-                        <p class="text-[10px] text-[#B0897B] font-bold uppercase tracking-widest mt-2 bg-[#B0897B]/10 inline-block px-3 py-1 rounded">Válido apenas esta semana</p>
+                    <!-- Etiqueta Promocional -->
+                    <div class="absolute top-0 right-0 bg-[#E3A857] text-black text-[10px] font-black uppercase tracking-widest px-4 py-1 rounded-bl-lg">
+                        Oferta Especial
                     </div>
 
-                    <div class="w-full bg-gradient-to-r from-[#E4B8A6]/5 via-[#E4B8A6]/10 to-[#E4B8A6]/5 border border-[#E4B8A6]/20 rounded-xl p-5 mb-6 text-center flex flex-col items-center justify-center">
-                        <span class="text-xs text-white font-medium tracking-wide">Condição de Avaliação Premium</span>
-                        <span class="text-sm sm:text-base font-bold text-[#E4B8A6] uppercase tracking-widest mt-1">Liso Soberano ou Glass Molecular</span>
-                        <span class="text-[9px] text-zinc-400 mt-2 uppercase tracking-widest">* Valor base para cabelos curtos/médios</span>
-                    </div>
-
-                    <!-- Indicador de Escassez Visual -->
-                    <div class="mb-6">
-                        <div class="flex justify-between items-end mb-2">
-                            <span class="text-[9px] uppercase tracking-[0.2em] text-[#E4B8A6] font-bold">Lotação da Agenda</span>
-                            <span class="text-[9px] text-zinc-400 font-bold">85% Preenchida</span>
-                        </div>
-                        <div class="w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
-                            <div class="bg-[#E4B8A6] h-1.5 rounded-full w-[85%] shadow-[0_0_10px_#E4B8A6]"></div>
-                        </div>
-                    </div>
-
-                    <!-- Datas Focadas na Reta Final (Quinta, Sexta, Sábado) -->
-                    <div class="space-y-4 mb-4">
-                        <p class="text-[9px] uppercase tracking-[0.2em] text-white font-bold border-b border-white/10 pb-2 mb-4 text-center">
-                            Selecione o melhor horário para garantir
-                        </p>
+                    <div class="text-center border-b border-white/10 pb-6 mb-6 mt-4">
+                        <p class="text-xs uppercase tracking-widest text-zinc-400 font-bold mb-1">Voucher Especial de Mães</p>
                         
-                        <div class="flex justify-between items-center gap-3">
-                            <button onclick="openCityModal('Quinta 07/05 - 09:00')" class="flex-1 py-3.5 rounded bg-[#111] border border-white/10 text-white text-[10px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 hover:shadow-[0_0_15px_rgba(228,184,166,0.2)] transition-all text-center cursor-pointer">QUI • 09:00</button>
-                            <button onclick="openCityModal('Quinta 07/05 - 14:00')" class="flex-1 py-3.5 rounded bg-[#111] border border-white/10 text-white text-[10px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 hover:shadow-[0_0_15px_rgba(228,184,166,0.2)] transition-all text-center cursor-pointer">QUI • 14:00</button>
-                        </div>
-                        
-                        <div class="flex justify-between items-center gap-3">
-                            <button onclick="openCityModal('Sexta 08/05 - 09:00')" class="flex-1 py-3.5 rounded bg-[#111] border border-white/10 text-white text-[10px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 hover:shadow-[0_0_15px_rgba(228,184,166,0.2)] transition-all text-center cursor-pointer">SEX • 09:00</button>
-                            <button onclick="openCityModal('Sábado 09/05 - 10:00')" class="flex-1 py-3.5 rounded bg-gradient-to-r from-[#B0897B] to-[#E4B8A6] border-none text-[#09090B] text-[10px] font-black tracking-widest hover:brightness-110 transition-all shadow-[0_5px_20px_rgba(228,184,166,0.4)] text-center cursor-pointer transform hover:-translate-y-0.5">SÁB • 10:00 🔥</button>
+                        <div class="flex flex-col items-center justify-center">
+                            <span class="text-sm text-zinc-500 line-through font-bold mb-[-5px]">De R$ 397,00 por</span>
+                            <div class="flex items-baseline text-[#E3A857]">
+                                <span class="text-3xl font-bold">R$</span>
+                                <span class="text-7xl font-black tracking-tighter">187</span>
+                            </div>
+                            <span class="text-[10px] text-zinc-500 font-bold uppercase mt-1">*Valor promocional para cabelos curtos/médios</span>
                         </div>
                     </div>
 
-                    <p class="text-[9px] text-zinc-500 text-center uppercase tracking-widest leading-relaxed mt-6">
-                        Ao clicar, você será direcionada para confirmar a unidade de atendimento.
+                    <!-- Escassez Real -->
+                    <div class="mb-6 bg-red-900/20 border border-red-500/30 p-3 rounded text-center">
+                        <p class="text-red-400 text-[11px] font-black uppercase tracking-wider mb-1">🔥 Agenda Quase Lotada 🔥</p>
+                        <p class="text-white text-[11px] font-medium">Restam apenas <strong class="text-[#E3A857] text-sm">4 vagas</strong> até sábado (09/05).</p>
+                    </div>
+
+                    <!-- Botões de Ação Direta (Call to Action) -->
+                    <div class="space-y-3">
+                        <button onclick="openCityModal('Agendamento Promocional: Quinta (07/05)')" class="w-full py-4 rounded bg-[#1f1f22] border border-white/10 text-white text-xs font-black uppercase tracking-widest hover:bg-white/10 transition-all flex items-center justify-between px-6 group">
+                            <span>👉 Quinta-feira (07/05)</span>
+                            <span class="text-zinc-500 text-[10px] group-hover:text-white transition-colors">Agendar</span>
+                        </button>
+                        
+                        <button onclick="openCityModal('Agendamento Promocional: Sexta (08/05)')" class="w-full py-4 rounded bg-[#1f1f22] border border-white/10 text-white text-xs font-black uppercase tracking-widest hover:bg-white/10 transition-all flex items-center justify-between px-6 group">
+                            <span>👉 Sexta-feira (08/05)</span>
+                            <span class="text-zinc-500 text-[10px] group-hover:text-white transition-colors">Agendar</span>
+                        </button>
+                        
+                        <button onclick="openCityModal('Agendamento Promocional: Sábado (09/05)')" class="w-full py-4 rounded bg-green-500 border border-green-400 text-black text-xs font-black uppercase tracking-widest hover:bg-green-400 hover:scale-[1.02] shadow-[0_5px_20px_rgba(34,197,94,0.3)] transition-all flex items-center justify-center gap-2 px-6">
+                            🔥 Agendar Sábado (09/05) - Últimas Vagas
+                        </button>
+                    </div>
+
+                    <p class="text-[9px] text-zinc-500 text-center uppercase font-bold mt-5 leading-relaxed">
+                        Toque no botão para falar no WhatsApp e travar o seu preço.
                     </p>
                 </div>
             </div>
