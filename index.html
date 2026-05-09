@@ -258,7 +258,8 @@
 
     <main class="relative z-10 flex-grow w-full mt-4">
         
-        <section class="relative w-full min-h-[80vh] bg-[#050505] overflow-hidden flex items-center py-24 border-b border-white/5" id="campanha-maes">
+        <!-- HERO SECTION - Otimizada para "Above the Fold" (Sem Scroll) -->
+<section class="relative w-full h-[100dvh] min-h-[650px] bg-[#050505] overflow-hidden flex items-center py-4 sm:py-8 border-b border-white/5" id="campanha-maes">
     <!-- Background Imagem com Máscara -->
     <div class="absolute top-0 right-0 w-full lg:w-[55%] h-full opacity-30 pointer-events-none" style="-webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);">
         <div class="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-transparent z-10"></div>
@@ -268,115 +269,106 @@
     <!-- Glow Rose Gold Ambience -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] sm:w-[800px] h-[600px] bg-[#E4B8A6] opacity-[0.06] blur-[120px] pointer-events-none rounded-full"></div>
 
-    <div class="max-w-7xl mx-auto px-6 w-full relative z-20">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-20">
+        <!-- Grid compactado para garantir que cabe na tela -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             
-            <!-- Bloco de Texto (Copy Focada em Neurovendas) -->
-            <div class="lg:col-span-7 flex flex-col items-start text-left">
-                <div class="inline-flex items-center gap-3 px-5 py-2 border border-[#E4B8A6]/40 bg-[#E4B8A6]/10 rounded-full backdrop-blur-md mb-8 shadow-[0_0_15px_rgba(228,184,166,0.2)]">
-                    <span class="text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] text-[#E4B8A6] flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-[#E4B8A6] animate-pulse"></span>
+            <!-- Bloco de Texto (Copy Focada) -->
+            <div class="lg:col-span-7 flex flex-col items-start text-left mt-8 lg:mt-0">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 border border-[#E4B8A6]/40 bg-[#E4B8A6]/10 rounded-full backdrop-blur-md mb-4 shadow-[0_0_15px_rgba(228,184,166,0.2)]">
+                    <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-[#E4B8A6] flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#E4B8A6] animate-pulse"></span>
                         Campanha de Mães • Últimos Dias
                     </span>
                 </div>
                 
-                <h2 class="text-5xl sm:text-6xl lg:text-[5.5rem] font-light text-white leading-[1.05] mb-6 tracking-tight" style="font-family: 'Cormorant Garamond', serif;">
+                <h2 class="text-4xl sm:text-5xl lg:text-[4.5rem] font-light text-white leading-[1.05] mb-3 tracking-tight" style="font-family: 'Cormorant Garamond', serif;">
                     O Presente Definitivo:<br/>
                     <span class="font-bold italic text-transparent bg-clip-text bg-gradient-to-r from-[#B0897B] via-[#E4B8A6] to-[#B0897B] bg-[length:200%_auto] animate-[shine_4s_linear_infinite]">
                         Liberdade e Brilho
                     </span>
                 </h2>
                 
-                <p class="text-base sm:text-xl text-zinc-300 font-light leading-relaxed max-w-xl mb-12 tracking-wide">
-                    Surpreenda quem você ama (ou a si mesma) com a tecnologia <strong class="text-white font-medium">Gata Lambeu</strong>. O caimento de seda absoluto e a praticidade de acordar pronta todos os dias. Uma condição de acesso exclusiva que não se repetirá este ano.
+                <p class="text-sm sm:text-base text-zinc-300 font-light leading-relaxed max-w-xl mb-6 tracking-wide">
+                    Surpreenda com a tecnologia <strong class="text-white font-medium">GL Pro Gata Lambeu</strong>. O caimento absoluto e a praticidade de acordar pronta todos os dias. Uma condição de acesso que não se repetirá.
                 </p>
 
-                <div class="hidden lg:flex items-center gap-4 text-[#E4B8A6]">
-                    <span class="h-[1px] w-12 bg-[#E4B8A6]/50"></span>
-                    <span class="text-[10px] uppercase tracking-[0.2em] font-bold">Sem Formol • Brilho Espelhado • Toque de Seda</span>
+                <div class="hidden lg:flex items-center gap-3 text-[#E4B8A6]">
+                    <span class="h-[1px] w-8 bg-[#E4B8A6]/50"></span>
+                    <span class="text-[9px] uppercase tracking-[0.2em] font-bold">Sem Formol • Brilho Espelhado • Glass Molecular</span>
                 </div>
             </div>
 
-            <!-- Bilhete de Acesso / Funil de Escassez -->
+            <!-- Bilhete de Acesso / Funil de Escassez (Box Compactada) -->
             <div class="lg:col-span-5 relative w-full">
-                <div class="relative w-full max-w-md mx-auto backdrop-blur-2xl bg-[#0A0A0A]/90 border border-[#E4B8A6]/30 p-8 sm:p-10 rounded-2xl shadow-[0_40px_80px_rgba(0,0,0,0.8),_0_0_40px_rgba(228,184,166,0.05)] overflow-hidden">
+                <div class="relative w-full max-w-md mx-auto backdrop-blur-2xl bg-[#0A0A0A]/90 border border-[#E4B8A6]/30 p-5 sm:p-6 rounded-2xl shadow-[0_40px_80px_rgba(0,0,0,0.8),_0_0_40px_rgba(228,184,166,0.05)] overflow-hidden">
                     
                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#E4B8A6] to-transparent opacity-80"></div>
 
-                    <!-- Ancoragem de Preço -->
-                    <div class="text-center mb-8">
-                        <p class="text-[10px] uppercase tracking-[0.3em] text-zinc-400 font-bold mb-1">Voucher Especial</p>
-                        <div class="text-[12px] text-zinc-500 line-through font-medium mb-[-5px]">De R$ 397,00</div>
+                    <!-- Ancoragem de Preço Compacta -->
+                    <div class="text-center mb-4">
+                        <div class="text-[11px] text-zinc-500 line-through font-medium mb-[-2px]">De R$ 397,00</div>
                         <div class="flex items-baseline justify-center gap-1 text-[#E4B8A6]">
-                            <span class="text-2xl font-medium">R$</span>
-                            <span class="text-7xl font-bold tracking-tighter drop-shadow-[0_0_15px_rgba(228,184,166,0.3)]">187</span>
+                            <span class="text-xl font-medium">R$</span>
+                            <span class="text-5xl sm:text-6xl font-bold tracking-tighter drop-shadow-[0_0_15px_rgba(228,184,166,0.3)]">187</span>
                         </div>
-                        <p class="text-[10px] text-[#B0897B] font-bold uppercase tracking-widest mt-2 bg-[#B0897B]/10 inline-block px-3 py-1 rounded">Válido apenas esta semana</p>
+                        <p class="text-[9px] text-[#B0897B] font-bold uppercase tracking-widest mt-1 bg-[#B0897B]/10 inline-block px-2 py-0.5 rounded">Válido apenas esta semana</p>
                     </div>
 
-                    <div class="w-full bg-gradient-to-r from-[#E4B8A6]/5 via-[#E4B8A6]/10 to-[#E4B8A6]/5 border border-[#E4B8A6]/20 rounded-xl p-5 mb-6 text-center flex flex-col items-center justify-center">
-                        <span class="text-xs text-white font-medium tracking-wide">Condição de Avaliação Premium</span>
-                        <span class="text-sm sm:text-base font-bold text-[#E4B8A6] uppercase tracking-widest mt-1">Liso Soberano ou Glass Molecular</span>
-                        <span class="text-[9px] text-zinc-400 mt-2 uppercase tracking-widest">* Valor base para cabelos curtos/médios</span>
+                    <div class="w-full bg-gradient-to-r from-[#E4B8A6]/5 via-[#E4B8A6]/10 to-[#E4B8A6]/5 border border-[#E4B8A6]/20 rounded-lg p-3 mb-4 text-center flex flex-col items-center justify-center">
+                        <span class="text-[10px] text-white font-medium tracking-wide">Condição de Avaliação</span>
+                        <span class="text-xs sm:text-sm font-bold text-[#E4B8A6] uppercase tracking-widest mt-0.5">Liso Soberano ou Glass Molecular</span>
+                        <span class="text-[8px] text-zinc-400 mt-1 uppercase tracking-widest">* Valor base para cabelos curtos/médios</span>
                     </div>
 
-                    <div class="mb-6">
-                        <div class="flex justify-between items-end mb-2">
-                            <span class="text-[9px] uppercase tracking-[0.2em] text-[#E4B8A6] font-bold">Lotação da Agenda</span>
-                            <span class="text-[9px] text-zinc-400 font-bold">85% Preenchida</span>
+                    <div class="mb-4">
+                        <div class="flex justify-between items-end mb-1">
+                            <span class="text-[8px] uppercase tracking-[0.2em] text-[#E4B8A6] font-bold">Lotação da Agenda</span>
+                            <span class="text-[8px] text-zinc-400 font-bold">85% Preenchida</span>
                         </div>
-                        <div class="w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
-                            <div class="bg-[#E4B8A6] h-1.5 rounded-full w-[85%] shadow-[0_0_10px_#E4B8A6]"></div>
+                        <div class="w-full bg-white/10 rounded-full h-1 overflow-hidden">
+                            <div class="bg-[#E4B8A6] h-1 rounded-full w-[85%] shadow-[0_0_10px_#E4B8A6]"></div>
                         </div>
                     </div>
 
-                    <!-- DATAS DA SEMANA - INÍCIO DA ÁREA AUTOMATIZADA -->
-                    <!-- Atributo data-date="YYYY-MM-DD" define quando a linha expira (às 18h desse dia) -->
-                    <div class="space-y-3 mb-4" id="agenda-container">
-                        
-                        <p class="text-[9px] uppercase tracking-[0.2em] text-white font-bold border-b border-white/10 pb-2 mb-4 text-center">
+                    <!-- DATAS DA SEMANA - Grelha mais apertada -->
+                    <div class="space-y-2 mb-2" id="agenda-container">
+                        <p class="text-[8px] uppercase tracking-[0.2em] text-white font-bold border-b border-white/10 pb-1.5 mb-2 text-center">
                             Selecione o melhor horário para garantir
                         </p>
                         
-                        <!-- Segunda-feira (11/05/2026) -->
-                        <div class="flex justify-between items-center gap-3 schedule-day" data-date="2026-05-11">
-                            <button onclick="openCityModal('Segunda - 10:00')" class="flex-1 py-3.5 rounded bg-[#111] border border-white/10 text-white text-[10px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center">SEG • 10:00</button>
-                            <button onclick="openCityModal('Segunda - 15:00')" class="flex-1 py-3.5 rounded bg-[#111] border border-white/10 text-white text-[10px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center">SEG • 15:00</button>
+                        <!-- Segunda -->
+                        <div class="flex justify-between items-center gap-2 schedule-day" data-date="2026-05-11">
+                            <button onclick="openCityModal('Segunda - 10:00')" class="flex-1 py-2 rounded bg-[#111] border border-white/10 text-white text-[9px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center">SEG • 10:00</button>
+                            <button onclick="openCityModal('Segunda - 15:00')" class="flex-1 py-2 rounded bg-[#111] border border-white/10 text-white text-[9px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center">SEG • 15:00</button>
                         </div>
-
-                        <!-- Terça-feira (12/05/2026) -->
-                        <div class="flex justify-between items-center gap-3 schedule-day" data-date="2026-05-12">
-                            <button onclick="openCityModal('Terça - 09:00')" class="flex-1 py-3.5 rounded bg-[#111] border border-white/10 text-white text-[10px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center">TER • 09:00</button>
-                            <button onclick="openCityModal('Terça - 14:00')" class="flex-1 py-3.5 rounded bg-[#111] border border-white/10 text-white text-[10px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center">TER • 14:00</button>
+                        <!-- Terça -->
+                        <div class="flex justify-between items-center gap-2 schedule-day" data-date="2026-05-12">
+                            <button onclick="openCityModal('Terça - 09:00')" class="flex-1 py-2 rounded bg-[#111] border border-white/10 text-white text-[9px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center">TER • 09:00</button>
+                            <button onclick="openCityModal('Terça - 14:00')" class="flex-1 py-2 rounded bg-[#111] border border-white/10 text-white text-[9px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center">TER • 14:00</button>
                         </div>
-
-                        <!-- Quarta-feira (13/05/2026) - LOTADO -->
-                        <div class="flex justify-between items-center gap-3 schedule-day" data-date="2026-05-13">
-                            <div class="flex-1 py-3.5 rounded bg-[#0a0a0a] border border-red-900/30 text-zinc-600 text-[10px] font-bold tracking-widest text-center cursor-not-allowed">QUA • LOTADO</div>
+                        <!-- Quarta - LOTADO -->
+                        <div class="flex justify-between items-center gap-2 schedule-day" data-date="2026-05-13">
+                            <div class="flex-1 py-2 rounded bg-[#0a0a0a] border border-red-900/30 text-zinc-600 text-[9px] font-bold tracking-widest text-center cursor-not-allowed">QUA • LOTADO</div>
                         </div>
-
-                        <!-- Quinta-feira (14/05/2026) -->
-                        <div class="flex justify-between items-center gap-3 schedule-day" data-date="2026-05-14">
-                            <button onclick="openCityModal('Quinta - 09:00')" class="flex-1 py-3.5 rounded bg-[#111] border border-white/10 text-white text-[10px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center">QUI • 09:00</button>
-                            <button onclick="openCityModal('Quinta - 14:00')" class="flex-1 py-3.5 rounded bg-[#111] border border-white/10 text-white text-[10px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center">QUI • 14:00</button>
+                        <!-- Quinta -->
+                        <div class="flex justify-between items-center gap-2 schedule-day" data-date="2026-05-14">
+                            <button onclick="openCityModal('Quinta - 09:00')" class="flex-1 py-2 rounded bg-[#111] border border-white/10 text-white text-[9px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center">QUI • 09:00</button>
+                            <button onclick="openCityModal('Quinta - 14:00')" class="flex-1 py-2 rounded bg-[#111] border border-white/10 text-white text-[9px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center">QUI • 14:00</button>
                         </div>
-
-                        <!-- Sexta-feira (15/05/2026) - LOTADO -->
-                        <div class="flex justify-between items-center gap-3 schedule-day" data-date="2026-05-15">
-                            <div class="flex-1 py-3.5 rounded bg-[#0a0a0a] border border-red-900/30 text-zinc-600 text-[10px] font-bold tracking-widest text-center cursor-not-allowed">SEX • LOTADO</div>
+                        <!-- Sexta - LOTADO -->
+                        <div class="flex justify-between items-center gap-2 schedule-day" data-date="2026-05-15">
+                            <div class="flex-1 py-2 rounded bg-[#0a0a0a] border border-red-900/30 text-zinc-600 text-[9px] font-bold tracking-widest text-center cursor-not-allowed">SEX • LOTADO</div>
                         </div>
-
-                        <!-- Sábado (16/05/2026) -->
-                        <div class="flex justify-between items-center gap-3 schedule-day" data-date="2026-05-16">
-                            <button onclick="openCityModal('Sábado - 10:00')" class="flex-1 py-3.5 rounded bg-gradient-to-r from-[#B0897B] to-[#E4B8A6] text-[#09090B] text-[10px] font-black tracking-widest hover:brightness-110 transition-all shadow-[0_5px_20px_rgba(228,184,166,0.4)] text-center">SÁB • 10:00 🔥</button>
-                            <button onclick="openCityModal('Sábado - 14:00')" class="flex-1 py-3.5 rounded bg-gradient-to-r from-[#B0897B] to-[#E4B8A6] text-[#09090B] text-[10px] font-black tracking-widest hover:brightness-110 transition-all shadow-[0_5px_20px_rgba(228,184,166,0.4)] text-center">SÁB • 14:00 🔥</button>
+                        <!-- Sábado -->
+                        <div class="flex justify-between items-center gap-2 schedule-day" data-date="2026-05-16">
+                            <button onclick="openCityModal('Sábado - 10:00')" class="flex-1 py-2 rounded bg-gradient-to-r from-[#B0897B] to-[#E4B8A6] text-[#09090B] text-[9px] font-black tracking-widest hover:brightness-110 transition-all shadow-[0_5px_15px_rgba(228,184,166,0.3)] text-center">SÁB • 10:00</button>
+                            <button onclick="openCityModal('Sábado - 14:00')" class="flex-1 py-2 rounded bg-gradient-to-r from-[#B0897B] to-[#E4B8A6] text-[#09090B] text-[9px] font-black tracking-widest hover:brightness-110 transition-all shadow-[0_5px_15px_rgba(228,184,166,0.3)] text-center">SÁB • 14:00</button>
                         </div>
-
                     </div>
-                    <!-- FIM DA ÁREA AUTOMATIZADA -->
 
-                    <p class="text-[9px] text-zinc-500 text-center uppercase tracking-widest leading-relaxed mt-6" id="aviso-agenda">
-                        Ao clicar, você será direcionada para confirmar a unidade de atendimento.
+                    <p class="text-[8px] text-zinc-500 text-center uppercase tracking-widest mt-3" id="aviso-agenda">
+                        O clique direciona para confirmação de unidade.
                     </p>
                 </div>
             </div>
@@ -384,97 +376,80 @@
     </div>
 </section>
 
-<!-- POP-UP XANXERÊ -->
-<div id="popup-xanxere" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm transition-opacity duration-300 opacity-0">
+<!-- POP-UP XANXERÊ - Elevado Z-Index [9999] para não ser coberto por menus fixos -->
+<div id="popup-xanxere" class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/85 backdrop-blur-md transition-opacity duration-300 opacity-0 p-4">
+    
     <!-- Conteúdo do Pop-up -->
-    <div id="popup-xanxere-content" class="relative w-[90%] max-w-sm bg-[#0A0A0A] border border-[#E4B8A6]/40 rounded-2xl p-1 shadow-[0_0_40px_rgba(228,184,166,0.15)] transform scale-95 transition-transform duration-300">
+    <div id="popup-xanxere-content" class="relative w-full max-w-md bg-[#0A0A0A] border border-[#E4B8A6]/40 rounded-2xl p-1 shadow-[0_0_50px_rgba(228,184,166,0.2)] transform scale-95 transition-transform duration-300">
         
         <!-- Botão Fechar (X) -->
-        <button id="close-popup-btn" class="absolute top-4 right-4 z-10 text-white hover:text-[#E4B8A6] bg-black/50 rounded-full p-1 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <button id="close-popup-btn" class="absolute top-3 right-3 z-20 text-white hover:text-[#E4B8A6] bg-black/80 rounded-full p-1.5 transition-colors border border-white/10 hover:border-[#E4B8A6]/50">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
 
-        <div class="bg-[#111] rounded-xl p-6 text-center h-full w-full">
-            <!-- Banner Visual -->
-            <div class="w-full h-32 rounded-lg bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border border-[#E4B8A6]/20 mb-5 flex items-center justify-center overflow-hidden relative">
-                <div class="absolute inset-0 bg-[#E4B8A6] opacity-[0.05] blur-xl"></div>
-                <h3 class="text-2xl font-bold text-[#E4B8A6] uppercase tracking-widest z-10">Xanxerê</h3>
+        <div class="bg-gradient-to-b from-[#111] to-[#050505] rounded-xl p-6 sm:p-8 text-center h-full w-full relative overflow-hidden">
+            
+            <!-- Efeito de Brilho de Fundo -->
+            <div class="absolute -top-20 -right-20 w-40 h-40 bg-[#E4B8A6] opacity-[0.08] blur-3xl rounded-full"></div>
+
+            <div class="inline-block px-3 py-1 bg-[#E4B8A6]/10 border border-[#E4B8A6]/30 rounded-full mb-4">
+                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#E4B8A6]">Expansão Oficial</span>
             </div>
 
-            <h4 class="text-xl text-white mb-3" style="font-family: 'Cormorant Garamond', serif;">Novo Salão Parceiro!</h4>
+            <h4 class="text-3xl text-white mb-4 leading-tight tracking-tight" style="font-family: 'Cormorant Garamond', serif;">
+                A Arquitetura Capilar<br>chegou a <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-[#B0897B] to-[#E4B8A6]">Xanxerê</span>.
+            </h4>
             
-            <p class="text-sm text-zinc-300 font-light mb-6 leading-relaxed">
-                Clientes, agora temos um salão parceiro aqui em Xanxerê!<br>
-                Clique para agendar por <strong class="text-white">Arquitetura Capilar</strong>.
+            <!-- Copy Persuasiva (Neurovendas: Autoridade + Escassez) -->
+            <p class="text-sm text-zinc-300 font-light mb-8 leading-relaxed px-2">
+                A mesma excelência e tecnologia <strong class="text-white font-medium">Glass Molecular</strong> que transformou centenas de cabelos, agora no nosso novo salão parceiro. Vagas de inauguração estritamente limitadas.
             </p>
 
             <!-- Link do WhatsApp -->
-            <a href="https://wa.me/5549991618389?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20agendamentos%20em%20Xanxerê!" target="_blank" class="flex items-center justify-center gap-2 w-full py-3.5 rounded bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white text-xs font-bold uppercase tracking-wider hover:brightness-110 transition-all shadow-[0_5px_15px_rgba(37,211,102,0.3)]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                Agendar Agora
+            <a href="https://wa.me/5549991618389?text=Olá,%20gostaria%20de%20garantir%20uma%20vaga%20de%20avaliação%20com%20a%20tecnologia%20Gata%20Lambeu%20no%20novo%20salão%20parceiro%20em%20Xanxerê!" target="_blank" class="flex items-center justify-center gap-2 w-full py-4 rounded bg-gradient-to-r from-[#B0897B] to-[#E4B8A6] text-[#0A0A0A] text-[11px] font-black uppercase tracking-[0.15em] hover:brightness-110 transition-all shadow-[0_5px_25px_rgba(228,184,166,0.3)] transform hover:-translate-y-0.5">
+                Garantir Avaliação em Xanxerê
             </a>
+            
+            <p class="text-[9px] text-zinc-500 uppercase tracking-widest mt-4">Atendimento Exclusivo sob Agendamento</p>
         </div>
     </div>
 </div>
 
 <script>
+    // Mantemos a mesma lógica robusta do JS anterior
     document.addEventListener('DOMContentLoaded', () => {
         
-        // ==========================================
         // 1. LÓGICA DA AGENDA AUTOMÁTICA
-        // ==========================================
         const updateSchedule = () => {
             const days = document.querySelectorAll('.schedule-day');
-            const now = new Date(); // Pega a data e hora atual do utilizador
+            const now = new Date(); 
             
-            let visiveis = 0;
-
             days.forEach(day => {
-                const dateStr = day.getAttribute('data-date'); // Ex: "2026-05-11"
+                const dateStr = day.getAttribute('data-date');
                 if (!dateStr) return;
 
-                // Divide a string da data para criar um objeto Date confiável
                 const [year, month, dayNum] = dateStr.split('-');
-                
-                // Cria a data alvo configurada para as 18:00:00 daquele dia
-                // Nota: O mês no JavaScript começa no 0 (Janeiro = 0, Maio = 4)
                 const scheduleDate = new Date(year, month - 1, dayNum, 18, 0, 0);
 
-                // Se a data e hora atual (now) for maior que a data do agendamento às 18h...
                 if (now > scheduleDate) {
-                    // ...esconde o dia completamente
                     day.style.display = 'none';
-                } else {
-                    visiveis++; // Conta quantos dias ainda estão disponíveis
                 }
             });
-
-            // Opcional: Se não houver mais nenhum dia visível, podemos mudar a mensagem
-            if(visiveis === 0) {
-                const aviso = document.getElementById('aviso-agenda');
-                if(aviso) aviso.innerHTML = "Agenda encerrada para esta semana. Fique atenta às novas vagas!";
-            }
         };
 
-        // Executa a função imediatamente ao carregar a página
         updateSchedule();
 
-
-        // ==========================================
-        // 2. LÓGICA DO POP-UP DE XANXERÊ
-        // ==========================================
+        // 2. LÓGICA DO POP-UP DE XANXERÊ (Z-Index Corrigido)
         const popup = document.getElementById('popup-xanxere');
         const popupContent = document.getElementById('popup-xanxere-content');
         const closeBtn = document.getElementById('close-popup-btn');
 
-        // Função para mostrar o pop-up com animação suave
         const showPopup = () => {
             popup.classList.remove('hidden');
             popup.classList.add('flex');
             
-            // Pequeno delay para o navegador renderizar o display flex antes de mudar a opacidade
             setTimeout(() => {
                 popup.classList.remove('opacity-0');
                 popup.classList.add('opacity-100');
@@ -483,34 +458,25 @@
             }, 50);
         };
 
-        // Função para esconder o pop-up
         const hidePopup = () => {
             popup.classList.remove('opacity-100');
             popup.classList.add('opacity-0');
             popupContent.classList.remove('scale-100');
             popupContent.classList.add('scale-95');
             
-            // Aguarda a animação terminar antes de esconder a div
             setTimeout(() => {
                 popup.classList.add('hidden');
                 popup.classList.remove('flex');
-            }, 300); // 300ms é o tempo da animação do Tailwind (duration-300)
+            }, 300); 
         };
 
-        // Configura o temporizador para 6 segundos (6000 milissegundos)
         setTimeout(showPopup, 6000);
 
-        // Evento: Fechar ao clicar no "X"
         closeBtn.addEventListener('click', hidePopup);
 
-        // Evento: Fechar ao clicar fora da caixa principal do pop-up
         popup.addEventListener('click', (e) => {
-            // Se o elemento clicado for o próprio fundo escuro (e não o conteúdo de dentro)
-            if (e.target === popup) {
-                hidePopup();
-            }
+            if (e.target === popup) hidePopup();
         });
-
     });
 </script>
 
