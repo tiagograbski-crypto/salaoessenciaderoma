@@ -258,227 +258,50 @@
 
     <main class="relative z-10 flex-grow w-full mt-4">
         
-        <!-- HERO SECTION - Com respiro (padding-top) para a barra fixa -->
-<section class="relative w-full min-h-[100dvh] bg-[#050505] overflow-hidden flex items-center pt-[120px] pb-10 sm:pt-[150px] sm:pb-12 px-4 border-b border-white/5" id="campanha-maes">
-    <!-- Background Imagem com Máscara -->
-    <div class="absolute top-0 right-0 w-full lg:w-[55%] h-full opacity-30 pointer-events-none" style="-webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-transparent z-10"></div>
-        <img src="https://testeessencia.carrd.co/assets/images/image52.jpg?v=0910aa8a" alt="Mães GL Pro" class="w-full h-full object-cover mix-blend-luminosity">
-    </div>
-
-    <!-- Glow Rose Gold Ambience -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] sm:w-[800px] h-[600px] bg-[#E4B8A6] opacity-[0.06] blur-[120px] pointer-events-none rounded-full"></div>
-
-    <div class="max-w-7xl mx-auto w-full relative z-20">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div id="view-studios" class="page-view">
             
-            <!-- Bloco de Texto -->
-            <div class="lg:col-span-7 flex flex-col items-start text-left">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 border border-[#E4B8A6]/40 bg-[#E4B8A6]/10 rounded-full backdrop-blur-md mb-4 shadow-[0_0_15px_rgba(228,184,166,0.2)]">
-                    <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-[#E4B8A6] flex items-center gap-1.5">
-                        <span class="w-1.5 h-1.5 rounded-full bg-[#E4B8A6] animate-pulse"></span>
-                        Campanha de Mães • Últimos Dias
-                    </span>
-                </div>
+            <header class="relative w-full min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-16 px-6 overflow-hidden border-b border-glass">
                 
-                <h2 class="text-4xl sm:text-5xl lg:text-[4.5rem] font-light text-white leading-[1.05] mb-3 tracking-tight" style="font-family: 'Cormorant Garamond', serif;">
-                    O Presente Definitivo:<br/>
-                    <span class="font-bold italic text-transparent bg-clip-text bg-gradient-to-r from-[#B0897B] via-[#E4B8A6] to-[#B0897B] bg-[length:200%_auto] animate-[shine_4s_linear_infinite]">
-                        Liberdade e Brilho
-                    </span>
-                </h2>
-                
-                <p class="text-sm sm:text-base text-zinc-300 font-light leading-relaxed max-w-xl mb-6 tracking-wide">
-                    Surpreenda com a tecnologia <strong class="text-white font-medium">GL Pro Gata Lambeu</strong>. O caimento absoluto e a praticidade de acordar pronta todos os dias. Uma condição de acesso que não se repetirá.
-                </p>
-
-                <div class="hidden lg:flex items-center gap-3 text-[#E4B8A6]">
-                    <span class="h-[1px] w-8 bg-[#E4B8A6]/50"></span>
-                    <span class="text-[9px] uppercase tracking-[0.2em] font-bold">Sem Formol • Brilho Espelhado • Liso Soberano 8K</span>
+                <div class="absolute inset-0 z-0 pointer-events-none">
+                    <div class="absolute inset-0 bg-gradient-to-b from-[var(--bg-primary)] via-transparent to-[var(--bg-primary)] z-10"></div>
+                    <img src="https://imagensagata.carrd.co/assets/images/image03.jpg?v=6b4b2f98" alt="Textura GL PRO" class="w-full h-full object-cover mix-blend-luminosity opacity-10 filter grayscale">
                 </div>
-            </div>
 
-            <!-- Bilhete de Acesso -->
-            <div class="lg:col-span-5 relative w-full">
-                <div class="relative w-full max-w-md mx-auto backdrop-blur-2xl bg-[#0A0A0A]/90 border border-[#E4B8A6]/30 p-5 sm:p-6 rounded-2xl shadow-[0_40px_80px_rgba(0,0,0,0.8),_0_0_40px_rgba(228,184,166,0.05)] overflow-hidden">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] sm:w-[600px] h-[500px] bg-accent opacity-[0.03] blur-[100px] pointer-events-none rounded-full z-0"></div>
+
+                <div class="relative z-20 w-full max-w-5xl mx-auto flex flex-col items-center text-center mt-10">
                     
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#E4B8A6] to-transparent opacity-80"></div>
-
-                    <!-- Ancoragem de Preço -->
-                    <div class="text-center mb-4">
-                        <div class="text-[11px] text-zinc-500 line-through font-medium mb-[-2px]">De R$ 397,00</div>
-                        <div class="flex items-baseline justify-center gap-1 text-[#E4B8A6]">
-                            <span class="text-xl font-medium">R$</span>
-                            <span class="text-5xl sm:text-6xl font-bold tracking-tighter drop-shadow-[0_0_15px_rgba(228,184,166,0.3)]">187</span>
-                        </div>
-                        <p class="text-[9px] text-[#B0897B] font-bold uppercase tracking-widest mt-1 bg-[#B0897B]/10 inline-block px-2 py-0.5 rounded">Válido apenas esta semana</p>
+                    <div class="reveal inline-flex items-center gap-2 px-4 py-2 border border-accent/20 bg-accent/5 rounded-full backdrop-blur-md mb-8 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+                        <span class="font-tech text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.3em] text-high-contrast">
+                            Julho 2026: Lançamento Molecular Platinum Fusion
+                        </span>
                     </div>
-
-                    <div class="w-full bg-gradient-to-r from-[#E4B8A6]/5 via-[#E4B8A6]/10 to-[#E4B8A6]/5 border border-[#E4B8A6]/20 rounded-lg p-3 mb-4 text-center flex flex-col items-center justify-center">
-                        <span class="text-[10px] text-white font-medium tracking-wide">Condição de Avaliação</span>
-                        <span class="text-xs sm:text-sm font-bold text-[#E4B8A6] uppercase tracking-widest mt-0.5">Liso Soberano 8K</span>
-                        <span class="text-[8px] text-zinc-400 mt-1 uppercase tracking-widest">* Valor base para cabelos curtos/médios</span>
-                    </div>
-
-                    <!-- Lotação -->
-                    <div class="mb-4">
-                        <div class="flex justify-between items-end mb-1">
-                            <span class="text-[8px] uppercase tracking-[0.2em] text-[#E4B8A6] font-bold">Lotação da Agenda</span>
-                            <span class="text-[8px] text-zinc-400 font-bold">85% Preenchida</span>
-                        </div>
-                        <div class="w-full bg-white/10 rounded-full h-1 overflow-hidden">
-                            <div class="bg-[#E4B8A6] h-1 rounded-full w-[85%] shadow-[0_0_10px_#E4B8A6]"></div>
-                        </div>
-                    </div>
-
-                    <!-- DATAS DA SEMANA -->
-                    <div class="space-y-2 mb-2" id="agenda-container">
-                        <p class="text-[8px] uppercase tracking-[0.2em] text-white font-bold border-b border-white/10 pb-1.5 mb-2 text-center">
-                            Selecione o melhor horário para garantir
-                        </p>
-                        
-                        <!-- Segunda -->
-                        <div class="flex justify-between items-center gap-2 schedule-day" data-date="2026-05-11">
-                            <button onclick="openCityModal('Segunda - 10:00')" class="flex-1 py-2 rounded bg-[#111] border border-white/10 text-white text-[9px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center">SEG • 10:00</button>
-                            <button onclick="openCityModal('Segunda - 15:00')" class="flex-1 py-2 rounded bg-[#111] border border-white/10 text-white text-[9px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center">SEG • 15:00</button>
-                        </div>
-                        <!-- Terça -->
-                        <div class="flex justify-between items-center gap-2 schedule-day" data-date="2026-05-12">
-                            <button onclick="openCityModal('Terça - 09:00')" class="flex-1 py-2 rounded bg-[#111] border border-white/10 text-white text-[9px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center">TER • 09:00</button>
-                            <button onclick="openCityModal('Terça - 14:00')" class="flex-1 py-2 rounded bg-[#111] border border-white/10 text-white text-[9px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center">TER • 14:00</button>
-                        </div>
-                        <!-- Quarta - LOTADO -->
-                        <div class="flex justify-between items-center gap-2 schedule-day" data-date="2026-05-13">
-                            <div class="flex-1 py-2 rounded bg-[#0a0a0a] border border-red-900/30 text-zinc-600 text-[9px] font-bold tracking-widest text-center cursor-not-allowed">QUA • LOTADO</div>
-                        </div>
-                        <!-- Quinta -->
-                        <div class="flex justify-between items-center gap-2 schedule-day" data-date="2026-05-14">
-                            <button onclick="openCityModal('Quinta - 09:00')" class="flex-1 py-2 rounded bg-[#111] border border-white/10 text-white text-[9px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center">QUI • 09:00</button>
-                            <button onclick="openCityModal('Quinta - 14:00')" class="flex-1 py-2 rounded bg-[#111] border border-white/10 text-white text-[9px] font-bold tracking-widest hover:border-[#E4B8A6] hover:bg-[#E4B8A6]/10 transition-all text-center">QUI • 14:00</button>
-                        </div>
-                        <!-- Sexta - LOTADO -->
-                        <div class="flex justify-between items-center gap-2 schedule-day" data-date="2026-05-15">
-                            <div class="flex-1 py-2 rounded bg-[#0a0a0a] border border-red-900/30 text-zinc-600 text-[9px] font-bold tracking-widest text-center cursor-not-allowed">SEX • LOTADO</div>
-                        </div>
-                        <!-- Sábado -->
-                        <div class="flex justify-between items-center gap-2 schedule-day" data-date="2026-05-16">
-                            <button onclick="openCityModal('Sábado - 10:00')" class="flex-1 py-2 rounded bg-gradient-to-r from-[#B0897B] to-[#E4B8A6] text-[#09090B] text-[9px] font-black tracking-widest hover:brightness-110 transition-all shadow-[0_5px_15px_rgba(228,184,166,0.3)] text-center">SÁB • 10:00</button>
-                            <button onclick="openCityModal('Sábado - 14:00')" class="flex-1 py-2 rounded bg-gradient-to-r from-[#B0897B] to-[#E4B8A6] text-[#09090B] text-[9px] font-black tracking-widest hover:brightness-110 transition-all shadow-[0_5px_15px_rgba(228,184,166,0.3)] text-center">SÁB • 14:00</button>
-                        </div>
-                    </div>
-
-                    <p class="text-[8px] text-zinc-500 text-center uppercase tracking-widest mt-3" id="aviso-agenda">
-                        O clique direciona para confirmação de unidade.
+                    
+                    <h1 class="reveal delay-1 font-editorial text-[clamp(3rem,8vw,6.5rem)] italic mb-6 text-high-contrast leading-[0.9]">
+                        A Engenharia do <br><span class="liquid-platinum not-italic font-black">Liso Absoluto</span>
+                    </h1>
+                    
+                    <p class="reveal delay-2 font-tech text-sm sm:text-base opacity-70 font-light max-w-2xl mx-auto leading-[1.8] text-high-contrast mb-12">
+                        A execução cirúrgica da bio-arquitetura [GL.] PRO. Selecione a unidade oficial da sua região e reserve o seu horário para a Auditoria de Viabilidade Técnica.
                     </p>
+
+                    <div class="reveal delay-3 w-full max-w-lg mx-auto bg-[#1a0505]/80 backdrop-blur-xl border border-red-900/40 p-6 sm:p-8 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-r from-red-500/0 via-red-500/5 to-red-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                        
+                        <h3 class="font-cta text-[10px] font-black uppercase tracking-[0.4em] text-red-400 mb-3 flex items-center justify-center gap-2">
+                            <i data-lucide="clock" class="w-4 h-4"></i> Transição de Lote Oficial
+                        </h3>
+                        <p class="font-tech text-xs sm:text-sm text-white/80 leading-[1.8] font-light">
+                            A nossa tabela de investimentos será atualizada. As vagas com o valor do lote atual estão estritamente garantidas para agendamentos até <strong class="text-white font-bold border-b border-red-500/50 pb-0.5">19 de Junho</strong>, ou mediante o esgotamento dos ativos nos estúdios.
+                        </p>
+                    </div>
+
+                    <div class="reveal delay-3 mt-16 animate-bounce opacity-40">
+                        <i data-lucide="arrow-down" class="w-6 h-6 text-accent"></i>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- POP-UP XANXERÊ - Z-Index cravado no máximo e tamanho ultracompacto -->
-<div id="popup-xanxere" class="fixed inset-0 z-[999999] hidden items-center justify-center bg-black/85 backdrop-blur-md transition-opacity duration-300 opacity-0 p-4">
-    
-    <!-- Conteúdo do Pop-up Reduzido (max-w-[320px]) com scroll interno se necessário -->
-    <div id="popup-xanxere-content" class="relative w-full max-w-[320px] max-h-[90vh] flex flex-col bg-[#0A0A0A] border border-[#E4B8A6]/40 rounded-2xl p-1 shadow-[0_0_50px_rgba(228,184,166,0.2)] transform scale-95 transition-transform duration-300">
-        
-        <!-- Botão Fechar (X) - Ajustado para o novo tamanho -->
-        <button id="close-popup-btn" class="absolute top-2 right-2 z-20 text-white hover:text-[#E4B8A6] bg-black/80 rounded-full p-1.5 transition-colors border border-white/10 hover:border-[#E4B8A6]/50">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-        </button>
-
-        <!-- Container com overflow-y-auto para evitar quebra em ecrãs minúsculos -->
-        <div class="bg-gradient-to-b from-[#111] to-[#050505] rounded-xl p-5 text-center h-full w-full relative overflow-y-auto overflow-x-hidden">
-            
-            <div class="absolute -top-20 -right-20 w-40 h-40 bg-[#E4B8A6] opacity-[0.08] blur-3xl rounded-full"></div>
-
-            <div class="inline-block px-2 py-0.5 bg-[#E4B8A6]/10 border border-[#E4B8A6]/30 rounded-full mb-3 mt-2">
-                <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#E4B8A6]">Expansão Oficial</span>
-            </div>
-
-            <!-- Título mais pequeno (text-2xl) -->
-            <h4 class="text-2xl text-white mb-3 leading-tight tracking-tight" style="font-family: 'Cormorant Garamond', serif;">
-                A Arquitetura Capilar<br>chegou a <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-[#B0897B] to-[#E4B8A6]">Xanxerê</span>.
-            </h4>
-            
-            <!-- Texto atualizado para Liso Soberano 8K -->
-            <p class="text-xs text-zinc-300 font-light mb-5 leading-relaxed">
-                A mesma excelência e tecnologia <strong class="text-white font-medium">Liso Soberano 8K</strong> que transformou centenas de cabelos, agora no nosso novo salão parceiro.
-            </p>
-
-            <a href="https://wa.me/5549991618389?text=Olá,%20gostaria%20de%20garantir%20uma%20vaga%20de%20avaliação%20com%20a%20tecnologia%20Liso%20Soberano%208K%20no%20novo%20salão%20parceiro%20em%20Xanxerê!" target="_blank" class="flex items-center justify-center gap-2 w-full py-3 rounded bg-gradient-to-r from-[#B0897B] to-[#E4B8A6] text-[#0A0A0A] text-[10px] font-black uppercase tracking-[0.1em] hover:brightness-110 transition-all shadow-[0_5px_25px_rgba(228,184,166,0.3)] transform hover:-translate-y-0.5">
-                Garantir Avaliação
-            </a>
-            
-            <p class="text-[8px] text-zinc-500 uppercase tracking-widest mt-3">Vagas estritamente limitadas</p>
-        </div>
-    </div>
-</div>
-
-<script>
-    // A lógica JavaScript mantém-se exatamente a mesma.
-    document.addEventListener('DOMContentLoaded', () => {
-        
-        const updateSchedule = () => {
-            const days = document.querySelectorAll('.schedule-day');
-            const now = new Date(); 
-            
-            days.forEach(day => {
-                const dateStr = day.getAttribute('data-date');
-                if (!dateStr) return;
-
-                const [year, month, dayNum] = dateStr.split('-');
-                const scheduleDate = new Date(year, month - 1, dayNum, 18, 0, 0);
-
-                if (now > scheduleDate) {
-                    day.style.display = 'none';
-                }
-            });
-        };
-
-        updateSchedule();
-
-        const popup = document.getElementById('popup-xanxere');
-        const popupContent = document.getElementById('popup-xanxere-content');
-        const closeBtn = document.getElementById('close-popup-btn');
-
-        const showPopup = () => {
-            popup.classList.remove('hidden');
-            popup.classList.add('flex');
-            
-            setTimeout(() => {
-                popup.classList.remove('opacity-0');
-                popup.classList.add('opacity-100');
-                popupContent.classList.remove('scale-95');
-                popupContent.classList.add('scale-100');
-            }, 50);
-        };
-
-        const hidePopup = () => {
-            popup.classList.remove('opacity-100');
-            popup.classList.add('opacity-0');
-            popupContent.classList.remove('scale-100');
-            popupContent.classList.add('scale-95');
-            
-            setTimeout(() => {
-                popup.classList.add('hidden');
-                popup.classList.remove('flex');
-            }, 300); 
-        };
-
-        setTimeout(showPopup, 6000);
-
-        closeBtn.addEventListener('click', hidePopup);
-
-        popup.addEventListener('click', (e) => {
-            if (e.target === popup) hidePopup();
-        });
-    });
-</script>
-
-        
+            </header>
 
         <section class="max-w-6xl mx-auto px-6 mb-24 relative z-10 mt-16">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative">
